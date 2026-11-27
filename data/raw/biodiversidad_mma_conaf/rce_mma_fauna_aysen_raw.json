@@ -2,7 +2,7 @@
   "fuente": "Ministerio del Medio Ambiente de Chile - Clasificación de Especies según Estado de Conservación",
   "portal_url": "https://clasificacionespecies.mma.gob.cl/",
   "inventario_url": "https://especies.mma.gob.cl/",
-  "fecha_extraccion": "2026-11-02T12:14:40.051326+00:00",
+  "fecha_extraccion": "2026-11-27T14:03:25.019505+00:00",
   "especies_auditadas": [
     {
       "especie": "Hippocamelus bisulcus",
@@ -11,9 +11,9 @@
       "decreto": "D.S. 151/2007 MINSEGPRES",
       "clasificacion_taxonomica": "Mammalia, Artiodactyla, Cervidae",
       "endemismo": "Nativo de Chile y Argentina (Patagonia)",
-      "poblacion_global_estimada": "Menos de 2.500 individuos en vida silvestre",
-      "poblacion_aysen_estimada": "1.500 a 2.000 individuos (60-70% de la población mundial)",
-      "fuente_oficial": "MMA / CONAF Plan Nacional de Conservación del Huemul"
+      "poblacion_global_estimada": "< 1.500 individuos maduros (101 subpoblaciones Chile + Argentina, 17° Proceso RCE MMA)",
+      "poblacion_aysen_estimada": "750 a 1.000 individuos (~50%-60% de la población mundial silvestre)",
+      "fuente_oficial": "MMA / CONAF Plan Nacional de Conservación del Huemul (17° Proceso RCE)"
     },
     {
       "especie": "Pudu puda",
@@ -28,11 +28,11 @@
     {
       "especie": "Lontra provocax",
       "nombre_comun": "Huillín",
-      "categoria_rce": "En Peligro (EN)",
-      "decreto": "D.S. 151/2007 MINSEGPRES",
+      "categoria_rce": "En Peligro (EN) Regiones VI-X / Insuficientemente Conocida (IC) Regiones XI-XII",
+      "decreto": "D.S. 151/2007 MINSEGPRES (EN VI-X / IC XI-XII)",
       "clasificacion_taxonomica": "Mammalia, Carnivora, Mustelidae",
       "endemismo": "Nativo de Chile y Argentina",
-      "poblacion_aysen_estimada": "Población crítica en cuenca del Río Baker, Río Cochrane y canales de fiordos",
+      "poblacion_aysen_estimada": "Población crítica en cuenca del Río Baker, Río Cochrane y canales de fiordos (estado IC en Regiones XI-XII)",
       "fuente_oficial": "MMA / SAG / CODEFF Monitoreo Huillín Patagonia"
     },
     {
@@ -62,8 +62,8 @@
       "decreto": "D.S. 23/2009 MMA",
       "clasificacion_taxonomica": "Mammalia, Cetacea, Balaenopteridae",
       "endemismo": "Subpoblación del Pacífico Suroriental (Chile)",
-      "poblacion_aysen_estimada": "600 a 800 ejemplares que utilizan el Golfo Corcovado y Moraleda en verano",
-      "fuente_oficial": "Centro Ballena Azul (CBA) / UACh / MERI Foundation"
+      "poblacion_aysen_estimada": "< 250 individuos maduros (~217 estimados en aguas chilenas, Golfo de Penas-Chiloé en verano, Ficha RCE MMA)",
+      "fuente_oficial": "MMA Ficha RCE / Centro Ballena Azul (CBA) / UACh"
     },
     {
       "especie": "Cephalorhynchus eutropia",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * tests/test_obsidian_indicator_audit.cjs (Versión 3 — 19 Evals con Invariantes Físicos y Regulatorios)
+ * tests/test_obsidian_indicator_audit.cjs (Versión 3 — 20 Evals con Invariantes Físicos y Regulatorios)
  * Suite de Evals y pruebas automatizadas para scripts/obsidian_indicator_audit.cjs.
  *
  * Portable en CI/shallow clones: si `git show HEAD~1` no está disponible, usa
@@ -430,7 +430,51 @@ function runTests() {
   console.log('  [PASS] Eval 19: Censo 2024, MINVU CECT, SSR/APR, SLEP 86/55, SIES 2.924, CEAD y Wiki Hub VI verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/19 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 20: Invariantes Hub VII (CONAF 2026 4 tipos, IPG 2022 8.721,6 km2, EEI Castor=0/Didymo 6 cuencas, SINCA/DGA Baker, RNVV 5/Hudson #12, Wiki Nodo 36) ---
+  console.log('--- Eval 20: Invariantes Hub VII Biodiversidad, Glaciares IPG 2022, SINCA/DGA Baker y Volcanes RNVV ---');
+  assert.strictEqual(
+    audit.evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 20 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 20 con 0 alertas'
+  );
+
+  // 20a: Corrupcion glaciares (10.035,7 km2 antiguo) y tipos forestales CONAF 2026 -> ROJO
+  const badGlacConafSnap = JSON.parse(JSON.stringify(currSnap));
+  badGlacConafSnap.indicators.superficie_glaciar_km2.values['11303'] = 4799.5;
+  badGlacConafSnap.hub7BiodivAudit.nodo27Data = [2672000, 1665000, 376200, 0, 2606729, 106484.6];
+  const badGlacConafDiff = audit.compareSnapshots(currSnap, badGlacConafSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badGlacConafDiff.semaforo, 'ROJO');
+  assert(
+    badGlacConafDiff.verificationAlerts.some(a => a.code === 'ERROR_CRIOSFERA_IPG_2022_GLACIARES') &&
+    badGlacConafDiff.verificationAlerts.some(a => a.code === 'ERROR_CONAF_2026_TIPOS_FORESTALES'),
+    'Debe detectar corrupcion de criosfera IPG 2022 y tipos forestales CONAF 2026'
+  );
+
+  // 20b: Falsa colonizacion Castor, SINCA no-EMRP con valor, fecha futura Baker / 7 conectores y Hudson #2 -> ROJO
+  const badBioAirVolcSnap = JSON.parse(JSON.stringify(currSnap));
+  badBioAirVolcSnap.indicators.dias_sobre_norma_mp25.values['11301'] = 18;
+  badBioAirVolcSnap.hub7BiodivAudit.eeiPorComunaCastorN = 2;
+  badBioAirVolcSnap.hub7BiodivAudit.bakerEstacion.hasFutureDates = true;
+  badBioAirVolcSnap.hub7BiodivAudit.activeApiConnectors = 7;
+  badBioAirVolcSnap.hub7BiodivAudit.volcanesRnvv.hudsonRanking = 2;
+  const badBioAirVolcDiff = audit.compareSnapshots(currSnap, badBioAirVolcSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badBioAirVolcDiff.semaforo, 'ROJO');
+  assert(
+    badBioAirVolcDiff.verificationAlerts.some(a => a.code === 'ERROR_SINCA_EMRP_COBERTURA_Y_GEC') &&
+    badBioAirVolcDiff.verificationAlerts.some(a => a.code === 'ERROR_EEI_CASTOR_JABALI_DIDYMO') &&
+    badBioAirVolcDiff.verificationAlerts.some(a => a.code === 'ERROR_HIDROLOGIA_BAKER_Y_CONECTOR_DGA') &&
+    badBioAirVolcDiff.verificationAlerts.some(a => a.code === 'ERROR_VOLCANISMO_RNVV_Y_WIKI_SIES'),
+    'Debe detectar regresiones en SINCA, EEI Castor, hidrograma Baker / 8 conectores y Volcan Hudson RNVV'
+  );
+  console.log('  [PASS] Eval 20: CONAF 2026 4 tipos, IPG 2022 (8.721,6 km2 / 10.301), EEI SAT, SINCA EMRP, Baker DGA 8 conectores y RNVV 5 volcanes verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/20 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

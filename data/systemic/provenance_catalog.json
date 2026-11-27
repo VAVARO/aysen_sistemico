@@ -702,8 +702,18 @@
       "provenance": {
         "sourceEntity": "Sistema de Información Nacional de Calidad del Aire (SINCA MMA) / Dirección General de Aguas (DGA MOP)",
         "sourceUrl": "https://sinca.mma.gob.cl/",
-        "collectionDate": "Monitoreo continuo en línea de estaciones telemétricas · Corte Octubre 2026",
-        "collectionMethod": "Telemetría continua horaria de estaciones oficiales (Estación Coyhaique II SINCA y BNA 11530000-8 DGA Río Baker)",
+        "dgaSourceUrl": "https://rest-sit.mop.gob.cl/arcgis/rest/services/DGA/Red_Hidrometrica/MapServer/0",
+        "activeConnectors": [
+          "sinca",
+          "dga_hidrologia"
+        ],
+        "dgaStations": [
+          "11530000-8",
+          "11542001-1",
+          "11317001-K"
+        ],
+        "collectionDate": "Monitoreo continuo en línea de estaciones telemétricas SINCA EMRP (Coyhaique I/II y Vialidad Aysén) y Red Hidrométrica DGA BNA · Corte Noviembre 2026",
+        "collectionMethod": "Telemetría continua horaria de estaciones oficiales SINCA MMA (2 EMRP Coyhaique, 1 EMRP Puerto Aysén) y conectores DGA BNA (11530000-8 Río Baker Bertrand, 11542001-1 Bajo Colonia, 11317001-K Río Simpson)",
         "updateFrequency": "Horario / Continuo",
         "nextUpdate": "Octubre 2026 (Transmisión en tiempo real)",
         "collectionDateISO": "2026-10-01",

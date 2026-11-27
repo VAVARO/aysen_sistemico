@@ -21,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Infraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.327 estudiantes de Educación Superior SIES (CFT Estatal 737, INACAP 800, UAysén 790), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34), UAysén Campus Río Simpson (31 · 790 alumnos), INIA Tamel Aike (10), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID) y DGAC BBA (2), junto a INACAP (800 alumnos) y CFT Estatal (737 alumnos).
+Infraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026), INIA Tamel Aike (10), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos).
 
 ## Indicadores Comunales Verificados
 

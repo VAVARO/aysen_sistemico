@@ -545,6 +545,126 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     hub06WikiText
   };
 
+  // Contexto Hub VII (Sprint 10 - Eval E20: CONAF 2026, Glaciares IPG 2022, EEI, SINCA/DGA, Volcanes RNVV, SIES Nodo 36)
+  const nodo27 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 27) : null;
+  const nodo29 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 29) : null;
+  const nodo30 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 30) : null;
+  const nodo31 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 31) : null;
+  const estacionesPath = options.estacionesAysenPath || path.join(ROOT_DIR, 'data', 'estaciones_aysen.json');
+  const estacionesJson = readJsonSafe(estacionesPath, null);
+  const estacionesArr = Array.isArray(estacionesJson)
+    ? estacionesJson
+    : (Array.isArray(estacionesJson && estacionesJson.estaciones) ? estacionesJson.estaciones : []);
+  const bakerEst = estacionesArr.find(
+    e => e && (Number(e.id) === 1 || String(e.codigo_estacion || e.codigo || '').includes('11530000-8'))
+  ) || null;
+  const bakerSerie = Array.isArray(bakerEst && (bakerEst.serie_temporal || bakerEst.serie))
+    ? (bakerEst.serie_temporal || bakerEst.serie)
+    : [];
+  let bakerEstMaxVal = null;
+  let bakerEstMaxMes = null;
+  let bakerEstMinVal = null;
+  let bakerEstMinMes = null;
+  let bakerEstHasFuture = false;
+  const currentYm = new Date().toISOString().slice(0, 7);
+  for (const pt of bakerSerie) {
+    const val = Number(pt && pt.valor);
+    const fecha = String((pt && pt.fecha) || '');
+    const ym = fecha.slice(0, 7);
+    if (ym && ym > currentYm) bakerEstHasFuture = true;
+    if (Number.isFinite(val)) {
+      if (bakerEstMaxVal === null || val > bakerEstMaxVal) {
+        bakerEstMaxVal = val;
+        bakerEstMaxMes = ym;
+      }
+      if (bakerEstMinVal === null || val < bakerEstMinVal) {
+        bakerEstMinVal = val;
+        bakerEstMinMes = ym;
+      }
+    }
+  }
+  const mapaHtmlPath = options.mapaTerritorialPath || path.join(ROOT_DIR, 'mapa_territorial.html');
+  let mapaBakerChartData = null;
+  try {
+    if (fs.existsSync(mapaHtmlPath)) {
+      const mapaTxt = fs.readFileSync(mapaHtmlPath, 'utf8');
+      const m = mapaTxt.match(/11530000-8[\s\S]{0,600}?chartData:\s*\[([^\]]+)\]/);
+      if (m) {
+        mapaBakerChartData = m[1].split(',').map(x => Number(x.trim())).filter(Number.isFinite);
+      }
+    }
+  } catch (_) {}
+  const rnvvPath = options.rnvvVolcanoesPath || path.join(ROOT_DIR, 'data', 'raw', 'social_ambiental', 'sernageomin_rnvv_volcanes_aysen.json');
+  const rnvvJson = readJsonSafe(rnvvPath, null);
+  const rnvvList = Array.isArray(rnvvJson && rnvvJson.volcanes_activos_aysen) ? rnvvJson.volcanes_activos_aysen : [];
+  const hudsonRnvv = rnvvList.find(v => String(v.id || '').includes('hudson') || /hudson/i.test(String(v.nombre || '')));
+  const arenalesInRnvvAysen = rnvvList.some(v => /arenales/i.test(String(v.nombre || '') + String(v.id || '')) && String(v.comuna_ine || '') === '11201');
+  const autoUpPath = options.autoUpdateStatusPath || AUTO_UPDATE_STATUS_PATH;
+  const autoUpJson = readJsonSafe(autoUpPath, null);
+  const nodo36WikiPath = options.nodo36WikiPath || path.join(ROOT_DIR, 'wiki', 'nodos', 'nodo_36.md');
+  let nodo36WikiText = '';
+  try {
+    if (fs.existsSync(nodo36WikiPath)) {
+      nodo36WikiText = fs.readFileSync(nodo36WikiPath, 'utf8');
+    }
+  } catch (_) {}
+
+  const eeiPorComunaCastorN = Array.isArray(wp07Json && wp07Json.por_comuna)
+    ? wp07Json.por_comuna.filter(c => c?.datos?.especies_exoticas_invasoras?.castor_canadiense?.presente === true).length
+    : 0;
+  const didymoCat = Array.isArray(wp07Json && wp07Json.catastro_especies_exoticas_invasoras)
+    ? wp07Json.catastro_especies_exoticas_invasoras.find(e => /didymo/i.test(String(e.nombre_comun || '')))
+    : null;
+  const jabaliCat = Array.isArray(wp07Json && wp07Json.catastro_especies_exoticas_invasoras)
+    ? wp07Json.catastro_especies_exoticas_invasoras.find(e => /jabal/i.test(String(e.nombre_comun || '')))
+    : null;
+
+  const hub7BiodivAudit = {
+    superficieGlaciaresAliasByIne: Object.fromEntries(
+      (dataLake.comunas || []).map(r => [String(r.comuna_ine || ''), Number(r.superficie_glaciares_km2 ?? NaN)])
+    ),
+    episodiosGec2024ByIne: Object.fromEntries(
+      (dataLake.comunas || []).map(r => [String(r.comuna_ine || ''), r.episodios_gec_mp25_2024 ?? null])
+    ),
+    nodo27Labels: Array.isArray(nodo27 && nodo27.chartSpec && nodo27.chartSpec.labels) ? nodo27.chartSpec.labels.slice() : [],
+    nodo27Data: Array.isArray(nodo27 && nodo27.chartSpec && nodo27.chartSpec.datasets && nodo27.chartSpec.datasets[0] && nodo27.chartSpec.datasets[0].data)
+      ? nodo27.chartSpec.datasets[0].data.map(Number)
+      : [],
+    nodo29Labels: Array.isArray(nodo29 && nodo29.chartSpec && nodo29.chartSpec.labels) ? nodo29.chartSpec.labels.slice() : [],
+    nodo29Data: Array.isArray(nodo29 && nodo29.chartSpec && nodo29.chartSpec.datasets && nodo29.chartSpec.datasets[0] && nodo29.chartSpec.datasets[0].data)
+      ? nodo29.chartSpec.datasets[0].data.map(Number)
+      : [],
+    eeiPorComunaCastorN,
+    jabaliText: `${(jabaliCat && (jabaliCat.cuencas_y_comunas_afectadas || []).join(' ')) || ''} ${String((nodo29 && nodo29.example) || '')}`,
+    didymoText: `${(didymoCat && (didymoCat.cuencas_y_comunas_afectadas || []).join(' ')) || ''} ${String((nodo29 && nodo29.example) || '')}`,
+    nodo30BakerData: Array.isArray(nodo30 && nodo30.chartSpec && nodo30.chartSpec.datasets && nodo30.chartSpec.datasets[1] && nodo30.chartSpec.datasets[1].data)
+      ? nodo30.chartSpec.datasets[1].data.map(Number)
+      : [],
+    nodo30TableHas202612: Array.isArray(nodo30 && nodo30.tableRows)
+      ? nodo30.tableRows.some(r => /2026-12/i.test(String((r && r[0]) || '')))
+      : false,
+    bakerEstacion: {
+      found: Boolean(bakerEst),
+      maxVal: bakerEstMaxVal,
+      maxMes: bakerEstMaxMes,
+      minVal: bakerEstMinVal,
+      minMes: bakerEstMinMes,
+      hasFutureDates: bakerEstHasFuture
+    },
+    mapaBakerChartData,
+    activeApiConnectors: Number((autoUpJson && autoUpJson.activeApiConnectors) || (dataLake.meta && dataLake.meta.autoUpdate && dataLake.meta.autoUpdate.activeApiConnectors) || 0),
+    hasDgaHidrologiaConnector: Array.isArray(autoUpJson && autoUpJson.connectors)
+      ? autoUpJson.connectors.some(c => (c.key || c.connector) === 'dga_hidrologia')
+      : false,
+    volcanesRnvv: {
+      count: rnvvList.length,
+      hudsonRanking: hudsonRnvv ? Number(hudsonRnvv.ranking_riesgo_sernageomin) : null,
+      arenalesInAysen: arenalesInRnvvAysen,
+      nodo31Text: `${String((nodo31 && nodo31.definition) || '')} ${String((nodo31 && nodo31.example) || '')}`
+    },
+    nodo36WikiText
+  };
+
   return {
     schemaVersion: '3.0.0',
     label,
@@ -563,6 +683,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     },
     hub5EconomyAudit,
     hub6SocialAudit,
+    hub7BiodivAudit,
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -1319,6 +1440,184 @@ function evaluateHub6SocialDemographyEducationHousingInvariants(bundleOrSnapshot
   return alerts;
 }
 
+function evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'direct', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h5 = snapshot.hub5EconomyAudit || {};
+  const h7 = snapshot.hub7BiodivAudit || {};
+  if (comunas.length < 10 || !indicators.superficie_glaciar_km2) return alerts;
+
+  const getRaw = (key, ine) => {
+    const map = indicators[key] && indicators[key].values;
+    if (!map || !(ine in map)) return undefined;
+    return map[ine];
+  };
+  const sumInd = (key) => comunas.reduce((a, c) => a + (Number(indicators[key]?.values?.[c.comuna_ine]) || 0), 0);
+
+  // (a) Bosque nativo CONAF 2026 = 5.152.384,3 ha y 4 tipos forestales oficiales incl. Coihue de Magallanes (882.420 ha)
+  const sumBosque = comunas.reduce((a, c) => {
+    const v = indicators.bosque_nativo_ha?.values?.[c.comuna_ine] ?? h5.bosqueNativoByIne?.[c.comuna_ine] ?? 0;
+    return a + (Number(v) || 0);
+  }, 0);
+  const labels27 = Array.isArray(h7.nodo27Labels) ? h7.nodo27Labels.map(s => String(s || '')) : [];
+  const data27 = Array.isArray(h7.nodo27Data) ? h7.nodo27Data.map(Number) : [];
+  const joined27 = labels27.join(' | ');
+  const hasAll4Types = /siempreverde/i.test(joined27) && /lenga/i.test(joined27) && /coihue\s+de\s+magallanes/i.test(joined27) && /cipr[eé]s/i.test(joined27);
+  const forest4Sum = data27.length >= 4 ? data27.slice(0, 4).reduce((a, b) => a + (Number(b) || 0), 0) : 0;
+  const hasCoihue882 = data27.some(v => Math.abs(v - 882420) < 0.5);
+  if (
+    Math.abs(sumBosque - 5152384.3) > 0.5 ||
+    (labels27.length > 0 && (!hasAll4Types || Math.abs(forest4Sum - 5152384.3) > 0.5 || !hasCoihue882))
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CONAF_2026_TIPOS_FORESTALES',
+      invariant: 'INVARIANTE_CONAF_2026_4_TIPOS_FORESTALES',
+      indicator: 'bosque_nativo_ha',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_CONAF_2026_TIPOS_FORESTALES] Bosque nativo=${sumBosque.toFixed(1)} ha (esp. 5152384.3), 4tipos=${forest4Sum.toFixed(1)}, hasAll4=${hasAll4Types}, coihue882=${hasCoihue882}.`
+    });
+  }
+
+  // (b) Criosfera IPG 2022 DGA: 8.721,6 km2 y 10.301 glaciares
+  const sumGlacKm2 = sumInd('superficie_glaciar_km2');
+  const sumGlacKm2Alias = indicators.superficie_glaciares_km2
+    ? sumInd('superficie_glaciares_km2')
+    : comunas.reduce((a, c) => a + (Number(h7.superficieGlaciaresAliasByIne?.[c.comuna_ine] ?? indicators.superficie_glaciar_km2?.values?.[c.comuna_ine]) || 0), 0);
+  const sumGlacN = sumInd('glaciares_dga_n');
+  if (
+    Math.abs(sumGlacKm2 - 8721.6) > 0.2 ||
+    Math.abs(sumGlacKm2Alias - 8721.6) > 0.2 ||
+    sumGlacN !== 10301
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CRIOSFERA_IPG_2022_GLACIARES',
+      invariant: 'INVARIANTE_CRIOSFERA_IPG_2022_8721_6',
+      indicator: 'superficie_glaciar_km2',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_CRIOSFERA_IPG_2022_GLACIARES] Glaciares IPG 2022 inconsistentes: km2=${sumGlacKm2.toFixed(1)} / alias=${sumGlacKm2Alias.toFixed(1)} (esp. 8721.6), n=${sumGlacN} (esp. 10301).`
+    });
+  }
+
+  // (c) EEI: Castor 0 comunas establecidas, Jabali con Rio Ibanez / Cerro Castillo, Didymo 6 cuencas BNA (110,111,113,114,115,117)
+  const data29 = Array.isArray(h7.nodo29Data) ? h7.nodo29Data.map(Number) : [];
+  const castorChartVal = data29.length >= 6 ? data29[5] : 0;
+  const jabaliTxt = String(h7.jabaliText || '');
+  const didymoTxt = String(h7.didymoText || '');
+  const hasJabaliIbanez = /ib[aá][nñ]ez|cerro\s+castillo/i.test(jabaliTxt);
+  const hasDidymo6Cuencas = ['110', '111', '113', '114', '115', '117'].every(b => new RegExp(`\\b${b}\\b`).test(didymoTxt));
+  if (
+    Number(h7.eeiPorComunaCastorN || 0) !== 0 ||
+    castorChartVal !== 0 ||
+    (jabaliTxt && !hasJabaliIbanez) ||
+    (didymoTxt && !hasDidymo6Cuencas)
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_EEI_CASTOR_JABALI_DIDYMO',
+      invariant: 'INVARIANTE_EEI_SAT_CASTOR_Y_6_CUENCAS_DIDYMO',
+      indicator: 'especies_exoticas_invasoras_n',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_EEI_CASTOR_JABALI_DIDYMO] Castor comunas=${h7.eeiPorComunaCastorN} / chart=${castorChartVal} (esp. 0), hasJabaliIbanez=${hasJabaliIbanez}, hasDidymo6Cuencas=${hasDidymo6Cuencas}.`
+    });
+  }
+
+  // (d) SINCA EMRP exclusivamente en Coyhaique (97 GEC 2026 / 87 2024) y Puerto Aysen (16 dias base 2022)
+  const emrpCoy = Number(getRaw('estaciones_sinca_emrp_n', '11101'));
+  const emrpAys = Number(getRaw('estaciones_sinca_emrp_n', '11201'));
+  const gecCoy = Number(getRaw('episodios_gec_mp25_anual', '11101'));
+  const rawGec24 = getRaw('episodios_gec_mp25_2024', '11101');
+  const gecCoy24 = Number(rawGec24 !== undefined ? rawGec24 : (h7.episodiosGec2024ByIne?.['11101'] ?? NaN));
+  const diasCoy = Number(getRaw('dias_sobre_norma_mp25', '11101'));
+  const diasAys = Number(getRaw('dias_sobre_norma_mp25', '11201'));
+  const badNonEmrp = [];
+  for (const c of comunas) {
+    const ine = String(c.comuna_ine);
+    if (ine === '11101' || ine === '11201') continue;
+    const estN = getRaw('estaciones_sinca_emrp_n', ine);
+    const dVal = getRaw('dias_sobre_norma_mp25', ine);
+    const gVal = getRaw('episodios_gec_mp25_anual', ine);
+    if (Number(estN) !== 0 || (dVal !== null && dVal !== undefined) || (gVal !== null && gVal !== undefined)) {
+      badNonEmrp.push(`${ine}(est=${estN},dias=${dVal},gec=${gVal})`);
+    }
+  }
+  if (
+    emrpCoy !== 2 || emrpAys !== 1 ||
+    gecCoy !== 97 || gecCoy24 !== 87 || diasCoy !== 87 || diasAys !== 16 ||
+    badNonEmrp.length > 0
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_SINCA_EMRP_COBERTURA_Y_GEC',
+      invariant: 'INVARIANTE_SINCA_EMRP_SOLO_COYHAIQUE_Y_AYSEN',
+      indicator: 'episodios_gec_mp25_anual',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_SINCA_EMRP_COBERTURA_Y_GEC] Coy(est=${emrpCoy},gec26=${gecCoy},gec24=${gecCoy24},dias=${diasCoy}), Ays(est=${emrpAys},dias=${diasAys}), noEMRP=[${badNonEmrp.join(', ')}].`
+    });
+  }
+
+  // (e) Hidrograma Rio Baker BNA 11530000-8 (Feb 675, Ago 395, sin futuro) y 8 conectores (incl. dga_hidrologia)
+  const bData = Array.isArray(h7.nodo30BakerData) ? h7.nodo30BakerData.map(Number) : [];
+  let nodo30Ok = true;
+  if (bData.length === 12) {
+    const maxB = Math.max(...bData);
+    const minB = Math.min(...bData);
+    nodo30Ok = bData[1] === 675 && maxB === 675 && bData[7] === 395 && minB === 395;
+  }
+  const bEst = h7.bakerEstacion || {};
+  const estOk = !bEst.found || (
+    bEst.maxVal === 675 &&
+    String(bEst.maxMes || '').endsWith('-02') &&
+    bEst.minVal === 395 &&
+    String(bEst.minMes || '').endsWith('-08') &&
+    !bEst.hasFutureDates
+  );
+  const mData = Array.isArray(h7.mapaBakerChartData) ? h7.mapaBakerChartData.map(Number) : [];
+  const mapaOk = mData.length === 0 || (mData.length === 12 && mData[1] === 675 && mData[7] === 395);
+  const connOk = Number(h7.activeApiConnectors || 0) === 8 && Boolean(h7.hasDgaHidrologiaConnector);
+  if (!nodo30Ok || !estOk || !mapaOk || Boolean(h7.nodo30TableHas202612) || !connOk) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_HIDROLOGIA_BAKER_Y_CONECTOR_DGA',
+      invariant: 'INVARIANTE_BAKER_NIVO_GLACIAL_Y_8_CONECTORES',
+      indicator: 'hidrologia_caudales_dga',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_HIDROLOGIA_BAKER_Y_CONECTOR_DGA] nodo30Ok=${nodo30Ok}, estOk=${estOk}, mapaOk=${mapaOk}, tableFuture=${Boolean(h7.nodo30TableHas202612)}, conns=${h7.activeApiConnectors}, hasDga=${Boolean(h7.hasDgaHidrologiaConnector)}.`
+    });
+  }
+
+  // (f) Volcanes RNVV (5 en Aysen, Hudson #12 Cat I, sin Arenales en 11201) y wiki/nodos/nodo_36.md con 2.924 SIES
+  const vInfo = h7.volcanesRnvv || {};
+  const n31Txt = String(vInfo.nodo31Text || '');
+  const n36Txt = String(h7.nodo36WikiText || '');
+  const n31Has12 = /#12|puesto\s+12/i.test(n31Txt);
+  const n36Ok = !n36Txt || (n36Txt.includes('2.924') && !n36Txt.includes('2.327'));
+  if (
+    Number(vInfo.count || 0) !== 5 ||
+    Number(vInfo.hudsonRanking || 0) !== 12 ||
+    Boolean(vInfo.arenalesInAysen) ||
+    (n31Txt && !n31Has12) ||
+    !n36Ok
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_VOLCANISMO_RNVV_Y_WIKI_SIES',
+      invariant: 'INVARIANTE_VOLCANES_RNVV_5_Y_NODO36_SIES',
+      indicator: 'amenaza_volcanica_sismica_idx',
+      hub: CANONICAL_HUB_TITLES.biodiversidad,
+      detail: `[ERROR_VOLCANISMO_RNVV_Y_WIKI_SIES] rnvvCount=${vInfo.count}, hudson=${vInfo.hudsonRanking}, arenales=${Boolean(vInfo.arenalesInAysen)}, n31Has12=${n31Has12}, n36Ok=${n36Ok}.`
+    });
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -1574,12 +1873,13 @@ function compareSnapshots(baseline, current, options = {}) {
     .map(([hubTitle, count]) => ({ hubTitle, count }))
     .sort((a, b) => a.hubTitle.localeCompare(b.hubTitle));
 
-  // Invariantes físicos, demográficos, fiscales Hub IV, económicos Hub V, sociales Hub VI y anti-colinealidad (Audit V3 / E17-E19)
+  // Invariantes físicos, demográficos, fiscales Hub IV, económicos Hub V, sociales Hub VI, Hub VII y anti-colinealidad (Audit V3 / E17-E20)
   const invariantAlerts = [
     ...evaluatePhysicalAndDemographicInvariants(current, options),
     ...evaluateHub4FiscalAndElectoralInvariants(current, options),
     ...evaluateHub5EconomyInvestmentLandInvariants(current, options),
-    ...evaluateHub6SocialDemographyEducationHousingInvariants(current, options)
+    ...evaluateHub6SocialDemographyEducationHousingInvariants(current, options),
+    ...evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(current, options)
   ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
@@ -2235,6 +2535,7 @@ module.exports = {
   evaluateHub4FiscalAndElectoralInvariants,
   evaluateHub5EconomyInvestmentLandInvariants,
   evaluateHub6SocialDemographyEducationHousingInvariants,
+  evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

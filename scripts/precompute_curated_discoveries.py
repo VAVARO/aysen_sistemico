@@ -709,8 +709,8 @@ def compute_curated_discoveries(data_lake):
         hub_x, label_x, unit_x = VARIABLE_META[vx]
         hub_y, label_y, unit_y = VARIABLE_META[vy]
 
-        x = [float(c.get(vx, 0.0)) for c in comunas]
-        y = [float(c.get(vy, 0.0)) for c in comunas]
+        x = [0.0 if c.get(vx) is None else float(c.get(vx)) for c in comunas]
+        y = [0.0 if c.get(vy) is None else float(c.get(vy)) for c in comunas]
 
         lin = calc_pearson_ols(x, y)
         pearson_r = float(lin["r"])
@@ -1032,7 +1032,7 @@ def compute_comunas_explain(data_lake):
     stds = [1.0] * m_vars
 
     for j, k in enumerate(valid_keys):
-        vec = [float(c.get(k, 0.0)) for c in comunas]
+        vec = [0.0 if c.get(k) is None else float(c.get(k)) for c in comunas]
         for i in range(n_com):
             mat[i][j] = vec[i]
         means[j] = _mean(vec)

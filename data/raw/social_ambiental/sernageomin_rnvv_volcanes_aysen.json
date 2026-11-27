@@ -1,79 +1,108 @@
 {
   "fuente": "Red Nacional de Vigilancia Volcánica (RNVV) - SERNAGEOMIN",
   "url_fuente": "https://rnvv.sernageomin.cl/",
+  "nota_cobertura_rnvv": "5 volcanes activos monitoreados por la RNVV dentro de la Región de Aysén (Hudson #12 Cat. I, Melimoyu Cat. II, Mentolat #35 Cat. III, Macá #39 Cat. III, Cay #63 Cat. IV). Cerro Arenales (Tortel/Cochrane) fue excluido por carecer de actividad eruptiva holocena confirmada (Stern et al., 2016); Volcán Lautaro (Natales, Magallanes) se monitorea como amenaza transregional al sur de O'Higgins.",
   "volcanes_activos_aysen": [
     {
       "id": "volcan_hudson",
       "nombre": "Volcán Hudson",
-      "tipo": "Estratovolcán con caldera activa de 10 km",
+      "tipo": "Estratovolcán con caldera activa de 10 km (1.905 m)",
       "lat": -45.9,
-      "lng": -72.9667,
+      "lng": -72.97,
       "comuna_ine": "11402",
+      "comunas_influencia": [
+        "11201",
+        "11402"
+      ],
       "codigo_comuna": "CL-XI-07",
-      "ranking_riesgo_sernageomin": 1,
+      "ranking_riesgo_sernageomin": 12,
+      "categoria_riesgo_rnvv": "Categoría I - Muy Alto Riesgo (regla de excepción VEI >= 4)",
+      "altitud_m": 1905,
       "ultima_gran_erupcion": 1991,
       "nivel_alerta_tecnica": "Verde",
       "url": "https://rnvv.sernageomin.cl/volcan-hudson/"
     },
     {
+      "id": "volcan_melimoyu",
+      "nombre": "Volcán Melimoyu",
+      "tipo": "Estratovolcán con caldera elongada de 8 km (2.400 m)",
+      "lat": -44.08,
+      "lng": -72.88,
+      "comuna_ine": "11202",
+      "codigo_comuna": "CL-XI-04",
+      "ranking_riesgo_sernageomin": 24,
+      "categoria_riesgo_rnvv": "Categoría II - Alto Riesgo",
+      "altitud_m": 2400,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-melimoyu/"
+    },
+    {
+      "id": "volcan_mentolat",
+      "nombre": "Volcán Mentolat",
+      "tipo": "Estratovolcán con caldera de 6 km en Isla Magdalena (1.660 m)",
+      "lat": -44.7,
+      "lng": -73.08,
+      "comuna_ine": "11202",
+      "codigo_comuna": "CL-XI-04",
+      "ranking_riesgo_sernageomin": 35,
+      "categoria_riesgo_rnvv": "Categoría III - Riesgo Moderado-Alto",
+      "altitud_m": 1660,
+      "nivel_alerta_tecnica": "Verde",
+      "url": "https://rnvv.sernageomin.cl/volcan-mentolat/"
+    },
+    {
       "id": "volcan_maca",
       "nombre": "Volcán Macá",
-      "tipo": "Estratovolcán holoceno",
-      "lat": -45.105,
+      "tipo": "Estratovolcán holoceno (2.300 m)",
+      "lat": -45.1,
       "lng": -73.17,
       "comuna_ine": "11201",
       "codigo_comuna": "CL-XI-03",
-      "ranking_riesgo_sernageomin": 35,
+      "ranking_riesgo_sernageomin": 39,
+      "categoria_riesgo_rnvv": "Categoría III - Riesgo Moderado-Alto",
+      "altitud_m": 2300,
       "nivel_alerta_tecnica": "Verde",
       "url": "https://rnvv.sernageomin.cl/volcan-maca/"
     },
     {
       "id": "volcan_cay",
       "nombre": "Volcán Cay",
-      "tipo": "Estratovolcán",
+      "tipo": "Estratovolcán (2.090 m)",
       "lat": -45.06,
-      "lng": -72.985,
+      "lng": -72.99,
       "comuna_ine": "11201",
+      "comunas_influencia": [
+        "11201",
+        "11202"
+      ],
       "codigo_comuna": "CL-XI-03",
-      "ranking_riesgo_sernageomin": 46,
+      "ranking_riesgo_sernageomin": 63,
+      "categoria_riesgo_rnvv": "Categoría IV - Riesgo Bajo",
+      "altitud_m": 2090,
       "nivel_alerta_tecnica": "Verde",
       "url": "https://rnvv.sernageomin.cl/volcan-cay/"
-    },
+    }
+  ],
+  "amenaza_transregional_magallanes": [
     {
-      "id": "volcan_mentolat",
-      "nombre": "Volcán Mentolat",
-      "tipo": "Estratovolcán con caldera de 6 km",
-      "lat": -44.668,
-      "lng": -73.085,
-      "comuna_ine": "11202",
-      "codigo_comuna": "CL-XI-04",
-      "ranking_riesgo_sernageomin": 38,
-      "nivel_alerta_tecnica": "Verde",
-      "url": "https://rnvv.sernageomin.cl/volcan-mentolat/"
-    },
+      "id": "volcan_lautaro",
+      "nombre": "Volcán Lautaro",
+      "lat": -49.02,
+      "lng": -73.5,
+      "altitud_m": 3623,
+      "categoria_riesgo_rnvv": "Categoría III",
+      "ubicacion_administrativa": "Comuna de Natales, Región de Magallanes",
+      "alcance_territorial": "Amenaza volcánica transregional en el borde sur de Villa O'Higgins (11302)",
+      "url": "https://rnvv.sernageomin.cl/volcan-lautaro/"
+    }
+  ],
+  "excluidos_sin_erupcion_holocena_confirmada": [
     {
-      "id": "volcan_melimoyu",
-      "nombre": "Volcán Melimoyu",
-      "tipo": "Estratovolcán con caldera elongada de 8 km",
-      "lat": -44.083,
-      "lng": -72.883,
-      "comuna_ine": "11202",
-      "codigo_comuna": "CL-XI-04",
-      "ranking_riesgo_sernageomin": 36,
-      "nivel_alerta_tecnica": "Verde",
-      "url": "https://rnvv.sernageomin.cl/volcan-melimoyu/"
-    },
-    {
-      "id": "volcan_arenales",
-      "nombre": "Volcán Arenales",
-      "tipo": "Estratovolcán cubierto por Campo de Hielo Norte",
+      "nombre": "Cerro / Macizo Arenales",
       "lat": -47.2,
-      "lng": -73.483,
-      "comuna_ine": "11201",
-      "codigo_comuna": "CL-XI-03",
-      "ranking_riesgo_sernageomin": 58,
-      "nivel_alerta_tecnica": "Verde",
-      "url": "https://rnvv.sernageomin.cl/volcan-arenales/"
+      "lng": -73.48,
+      "ubicacion": "Entre comunas de Tortel (11303) y Cochrane (11301)",
+      "referencia": "Stern et al. (2016, Andean Geology): descartada actividad eruptiva holocena confirmada; excluido de nómina de volcanes activos RNVV en Aysén (11201)."
     }
   ]
 }

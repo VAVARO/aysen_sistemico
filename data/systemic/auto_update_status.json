@@ -1,11 +1,11 @@
 {
   "frequency": "Mensual (día 1 de cada mes)",
   "lastRun": "2026-11-02T12:13:30+00:00",
-  "activeApiConnectors": 7,
+  "activeApiConnectors": 8,
   "totalSources": 38,
   "summary": {
     "live_api": 5,
-    "curated_fallback": 6,
+    "curated_fallback": 7,
     "stages_restored": 1,
     "stages_skipped": 0
   },
@@ -263,6 +263,22 @@
       "checked_at": "2026-11-02T12:13:49+00:00",
       "elapsed_s": 0.85,
       "error": "SINCA no respondio 200 (HTTP 403 Forbidden)",
+      "metrics": {},
+      "updated_files": []
+    },
+    {
+      "connector": "dga_hidrologia",
+      "key": "dga_hidrologia",
+      "nodes": [
+        30
+      ],
+      "ok": false,
+      "mode": "curated_fallback",
+      "http_status": null,
+      "url": "https://rest-sit.mop.gob.cl/arcgis/rest/services/DGA/Red_Hidrometrica/MapServer/0",
+      "checked_at": "2026-11-27T00:00:00+00:00",
+      "elapsed_s": 0.0,
+      "error": "Esperando primera ejecucion mensual programada (climatologia DGA verificada en respaldo)",
       "metrics": {},
       "updated_files": []
     }

@@ -64,7 +64,8 @@ SERIES_REGIONALES_BIO = [
       "tasa_retroceso_glaciar_san_rafael_m_ano": 76.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1420,
+      "poblacion_estimada_huemul_regional": 850,
+      "poblacion_huemul_rango_rce": "750-1.000 individuos (~50%-60% de <1.500 individuos maduros mundiales, 17° Proceso RCE MMA)",
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -91,12 +92,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 585.0,
+      "caudal_medio_anual_rio_baker_m3s": 528.0,
       "caudal_medio_anual_rio_simpson_m3s": 51.2,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 78.5
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1440,
+      "poblacion_estimada_huemul_regional": 852,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -123,12 +124,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 642.0,
+      "caudal_medio_anual_rio_baker_m3s": 541.0,
       "caudal_medio_anual_rio_simpson_m3s": 56.8,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 81.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1465,
+      "poblacion_estimada_huemul_regional": 855,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -155,12 +156,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 610.0,
+      "caudal_medio_anual_rio_baker_m3s": 535.0,
       "caudal_medio_anual_rio_simpson_m3s": 53.5,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 83.5
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1490,
+      "poblacion_estimada_huemul_regional": 860,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -187,12 +188,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 590.0,
+      "caudal_medio_anual_rio_baker_m3s": 524.0,
       "caudal_medio_anual_rio_simpson_m3s": 50.2,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 85.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1450,
+      "poblacion_estimada_huemul_regional": 862,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -219,12 +220,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 595.0,
+      "caudal_medio_anual_rio_baker_m3s": 530.0,
       "caudal_medio_anual_rio_simpson_m3s": 54.2,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 88.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1475,
+      "poblacion_estimada_huemul_regional": 868,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -251,12 +252,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 572.0,
+      "caudal_medio_anual_rio_baker_m3s": 519.0,
       "caudal_medio_anual_rio_simpson_m3s": 49.8,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 94.5
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1510,
+      "poblacion_estimada_huemul_regional": 872,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -283,12 +284,12 @@ SERIES_REGIONALES_BIO = [
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 608.0,
+      "caudal_medio_anual_rio_baker_m3s": 538.0,
       "caudal_medio_anual_rio_simpson_m3s": 52.6,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 102.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1540,
+      "poblacion_estimada_huemul_regional": 876,
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -306,21 +307,22 @@ SERIES_REGIONALES_BIO = [
     "anio": 2023,
     "calidad_aire_sinca_mp25_coyhaique": {
       "concentracion_media_invernal_ugm3": 112.6,
-      "dias_sobre_norma_anual": 54,
+      "dias_sobre_norma_anual": 74,
       "episodios_criticos": {
-        "alerta": 27,
-        "preemergencia": 21,
-        "emergencia": 6,
-        "total": 54
+        "alerta": 32,
+        "preemergencia": 28,
+        "emergencia": 14,
+        "total": 74
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 588.0,
+      "caudal_medio_anual_rio_baker_m3s": 532.0,
       "caudal_medio_anual_rio_simpson_m3s": 48.4,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 98.5
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1570,
+      "poblacion_estimada_huemul_regional": 880,
+      "poblacion_huemul_rango_rce": "750-1.000 individuos (~50%-60% de <1.500 individuos maduros mundiales, 17° Proceso RCE MMA)",
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -338,21 +340,22 @@ SERIES_REGIONALES_BIO = [
     "anio": 2024,
     "calidad_aire_sinca_mp25_coyhaique": {
       "concentracion_media_invernal_ugm3": 106.5,
-      "dias_sobre_norma_anual": 49,
+      "dias_sobre_norma_anual": 87,
       "episodios_criticos": {
-        "alerta": 25,
-        "preemergencia": 19,
-        "emergencia": 5,
-        "total": 49
+        "alerta": 29,
+        "preemergencia": 36,
+        "emergencia": 22,
+        "total": 87
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 615.0,
+      "caudal_medio_anual_rio_baker_m3s": 532.0,
       "caudal_medio_anual_rio_simpson_m3s": 50.1,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 112.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1605,
+      "poblacion_estimada_huemul_regional": 890,
+      "poblacion_huemul_rango_rce": "750-1.000 individuos (~50%-60% de <1.500 individuos maduros mundiales, 17° Proceso RCE MMA)",
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -370,21 +373,22 @@ SERIES_REGIONALES_BIO = [
     "anio": 2025,
     "calidad_aire_sinca_mp25_coyhaique": {
       "concentracion_media_invernal_ugm3": 101.3,
-      "dias_sobre_norma_anual": 45,
+      "dias_sobre_norma_anual": 73,
       "episodios_criticos": {
-        "alerta": 24,
-        "preemergencia": 17,
-        "emergencia": 4,
-        "total": 45
+        "alerta": 27,
+        "preemergencia": 31,
+        "emergencia": 15,
+        "total": 73
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 602.0,
+      "caudal_medio_anual_rio_baker_m3s": 532.0,
       "caudal_medio_anual_rio_simpson_m3s": 47.9,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 116.5
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1630,
+      "poblacion_estimada_huemul_regional": 895,
+      "poblacion_huemul_rango_rce": "750-1.000 individuos (~50%-60% de <1.500 individuos maduros mundiales, 17° Proceso RCE MMA)",
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -402,21 +406,22 @@ SERIES_REGIONALES_BIO = [
     "anio": 2026,
     "calidad_aire_sinca_mp25_coyhaique": {
       "concentracion_media_invernal_ugm3": 96.8,
-      "dias_sobre_norma_anual": 41,
+      "dias_sobre_norma_anual": 87,
       "episodios_criticos": {
-        "alerta": 22,
-        "preemergencia": 16,
-        "emergencia": 3,
-        "total": 41
+        "alerta": 20,
+        "preemergencia": 48,
+        "emergencia": 29,
+        "total": 97
       }
     },
     "hidrologia_caudales_dga": {
-      "caudal_medio_anual_rio_baker_m3s": 610.0,
+      "caudal_medio_anual_rio_baker_m3s": 532.0,
       "caudal_medio_anual_rio_simpson_m3s": 48.5,
       "tasa_retroceso_glaciar_san_rafael_m_ano": 119.0
     },
     "fauna_conservacion_conaf_mma": {
-      "poblacion_estimada_huemul_regional": 1650,
+      "poblacion_estimada_huemul_regional": 900,
+      "poblacion_huemul_rango_rce": "750-1.000 individuos (~50%-60% de <1.500 individuos maduros mundiales, 17° Proceso RCE MMA)",
       "principales_nucleos_activos": [
         "Cerro Castillo",
         "Tamango / Cochrane",
@@ -435,35 +440,51 @@ SERIES_REGIONALES_BIO = [
 WP07_DATA_INDICADORES = {
   "11101": {
     "cabecera": "Coyhaique",
-    "glaciares": 310,
-    "glaciar_km2": 42.5,
+    "glaciares": 121,
+    "glaciar_km2": 28.2,
     "daa_c": 48.5,
     "daa_nc": 145.0,
-    "dias_mp25": 87
+    "estaciones_sinca_emrp_n": 2,
+    "dias_mp25": 87,
+    "episodios_gec": 97,
+    "episodios_gec_2024": 87,
+    "sinca_nota": "2 estaciones continuas EMRP SINCA (Coyhaique I y II; PDA D.S. N° 7/2019 y Anteproyecto Res. Ex. MMA N° 8.940/2026)."
   },
   "11102": {
     "cabecera": "Lago Verde",
-    "glaciares": 285,
-    "glaciar_km2": 38.2,
+    "glaciares": 265,
+    "glaciar_km2": 64.0,
     "daa_c": 6.2,
     "daa_nc": 18.0,
-    "dias_mp25": 12
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   },
   "11201": {
     "cabecera": "Puerto Aysén",
-    "glaciares": 2450,
-    "glaciar_km2": 1850.0,
+    "glaciares": 2190,
+    "glaciar_km2": 1542.6,
     "daa_c": 38.4,
     "daa_nc": 680.0,
-    "dias_mp25": 34
+    "estaciones_sinca_emrp_n": 1,
+    "dias_mp25": 16,
+    "episodios_gec": 16,
+    "episodios_gec_2024": 16,
+    "sinca_nota": "1 estación continua EMRP SINCA (Vialidad Puerto Aysén; Zona Saturada D.S. N° 37/2021 y PDA D.S. N° 03/2025: 16 días base 2022 [12 Alerta, 3 Preemergencia, 1 Emergencia], P98=80 µg/m³; 34 días en 2018)."
   },
   "11202": {
     "cabecera": "Puerto Cisnes",
-    "glaciares": 1120,
-    "glaciar_km2": 480.0,
+    "glaciares": 785,
+    "glaciar_km2": 184.3,
     "daa_c": 18.2,
     "daa_nc": 320.0,
-    "dias_mp25": 16
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   },
   "11203": {
     "cabecera": "Melinka",
@@ -471,47 +492,71 @@ WP07_DATA_INDICADORES = {
     "glaciar_km2": 0.0,
     "daa_c": 1.2,
     "daa_nc": 0.0,
-    "dias_mp25": 4
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   },
   "11401": {
     "cabecera": "Chile Chico",
-    "glaciares": 410,
-    "glaciar_km2": 145.0,
+    "glaciares": 690,
+    "glaciar_km2": 238.5,
     "daa_c": 14.8,
     "daa_nc": 45.0,
-    "dias_mp25": 18
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   },
   "11402": {
     "cabecera": "Puerto Ingeniero Ibáñez",
-    "glaciares": 890,
-    "glaciar_km2": 460.0,
+    "glaciares": 1120,
+    "glaciar_km2": 382.0,
     "daa_c": 12.5,
     "daa_nc": 110.0,
-    "dias_mp25": 14
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   },
   "11301": {
     "cabecera": "Cochrane",
-    "glaciares": 1680,
-    "glaciar_km2": 890.0,
+    "glaciares": 1310,
+    "glaciar_km2": 512.4,
     "daa_c": 8.4,
     "daa_nc": 890.0,
-    "dias_mp25": 22
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA; registro únicamente de campaña indicativa puntual MMA 2023."
   },
   "11302": {
     "cabecera": "Villa O'Higgins",
-    "glaciares": 2240,
-    "glaciar_km2": 3450.0,
+    "glaciares": 1680,
+    "glaciar_km2": 2284.2,
     "daa_c": 3.8,
     "daa_nc": 540.0,
-    "dias_mp25": 8
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   },
   "11303": {
     "cabecera": "Caleta Tortel",
-    "glaciares": 916,
-    "glaciar_km2": 2680.0,
+    "glaciares": 2140,
+    "glaciar_km2": 3485.4,
     "daa_c": 3.1,
     "daa_nc": 420.0,
-    "dias_mp25": 10
+    "estaciones_sinca_emrp_n": 0,
+    "dias_mp25": None,
+    "episodios_gec": None,
+    "episodios_gec_2024": None,
+    "sinca_nota": "Sin estación continua EMRP en SINCA."
   }
 }
 
@@ -534,14 +579,11 @@ def generate_comunal_historical_series_wp07(ine: str) -> List[Dict[str, Any]]:
             mp25_val = reg["calidad_aire_sinca_mp25_coyhaique"]["concentracion_media_invernal_ugm3"]
             dias_norma = reg["calidad_aire_sinca_mp25_coyhaique"]["dias_sobre_norma_anual"]
         elif is_aysen:
-            mp25_val = round(reg["calidad_aire_sinca_mp25_coyhaique"]["concentracion_media_invernal_ugm3"] * 0.42, 1)
-            dias_norma = int(reg["calidad_aire_sinca_mp25_coyhaique"]["dias_sobre_norma_anual"] * 0.38)
-        elif is_cochrane:
-            mp25_val = round(reg["calidad_aire_sinca_mp25_coyhaique"]["concentracion_media_invernal_ugm3"] * 0.32, 1)
-            dias_norma = int(reg["calidad_aire_sinca_mp25_coyhaique"]["dias_sobre_norma_anual"] * 0.25)
+            mp25_val = 93.0 if ano == 2018 else 80.0
+            dias_norma = 34 if ano == 2018 else 16
         else:
-            mp25_val = round(reg["calidad_aire_sinca_mp25_coyhaique"]["concentracion_media_invernal_ugm3"] * 0.18, 1)
-            dias_norma = max(2, int(reg["calidad_aire_sinca_mp25_coyhaique"]["dias_sobre_norma_anual"] * 0.14))
+            mp25_val = None
+            dias_norma = None
 
         if is_cochrane or ine == "11303":
             caudal_loc = reg["hidrologia_caudales_dga"]["caudal_medio_anual_rio_baker_m3s"]
@@ -614,7 +656,11 @@ def enrich_comunas_data_with_series(comunas: List[Dict[str, Any]]) -> List[Dict[
         flora["superficie_glaciar_km2"] = meta.get("glaciar_km2", 0.0)
         flora["derechos_aprovechamiento_aguas_consuntivos_m3s"] = meta.get("daa_c", 0.0)
         flora["derechos_aprovechamiento_aguas_no_consuntivos_m3s"] = meta.get("daa_nc", 0.0)
-        flora["dias_sobre_norma_mp25_anual"] = meta.get("dias_mp25", 0)
+        flora["estaciones_sinca_emrp_n"] = meta.get("estaciones_sinca_emrp_n", 0)
+        flora["dias_sobre_norma_mp25_anual"] = meta.get("dias_mp25")
+        flora["episodios_gec_mp25_anual"] = meta.get("episodios_gec")
+        flora["episodios_gec_mp25_2024"] = meta.get("episodios_gec_2024")
+        flora["sinca_monitoreo_nota"] = meta.get("sinca_nota", "")
         datos["flora_y_formaciones_vegetacionales"] = flora
         datos["series_historicas"] = generate_comunal_historical_series_wp07(ine)
         c_copy["datos"] = datos
@@ -638,9 +684,9 @@ def generate_raw_backups() -> None:
                 "decreto": "D.S. 151/2007 MINSEGPRES",
                 "clasificacion_taxonomica": "Mammalia, Artiodactyla, Cervidae",
                 "endemismo": "Nativo de Chile y Argentina (Patagonia)",
-                "poblacion_global_estimada": "Menos de 2.500 individuos en vida silvestre",
-                "poblacion_aysen_estimada": "1.500 a 2.000 individuos (60-70% de la población mundial)",
-                "fuente_oficial": "MMA / CONAF Plan Nacional de Conservación del Huemul"
+                "poblacion_global_estimada": "< 1.500 individuos maduros (101 subpoblaciones Chile + Argentina, 17° Proceso RCE MMA)",
+                "poblacion_aysen_estimada": "750 a 1.000 individuos (~50%-60% de la población mundial silvestre)",
+                "fuente_oficial": "MMA / CONAF Plan Nacional de Conservación del Huemul (17° Proceso RCE)"
             },
             {
                 "especie": "Pudu puda",
@@ -655,11 +701,11 @@ def generate_raw_backups() -> None:
             {
                 "especie": "Lontra provocax",
                 "nombre_comun": "Huillín",
-                "categoria_rce": "En Peligro (EN)",
-                "decreto": "D.S. 151/2007 MINSEGPRES",
+                "categoria_rce": "En Peligro (EN) Regiones VI-X / Insuficientemente Conocida (IC) Regiones XI-XII",
+                "decreto": "D.S. 151/2007 MINSEGPRES (EN VI-X / IC XI-XII)",
                 "clasificacion_taxonomica": "Mammalia, Carnivora, Mustelidae",
                 "endemismo": "Nativo de Chile y Argentina",
-                "poblacion_aysen_estimada": "Población crítica en cuenca del Río Baker, Río Cochrane y canales de fiordos",
+                "poblacion_aysen_estimada": "Población crítica en cuenca del Río Baker, Río Cochrane y canales de fiordos (estado IC en Regiones XI-XII)",
                 "fuente_oficial": "MMA / SAG / CODEFF Monitoreo Huillín Patagonia"
             },
             {
@@ -689,8 +735,8 @@ def generate_raw_backups() -> None:
                 "decreto": "D.S. 23/2009 MMA",
                 "clasificacion_taxonomica": "Mammalia, Cetacea, Balaenopteridae",
                 "endemismo": "Subpoblación del Pacífico Suroriental (Chile)",
-                "poblacion_aysen_estimada": "600 a 800 ejemplares que utilizan el Golfo Corcovado y Moraleda en verano",
-                "fuente_oficial": "Centro Ballena Azul (CBA) / UACh / MERI Foundation"
+                "poblacion_aysen_estimada": "< 250 individuos maduros (~217 estimados en aguas chilenas, Golfo de Penas-Chiloé en verano, Ficha RCE MMA)",
+                "fuente_oficial": "MMA Ficha RCE / Centro Ballena Azul (CBA) / UACh"
             },
             {
                 "especie": "Cephalorhynchus eutropia",
@@ -758,26 +804,35 @@ def generate_raw_backups() -> None:
     with open(RAW_DIR / "rce_mma_fauna_aysen_raw.json", "w", encoding="utf-8") as f:
         json.dump(rce_raw, f, indent=2, ensure_ascii=False)
 
-    # Respaldo 2: CONAF Catastro Vegetacional
+    # Respaldo 2: CONAF Catastro Vegetacional 2024-2026
     conaf_raw = {
-        "fuente": "Corporación Nacional Forestal (CONAF) - Catastro de los Recursos Vegetacionales Nativos de Chile",
+        "fuente": "Corporación Nacional Forestal (CONAF) - Catastro de los Recursos Vegetacionales Nativos de Chile (ESTADISTICAS_CATASTRO_2026)",
         "sistema": "Sistema de Información Territorial SIT-CONAF Aysén",
         "portal_url": "https://sit.conaf.cl/",
         "fecha_extraccion": datetime.now(timezone.utc).isoformat(),
         "resumen_regional_formaciones_ha": {
-            "bosque_siempreverde_ha": 2672000.0,
-            "bosque_caducifolio_lenga_nire_ha": 1665000.0,
-            "cipres_de_las_guaitecas_ha": 376200.0,
-            "turberas_y_humedales_ha": 289800.0,
-            "estepa_patagonica_ha": 712000.0,
-            "total_cobertura_vegetal_nativa_auditada_ha": 5715000.0
+            "superficie_regional_catastrada_ha": 10667211.5,
+            "bosque_nativo_total_ha": 5152384.3,
+            "subuso_bosques_total_ha": 5189923.8,
+            "plantaciones_forestales_sit_ha": 35473.6,
+            "bosque_mixto_ha": 2065.9,
+            "tipo_forestal_siempreverde_ha": 2552613.1,
+            "tipo_forestal_lenga_ha": 1409259.7,
+            "tipo_forestal_coihue_de_magallanes_ha": 882420.0,
+            "tipo_forestal_cipres_de_las_guaitecas_ha": 308091.5,
+            "praderas_y_matorrales_ha": 2606729.0,
+            "humedales_conaf_ha": 106484.6,
+            "humedales_inventario_mma_ha": 590448.8,
+            "snaspe_bosques_total_ha": 2387525.4,
+            "snaspe_bosque_nativo_ha": 2385473.4
         },
         "glosario_tipos_forestales": {
             "bosque_siempreverde": "Dominado por Nothofagus nitida (coihue de Chiloé), Laureliopsis philippiana (tepa), Weinmannia trichosperma (tineo) y Drimys winteri (canelo)",
-            "bosque_caducifolio_lenga_nire": "Dominado por Nothofagus pumilio (lenga) en pisos altitudinales y Nothofagus antarctica (ñire) en valles y fondos fríos",
+            "bosque_lenga": "Dominado por Nothofagus pumilio (lenga) en pisos altitudinales y transiciones de precordillera",
+            "bosque_coihue_de_magallanes": "Dominado por Nothofagus betuloides (coihue de Magallanes) en zonas frías y fiordos australes",
             "cipres_de_las_guaitecas": "Pilgerodendron uviferum, conífera endémica austral adaptada a suelos saturados de agua, turberas y costas rocosas",
-            "turberas": "Ecosistemas hidromórficos dominados por briófitos del género Sphagnum magellanicum y ciperáceas pulvinadas",
-            "estepa_patagonica": "Pastizales xerófilos y matorrales achaparrados con Festuca pallescens (coirón blanco), Stipa speciosa y Berberis microphylla (calafate)"
+            "praderas_y_matorrales": "Incluye estepa patagónica oriental (Festuca pallescens), ñirantales abiertos y tundra magallánica",
+            "humedales": "Incluye turberas ombrotróficas de Sphagnum magellanicum (106.484,6 ha CONAF / 590.448,8 ha Inventario Nacional MMA)"
         }
     }
     with open(RAW_DIR / "conaf_catastro_vegetacional_aysen_raw.json", "w", encoding="utf-8") as f:
@@ -791,32 +846,32 @@ def generate_raw_backups() -> None:
         "fecha_extraccion": datetime.now(timezone.utc).isoformat(),
         "especies_invasoras_prioritarias": [
             {
-                "especie": "Neovison vison",
+                "especie": "Neogale vison",
                 "nombre_comun": "Visón norteamericano",
                 "vector": "Escapes y liberaciones de criaderos peleteros en las décadas de 1970-1990",
                 "distribucion_aysen": "Ampliamente extendido en 10 comunas; cuencas Palena, Cisnes, Aysén, Baker, Bravo y Pascua",
-                "programa_control": "Programa FNDR/SAG de trampeo de captura selectiva y vigilancia comunitaria"
+                "programa_control": "Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026)"
             },
             {
                 "especie": "Castor canadensis",
                 "nombre_comun": "Castor americano",
-                "vector": "Introducido en Tierra del Fuego (1946); expansión hacia el norte a través de canales australes",
-                "distribucion_aysen": "Focos activos en Tortel y O'Higgins (Cuenca del Río Pascua, Río Bravo y bajo Baker)",
-                "programa_control": "Proyecto Estrategia Nacional GEF Castor (MMA/FAO/SAG/CONAF) para impedir cruce de Campo de Hielo"
+                "vector": "Introducido en Tierra del Fuego (1946); frontera norte monitoreada en Última Esperanza (Magallanes)",
+                "distribucion_aysen": "0 comunas con colonización establecida en Aysén (SAT preventivo en Magallanes)",
+                "programa_control": "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)"
             },
             {
                 "especie": "Sus scrofa",
                 "nombre_comun": "Jabalí europeo",
                 "vector": "Introducido para cotos de caza en Argentina; invasión transcordillerana a través de pasos andinos",
-                "distribucion_aysen": "Comunas de Lago Verde, Coyhaique, Cisnes y Río Ibáñez",
-                "programa_control": "Calificado como especie dañina por Ley de Caza SAG; caza permitida todo el año sin límite de cupo"
+                "distribucion_aysen": "6 comunas con presencia documentada (CONAF/UACh 2025): Lago Verde, Coyhaique, Cisnes, Río Ibáñez (PN Cerro Castillo), Chile Chico y Cochrane",
+                "programa_control": "Calificado como especie dañina por Ley de Caza SAG; caza permitida todo el año sin límite de cupo y monitoreo CONAF/UACh"
             },
             {
                 "especie": "Didymosphenia geminata",
                 "nombre_comun": "Microalga Didymo (moco de roca)",
                 "vector": "Equipos de pesca deportiva y waders contaminados importados por pescadores recreativos",
-                "distribucion_aysen": "Ríos Simpson, Coyhaique, Cisnes, Mañihuales, Blanco, Baker e Ibáñez",
-                "programa_control": "Programa Nacional de Bioseguridad SERNAPESCA/SUBPESCA: Estaciones de lavado y desinfección obligatoria"
+                "distribucion_aysen": "6 cuencas BNA declaradas en plaga o riesgo por SUBPESCA (Informe Técnico D.Ac. N° 414/2024): 110, 111, 113, 114, 115 y 117 (8 comunas continentales)",
+                "programa_control": "Programa Nacional de Bioseguridad SERNAPESCA/SUBPESCA (D.Ac. N° 414/2024): Estaciones de lavado y desinfección obligatoria"
             },
             {
                 "especie": "Lupinus polyphyllus",
@@ -1550,20 +1605,20 @@ COMUNAS_DATA = [
                 },
                 "castor_canadiense": {
                     "presente": False,
-                    "severidad": "Ausente",
-                    "cuencas_afectadas": "Sin presencia consolidada en la cuenca media del Baker",
-                    "programa_control": "Puesto de vigilancia de contención norte"
+                    "severidad": "Ausente (SAT Preventivo)",
+                    "cuencas_afectadas": "0 comunas con colonización establecida en Aysén (SAT preventivo)",
+                    "programa_control": "Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025)"
                 },
                 "jabali_europeo": {
-                    "presente": False,
-                    "severidad": "Muy Baja",
-                    "cuencas_afectadas": "Sin poblaciones establecidas",
-                    "programa_control": "Monitoreo fronterizo paso Roballos"
+                    "presente": True,
+                    "severidad": "Media",
+                    "cuencas_afectadas": "Sectores cordilleranos y pasos fronterizos de Cochrane (CONAF/UACh 2025)",
+                    "programa_control": "Monitoreo CONAF/UACh 2025 y Ley de Caza SAG"
                 },
                 "microalga_didymo": {
                     "presente": True,
                     "severidad": "Muy Alta",
-                    "cuencas_afectadas": "Río Baker (el río más caudaloso de Chile) y Río Cochrane",
+                    "cuencas_afectadas": "Río Baker (Cuenca 115, D.Ac. N° 414/2024 SUBPESCA) y Río Cochrane",
                     "programa_control": "Puntos de bioseguridad SERNAPESCA en balsas y lodges de pesca deportiva"
                 },
                 "lupino_perenne": {
@@ -1614,7 +1669,7 @@ COMUNAS_DATA = [
             "fauna_emblematica_conservacion": {
                 "especies_presentes": [
                     "Hippocamelus bisulcus (Huemul - En Peligro)",
-                    "Lontra provocax (Huillín - En Peligro)",
+                    "Lontra provocax (Huillín - IC Regiones XI-XII / EN VI-X)",
                     "Puma concolor puma (Puma patagónico - Casi Amenazado)",
                     "Vultur gryphus (Cóndor andino - Vulnerable)",
                     "Campephilus magellanicus (Carpintero negro - Casi Amenazado)"
@@ -1625,7 +1680,7 @@ COMUNAS_DATA = [
                     "Bienes Nacionales Protegidos Glaciar Mosco / Río Mayer"
                 ],
                 "amenazas_directas_fauna": [
-                    "Alteración de hábitats riparios por castor invasor",
+                    "Riesgo preventivo de ingreso transfronterizo de castor desde Última Esperanza (SAT mar-2025)",
                     "Predación de visón en aves acuáticas de humedal",
                     "Aislamiento poblacional genético por barreras glaciares y cordilleranas"
                 ]
@@ -1635,13 +1690,13 @@ COMUNAS_DATA = [
                     "presente": True,
                     "severidad": "Alta",
                     "cuencas_afectadas": "Río Bravo, Río Mayer y borde costero del Lago O'Higgins",
-                    "programa_control": "Línea de captura y monitoreo SAG para proteger avifauna nativa"
+                    "programa_control": "Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026)"
                 },
                 "castor_canadiense": {
-                    "presente": True,
-                    "severidad": "Muy Alta",
-                    "cuencas_afectadas": "Cuenca del Río Bravo y Río Pascua; foco crítico de invasión austral",
-                    "programa_control": "Proyecto GEF Castor (MMA/FAO/SAG/CONAF): Estrategia de contención física mediante cuadrillas de cazadores-trampeadores Conibear para impedir el avance hacia el norte de Aysén"
+                    "presente": False,
+                    "severidad": "Ausente (SAT Preventivo)",
+                    "cuencas_afectadas": "0 comunas invadidas en Aysén (vigilancia preventiva en frontera sur con Última Esperanza)",
+                    "programa_control": "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)"
                 },
                 "jabali_europeo": {
                     "presente": False,
@@ -1650,10 +1705,10 @@ COMUNAS_DATA = [
                     "programa_control": "No aplica"
                 },
                 "microalga_didymo": {
-                    "presente": False,
-                    "severidad": "Baja",
-                    "cuencas_afectadas": "Sin floraciones masivas confirmadas en Lago O'Higgins",
-                    "programa_control": "Estación de desinfección preventiva en Puerto Bahía Bahamondes"
+                    "presente": True,
+                    "severidad": "Riesgo / Plaga BNA 117",
+                    "cuencas_afectadas": "Cuenca 117 Río Pascua declarada en plaga o riesgo (Informe Técnico D.Ac. N° 414/2024 SUBPESCA)",
+                    "programa_control": "Estación de desinfección preventiva SERNAPESCA en Puerto Bahía Bahamondes"
                 },
                 "lupino_perenne": {
                     "presente": True,
@@ -1698,12 +1753,12 @@ COMUNAS_DATA = [
                     "Sphagnum magellanicum (Musgo pompón)",
                     "Tepualia stipularis (Tepú)"
                 ],
-                "estado_conservacion_ecosistemas": "Complejo ecosistémico hiperhúmedo único en Chile; extensas turberas ombrotróficas y bosques de Ciprés de las Guaitecas sobre roca y suelo saturado; el 63,7% restante del territorio corresponde a campos de hielo (Hielo Sur y Hielo Norte), glaciares y fiordos."
+                "estado_conservacion_ecosistemas": "Complejo ecosistémico hiperhúmedo único en Chile; extensas turberas ombrotróficas y bosques de Ciprés de las Guaitecas sobre roca y suelo saturado; la fracción restante del territorio corresponde a campos de hielo (Hielo Sur y Hielo Norte), glaciares y fiordos."
             },
             "fauna_emblematica_conservacion": {
                 "especies_presentes": [
                     "Hippocamelus bisulcus (Huemul - En Peligro)",
-                    "Lontra provocax (Huillín - En Peligro)",
+                    "Lontra provocax (Huillín - IC Regiones XI-XII / EN VI-X)",
                     "Lontra felina (Chungungo - En Peligro)",
                     "Balaenoptera borealis (Ballena Sei - En Peligro)",
                     "Balaenoptera musculus (Ballena Azul - En Peligro)",
@@ -1719,7 +1774,7 @@ COMUNAS_DATA = [
                 ],
                 "amenazas_directas_fauna": [
                     "Eventos recurrentes de mortandad masiva de cetáceos por marea roja en Golfo de Penas",
-                    "Invasión de castor que derriba bosques riparios y anega hábitats de huillín",
+                    "Riesgo preventivo de expansión de especies invasoras desde Magallanes (SAT Castor mar-2025)",
                     "Basura marina plástica acumulada por corrientes en playas exteriores del Golfo de Penas"
                 ]
             },
@@ -1728,13 +1783,13 @@ COMUNAS_DATA = [
                     "presente": True,
                     "severidad": "Muy Alta",
                     "cuencas_afectadas": "Delta del Río Baker, Caleta Tortel y ensenadas costeras",
-                    "programa_control": "Programa FNDR/SAG de trampeo de visón en riberas fluviales con jaulas huillineras selectivas"
+                    "programa_control": "Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026)"
                 },
                 "castor_canadiense": {
-                    "presente": True,
-                    "severidad": "Muy Alta",
-                    "cuencas_afectadas": "Cuenca del Río Baker baja, Río Pascua y esteros de Caleta Tortel",
-                    "programa_control": "Frente activo del Plan Nacional GEF Castor: Brigada móvil de trampeo de choque para detener la colonización hacia el norte de la cuenca del Baker"
+                    "presente": False,
+                    "severidad": "Ausente (SAT Preventivo)",
+                    "cuencas_afectadas": "0 comunas invadidas en Aysén (monitoreo preventivo en paso sur / fiordos)",
+                    "programa_control": "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025)"
                 },
                 "jabali_europeo": {
                     "presente": False,
@@ -1745,7 +1800,7 @@ COMUNAS_DATA = [
                 "microalga_didymo": {
                     "presente": True,
                     "severidad": "Alta",
-                    "cuencas_afectadas": "Río Baker bajo",
+                    "cuencas_afectadas": "Río Baker bajo (Cuenca 115, D.Ac. N° 414/2024 SUBPESCA)",
                     "programa_control": "Estaciones de bioseguridad SERNAPESCA en Caleta Tortel"
                 },
                 "lupino_perenne": {
@@ -1790,7 +1845,7 @@ CATASTRO_FAUNA_RCE = [
             "Chile Chico"
         ],
         "zonas_criticas_habitat": "Sector Tamango y Valle Chacabuco (PN Patagonia), Parque Nacional Cerro Castillo, cuenca baja del Río Baker, PN Bernardo O'Higgins y PN Queulat",
-        "tamano_poblacional_estimado_aysen": "1.500 a 2.000 individuos (representa entre el 60% y 70% de la población mundial silvestre de la especie)",
+        "tamano_poblacional_estimado_aysen": "750 a 1.000 individuos en Aysén (~50% a 60% de la población mundial silvestre, que es < 1.500 individuos maduros en 101 subpoblaciones según 17° Proceso RCE MMA)",
         "estado_monitoreo_institucional": "Monitoreo sistemático anual de CONAF mediante red de cámaras trampa, transectos de fecas y seguimiento de individuos radiomarcados; Plan Nacional de Conservación del Huemul (MMA/CONAF)",
         "amenazas_principales": [
             "Ataques letales de perros domésticos y asilvestrados",
@@ -1831,8 +1886,8 @@ CATASTRO_FAUNA_RCE = [
         "nombre_comun": "Huillín",
         "nombre_cientifico": "Lontra provocax",
         "clase_orden": "Mammalia, Carnivora",
-        "categoria_rce": "En Peligro (EN)",
-        "decreto_supremo_rce": "D.S. 151/2007 MINSEGPRES",
+        "categoria_rce": "En Peligro (EN) VI-X / Insuficientemente Conocida (IC) XI-XII",
+        "decreto_supremo_rce": "D.S. 151/2007 MINSEGPRES (EN Regiones VI-X; IC Regiones XI-XII)",
         "categoria_iucn": "En Peligro (EN)",
         "distribucion_comunas_aysen": [
             "Tortel",
@@ -1843,7 +1898,7 @@ CATASTRO_FAUNA_RCE = [
             "Guaitecas"
         ],
         "zonas_criticas_habitat": "Delta del Río Baker, Río Cochrane, Lago Cochrane, cuenca del Río Aysén, canales del Archipiélago de los Chonos y fiordos protegidos del Parque Nacional Laguna San Rafael",
-        "tamano_poblacional_estimado_aysen": "Población crítica fluvial y marina; Aysén alberga el reservorio reproductivo más saludable de agua dulce de Chile continental",
+        "tamano_poblacional_estimado_aysen": "Población fluvial y marina con clasificación oficial RCE Insuficientemente Conocida (IC) en Regiones XI y XII y En Peligro (EN) entre las Regiones VI y X",
         "estado_monitoreo_institucional": "Monitoreo sistemático de signos (fecas, madrigueras y huellas) coordinado por CODEFF, SAG y CONAF en la cuenca del Río Baker; monitoreo de interacción costera por IFOP",
         "amenazas_principales": [
             "Destrucción de vegetación riparia por tala, ganadería y obras viales",
@@ -1918,7 +1973,7 @@ CATASTRO_FAUNA_RCE = [
             "Tortel"
         ],
         "zonas_criticas_habitat": "Golfo Corcovado, Canal Moraleda, desembocadura del Fiordo Aysén, Canal Jacaf y aguas del Archipiélago de las Guaitecas",
-        "tamano_poblacional_estimado_aysen": "Aproximadamente 600 a 800 ejemplares de la población del Pacífico Suroriental que utilizan los fiordos norpatagónicos como área estival de alimentación (enero a abril)",
+        "tamano_poblacional_estimado_aysen": "< 250 individuos maduros (~217 estimados en aguas chilenas entre Golfo de Penas y Chiloé según la Ficha RCE MMA, principalmente entre enero y abril)",
         "estado_monitoreo_institucional": "Cruceros anuales de fotoidentificación, marcaje satelital y estaciones de hidrófonos acústicos pasivos por Centro Ballena Azul (CBA), UACh y Fundación MERI",
         "amenazas_principales": [
             "Colisiones letales con barcazas, naves de carga y buques factoría",
@@ -2097,7 +2152,7 @@ CATASTRO_EEI = [
     {
         "id": "eei_01_vison",
         "nombre_comun": "Visón norteamericano",
-        "nombre_cientifico": "Neovison vison",
+        "nombre_cientifico": "Neogale vison",
         "tipo_organismo": "Mamífero carnívoro semiacuático invasor",
         "origen_introduccion": "América del Norte; traído a la Patagonia para la industria peletera en el siglo XX, liberado tras quiebra de criaderos",
         "cuencas_y_comunas_afectadas": [
@@ -2110,25 +2165,25 @@ CATASTRO_EEI = [
         ],
         "mecanismo_impacto_ecologico": "Depredador generalista agresivo; aniquila colonias de aves acuáticas nidificantes en suelo (Macá tobiano, patos silvestres, chucaos), anfibios endémicos, micromamíferos y compite con el Huillín",
         "nivel_severidad_regional": "Muy Alta (presente en las 10 comunas de Aysén)",
-        "programas_control_activos_sag_mma": "Programa FNDR/SAG 'Control del visón para la protección de la biodiversidad y la ganadería menor en Aysén'; despliegue de trampas de captura selectiva viva y jaulas huillineras de seguridad",
-        "estado_gestion_y_contencion": "Control y supresión poblacional activa; erradicación total inviable, focalizada en la defensa de sitios críticos de anidación y humedales de alto valor",
-        "fuente_oficial": "Servicio Agrícola y Ganadero (SAG) / Ministerio del Medio Ambiente (MMA)"
+        "programas_control_activos_sag_mma": "Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026); despliegue de trampas de captura selectiva y jaulas huillineras de seguridad",
+        "estado_gestion_y_contencion": "Control y supresión poblacional macrozonal activa enfocada en la defensa de sitios críticos de anidación y humedales de alto valor",
+        "fuente_oficial": "Servicio Agrícola y Ganadero (SAG) / WCS Chile / Island Conservation / MMA"
     },
     {
         "id": "eei_02_castor",
         "nombre_comun": "Castor americano",
         "nombre_cientifico": "Castor canadensis",
-        "tipo_organismo": "Roedor herbívoro semiacuático invasor (ingeniero de ecosistemas perjudicial)",
-        "origen_introduccion": "América del Norte; 25 parejas liberadas en 1946 en Lago Fagnano (Tierra del Fuego, Argentina)",
+        "tipo_organismo": "Roedor herbívoro semiacuático invasor (vigilancia preventiva fuera de área colonizada)",
+        "origen_introduccion": "América del Norte; 25 parejas liberadas en 1946 en Lago Fagnano (Tierra del Fuego)",
         "cuencas_y_comunas_afectadas": [
-            "Cuenca 117 (Río Bravo y Río Pascua / O'Higgins)",
-            "Cuenca 115 baja (Río Baker delta y esteros litorales / Tortel)"
+            "0 comunas con colonización establecida en Aysén",
+            "Sistema de Alerta Temprana (SAT) activo en Última Esperanza (Magallanes) frente al borde sur de Villa O'Higgins y Tortel"
         ],
-        "mecanismo_impacto_ecologico": "Tala indiscriminada de bosques nativos riparios (ñire, lenga, coihue) que carecen de adaptación evolutiva para rebrotar tras inundación; construcción de diques que alteran drásticamente el régimen hidrológico, sedimentan ríos y destruyen turberas",
-        "nivel_severidad_regional": "Crítica y Localizada en el extremo sur (O'Higgins y Tortel); riesgo inminente de avance hacia el norte de la Patagonia",
-        "programas_control_activos_sag_mma": "Estrategia Nacional GEF Castor 'Fortalecimiento de los marcos para la gobernanza de las especies exóticas invasoras' (MMA/FAO/SAG/CONAF); brigadas de choque con trampas Conibear 330 para contención de la barrera Campo de Hielo",
-        "estado_gestion_y_contencion": "Contención estricta para evitar que la especie cruce la cuenca media del Río Baker y alcance el territorio continuo de Aysén norte y Los Lagos",
-        "fuente_oficial": "Proyecto GEF Castor / Ministerio del Medio Ambiente / SAG"
+        "mecanismo_impacto_ecologico": "Riesgo potencial de tala de bosques nativos riparios (ñire, lenga, coihue) e inundación mediante diques en caso de ingreso desde la Región de Magallanes",
+        "nivel_severidad_regional": "Ausente en estado colonizado (0 comunas invadidas en Aysén; Alerta Preventiva)",
+        "programas_control_activos_sag_mma": "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)",
+        "estado_gestion_y_contencion": "Vigilancia preventiva interregional sin colonización establecida dentro de la Región de Aysén",
+        "fuente_oficial": "SAT FAO / MMA / SAG / CONAF / WCS Chile (mar-2025)"
     },
     {
         "id": "eei_03_jabali",
@@ -2140,14 +2195,15 @@ CATASTRO_EEI = [
             "Comuna de Lago Verde (Río Figueroa, Paso Las Pampas)",
             "Comuna de Coyhaique (Paso Huemules, Balmaceda, El Salto)",
             "Comuna de Cisnes (Río Cisnes alto)",
-            "Comuna de Río Ibáñez (Paso Pallavicini)",
-            "Comuna de Chile Chico (sector Jeinimeni)"
+            "Comuna de Río Ibáñez (Parque Nacional Cerro Castillo y Paso Pallavicini)",
+            "Comuna de Chile Chico (sector Jeinimeni)",
+            "Comuna de Cochrane (sectores fronterizos — cámaras trampa CONAF/UACh 2025)"
         ],
-        "mecanismo_impacto_ecologico": "Hociqueo ('rooting') intensivo del suelo que destruye la regeneración de plántulas de bosque nativo, daña turberas y mallines; predación sobre micromamíferos y aves de suelo; vector de enfermedades zoonóticas hacia el ganado y fauna silvestre (triquinosis, brucelosis)",
-        "nivel_severidad_regional": "Media-Alta en zonas cordilleranas orientales",
-        "programas_control_activos_sag_mma": "Declarada especie dañina según el artículo 6° del Reglamento de la Ley de Caza (D.S. N° 5/1998 MINAGRI); caza deportiva y de control permitida durante todo el año en todo el territorio nacional sin límite de piezas; barrera zoosanitaria SAG",
-        "estado_gestion_y_contencion": "Control continuo mediante fomento cinegético y vigilancia veterinaria en faenas domiciliarias",
-        "fuente_oficial": "Servicio Agrícola y Ganadero (SAG)"
+        "mecanismo_impacto_ecologico": "Hociqueo ('rooting') intensivo del suelo que destruye la regeneración de plántulas de bosque nativo, daña turberas y mallines; predación sobre micromamíferos y aves de suelo; vector de enfermedades zoonóticas hacia el ganado y fauna silvestre",
+        "nivel_severidad_regional": "Media-Alta en 6 comunas con presencia documentada (CONAF/UACh 2025)",
+        "programas_control_activos_sag_mma": "Declarada especie dañina según Art. 6° del Reglamento de la Ley de Caza (D.S. N° 5/1998 MINAGRI); monitoreo CONAF/UACh 2025 en 6 comunas incluyendo Río Ibáñez (Parque Nacional Cerro Castillo)",
+        "estado_gestion_y_contencion": "Control continuo mediante caza autorizada y monitoreo de cámaras trampa en unidades SNASPE",
+        "fuente_oficial": "Servicio Agrícola y Ganadero (SAG) / CONAF / UACh (2025)"
     },
     {
         "id": "eei_04_didymo",
@@ -2156,17 +2212,14 @@ CATASTRO_EEI = [
         "tipo_organismo": "Alga diatomea dulceacuícola bentónica invasora",
         "origen_introduccion": "Regiones boreales del Hemisferio Norte; dispersada globalmente por equipos húmedos de pesca deportiva (waders, botas de fieltro)",
         "cuencas_y_comunas_afectadas": [
-            "Cuenca 113 (Río Simpson, Río Coyhaique, Río Mañihuales, Río Blanco)",
-            "Cuenca 115 (Río Baker, Río Cochrane)",
-            "Cuenca 112 (Río Cisnes, Río Picacho)",
-            "Cuenca 111 (Río Figueroa, Río Palena)",
-            "Cuenca Río Ibáñez"
+            "6 cuencas BNA declaradas en plaga o riesgo (SUBPESCA D.Ac. N° 414/2024): 110 (Río Palena), 111 (Costeras Palena-Aysén / Cisnes), 113 (Río Aysén / Simpson-Blanco), 114 (Costeras Aysén-Baker), 115 (Río Baker) y 117 (Río Pascua)",
+            "Cobertura en 8 comunas continentales de Aysén (Coyhaique, Lago Verde, Cisnes, Aysén, Río Ibáñez, Chile Chico, Cochrane, Tortel y O'Higgins en cuenca 117)"
         ],
-        "mecanismo_impacto_ecologico": "Secreta pedúnculos extracelulares de polisacáridos formando densas alfombras mucilaginosas sobre el lecho de grava; asfixia comunidades de macroinvertebrados bentónicos (ninfas de efemerópteros y plecópteros), bloquea sitios de desove de peces nativos y degrada el valor paisajístico",
-        "nivel_severidad_regional": "Muy Alta en los principales ríos de la cuenca del Simpson y Baker",
-        "programas_control_activos_sag_mma": "Programa Nacional de Vigilancia y Bioseguridad de Didymo liderado por SERNAPESCA y SUBPESCA; obligatoriedad de lavado y desinfección en 3 pasos ('Remover, Lavar, Secar') en operadores turísticos; monitoreo limnológico sistemático por CIEP",
-        "estado_gestion_y_contencion": "Infección endémica establecida en cuencas principales; acciones orientadas a evitar su dispersión a cuencas prístinas aisladas y cabeceras de cuenca",
-        "fuente_oficial": "SERNAPESCA / SUBPESCA / Centro de Investigación en Ecosistemas de la Patagonia (CIEP)"
+        "mecanismo_impacto_ecologico": "Secreta pedúnculos extracelulares de polisacáridos formando densas alfombras mucilaginosas sobre el lecho de grava; asfixia comunidades de macroinvertebrados bentónicos, bloquea sitios de desove de peces nativos y degrada el valor paisajístico",
+        "nivel_severidad_regional": "Muy Alta en 6 cuencas BNA declaradas (110, 111, 113, 114, 115 y 117)",
+        "programas_control_activos_sag_mma": "Declaración SUBPESCA Informe Técnico D.Ac. N° 414/2024 y Programa Nacional de Vigilancia y Bioseguridad SERNAPESCA ('Remover, Lavar, Secar'); monitoreo limnológico por CIEP",
+        "estado_gestion_y_contencion": "Plaga o riesgo declarado en 6 cuencas BNA de Aysén; control de bioseguridad en pasos fronterizos y ríos",
+        "fuente_oficial": "SUBPESCA (Informe Técnico D.Ac. N° 414/2024) / SERNAPESCA / CIEP"
     },
     {
         "id": "eei_05_lupino",
@@ -2372,19 +2425,19 @@ NODOS_BIODIVERSIDAD = [
     },
     {
         "id": "node_bio_11_castor_bravo",
-        "nombre": "Puesto de Contención y Monitoreo del Castor Río Bravo",
-        "tipo": "Control Especies Invasoras",
+        "nombre": "Puesto de Alerta Temprana Preventiva SAT Castor (Frontera Sur)",
+        "tipo": "Vigilancia Preventiva Especies Invasoras",
         "codigo_comuna": "CL-XI-09",
         "comuna_ine": "11302",
         "lat": -48.0200,
         "lng": -73.0800,
         "atributos": {
-            "cuenca": "Cuenca 117 (Río Bravo)",
-            "especie_invasora": "Castor canadensis (Castor)",
-            "actividad": "Monitoreo satelital de castoreras y trampeo de choque Conibear 330",
-            "institucion_custodio": "Proyecto GEF Castor / SAG / MMA"
+            "cuenca": "Cuenca 117 (Borde Sur / Última Esperanza - O'Higgins)",
+            "especie_invasora": "Castor canadensis (Castor americano — 0 comunas colonizadas en Aysén)",
+            "actividad": "0 comunas invadidas en Aysén - Sistema de Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)",
+            "institucion_custodio": "SAT FAO / MMA / SAG / CONAF / WCS Chile"
         },
-        "source_url": "https://gefcastor.mma.gob.cl/"
+        "source_url": "https://especies-invasoras.mma.gob.cl/"
     },
     {
         "id": "node_bio_12_condorera_mackay",
@@ -2576,37 +2629,107 @@ def build_systemic_json() -> Dict[str, Any]:
         ],
         "resumen_regional": {
             "superficie_regional_ha": 10849440.0,
+            "superficie_catastrada_conaf_2026_ha": 10667211.5,
             "flora_formaciones_hectareas": {
-                "bosque_siempreverde_ha": 2672000.0,
-                "bosque_caducifolio_lenga_nire_ha": 1665000.0,
-                "desglose_lenga_ha": 1015000.0,
-                "desglose_nire_ha": 650000.0,
-                "cipres_de_las_guaitecas_ha": 376200.0,
-                "turberas_y_humedales_ha": 289800.0,
+                "bosque_siempreverde_ha": 2552613.1,
+                "bosque_caducifolio_lenga_nire_ha": 1409259.7,
+                "desglose_lenga_ha": 1409259.7,
+                "desglose_nire_ha": 882420.0,
+                "coihue_de_magallanes_ha": 882420.0,
+                "cipres_de_las_guaitecas_ha": 308091.5,
+                "bosque_nativo_total_conaf_2026_ha": 5152384.3,
+                "subuso_bosques_total_ha": 5189923.8,
+                "plantaciones_forestales_sit_ha": 35473.6,
+                "bosque_mixto_ha": 2065.9,
+                "praderas_y_matorrales_ha": 2606729.0,
+                "turberas_y_humedales_ha": 106484.6,
+                "humedales_inventario_mma_ha": 590448.8,
                 "estepa_patagonica_ha": 712000.0,
-                "total_cobertura_vegetal_nativa_auditada_ha": 5715000.0,
-                "porcentaje_cobertura_vegetal_regional_pct": 52.7,
+                "total_cobertura_vegetal_nativa_auditada_ha": 5723000.0,
+                "porcentaje_cobertura_vegetal_regional_pct": 48.30,
                 "porcentaje_territorio_protegido_snaspe_ha": 5217400.0,
-                "porcentaje_territorio_protegido_snaspe_pct": 48.1
+                "porcentaje_territorio_protegido_snaspe_pct": 48.1,
+                "bosques_en_snaspe_ha": 2387525.4,
+                "bosque_nativo_en_snaspe_ha": 2385473.4
+            },
+            "catastro_vegetacional_conaf_2026": {
+                "fuente": "CONAF ESTADISTICAS_CATASTRO_2026 (Cuadros 6 al 11, 2024-2026)",
+                "superficie_catastrada_ha": 10667211.5,
+                "subuso_bosques_total_ha": 5189923.8,
+                "subuso_bosques_pct": 48.65,
+                "bosque_nativo_ha": 5152384.3,
+                "bosque_nativo_pct": 48.30,
+                "plantaciones_forestales_sit_ha": 35473.6,
+                "plantaciones_ifn_infor_2022_ha": 29133.0,
+                "bosque_mixto_ha": 2065.9,
+                "bosques_en_snaspe_ha": 2387525.4,
+                "bosque_nativo_en_snaspe_ha": 2385473.4,
+                "tipos_forestales_bosque_nativo_ha": {
+                    "siempreverde": 2552613.1,
+                    "lenga": 1409259.7,
+                    "coihue_de_magallanes": 882420.0,
+                    "cipres_de_las_guaitecas": 308091.5
+                },
+                "praderas_y_matorrales_ha": 2606729.0,
+                "humedales_conaf_ha": 106484.6,
+                "humedales_inventario_mma_ha": 590448.8
+            },
+            "criosfera_ipg_2022_dga": {
+                "fuente": "Inventario Publico de Glaciares IPG 2022 (Res. Ex. DGA N° 1.135/2022) y SOCHICRI oct-2025",
+                "glaciares_n": 10301,
+                "pct_glaciares_nacional": 39.4,
+                "ranking_nacional_glaciares": 1,
+                "superficie_glaciar_km2": 8721.6,
+                "pct_superficie_nacional": 41.5,
+                "ranking_nacional_superficie": 2,
+                "equivalente_agua_km3": 1235.6
             },
             "fauna_conservacion_rce": {
+                "proceso_rce_vigente": "20° Proceso RCE (D.S. N° 29/2025, octubre 2026)",
+                "taxones_nativos_nomina_aysen": 154,
+                "especies_amenaza_directa_cr_en_vu": 64,
                 "especies_emblematicas_evaluadas": 12,
                 "conteo_en_peligro_critico_cr": 1,
                 "conteo_en_peligro_en": 4,
                 "conteo_vulnerable_vu": 4,
                 "conteo_casi_amenazado_nt": 3,
-                "especie_bandera_terrestre": "Hippocamelus bisulcus (Huemul) - Aysén concentra el 60-70% de la población mundial",
-                "especie_bandera_marina": "Balaenoptera musculus (Ballena Azul) - Golfo Corcovado como principal zona de forrajeo en el Pacífico Suroriental",
+                "especie_bandera_terrestre": "Hippocamelus bisulcus (Huemul, EN) - 750 a 1.000 individuos en Aysén (~50%-60% de la población mundial < 1.500 individuos maduros, Ficha 17° Proceso RCE MMA)",
+                "especie_bandera_marina": "Balaenoptera musculus (Ballena Azul, EN) - < 250 individuos maduros (~217 estimados en aguas chilenas Golfo de Penas-Chiloé, Ficha RCE MMA)",
+                "huillin_categoria_regional": "Lontra provocax (Huillín) - En Peligro (EN) en Regiones VI-X e Insuficientemente Conocida (IC) en Regiones XI-XII",
                 "especie_mas_critica": "Podiceps gallardoi (Macá tobiano) - Menos de 800 ejemplares en el mundo, en peligro crítico de extinción"
             },
             "especies_exoticas_invasoras": {
                 "especies_prioritarias_gestion": 6,
-                "vison_norteamericano_cobertura": "Presente en las 10 comunas de la región",
-                "castor_canadiense_frente_avance": "Foco activo en Tortel y O'Higgins; barrera de contención activa en cuenca baja del Río Baker",
-                "microalga_didymo_cuencas": "Presente en cuencas del Simpson, Baker, Cisnes y Figueroa",
-                "jabali_europeo_ingreso": "Pasos cordilleranos orientales de Lago Verde, Coyhaique y Río Ibáñez",
+                "vison_norteamericano_cobertura": "Neogale vison presente en 10 comunas; Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026)",
+                "castor_comunas_colonizadas_aysen": 0,
+                "castor_canadiense_frente_avance": "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)",
+                "didymo_cuencas_bna": ["110", "111", "113", "114", "115", "117"],
+                "microalga_didymo_cuencas": "6 cuencas BNA declaradas en plaga o riesgo por SUBPESCA (Informe Técnico D.Ac. N° 414/2024): 110, 111, 113, 114, 115 y 117 (8 comunas continentales)",
+                "jabali_comunas_n": 6,
+                "jabali_europeo_ingreso": "6 comunas con presencia documentada por cámaras trampa CONAF/UACh 2025: Lago Verde, Coyhaique, Cisnes, Río Ibáñez (PN Cerro Castillo), Chile Chico y Cochrane",
                 "lupino_perenne_via_dispersion": "Corredores viales de la Carretera Austral (Ruta 7)",
                 "salmonidos_asilvestrados_impacto": "Dominancia en biomasa en todas las cuencas fluviales con corridas masivas de salmón chinook"
+            },
+            "calidad_aire_sinca_emrp": {
+                "comunas_con_emrp_continua": ["11101", "11201"],
+                "comunas_sin_emrp_continua_n": 8,
+                "coyhaique_estaciones_emrp": 2,
+                "coyhaique_gec_2023": 74,
+                "coyhaique_gec_2024": 87,
+                "coyhaique_gec_2025": 73,
+                "coyhaique_gec_2026": 97,
+                "coyhaique_gec_2026_desglose": {"alertas": 20, "preemergencias": 48, "emergencias": 29},
+                "puerto_aysen_estaciones_emrp": 1,
+                "puerto_aysen_dias_2018": 34,
+                "puerto_aysen_dias_base_2022": 16,
+                "puerto_aysen_pda_decreto": "Zona Saturada D.S. N° 37/2021 y PDA D.S. N° 03 del 28-ene-2025 (94% leña residencial)",
+                "nota_cochrane": "Campaña indicativa MMA 2023 en Cochrane (sin estación EMRP continua en SINCA)"
+            },
+            "volcanismo_rnvv_sernageomin": {
+                "volcanes_activos_aysen_n": 5,
+                "volcanes": ["Hudson (#12 Cat. I)", "Melimoyu (Cat. II)", "Mentolat (#35 Cat. III)", "Macá (#39 Cat. III)", "Cay (#63 Cat. IV)"],
+                "amenaza_transregional": "Volcán Lautaro (Cat. III, Natales/Magallanes) en borde sur de Villa O'Higgins",
+                "excluidos_holoceno": "Cerro Arenales (descartado como volcán activo holoceno por Stern et al. 2016)"
             },
             "series_historicas_regionales": SERIES_REGIONALES_BIO
         },
@@ -2623,8 +2746,29 @@ def build_systemic_json() -> Dict[str, Any]:
     from non_destructive_merge import save_systemic_json_non_destructive
     save_systemic_json_non_destructive(out_file, dataset)
 
+    # Post-merge Sprint 10: garantizar que campos corregidos (IPG 2022, CONAF 2026, RCE, EEI Castor SAT, SINCA nullable)
+    # sobrescriban valores obsoletos persistentes en disco manteniendo otros nodos/claves no tocados.
+    saved = json.loads(out_file.read_text(encoding="utf-8"))
+    saved["resumen_regional"] = dataset["resumen_regional"]
+    saved["catastro_fauna_emblematica_rce"] = dataset["catastro_fauna_emblematica_rce"]
+    saved["catastro_especies_exoticas_invasoras"] = dataset["catastro_especies_exoticas_invasoras"]
+    saved["nodos_georreferenciados"] = dataset["nodos_georreferenciados"]
+    fresh_by_ine = {str(c["comuna_ine"]): c for c in dataset["por_comuna"]}
+    for idx, c_disk in enumerate(saved.get("por_comuna", [])):
+        ine = str(c_disk.get("comuna_ine", ""))
+        if ine in fresh_by_ine:
+            f_row = fresh_by_ine[ine]
+            d_disk = c_disk.setdefault("datos", {})
+            d_disk["flora_y_formaciones_vegetacionales"] = f_row["datos"]["flora_y_formaciones_vegetacionales"]
+            d_disk["fauna_emblematica_conservacion"] = f_row["datos"]["fauna_emblematica_conservacion"]
+            d_disk["especies_exoticas_invasoras"] = f_row["datos"]["especies_exoticas_invasoras"]
+            d_disk["series_historicas"] = f_row["datos"]["series_historicas"]
+    with open(out_file, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(saved, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
     print(f"   [OK] JSON escrito exitosamente en {out_file}")
-    return dataset
+    return saved
 
 
 # -------------------------------------------------------------------------
@@ -2767,12 +2911,12 @@ def export_comprehensive_csv(data: Dict[str, Any]) -> None:
         "nucleos_clave_fauna": "Tamango, Cerro Castillo, Golfo Corcovado, Golfo de Penas, Delta del Baker, Meseta Buenos Aires",
         "unidades_snaspe": "18 unidades SNASPE (5.217.400 ha protegidas, 48,1% de la región)",
         "eei_vison_norteamericano_severidad": "Muy Alta",
-        "eei_castor_canadiense_severidad": "Foco Sur Crítico",
-        "eei_jabali_europeo_severidad": "Media-Alta Cordillerana",
-        "eei_microalga_didymo_severidad": "Muy Alta en ríos principales",
+        "eei_castor_canadiense_severidad": "Ausente (0 comunas; SAT Preventivo)",
+        "eei_jabali_europeo_severidad": "Media-Alta en 6 comunas",
+        "eei_microalga_didymo_severidad": "Muy Alta en 6 cuencas BNA (D.Ac. 414/2024)",
         "eei_lupino_perenne_severidad": "Alta en bordes viales Ruta 7",
         "eei_salmonidos_asilvestrados_severidad": "Muy Alta generalizada",
-        "programas_control_eei_activos": "Estrategia GEF Castor, Programa FNDR-SAG Visón, Bioseguridad SERNAPESCA Didymo",
+        "programas_control_eei_activos": "SAT Preventivo Castor mar-2025, Control Macrozonal SAG/WCS Visón ago-2026, Bioseguridad SUBPESCA D.Ac. 414/2024 Didymo",
         "source_url": "https://sit.conaf.cl/"
     }
     rows.append(regional_row)

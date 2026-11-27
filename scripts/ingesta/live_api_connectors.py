@@ -3,7 +3,7 @@
 """
 live_api_connectors.py - Conectores de extraccion en vivo (APIs publicas abiertas).
 
-Siete conectores activos alimentan la actualizacion mensual de Aysen Sistemico:
+Ocho conectores activos alimentan la actualizacion mensual de Aysen Sistemico:
 
   1. usgs                USGS Earthquake Catalog (GeoJSON)
   2. ckan_datos_gob      CKAN v3 de datos.gob.cl (DEIS, MINEDUC, SINIM, SERPAT)
@@ -12,6 +12,7 @@ Siete conectores activos alimentan la actualizacion mensual de Aysen Sistemico:
   5. arcgis_bbnn         ArcGIS REST de Bienes Nacionales (tenencia de suelo)
   6. arcgis_conaf        ArcGIS REST de CONAF / SIT (cobertura vegetacional)
   7. sinca               SINCA MMA (calidad del aire, Coyhaique y Puerto Aysen)
+  8. dga_hidrologia      DGA-MOP Red Hidrometrica (Baker en Bertrand/Colonia y Simpson)
 
 Reglas comunes (innegociables):
   - timeout=12 s y cabecera User-Agent honesta (sin suplantar navegadores).
@@ -132,9 +133,21 @@ SINCA_LIST_URL = "https://sinca.mma.gob.cl/index.php/json/listadomapa2k19/"
 SINCA_STATIONS = {"coyhaique": "Coyhaique", "puerto aysen": "Puerto Aysen"}
 SINCA_RAW_RELPATH = Path("data/raw/biodiversidad_mma_conaf/sinca_aire_live_snapshot.json")
 
+DGA_HIDROLOGIA_CANDIDATES = (
+    "https://rest-sit.mop.gob.cl/arcgis/rest/services/DGA/Red_Hidrometrica/MapServer/0",
+    "https://dga.mop.gob.cl/api/v1/hidrometria/aysen",
+)
+DGA_STATIONS_AYSEN: Dict[str, Dict[str, Any]] = {
+    "11530000-8": {"id": 1, "nombre": "Rio Baker en Lago Bertrand", "comuna_ine": "11301", "min_m3s": 150.0, "max_m3s": 2500.0},
+    "11542001-1": {"id": 2, "nombre": "Rio Baker en Bajo Colonia", "comuna_ine": "11301", "min_m3s": 0.5, "max_m3s": 25.0},
+    "11317001-K": {"id": 5, "nombre": "Rio Simpson en Coyhaique", "comuna_ine": "11101", "min_m3s": 5.0, "max_m3s": 800.0},
+}
+DGA_RAW_RELPATH = Path("data/raw/biodiversidad_mma_conaf/dga_hidrologia_live_snapshot.json")
+
 CONNECTOR_IDS = (
     "usgs", "ckan_datos_gob", "ckan_cne",
     "arcgis_subpesca", "arcgis_bbnn", "arcgis_conaf", "sinca",
+    "dga_hidrologia",
 )
 
 
@@ -627,17 +640,195 @@ def fetch_sinca_air_quality_aysen(root: Optional[Path] = None, write: bool = Tru
 
 
 # ---------------------------------------------------------------------------
+# 6. DGA-MOP Red Hidrometrica Aysen (BNA 11530000-8, 11542001-1, 11317001-K)
+# ---------------------------------------------------------------------------
+
+def _dga_candidates() -> List[str]:
+    env = os.environ.get("AYSEN_DGA_HIDROLOGIA_URLS", "").strip()
+    if env:
+        return [u.strip() for u in env.split(",") if u.strip()]
+    return list(DGA_HIDROLOGIA_CANDIDATES)
+
+
+def _in_aysen_bbox(lat: Optional[float], lon: Optional[float]) -> bool:
+    if lat is None or lon is None:
+        return False
+    return (
+        AYSEN_BBOX["minlat"] <= lat <= AYSEN_BBOX["maxlat"]
+        and AYSEN_BBOX["minlon"] <= lon <= AYSEN_BBOX["maxlon"]
+    )
+
+
+def _extract_dga_records(payload: Any) -> Dict[str, Dict[str, Any]]:
+    """Extrae lecturas hidrologicas validas de Aysen desde JSON ArcGIS REST o JSON DGA."""
+    if isinstance(payload, dict) and isinstance(payload.get("features"), list):
+        items = payload["features"]
+    elif isinstance(payload, dict) and isinstance(payload.get("estaciones"), list):
+        items = payload["estaciones"]
+    elif isinstance(payload, list):
+        items = payload
+    else:
+        return {}
+
+    found: Dict[str, Dict[str, Any]] = {}
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        attrs = item.get("attributes") if isinstance(item.get("attributes"), dict) else item
+        geom = item.get("geometry") if isinstance(item.get("geometry"), dict) else {}
+        code_raw = str(
+            attrs.get("COD_BNA") or attrs.get("codigo_estacion") or attrs.get("codigo_bna")
+            or attrs.get("cod_bna") or attrs.get("bna") or ""
+        ).strip()
+        code = re.sub(r"^BNA\s+", "", code_raw, flags=re.I)
+        if code not in DGA_STATIONS_AYSEN:
+            continue
+
+        lat = _to_float(attrs.get("LATITUD") or attrs.get("lat") or geom.get("y"))
+        lon = _to_float(attrs.get("LONGITUD") or attrs.get("lng") or attrs.get("lon") or geom.get("x"))
+        if lat is not None and lon is not None and not _in_aysen_bbox(lat, lon):
+            continue
+
+        val = None
+        for vk in ("caudal_m3s", "CAUDAL_M3S", "caudal", "CAUDAL", "nivel_m", "NIVEL_M", "valor", "VALOR", "altura_m"):
+            cand = _to_float(attrs.get(vk))
+            if cand is not None:
+                val = cand
+                break
+
+        meta = DGA_STATIONS_AYSEN[code]
+        if val is None or val <= 0 or not (meta["min_m3s"] <= val <= meta["max_m3s"]):
+            continue
+
+        found[code] = {
+            "id": meta["id"],
+            "codigo_bna": code,
+            "nombre": meta["nombre"],
+            "comuna_ine": meta["comuna_ine"],
+            "valor": round(val, 2),
+            "unidad": "m" if code == "11542001-1" else "m\u00b3/s",
+        }
+    return found
+
+
+def fetch_dga_hidrologia_aysen(root: Optional[Path] = None, write: bool = True) -> ConnectorResult:
+    """Consulta la Red Hidrometrica DGA-MOP para estaciones de Aysen (sin meses futuros)."""
+    root = Path(root) if root else REPO_ROOT
+    candidates = _dga_candidates()
+    first_url = candidates[0] if candidates else ""
+    res = _result("dga_hidrologia", "dga_hidrologia", [30], first_url)
+    last_fail: Optional[ConnectorResult] = None
+    attempts: List[Dict[str, Any]] = []
+
+    for base_url in candidates:
+        query_url = base_url.rstrip("/")
+        if "MapServer" in query_url and "/query" not in query_url:
+            query_url = f"{query_url}/query?where=COD_REG%3D11&outFields=*&f=json"
+        probe = _result("dga_hidrologia", "dga_hidrologia", [30], query_url)
+        resp = http_get(query_url)
+        if resp.status != 200:
+            last_fail = _fail(probe, resp, "DGA Hidro no respondio 200")
+            attempts.append({"url": query_url, "http_status": resp.status, "ok": False, "error": last_fail.error})
+            continue
+        payload = parse_json(resp)
+        if payload is None:
+            last_fail = _fail(probe, resp, "DGA Hidro devolvio un cuerpo que no es JSON")
+            attempts.append({"url": query_url, "http_status": resp.status, "ok": False, "error": last_fail.error})
+            continue
+        if isinstance(payload, dict) and "error" in payload:
+            last_fail = _fail(probe, resp, f"DGA Hidro error logico: {payload['error']}")
+            attempts.append({"url": query_url, "http_status": resp.status, "ok": False, "error": last_fail.error})
+            continue
+
+        matched = _extract_dga_records(payload)
+        if not matched:
+            last_fail = _fail(probe, resp, "DGA Hidro sin lecturas fisicas validas en Aysen")
+            attempts.append({"url": query_url, "http_status": resp.status, "ok": False, "error": last_fail.error})
+            continue
+
+        now_iso = utc_now_iso()
+        cur_ym = now_iso[:7]
+        cur_ymd = now_iso[:10]
+        res.url = query_url
+        res.ok = True
+        res.mode = MODE_LIVE
+        res.http_status = resp.status
+        res.elapsed_s = round(resp.elapsed_s, 2)
+        res.metrics = {
+            "stations_matched": sorted(matched.keys()),
+            "stations_count": len(matched),
+            "readings": matched,
+        }
+
+        if write:
+            _atomic_write_json(root / DGA_RAW_RELPATH, {
+                "endpoint": query_url,
+                "status_http": resp.status,
+                "extraction_mode": MODE_LIVE,
+                "timestamp": res.checked_at,
+                "estaciones": matched,
+            })
+            res.updated_files.append(DGA_RAW_RELPATH.as_posix())
+
+            est_path = root / "data" / "estaciones_aysen.json"
+            if est_path.is_file():
+                try:
+                    est_doc = json.loads(est_path.read_text(encoding="utf-8-sig"))
+                    changed_est = False
+                    for st in est_doc.get("estaciones", []):
+                        raw_code = str(st.get("codigo_estacion") or "")
+                        bna = re.sub(r"^BNA\s+", "", raw_code, flags=re.I).strip()
+                        if bna not in matched:
+                            continue
+                        serie = [
+                            pt for pt in (st.get("serie_temporal") or [])
+                            if str(pt.get("periodo_mes", "")) <= cur_ym
+                            and str(pt.get("fecha", "")) <= cur_ymd
+                        ]
+                        val_num = matched[bna]["valor"]
+                        existing_cur = next((pt for pt in serie if pt.get("periodo_mes") == cur_ym), None)
+                        if existing_cur is not None:
+                            existing_cur["valor"] = val_num
+                            existing_cur["fecha"] = cur_ymd
+                        else:
+                            serie.append({
+                                "periodo_mes": cur_ym,
+                                "fecha": cur_ymd,
+                                "valor": val_num,
+                                "unidad": st.get("unidad") or matched[bna]["unidad"],
+                            })
+                        st["serie_temporal"] = serie[-12:]
+                        changed_est = True
+                    if changed_est:
+                        est_doc["fecha_actualizacion"] = res.checked_at
+                        _atomic_write_json(est_path, est_doc)
+                        res.updated_files.append("data/estaciones_aysen.json")
+                except Exception:
+                    pass
+        return res
+
+    res.url = last_fail.url if last_fail else first_url
+    res.ok = False
+    res.mode = MODE_FALLBACK
+    res.http_status = last_fail.http_status if last_fail else None
+    res.error = last_fail.error if last_fail else "DGA Hidro sin candidatos configurados"
+    res.metrics = {"attempts": attempts}
+    return res
+
+
+# ---------------------------------------------------------------------------
 # Ejecucion agregada
 # ---------------------------------------------------------------------------
 
 def run_all_live_connectors(root: Optional[Path] = None, write: bool = True) -> List[ConnectorResult]:
-    """Ejecuta los siete conectores; cada uno aislado de los demas."""
+    """Ejecuta los ocho conectores; cada uno aislado de los demas."""
     results: List[ConnectorResult] = []
     for name, call in (
         ("usgs", lambda: [fetch_usgs_earthquakes_aysen(root, write)]),
         ("ckan", lambda: fetch_ckan_topics(root, write)),
         ("arcgis", lambda: fetch_arcgis_rest_aysen(root, write)),
         ("sinca", lambda: [fetch_sinca_air_quality_aysen(root, write)]),
+        ("dga_hidrologia", lambda: [fetch_dga_hidrologia_aysen(root, write)]),
     ):
         try:
             results.extend(call())

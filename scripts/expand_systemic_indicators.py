@@ -116,16 +116,16 @@ WP06_DATA = {
 
 # 7. Datos WP_07
 WP07_DATA = {
-    "11101": {"glaciares": 310, "glaciar_km2": 42.5, "daa_c": 48.5, "daa_nc": 145.0, "dias_mp25": 87},
-    "11102": {"glaciares": 285, "glaciar_km2": 38.2, "daa_c": 6.2, "daa_nc": 18.0, "dias_mp25": 12},
-    "11201": {"glaciares": 2450, "glaciar_km2": 1850.0, "daa_c": 38.4, "daa_nc": 680.0, "dias_mp25": 34},
-    "11202": {"glaciares": 1120, "glaciar_km2": 480.0, "daa_c": 18.2, "daa_nc": 320.0, "dias_mp25": 16},
-    "11203": {"glaciares": 0, "glaciar_km2": 0.0, "daa_c": 1.2, "daa_nc": 0.0, "dias_mp25": 4},
-    "11401": {"glaciares": 410, "glaciar_km2": 145.0, "daa_c": 14.8, "daa_nc": 45.0, "dias_mp25": 18},
-    "11402": {"glaciares": 890, "glaciar_km2": 460.0, "daa_c": 12.5, "daa_nc": 110.0, "dias_mp25": 14},
-    "11301": {"glaciares": 1680, "glaciar_km2": 890.0, "daa_c": 8.4, "daa_nc": 890.0, "dias_mp25": 22},
-    "11302": {"glaciares": 2240, "glaciar_km2": 3450.0, "daa_c": 3.8, "daa_nc": 540.0, "dias_mp25": 8},
-    "11303": {"glaciares": 916, "glaciar_km2": 2680.0, "daa_c": 3.1, "daa_nc": 420.0, "dias_mp25": 10},
+    "11101": {"glaciares": 121, "glaciar_km2": 28.2, "daa_c": 48.5, "daa_nc": 145.0, "dias_mp25": 87},
+    "11102": {"glaciares": 265, "glaciar_km2": 64.0, "daa_c": 6.2, "daa_nc": 18.0, "dias_mp25": None},
+    "11201": {"glaciares": 2190, "glaciar_km2": 1542.6, "daa_c": 38.4, "daa_nc": 680.0, "dias_mp25": 16},
+    "11202": {"glaciares": 785, "glaciar_km2": 184.3, "daa_c": 18.2, "daa_nc": 320.0, "dias_mp25": None},
+    "11203": {"glaciares": 0, "glaciar_km2": 0.0, "daa_c": 1.2, "daa_nc": 0.0, "dias_mp25": None},
+    "11401": {"glaciares": 690, "glaciar_km2": 238.5, "daa_c": 14.8, "daa_nc": 45.0, "dias_mp25": None},
+    "11402": {"glaciares": 1120, "glaciar_km2": 382.0, "daa_c": 12.5, "daa_nc": 110.0, "dias_mp25": None},
+    "11301": {"glaciares": 1310, "glaciar_km2": 512.4, "daa_c": 8.4, "daa_nc": 890.0, "dias_mp25": None},
+    "11302": {"glaciares": 1680, "glaciar_km2": 2284.2, "daa_c": 3.8, "daa_nc": 540.0, "dias_mp25": None},
+    "11303": {"glaciares": 2140, "glaciar_km2": 3485.4, "daa_c": 3.1, "daa_nc": 420.0, "dias_mp25": None},
 }
 
 

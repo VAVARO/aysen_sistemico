@@ -1,17 +1,17 @@
 {
   "schemaVersion": "3.0.0",
   "label": "HEAD",
-  "capturedAt": "2026-11-27T11:38:59.686Z",
-  "bundleGeneratedAt": "2026-11-27T11:38:44.637Z",
+  "capturedAt": "2026-11-27T14:11:16.054Z",
+  "bundleGeneratedAt": "2026-11-27T14:06:34.800Z",
   "autoUpdateMeta": {
     "frequency": "Mensual (día 1 de cada mes)",
     "lastRun": "2026-11-02T12:13:30+00:00",
-    "activeApiConnectors": 7,
+    "activeApiConnectors": 8,
     "totalSources": 38,
     "totalOfficialSources": 38,
     "totalHubs": 10,
     "totalNodes": 41,
-    "totalComunaVariables": 289
+    "totalComunaVariables": 291
   },
   "comunas": [
     {
@@ -510,6 +510,113 @@
     ],
     "hub06WikiText": "---\nid: hub_06_social\ntitle: \"Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social\"\ntype: hub\nhub_id: social\nhub_roman: VI\nvariables_clave:\n  - poblacion_censo_2024\n  - hogares_censo_2024\n  - viviendas_totales_censo_2024\n  - indice_envejecimiento\n  - pobreza_multidim_pct\n  - pobreza_ingresos_pct\n  - matricula_escolar\n  - establecimientos_escolares_n\n  - establecimientos_slep_aysen\n  - matricula_educacion_superior_sies_n\n  - deficit_habitacional_cuantitativo_n\n  - sistemas_ssr_apr_n\n  - beneficiarios_ssr_apr_doh\n  - cobertura_ssr_apr_familias\n  - tasa_dmcs_100k\n  - tasa_vif_100k\nfuentes_oficiales:\n  - \"INE / BCN — Censo 2024 (100.745 hab., 39.964 hogares, 52.294 viviendas)\"\n  - \"MDSF — CASEN 2022/2024 (ene-2026) y Registro Social de Hogares\"\n  - \"MINEDUC / SLEP Aysén / SIES 2026 — 86 colegios (55 SLEP + 10 VTF) y 2.924 SIES\"\n  - \"MINVU CECT / PEH Feb-2026 / DOH-MOP — 1.927 déficit cuantitativo, PEH 1.671 y 47 SSR\"\n  - \"CEAD SPD / BCN — Tasas delictuales violentos/integridad y VIF 2023–2025\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - hub\n  - hub-vi\n---\n\n# Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social\n\n## Síntesis Compilada (Consultor IA)\n\nEl Hub VI (Demografía, Educación, Vivienda y Cohesión) integra los microdatos oficiales del Censo 2024 (INE / BCN 2026): sobre un total regional consolidado de 100.745 habitantes (suma comunal BCN 101.148 hab.; 80,7% urbana / 19,3% rural; 49.847 hombres y 50.898 mujeres), Coyhaique concentra 57.823 habitantes (57,4%) y Aysén 23.170 habitantes (23,0%) (80,4% conjunto), con 39.964 hogares (2,5 pers./hogar) y 52.294 viviendas totales (39.631 ocupadas). El Índice de Envejecimiento pasó de 13,7 (1992) a 66,2 (2024; Lago Verde 182,8, Río Ibáñez 121,2, Tortel 30,8), con masculinidad regional de 97,9, pueblos originarios de 29,0% (29.230 pers.) e inmigración de 3,9% (3.931 pers.). En hábitat, MINVU CECT (oct-2025) fija el déficit cuantitativo en 1.927 viviendas (4,8% hogares: Coyhaique 1.128, Aysén 330, Lago Verde 73 [19,6%], Cochrane 118 [8,1%]), CASEN 2024 fija el déficit cualitativo en 12,9% (5.155 hogares), se catastran 10 campamentos (244 hogares) y el PEH cerró febrero 2026 con 1.671 viviendas terminadas (129,2% sobre meta de 1.293, prorrogado a dic-2029); paralelamente operan 47 comités SSR/APR DOH-MOP (28.833 personas y 9.185 familias/arranques, con 551 en Melinka). En educación conviven 86 colegios activos (55 escuelas/liceos SLEP + 10 jardines VTF = 65 SLEP; Tortel 1 escuela y 0 liceos), 22.087 alumnos totales (8.939 SLEP), PAES 2026 sobre la media nacional (M1 627,4 / Lectora 600,2) y 2.924 estudiantes SIES 2026 (Coyhaique 2.187 y CFT Estatal Aysén 737). CASEN 2024 (nueva metodología ene-2026) marca 14,3% de pobreza por ingresos y 12,1% multidimensional, mientras CEAD registra VIF regional de 691,6 (2023), 809,9 (2024) y 709,9 c/100k hab (2025).\n\n## Indicadores Comunales Verificados\n\n| Comuna | Población Censo 2024 (hab.) | Hogares Censales Estimados Censo 2024 (hogares) | Viviendas Totales Censadas Censo 2024 (viviendas) | Índice de Envejecimiento Demográfico (65+ años por cada 100 menores de 15) | Pobreza Multidimensional CASEN (%) |\n| --- | --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 57.823 | 22.423 | 27.989 | 64,1 | 14 |\n| [[comunas/lago_verde|Lago Verde]] | 882 | 373 | 724 | 182,8 | 18 |\n| [[comunas/aysen|Aysén]] | 23.170 | 9.057 | 11.054 | 61,6 | 12,8 |\n| [[comunas/cisnes|Cisnes]] | 5.335 | 2.180 | 3.437 | 64,1 | 12,3 |\n| [[comunas/guaitecas|Guaitecas]] | 1.598 | 606 | 816 | 56,5 | 22,2 |\n| [[comunas/chile_chico|Chile Chico]] | 4.950 | 2.109 | 3.108 | 92,9 | 16,3 |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 2.671 | 1.231 | 2.242 | 121,2 | 18,8 |\n| [[comunas/cochrane|Cochrane]] | 3.492 | 1.462 | 2.126 | 65 | 14,3 |\n| [[comunas/ohiggins|O'Higgins]] | 664 | 292 | 403 | 41,7 | 12,1 |\n| [[comunas/tortel|Tortel]] | 563 | 231 | 395 | 30,8 | 12,3 |\n\n## Nodos Satélite del Hub\n\n- [[nodos/nodo_23|Nodo #23: Demografía Censo 2024 y Pobreza CASEN]]\n- [[nodos/nodo_25|Nodo #25: Matrícula escolar en la comuna]]\n- [[nodos/nodo_26|Nodo #26: Denuncias por violencia intrafamiliar]]\n- [[nodos/nodo_41|Nodo #41: Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)]]\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **Paquetes Conceptuales y Entidades Territoriales**:\n- [[conceptos/inversion_publica_regional|inversion_publica_regional]]\n- [[conceptos/financiamiento_municipal|financiamiento_municipal]]\n- **Registros de Decisión de Arquitectura y Datos (ADR)**:\n- [[adr/adr_004_normalizacion_per_capita_y_colinealidad|ADR_004_NORMALIZACION_PER_CAPITA_Y_COLINEALIDAD]]\n- [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR_002_RECONCILIACION_38_FUENTES_INVARIANTES]]\n"
   },
+  "hub7BiodivAudit": {
+    "superficieGlaciaresAliasByIne": {
+      "11101": 28.2,
+      "11102": 64,
+      "11201": 1542.6,
+      "11202": 184.3,
+      "11203": 0,
+      "11301": 512.4,
+      "11302": 2284.2,
+      "11303": 3485.4,
+      "11401": 238.5,
+      "11402": 382
+    },
+    "episodiosGec2024ByIne": {
+      "11101": 87,
+      "11102": null,
+      "11201": 16,
+      "11202": null,
+      "11203": null,
+      "11301": null,
+      "11302": null,
+      "11303": null,
+      "11401": null,
+      "11402": null
+    },
+    "nodo27Labels": [
+      "Siempreverde (BN)",
+      "Lenga (BN)",
+      "Coihue de Magallanes (BN)",
+      "Ciprés de las Guaitecas (BN)",
+      "Praderas y Matorrales",
+      "Humedales (CONAF)"
+    ],
+    "nodo27Data": [
+      2552613.1,
+      1409259.7,
+      882420,
+      308091.5,
+      2606729,
+      106484.6
+    ],
+    "nodo29Labels": [
+      "Visón norteamericano",
+      "Salmónidos asilvestrados",
+      "Didymo (Microalga)",
+      "Lupino perenne",
+      "Jabalí europeo",
+      "Castor americano (SAT preventivo)"
+    ],
+    "nodo29Data": [
+      10,
+      10,
+      8,
+      7,
+      6,
+      0
+    ],
+    "eeiPorComunaCastorN": 0,
+    "jabaliText": "Comuna de Lago Verde (Río Figueroa, Paso Las Pampas) Comuna de Coyhaique (Paso Huemules, Balmaceda, El Salto) Comuna de Cisnes (Río Cisnes alto) Comuna de Río Ibáñez (Parque Nacional Cerro Castillo y Paso Pallavicini) Comuna de Chile Chico (sector Jeinimeni) Comuna de Cochrane (sectores fronterizos — cámaras trampa CONAF/UACh 2025) El **Visón norteamericano (Neogale vison)** colonizó las **10 comunas** (Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation ago-2026); el **Didymo** cubre **6 cuencas BNA** (110, 111, 113, 114, 115, 117; D.Ac. N° 414/2024 en 8 comunas continentales); el **Jabalí** registra **6 comunas** incl. Río Ibáñez / PN Cerro Castillo (CONAF/UACh 2025); y el **Castor americano** suma **0 comunas con colonización establecida en Aysén** bajo **Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza)**.",
+    "didymoText": "6 cuencas BNA declaradas en plaga o riesgo (SUBPESCA D.Ac. N° 414/2024): 110 (Río Palena), 111 (Costeras Palena-Aysén / Cisnes), 113 (Río Aysén / Simpson-Blanco), 114 (Costeras Aysén-Baker), 115 (Río Baker) y 117 (Río Pascua) Cobertura en 8 comunas continentales de Aysén (Coyhaique, Lago Verde, Cisnes, Aysén, Río Ibáñez, Chile Chico, Cochrane, Tortel y O'Higgins en cuenca 117) El **Visón norteamericano (Neogale vison)** colonizó las **10 comunas** (Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation ago-2026); el **Didymo** cubre **6 cuencas BNA** (110, 111, 113, 114, 115, 117; D.Ac. N° 414/2024 en 8 comunas continentales); el **Jabalí** registra **6 comunas** incl. Río Ibáñez / PN Cerro Castillo (CONAF/UACh 2025); y el **Castor americano** suma **0 comunas con colonización establecida en Aysén** bajo **Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza)**.",
+    "nodo30BakerData": [
+      655,
+      675,
+      615,
+      525,
+      475,
+      440,
+      415,
+      395,
+      405,
+      465,
+      555,
+      625
+    ],
+    "nodo30TableHas202612": false,
+    "bakerEstacion": {
+      "found": true,
+      "maxVal": 675,
+      "maxMes": "2026-02",
+      "minVal": 395,
+      "minMes": "2026-08",
+      "hasFutureDates": false
+    },
+    "mapaBakerChartData": [
+      655,
+      675,
+      615,
+      525,
+      475,
+      440,
+      415,
+      395,
+      405,
+      465,
+      555,
+      625
+    ],
+    "activeApiConnectors": 8,
+    "hasDgaHidrologiaConnector": true,
+    "volcanesRnvv": {
+      "count": 5,
+      "hudsonRanking": 12,
+      "arenalesInAysen": false,
+      "nodo31Text": "Catastro georreferenciado de los **5 complejos volcánicos activos monitoreados por la RNVV de SERNAGEOMIN dentro de la Región de Aysén** (**Hudson `#12` Cat. I**, **Melimoyu Cat. II**, **Mentolat `#35` Cat. III**, **Macá `#39` Cat. III** y **Cay `#63` Cat. IV**), junto a los sismos instrumentales **USGS** y la exclusión técnica del **Cerro Arenales** (sin erupción holocena confirmada, Stern et al. 2016), considerando al **Volcán Lautaro** (Cat. III, Natales/Magallanes) como amenaza volcánica transregional en el borde sur de Villa O'Higgins (`11302`). El **Volcán Hudson** (`-45.90, -72.97`, `1.905 m`, Aysén / Río Ibáñez) ocupa el puesto **`#12` Nacional (Categoría I — Muy Alto Riesgo por regla VEI >= 4)**; Melimoyu (`Cat. II`), Mentolat (`#35 Cat. III`) y Cay (`#63 Cat. IV`) monitorean la Falla Liquiñe-Ofqui."
+    },
+    "nodo36WikiText": "---\nid: nodo_36\ntitle: \"Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\"\ntype: nodo\nhub_id: ctci\nhub_roman: X\nvariables_clave:\n  - centros_y_estaciones_ctci_count\n  - investigadores_residentes_est\n  - proporcion_ciencia_endogena_pct\nfuentes_oficiales:\n  - \"Ministerio de Ciencia / OBSERVA / ANID\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - nodo\n  - hub-x\n---\n\n# Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\n\n## Síntesis Compilada (Consultor IA)\n\nInfraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026), INIA Tamel Aike (10), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos).\n\n## Indicadores Comunales Verificados\n\n| Comuna | Centros y Estaciones I+D | Investigadores Residentes | Instituciones Principales | Prioridad Ciudadana (%) |\n| --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 6 | 91 | CIEP / UAysén / INIA Tamel Aike / INFOR / UACh Patagonia / DGAC | 88.6% |\n| [[comunas/lago_verde|Lago Verde]] | 1 | 1 | MinCiencia / CONAF / UAysén | 100% |\n| [[comunas/aysen|Aysén]] | 2 | 14 | CECs / U. de Chile / Plataforma Bioseguridad IFOP | 93.8% |\n| [[comunas/cisnes|Cisnes]] | 1 | 4 | IFOP Puerto Cisnes | 85.2% |\n| [[comunas/guaitecas|Guaitecas]] | 1 | 2 | IFOP Melinka (Marea Roja) | 87.5% |\n| [[comunas/chile_chico|Chile Chico]] | 1 | 3 | INIA Tamel Aike (Agroclimática) | 84% |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 1 | 2 | Pontificia Universidad Católica (PUC) | 90% |\n| [[comunas/cochrane|Cochrane]] | 1 | 3 | CIEP / UAysén (Cuencas Australes) | 83.3% |\n| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | CECs / U. de Concepción | 100% |\n| [[comunas/tortel|Tortel]] | 1 | 3 | CIEP / Municipalidad de Tortel | 100% |\n\n## Metadatos de Procedencia Institucional\n\n- **Entidad Oficial**: Ministerio de Ciencia / OBSERVA / ANID\n- **Fecha de Corte**: Catastro Oficial 2026\n- **Método de Captura**: Registro administrativo oficial y estadísticas sectoriales consolidadas\n- **Subsistema VSM**: S4 · Flujo metabólico: info\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Hub Perteneciente**: [[hubs/hub_10_ctci|Hub X — Ciencia, Tecnología, Conocimiento e Innovación (CTCi) en Aysén]]\n- **Nodos Satélite Relacionados**: [[nodos/nodo_06|Nodo #06]] · [[nodos/nodo_09|Nodo #09]] · [[nodos/nodo_25|Nodo #25]] · [[nodos/nodo_27|Nodo #27]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **ADRs de Referencia**: [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]] · [[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]\n"
+  },
   "centralesElectricas": [
     {
       "id": "ene_cne_CENTRAL-TERMICA-TEHUELCHE",
@@ -659,8 +766,8 @@
       "potencia_mw": 0.35
     }
   ],
-  "totalKeys": 289,
-  "indicatorCount": 247,
+  "totalKeys": 291,
+  "indicatorCount": 248,
   "indicators": {
     "poblacion_censo_2024": {
       "type": "numeric",
@@ -2180,31 +2287,31 @@
     "glaciares_dga_n": {
       "type": "numeric",
       "values": {
-        "11101": 310,
-        "11102": 285,
-        "11201": 2450,
-        "11202": 1120,
+        "11101": 121,
+        "11102": 265,
+        "11201": 2190,
+        "11202": 785,
         "11203": 0,
-        "11301": 1680,
-        "11302": 2240,
-        "11303": 916,
-        "11401": 410,
-        "11402": 890
+        "11301": 1310,
+        "11302": 1680,
+        "11303": 2140,
+        "11401": 690,
+        "11402": 1120
       }
     },
     "superficie_glaciar_km2": {
       "type": "numeric",
       "values": {
-        "11101": 42.5,
-        "11102": 38.2,
-        "11201": 1850,
-        "11202": 480,
+        "11101": 28.2,
+        "11102": 64,
+        "11201": 1542.6,
+        "11202": 184.3,
         "11203": 0,
-        "11301": 890,
-        "11302": 3450,
-        "11303": 2680,
-        "11401": 145,
-        "11402": 460
+        "11301": 512.4,
+        "11302": 2284.2,
+        "11303": 3485.4,
+        "11401": 238.5,
+        "11402": 382
       }
     },
     "daa_consuntivos_m3s": {
@@ -2237,19 +2344,34 @@
         "11402": 110
       }
     },
+    "estaciones_sinca_emrp_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2,
+        "11102": 0,
+        "11201": 1,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
     "dias_sobre_norma_mp25": {
       "type": "numeric",
       "values": {
         "11101": 87,
-        "11102": 12,
-        "11201": 34,
-        "11202": 16,
-        "11203": 4,
-        "11301": 22,
-        "11302": 8,
-        "11303": 10,
-        "11401": 18,
-        "11402": 14
+        "11102": null,
+        "11201": 16,
+        "11202": null,
+        "11203": null,
+        "11301": null,
+        "11302": null,
+        "11303": null,
+        "11401": null,
+        "11402": null
       }
     },
     "postas_salud_rural": {
@@ -3011,25 +3133,25 @@
         "11202": 5,
         "11203": 2,
         "11301": 5,
-        "11302": 5,
-        "11303": 4,
-        "11401": 4,
+        "11302": 4,
+        "11303": 3,
+        "11401": 5,
         "11402": 5
       }
     },
     "episodios_gec_mp25_anual": {
       "type": "numeric",
       "values": {
-        "11101": 41,
-        "11102": 2,
-        "11201": 14,
-        "11202": 4,
-        "11203": 0,
-        "11301": 8,
-        "11302": 1,
-        "11303": 2,
-        "11401": 5,
-        "11402": 3
+        "11101": 97,
+        "11102": null,
+        "11201": 16,
+        "11202": null,
+        "11203": null,
+        "11301": null,
+        "11302": null,
+        "11303": null,
+        "11401": null,
+        "11402": null
       }
     },
     "expedientes_fiscalizacion_sma_n": {
@@ -5063,7 +5185,7 @@
       "serie_mp25_pda_coyhaique_2015_2026__episodios_gec_mp25": {
         "type": "numeric",
         "values": {
-          "2026": 41
+          "2026": 97
         }
       },
       "serie_snaspe_por_parque_anual__visitantes_snaspe_total": {

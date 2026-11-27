@@ -1038,80 +1038,109 @@ def build_raw_volcanoes_catalog() -> Dict[str, Any]:
     catalog = {
         "fuente": "Red Nacional de Vigilancia Volcánica (RNVV) - SERNAGEOMIN",
         "url_fuente": "https://rnvv.sernageomin.cl/",
+        "nota_cobertura_rnvv": (
+            "5 volcanes activos monitoreados por la RNVV dentro de la Región de Aysén "
+            "(Hudson #12 Cat. I, Melimoyu Cat. II, Mentolat #35 Cat. III, Macá #39 Cat. III, "
+            "Cay #63 Cat. IV). Cerro Arenales (Tortel/Cochrane) fue excluido por carecer de "
+            "actividad eruptiva holocena confirmada (Stern et al., 2016); Volcán Lautaro "
+            "(Natales, Magallanes) se monitorea como amenaza transregional al sur de O'Higgins."
+        ),
         "volcanes_activos_aysen": [
             {
                 "id": "volcan_hudson",
                 "nombre": "Volcán Hudson",
-                "tipo": "Estratovolcán con caldera activa de 10 km",
+                "tipo": "Estratovolcán con caldera activa de 10 km (1.905 m)",
                 "lat": -45.9000,
-                "lng": -72.9667,
+                "lng": -72.9700,
                 "comuna_ine": "11402",
+                "comunas_influencia": ["11201", "11402"],
                 "codigo_comuna": "CL-XI-07",
-                "ranking_riesgo_sernageomin": 1,
+                "ranking_riesgo_sernageomin": 12,
+                "categoria_riesgo_rnvv": "Categoría I - Muy Alto Riesgo (regla de excepción VEI >= 4)",
+                "altitud_m": 1905,
                 "ultima_gran_erupcion": 1991,
                 "nivel_alerta_tecnica": "Verde",
                 "url": "https://rnvv.sernageomin.cl/volcan-hudson/",
             },
             {
+                "id": "volcan_melimoyu",
+                "nombre": "Volcán Melimoyu",
+                "tipo": "Estratovolcán con caldera elongada de 8 km (2.400 m)",
+                "lat": -44.0800,
+                "lng": -72.8800,
+                "comuna_ine": "11202",
+                "codigo_comuna": "CL-XI-04",
+                "ranking_riesgo_sernageomin": 24,
+                "categoria_riesgo_rnvv": "Categoría II - Alto Riesgo",
+                "altitud_m": 2400,
+                "nivel_alerta_tecnica": "Verde",
+                "url": "https://rnvv.sernageomin.cl/volcan-melimoyu/",
+            },
+            {
+                "id": "volcan_mentolat",
+                "nombre": "Volcán Mentolat",
+                "tipo": "Estratovolcán con caldera de 6 km en Isla Magdalena (1.660 m)",
+                "lat": -44.7000,
+                "lng": -73.0800,
+                "comuna_ine": "11202",
+                "codigo_comuna": "CL-XI-04",
+                "ranking_riesgo_sernageomin": 35,
+                "categoria_riesgo_rnvv": "Categoría III - Riesgo Moderado-Alto",
+                "altitud_m": 1660,
+                "nivel_alerta_tecnica": "Verde",
+                "url": "https://rnvv.sernageomin.cl/volcan-mentolat/",
+            },
+            {
                 "id": "volcan_maca",
                 "nombre": "Volcán Macá",
-                "tipo": "Estratovolcán holoceno",
-                "lat": -45.1050,
+                "tipo": "Estratovolcán holoceno (2.300 m)",
+                "lat": -45.1000,
                 "lng": -73.1700,
                 "comuna_ine": "11201",
                 "codigo_comuna": "CL-XI-03",
-                "ranking_riesgo_sernageomin": 35,
+                "ranking_riesgo_sernageomin": 39,
+                "categoria_riesgo_rnvv": "Categoría III - Riesgo Moderado-Alto",
+                "altitud_m": 2300,
                 "nivel_alerta_tecnica": "Verde",
                 "url": "https://rnvv.sernageomin.cl/volcan-maca/",
             },
             {
                 "id": "volcan_cay",
                 "nombre": "Volcán Cay",
-                "tipo": "Estratovolcán",
+                "tipo": "Estratovolcán (2.090 m)",
                 "lat": -45.0600,
-                "lng": -72.9850,
+                "lng": -72.9900,
                 "comuna_ine": "11201",
+                "comunas_influencia": ["11201", "11202"],
                 "codigo_comuna": "CL-XI-03",
-                "ranking_riesgo_sernageomin": 46,
+                "ranking_riesgo_sernageomin": 63,
+                "categoria_riesgo_rnvv": "Categoría IV - Riesgo Bajo",
+                "altitud_m": 2090,
                 "nivel_alerta_tecnica": "Verde",
                 "url": "https://rnvv.sernageomin.cl/volcan-cay/",
             },
+        ],
+        "amenaza_transregional_magallanes": [
             {
-                "id": "volcan_mentolat",
-                "nombre": "Volcán Mentolat",
-                "tipo": "Estratovolcán con caldera de 6 km",
-                "lat": -44.6680,
-                "lng": -73.0850,
-                "comuna_ine": "11202",
-                "codigo_comuna": "CL-XI-04",
-                "ranking_riesgo_sernageomin": 38,
-                "nivel_alerta_tecnica": "Verde",
-                "url": "https://rnvv.sernageomin.cl/volcan-mentolat/",
-            },
+                "id": "volcan_lautaro",
+                "nombre": "Volcán Lautaro",
+                "lat": -49.0200,
+                "lng": -73.5000,
+                "altitud_m": 3623,
+                "categoria_riesgo_rnvv": "Categoría III",
+                "ubicacion_administrativa": "Comuna de Natales, Región de Magallanes",
+                "alcance_territorial": "Amenaza volcánica transregional en el borde sur de Villa O'Higgins (11302)",
+                "url": "https://rnvv.sernageomin.cl/volcan-lautaro/",
+            }
+        ],
+        "excluidos_sin_erupcion_holocena_confirmada": [
             {
-                "id": "volcan_melimoyu",
-                "nombre": "Volcán Melimoyu",
-                "tipo": "Estratovolcán con caldera elongada de 8 km",
-                "lat": -44.0830,
-                "lng": -72.8830,
-                "comuna_ine": "11202",
-                "codigo_comuna": "CL-XI-04",
-                "ranking_riesgo_sernageomin": 36,
-                "nivel_alerta_tecnica": "Verde",
-                "url": "https://rnvv.sernageomin.cl/volcan-melimoyu/",
-            },
-            {
-                "id": "volcan_arenales",
-                "nombre": "Volcán Arenales",
-                "tipo": "Estratovolcán cubierto por Campo de Hielo Norte",
+                "nombre": "Cerro / Macizo Arenales",
                 "lat": -47.2000,
-                "lng": -73.4830,
-                "comuna_ine": "11201",
-                "codigo_comuna": "CL-XI-03",
-                "ranking_riesgo_sernageomin": 58,
-                "nivel_alerta_tecnica": "Verde",
-                "url": "https://rnvv.sernageomin.cl/volcan-arenales/",
-            },
+                "lng": -73.4800,
+                "ubicacion": "Entre comunas de Tortel (11303) y Cochrane (11301)",
+                "referencia": "Stern et al. (2016, Andean Geology): descartada actividad eruptiva holocena confirmada; excluido de nómina de volcanes activos RNVV en Aysén (11201).",
+            }
         ],
     }
     with open(raw_file, "w", encoding="utf-8") as f:
@@ -1458,7 +1487,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 "dotacion_carabineros_cabecera": "4ª Comisaría Cochrane",
             },
             "riesgos_ambientales": {
-                "volcanes_influencia_directa": ["Volcán Hudson", "Volcán Arenales"],
+                "volcanes_influencia_directa": ["Volcán Hudson", "Cerro Arenales (macizo glaciado, sin erupción holocena confirmada)"],
                 "amenaza_principal_senapred": "Incendios forestales de gran escala (Megaincendio 2019 de 15.000 ha), crecidas del Río Baker y aislamiento invernal",
                 "incendios_forestales_promedio_anual_ha": 350.0,
                 "sismos_registrados_cercanos_usgs": sismos_por_comuna["11301"],
@@ -1530,7 +1559,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 "dotacion_carabineros_cabecera": "Retén Caleta Tortel y Capitanía de Puerto Caleta Tortel (Armada)",
             },
             "riesgos_ambientales": {
-                "volcanes_influencia_directa": ["Volcán Arenales"],
+                "volcanes_influencia_directa": ["Volcán Lautaro (transregional, Magallanes)", "Cerro Arenales (macizo glaciado, sin erupción holocena confirmada)"],
                 "amenaza_principal_senapred": "Crecidas torrenciales y vaciamientos glaciares (GLOF) del Río Baker y Ventisquero Steffen, temporales del Golfo de Penas",
                 "incendios_forestales_promedio_anual_ha": 10.0,
                 "sismos_registrados_cercanos_usgs": sismos_por_comuna["11303"],
@@ -1781,7 +1810,7 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             },
             "source_url": "https://www.saludaysen.cl",
         },
-        # Volcanes Activos (SERNAGEOMIN RNVV)
+        # Volcanes Activos (SERNAGEOMIN RNVV - 5 en Región de Aysén)
         {
             "id": "volcan_hudson",
             "nombre": "Volcán Hudson",
@@ -1789,10 +1818,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "codigo_comuna": "CL-XI-07",
             "comuna_ine": "11402",
             "lat": -45.9000,
-            "lng": -72.9667,
+            "lng": -72.9700,
             "atributos": {
-                "tipo_volcan": "Estratovolcán con caldera",
+                "tipo_volcan": "Estratovolcán con caldera activa de 10 km (1.905 m)",
                 "red_vigilancia": "SERNAGEOMIN RNVV OVDAS",
+                "ranking_rnvv_nacional": 12,
+                "categoria_riesgo": "Categoría I - Muy Alto Riesgo (regla excepción VEI >= 4)",
                 "erupcion_historica_destacada": 1991,
             },
             "source_url": "https://rnvv.sernageomin.cl/volcan-hudson/",
@@ -1803,10 +1834,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "tipo": "Complejo Volcánico Activo",
             "codigo_comuna": "CL-XI-03",
             "comuna_ine": "11201",
-            "lat": -45.1050,
+            "lat": -45.1000,
             "lng": -73.1700,
             "atributos": {
-                "tipo_volcan": "Estratovolcán holoceno",
+                "tipo_volcan": "Estratovolcán holoceno (2.300 m)",
+                "ranking_rnvv_nacional": 39,
+                "categoria_riesgo": "Categoría III",
                 "ubicacion": "Fiordo Aysén / Canal Moraleda",
             },
             "source_url": "https://rnvv.sernageomin.cl/volcan-maca/",
@@ -1818,10 +1851,12 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "codigo_comuna": "CL-XI-03",
             "comuna_ine": "11201",
             "lat": -45.0600,
-            "lng": -72.9850,
+            "lng": -72.9900,
             "atributos": {
-                "tipo_volcan": "Estratovolcán",
-                "ubicacion": "Noreste del Volcán Macá",
+                "tipo_volcan": "Estratovolcán (2.090 m)",
+                "ranking_rnvv_nacional": 63,
+                "categoria_riesgo": "Categoría IV",
+                "ubicacion": "Comunas de Aysén y Cisnes",
             },
             "source_url": "https://rnvv.sernageomin.cl/volcan-cay/",
         },
@@ -1831,11 +1866,13 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "tipo": "Complejo Volcánico Activo",
             "codigo_comuna": "CL-XI-04",
             "comuna_ine": "11202",
-            "lat": -44.6680,
-            "lng": -73.0850,
+            "lat": -44.7000,
+            "lng": -73.0800,
             "atributos": {
-                "tipo_volcan": "Estratovolcán con caldera",
-                "ubicacion": "Isla Magdalena",
+                "tipo_volcan": "Estratovolcán con caldera (1.660 m)",
+                "ranking_rnvv_nacional": 35,
+                "categoria_riesgo": "Categoría III",
+                "ubicacion": "Isla Magdalena, comuna de Cisnes",
             },
             "source_url": "https://rnvv.sernageomin.cl/volcan-mentolat/",
         },
@@ -1845,27 +1882,15 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "tipo": "Complejo Volcánico Activo",
             "codigo_comuna": "CL-XI-04",
             "comuna_ine": "11202",
-            "lat": -44.0830,
-            "lng": -72.8830,
+            "lat": -44.0800,
+            "lng": -72.8800,
             "atributos": {
-                "tipo_volcan": "Estratovolcán elongado",
-                "ubicacion": "Norte del Canal Jacaf",
+                "tipo_volcan": "Estratovolcán elongado (2.400 m)",
+                "ranking_rnvv_nacional": 24,
+                "categoria_riesgo": "Categoría II",
+                "ubicacion": "Norte del Canal Jacaf, comuna de Cisnes",
             },
             "source_url": "https://rnvv.sernageomin.cl/volcan-melimoyu/",
-        },
-        {
-            "id": "volcan_arenales",
-            "nombre": "Volcán Arenales",
-            "tipo": "Complejo Volcánico Activo",
-            "codigo_comuna": "CL-XI-03",
-            "comuna_ine": "11201",
-            "lat": -47.2000,
-            "lng": -73.4830,
-            "atributos": {
-                "tipo_volcan": "Estratovolcán englazado",
-                "ubicacion": "Campo de Hielo Norte",
-            },
-            "source_url": "https://rnvv.sernageomin.cl/volcan-arenales/",
         },
         # Instituciones de Educación Superior
         {
@@ -2191,10 +2216,20 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 if sk in gdat["seguridad_cead"]:
                     rsec[sk] = gdat["seguridad_cead"][sk]
 
+    # Sprint 10: Remover Cerro Arenales de nodos volcanicos RNVV en Aysen y sincronizar 5 volcanes activos
+    volc_by_id = {vn["id"]: vn for vn in nodos if str(vn.get("id", "")).startswith("volcan_")}
+    filtered_nodos = []
     for n_disk in merged.get("nodos_georreferenciados", []):
-        if n_disk.get("id") == "hosp_coyhaique":
+        nid = n_disk.get("id")
+        if nid == "volcan_arenales":
+            continue
+        if nid == "hosp_coyhaique":
             n_disk["lat"] = -45.5712
             n_disk["lng"] = -72.0685
+        elif nid in volc_by_id:
+            n_disk = volc_by_id[nid]
+        filtered_nodos.append(n_disk)
+    merged["nodos_georreferenciados"] = filtered_nodos
 
     with open(out_json, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(merged, fh, indent=2, ensure_ascii=False)

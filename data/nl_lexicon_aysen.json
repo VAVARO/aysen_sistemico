@@ -3948,6 +3948,41 @@
       ]
     },
     {
+      "id": "estaciones_sinca_emrp_n",
+      "canonicalId": "estaciones_sinca_emrp_n",
+      "name": "Estaciones Continuas EMRP SINCA MMA (unidades)",
+      "shortName": "Estaciones EMRP SINCA",
+      "unit": "estaciones",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 30,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "estaciones sinca",
+        "estaciones emrp",
+        "monitoreo continuo mp25"
+      ]
+    },
+    {
+      "id": "episodios_gec_mp25_2024",
+      "canonicalId": "dias_sobre_norma_mp25",
+      "isAliasOf": "dias_sobre_norma_mp25",
+      "name": "Episodios Críticos GEC MP2,5 Coyhaique y Aysén (Corte 2024)",
+      "shortName": "Episodios GEC 2024",
+      "unit": "episodios",
+      "hub": "biodiversidad",
+      "hubTitle": "VII. Biodiversidad, Clima y Riesgos",
+      "nodeId": 30,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "gec 2024",
+        "episodios gec 2024",
+        "alertas mp25 2024"
+      ]
+    },
+    {
       "id": "pib_regional_nominal_mmclp",
       "canonicalId": "pib_regional_nominal_mmclp",
       "name": "Producto Interno Bruto (PIB) Regional Nominal (2015–2026)",

@@ -421,9 +421,20 @@ class TestM3BundleByteSyncAndZeroEmojis(unittest.TestCase):
             const d = window.AYSEN_HUBS_DATA;
             let errors = 0;
             function walk(v, path) {
-                if (v === null || v === undefined || (typeof v === 'number' && isNaN(v))) {
+                if (v === undefined || (typeof v === 'number' && isNaN(v))) {
                     console.error('Bad value at ' + path + ': ' + v);
                     errors++;
+                    return;
+                }
+                if (v === null) {
+                    const allowedNull = (
+                        /^bundle\.comunas\[\d+\]\.(dias_sobre_norma_mp25|episodios_gec_mp25_anual|episodios_gec_mp25_2024)$/.test(path) ||
+                        /^bundle\.series\.fndr_asignado_vs_ejecutado_2015_2025\[\d+\]\.gasto_actual_mclp$/.test(path)
+                    );
+                    if (!allowedNull) {
+                        console.error('Bad value at ' + path + ': ' + v);
+                        errors++;
+                    }
                     return;
                 }
                 if (Array.isArray(v)) {

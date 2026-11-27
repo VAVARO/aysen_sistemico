@@ -20,18 +20,17 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro georreferenciado de los 6 complejos volcánicos activos de Aysén (Hudson, Macá, Cay, Mentolat, Melimoyu y Lautaro — SERNAGEOMIN RNVV), los sismos instrumentales registrados por la API de USGS y la red de estaciones regionales. Incluye la ubicación, magnitud y profundidad de los sismos registrados en torno a la Triple Unión de Taitao / Zona de Fractura de Chile y los volcanes con influencia sobre cada comuna.
+Catastro georreferenciado de los 5 complejos volcánicos activos monitoreados por la RNVV de SERNAGEOMIN dentro de la Región de Aysén (Hudson `#12` Cat. I, Melimoyu Cat. II, Mentolat `#35` Cat. III, Macá `#39` Cat. III y Cay `#63` Cat. IV), junto a los sismos instrumentales USGS y la exclusión técnica del Cerro Arenales (sin erupción holocena confirmada, Stern et al. 2016), considerando al Volcán Lautaro (Cat. III, Natales/Magallanes) como amenaza volcánica transregional en el borde sur de Villa O'Higgins (`11302`). El Volcán Hudson (`-45.90, -72.97`, `1.905 m`, Aysén / Río Ibáñez) ocupa el puesto `#12` Nacional (Categoría I — Muy Alto Riesgo por regla VEI >= 4); Melimoyu (`Cat. II`), Mentolat (`#35 Cat. III`) y Cay (`#63 Cat. IV`) monitorean la Falla Liquiñe-Ofqui.
 
 ## Indicadores Comunales Verificados
 
-| Volcan / Sismo / Estación | Comuna INE | Tipo de Nodo | Atributos / Magnitud | Coordenadas |
+| Volcán / Sismo / Estación | Comuna INE | Tipo de Nodo | Atributos / Magnitud | Coordenadas |
 | --- | --- | --- | --- | --- |
-| Volcán Hudson | 11402 | Complejo Volcánico Activo | tipo volcan: Estratovolcán con caldera · red vigilancia: SERNAGEOMIN RNVV OVDAS | -45.9, -72.9667 |
-| Volcán Macá | 11201 | Complejo Volcánico Activo | tipo volcan: Estratovolcán holoceno · ubicacion: Fiordo Aysén / Canal Moraleda | -45.105, -73.17 |
-| Volcán Cay | 11201 | Complejo Volcánico Activo | tipo volcan: Estratovolcán · ubicacion: Noreste del Volcán Macá | -45.06, -72.985 |
-| Volcán Mentolat | 11202 | Complejo Volcánico Activo | tipo volcan: Estratovolcán con caldera · ubicacion: Isla Magdalena | -44.668, -73.085 |
-| Volcán Melimoyu | 11202 | Complejo Volcánico Activo | tipo volcan: Estratovolcán elongado · ubicacion: Norte del Canal Jacaf | -44.083, -72.883 |
-| Volcán Arenales | 11201 | Complejo Volcánico Activo | tipo volcan: Estratovolcán englazado · ubicacion: Campo de Hielo Norte | -47.2, -73.483 |
+| Volcán Hudson | 11402 | Complejo Volcánico Activo | tipo volcan: Estratovolcán con caldera activa de 10 km (1.905 m) · red vigilancia: SERNAGEOMIN RNVV OVDAS | -45.9, -72.97 |
+| Volcán Macá | 11201 | Complejo Volcánico Activo | tipo volcan: Estratovolcán holoceno (2.300 m) · ranking rnvv nacional: 39 | -45.1, -73.17 |
+| Volcán Cay | 11201 | Complejo Volcánico Activo | tipo volcan: Estratovolcán (2.090 m) · ranking rnvv nacional: 63 | -45.06, -72.99 |
+| Volcán Mentolat | 11202 | Complejo Volcánico Activo | tipo volcan: Estratovolcán con caldera (1.660 m) · ranking rnvv nacional: 35 | -44.7, -73.08 |
+| Volcán Melimoyu | 11202 | Complejo Volcánico Activo | tipo volcan: Estratovolcán elongado (2.400 m) · ranking rnvv nacional: 24 | -44.08, -72.88 |
 
 ## Metadatos de Procedencia Institucional
 

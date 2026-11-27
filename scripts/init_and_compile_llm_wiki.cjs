@@ -80,7 +80,7 @@ function cleanMarkdownBolds(text) {
   return String(text || '')
     .replace(/\*\*/g, '')
     .replace(/\b12 holdings\b/gi, '13 holdings')
-    .replace(/\b6\.410 km\b/gi, '10.035,7 km')
+    .replace(/\b6\.410 km\b/gi, '8.721,6 km')
     .replace(/\b1\.842 sitios\b/gi, '16 centros')
     .replace(/\b28 postas\b/gi, '27 postas');
 }
@@ -277,15 +277,15 @@ const HUB_META = [
       'amenaza_volcanica_sismica_idx'
     ],
     fuentes_oficiales: [
-      'MMA / CONAF SIT — Inventario Forestal y Especies en Categoría de Conservación (RCE)',
-      'DGA-MOP — Inventario Público de Glaciares (10.035,7 km² regionales)',
-      'MMA SINCA — Red de Monitoreo de Calidad del Aire MP2.5',
-      'SERNAGEOMIN RNVV / USGS — Red Nacional de Vigilancia Volcánica y Sismicidad'
+      'CONAF SIT 2026 — Catastro Vegetacional (10.667.211,5 ha; 5.152.384,3 ha bosque nativo)',
+      'DGA-MOP — Inventario Público de Glaciares IPG 2022 (10.301 glaciares; 8.721,6 km²)',
+      'MMA — 20° Proceso RCE (D.S. N° 29/2025, oct-2026) y Red SINCA EMRP (Coyhaique/Aysén)',
+      'SERNAGEOMIN RNVV / USGS / DGA Red Hidrométrica (5 volcanes activos RNVV en Aysén)'
     ],
     conceptLinks: ['conceptos/huemules_multidimensional', 'conceptos/volcan_hudson_y_campos_de_hielo'],
     adrLinks: ['adr/adr_002_reconciliacion_38_fuentes_invariantes', 'adr/adr_003_enrutador_hibrido_llm_first_omniroute'],
     synthesis:
-      'El Hub VII (Biodiversidad, Clima y Riesgos Geológicos) abarca los ecosistemas templado-fríos y subantárticos de Aysén, incluyendo 10.035,7 km² de superficie glaciar inventariada por la DGA-MOP (concentrados en O\'Higgins, Tortel, Aysén y Río Ibáñez), más de 4,8 millones de hectáreas de bosque nativo y hábitats críticos de especies RCE como el huemul (Hippocamelus bisulcus). Asimismo, cuantifica dos riesgos socioambientales opuestos: la contaminación atmosférica invernal por material particulado fino MP2.5 derivado de la combustión de leña (87 días sobre norma diaria y 41 episodios críticos GEC en Coyhaique) y la amenaza volcanológica y sísmica del arco austral liderada por el Volcán Hudson (#2 del ranking RNVV de SERNAGEOMIN), Macá, Cay y Mentolat.'
+      'El Hub VII (Biodiversidad, Clima y Riesgos Geológicos) integra el Catastro Vegetacional CONAF 2024-2026 (5.152.384,3 ha de bosque nativo [48,30% de 10.667.211,5 ha catastradas], con 5.189.923,8 ha de subuso Bosques, 2.387.525,4 ha en SNASPE, 2.606.729,0 ha de praderas/matorrales y 106.484,6 ha de humedales CONAF), junto al Inventario Público de Glaciares IPG 2022 de DGA-MOP (10.301 glaciares [39,4% nacional, 1° en número] y 8.721,6 km² [41,5% nacional, ~1.235,6 km³ eq. agua]). En fauna (20° Proceso RCE MMA, 154 taxones y 64 amenazados), Aysén concentra 750-1.000 huemules (~50%-60% de <1.500 maduros mundiales) y Ballena Azul <250 (~217), mientras Castor canadensis registra 0 comunas invadidas (SAT preventivo mar-2025). En aire y riesgos, solo Coyhaique (2 EMRP, 97 GEC en 2026 / 87 en 2024) y Puerto Aysén (1 EMRP Vialidad, 16 días base PDA D.S. N° 03/2025) tienen monitoreo continuo EMRP SINCA, el Río Baker en Bertrand (BNA 11530000-8) alcanza su máximo estival en febrero (675 m³/s) y el Volcán Hudson ocupa el puesto #12 nacional RNVV (Categoría I).'
   },
   {
     idx: 8,
@@ -574,7 +574,7 @@ const CONCEPT_SPECS = [
       'En la Región de Aysén, «Huemules» alude a tres entidades territoriales y ecológicas verificadas: ' +
       '(1) Paso Fronterizo Huemules (comuna de Coyhaique, sector Balmaceda): complejo aduanero terrestre del corredor binacional ATIT 1974 junto a la Ruta 40 argentina hacia Comodoro Rivadavia y barrera de bioseguridad fitosanitaria del SAG; ' +
       '(2) Río Huemules y Valle Huemules (sector limítrofe Aysén / Coyhaique): cuenca fluvioglaciar que drena el flanco occidental del Volcán Hudson hacia el estero Elefantes; y ' +
-      '(3) Huemul (Hippocamelus bisulcus, en plural «huemules»): cérvido nativo en categoría En Peligro (EN) en el RCE MMA, con una población estimada de 1.500 a 2.000 individuos en Aysén (60% al 70% de la población mundial) protegida en áreas SNASPE como el Parque Nacional Cerro Castillo y la Reserva Nacional Tamango.'
+      '(3) Huemul (Hippocamelus bisulcus, en plural «huemules»): cérvido nativo en categoría En Peligro (EN) en el RCE MMA, con una población mundial total inferior a 1.500 individuos maduros (101 subpoblaciones Chile-Argentina, 17° Proceso RCE), de la cual Aysén concentra entre 750 y 1.000 individuos (~50%–60% mundial) protegidos en áreas SNASPE como el Parque Nacional Cerro Castillo y la Reserva Nacional Tamango.'
   },
   {
     id: 'volcan_hudson',
@@ -588,15 +588,15 @@ const CONCEPT_SPECS = [
       'visitantes_snaspe'
     ],
     fuentes_oficiales: [
-      'SERNAGEOMIN — Red Nacional de Vigilancia Volcánica (RNVV) y Ranking de Riesgo Específico',
+      'SERNAGEOMIN — Red Nacional de Vigilancia Volcánica (RNVV, Volcán Hudson #12 Nacional Cat. I)',
       'USGS / CSN — Catálogo Instrumental de Sismicidad en el Arco Volcánico Austral',
-      'DGA-MOP — Inventario de Glaciares de Calota e Interacción Glacio-Volcánica'
+      'DGA-MOP — Inventario Público de Glaciares IPG 2022 (8.721,6 km² / 10.301 glaciares)'
     ],
     relatedComunas: ['rio_ibanez', 'aysen', 'chile_chico', 'coyhaique'],
     relatedNodos: [30, 31, 28],
     relatedAdrs: ['adr_003_enrutador_hibrido_llm_first_omniroute', 'adr_002_reconciliacion_38_fuentes_invariantes'],
     synthesis:
-      'El Volcán Hudson (límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km, #2 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico, junto a 142 eventos sísmicos USGS en el clúster Hudson/Simpson.'
+      'El Volcán Hudson (1.905 m, límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km en el puesto #12 nacional del Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo por regla de excepción VEI >= 4), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico, junto a 142 eventos sísmicos USGS en el clúster Hudson/Simpson.'
   },
   {
     id: 'laguna_san_rafael_campos_hielo',
@@ -611,7 +611,7 @@ const CONCEPT_SPECS = [
       'glaciares_dga_n'
     ],
     fuentes_oficiales: [
-      'DGA-MOP — Inventario Público de Glaciares de la Región de Aysén (10.035,7 km²)',
+      'DGA-MOP — Inventario Público de Glaciares IPG 2022 de la Región de Aysén (8.721,6 km² / 10.301 glaciares)',
       'CONAF — Estadísticas de Visitación SNASPE y Plan de Manejo PN Laguna San Rafael',
       'CECs / Universidad de Chile / CIEP — Monitoreo Glaciológico en Campos de Hielo Norte y Sur'
     ],
@@ -619,7 +619,7 @@ const CONCEPT_SPECS = [
     relatedNodos: [4, 5, 30, 36],
     relatedAdrs: ['adr_002_reconciliacion_38_fuentes_invariantes', 'adr_003_enrutador_hibrido_llm_first_omniroute'],
     synthesis:
-      'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional (DGA-MOP). Registra 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de retroceso glacial.'
+      'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 8.721,6 km² de superficie glaciar regional (10.301 glaciares, IPG 2022 DGA-MOP). Registra 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de retroceso glacial.'
   },
   {
     id: 'conectividad_multimodal_ruta7',
@@ -684,8 +684,8 @@ const CANONICAL_8_CONCEPTS = [
       'superficie_snaspe_pct'
     ],
     fuentes_oficiales: [
-      'SERNAGEOMIN — Red Nacional de Vigilancia Volcánica (RNVV, Volcán Hudson #2 Nacional)',
-      'DGA-MOP — Inventario Público de Glaciares (10.035,7 km² en la Región de Aysén)',
+      'SERNAGEOMIN — Red Nacional de Vigilancia Volcánica (RNVV, 5 volcanes activos en Aysén; Hudson #12 Nacional Cat. I)',
+      'DGA-MOP — Inventario Público de Glaciares IPG 2022 / SOCHICRI oct-2025 (10.301 glaciares / 8.721,6 km² en Aysén)',
       'CONAF — Estadísticas de Visitación SNASPE (Parque Nacional Laguna San Rafael)',
       'USGS / CSN — Catálogo Sísmico del Clúster Hudson-Simpson'
     ],
@@ -694,13 +694,13 @@ const CANONICAL_8_CONCEPTS = [
     relatedAdrs: ['adr_002_reconciliacion_38_fuentes_invariantes', 'adr_003_enrutador_hibrido_llm_first_omniroute'],
     synthesis:
       'El corredor criosférico y volcanológico occidental de Aysén articula dos hitos geofísicos mayores: ' +
-      '(1) El Volcán Hudson (límite comunal Río Ibáñez / Aysén), estratovolcán con caldera activa de 10 km clasificado en el puesto #2 nacional del Ranking RNVV de SERNAGEOMIN (Categoría I de Muy Alto Riesgo), cuyas erupciones plinianas de 1971 y 1991 provocaron lahares catastróficos por el valle del Río Huemules y dispersión de tefra hacia Río Ibáñez y Chile Chico, registrando 142 eventos sísmicos instrumentales USGS en el clúster Hudson/Simpson; y ' +
-      '(2) El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez), puerta occidental al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional inventariada por la DGA-MOP, que recibe 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de ablation y retroceso frontal.',
+      '(1) El Volcán Hudson (-45.90, -72.97, 1.905 m, límite comunal Río Ibáñez / Aysén), estratovolcán con caldera activa de 10 km clasificado en el puesto #12 nacional del Ranking RNVV de SERNAGEOMIN (Categoría I de Muy Alto Riesgo por regla de excepción VEI >= 4), parte de los 5 volcanes activos de Aysén monitoreados por RNVV (junto a Melimoyu Cat. II, Mentolat #35 Cat. III, Macá #39 Cat. III y Cay #63 Cat. IV), cuyas erupciones plinianas de 1971 y 1991 provocaron lahares catastróficos por el valle del Río Huemules y dispersión de tefra hacia Río Ibáñez y Chile Chico; y ' +
+      '(2) El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez), puerta occidental al Campo de Hielo Norte dentro de los 8.721,6 km² y 10.301 glaciares inventariados por DGA-MOP IPG 2022 (~1.235,6 km³ de agua equivalente), que recibe 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael.',
     entitySyntheses: {
       volcan_hudson:
-        'El Volcán Hudson (límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km, #2 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico, junto a 142 eventos sísmicos USGS en el clúster Hudson/Simpson.',
+        'El Volcán Hudson (-45.90, -72.97, límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km, #12 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo por regla de excepción VEI >= 4), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico. Cerro Arenales queda excluido de volcanes activos RNVV (Stern et al. 2016) y Volcán Lautaro (Cat. III, Natales/Magallanes) actúa como amenaza transregional en el borde sur de O\'Higgins.',
       laguna_san_rafael_campos_hielo:
-        'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional (DGA-MOP). Registra 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de retroceso glacial.'
+        'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 8.721,6 km² y 10.301 glaciares de superficie glaciar regional según el IPG 2022 DGA-MOP (SOCHICRI oct-2025). Registra 39.800 visitas anuales SNASPE (CONAF 2026).'
     }
   }
 ];
@@ -750,7 +750,7 @@ const ADR_SPECS = [
     ],
     fuentes_oficiales: [
       'SUBPESCA / SERNAPESCA — Catastro Acuícola Reconciliado',
-      'DGA-MOP — Inventario Público de Glaciares (10.035,7 km²)',
+      'DGA-MOP — Inventario Público de Glaciares IPG 2022 / SOCHICRI oct-2025 (10.301 glaciares / 8.721,6 km²)',
       'DEIS - MINSAL / Servicio de Salud Aysén — 27 Postas de Salud Rural y 261 Camas',
       'ANID / CORFO / CIEP / UAysén — 16 Centros CTCi y 124 Investigadores Residentes',
       'DIPRES / GORE Aysén — Ejecución Presupuestaria FNDR'
@@ -759,7 +759,7 @@ const ADR_SPECS = [
     relatedComunas: ['coyhaique', 'aysen', 'cisnes', 'guaitecas', 'tortel', 'ohiggins'],
     relatedConcepts: ['modelo_salmonicultor', 'ecosistema_ctci_ciencia', 'red_asistencial_salud', 'volcan_hudson_y_campos_de_hielo'],
     synthesis:
-      'Tras auditar los 10 Hubs, se establecieron invariantes numéricos únicos en todo el repositorio para eliminar discrepancias entre tablas comunales, nodos satélite y respuestas del Consultor IA: (1) Salmonicultura: 13 holdings salmoneros madres con 745 concesiones otorgadas en las 4 comunas costeras, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada; (2) Criósfera DGA: 10.035,7 km² de superficie glaciar regional; (3) Salud Rural: 27 Postas de Salud Rural (PSR) y 5 hospitales con 261 camas; (4) Ecosistema CTCi: 16 centros científicos con 124 investigadores residentes y 179 proyectos totales (120 ANID + 59 CORFO); (5) Finanzas GORE y Municipales: ingresos municipales BCN/SINIM 2025 de 84.820,68 M$ (FCM 41.753,32 M$ brutos), FNDR 2025 devengado de 73.863,0 M$ (92,0%) y acuerdo Hacienda 2027 en 80.748,0 M$; (6) Economía, Inversión y Suelo (Hub V — Sprint 8): PIB nominal BCCh 2025 de 1.991.000 MM$ (+8,5% real, 13 actividades, 1T 2026 -2,6% real), demografía SII (13.453 empresas / 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs. 131.520 MUF valor bruto de producción), SEIA sin alucinaciones extrarregionales y sincronía 1:1 (Cuenta Pública SEA 2025), ChileCompra 2026 YTD (228.874,2 M$), SERNAGEOMIN (356 conc. / 128.511 ha), ODEPA (144.118 bovinos / 177.972 ovinos) y CONAF 2026 (10.667.211,5 ha / 5.152.384,3 ha bosque nativo); y (7) Desarrollo Social (Hub VI — Sprint 9): Censo 2024 (100.745 hab. INE / 39.964 hogares / 52.294 viviendas / IAM 66,2), MINVU CECT (1.927 cuantitativo / 12,9% cualitativo = 5.155 / 10 campamentos / PEH 1.671 = 129,2%), DOH-MOP (47 SSR / 28.833 personas / 9.185 familias), Educación (86 colegios; 55 SLEP + 10 VTF; 2.924 SIES 2026) y CEAD VIF oficial 2023–2025.',
+      'Tras auditar los 10 Hubs, se establecieron invariantes numéricos únicos en todo el repositorio para eliminar discrepancias entre tablas comunales, nodos satélite y respuestas del Consultor IA: (1) Salmonicultura: 13 holdings salmoneros madres con 745 concesiones otorgadas en las 4 comunas costeras, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada; (2) Criósfera DGA (IPG 2022 / SOCHICRI oct-2025): 10.301 glaciares y 8.721,6 km² de superficie glaciar regional (~1.235,6 km³ agua equivalente); (3) Salud Rural: 27 Postas de Salud Rural (PSR) y 5 hospitales con 261 camas; (4) Ecosistema CTCi: 16 centros científicos con 124 investigadores residentes y 179 proyectos totales (120 ANID + 59 CORFO); (5) Finanzas GORE y Municipales: ingresos municipales BCN/SINIM 2025 de 84.820,68 M$ (FCM 41.753,32 M$ brutos), FNDR 2025 devengado de 73.863,0 M$ (92,0%) y acuerdo Hacienda 2027 en 80.748,0 M$; (6) Economía, Inversión y Suelo (Hub V — Sprint 8): PIB nominal BCCh 2025 de 1.991.000 MM$ (+8,5% real, 13 actividades, 1T 2026 -2,6% real), demografía SII (13.453 empresas / 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs. 131.520 MUF valor bruto de producción), SEIA sin alucinaciones extrarregionales y sincronía 1:1 (Cuenta Pública SEA 2025), ChileCompra 2026 YTD (228.874,2 M$), SERNAGEOMIN (356 conc. / 128.511 ha), ODEPA (144.118 bovinos / 177.972 ovinos) y CONAF 2026 (10.667.211,5 ha / 5.152.384,3 ha bosque nativo); (7) Desarrollo Social (Hub VI — Sprint 9): Censo 2024 (100.745 hab. INE / 39.964 hogares / 52.294 viviendas / IAM 66,2), MINVU CECT (1.927 cuantitativo / 12,9% cualitativo = 5.155 / 10 campamentos / PEH 1.671 = 129,2%), DOH-MOP (47 SSR / 28.833 personas / 9.185 familias), Educación (86 colegios; 55 SLEP + 10 VTF; 2.924 SIES 2026) y CEAD VIF oficial 2023–2025; y (8) Biodiversidad, Criósfera, Aire e Hidrología (Hub VII — Sprint 10): CONAF 2026 (4 tipos forestales sumando 5.152.384,3 ha incl. Coihue de Magallanes 882.420,0 ha; 5.189.923,8 ha subuso Bosques), 20° Proceso RCE oct-2026 (154 taxones, 64 en amenaza directa; Huemul 750–1.000 en Aysén y < 1.500 global; Ballena Azul < 250; Huillín EN VI–X / IC XI–XII), EEI (Castor 0 comunas invadidas con SAT mar-2025; Jabalí 6 comunas; Didymo 6 cuencas BNA D.Ac. N° 414/2024), SINCA EMRP únicamente en Coyhaique (97 GEC 2026 / 87 en 2024) y Puerto Aysén (16 días base 2022 / 34 en 2018), régimen nivo-glacial DGA Río Baker BNA 11530000-8 (Feb 675 m³/s, Ago 395 m³/s; 8° conector dga_hidrologia) y 5 volcanes RNVV en Aysén (Hudson #12 Cat. I; exclusión Cerro Arenales).',
     context:
       'Los catastros administrativos chilenos publican cortes temporales distintos (por ejemplo, concesiones acuícolas otorgadas vs. operativas, o presupuesto FNDR ley inicial vs. devengado anual), lo que inducía contradicciones aparentes cuando un analista cruzaba dos módulos.',
     decision:
@@ -1477,6 +1477,10 @@ function generateLogPage() {
     '## [2026-11-27] ingest | Sprint 9: Reingeniería Forense del Hub VI (Censo 2024, CASEN 2022/2024, MINVU CECT/PEH, DOH-MOP, SLEP/SIES 2026, CEAD) y Eval E19',
     '- Parche de residuos Sprint 8 (eliminado falso `isAliasOf: total_proyectos_ctci` en `matricula_educacion_superior_sies_n`, alineado `ventas_sii_domicilio_local_muf` sumando `25.800 MUF` y desagregación `personas` vs. `familias` SSR/APR) y actualización oficial de [[hubs/hub_06_social|Hub VI]] (Coyhaique `57.823 [57,4%]` y Aysén `23.170 [23,0%]`), `39.964` hogares, `52.294` viviendas (`39.631` ocupadas), IAM `66,2` (`1992: 13,7`), masculinidad `97,9`, pueblos originarios `29,0%` e inmigración `3,9%`.',
     '- Reconciliación CASEN 2022/2024 (nueva metodología ene-2026: `14,3%` ingresos / `12,1%` multidimensional), MINVU CECT (`1.927` déficit cuantitativo = `4,8%`, `12,9%` cualitativo = `5.155`, `10` campamentos / `244` hogares, cierre PEH feb-2026 `1.671` viviendas = `129,2%`), DOH-MOP (`47` SSR / `28.833` pers. / `9.185` familias), Educación (`86` colegios, `55` SLEP + `10` VTF, `2.924` SIES 2026, Tortel `1` escuela y `0` liceos), CEAD/VIF 2023–2025 sin múltiplos redondos sintéticos y **Eval E19** en [[nodos/nodo_23|Nodo #23]], [[nodos/nodo_25|#25]], [[nodos/nodo_26|#26]] y [[nodos/nodo_41|#41]].',
+    '',
+    '## [2026-11-27] ingest | Sprint 10: Reingeniería Forense del Hub VII (Biodiversidad, Criósfera IPG 2022, RCE, EEI, SINCA, DGA `BNA 11530000-8`, Volcanismo RNVV), 8° Conector `dga_hidrologia` y Eval E20',
+    '- Cierre de residuo SIES 2026 en [[nodos/nodo_36|Nodo #36]] (`2.924` estudiantes: `2.187` Coyhaique + `737` Aysén) y reconciliación integral del [[hubs/hub_07_biodiversidad|Hub VII]]: Catastro CONAF 2026 con 4 tipos forestales sumando `5.152.384,3 ha` (`Coihue de Magallanes 882.420,0 ha`), `5.189.923,8 ha` Bosques total y `2.387.525,4 ha` en SNASPE; criósfera IPG 2022 (`10.301` glaciares / `8.721,6 km²` / `~1.235,6 km³`); 20° Proceso RCE oct-2026 (`154` taxones / `64` amenazadas, Huemul `750–1.000` en Aysén y `<1.500` global, Ballena Azul `<250`, Huillín EN VI–X / IC XI–XII); EEI (`Castor` `0` comunas establecidas con SAT mar-2025, `Jabalí` `6` comunas, `Didymo` `6` cuencas BNA D.Ac. N° 414/2024, `Visón` WCS/SAG ago-2026).',
+    '- Exclusividad SINCA EMRP en Coyhaique (`97` GEC 2026 / `87` 2024) y Puerto Aysén (`16` días base 2022 / `34` 2018, D.S. N° 03/2025), régimen nivo-glacial del Río Baker `BNA 11530000-8` (máx. Feb `675 m³/s`, mín. Ago `395 m³/s`, 12 meses cerrados sin fechas futuras), 5 volcanes activos RNVV en Aysén (Hudson `#12` Cat. I; exclusión Cerro Arenales; Volcán Lautaro transregional), registro del 8° conector en vivo `dga_hidrologia` y **Eval E20** en [[nodos/nodo_27|Nodos #27]]–[[nodos/nodo_31|#31]] y [[conceptos/volcan_hudson_y_campos_de_hielo|Volcán Hudson y Campos de Hielo]].',
     ''
   ].join('\n');
 

@@ -1435,7 +1435,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
             assert.strictEqual(p7.chart.type, 'scatter', 'P7 debe producir scatter');
             const p7Vars = [p7.chart.varX, p7.chart.varY];
             assert(p7Vars.includes('hogares_lena_pct') && p7Vars.includes('dias_sobre_norma_mp25'), 'P7 variables esperadas: ' + p7Vars.join(','));
-            assert((p7.reply.includes('-0,28') || p7.reply.includes('negativa')) && p7.reply.includes('Guaitecas') && p7.reply.includes('inferior-derecho'), 'A3 scatter debe coincidir con r=-0,28, minimo Guaitecas y cuadrante inferior-derecho: ' + p7.reply);
+            assert(p7.reply.includes('negativa') && (p7.reply.includes('Aysén') || p7.reply.includes('Guaitecas')) && p7.reply.includes('inferior-derecho'), 'A3 scatter debe reflejar correlacion negativa SINCA EMRP y cuadrante inferior-derecho: ' + p7.reply);
             assert(!/\btendencia positiva\b|\bpositiva\b/i.test(p7.reply), 'A3 scatter no debe decir tendencia positiva: ' + p7.reply);
 
             // 4. Jailbreak fuera de dominio (P4) -> render false

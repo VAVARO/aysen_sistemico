@@ -55,75 +55,75 @@
       "etiqueta_metrica": "Caudal Medio Mensual (m³/s)",
       "serie_temporal": [
         {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 625,
+          "unidad": "m³/s"
+        },
+        {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
-          "valor": 580,
+          "valor": 655,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-02",
           "fecha": "2026-02-15",
-          "valor": 620,
+          "valor": 675,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-03",
           "fecha": "2026-03-15",
-          "valor": 690,
+          "valor": 615,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-04",
           "fecha": "2026-04-15",
-          "valor": 740,
+          "valor": 525,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-05",
           "fecha": "2026-05-15",
-          "valor": 610,
+          "valor": 475,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-06",
           "fecha": "2026-06-15",
-          "valor": 480,
+          "valor": 440,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-07",
           "fecha": "2026-07-15",
-          "valor": 430,
+          "valor": 415,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-08",
           "fecha": "2026-08-15",
-          "valor": 460,
+          "valor": 395,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-09",
           "fecha": "2026-09-15",
-          "valor": 520,
+          "valor": 405,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-10",
           "fecha": "2026-10-15",
-          "valor": 570,
+          "valor": 465,
           "unidad": "m³/s"
         },
         {
           "periodo_mes": "2026-11",
           "fecha": "2026-11-15",
-          "valor": 610,
-          "unidad": "m³/s"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 660,
+          "valor": 555,
           "unidad": "m³/s"
         }
       ]
@@ -151,6 +151,12 @@
       "unidad": "m",
       "etiqueta_metrica": "Nivel de Agua Limnígrafo (m)",
       "serie_temporal": [
+        {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 3.2,
+          "unidad": "m"
+        },
         {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
@@ -215,12 +221,6 @@
           "periodo_mes": "2026-11",
           "fecha": "2026-11-15",
           "valor": 3.1,
-          "unidad": "m"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 3.2,
           "unidad": "m"
         }
       ]
@@ -443,6 +443,12 @@
       "etiqueta_metrica": "Caudal Medio (m³/s)",
       "serie_temporal": [
         {
+          "periodo_mes": "2025-12",
+          "fecha": "2025-12-15",
+          "valor": 45,
+          "unidad": "m³/s"
+        },
+        {
           "periodo_mes": "2026-01",
           "fecha": "2026-01-15",
           "valor": 42,
@@ -506,12 +512,6 @@
           "periodo_mes": "2026-11",
           "fecha": "2026-11-15",
           "valor": 48,
-          "unidad": "m³/s"
-        },
-        {
-          "periodo_mes": "2026-12",
-          "fecha": "2026-12-15",
-          "valor": 45,
           "unidad": "m³/s"
         }
       ]

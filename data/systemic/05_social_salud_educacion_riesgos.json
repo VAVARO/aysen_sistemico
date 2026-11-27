@@ -5113,10 +5113,12 @@
       "codigo_comuna": "CL-XI-07",
       "comuna_ine": "11402",
       "lat": -45.9,
-      "lng": -72.9667,
+      "lng": -72.97,
       "atributos": {
-        "tipo_volcan": "Estratovolcán con caldera",
+        "tipo_volcan": "Estratovolcán con caldera activa de 10 km (1.905 m)",
         "red_vigilancia": "SERNAGEOMIN RNVV OVDAS",
+        "ranking_rnvv_nacional": 12,
+        "categoria_riesgo": "Categoría I - Muy Alto Riesgo (regla excepción VEI >= 4)",
         "erupcion_historica_destacada": 1991
       },
       "source_url": "https://rnvv.sernageomin.cl/volcan-hudson/"
@@ -5127,10 +5129,12 @@
       "tipo": "Complejo Volcánico Activo",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
-      "lat": -45.105,
+      "lat": -45.1,
       "lng": -73.17,
       "atributos": {
-        "tipo_volcan": "Estratovolcán holoceno",
+        "tipo_volcan": "Estratovolcán holoceno (2.300 m)",
+        "ranking_rnvv_nacional": 39,
+        "categoria_riesgo": "Categoría III",
         "ubicacion": "Fiordo Aysén / Canal Moraleda"
       },
       "source_url": "https://rnvv.sernageomin.cl/volcan-maca/"
@@ -5142,10 +5146,12 @@
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
       "lat": -45.06,
-      "lng": -72.985,
+      "lng": -72.99,
       "atributos": {
-        "tipo_volcan": "Estratovolcán",
-        "ubicacion": "Noreste del Volcán Macá"
+        "tipo_volcan": "Estratovolcán (2.090 m)",
+        "ranking_rnvv_nacional": 63,
+        "categoria_riesgo": "Categoría IV",
+        "ubicacion": "Comunas de Aysén y Cisnes"
       },
       "source_url": "https://rnvv.sernageomin.cl/volcan-cay/"
     },
@@ -5155,11 +5161,13 @@
       "tipo": "Complejo Volcánico Activo",
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
-      "lat": -44.668,
-      "lng": -73.085,
+      "lat": -44.7,
+      "lng": -73.08,
       "atributos": {
-        "tipo_volcan": "Estratovolcán con caldera",
-        "ubicacion": "Isla Magdalena"
+        "tipo_volcan": "Estratovolcán con caldera (1.660 m)",
+        "ranking_rnvv_nacional": 35,
+        "categoria_riesgo": "Categoría III",
+        "ubicacion": "Isla Magdalena, comuna de Cisnes"
       },
       "source_url": "https://rnvv.sernageomin.cl/volcan-mentolat/"
     },
@@ -5169,27 +5177,15 @@
       "tipo": "Complejo Volcánico Activo",
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
-      "lat": -44.083,
-      "lng": -72.883,
+      "lat": -44.08,
+      "lng": -72.88,
       "atributos": {
-        "tipo_volcan": "Estratovolcán elongado",
-        "ubicacion": "Norte del Canal Jacaf"
+        "tipo_volcan": "Estratovolcán elongado (2.400 m)",
+        "ranking_rnvv_nacional": 24,
+        "categoria_riesgo": "Categoría II",
+        "ubicacion": "Norte del Canal Jacaf, comuna de Cisnes"
       },
       "source_url": "https://rnvv.sernageomin.cl/volcan-melimoyu/"
-    },
-    {
-      "id": "volcan_arenales",
-      "nombre": "Volcán Arenales",
-      "tipo": "Complejo Volcánico Activo",
-      "codigo_comuna": "CL-XI-03",
-      "comuna_ine": "11201",
-      "lat": -47.2,
-      "lng": -73.483,
-      "atributos": {
-        "tipo_volcan": "Estratovolcán englazado",
-        "ubicacion": "Campo de Hielo Norte"
-      },
-      "source_url": "https://rnvv.sernageomin.cl/volcan-arenales/"
     },
     {
       "id": "uaysen_coyhaique",

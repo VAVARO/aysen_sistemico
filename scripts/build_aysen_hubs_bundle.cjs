@@ -713,8 +713,8 @@ const hubs = [
     title: 'VII. Biodiversidad, Clima & Riesgos Geológicos',
     shortTitle: 'Biodiversidad, Clima & Riesgos',
     color: '#047857',
-    description: 'Formaciones de **flora nativa (CONAF SIT)**, **fauna en conservación (RCE MMA / Huemul)**, **especies exóticas invasoras (EEI / Visón, Castor)**, monitoreo ambiental continuo (**SINCA / DGA**) y volcanes/sismos (**RNVV / USGS**).',
-    example: 'La región alberga 5,7 millones de hectáreas de bosque nativo y el 70% de la población mundial de Huemules, monitoreando en paralelo las estaciones de material particulado MP2,5 y la sismicidad regional.',
+    description: 'Formaciones de **flora nativa (CONAF SIT 2026)**, **fauna en conservación (20° Proceso RCE MMA)**, **especies exóticas invasoras (EEI / Visón, Didymo, Jabalí, Castor SAT preventivo)**, monitoreo ambiental continuo (**SINCA EMRP / DGA BNA**) y volcanes/sismos (**5 complejos RNVV / USGS**).',
+    example: 'La región alberga **5.152.384,3 ha de bosque nativo** (`48,30%` de `10.667.211,5 ha` catastradas CONAF 2026), **8.721,6 km² de glaciares IPG 2022 DGA** (`10.301` glaciares) y **750–1.000 huemules** (`~50%–60%` mundial), monitoreando SINCA EMRP (Coyhaique/Aysén), Red Hidrométrica DGA y RNVV.',
     csvFile: 'data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv',
     nodesFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv',
     sourceName: 'CONAF SIT / MMA RCE / SAG / SINCA / DGA / SERNAGEOMIN',
@@ -752,8 +752,8 @@ const hubs = [
     title: 'X. CTCi, Ciencia & Innovación',
     shortTitle: 'CTCi, Ciencia & Innovación',
     color: '#6d28d9',
-    description: 'Ecosistema de ciencia, tecnología y educación superior austral: **2.327 estudiantes de Educación Superior SIES** (**CFT Estatal 737, INACAP 800, UAysén 790**), **179 proyectos de I+D**, cartera histórica ANID y **15 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15).',
-    example: 'Articula la educación superior e investigación local liderada por el **CFT Estatal de Aysén** (737 alumnos), **INACAP** (800 alumnos), la **Universidad de Aysén** (790 alumnos), el **CIEP**, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e **INIA Tamel Aike** frente a estaciones científicas en fiordos y glaciares.',
+    description: 'Ecosistema de ciencia, tecnología y educación superior austral: **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), **179 proyectos de I+D**, cartera histórica ANID y **15 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15).',
+    example: 'Articula la educación superior e investigación local liderada por el **CFT Estatal de Aysén** (737 alumnos), **INACAP Coyhaique** (1.187 alumnos), la **Universidad de Aysén** (1.000 alumnos), el **CIEP**, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e **INIA Tamel Aike** frente a estaciones científicas en fiordos y glaciares.',
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     nodesFile: 'data/systemic/csv/10_ctci_innovacion_nodos.csv',
     sourceName: 'MinCiencia / ANID / CORFO / CIEP / UAysén / INIA',
@@ -2068,19 +2068,19 @@ const rawNodos = [
   {
     id: 27,
     hubId: 'biodiversidad',
-    title: 'Cobertura Forestal y Flora Nativa (CONAF SIT / MMA)',
-    definition: 'Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (**CONAF SIT 2026 / MMA**): **10.667.211,5 ha catastradas**, **5.152.384,3 ha de bosque nativo** y **2.387.525,4 ha de bosques en SNASPE**, junto a **Estepa Patagónica** y **Turberas y Humedales** (**5.723.000 ha totales de cobertura vegetal nativa**).',
-    example: 'El **Catastro Vegetacional CONAF 2026** contabiliza **10.667.211,5 ha catastradas**, **5.152.384,3 ha de bosque nativo** (con **2.387.525,4 ha de bosques dentro de SNASPE**) y **5.723.000 ha de cobertura vegetal nativa**, liderada por el **Bosque Siempreverde** y **Lenga/Ñire**.',
-    officialSource: { name: 'Corporacion Nacional Forestal (CONAF) / Ministerio del Medio Ambiente (MMA)', url: 'https://sit.conaf.cl/', frequency: 'Quinquenal' },
+    title: 'Cobertura Forestal y Flora Nativa (CONAF SIT 2026 / MMA)',
+    definition: 'Catastro de los Recursos Vegetacionales Nativos (**CONAF 2024–2026**, Cuadros 6–11): **10.667.211,5 ha** regionales catastradas, con **5.189.923,8 ha** de subuso Bosques (`48,65%`: **5.152.384,3 ha de bosque nativo** [`48,30%`], `35.473,6 ha` plantaciones forestales SIT CONAF [`29.133 ha` IFN INFOR 2022] y `2.065,9 ha` bosque mixto), **2.387.525,4 ha** de bosques en SNASPE (`2.385.473,4 ha` bosque nativo estricto), **2.606.729,0 ha** de Praderas y Matorrales (`24,44%`) y **106.484,6 ha** de Humedales CONAF (`590.448,8 ha` Inventario Nacional MMA).',
+    example: 'El **Bosque Nativo CONAF 2026 (`5.152.384,3 ha`)** se desglosa en cuatro Tipos Forestales oficiales: **Siempreverde (`2.552.613,1 ha`, `49,54%`)**, **Lenga (`1.409.259,7 ha`, `27,35%`)**, **Coihue de Magallanes (`882.420,0 ha`, `17,13%`)** y **Ciprés de las Guaitecas (`308.091,5 ha`, `5,98%`)**.',
+    officialSource: { name: 'Corporacion Nacional Forestal (CONAF SIT 2026) / MMA', url: 'https://sit.conaf.cl/', frequency: 'Quinquenal' },
     csvFile: 'data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv',
     relatedNodeIds: [4, 13, 22, 28, 29],
     chartSpec: {
       type: 'bar',
-      title: 'Distribución de Cobertura Forestal Nativa por Formación en Aysén (Hectáreas - CONAF)',
-      labels: ['Bosque Siempreverde', 'Bosque Lenga / Ñire', 'Estepa Patagónica', 'Ciprés de las Guaitecas', 'Turberas y Humedales'],
+      title: 'Catastro Vegetacional CONAF 2026: Tipos Forestales de Bosque Nativo y Formaciones (ha)',
+      labels: ['Siempreverde (BN)', 'Lenga (BN)', 'Coihue de Magallanes (BN)', 'Ciprés de las Guaitecas (BN)', 'Praderas y Matorrales', 'Humedales (CONAF)'],
       datasets: [{
-        label: 'Superficie Regional (ha)',
-        data: [2672000, 1665000, 712000, 376200, 297800],
+        label: 'Superficie Regional CONAF 2026 (ha)',
+        data: [2552613.1, 1409259.7, 882420.0, 308091.5, 2606729.0, 106484.6],
         backgroundColor: '#047857'
       }],
       unit: 'hectareas'
@@ -2124,20 +2124,20 @@ const rawNodos = [
   {
     id: 28,
     hubId: 'biodiversidad',
-    title: 'Fauna Silvestre y Especies en Categoría de Conservación (RCE MMA)',
-    definition: 'Catastro de fauna emblemática y especies clasificadas bajo el **Reglamento para la Clasificación de Especies Silvestres (RCE MMA — D.S. N° 44/2023 y D.S. N° 22/2024)**: tamaño poblacional estimado, distribución comunal y amenazas directas para especies como el **Huemul**, **Pudu**, **Huillin**, **Chungungo**, **Ballena Sei**, **Ballena Azul** y **Cóndor**.',
-    example: 'Aysén alberga entre **1.500 y 2.000 huemules** (60% al 70% de la población mundial de la especie), con núcleos críticos en Tamango (PN Patagonia), Cerro Castillo y la cuenca del Río Baker, amenazados por perros asilvestrados, cercos y atropellos.',
-    officialSource: { name: 'Ministerio del Medio Ambiente (MMA) / CONAF / SAG', url: 'https://clasificacionespecies.mma.gob.cl/', frequency: 'Anual' },
+    title: 'Fauna Silvestre y Especies en Categoría de Conservación (20° Proceso RCE MMA)',
+    definition: 'Catastro de fauna emblemática y especies clasificadas bajo el **20° Proceso RCE MMA (D.S. N° 29/2025, octubre 2026)**: **154 taxones nativos** relevantes en nómina RCE en Aysén y **64 especies en categorías de amenaza directa (CR, EN, VU)**, incluyendo **Huemul** (`750–1.000` individuos en Aysén sobre `<1.500` maduros mundiales, 17° Proceso RCE), **Ballena Azul** (`<250` maduros, `~217` en aguas chilenas) y **Huillín** (`EN` en VI–X e `IC` Insuficientemente Conocida en XI–XII).',
+    example: 'Según el 17° y 20° Proceso RCE MMA, la población mundial de **Huemul (`< 1.500` individuos maduros en 101 subpoblaciones)** concentra en Aysén entre **750 y 1.000 individuos (`~50%–60%` mundial)**, mientras la **Ballena Azul (`EN`)** registra **`< 250` individuos maduros (`~217` estimados Golfo de Penas–Chiloé)**.',
+    officialSource: { name: 'Ministerio del Medio Ambiente (20° Proceso RCE, D.S. N° 29/2025) / CONAF / SAG', url: 'https://clasificacionespecies.mma.gob.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv',
     relatedNodeIds: [4, 18, 22, 27, 29],
     chartSpec: {
       type: 'doughnut',
-      title: 'Distribución de Especies Emblemáticas de Aysén por Categoría RCE MMA',
-      labels: ['En Peligro Crítico (CR)', 'En Peligro (EN)', 'Vulnerable (VU)', 'Casi Amenazada (NT)', 'Preocupación Menor (LC)'],
+      title: 'Especies Emblemáticas Auditadas (12) · Contexto: 64 Amenazadas de 154 RCE en Aysén',
+      labels: ['En Peligro Crítico (CR)', 'En Peligro (EN)', 'Vulnerable (VU)', 'Casi Amenazada (NT)', 'Insufic. Conocida XI-XII (IC)'],
       datasets: [{
-        label: 'Especies Evaluadas',
-        data: [1, 5, 3, 3, 2],
-        backgroundColor: ['#991b1b', '#dc2626', '#f59e0b', '#0284c7', '#10b981']
+        label: 'Especies Auditadas',
+        data: [1, 4, 3, 3, 1],
+        backgroundColor: ['#991b1b', '#dc2626', '#f59e0b', '#0284c7', '#64748b']
       }],
       unit: 'especies'
     },
@@ -2167,18 +2167,18 @@ const rawNodos = [
     id: 29,
     hubId: 'biodiversidad',
     title: 'Especies Exóticas Invasoras y Presión Ecológica',
-    definition: 'Monitoreo de **Especies Exóticas Invasoras (EEI)** en Aysén según **MMA, SAG, CIEP y SUBPESCA**: dispersión, mecanismo de impacto y programas de control activo del **Visón norteamericano**, **Castor americano**, **Jabalí europeo**, **Microalga Didymo**, **Lupino perenne** y **Salmonidos asilvestrados**.',
-    example: 'El **Visón norteamericano** colonizó las **10 comunas** de Aysén depredando aves acuáticas y compitiendo con el Huillin, mientras el **Castor** avanza en O\'Higgins y Tortel talando bosques riparios que carecen de adaptación evolutiva para rebrotar tras inundación.',
-    officialSource: { name: 'Ministerio del Medio Ambiente (MMA) / SAG / CIEP / SUBPESCA', url: 'https://especies-invasoras.mma.gob.cl/', frequency: 'Semestral' },
+    definition: 'Monitoreo de **Especies Exóticas Invasoras (EEI)** en Aysén según **MMA, SAG, WCS, CONAF y SUBPESCA**: dispersión, mecanismo de impacto y programas de control activo del **Visón norteamericano**, **Jabalí europeo**, **Microalga Didymo**, **Lupino perenne**, **Salmónidos asilvestrados** y vigilancia preventiva de **Castor americano**.',
+    example: 'El **Visón norteamericano (Neogale vison)** colonizó las **10 comunas** (Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation ago-2026); el **Didymo** cubre **6 cuencas BNA** (110, 111, 113, 114, 115, 117; D.Ac. N° 414/2024 en 8 comunas continentales); el **Jabalí** registra **6 comunas** incl. Río Ibáñez / PN Cerro Castillo (CONAF/UACh 2025); y el **Castor americano** suma **0 comunas con colonización establecida en Aysén** bajo **Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza)**.',
+    officialSource: { name: 'Ministerio del Medio Ambiente (MMA) / SAG / WCS / SUBPESCA', url: 'https://especies-invasoras.mma.gob.cl/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/07_flora_fauna_ecosistemas_aysen.csv',
     relatedNodeIds: [6, 9, 27, 28, 30],
     chartSpec: {
       type: 'bar',
       title: 'Amplitud Territorial de Especies Exóticas Invasoras (Comunas Afectadas de 10)',
-      labels: ['Visón norteamericano', 'Salmonidos asilvestrados', 'Didymo (Microalga)', 'Lupino perenne', 'Jabalí europeo', 'Castor americano'],
+      labels: ['Visón norteamericano', 'Salmónidos asilvestrados', 'Didymo (Microalga)', 'Lupino perenne', 'Jabalí europeo', 'Castor americano (SAT preventivo)'],
       datasets: [{
         label: 'Comunas con Presencia Activa (de 10)',
-        data: [10, 10, 8, 7, 4, 2],
+        data: [10, 10, 8, 7, 6, 0],
         backgroundColor: '#b91c1c'
       }],
       unit: 'comunas afectadas'
@@ -2187,11 +2187,11 @@ const rawNodos = [
     tableRows: (wp07.catastro_especies_exoticas_invasoras || []).map(e => {
       const nomLow = String(e.nombre_comun || '').toLowerCase();
       let prog = String(e.programas_control_activos_sag_mma || '-');
-      if (/vis[oó]n/.test(nomLow)) prog = "Programa FNDR/SAG-CIEP de Control Comunitario y Trampeo Estratégico del Visón en Cuencas Prioritarias";
-      else if (/castor/.test(nomLow)) prog = "Estrategia Binacional Chile-Argentina y Proyecto GEF Castor (MMA/SAG/CONAF/FAO) de Erradicación y Alerta Temprana";
-      else if (/jabal[ií]/.test(nomLow)) prog = "Declarada especie dañina (Art. 6° D.S. N° 5/1998 Ley de Caza SAG); caza y control autorizado todo el año";
+      if (/vis[oó]n/.test(nomLow)) prog = "Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026)";
+      else if (/castor/.test(nomLow)) prog = "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)";
+      else if (/jabal[ií]/.test(nomLow)) prog = "Declarada especie dañina (Art. 6° D.S. N° 5/1998 Ley de Caza SAG); monitoreo CONAF/UACh 2025 en 6 comunas (incl. Río Ibáñez / PN Cerro Castillo)";
       else if (/chinook|salm[oó]n|trucha/.test(nomLow)) prog = "Monitoreo SUBPESCA/IFOP de escapes acuícolas, pesca recreativa selectiva y control de asilvestramiento en cuencas";
-      else if (/didymo/.test(nomLow)) prog = "Protocolo obligatorio SERNAPESCA/SERNATUR de desinfección ('Remover, Lavar y Secar') en pasos fronterizos y ríos";
+      else if (/didymo/.test(nomLow)) prog = "Declaración SUBPESCA D.Ac. N° 414/2024 en 6 cuencas BNA (110, 111, 113, 114, 115, 117) y desinfección SERNAPESCA";
       else if (/lupino/.test(nomLow)) prog = "Control mecánico en fajas viales MOP Ruta 7 y restauración ecológica de praderas en zonas de amortiguación SNASPE";
       return [
         e.nombre_comun,
@@ -2203,85 +2203,85 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Nivel de severidad ecológica comunal (Muy Alta, Alta, Moderada, Nula)',
-        'Vectores de dispersión (Ruta 7, cuencas hidricas, frontera cordillerana)',
-        'Presupuesto y programas de control activos SAG / MMA (trampeo Conibear, barrera Río Baker)',
-        'Mecanismos de impacto sobre especies nativas (depredacion, competencia, destruccion de riberas)'
+        'Nivel de severidad ecológica comunal y sistema de alerta temprana SAT Castor (0 comunas invadidas)',
+        '6 cuencas BNA declaradas con Didymo según Informe Técnico D.Ac. N° 414/2024 SUBPESCA',
+        'Presencia documentada de Jabalí europeo en 6 comunas incl. Río Ibáñez / PN Cerro Castillo (CONAF/UACh 2025)',
+        'Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026) para Visón'
       ],
       suggestedCrossings: [
         'Cruce con Monitoreo Marino y Calidad de Agua (Nodo #09 / #30)',
-        'Cruce con Concesiones Acuícolas (Nodo #06) para modelar escapes de Salmon Chinook'
+        'Cruce con Concesiones Acuícolas (Nodo #06) para modelar escapes de Salmón Chinook'
       ],
-      totalRecordsInFullBase: '6 especies invasoras con analisis de vectores y mapas de contencion en data/systemic/07_biodiversidad_flora_fauna_aysen.json'
+      totalRecordsInFullBase: '6 especies invasoras priorizadas en data/systemic/07_biodiversidad_flora_fauna_aysen.json'
     }
   },
   {
     id: 30,
     hubId: 'biodiversidad',
     title: 'Días al año con contaminación crítica del aire e Hidrología',
-    definition: 'Red de monitoreo ambiental continuo y telemetría satelital de **calidad del aire (SINCA MMA)** y **caudales hidrométricos (DGA MOP)**: concentración de material particulado fino **MP2,5 (ug/m3)** en Coyhaique y aforos del **Río Baker y Río Simpson**.',
-    example: 'La estación **Coyhaique II (SINCA)** registra un pico invernal de **160 ug/m3 de MP2,5 en junio y 145 ug/m3 en julio** asociado al uso intensivo de leña para calefacción, contrastando con **15-18 ug/m3 en verano**. Paralelamente, el **Río Baker en Bertrand (DGA)** promedia caudales de deshielo de **740 m3/s en abril** y un mínimo invernal de **430 m3/s en julio**.',
-    officialSource: { name: 'SINCA (Ministerio del Medio Ambiente) / Direccion General de Aguas (DGA)', url: 'https://sinca.mma.gob.cl/', frequency: 'Horario / Telemetria continua' },
+    definition: 'Red oficial de monitoreo continuo de **calidad del aire (SINCA MMA, estaciones EMRP únicamente en Coyhaique y Puerto Aysén)** y telemetría hidrométrica **DGA MOP / BNA** (`11530000-8`, `11542001-1`, `11317001-K`). Las restantes 8 comunas carecen de estación EMRP continua (`estaciones_sinca_emrp_n = 0`).',
+    example: '**Coyhaique** (`2` EMRP, PDA D.S. N° 7/2019 y Anteproyecto Res. Ex. N° 8.940/2026) registra **`97` episodios críticos GEC en 2026** (`20` Alertas, `48` Preemergencias, `29` Emergencias) frente a `87` en 2024 y `73` en 2025. **Puerto Aysén** (`1` EMRP Vialidad, PDA D.S. N° 03/2025) suma **`16` días >50 µg/m³ en año base 2022** (`34` en 2018; `94%` leña). En **Río Baker en Desagüe Lago Bertrand (`BNA 11530000-8`, media `~532 m³/s`)**, el régimen nivo-glacial alcanza su máximo en **febrero (`675 m³/s`)** y mínimo en **agosto (`395 m³/s`)**.',
+    officialSource: { name: 'SINCA (Ministerio del Medio Ambiente) / Dirección General de Aguas (DGA MOP)', url: 'https://sinca.mma.gob.cl/', frequency: 'Horario / Telemetría continua (sinca + dga_hidrologia)' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv',
     relatedNodeIds: [13, 23, 24, 29],
     chartSpec: {
       type: 'line',
-      title: 'Monitoreo Mensual Observado 2026: MP2,5 Coyhaique vs. Caudal Río Baker (SINCA / DGA)',
-      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      title: 'Ventana Cerrada (2025-12 a 2026-11): MP2,5 Coyhaique II vs. Caudal Río Baker BNA 11530000-8',
+      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic (25)'],
       datasets: [
-        { label: 'MP2,5 Coyhaique II (ug/m3)', data: [18, 15, 22, 55, 115, 160, 145, 95, 45, 25, 19, 16], borderColor: '#e11d48', backgroundColor: 'rgba(225,29,72,0.08)' },
-        { label: 'Caudal Río Baker (m3/s / 10)', data: [58, 62, 69, 74, 61, 48, 43, 46, 52, 57, 61, 66], borderColor: '#0284c7', backgroundColor: 'rgba(2,132,199,0.08)' }
+        { label: 'MP2,5 Coyhaique II (µg/m³)', data: [18, 15, 22, 55, 115, 160, 145, 95, 45, 25, 19, 16], borderColor: '#e11d48', backgroundColor: 'rgba(225,29,72,0.08)' },
+        { label: 'Caudal Río Baker BNA 11530000-8 (m³/s)', data: [655, 675, 615, 525, 475, 440, 415, 395, 405, 465, 555, 625], borderColor: '#0284c7', backgroundColor: 'rgba(2,132,199,0.08)' }
       ],
-      unit: 'ug/m3 / m3/s'
+      unit: 'µg/m³ / m³/s'
     },
-    tableColumns: ['Periodo 2026', 'MP2,5 Coyhaique II', 'Condición Ambiental', 'Caudal Río Baker', 'Caudal Río Simpson'],
+    tableColumns: ['Periodo cerrado (SINCA / BNA)', 'MP2,5 Coyhaique II', 'Condición PDA / GEC', 'Caudal Río Baker (11530000-8)', 'Caudal Río Simpson (11317001-K)'],
     tableRows: [
-      ['2026-01 (Enero)', '18 ug/m3', 'Bueno (Bajo umbral)', '580 m3/s', '38,5 m3/s'],
-      ['2026-02 (Febrero)', '15 ug/m3', 'Bueno (Bajo umbral)', '620 m3/s', '34,2 m3/s'],
-      ['2026-03 (Marzo)', '22 ug/m3', 'Bueno (Bajo umbral)', '690 m3/s', '42,1 m3/s'],
-      ['2026-04 (Abril)', '55 ug/m3', 'Alerta Ambiental', '740 m3/s (Pico)', '68,4 m3/s'],
-      ['2026-05 (Mayo)', '115 ug/m3', 'Preemergencia', '610 m3/s', '55,0 m3/s'],
-      ['2026-06 (Junio)', '160 ug/m3', 'Emergencia Ambiental', '480 m3/s', '45,2 m3/s'],
-      ['2026-07 (Julio)', '145 ug/m3', 'Emergencia Ambiental', '430 m3/s (Mínimo)', '39,8 m3/s'],
-      ['2026-08 (Agosto)', '95 ug/m3', 'Preemergencia', '460 m3/s', '48,6 m3/s'],
-      ['2026-09 (Septiembre)', '45 ug/m3', 'Alerta Ambiental', '520 m3/s', '59,2 m3/s'],
-      ['2026-10 (Octubre)', '25 ug/m3', 'Regular / Bueno', '570 m3/s', '64,1 m3/s']
+      ['2026-02 (Febrero)', '15 µg/m³', 'Bueno (Bajo umbral)', '675 m³/s (Máximo estival)', '34,2 m³/s'],
+      ['2026-03 (Marzo)', '22 µg/m³', 'Bueno (Bajo umbral)', '615 m³/s', '41,0 m³/s'],
+      ['2026-04 (Abril)', '55 µg/m³', 'Alerta Ambiental', '525 m³/s', '52,4 m³/s'],
+      ['2026-05 (Mayo)', '115 µg/m³', 'Preemergencia', '475 m³/s', '55,0 m³/s'],
+      ['2026-06 (Junio)', '160 µg/m³', 'Emergencia Ambiental', '440 m³/s', '45,2 m³/s'],
+      ['2026-07 (Julio)', '145 µg/m³', 'Emergencia Ambiental', '415 m³/s', '39,8 m³/s'],
+      ['2026-08 (Agosto)', '95 µg/m³', 'Preemergencia', '395 m³/s (Mínimo invernal)', '48,6 m³/s'],
+      ['2026-09 (Septiembre)', '45 µg/m³', 'Alerta Ambiental', '405 m³/s', '59,2 m³/s'],
+      ['2026-10 (Octubre)', '25 µg/m³', 'Regular / Bueno', '465 m³/s', '64,1 m³/s'],
+      ['2026-11 (Noviembre)', '19 µg/m³', 'Bueno (Bajo umbral)', '555 m³/s', '49,5 m³/s']
     ],
     canvasPreview: {
       availableDimensions: [
-        'Telemetría continua horaria SINCA MMA en estaciones Coyhaique I y Coyhaique II',
-        'Estación BNA 11530000-8 DGA Río Baker en Lago Bertrand y Río Simpson',
-        'Días con episodios críticos de contaminacion (Alerta, Preemergencia y Emergencia)',
-        'Monitoreo de deshielo nival y régimen pluvio-nival en cuencas de Aysén'
+        'Telemetría SINCA EMRP exclusivamente en Coyhaique (2 est., 97 GEC 2026) y Puerto Aysén (1 est., 16 días base 2022)',
+        'Estación DGA BNA 11530000-8 Río Baker en Bertrand (máx Feb 675 m³/s, mín Ago 395 m³/s) y BNA 11317001-K Río Simpson',
+        '8 comunas restantes sin EMRP continua (campaña indicativa Cochrane 2023 documentada aparte)',
+        'Régimen nivo-glacial sin fechas futuras no transcurridas ni pre-rellenos estáticos'
       ],
       suggestedCrossings: [
         'Cruce con Consumo y Precios de Leña (Nodo #13)',
         'Cruce con Atenciones Respiratorias en Red de Salud (Nodo #24)'
       ],
-      totalRecordsInFullBase: 'Telemetria continua de 16 estaciones oficiales consolidada en data/estaciones_aysen.json'
+      totalRecordsInFullBase: 'Telemetría continua consolidada en data/estaciones_aysen.json (sin fechas futuras)'
     }
   },
   {
     id: 31,
     hubId: 'biodiversidad',
     title: 'Complejos Volcánicos Activos (RNVV), Sismos (USGS) y Red de Estaciones',
-    definition: 'Catastro georreferenciado de los **6 complejos volcánicos activos** de Aysén (**Hudson, Macá, Cay, Mentolat, Melimoyu y Lautaro** — SERNAGEOMIN RNVV), los sismos instrumentales registrados por la API de **USGS** y la red de estaciones regionales.',
-    example: 'Incluye la ubicación, magnitud y profundidad de los sismos registrados en torno a la **Triple Unión de Taitao / Zona de Fractura de Chile** y los volcanes con influencia sobre cada comuna.',
-    officialSource: { name: 'SERNAGEOMIN RNVV / USGS Earthquake Hazards API / DGA', url: 'https://earthquake.usgs.gov/', frequency: 'Tiempo real (API)' },
+    definition: 'Catastro georreferenciado de los **5 complejos volcánicos activos monitoreados por la RNVV de SERNAGEOMIN dentro de la Región de Aysén** (**Hudson `#12` Cat. I**, **Melimoyu Cat. II**, **Mentolat `#35` Cat. III**, **Macá `#39` Cat. III** y **Cay `#63` Cat. IV**), junto a los sismos instrumentales **USGS** y la exclusión técnica del **Cerro Arenales** (sin erupción holocena confirmada, Stern et al. 2016), considerando al **Volcán Lautaro** (Cat. III, Natales/Magallanes) como amenaza volcánica transregional en el borde sur de Villa O\'Higgins (`11302`).',
+    example: 'El **Volcán Hudson** (`-45.90, -72.97`, `1.905 m`, Aysén / Río Ibáñez) ocupa el puesto **`#12` Nacional (Categoría I — Muy Alto Riesgo por regla VEI >= 4)**; Melimoyu (`Cat. II`), Mentolat (`#35 Cat. III`) y Cay (`#63 Cat. IV`) monitorean la Falla Liquiñe-Ofqui.',
+    officialSource: { name: 'SERNAGEOMIN RNVV / USGS Earthquake Hazards API / DGA', url: 'https://rnvv.sernageomin.cl/', frequency: 'Tiempo real (API)' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv',
     relatedNodeIds: [18, 24, 30],
     chartSpec: {
       type: 'bar',
-      title: 'Sismicidad Instrumental Registrada (USGS M>=3.0) y Estaciones RNVV por Zona',
-      labels: ['Volcan Hudson / Simpson', 'Canal Puyuhuapi / Mentolat', 'Liquine-Ofqui / Aysén', 'Lago General Carrera', 'Zona Sur / Glaciares'],
+      title: 'Sismicidad Instrumental Registrada (USGS M>=3.0) y Complejos RNVV de Aysén',
+      labels: ['Volcán Hudson / Simpson', 'Canal Puyuhuapi / Mentolat', 'Liquiñe-Ofqui / Aysén', 'Lago General Carrera', 'Borde Sur / Lautaro (Mag.)'],
       datasets: [{
         label: 'Sismos Registrados (2015-2026)',
         data: [142, 98, 86, 42, 28],
         backgroundColor: '#d97706'
       }],
-      unit: 'eventos sismicos'
+      unit: 'eventos sísmicos'
     },
-    tableColumns: ['Volcan / Sismo / Estación', 'Comuna INE', 'Tipo de Nodo', 'Atributos / Magnitud', 'Coordenadas'],
+    tableColumns: ['Volcán / Sismo / Estación', 'Comuna INE', 'Tipo de Nodo', 'Atributos / Magnitud', 'Coordenadas'],
     tableRows: (wp05.nodos_georreferenciados || []).filter(n => {
       const t = String(n.tipo || '').toLowerCase();
       return t.includes('volc') || t.includes('sism') || t.includes('riesg');
@@ -2298,16 +2298,16 @@ const rawNodos = [
     }),
     canvasPreview: {
       availableDimensions: [
-        'Catastro de 6 complejos volcánicos activos monitoreados por OVDAS SERNAGEOMIN',
-        'Catálogo sismico instrumental USGS (eventos M>=3.0)',
-        '16 estaciones hidrometeorologicas y ambientales de referencia regional',
-        'Niveles de alerta técnica volcanica (Verde, Amarilla, Naranja, Roja)'
+        '5 complejos volcánicos activos RNVV en Aysén (Hudson #12 Cat. I, Melimoyu Cat. II, Mentolat #35 Cat. III, Macá #39 Cat. III, Cay #63 Cat. IV)',
+        'Amenaza volcánica transregional: Volcán Lautaro (Cat. III, Natales/Magallanes) en borde sur de O\'Higgins (11302)',
+        'Exclusión documentada de Cerro Arenales (sin erupción holocena confirmada, Stern et al. 2016)',
+        'Catálogo sísmico instrumental USGS (eventos M>=3.0) y niveles de alerta técnica RNVV'
       ],
       suggestedCrossings: [
         'Cruce con Red de Evacuación SAMU (Nodo #24)',
         'Cruce con Puentes y Cortes de Carretera Austral (Nodo #18)'
       ],
-      totalRecordsInFullBase: '28 hitos geologicos y estaciones ambientales en data/systemic/csv/05_social_salud_educacion_riesgos_nodos.csv'
+      totalRecordsInFullBase: '5 volcanes RNVV de Aysén + sismicidad USGS + exclusiones documentadas'
     }
   },
   // --- HUB IX: CULTURA, ARTES & PATRIMONIO (#32 a #34) ---
@@ -2543,8 +2543,8 @@ const rawNodos = [
     id: 36,
     hubId: 'ctci',
     title: 'Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional',
-    definition: 'Infraestructura científica fija y educación superior en la región: **16 centros y estaciones de campo** (incluyendo **INFOR Sede Patagonia CTCI-NOD-15** y **UACh Campus Patagonia CTCI-NOD-16**) y **2.327 estudiantes de Educación Superior SIES** (**CFT Estatal 737, INACAP 800, UAysén 790**), contrastando centros endógenos con estaciones de investigación extrarregionales.',
-    example: 'Coyhaique alberga 6 centros con 91 investigadores residentes: **CIEP (34)**, **UAysén Campus Río Simpson (31 · 790 alumnos)**, **INIA Tamel Aike (10)**, **INFOR Sede Patagonia (9)**, **UACh Campus Patagonia (5 · 32 proyectos ANID)** y **DGAC BBA (2)**, junto a **INACAP (800 alumnos)** y **CFT Estatal (737 alumnos)**.',
+    definition: 'Infraestructura científica fija y educación superior en la región: **16 centros y estaciones de campo** (incluyendo **INFOR Sede Patagonia CTCI-NOD-15** y **UACh Campus Patagonia CTCI-NOD-16**) y **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), contrastando centros endógenos con estaciones de investigación extrarregionales.',
+    example: 'Coyhaique alberga 6 centros con 91 investigadores residentes: **CIEP (34)**, **UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026)**, **INIA Tamel Aike (10)**, **INFOR Sede Patagonia (9)**, **UACh Campus Patagonia (5 · 32 proyectos ANID)** y **DGAC BBA (2)**, junto a **INACAP Coyhaique (1.187 alumnos)** y **CFT Estatal de Aysén en Puerto Aysén (737 alumnos)**.',
     officialSource: { name: 'Ministerio de Ciencia / OBSERVA / ANID', url: 'https://observa.minciencia.gob.cl/', frequency: 'Continuo' },
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     relatedNodeIds: [6, 25, 27, 35],
@@ -4160,11 +4160,12 @@ function buildComunaRows() {
       aeroevacuaciones_samu_n: Number((g5.salud_red_asistencial || {}).aeroevacuaciones_samu_anual) || 0,
       ratio_presion_turistica: Number((g6.demanda_emat_visitantes || {}).presion_turistica_poblacion_flotante_ratio) || 0,
       ha_snaspe_por_guardaparque: Number((g6.demanda_emat_visitantes || {}).superficie_protegida_por_guardaparque_ha) || 0,
-      glaciares_dga_n: Number((g7.flora_y_formaciones_vegetacionales || {}).glaciares_dga_cantidad) || 0,
-      superficie_glaciar_km2: ({ '11101': 42.5, '11102': 38.2, '11201': 1850.0, '11202': 480.0, '11203': 0, '11401': 145.0, '11402': 460.0, '11301': 890.0, '11302': 3450.0, '11303': 2680.0 })[ine] ?? (Number((g7.flora_y_formaciones_vegetacionales || {}).superficie_glaciar_km2) || 0),
+      glaciares_dga_n: ({ '11101': 121, '11102': 265, '11201': 2190, '11202': 785, '11203': 0, '11401': 690, '11402': 1120, '11301': 1310, '11302': 1680, '11303': 2140 })[ine] ?? (Number((g7.flora_y_formaciones_vegetacionales || {}).glaciares_dga_cantidad) || 0),
+      superficie_glaciar_km2: ({ '11101': 28.2, '11102': 64.0, '11201': 1542.6, '11202': 184.3, '11203': 0.0, '11401': 238.5, '11402': 382.0, '11301': 512.4, '11302': 2284.2, '11303': 3485.4 })[ine] ?? (Number((g7.flora_y_formaciones_vegetacionales || {}).superficie_glaciar_km2) || 0),
       daa_consuntivos_m3s: Number((g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_consuntivos_m3s) || 0,
       daa_no_consuntivos_m3s: Number((g7.flora_y_formaciones_vegetacionales || {}).derechos_aprovechamiento_aguas_no_consuntivos_m3s) || 0,
-      dias_sobre_norma_mp25: Number((g7.flora_y_formaciones_vegetacionales || {}).dias_sobre_norma_mp25_anual) || 0,
+      estaciones_sinca_emrp_n: ({ '11101': 2, '11201': 1 }[ine] ?? 0),
+      dias_sobre_norma_mp25: ({ '11101': 87, '11201': 16 }[ine] ?? null),
 
       // Hub VIII (Salud)
       postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
@@ -4234,9 +4235,10 @@ function buildComunaRows() {
       bosque_nativo_ha: ({ '11101': 435000.0, '11102': 365000.0, '11201': 1390000.0, '11202': 990000.0, '11203': 51200.0, '11401': 260000.0, '11402': 285000.0, '11301': 465000.0, '11302': 326184.3, '11303': 585000.0 })[ine] || Number(gAgro.bosque_nativo_ha) || 0,
       plantaciones_ha: Number(gAgro.plantaciones_ha) || 0,
       consumo_lena_m3_hogar_ano: CONSUMO_LENA_HOGAR_MAP[ine] !== undefined ? CONSUMO_LENA_HOGAR_MAP[ine] : (Number(gAgro.consumo_lena_m3_hogar_ano) || 0),
-      superficie_glaciares_km2: ({ '11101': 42.5, '11102': 38.2, '11201': 1850.0, '11202': 480.0, '11203': 0, '11401': 145.0, '11402': 460.0, '11301': 890.0, '11302': 3450.0, '11303': 2680.0 })[ine] ?? (Number(gAgro.superficie_glaciares_km2) || 0),
-      especies_exoticas_invasoras_n: ({ '11101': 5, '11102': 5, '11201': 4, '11202': 5, '11203': 2, '11401': 4, '11402': 5, '11301': 5, '11302': 5, '11303': 4 })[ine] || 4,
-      episodios_gec_mp25_anual: ({ '11101': 41, '11102': 2, '11201': 14, '11202': 4, '11203': 0, '11401': 5, '11402': 3, '11301': 8, '11302': 1, '11303': 2 })[ine] ?? 0,
+      superficie_glaciares_km2: ({ '11101': 28.2, '11102': 64.0, '11201': 1542.6, '11202': 184.3, '11203': 0.0, '11401': 238.5, '11402': 382.0, '11301': 512.4, '11302': 2284.2, '11303': 3485.4 })[ine] ?? (Number(gAgro.superficie_glaciares_km2) || 0),
+      especies_exoticas_invasoras_n: ({ '11101': 5, '11102': 5, '11201': 4, '11202': 5, '11203': 2, '11401': 5, '11402': 5, '11301': 5, '11302': 4, '11303': 3 })[ine] || 4,
+      episodios_gec_mp25_anual: ({ '11101': 97, '11201': 16 }[ine] ?? null),
+      episodios_gec_mp25_2024: ({ '11101': 87, '11201': 16 }[ine] ?? null),
       expedientes_fiscalizacion_sma_n: ({ '11101': 42, '11102': 4, '11201': 86, '11202': 64, '11203': 28, '11401': 19, '11402': 12, '11301': 14, '11302': 5, '11303': 8 })[ine] || 0,
       amenaza_volcanica_sismica_idx: ({ '11101': 78.5, '11102': 42.0, '11201': 94.2, '11202': 88.6, '11203': 64.0, '11401': 72.4, '11402': 91.5, '11301': 48.0, '11302': 56.5, '11303': 61.0 })[ine] || 60.0,
       esperanza_vida_total_anos: Number(gSalud.esperanza_vida_total_anos) || 0,
@@ -5026,7 +5028,7 @@ if (fs.existsSync(rnvvPath)) {
       comuna_ine: v.comuna_ine,
       lat: v.lat,
       lon: v.lng,
-      magnitudeValue: (10 - Number(v.ranking_riesgo_sernageomin || 5)) * 10,
+      magnitudeValue: Math.max(10, 100 - Number(v.ranking_riesgo_sernageomin || 50)),
       magnitudeUnit: `Alerta ${v.nivel_alerta_tecnica || 'Verde'}`,
       magnitudeLabel: 'Indice Riesgo Volcanico RNVV',
       titular: 'SERNAGEOMIN RNVV / OVDAS',
@@ -6744,7 +6746,7 @@ const goreFndrSeries = (() => {
 const metaAutoUpdate = {
   frequency: (autoUpdateStatus && autoUpdateStatus.frequency) || 'Mensual (d\u00eda 1 de cada mes)',
   lastRun: (autoUpdateStatus && autoUpdateStatus.lastRun) || '',
-  activeApiConnectors: (autoUpdateStatus && autoUpdateStatus.activeApiConnectors) || 7,
+  activeApiConnectors: (autoUpdateStatus && autoUpdateStatus.activeApiConnectors) || 8,
   totalSources: (autoUpdateStatus && autoUpdateStatus.totalSources) || 38,
   totalOfficialSources: 38,
   totalHubs: hubs.length,

@@ -1183,7 +1183,7 @@
     tasa_suicidio_por_100k: ['tasa de suicidio', 'suicidio', 'suicidios', 'mortalidad suicidio', 'salud mental suicidio', 'intentos de autoeliminacion', '15.1 suicidio'],
     camas_psiquiatricas_uhce: ['camas psiquiatricas', 'uhce', 'salud mental hrc', 'uhce hrc', '9 camas psiquiatricas', 'psiquiatria coyhaique'],
     estaciones_medico_rurales_n: ['estaciones medico rurales', 'emr', 'rondas medicas', '20 estaciones medico'],
-    matricula_sies_total: ['matricula educacion superior', 'sies', 'estudiantes educacion superior', 'matricula sies', '2327 estudiantes'],
+    matricula_sies_total: ['matricula educacion superior', 'sies', 'estudiantes educacion superior', 'matricula sies', '2924 estudiantes'],
     matricula_cft_estatal: ['cft estatal', 'cft estatal aysen', 'matricula cft estatal', '737 estudiantes cft'],
     matricula_inacap_coyhaique: ['inacap coyhaique', 'inacap aysen', 'matricula inacap', '800 estudiantes inacap'],
     matricula_universidad_aysen: ['universidad de aysen', 'matricula uaysen', 'estudiantes uaysen', '790 estudiantes uaysen'],
@@ -2214,14 +2214,14 @@
     const nodeSummaryList = indexedNodes.map(n => `#${n.id}(${n.hubId}):${n.title}`).join('; ');
     const regionalMilestones = [
       '13 holdings salmoneros madres operan en el litoral de Aysén (745 concesiones otorgadas y 503.500 ton de biomasa anual: AquaChile, Multi X, Blumar, Mowi, Cermaq, Australis)',
-      'Criosfera y recursos hidricos: 10.035,7 km2 de superficie glaciar regional (Campos de Hielo Norte y Sur, DGA-MOP) y cuencas binacionales (Palena, Cisnes, Aysen, Baker y Pascua)',
+      'Criosfera y recursos hidricos: 8.721,6 km2 de superficie glaciar regional (10.301 glaciares en IPG 2022 DGA-MOP / SOCHICRI oct-2025, Campos de Hielo Norte y Sur) y cuencas binacionales (Palena, Cisnes, Aysen, Baker y Pascua)',
       'Corredor binacional ATIT 1974 via RN40 y Paso Cardenal Samore hacia Huemules, Jeinimeni, Coyhaique Alto y Roballos',
       'EMPORCHA Puerto Chacabuco 468.200 ton (2024) y proy. 495.000 ton (2026) + CAM-01 + barcazas DTPR',
       'Red vial MOP 3.386,4 km totales (412,8 km pavimentados [12,2%] vs 2.438,0 km ripio)',
       'Sistemas Medianos y Aislados desconectados del SEN (67,10 MW operativos + 18,98 MW ERNC en construccion 2026) + Decreto 8T Nov-2026 BT1 $287,8/kWh + 13.448 hogares Subsidio Electrico + Lena INFOR BES 11 334.274 m3s/ano (Coyhaique 147.080 m3s [44,0%]) + unico MBM activo Copec Chacabuco 6.674 m3 + CTR submarina solo en Caleta Tortel',
       'Finanzas municipales BCN/SINIM 2025: ingresos municipales agregados de 84.820,68 M$ (promedio 8.482,1 M$/comuna), IPP 19.243,52 M$, FCM 41.753,32 M$ (dependencia FCM 68,5% ponderada / 77,5% simple; min 48,7% Cisnes, 58,4% Coyhaique; max 95,4% Tortel), FNDR 2025 devengado récord 73.863,0 M$ (92,0% sobre 80.200,0 M$) y participación municipal oct-2024 de 72,9% (SERVEL)',
-      'Bosque nativo CONAF 2026: 5.152.384,3 ha (10.667.211,5 ha catastradas; 2.387.525,4 ha en SNASPE) + 35.240 ha plantaciones + 5.723.000 ha vegetacion nativa',
-      'Huemul RCE MMA 1.500-2.000 individuos (amenaza perros asilvestrados); Ganado BCN/ODEPA 144.118 bovinos y 177.972 ovinos',
+      'Bosque nativo CONAF 2026: 5.152.384,3 ha (10.667.211,5 ha catastradas; 5.189.923,8 ha subuso Bosques total; 2.387.525,4 ha en SNASPE) con 4 tipos forestales (Siempreverde 2.552.613,1 ha, Lenga 1.409.259,7 ha, Coihue de Magallanes 882.420,0 ha, Cipres de las Guaitecas 308.091,5 ha)',
+      'Huemul RCE MMA 750-1.000 individuos en Aysen (<1.500 poblacion mundial 17° Proceso RCE; amenaza perros asilvestrados); 154 taxones nativos RCE (64 en amenaza directa 20° Proceso oct-2026); Ganado BCN/ODEPA 144.118 bovinos y 177.972 ovinos',
       'Listas espera SIGTE 11.420 interconsultas; GLOFs Cachet 2 cuenca Baker; 3 ZOITs decretadas'
     ].join(' | ');
     const panoramicNodesAndMilestones = `Hitos regionales: ${regionalMilestones}. Nodos (${indexedNodes.length}): ${nodeSummaryList}`;
@@ -3469,9 +3469,10 @@
       }
       case 'especies_exoticas_invasoras': {
         const reply = (
-          'Especies Exóticas Invasoras EEI en Aysén y Áreas Silvestres SNASPE (Nodo #29 · SAG/CONAF/CIEP): ' +
-          'El catastro regional registra 6 complejos invasores críticos con un promedio comunal de 4,4 especies (Pool regional: Visón americano en 10/10 comunas [100%, Control biológico-trampeo SAG], Salmónidos asilvestrados Chinook y truchas en 10/10 comunas [100%, Vigilancia SERNAPESCA], Alga Didymo en 8/10 comunas [80%, Protocolo bioseguridad SERNAPESCA], Lupino/Chaqueta Amarilla en 7/10 comunas [70%, Manejo vial/CONAF], Jabalí europeo en 4/10 comunas [40%, Caza controlada SAG] y Castor canadiense en 2/10 comunas — O\'Higgins y Tortel [20%, Erradicación fronteriza SAG]). ' +
-          'El avance de estas invasoras ejerce presión directa sobre la fauna nativa RCE (Prom. comunal: 6,3 especies amenazadas por comuna) y la red SNASPE.'
+          'Especies Exóticas Invasoras EEI en Aysén y Áreas Silvestres SNASPE (Nodo #29 · SAG/WCS/CONAF/SUBPESCA): ' +
+          'El catastro regional registra 6 complejos evaluados: Visón norteamericano en 10/10 comunas (Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation ago-2026), ' +
+          'Salmónidos asilvestrados en 10/10 comunas (vigilancia SERNAPESCA), Microalga Didymo en 6 cuencas BNA declaradas en plaga o riesgo por SUBPESCA D.Ac. N° 414/2024 (110, 111, 113, 114, 115, 117 · 8 comunas continentales), ' +
+          'Lupino en 7/10 comunas, Jabalí europeo en 6/10 comunas (incl. Río Ibáñez / PN Cerro Castillo, cámaras trampa CONAF/UACh 2025) y Castor americano con 0 comunas invadidas en Aysén (Alerta Temprana Preventiva SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza).'
         );
         const sources = resolveSourcesForKeys(['especies_exoticas_invasoras_n', 'fauna_amenazada_n', 'superficie_snaspe_pct']);
         return {
@@ -3484,10 +3485,10 @@
             yKey: 'especies_exoticas_invasoras_n',
             y2Key: 'fauna_amenazada_n',
             customCategoryData: true,
-            labels: ['Visón Americano', 'Salmónidos (Chinook)', 'Alga Didymo', 'Lupino Invasor', 'Jabalí Europeo', 'Castor Canadiense'],
+            labels: ['Visón Americano', 'Salmónidos (Chinook)', 'Alga Didymo (6 cuencas)', 'Lupino Invasor', 'Jabalí Europeo (6 com.)', 'Castor (SAT 0 com.)'],
             datasets: [{
-              label: 'Cobertura Comunal de Especies Exóticas Invasoras (n° de 10 comunas)',
-              data: [10, 10, 8, 7, 4, 2],
+              label: 'Cobertura Comunal Establecida de EEI (n° de 10 comunas)',
+              data: [10, 10, 8, 7, 6, 0],
               backgroundColor: ['#b91c1c', '#dc2626', '#d97706', '#ca8a04', '#0284c7', '#4338ca']
             }],
             title: 'Catastro de Especies Exóticas Invasoras EEI en Aysén (Comunas Afectadas)',
@@ -3500,9 +3501,10 @@
       }
       case 'fauna_rce_conservacion': {
         const reply = (
-          'Catastro de Fauna Silvestre en Categorías de Conservación RCE MMA en Aysén (Nodo #28): ' +
-          'El pool regional suma 14 especies evaluadas (9 en categorías amenazadas CR+EN+VU y 5 en NT+LC), con un promedio comunal de 6,3 especies presentes (máx. Puerto Aysén y Cisnes con 9): ' +
-          '1 En Peligro Crítico (CR: Macá Tobiano en mesetas lacustres australes), 5 En Peligro (EN: Huemul [1.500-2.000 ind. en Patagonia], Huillín, Chungungo, Ballena Sei y Ballena Azul [600-800 ind.]), 3 Vulnerables (VU: Pudú del Sur, Chorlo de Magallanes, Becacina Grande), 3 Casi Amenazadas (NT: Cóndor Andino, Puma, Zorro Culpeo) y 2 Preocupación Menor (LC).'
+          'Catastro de Fauna Silvestre RCE MMA en Aysén (20° Proceso RCE, D.S. N° 29/2025 oct-2026 · Nodo #28): ' +
+          'La nómina RCE de Aysén reúne 154 taxones nativos y 64 especies en categorías de amenaza directa (CR, EN, VU); en el subconjunto emblemático auditado destacan: ' +
+          '1 En Peligro Crítico (CR: Macá Tobiano), Huemul (EN: 750–1.000 individuos en Aysén, ~50%–60% de <1.500 maduros mundiales según 17° Proceso RCE MMA), ' +
+          'Ballena Azul (EN: <250 individuos maduros, ~217 estimados en aguas chilenas Golfo de Penas–Chiloé), Huillín (EN entre Regiones VI y X; Insuficientemente Conocida IC en XI y XII), Ballena Sei (EN), Chungungo (EN), Pudú/Cóndor/Guanaco (VU) y Puma/Carpintero/Delfín Chileno (NT).'
         );
         const sources = resolveSourcesForKeys(['fauna_amenazada_n', 'superficie_snaspe_pct']);
         return {
@@ -3515,13 +3517,13 @@
             yKey: 'fauna_amenazada_n',
             y2Key: 'superficie_snaspe_pct',
             customCategoryData: true,
-            labels: ['En Peligro Crítico (CR)', 'En Peligro (EN)', 'Vulnerable (VU)', 'Casi Amenazada (NT)', 'Preocupación Menor (LC)'],
+            labels: ['En Peligro Crítico (CR)', 'En Peligro (EN)', 'Vulnerable (VU)', 'Casi Amenazada (NT)', 'Insuf. Conocida XI-XII (IC)'],
             datasets: [{
-              label: 'Especies Evaluadas en Pool Regional RCE MMA Aysén (Total: 14)',
-              data: [1, 5, 3, 3, 2],
-              backgroundColor: ['#991b1b', '#dc2626', '#d97706', '#0284c7', '#059669']
+              label: 'Especies Emblemáticas Auditadas RCE MMA Aysén (12 fichas; 64 amenazadas de 154 totales)',
+              data: [1, 4, 3, 3, 1],
+              backgroundColor: ['#991b1b', '#dc2626', '#d97706', '#0284c7', '#64748b']
             }],
-            title: 'Pool Regional de Fauna Silvestre RCE MMA en Aysén (14 Especies · Prom. 6,3/comuna)',
+            title: 'Fauna Silvestre 20° Proceso RCE MMA en Aysén (154 taxones RCE · 64 amenazadas)',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -3531,9 +3533,9 @@
       }
       case 'hidrologia_caudal_mp25_mensual': {
         const reply = (
-          'Estacionalidad Hidrológica Mensual (Ríos Baker y Simpson) vs. Material Particulado MP2.5 Coyhaique II (Nodo #30 · DGA/SINCA): ' +
-          'Mientras la concentración atmosférica de MP2.5 en Coyhaique II presenta un fuerte pulso invernal agudo (alcanzando picos de 160 µg/m³ en junio y 145 µg/m³ en julio por combustión residencial de leña e inversión térmica, vs. 18 µg/m³ en enero), ' +
-          'el Caudal del Río Baker muestra régimen pluvio-nival glacial con mínimo invernal en julio (430 m³/s por retención nival) y máximo de deshielo y precipitaciones en abril (740 m³/s) y noviembre (710 m³/s), en paralelo al Río Simpson (entre 34,2 m³/s en febrero y 68,4 m³/s en junio-noviembre).'
+          'Estacionalidad Hidrológica Mensual (Río Baker BNA 11530000-8 y Río Simpson) vs. MP2,5 SINCA (Nodo #30 · DGA/SINCA): ' +
+          'Solo Coyhaique (2 EMRP: 97 episodios críticos GEC en 2026; 87 en 2024; 87 días >50 µg/m³) y Puerto Aysén (1 EMRP Vialidad PDA D.S. N° 03/2025: 16 días base 2022) poseen estaciones continuas SINCA. ' +
+          'En hidrología, el Río Baker en Desagüe Lago Bertrand (BNA 11530000-8, media ~532 m³/s) presenta régimen nivo-glacial con máximo estival en febrero (675 m³/s) y enero (655 m³/s) y mínimo invernal en agosto (395 m³/s), contrastando con el pulso invernal de MP2,5 en Coyhaique II (160 µg/m³ en junio).'
         );
         const sources = resolveSourcesForKeys(['dias_sobre_norma_mp25', 'daa_no_consuntivos_m3s']);
         return {
@@ -3546,26 +3548,26 @@
             yKey: 'dias_sobre_norma_mp25',
             y2Key: 'daa_no_consuntivos_m3s',
             customTemporalSeries: true,
-            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic (12m)'],
             datasets: [
               {
                 label: 'MP2.5 Estación Coyhaique II (µg/m³)',
-                data: [18, 22, 38, 72, 118, 160, 145, 112, 68, 34, 24, 19],
+                data: [18, 15, 22, 55, 115, 160, 145, 95, 45, 25, 19, 16],
                 borderColor: '#991b1b',
                 backgroundColor: 'rgba(153, 27, 27, 0.14)',
                 yAxisID: 'y',
                 unit: 'µg/m³'
               },
               {
-                label: 'Caudal Medio Mensual Río Baker DGA (m³/s)',
-                data: [620, 560, 590, 740, 610, 480, 430, 470, 540, 650, 710, 660],
+                label: 'Caudal Medio Mensual Río Baker DGA BNA 11530000-8 (m³/s)',
+                data: [655, 675, 615, 525, 475, 440, 415, 395, 405, 465, 555, 625],
                 borderColor: '#0284c7',
                 backgroundColor: 'rgba(2, 132, 199, 0.14)',
                 yAxisID: 'y1',
                 unit: 'm³/s'
               }
             ],
-            title: 'Estacionalidad Mensual Ene-Dic: MP2.5 Coyhaique II (µg/m³) vs. Caudal Río Baker (m³/s)',
+            title: 'Régimen Nivo-Glacial DGA Río Baker (Máx. Feb 675 / Mín. Ago 395 m³/s) vs. MP2.5 Coyhaique II',
             sourceText: sources.map(s => s.institucion).join(' · '),
             excludeCoyhaique: false
           },
@@ -3582,7 +3584,7 @@
           const top3Sma = smaRanked.slice(0, 3).map(e => `${e.name} (${e.raw.expedientes_fiscalizacion_sma_n})`).join(', ');
           const reply = (
             'Amenaza Volcánica RNVV (SERNAGEOMIN), Sismicidad USGS y Fiscalización Ambiental SMA en Aysén (Nodo #31 + justicia_sma): ' +
-            '1) 6 complejos volcánicos activos RNVV: Volcán Hudson (#2 nacional, Muy Alto), Melimoyu (#16 Alto), Mentolat (#19 Alto), Macá (#20 Alto), Cay (#28 Moderado) y Arenales/Lautaro (#42 Bajo-Moderado). ' +
+            '1) 5 complejos volcánicos activos RNVV dentro de Aysén: Volcán Hudson (#12 nacional, Categoría I Muy Alto Riesgo por regla VEI >= 4), Melimoyu (Cat. II), Mentolat (#35, Cat. III), Macá (#39, Cat. III) y Cay (#63, Cat. IV), más Volcán Lautaro (Cat. III, Natales/Magallanes) como amenaza transregional al sur de Villa O\'Higgins (Cerro Arenales excluido por falta de erupción holocena confirmada). ' +
             '2) 396 eventos sísmicos catalogados USGS distribuidos por clúster geodésico: Hudson/Simpson (142), Puyuhuapi/Mentolat (98), Falla Liquiñe-Ofqui/Aysén (86), General Carrera (42) y Zona Sur/Glaciares (28). ' +
             `3) 282 expedientes comunales de fiscalización ambiental SMA SNIFA (prom. 28,2/comuna): lideran ${top3Sma} (nunca confundir volcanes activos con centros activos de salmonicultura).`
           );
@@ -3609,8 +3611,8 @@
         if (asksSanRafael) {
           const reply = (
             'Síntesis geográfica y glaciovolcánica de ambos hitos australes: ' +
-            '1) Volcán Hudson (límite Aysén / Río Ibáñez): estratovolcán con caldera activa de 10 km, #2 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo), erupciones históricas en 1971 y 1991 con lahares por el valle del Río Huemules y cenizas sobre Río Ibáñez/Chile Chico, junto a 142 eventos sísmicos USGS registrados en el clúster Hudson/Simpson. ' +
-            '2) Parque Nacional y Glaciar Laguna San Rafael (comunas de Aysén, Tortel y Río Ibáñez; 1.742.000 ha SNASPE): puerta de entrada al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional (DGA-MOP), con 39.800 visitas anuales SNASPE (CONAF 2026) y monitoreo activo en la Base Glaciológica San Rafael (CECs / Universidad de Chile).'
+            '1) Volcán Hudson (límite Aysén / Río Ibáñez): estratovolcán con caldera activa de 10 km, #12 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo por regla VEI >= 4), erupciones históricas en 1971 y 1991 con lahares por el valle del Río Huemules y cenizas sobre Río Ibáñez/Chile Chico, junto a 142 eventos sísmicos USGS registrados en el clúster Hudson/Simpson. ' +
+            '2) Parque Nacional y Glaciar Laguna San Rafael (comunas de Aysén, Tortel y Río Ibáñez; 1.742.000 ha SNASPE): puerta de entrada al Campo de Hielo Norte dentro de los 8.721,6 km² de superficie glaciar regional IPG 2022 (10.301 glaciares DGA-MOP), con 39.800 visitas anuales SNASPE (CONAF 2026) y monitoreo activo en la Base Glaciológica San Rafael (CECs / Universidad de Chile).'
           );
           const sources = resolveSourcesForKeys(['superficie_glaciares_km2', 'visitantes_snaspe', 'amenaza_volcanica_sismica_idx']);
           return {
@@ -3634,7 +3636,7 @@
 
         const reply = (
           'Amenaza Volcánica RNVV (SERNAGEOMIN) y Sismicidad USGS en Aysén (Nodo #31): ' +
-          '1) 6 complejos volcánicos activos RNVV: Volcán Hudson (#2 nacional, Muy Alto Riesgo, caldera activa de 10 km entre Aysén y Río Ibáñez), Melimoyu (#16 Alto), Mentolat (#19 Alto), Macá (#20 Alto), Cay (#28 Moderado) y Arenales/Lautaro (#42 Bajo-Moderado). ' +
+          '1) 5 complejos volcánicos activos RNVV en Aysén: Volcán Hudson (#12 nacional, Categoría I Muy Alto Riesgo por regla VEI >= 4, caldera activa de 10 km entre Aysén y Río Ibáñez), Melimoyu (Cat. II), Mentolat (#35, Cat. III), Macá (#39, Cat. III) y Cay (#63, Cat. IV), más Volcán Lautaro (Cat. III, Natales/Magallanes) sobre O\'Higgins. ' +
           '2) 396 eventos sísmicos catalogados USGS distribuidos por clúster geodésico: Hudson/Simpson (142), Puyuhuapi/Mentolat (98), Falla Liquiñe-Ofqui/Aysén (86), General Carrera (42) y Zona Sur/Glaciares (28).'
         );
         const sources = resolveSourcesForKeys(['amenaza_volcanica_sismica_idx', 'superficie_glaciares_km2']);
@@ -4408,7 +4410,7 @@
         'En la Región de Aysén, «Huemules» alude a tres entidades territoriales y ecológicas verificadas: ' +
         '(1) Paso Fronterizo Huemules (comuna de Coyhaique, sector Balmaceda): complejo aduanero terrestre del corredor binacional ATIT 1974 junto a la Ruta 40 argentina hacia Comodoro Rivadavia y barrera de bioseguridad fitosanitaria del SAG; ' +
         '(2) Río Huemules y Valle Huemules (sector limítrofe Aysén / Coyhaique): cuenca fluvioglaciar que drena el flanco occidental del Volcán Hudson hacia el estero Elefantes; y ' +
-        '(3) Huemul (Hippocamelus bisulcus, en plural «huemules»): cérvido nativo en categoría En Peligro (EN) en el RCE MMA, con una población estimada de 1.500 a 2.000 individuos en Aysén (60% al 70% de la población mundial) protegida en áreas SNASPE como el Parque Nacional Cerro Castillo y la Reserva Nacional Tamango.'
+        '(3) Huemul (Hippocamelus bisulcus, en plural «huemules»): cérvido nativo en categoría En Peligro (EN) en el RCE MMA (< 1.500 individuos maduros a nivel mundial según Ficha Oficial 17° Proceso RCE), con una población estimada de 750 a 1.000 individuos en Aysén (~50% a 60% de la población mundial) protegida en áreas SNASPE como el Parque Nacional Cerro Castillo y la Reserva Nacional Tamango.'
     },
     {
       id: 'volcan_hudson',
@@ -4428,7 +4430,7 @@
         title: 'Índice de Amenaza Volcánica-Sísmica RNVV y Superficie Glaciar Comunal (km²)'
       },
       verifiedSynthesis:
-        'El Volcán Hudson (límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km, #2 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico, junto a 142 eventos sísmicos USGS en el clúster Hudson/Simpson.'
+        'El Volcán Hudson (-45.90, -72.97, límite Río Ibáñez / Aysén) es un estratovolcán con caldera activa de 10 km, #12 nacional en el Ranking RNVV de SERNAGEOMIN (Categoría I Muy Alto Riesgo por regla de excepción VEI >= 4), parte de los 5 volcanes activos monitoreados en Aysén (Hudson, Melimoyu Cat. II, Mentolat #35 Cat. III, Macá #39 Cat. III y Cay #63 Cat. IV), con erupciones históricas en 1971 y 1991 que generaron lahares por el valle del Río Huemules y caída de cenizas hacia Río Ibáñez y Chile Chico.'
     },
     {
       id: 'laguna_san_rafael_campos_hielo',
@@ -4448,7 +4450,7 @@
         title: 'Superficie de Glaciares DGA (km²) vs. Visitantes Anuales Parques SNASPE por Comuna'
       },
       verifiedSynthesis:
-        'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 10.035,7 km² de superficie glaciar regional (DGA-MOP). Registra 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de retroceso glacial.'
+        'El Parque Nacional Laguna San Rafael (1.742.000 ha SNASPE entre Aysén, Tortel y Río Ibáñez) constituye la puerta occidental al Campo de Hielo Norte dentro de los 8.721,6 km² y 10.301 glaciares de superficie glaciar regional según el IPG 2022 DGA-MOP / SOCHICRI oct-2025. Registra 39.800 visitas anuales SNASPE (CONAF 2026) y alberga la Base Glaciológica San Rafael (CECs / Universidad de Chile) para monitoreo de retroceso glacial.'
     }
   ];
 
@@ -4598,7 +4600,7 @@
       const lastRunIso = String(autoUp.lastRun || nowIso).slice(0, 10);
       const [yr, mo] = lastRunIso.split('-');
       const cycleCutIso = (yr && mo) ? `${yr}-${mo}-01` : `${nowIso.slice(0, 7)}-01`;
-      const activeConns = autoUp.activeApiConnectors || 7;
+      const activeConns = autoUp.activeApiConnectors || 8;
       const totalSrc = autoUp.totalOfficialSources || _memoryIndex.fuentes?.length || autoUp.totalSources || 38;
       const reply = `La plataforma se actualiza automáticamente el día 1 de cada mes (ciclo mensual vigente: ${cycleCutIso}; última corrida automática registrada: ${lastRunIso}, con ${activeConns} conectores API activos sobre ${totalSrc} fuentes oficiales en series 2015–2026). Fuentes censales y estructurales como Censo INE 2024, CASEN 2022 y Censo Agropecuario 2021 mantienen su última publicación oficial vigente.`;
       const metaChart = buildEmptyChartSpec('Consulta de vigencia y ciclo de actualización mensual (día 1 de cada mes).');

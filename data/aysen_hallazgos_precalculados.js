@@ -6,7 +6,7 @@
 (function (root) {
   'use strict';
   const data = {
-  "generatedAt": "2026-11-27T11:38:43Z",
+  "generatedAt": "2026-11-27T14:06:33Z",
   "methodology": {
     "engine": "Cálculo estadístico territorial de Aysén",
     "testsApplied": [
@@ -164,7 +164,7 @@
         "partialCorrPop": 0.854,
         "rWithoutCoyhaique": 0.896,
         "firstDiffCorrDelta": 0.854,
-        "pValueFdr": 3.3e-05,
+        "pValueFdr": 3.5e-05,
         "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,85"
       }
     },
@@ -894,7 +894,7 @@
         "partialCorrPop": -0.851,
         "rWithoutCoyhaique": -0.964,
         "firstDiffCorrDelta": -0.851,
-        "pValueFdr": 1.4e-05,
+        "pValueFdr": 1.5e-05,
         "veredictoSimple": "R² 93% · r = –0,96 · Sin Coyhaique: –0,96 · Control pob.: –0,85"
       }
     },
@@ -1624,7 +1624,7 @@
         "partialCorrPop": 0.714,
         "rWithoutCoyhaique": 0.895,
         "firstDiffCorrDelta": 0.714,
-        "pValueFdr": 4.8e-05,
+        "pValueFdr": 5.1e-05,
         "veredictoSimple": "R² 90% · r = +0,95 · Sin Coyhaique: +0,90 · Control pob.: +0,71"
       }
     },
@@ -2062,7 +2062,7 @@
         "partialCorrPop": 0.84,
         "rWithoutCoyhaique": 0.938,
         "firstDiffCorrDelta": 0.84,
-        "pValueFdr": 3.3e-05,
+        "pValueFdr": 3.6e-05,
         "veredictoSimple": "R² 91% · r = +0,95 · Sin Coyhaique: +0,94 · Control pob.: +0,84"
       }
     },
@@ -2208,7 +2208,7 @@
         "partialCorrPop": -0.773,
         "rWithoutCoyhaique": -0.944,
         "firstDiffCorrDelta": -0.773,
-        "pValueFdr": 3.3e-05,
+        "pValueFdr": 3.5e-05,
         "veredictoSimple": "R² 91% · r = –0,95 · Sin Coyhaique: –0,94 · Control pob.: –0,77"
       }
     },
@@ -2792,7 +2792,7 @@
         "partialCorrPop": 0.886,
         "rWithoutCoyhaique": 0.866,
         "firstDiffCorrDelta": 0.886,
-        "pValueFdr": 1e-05,
+        "pValueFdr": 1.1e-05,
         "veredictoSimple": "R² 94% · r = +0,97 · Sin Coyhaique: +0,87 · Control pob.: +0,89"
       }
     },
@@ -2824,16 +2824,16 @@
         "Tortel"
       ],
       "dataX": [
-        41.0,
-        2.0,
-        14.0,
-        4.0,
+        97.0,
         0.0,
-        5.0,
-        3.0,
-        8.0,
-        1.0,
-        2.0
+        16.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "dataY": [
         44.5,
@@ -2848,98 +2848,98 @@
         17.8
       ],
       "regressionLine": {
-        "slopeBeta1": 0.64713,
-        "interceptBeta0": 18.2529,
-        "rSquaredPct": 94.2,
+        "slopeBeta1": 0.25352,
+        "interceptBeta0": 20.5653,
+        "rSquaredPct": 89.2,
         "directionLabel": "Relación Directa (+)"
       },
-      "reading": "En valles con inversión térmica y leña, el humo eleva la demanda clínica: Coyhaique sufre 41 episodios críticos y 44,5% de urgencias respiratorias, vs. 22,8% en Guaitecas.",
-      "plainExplanation": "En valles con inversión térmica y leña, el humo eleva la demanda clínica: Coyhaique sufre 41 episodios críticos y 44,5% de urgencias respiratorias, vs. 22,8% en Guaitecas.",
-      "notable_commune": "Caso atípico: Guaitecas registra +4,5 % por encima de lo esperado para su nivel en el eje X.",
+      "reading": "En valles con inversión térmica y leña, el humo eleva la demanda clínica: Coyhaique sufre 97 episodios críticos y 44,5% de urgencias respiratorias, vs. 18,2% en Lago Verde.",
+      "plainExplanation": "En valles con inversión térmica y leña, el humo eleva la demanda clínica: Coyhaique sufre 97 episodios críticos y 44,5% de urgencias respiratorias, vs. 18,2% en Lago Verde.",
+      "notable_commune": "Caso atípico: O'Higgins registra –4,1 % por debajo de lo esperado para su nivel en el eje X.",
       "residualsByComuna": {
         "Coyhaique": {
           "actualY": 44.5,
-          "expectedY": 44.79,
-          "diffY": -0.29,
-          "zResid": -0.15,
+          "expectedY": 45.16,
+          "diffY": -0.66,
+          "zResid": -0.26,
           "note": "Coyhaique (44,5 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Lago Verde": {
           "actualY": 18.2,
-          "expectedY": 19.55,
-          "diffY": -1.35,
-          "zResid": -0.72,
-          "note": "Lago Verde registra 18,2 %, 1,3 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
+          "expectedY": 20.57,
+          "diffY": -2.37,
+          "zResid": -0.92,
+          "note": "Lago Verde registra 18,2 %, 2,4 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
         },
         "Aysén": {
           "actualY": 28.6,
-          "expectedY": 27.31,
-          "diffY": 1.29,
-          "zResid": 0.69,
-          "note": "Aysén registra 28,6 %, 1,3 % por encima de lo esperado según su nivel de episodios críticos MP2.5."
+          "expectedY": 24.62,
+          "diffY": 3.98,
+          "zResid": 1.55,
+          "note": "Aysén registra 28,6 %, 4,0 % por encima de lo esperado según su nivel de episodios críticos MP2.5."
         },
         "Cisnes": {
           "actualY": 21.4,
-          "expectedY": 20.84,
-          "diffY": 0.56,
-          "zResid": 0.3,
+          "expectedY": 20.57,
+          "diffY": 0.83,
+          "zResid": 0.33,
           "note": "Cisnes (21,4 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Guaitecas": {
           "actualY": 22.8,
-          "expectedY": 18.25,
-          "diffY": 4.55,
-          "zResid": 2.43,
-          "note": "Guaitecas registra 22,8 %, 4,5 % por encima de lo esperado según su nivel de episodios críticos MP2.5."
+          "expectedY": 20.57,
+          "diffY": 2.23,
+          "zResid": 0.87,
+          "note": "Guaitecas registra 22,8 %, 2,2 % por encima de lo esperado según su nivel de episodios críticos MP2.5."
         },
         "Chile Chico": {
           "actualY": 20.5,
-          "expectedY": 21.49,
-          "diffY": -0.99,
-          "zResid": -0.53,
-          "note": "Chile Chico registra 20,5 %, 1,0 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
+          "expectedY": 20.57,
+          "diffY": -0.07,
+          "zResid": -0.03,
+          "note": "Chile Chico (20,5 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Río Ibáñez": {
           "actualY": 19.8,
-          "expectedY": 20.19,
-          "diffY": -0.39,
-          "zResid": -0.21,
+          "expectedY": 20.57,
+          "diffY": -0.77,
+          "zResid": -0.3,
           "note": "Río Ibáñez (19,8 %) se ubica prácticamente en línea con la tendencia regional."
         },
         "Cochrane": {
           "actualY": 24.2,
-          "expectedY": 23.43,
-          "diffY": 0.77,
-          "zResid": 0.41,
-          "note": "Cochrane (24,2 %) se ubica prácticamente en línea con la tendencia regional."
+          "expectedY": 20.57,
+          "diffY": 3.63,
+          "zResid": 1.42,
+          "note": "Cochrane registra 24,2 %, 3,6 % por encima de lo esperado según su nivel de episodios críticos MP2.5."
         },
         "O'Higgins": {
           "actualY": 16.5,
-          "expectedY": 18.9,
-          "diffY": -2.4,
-          "zResid": -1.28,
-          "note": "O'Higgins registra 16,5 %, 2,4 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
+          "expectedY": 20.57,
+          "diffY": -4.07,
+          "zResid": -1.59,
+          "note": "O'Higgins registra 16,5 %, 4,1 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
         },
         "Tortel": {
           "actualY": 17.8,
-          "expectedY": 19.55,
-          "diffY": -1.75,
-          "zResid": -0.93,
-          "note": "Tortel registra 17,8 %, 1,7 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
+          "expectedY": 20.57,
+          "diffY": -2.77,
+          "zResid": -1.08,
+          "note": "Tortel registra 17,8 %, 2,8 % por debajo de lo esperado según su nivel de episodios críticos MP2.5."
         }
       },
       "methodologicalCaveat": "Nota metodológica: asociación transversal sobre las 10 comunas de Aysén entre registros administrativos independientes (correlación estadística no implica causalidad directa).",
-      "metrics_line": "R² 94% · r = +0,97 · Sin Coyhaique: +0,83 · Control pob.: +0,90",
+      "metrics_line": "R² 89% · r = +0,94 · Sin Coyhaique: +0,76 · Control pob.: +0,91",
       "statProofBadges": {
-        "fuerzaExplicativaPct": 94,
-        "pearsonR": 0.971,
-        "spearmanRho": 0.729,
-        "kendallTau": 0.674,
-        "partialCorrPop": 0.899,
-        "rWithoutCoyhaique": 0.832,
-        "firstDiffCorrDelta": 0.899,
-        "pValueFdr": 8e-06,
-        "veredictoSimple": "R² 94% · r = +0,97 · Sin Coyhaique: +0,83 · Control pob.: +0,90"
+        "fuerzaExplicativaPct": 89,
+        "pearsonR": 0.944,
+        "spearmanRho": 0.701,
+        "kendallTau": 0.615,
+        "partialCorrPop": 0.91,
+        "rWithoutCoyhaique": 0.755,
+        "firstDiffCorrDelta": 0.91,
+        "pValueFdr": 6.2e-05,
+        "veredictoSimple": "R² 89% · r = +0,94 · Sin Coyhaique: +0,76 · Control pob.: +0,91"
       }
     },
     {
@@ -3356,6 +3356,17 @@
       "porcentajeRegionalPct": 57.17,
       "topAboveRegionalMean": [
         {
+          "varKey": "dias_sobre_norma_mp25",
+          "hub": "VII. Biodiversidad",
+          "label": "Días Anuales sobre Norma Diaria de MP2.5 (SINCA)",
+          "unit": "días/año",
+          "comunaValue": 87.0,
+          "regionalMean": 10.3,
+          "zScore": 2.95,
+          "diffVsMeanPct": 744.7,
+          "plainSummary": "Días Anuales sobre Norma Diaria de MP2.5 (SINCA): 87,0 días/año (promedio regional: 10,3 días/año)"
+        },
+        {
           "varKey": "total_proyectos_ctci",
           "hub": "X. CTCi",
           "label": "Total de Proyectos de Ciencia e Innovación (ANID + CORFO)",
@@ -3365,17 +3376,6 @@
           "zScore": 2.89,
           "diffVsMeanPct": 469.8,
           "plainSummary": "Total de Proyectos de Ciencia e Innovación (ANID + CORFO): 102,0 proyectos (promedio regional: 17,9 proyectos)"
-        },
-        {
-          "varKey": "dias_sobre_norma_mp25",
-          "hub": "VII. Biodiversidad",
-          "label": "Días Anuales sobre Norma Diaria de MP2.5 (SINCA)",
-          "unit": "días/año",
-          "comunaValue": 87.0,
-          "regionalMean": 22.5,
-          "zScore": 2.82,
-          "diffVsMeanPct": 286.7,
-          "plainSummary": "Días Anuales sobre Norma Diaria de MP2.5 (SINCA): 87,0 días/año (promedio regional: 22,5 días/año)"
         },
         {
           "varKey": "medicos_por_mil_hab",
@@ -3477,10 +3477,10 @@
         {
           "comuna": "Aysén",
           "provincia": "Aysén",
-          "similitudPct": 55
+          "similitudPct": 54
         }
       ],
-      "narrativeDigest": "Coyhaique (Coyhaique, 57.823 hab.) destaca sobre la media regional en Total de Proyectos de Ciencia e Innovación (ANID + CORFO) (102,0 proyectos) y Días Anuales sobre Norma Diaria de MP2.5 (SINCA), mientras presenta sus valores más bajos frente al promedio en Consumo Residencial Anual de Leña por Hogar. Sus perfiles territoriales más parecidos son Chile Chico (56%) y Aysén (55%)."
+      "narrativeDigest": "Coyhaique (Coyhaique, 57.823 hab.) destaca sobre la media regional en Días Anuales sobre Norma Diaria de MP2.5 (SINCA) (87,0 días/año) y Total de Proyectos de Ciencia e Innovación (ANID + CORFO), mientras presenta sus valores más bajos frente al promedio en Consumo Residencial Anual de Leña por Hogar. Sus perfiles territoriales más parecidos son Chile Chico (56%) y Aysén (54%)."
     },
     "Lago Verde": {
       "comuna": "Lago Verde",
@@ -3603,17 +3603,17 @@
       ],
       "twinComunas": [
         {
+          "comuna": "O'Higgins",
+          "provincia": "Capitán Prat",
+          "similitudPct": 59
+        },
+        {
           "comuna": "Cochrane",
           "provincia": "Capitán Prat",
           "similitudPct": 58
-        },
-        {
-          "comuna": "Río Ibáñez",
-          "provincia": "General Carrera",
-          "similitudPct": 57
         }
       ],
-      "narrativeDigest": "Lago Verde (Coyhaique, 882 hab.) destaca sobre la media regional en Déficit Habitacional Relativo (MINVU) (82,8 viv/1.000 hab) y Gasto Municipal en Cultura Per Cápita, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Cochrane (58%) y Río Ibáñez (57%)."
+      "narrativeDigest": "Lago Verde (Coyhaique, 882 hab.) destaca sobre la media regional en Déficit Habitacional Relativo (MINVU) (82,8 viv/1.000 hab) y Gasto Municipal en Cultura Per Cápita, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son O'Higgins (59%) y Cochrane (58%)."
     },
     "Aysén": {
       "comuna": "Aysén",
@@ -4137,7 +4137,7 @@
         {
           "comuna": "Cochrane",
           "provincia": "Capitán Prat",
-          "similitudPct": 81
+          "similitudPct": 82
         },
         {
           "comuna": "Río Ibáñez",
@@ -4145,7 +4145,7 @@
           "similitudPct": 70
         }
       ],
-      "narrativeDigest": "Chile Chico (General Carrera, 4.950 hab.) destaca sobre la media regional en Esperanza de Vida al Nacer Comunal (DEIS) (81,3 años) y Cobertura de Control Preventivo del Adulto Mayor (EMPAM), mientras presenta sus valores más bajos frente al promedio en Costo Real de Generación Diésel Aislada. Sus perfiles territoriales más parecidos son Cochrane (81%) y Río Ibáñez (70%)."
+      "narrativeDigest": "Chile Chico (General Carrera, 4.950 hab.) destaca sobre la media regional en Esperanza de Vida al Nacer Comunal (DEIS) (81,3 años) y Cobertura de Control Preventivo del Adulto Mayor (EMPAM), mientras presenta sus valores más bajos frente al promedio en Costo Real de Generación Diésel Aislada. Sus perfiles territoriales más parecidos son Cochrane (82%) y Río Ibáñez (70%)."
     },
     "Río Ibáñez": {
       "comuna": "Río Ibáñez",
@@ -4403,7 +4403,7 @@
         {
           "comuna": "Chile Chico",
           "provincia": "General Carrera",
-          "similitudPct": 81
+          "similitudPct": 82
         },
         {
           "comuna": "Cisnes",
@@ -4411,7 +4411,7 @@
           "similitudPct": 67
         }
       ],
-      "narrativeDigest": "Cochrane (Capitán Prat, 3.492 hab.) destaca sobre la media regional en Proporción de Suelo Fiscal (Bienes Nacionales) (31,4 %) y Cobertura del Programa de Salud Cardiovascular (PSCV), mientras presenta sus valores más bajos frente al promedio en Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN). Sus perfiles territoriales más parecidos son Chile Chico (81%) y Cisnes (67%)."
+      "narrativeDigest": "Cochrane (Capitán Prat, 3.492 hab.) destaca sobre la media regional en Proporción de Suelo Fiscal (Bienes Nacionales) (31,4 %) y Cobertura del Programa de Salud Cardiovascular (PSCV), mientras presenta sus valores más bajos frente al promedio en Índice de Amenaza Volcánica y Sísmica (SERNAGEOMIN). Sus perfiles territoriales más parecidos son Chile Chico (82%) y Cisnes (67%)."
     },
     "O'Higgins": {
       "comuna": "O'Higgins",
@@ -4429,17 +4429,6 @@
           "zScore": 2.2,
           "diffVsMeanPct": 180.9,
           "plainSummary": "Presupuesto Municipal Per Cápita: 8017,7 M$/hab (promedio regional: 2854,6 M$/hab)"
-        },
-        {
-          "varKey": "superficie_glaciar_km2",
-          "hub": "VII. Biodiversidad",
-          "label": "Superficie Glaciar Comunal (DGA)",
-          "unit": "km²",
-          "comunaValue": 3450.0,
-          "regionalMean": 1003.57,
-          "zScore": 2.09,
-          "diffVsMeanPct": 243.8,
-          "plainSummary": "Superficie Glaciar Comunal (DGA): 3450,0 km² (promedio regional: 1003,6 km²)"
         },
         {
           "varKey": "indice_aislamiento_multimodal",
@@ -4473,6 +4462,17 @@
           "zScore": 1.33,
           "diffVsMeanPct": 95.6,
           "plainSummary": "Inversión Pública FNDR Per Cápita: 3614,5 Miles $/hab (promedio regional: 1848,4 Miles $/hab)"
+        },
+        {
+          "varKey": "superficie_glaciar_km2",
+          "hub": "VII. Biodiversidad",
+          "label": "Superficie Glaciar Comunal (DGA)",
+          "unit": "km²",
+          "comunaValue": 2284.2,
+          "regionalMean": 872.16,
+          "zScore": 1.26,
+          "diffVsMeanPct": 161.9,
+          "plainSummary": "Superficie Glaciar Comunal (DGA): 2284,2 km² (promedio regional: 872,2 km²)"
         }
       ],
       "topBelowRegionalMean": [
@@ -4536,15 +4536,15 @@
         {
           "comuna": "Tortel",
           "provincia": "Capitán Prat",
-          "similitudPct": 69
+          "similitudPct": 68
         },
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 57
+          "similitudPct": 59
         }
       ],
-      "narrativeDigest": "O'Higgins (Capitán Prat, 664 hab.) destaca sobre la media regional en Presupuesto Municipal Per Cápita (8017,7 M$/hab) y Superficie Glaciar Comunal (DGA), mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (69%) y Lago Verde (57%)."
+      "narrativeDigest": "O'Higgins (Capitán Prat, 664 hab.) destaca sobre la media regional en Presupuesto Municipal Per Cápita (8017,7 M$/hab) y Índice Compuesto de Aislamiento Multimodal, mientras presenta sus valores más bajos frente al promedio en Proporción de Ciencia Liderada por Centros Locales. Sus perfiles territoriales más parecidos son Tortel (68%) y Lago Verde (59%)."
     },
     "Tortel": {
       "comuna": "Tortel",
@@ -4552,6 +4552,17 @@
       "poblacionCenso2024": 563,
       "porcentajeRegionalPct": 0.56,
       "topAboveRegionalMean": [
+        {
+          "varKey": "superficie_glaciar_km2",
+          "hub": "VII. Biodiversidad",
+          "label": "Superficie Glaciar Comunal (DGA)",
+          "unit": "km²",
+          "comunaValue": 3485.4,
+          "regionalMean": 872.16,
+          "zScore": 2.32,
+          "diffVsMeanPct": 299.6,
+          "plainSummary": "Superficie Glaciar Comunal (DGA): 3485,4 km² (promedio regional: 872,2 km²)"
+        },
         {
           "varKey": "rsh_carencia_servicios_basicos_jun2026_pct",
           "hub": "VI. Social",
@@ -4595,17 +4606,6 @@
           "zScore": 2.02,
           "diffVsMeanPct": 58.2,
           "plainSummary": "Participación Activa en Organizaciones Culturales: 100,0 % (promedio regional: 63,2 %)"
-        },
-        {
-          "varKey": "tarifa_bt1_clp",
-          "hub": "III. Energía",
-          "label": "Tarifa Eléctrica Residencial BT1",
-          "unit": "$/kWh",
-          "comunaValue": 318.0,
-          "regionalMean": 297.02,
-          "zScore": 1.97,
-          "diffVsMeanPct": 7.1,
-          "plainSummary": "Tarifa Eléctrica Residencial BT1: 318,0 $/kWh (promedio regional: 297,0 $/kWh)"
         }
       ],
       "topBelowRegionalMean": [
@@ -4669,15 +4669,15 @@
         {
           "comuna": "O'Higgins",
           "provincia": "Capitán Prat",
-          "similitudPct": 69
+          "similitudPct": 68
         },
         {
           "comuna": "Lago Verde",
           "provincia": "Coyhaique",
-          "similitudPct": 55
+          "similitudPct": 54
         }
       ],
-      "narrativeDigest": "Tortel (Capitán Prat, 563 hab.) destaca sobre la media regional en Hogares con Carencia de Servicios Básicos (RSH) (44,0 %) y Ratio de Presión Turística Estacional, mientras presenta sus valores más bajos frente al promedio en Cobertura del Programa de Salud Cardiovascular (PSCV). Sus perfiles territoriales más parecidos son O'Higgins (69%) y Lago Verde (55%)."
+      "narrativeDigest": "Tortel (Capitán Prat, 563 hab.) destaca sobre la media regional en Superficie Glaciar Comunal (DGA) (3485,4 km²) y Hogares con Carencia de Servicios Básicos (RSH), mientras presenta sus valores más bajos frente al promedio en Cobertura del Programa de Salud Cardiovascular (PSCV). Sus perfiles territoriales más parecidos son O'Higgins (68%) y Lago Verde (54%)."
     }
   }
 };

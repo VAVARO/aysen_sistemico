@@ -6,15 +6,15 @@ fecha: "2026-11-27"
 baseline: "HEAD"
 actual: "HEAD"
 semaforo: "ROJO"
-total_indicadores: 247
+total_indicadores: 248
 modificados: 0
 agregados: 0
 eliminados: 0
-sin_cambios: 247
+sin_cambios: 248
 alertas_alta: 1
 alertas_media: 1
 conectores_live_api: 5
-conectores_fallback: 6
+conectores_fallback: 7
 etapas_restauradas: 1
 umbral_outlier_operativo_pct: 20
 umbral_outlier_estructural_pct: 5
@@ -34,10 +34,10 @@ Comparación determinista: `HEAD` -> `HEAD` · Semáforo de revisión: **ROJO**.
 
 | Dimensión de Control | Resultado | Señal |
 |---|---|---|
-| Indicadores comunales evaluados | 247 actuales (247 en baseline) | 0 modificados · 0 agregados · 0 eliminados · 247 sin cambios |
+| Indicadores comunales evaluados | 248 actuales (248 en baseline) | 0 modificados · 0 agregados · 0 eliminados · 248 sin cambios |
 | Umbrales de salto brusco | Estructural >= 5% · Operativo >= 20% | + transiciones 0/nulo y cambios de signo |
 | Alertas para revisión humana | 2 (1 ALTA · 1 MEDIA) | Requiere cierre humano antes de merge a `main` si semáforo != VERDE |
-| Salud de conectores automáticos | 5 live_api · 6 curated_fallback | 1 etapa(s) restaurada(s) · Última corrida API: `2026-11-02T12:13:30+00:00` |
+| Salud de conectores automáticos | 5 live_api · 7 curated_fallback | 1 etapa(s) restaurada(s) · Última corrida API: `2026-11-02T12:13:30+00:00` |
 
 ### Checklist de Cierre Humano
 - [ ] Revisar logs de GitHub Actions (`actualizacion_mensual.yml` / `verificacion.yml`) sin errores bloqueantes.
@@ -48,14 +48,14 @@ Comparación determinista: `HEAD` -> `HEAD` · Semáforo de revisión: **ROJO**.
 ## 2. Qué Requiere Verificación Humana
 
 - [ ] **[ALTA · ETAPA_RESTAURADA]** `pipeline_ingesta` (Infraestructura / Ingesta): 1 etapa(s) fueron restauradas por Circuit Breaker (Last-Known-Good) en la última corrida automática (2026-11-02T12:13:30+00:00).
-- [ ] **[MEDIA · CONECTOR_FALLBACK]** `pipeline_ingesta` (Infraestructura / Ingesta): 6 conector(es) operaron en curated_fallback: cne_combustibles, cne_energia, subpesca, bbnn, conaf, sinca. Los datos previos se conservaron, pero conviene verificar si hubo actualización oficial pendiente.
+- [ ] **[MEDIA · CONECTOR_FALLBACK]** `pipeline_ingesta` (Infraestructura / Ingesta): 7 conector(es) operaron en curated_fallback: cne_combustibles, cne_energia, subpesca, bbnn, conaf, sinca, dga_hidrologia. Los datos previos se conservaron, pero conviene verificar si hubo actualización oficial pendiente.
 
 ## 3. Qué Cambió en esta Corrida (Indicadores Comunales)
 
 Sin variaciones numéricas ni estructurales en `dataLake.comunas` respecto al baseline.
 ## 4. Qué Quedó Igual (Resumen por 10 Hubs Canónicos)
 
-**247 indicadores comunales** mantuvieron valores idénticos en las 10 comunas de Aysén. No se generan fichas individuales vacías para evitar ruido en el grafo de Obsidian.
+**248 indicadores comunales** mantuvieron valores idénticos en las 10 comunas de Aysén. No se generan fichas individuales vacías para evitar ruido en el grafo de Obsidian.
 
 | Hub Canónico | Indicadores sin cambios |
 |---|---|
@@ -66,7 +66,7 @@ Sin variaciones numéricas ni estructurales en `dataLake.comunas` respecto al ba
 | IX. Cultura y Patrimonio | 15 |
 | V. Economía, Inversión y Suelo | 21 |
 | VI. Demografía, Educación y Sociedad | 36 |
-| VII. Biodiversidad, Clima y Riesgos | 15 |
+| VII. Biodiversidad, Clima y Riesgos | 16 |
 | VIII. Salud | 19 |
 | X. CTCi e Innovación | 14 |
 
@@ -91,4 +91,5 @@ Sin variaciones numéricas ni estructurales en `dataLake.comunas` respecto al ba
 | `bbnn` | `curated_fallback` | N/A | #22 | 2 candidato(s) fallaron: sin respuesta / sin respuesta |
 | `conaf` | `curated_fallback` | N/A | #27 | 2 candidato(s) fallaron: 404 / sin respuesta |
 | `sinca` | `curated_fallback` | 403 | #30 | SINCA no respondio 200 (HTTP 403 Forbidden) |
+| `dga_hidrologia` | `curated_fallback` | N/A | #30 | Esperando primera ejecucion mensual programada (climatologia DGA verificada en respaldo) |
 

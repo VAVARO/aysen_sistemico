@@ -54,7 +54,7 @@ sys.path.insert(0, str(SCRIPT_DIR / "ingesta"))
 import live_api_connectors as live  # noqa: E402
 
 WATCH_DIRS = ("data/raw", "data/systemic")
-EXTRA_FILES = ("data/aysen_hubs_data.js",)
+EXTRA_FILES = ("data/aysen_hubs_data.js", "data/estaciones_aysen.json")
 STATUS_RELPATH = "data/systemic/auto_update_status.json"
 MANIFEST_RELPATH = "data/systemic/source_watch_manifest.json"
 REPORT_RELPATH = "data/systemic/source_watch_report.md"
@@ -319,6 +319,10 @@ class MonthlyUpdater:
                          lambda t=target: [live.fetch_arcgis_target(t, self.root)]))
         jobs.append(("sinca", urlparse(live.SINCA_LIST_URL).netloc,
                      lambda: [live.fetch_sinca_air_quality_aysen(self.root)]))
+        dga_cands = live._dga_candidates()
+        dga_host = urlparse(dga_cands[0]).netloc if dga_cands else "rest-sit.mop.gob.cl"
+        jobs.append(("dga_hidrologia", dga_host,
+                     lambda: [live.fetch_dga_hidrologia_aysen(self.root)]))
         return jobs
 
     def run_live_connectors(self) -> None:
@@ -353,7 +357,7 @@ class MonthlyUpdater:
                 nodes, connector = list(t["nodes"]), t["connector"]
         if key == "usgs":
             nodes = [31]
-        if key == "sinca":
+        if key in ("sinca", "dga_hidrologia"):
             nodes = [30]
         r = live.ConnectorResult(connector=connector, key=key, nodes=nodes, ok=False,
                                  mode=live.MODE_FALLBACK, checked_at=live.utc_now_iso(),

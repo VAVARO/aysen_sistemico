@@ -2,35 +2,35 @@
   "fuente": "Servicio Agrícola y Ganadero (SAG) & Ministerio del Medio Ambiente (MMA)",
   "sistema": "Comité Operativo Regional de Especies Exóticas Invasoras (EEI) de Aysén",
   "portal_url": "https://www.sag.gob.cl/ambitos-de-accion/especies-exoticas-invasoras",
-  "fecha_extraccion": "2026-11-02T12:14:40.052032+00:00",
+  "fecha_extraccion": "2026-11-27T14:03:25.073507+00:00",
   "especies_invasoras_prioritarias": [
     {
-      "especie": "Neovison vison",
+      "especie": "Neogale vison",
       "nombre_comun": "Visón norteamericano",
       "vector": "Escapes y liberaciones de criaderos peleteros en las décadas de 1970-1990",
       "distribucion_aysen": "Ampliamente extendido en 10 comunas; cuencas Palena, Cisnes, Aysén, Baker, Bravo y Pascua",
-      "programa_control": "Programa FNDR/SAG de trampeo de captura selectiva y vigilancia comunitaria"
+      "programa_control": "Control Macrozonal SAG y Estrategia WCS Chile / SAG / Island Conservation (agosto 2026)"
     },
     {
       "especie": "Castor canadensis",
       "nombre_comun": "Castor americano",
-      "vector": "Introducido en Tierra del Fuego (1946); expansión hacia el norte a través de canales australes",
-      "distribucion_aysen": "Focos activos en Tortel y O'Higgins (Cuenca del Río Pascua, Río Bravo y bajo Baker)",
-      "programa_control": "Proyecto Estrategia Nacional GEF Castor (MMA/FAO/SAG/CONAF) para impedir cruce de Campo de Hielo"
+      "vector": "Introducido en Tierra del Fuego (1946); frontera norte monitoreada en Última Esperanza (Magallanes)",
+      "distribucion_aysen": "0 comunas con colonización establecida en Aysén (SAT preventivo en Magallanes)",
+      "programa_control": "0 comunas invadidas en Aysén - Alerta Temprana Preventiva (SAT FAO/MMA/SAG/CONAF/WCS mar-2025 en Última Esperanza para impedir ingreso a Villa O'Higgins)"
     },
     {
       "especie": "Sus scrofa",
       "nombre_comun": "Jabalí europeo",
       "vector": "Introducido para cotos de caza en Argentina; invasión transcordillerana a través de pasos andinos",
-      "distribucion_aysen": "Comunas de Lago Verde, Coyhaique, Cisnes y Río Ibáñez",
-      "programa_control": "Calificado como especie dañina por Ley de Caza SAG; caza permitida todo el año sin límite de cupo"
+      "distribucion_aysen": "6 comunas con presencia documentada (CONAF/UACh 2025): Lago Verde, Coyhaique, Cisnes, Río Ibáñez (PN Cerro Castillo), Chile Chico y Cochrane",
+      "programa_control": "Calificado como especie dañina por Ley de Caza SAG; caza permitida todo el año sin límite de cupo y monitoreo CONAF/UACh"
     },
     {
       "especie": "Didymosphenia geminata",
       "nombre_comun": "Microalga Didymo (moco de roca)",
       "vector": "Equipos de pesca deportiva y waders contaminados importados por pescadores recreativos",
-      "distribucion_aysen": "Ríos Simpson, Coyhaique, Cisnes, Mañihuales, Blanco, Baker e Ibáñez",
-      "programa_control": "Programa Nacional de Bioseguridad SERNAPESCA/SUBPESCA: Estaciones de lavado y desinfección obligatoria"
+      "distribucion_aysen": "6 cuencas BNA declaradas en plaga o riesgo por SUBPESCA (Informe Técnico D.Ac. N° 414/2024): 110, 111, 113, 114, 115 y 117 (8 comunas continentales)",
+      "programa_control": "Programa Nacional de Bioseguridad SERNAPESCA/SUBPESCA (D.Ac. N° 414/2024): Estaciones de lavado y desinfección obligatoria"
     },
     {
       "especie": "Lupinus polyphyllus",

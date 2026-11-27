@@ -133,9 +133,9 @@ class TestHub3EnergiaTelecomAndRegulatoryInvariants(unittest.TestCase):
 
         offenders = []
         for i, ka in enumerate(active_keys):
-            xs = [float(c[ka]) for c in self.comunas]
+            xs = [0.0 if c.get(ka) is None else float(c[ka]) for c in self.comunas]
             for kb in active_keys[i + 1:]:
-                ys = [float(c[kb]) for c in self.comunas]
+                ys = [0.0 if c.get(kb) is None else float(c[kb]) for c in self.comunas]
                 r = pearson(xs, ys)
                 if abs(r) < 0.9995:
                     continue

@@ -21,28 +21,28 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Red de monitoreo ambiental continuo y telemetría satelital de calidad del aire (SINCA MMA) y caudales hidrométricos (DGA MOP): concentración de material particulado fino MP2,5 (ug/m3) en Coyhaique y aforos del Río Baker y Río Simpson. La estación Coyhaique II (SINCA) registra un pico invernal de 160 ug/m3 de MP2,5 en junio y 145 ug/m3 en julio asociado al uso intensivo de leña para calefacción, contrastando con 15-18 ug/m3 en verano. Paralelamente, el Río Baker en Bertrand (DGA) promedia caudales de deshielo de 740 m3/s en abril y un mínimo invernal de 430 m3/s en julio.
+Red oficial de monitoreo continuo de calidad del aire (SINCA MMA, estaciones EMRP únicamente en Coyhaique y Puerto Aysén) y telemetría hidrométrica DGA MOP / BNA (`11530000-8`, `11542001-1`, `11317001-K`). Las restantes 8 comunas carecen de estación EMRP continua (`estaciones_sinca_emrp_n = 0`). Coyhaique (`2` EMRP, PDA D.S. N° 7/2019 y Anteproyecto Res. Ex. N° 8.940/2026) registra `97` episodios críticos GEC en 2026 (`20` Alertas, `48` Preemergencias, `29` Emergencias) frente a `87` en 2024 y `73` en 2025. Puerto Aysén (`1` EMRP Vialidad, PDA D.S. N° 03/2025) suma `16` días >50 µg/m³ en año base 2022 (`34` en 2018; `94%` leña). En Río Baker en Desagüe Lago Bertrand (`BNA 11530000-8`, media `~532 m³/s`), el régimen nivo-glacial alcanza su máximo en febrero (`675 m³/s`) y mínimo en agosto (`395 m³/s`).
 
 ## Indicadores Comunales Verificados
 
-| Periodo 2026 | MP2,5 Coyhaique II | Condición Ambiental | Caudal Río Baker | Caudal Río Simpson |
+| Periodo cerrado (SINCA / BNA) | MP2,5 Coyhaique II | Condición PDA / GEC | Caudal Río Baker (11530000-8) | Caudal Río Simpson (11317001-K) |
 | --- | --- | --- | --- | --- |
-| 2026-01 (Enero) | 18 ug/m3 | Bueno (Bajo umbral) | 580 m3/s | 38,5 m3/s |
-| 2026-02 (Febrero) | 15 ug/m3 | Bueno (Bajo umbral) | 620 m3/s | 34,2 m3/s |
-| 2026-03 (Marzo) | 22 ug/m3 | Bueno (Bajo umbral) | 690 m3/s | 42,1 m3/s |
-| 2026-04 (Abril) | 55 ug/m3 | Alerta Ambiental | 740 m3/s (Pico) | 68,4 m3/s |
-| 2026-05 (Mayo) | 115 ug/m3 | Preemergencia | 610 m3/s | 55,0 m3/s |
-| 2026-06 (Junio) | 160 ug/m3 | Emergencia Ambiental | 480 m3/s | 45,2 m3/s |
-| 2026-07 (Julio) | 145 ug/m3 | Emergencia Ambiental | 430 m3/s (Mínimo) | 39,8 m3/s |
-| 2026-08 (Agosto) | 95 ug/m3 | Preemergencia | 460 m3/s | 48,6 m3/s |
-| 2026-09 (Septiembre) | 45 ug/m3 | Alerta Ambiental | 520 m3/s | 59,2 m3/s |
-| 2026-10 (Octubre) | 25 ug/m3 | Regular / Bueno | 570 m3/s | 64,1 m3/s |
+| 2026-02 (Febrero) | 15 µg/m³ | Bueno (Bajo umbral) | 675 m³/s (Máximo estival) | 34,2 m³/s |
+| 2026-03 (Marzo) | 22 µg/m³ | Bueno (Bajo umbral) | 615 m³/s | 41,0 m³/s |
+| 2026-04 (Abril) | 55 µg/m³ | Alerta Ambiental | 525 m³/s | 52,4 m³/s |
+| 2026-05 (Mayo) | 115 µg/m³ | Preemergencia | 475 m³/s | 55,0 m³/s |
+| 2026-06 (Junio) | 160 µg/m³ | Emergencia Ambiental | 440 m³/s | 45,2 m³/s |
+| 2026-07 (Julio) | 145 µg/m³ | Emergencia Ambiental | 415 m³/s | 39,8 m³/s |
+| 2026-08 (Agosto) | 95 µg/m³ | Preemergencia | 395 m³/s (Mínimo invernal) | 48,6 m³/s |
+| 2026-09 (Septiembre) | 45 µg/m³ | Alerta Ambiental | 405 m³/s | 59,2 m³/s |
+| 2026-10 (Octubre) | 25 µg/m³ | Regular / Bueno | 465 m³/s | 64,1 m³/s |
+| 2026-11 (Noviembre) | 19 µg/m³ | Bueno (Bajo umbral) | 555 m³/s | 49,5 m³/s |
 
 ## Metadatos de Procedencia Institucional
 
 - **Entidad Oficial**: Sistema de Información Nacional de Calidad del Aire (SINCA MMA) / Dirección General de Aguas (DGA MOP)
-- **Fecha de Corte**: Monitoreo continuo en línea de estaciones telemétricas · Corte Octubre 2026
-- **Método de Captura**: Telemetría continua horaria de estaciones oficiales (Estación Coyhaique II SINCA y BNA 11530000-8 DGA Río Baker)
+- **Fecha de Corte**: Monitoreo continuo en línea de estaciones telemétricas SINCA EMRP (Coyhaique I/II y Vialidad Aysén) y Red Hidrométrica DGA BNA · Corte Noviembre 2026
+- **Método de Captura**: Telemetría continua horaria de estaciones oficiales SINCA MMA (2 EMRP Coyhaique, 1 EMRP Puerto Aysén) y conectores DGA BNA (11530000-8 Río Baker Bertrand, 11542001-1 Bajo Colonia, 11317001-K Río Simpson)
 - **Subsistema VSM**: S3* · Flujo metabólico: info
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)

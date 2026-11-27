@@ -4,7 +4,7 @@ title: "Índice de Auditoría y Respaldos por Indicador — Aysén Sistémico"
 type: index_auditoria
 updated_at: "2026-11-27"
 total_corridas: 5
-total_fichas_indicadores: 122
+total_fichas_indicadores: 128
 tags:
   - aysen-sistemico
   - auditoria-indicadores
@@ -48,6 +48,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/deficit_habitacional_total_por_1000_hab|deficit_habitacional_total_por_1000_hab]]
 - [[indicadores/dependencia_fcm_pct|dependencia_fcm_pct]]
 - [[indicadores/desembarque_muelles_total_ton|desembarque_muelles_total_ton]]
+- [[indicadores/dias_sobre_norma_mp25|dias_sobre_norma_mp25]]
 - [[indicadores/diesel_clp_litro|diesel_clp_litro]]
 - [[indicadores/ecmpo_solicitadas_ha|ecmpo_solicitadas_ha]]
 - [[indicadores/ecmpo_traslape_acuicola_n|ecmpo_traslape_acuicola_n]]
@@ -55,10 +56,13 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/empleo_directo_acuicola_n|empleo_directo_acuicola_n]]
 - [[indicadores/empresas_act_turismo_sii_n|empresas_act_turismo_sii_n]]
 - [[indicadores/empresas_sii|empresas_sii]]
+- [[indicadores/episodios_gec_mp25_anual|episodios_gec_mp25_anual]]
 - [[indicadores/escuelas_rurales_multigrado_n|escuelas_rurales_multigrado_n]]
+- [[indicadores/especies_exoticas_invasoras_n|especies_exoticas_invasoras_n]]
 - [[indicadores/establecimientos_educacion_conectados_n|establecimientos_educacion_conectados_n]]
 - [[indicadores/establecimientos_escolares_n|establecimientos_escolares_n]]
 - [[indicadores/establecimientos_slep_aysen|establecimientos_slep_aysen]]
+- [[indicadores/estaciones_sinca_emrp_n|estaciones_sinca_emrp_n]]
 - [[indicadores/estadia_promedio_dias|estadia_promedio_dias]]
 - [[indicadores/estadia_regional_viaje_dias|estadia_regional_viaje_dias]]
 - [[indicadores/estado_foa|estado_foa]]
@@ -70,6 +74,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/gasolina_93_clp|gasolina_93_clp]]
 - [[indicadores/gasto_diario_turista_usd|gasto_diario_turista_usd]]
 - [[indicadores/gastos_corrientes_bcn_pct|gastos_corrientes_bcn_pct]]
+- [[indicadores/glaciares_dga_n|glaciares_dga_n]]
 - [[indicadores/guias_turismo_rnpst_n|guias_turismo_rnpst_n]]
 - [[indicadores/hogares_censo_2024|hogares_censo_2024]]
 - [[indicadores/hogares_lena_pct|hogares_lena_pct]]
@@ -126,6 +131,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/subsidio_fiscal_diesel_kwh_clp|subsidio_fiscal_diesel_kwh_clp]]
 - [[indicadores/sucursales_bancarias_n|sucursales_bancarias_n]]
 - [[indicadores/superficie_concesionada_mar_ha|superficie_concesionada_mar_ha]]
+- [[indicadores/superficie_glaciar_km2|superficie_glaciar_km2]]
 - [[indicadores/tarifa_adr_emat_clp|tarifa_adr_emat_clp]]
 - [[indicadores/tarifa_adr_estimada_usd|tarifa_adr_estimada_usd]]
 - [[indicadores/tarifa_bt1_clp|tarifa_bt1_clp]]

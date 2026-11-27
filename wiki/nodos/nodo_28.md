@@ -1,6 +1,6 @@
 ---
 id: nodo_28
-title: "Nodo #28 — Fauna Silvestre y Especies en Categoría de Conservación (RCE MMA)"
+title: "Nodo #28 — Fauna Silvestre y Especies en Categoría de Conservación (20° Proceso RCE MMA)"
 type: nodo
 hub_id: biodiversidad
 hub_roman: VII
@@ -16,22 +16,22 @@ tags:
   - hub-vii
 ---
 
-# Nodo #28 — Fauna Silvestre y Especies en Categoría de Conservación (RCE MMA)
+# Nodo #28 — Fauna Silvestre y Especies en Categoría de Conservación (20° Proceso RCE MMA)
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de fauna emblemática y especies clasificadas bajo el Reglamento para la Clasificación de Especies Silvestres (RCE MMA — D.S. N° 44/2023 y D.S. N° 22/2024): tamaño poblacional estimado, distribución comunal y amenazas directas para especies como el Huemul, Pudu, Huillin, Chungungo, Ballena Sei, Ballena Azul y Cóndor. Aysén alberga entre 1.500 y 2.000 huemules (60% al 70% de la población mundial de la especie), con núcleos críticos en Tamango (PN Patagonia), Cerro Castillo y la cuenca del Río Baker, amenazados por perros asilvestrados, cercos y atropellos.
+Catastro de fauna emblemática y especies clasificadas bajo el 20° Proceso RCE MMA (D.S. N° 29/2025, octubre 2026): 154 taxones nativos relevantes en nómina RCE en Aysén y 64 especies en categorías de amenaza directa (CR, EN, VU), incluyendo Huemul (`750–1.000` individuos en Aysén sobre `<1.500` maduros mundiales, 17° Proceso RCE), Ballena Azul (`<250` maduros, `~217` en aguas chilenas) y Huillín (`EN` en VI–X e `IC` Insuficientemente Conocida en XI–XII). Según el 17° y 20° Proceso RCE MMA, la población mundial de Huemul (`< 1.500` individuos maduros en 101 subpoblaciones) concentra en Aysén entre 750 y 1.000 individuos (`~50%–60%` mundial), mientras la Ballena Azul (`EN`) registra `< 250` individuos maduros (`~217` estimados Golfo de Penas–Chiloé).
 
 ## Indicadores Comunales Verificados
 
 | Especie Emblemática | Nombre Científico | Categoría RCE MMA | Población Estimada Aysén | Comunas con Presencia |
 | --- | --- | --- | --- | --- |
-| Huemul | Hippocamelus bisulcus | En Peligro (EN) | 1.500 a 2.000 individuos | Cochrane, Río Ibáñez, Tortel |
+| Huemul | Hippocamelus bisulcus | En Peligro (EN) | 750 a 1.000 individuos en Aysén | Cochrane, Río Ibáñez, Tortel |
 | Pudú | Pudu puda | Vulnerable (VU) | Poblaciones continuas en la zona húmeda del norte y litoral de Aysén; densidades medias de 2 a 5 ind/km2 en hábitats óptimos | Cisnes, Aysén, Lago Verde |
-| Huillín | Lontra provocax | En Peligro (EN) | Población crítica fluvial y marina; Aysén alberga el reservorio reproductivo más saludable de agua dulce de Chile continental | Tortel, Cochrane, Aysén |
+| Huillín | Lontra provocax | En Peligro (EN) VI-X / Insuficientemente Conocida (IC) XI-XII | Población fluvial y marina con clasificación oficial RCE Insuficientemente Conocida | Tortel, Cochrane, Aysén |
 | Chungungo | Lontra felina | En Peligro (EN) | Población dispersa en densidades bajas | Guaitecas, Cisnes, Aysén |
 | Ballena Sei | Balaenoptera borealis | En Peligro (EN) | Área de alimentación estival pelágica clave en el cono sur; sitio donde en 2015 se registró el evento de varamiento masivo más grande de la historia | Tortel, Aysén, Guaitecas |
-| Ballena Azul | Balaenoptera musculus | En Peligro (EN) | Aproximadamente 600 a 800 ejemplares de la población del Pacífico Suroriental que utilizan los fiordos norpatagónicos como área estival de alimentación | Guaitecas, Cisnes, Aysén |
+| Ballena Azul | Balaenoptera musculus | En Peligro (EN) | < 250 individuos maduros | Guaitecas, Cisnes, Aysén |
 | Delfín Chileno | Cephalorhynchus eutropia | Casi Amenazado (NT) | Poblaciones locales residentes y de alta fidelidad al sitio; grupos pequeños de 2 a 15 individuos | Cisnes, Aysén, Tortel |
 | Puma patagónico | Puma concolor puma | Casi Amenazado (NT) | Mayor depredador tope de los ecosistemas patagónicos terrestres; alta densidad en el Parque Nacional Patagonia y estancias con manejo ganadero adaptativo | Cochrane, Chile Chico, Coyhaique |
 

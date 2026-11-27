@@ -263,7 +263,7 @@ function loadEnv() {
   assert.strictEqual(postasSum, 27, 'Postas de salud rural deben sumar 27');
 
   const glacSum = Number(bundle.comunas.reduce((acc, c) => acc + (c.superficie_glaciares_km2 || 0), 0).toFixed(1));
-  assert.strictEqual(glacSum, 10035.7, 'Superficie glaciar debe sumar 10035.7 km2');
+  assert.strictEqual(glacSum, 8721.6, 'Superficie glaciar debe sumar 8721.6 km2');
 
   const emojiRe = /[\u{10000}-\u{10FFFF}]|[\u2600-\u27bf]|[\u2300-\u23ff]|[\u2b50-\u2b55]/u;
   assert(!emojiRe.test(omniSrc), 'js/omniroute_client.js contiene emojis');
@@ -378,7 +378,7 @@ function loadEnv() {
   client.clearConversationMemory();
   const q13b = '¿qué me puedes contar del Volcán Hudson y la Laguna San Rafael?';
   const res13b = await client.query(q13b);
-  ['Volcán Hudson', 'Laguna San Rafael', 'Campo de Hielo Norte', '10.035,7 km²'].forEach(tok => {
+  ['Volcán Hudson', 'Laguna San Rafael', 'Campo de Hielo Norte', '8.721,6 km²'].forEach(tok => {
     assert(res13b.reply.includes(tok), `Síntesis Hudson + San Rafael debe incluir ${tok}: ${res13b.reply}`);
   });
   assert(!/\bSMA\b|\bSNIFA\b|282 expedientes/i.test(res13b.reply),

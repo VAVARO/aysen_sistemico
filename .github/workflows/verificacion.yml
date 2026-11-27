@@ -101,11 +101,11 @@ jobs:
       - name: Suite Coherencia Metodologica y CECAN Atlas (16 tests)
         run: python tests/test_coherencia_metodologia_y_cecan.py
 
-      - name: Suite Auditoria Obsidian V3 (19 evals)
+      - name: Suite Auditoria Obsidian V3 (20 evals)
         run: node tests/test_obsidian_indicator_audit.cjs
 
-      - name: Suites Hub I, Hub II, Hub III, Hub IV, Hub V, Hub VI y Mapa Espacial Multicapa
-        run: python -m unittest tests/test_hub1_turismo_and_cross_hub_integrity.py tests/test_hub2_salmonicultura_reengineering.py tests/test_spatial_multilayer_map.py tests/test_hub3_energia_telecom_and_regulatory_invariants.py tests/test_hub4_gobernanza_finanzas_invariants.py tests/test_hub5_economia_inversion_suelo_invariants.py tests/test_hub6_social_demografia_educacion_vivienda_invariants.py
+      - name: Suites Hub I, Hub II, Hub III, Hub IV, Hub V, Hub VI, Hub VII y Mapa Espacial Multicapa
+        run: python -m unittest tests/test_hub1_turismo_and_cross_hub_integrity.py tests/test_hub2_salmonicultura_reengineering.py tests/test_spatial_multilayer_map.py tests/test_hub3_energia_telecom_and_regulatory_invariants.py tests/test_hub4_gobernanza_finanzas_invariants.py tests/test_hub5_economia_inversion_suelo_invariants.py tests/test_hub6_social_demografia_educacion_vivienda_invariants.py tests/test_hub7_biodiversidad_invariants.py
 
       - name: Suite Pytest Completa (398 tests)
         run: |

@@ -60,7 +60,7 @@ La comuna de Guaitecas (capital comunal: Melinka; Provincia de Aysén; cuenca pr
 | Visitantes Anuales Parques SNASPE | 0 visitantes (Reserva Nacional Las Guaitecas) | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Concesiones y Biomasa de Salmón | 98 concesiones / 45.000 ton | [[hubs/hub_02_salmonicultura|Hub II — Salmonicultura]] |
 | Subsistema Eléctrico y Tarifa BT1 | Sistema Aislado Municipal Melinka-Repollal (1,45 MW) / $312/kWh | [[hubs/hub_03_energia|Hub III — Energía]] |
-| Calefacción a Leña y Días MP2.5 | 94,2% hogares / 4 días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
+| Calefacción a Leña y Días MP2.5 | 94,2% hogares / s/i días sobre norma | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Superficie Glaciar DGA (km²) | 0 km² (0 glaciares) | [[hubs/hub_07_biodiversidad|Hub VII — Biodiversidad]] |
 | Red de Salud y Tiempo de Derivación | Sin hospital en el archipielago (Cobertura por CESFAM Melinka) (0 camas, 1 PSR, 14 hrs a Coyhaique) | [[hubs/hub_08_salud|Hub VIII — Salud]] |
 | Infraestructura Cultural y Bibliotecas | 2 museos / 1 bibliotecas SNBP | [[hubs/hub_09_cultura|Hub IX — Cultura]] |

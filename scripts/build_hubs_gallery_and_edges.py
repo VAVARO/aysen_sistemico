@@ -1048,7 +1048,7 @@ def build_hubs_gallery(barometro_data):
                             "show_sample_n": True
                         }
                     },
-                    "what_it_shows": "La riqueza ecosistémica de Aysén alberga más de 5,7 millones de ha de bosque nativo y el 70% de la población mundial de huemules.",
+                    "what_it_shows": "La riqueza ecosistémica de Aysén alberga 5.152.384,3 ha de bosque nativo (48,30% CONAF 2026), 8.721,6 km² de glaciares IPG 2022 y 750-1.000 huemules (~50%-60% mundial).",
                     "why_complex_system": "Fragilidad y refugio: la cuenca del Baker y los fiordos actúan como santuarios biológicos frente a la fragmentación antropogénica."
                 },
                 {

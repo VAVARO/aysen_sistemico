@@ -45,12 +45,12 @@ class TestHub7BiodiversidadAudit(unittest.TestCase):
         self.assertEqual(ds[1]["data"][-1], coy["dias_sobre_norma_mp25"])
         self.assertEqual(ds[1]["data"][-1], 87)
         self.assertEqual(ds[2]["data"][-1], coy["episodios_gec_mp25_anual"])
-        self.assertEqual(ds[2]["data"][-1], 41)
+        self.assertEqual(ds[2]["data"][-1], 97)
 
         g1 = [c["superficie_glaciar_km2"] for c in self.comunas]
         g2 = [c["superficie_glaciares_km2"] for c in self.comunas]
         self.assertEqual(g1, g2)
-        self.assertAlmostEqual(sum(g1), 10035.7, places=1)
+        self.assertAlmostEqual(sum(g1), 8721.6, places=1)
 
         for c in self.comunas:
             self.assertLessEqual(c["bosque_nativo_ha"], c["cobertura_vegetal_nativa_ha"])
@@ -67,8 +67,13 @@ class TestHub7BiodiversidadAudit(unittest.TestCase):
             for cell in row:
                 self.assertNotIn("...", str(cell), f"Celda truncada en Nodo #29: {cell}")
 
-        for k in ("especies_exoticas_invasoras_n", "episodios_gec_mp25_anual", "expedientes_fiscalizacion_sma_n", "amenaza_volcanica_sismica_idx"):
+        for k in ("especies_exoticas_invasoras_n", "expedientes_fiscalizacion_sma_n", "amenaza_volcanica_sismica_idx"):
             self.assertTrue(all(isinstance(c.get(k), (int, float)) for c in self.comunas), f"Falta {k} en comunas")
+        for c in self.comunas:
+            if c["comuna_ine"] in ("11101", "11201"):
+                self.assertIsInstance(c.get("episodios_gec_mp25_anual"), (int, float))
+            else:
+                self.assertIsNone(c.get("episodios_gec_mp25_anual"))
         self.assertEqual(sum(c["expedientes_fiscalizacion_sma_n"] for c in self.comunas), 282)
 
     def test_03_capas_espaciales_saneadas(self):
@@ -81,7 +86,7 @@ class TestHub7BiodiversidadAudit(unittest.TestCase):
         self.assertFalse(any(n.get("magnitudeValue") == 25 and str(n.get("id", "")).startswith("fauna_") for n in est_mon))
 
         volc = self.layers.get("volcanes_sismos", [])
-        self.assertEqual(len(volc), 42)
+        self.assertEqual(len(volc), 41)
         self.assertTrue(all(n.get("hubId") == "biodiversidad" for n in volc))
         usgs = [n for n in volc if "Sismo" in str(n.get("tipo", "")) or "USGS" in str(n.get("tipo", ""))]
         self.assertGreaterEqual(len({n.get("nombre_comuna") for n in usgs}), 3)
@@ -113,8 +118,8 @@ class TestHub7BiodiversidadAudit(unittest.TestCase):
           assert(r2.reply.includes('Visón') && r2.reply.includes('Didymo') && r2.chart.varX === 'especies_exoticas_invasoras_n');
 
           const r3 = await client.query('Cuántas especies de fauna amenazada RCE hay y cuántos días sobre norma MP2.5 registra cada comuna');
-          assert(r3.reply.includes('6,3') && r3.reply.includes('22,5'), 'Debe reportar promedio comunal, no suma: ' + r3.reply);
-          assert(!r3.reply.includes('Total regional: 63') && !r3.reply.includes('Total regional: 225'));
+          assert(r3.reply.includes('6,3') && (r3.reply.includes('10,3') || r3.reply.includes('51,5')), 'Debe reportar promedio de días MP2.5, no suma regional: ' + r3.reply);
+          assert(!r3.reply.includes('Total regional: 63') && !r3.reply.includes('Total regional: 225') && !r3.reply.includes('Total regional: 103'));
           console.log('HUB7_CONSULTOR_OK');
         })().catch(e => { console.error(e); process.exit(1); });
         """

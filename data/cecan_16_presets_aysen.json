@@ -4010,7 +4010,7 @@
             "showBuffers": true,
             "bufferRadiusM": 25000
           },
-          "what_it_shows": "Cartografía los 5.723.000 ha de cobertura vegetal nativa (incluyendo 4.713.200 ha de bosque nativo arbóreo) y 56,2% de cobertura comunal promedio en SNASPE, junto a 32 nodos ambientales limpios (20 sitios prioritarios de fauna RCE MMA + 12 estaciones hidrométricas DGA y de calidad del aire SINCA).",
+          "what_it_shows": "Cartografía los 5.189.923,8 ha de subuso Bosques (incluyendo 5.152.384,3 ha de bosque nativo CONAF 2026) y 56,2% de cobertura comunal promedio en SNASPE, junto a 32 nodos ambientales limpios (20 sitios prioritarios de fauna RCE MMA + 12 estaciones hidrométricas DGA y de calidad del aire SINCA).",
           "why_complex_system": "Fragilidad y refugio: la cuenca del Baker y los fiordos actúan como santuarios biológicos frente a la fragmentación antropogénica."
         },
         {
@@ -4138,7 +4138,7 @@
                   "unit": "días >50 µg/m³"
                 },
                 {
-                  "label": "Episodios Críticos Preemergencia + Emergencia GEC (>110 µg/m³, días)",
+                  "label": "Episodios Críticos Totales GEC Coyhaique (Alerta + Preemergencia + Emergencia MMA)",
                   "data": [
                     92,
                     98,
@@ -4148,10 +4148,10 @@
                     68,
                     62,
                     58,
-                    54,
-                    49,
-                    45,
-                    41
+                    74,
+                    87,
+                    73,
+                    97
                   ],
                   "borderColor": "#991b1b",
                   "backgroundColor": "rgba(153, 27, 27, 0.12)",
@@ -4161,7 +4161,7 @@
               ]
             }
           },
-          "what_it_shows": "Reconcilia las tres series del PDA Coyhaique (2015-2026): la media invernal baja de 168,5 a 96,8 µg/m³, los días totales sobre la norma primaria (>50 µg/m³) descienden de 152 a 87 días (igual al dato comunal 2026 de Coyhaique), y los episodios críticos de Preemergencia + Emergencia GEC (>110 µg/m³) disminuyen de 92 a 41 episodios.",
+          "what_it_shows": "Reconcilia las tres series del PDA Coyhaique (2015-2026): la media invernal baja de 168,5 a 96,8 µg/m³, los días sobre la norma primaria (>50 µg/m³) son 87 días (año base 2024 en el vector comunal de Coyhaique), y los episodios críticos totales GEC MMA suman 74 (2023), 87 (2024), 73 (2025) y 97 en 2026 (20 Alertas, 48 Preemergencias y 29 Emergencias).",
           "why_complex_system": "Inversión térmica y no linealidad: caídas de 2°C bajo cero duplican el encendido simultáneo de calefactores, colapsando la capa de ventilación."
         },
         {

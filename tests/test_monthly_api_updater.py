@@ -116,10 +116,11 @@ class TestConnectorContract(unittest.TestCase):
         self.assertNotIn("Chrome", ua)
         self.assertTrue(ua.startswith("AysenSistemico"))
 
-    def test_seven_connectors_and_required_functions(self):
-        self.assertEqual(len(live.CONNECTOR_IDS), 7)
+    def test_eight_connectors_and_required_functions(self):
+        self.assertEqual(len(live.CONNECTOR_IDS), 8)
         for fn in ("fetch_usgs_earthquakes_aysen", "fetch_ckan_datos_gob",
-                   "fetch_arcgis_rest_aysen", "fetch_sinca_air_quality_aysen"):
+                   "fetch_arcgis_rest_aysen", "fetch_sinca_air_quality_aysen",
+                   "fetch_dga_hidrologia_aysen"):
             self.assertTrue(callable(getattr(live, fn)), fn)
         self.assertIn("minmagnitude=2.5", live.USGS_URL)
         self.assertIn("starttime=2015-01-01", live.USGS_URL)
@@ -275,6 +276,91 @@ class TestArcgisAndSinca(TempRepoCase):
         self.assertFalse((self.tmp / live.SINCA_RAW_RELPATH).exists())
 
 
+class TestDgaHidrologiaConnector(TempRepoCase):
+    def _write_sample_estaciones(self):
+        est_path = self.tmp / "data" / "estaciones_aysen.json"
+        est_doc = {
+            "version": "1.0.0",
+            "estaciones": [
+                {
+                    "id": 1,
+                    "codigo_estacion": "BNA 11530000-8",
+                    "unidad": "m3/s",
+                    "serie_temporal": [
+                        {"periodo_mes": "2026-02", "fecha": "2026-02-15", "valor": 675},
+                        {"periodo_mes": "2026-08", "fecha": "2026-08-15", "valor": 395},
+                    ],
+                },
+                {
+                    "id": 2,
+                    "codigo_estacion": "BNA 11542001-1",
+                    "unidad": "m",
+                    "serie_temporal": [{"periodo_mes": "2026-10", "fecha": "2026-10-15", "valor": 5.4}],
+                },
+            ],
+        }
+        est_path.write_text(json.dumps(est_doc, indent=2), encoding="utf-8")
+        return est_path
+
+    def test_dga_arcgis_and_json_success_updates_snapshot_and_estaciones_no_future(self):
+        est_path = self._write_sample_estaciones()
+        arcgis_payload = {
+            "features": [
+                {
+                    "attributes": {"COD_BNA": "11530000-8", "CAUDAL_M3S": 540.5, "LATITUD": -47.01, "LONGITUD": -72.82},
+                    "geometry": {"x": -72.82, "y": -47.01},
+                },
+                {
+                    "attributes": {"COD_BNA": "11542001-1", "NIVEL_M": 5.8, "LATITUD": -47.34, "LONGITUD": -73.01},
+                    "geometry": {"x": -73.01, "y": -47.34},
+                },
+            ]
+        }
+        self.install({"https://rest-sit.mop.gob.cl": ok_json("", arcgis_payload)})
+        res = live.fetch_dga_hidrologia_aysen(self.tmp)
+        self.assertTrue(res.ok)
+        self.assertEqual(res.mode, "live_api")
+        self.assertEqual(res.http_status, 200)
+        self.assertEqual(sorted(res.metrics["stations_matched"]), ["11530000-8", "11542001-1"])
+        self.assertTrue((self.tmp / live.DGA_RAW_RELPATH).exists())
+        updated_est = json.loads(est_path.read_text(encoding="utf-8"))
+        now_ym = live.utc_now_iso()[:7]
+        for st in updated_est["estaciones"]:
+            self.assertTrue(all(pt["periodo_mes"] <= now_ym for pt in st["serie_temporal"]))
+            self.assertGreater(st["serie_temporal"][-1]["valor"], 0)
+
+        # JSON telemetria plano alternativo
+        json_payload = {"estaciones": [{"codigo_bna": "11317001-K", "caudal": 44.2, "lat": -45.57, "lng": -72.07}]}
+        self.install({"https://": ok_json("", json_payload)})
+        res2 = live.fetch_dga_hidrologia_aysen(self.tmp)
+        self.assertTrue(res2.ok)
+        self.assertEqual(res2.metrics["stations_matched"], ["11317001-K"])
+
+    def test_dga_failures_and_out_of_bounds_preserve_lkg(self):
+        self._write_sample_estaciones()
+        snap_path = self.tmp / live.DGA_RAW_RELPATH
+        snap_path.parent.mkdir(parents=True, exist_ok=True)
+        lkg_bytes = b'{"endpoint":"curated","estaciones":{"11530000-8":{"valor":532.0}}}'
+        snap_path.write_bytes(lkg_bytes)
+
+        bad_cases = {
+            "403": live.HttpResponse("", 403, b"", 0.1, "HTTP 403 Forbidden"),
+            "500": live.HttpResponse("", 500, b"", 0.1, "HTTP 500"),
+            "timeout": HTTP_UNAVAILABLE,
+            "html": live.HttpResponse("", 200, b"<html>error</html>", 0.1),
+            "arcgis_error": ok_json("", {"error": {"code": 400, "message": "Invalid"}}),
+            "caudal_cero": ok_json("", {"features": [{"attributes": {"COD_BNA": "11530000-8", "CAUDAL_M3S": 0, "LATITUD": -47.0, "LONGITUD": -72.8}}]}),
+            "fuera_aysen": ok_json("", {"features": [{"attributes": {"COD_BNA": "11530000-8", "CAUDAL_M3S": 500, "LATITUD": -33.4, "LONGITUD": -70.6}}]}),
+        }
+        for name, resp in bad_cases.items():
+            with self.subTest(name):
+                self.install({"https://": resp})
+                res = live.fetch_dga_hidrologia_aysen(self.tmp)
+                self.assertFalse(res.ok, name)
+                self.assertEqual(res.mode, "curated_fallback", name)
+                self.assertEqual(snap_path.read_bytes(), lkg_bytes, name)
+
+
 # ---------------------------------------------------------------------------
 # Circuit Breaker y Last-Known-Good
 # ---------------------------------------------------------------------------
@@ -378,7 +464,7 @@ class TestOrchestratorProtection(TempRepoCase):
         self.assertEqual(node31["lastAutoUpdateISO"], up.run_at.isoformat())
 
         status = json.loads((self.tmp / monthly.STATUS_RELPATH).read_text(encoding="utf-8"))
-        self.assertEqual(status["activeApiConnectors"], 7)
+        self.assertEqual(status["activeApiConnectors"], 8)
         self.assertEqual(status["totalSources"], 3)
         self.assertEqual(status["lastRun"], up.run_at.isoformat())
         self.assertEqual(status["usgs"]["max_magnitude"], 6.1)
@@ -487,7 +573,7 @@ class TestAutoUpdateSeal(unittest.TestCase):
         text = (ROOT / "data" / "aysen_hubs_data.js").read_text(encoding="utf-8")
         self.assertRegex(text, r'"autoUpdate":\s*\{')
         self.assertIn("Mensual (día 1 de cada mes)", text)
-        self.assertRegex(text, r'"activeApiConnectors":\s*7')
+        self.assertRegex(text, r'"activeApiConnectors":\s*8')
 
     def test_status_metadata_and_internal_audit(self):
         status_file = ROOT / "data" / "systemic" / "auto_update_status.json"

@@ -1,6 +1,6 @@
 ---
 id: nodo_27
-title: "Nodo #27 — Cobertura Forestal y Flora Nativa (CONAF SIT / MMA)"
+title: "Nodo #27 — Cobertura Forestal y Flora Nativa (CONAF SIT 2026 / MMA)"
 type: nodo
 hub_id: biodiversidad
 hub_roman: VII
@@ -17,11 +17,11 @@ tags:
   - hub-vii
 ---
 
-# Nodo #27 — Cobertura Forestal y Flora Nativa (CONAF SIT / MMA)
+# Nodo #27 — Cobertura Forestal y Flora Nativa (CONAF SIT 2026 / MMA)
 
 ## Síntesis Compilada (Consultor IA)
 
-Catastro de uso del suelo y cobertura forestal nativa de la Región de Aysén (CONAF SIT 2026 / MMA): 10.667.211,5 ha catastradas, 5.152.384,3 ha de bosque nativo y 2.387.525,4 ha de bosques en SNASPE, junto a Estepa Patagónica y Turberas y Humedales (5.723.000 ha totales de cobertura vegetal nativa). El Catastro Vegetacional CONAF 2026 contabiliza 10.667.211,5 ha catastradas, 5.152.384,3 ha de bosque nativo (con 2.387.525,4 ha de bosques dentro de SNASPE) y 5.723.000 ha de cobertura vegetal nativa, liderada por el Bosque Siempreverde y Lenga/Ñire.
+Catastro de los Recursos Vegetacionales Nativos (CONAF 2024–2026, Cuadros 6–11): 10.667.211,5 ha regionales catastradas, con 5.189.923,8 ha de subuso Bosques (`48,65%`: 5.152.384,3 ha de bosque nativo [`48,30%`], `35.473,6 ha` plantaciones forestales SIT CONAF [`29.133 ha` IFN INFOR 2022] y `2.065,9 ha` bosque mixto), 2.387.525,4 ha de bosques en SNASPE (`2.385.473,4 ha` bosque nativo estricto), 2.606.729,0 ha de Praderas y Matorrales (`24,44%`) y 106.484,6 ha de Humedales CONAF (`590.448,8 ha` Inventario Nacional MMA). El Bosque Nativo CONAF 2026 (`5.152.384,3 ha`) se desglosa en cuatro Tipos Forestales oficiales: Siempreverde (`2.552.613,1 ha`, `49,54%`), Lenga (`1.409.259,7 ha`, `27,35%`), Coihue de Magallanes (`882.420,0 ha`, `17,13%`) y Ciprés de las Guaitecas (`308.091,5 ha`, `5,98%`).
 
 ## Indicadores Comunales Verificados
 

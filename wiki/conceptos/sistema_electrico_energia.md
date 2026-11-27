@@ -34,15 +34,15 @@ Aunque Aysén posee abundante recurso hídrico, no está conectada al SEN: opera
 | Comuna | Capacidad Eléctrica Instalada en el Subsistema (MW) | Tarifa Eléctrica Residencial BT1 ($/kWh) | Matriz de Calefacción a Leña (% hogares) | Consumo Residencial de Leña (m³/hogar/año) | Días Anuales sobre Norma Diaria MP2.5 (SINCA) |
 | --- | --- | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | 33,95 | 287,8 | 68,8 | 9,81 | 87 |
-| [[comunas/lago_verde|Lago Verde]] | 0,35 | 294 | 98,1 | 15,1 | 12 |
-| [[comunas/aysen|Aysén]] | 18,48 | 287,8 | 84,5 | 13,2 | 34 |
-| [[comunas/cisnes|Cisnes]] | 2,83 | 292,4 | 94 | 13,95 | 16 |
-| [[comunas/guaitecas|Guaitecas]] | 1,45 | 312 | 94,2 | 13,1 | 4 |
-| [[comunas/chile_chico|Chile Chico]] | 3,9 | 289,5 | 82 | 11,95 | 18 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 1,4 | 289,5 | 94,2 | 14,05 | 14 |
-| [[comunas/cochrane|Cochrane]] | 2,54 | 291,2 | 95,5 | 14,35 | 22 |
-| [[comunas/ohiggins|O'Higgins]] | 1,25 | 308 | 98,8 | 15,5 | 8 |
-| [[comunas/tortel|Tortel]] | 0,95 | 318 | 98,5 | 15,2 | 10 |
+| [[comunas/lago_verde|Lago Verde]] | 0,35 | 294 | 98,1 | 15,1 | s/i |
+| [[comunas/aysen|Aysén]] | 18,48 | 287,8 | 84,5 | 13,2 | 16 |
+| [[comunas/cisnes|Cisnes]] | 2,83 | 292,4 | 94 | 13,95 | s/i |
+| [[comunas/guaitecas|Guaitecas]] | 1,45 | 312 | 94,2 | 13,1 | s/i |
+| [[comunas/chile_chico|Chile Chico]] | 3,9 | 289,5 | 82 | 11,95 | s/i |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 1,4 | 289,5 | 94,2 | 14,05 | s/i |
+| [[comunas/cochrane|Cochrane]] | 2,54 | 291,2 | 95,5 | 14,35 | s/i |
+| [[comunas/ohiggins|O'Higgins]] | 1,25 | 308 | 98,8 | 15,5 | s/i |
+| [[comunas/tortel|Tortel]] | 0,95 | 318 | 98,5 | 15,2 | s/i |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 
