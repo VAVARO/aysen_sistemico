@@ -92,15 +92,15 @@ WP01_FCM_PCT = {
 # Finanzas BCN 2025 adicionales (por_comuna exacto)
 WP01_BCN_2025_EXTRA = {
     "11101": {"pob": 57823, "pres_pc": 477.5, "ipp_pc": 148232, "part_fcm_tot": 43.6, "gastos_corr": 85.4},
-    "11102": {"pob": 779,   "pres_pc": 4263.2, "ipp_pc": 552952, "part_fcm_tot": 67.7, "gastos_corr": 75.6},
+    "11102": {"pob": 882,   "pres_pc": 3765.4, "ipp_pc": 488379, "part_fcm_tot": 67.7, "gastos_corr": 75.6},
     "11201": {"pob": 23170, "pres_pc": 630.7,  "ipp_pc": 194770, "part_fcm_tot": 48.5, "gastos_corr": 85.2},
-    "11202": {"pob": 5137,  "pres_pc": 1554.5, "ipp_pc": 580062, "part_fcm_tot": 35.4, "gastos_corr": 71.2},
+    "11202": {"pob": 5335,  "pres_pc": 1496.8, "ipp_pc": 558534, "part_fcm_tot": 35.4, "gastos_corr": 71.2},
     "11203": {"pob": 1598,  "pres_pc": 2859.2, "ipp_pc": 528924, "part_fcm_tot": 50.3, "gastos_corr": 70.9},
-    "11401": {"pob": 4905,  "pres_pc": 1219.5, "ipp_pc": 135441, "part_fcm_tot": 71.0, "gastos_corr": 82.9},
-    "11402": {"pob": 2723,  "pres_pc": 2296.3, "ipp_pc": 185784, "part_fcm_tot": 52.1, "gastos_corr": 75.3},
-    "11301": {"pob": 3458,  "pres_pc": 1654.4, "ipp_pc": 145419, "part_fcm_tot": 52.5, "gastos_corr": 74.9},
-    "11302": {"pob": 647,   "pres_pc": 8228.4, "ipp_pc": 182859, "part_fcm_tot": 45.2, "gastos_corr": 86.6},
-    "11303": {"pob": 505,   "pres_pc": 6813.3, "ipp_pc": 222455, "part_fcm_tot": 67.5, "gastos_corr": 88.2},
+    "11401": {"pob": 4950,  "pres_pc": 1208.4, "ipp_pc": 134210, "part_fcm_tot": 71.0, "gastos_corr": 82.9},
+    "11402": {"pob": 2671,  "pres_pc": 2341.0, "ipp_pc": 189401, "part_fcm_tot": 52.1, "gastos_corr": 75.3},
+    "11301": {"pob": 3492,  "pres_pc": 1638.3, "ipp_pc": 144003, "part_fcm_tot": 52.5, "gastos_corr": 74.9},
+    "11302": {"pob": 664,   "pres_pc": 8017.8, "ipp_pc": 178178, "part_fcm_tot": 45.2, "gastos_corr": 86.6},
+    "11303": {"pob": 563,   "pres_pc": 6111.3, "ipp_pc": 199538, "part_fcm_tot": 67.5, "gastos_corr": 88.2},
 }
 
 # Patentes Acuicolas (Art. 84 LGPA) y Mineras percibidas (SINIM / BCN M$ CLP) — CERO split 50/50 en comunas interiores
@@ -290,16 +290,16 @@ WP04_TRABAJADORES_COMUNAL = {
 }
 
 WP04_VENTAS_LOCAL_COMUNAL_MUF = {
-    "11101": 16900,
-    "11102": 130,
-    "11201": 4410,
-    "11202": 1420,
-    "11203": 240,
-    "11401": 1210,
-    "11402": 540,
-    "11301": 790,
-    "11302": 75,
-    "11303": 85,
+    "11101": 16900.0,
+    "11102": 130.0,
+    "11201": 4410.0,
+    "11202": 1450.0,
+    "11203": 380.0,
+    "11401": 1180.0,
+    "11402": 410.0,
+    "11301": 620.0,
+    "11302": 170.0,
+    "11303": 150.0,
 }
 
 WP04_VENTAS_BRUTAS_COMUNAL_MUF = {
@@ -753,6 +753,7 @@ def update_wp04_all():
 
         # Reconciliacion BCN/SII y diferenciacion ventas domicilio local vs valor bruto produccion
         sii = datos.setdefault("estructura_empresarial_sii", {})
+        sii.pop("ventas_anuales_domicilio_local_miles_uf", None)
         if ine in WP04_EMPRESAS_COMUNAL:
             sii["empresas_sii_2023_bcn"] = WP04_EMPRESAS_COMUNAL[ine][8]
             sii["numero_empresas_activas"] = WP04_EMPRESAS_COMUNAL[ine][10]

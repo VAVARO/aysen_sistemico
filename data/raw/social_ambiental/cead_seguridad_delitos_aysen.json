@@ -116,5 +116,28 @@
       "casos_vif_total": 915,
       "tasa_vif_regional_por_100k_hab": 897.1
     }
-  ]
+  ],
+  "cead_bcn_oficial_2023_2025": {
+    "delitos_violentos_2024_100k": 1872.2,
+    "delitos_violentos_2024_chile_100k": 2222.7,
+    "vida_integridad_2024_100k": 973.9,
+    "vida_integridad_2025_100k": 902.1,
+    "vida_integridad_chile_100k": 1003.2,
+    "vif_regional_serie_100k": {
+      "2023": {
+        "aysen": 691.6,
+        "chile": 608.2
+      },
+      "2024": {
+        "aysen": 809.9,
+        "chile": 601.0,
+        "brecha_chile_pct": 34.8
+      },
+      "2025": {
+        "aysen": 709.9,
+        "chile": 585.1,
+        "brecha_chile_pct": 21.3
+      }
+    }
+  }
 }

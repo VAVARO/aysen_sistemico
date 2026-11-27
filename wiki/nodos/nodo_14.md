@@ -21,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Conectividad comunal según Informe Nacional FDT SUBTEL 3T-2026: Troncal Submarina CTR (FDT-2017-01, único aterrizaje en Caleta Tortel), Cable Submarino Austral GTD (Puerto Chacabuco), Troncal Terrestre Silica (14 POIITs, FDT-2018-02) y adjudicaciones Fibra Tortel–Villa O'Higgins (1S-2028) y Última Milla FDT-2025-03 (33 localidades). Reconcilia 26.294 conexiones fijas (24.782 residenciales, 75,96% FTTX y 21,48% Starlink) al corte SUBTEL junio 2026 frente a 37.645 hogares Censo 2024: Lago Verde (17,5% internet, 0,0% fibra) y Villa O'Higgins (23,2% internet, 0,0% fibra hasta enlace 1S-2028) operan 100% sobre Starlink y radioenlace.
+Conectividad comunal según Informe Nacional FDT SUBTEL 3T-2026: Troncal Submarina CTR (FDT-2017-01, único aterrizaje en Caleta Tortel), Cable Submarino Austral GTD (Puerto Chacabuco), Troncal Terrestre Silica (14 POIITs, FDT-2018-02) y adjudicaciones Fibra Tortel–Villa O'Higgins (1S-2028) y Última Milla FDT-2025-03 (33 localidades). Reconcilia 26.294 conexiones fijas (24.782 residenciales, 75,96% FTTX y 21,48% Starlink) al corte SUBTEL junio 2026 frente a 39.964 hogares Censo 2024: Lago Verde (17,5% internet, 0,0% fibra) y Villa O'Higgins (23,2% internet, 0,0% fibra hasta enlace 1S-2028) operan 100% sobre Starlink y radioenlace.
 
 ## Indicadores Comunales Verificados
 

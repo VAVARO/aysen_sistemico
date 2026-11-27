@@ -36,15 +36,15 @@ Aysén Sistémico adopta una arquitectura de costo de infraestructura cero ($0/m
 | Comuna | Población Censo 2024 (hab.) | Presupuesto Municipal Vigente (M$) | Inversión Pública FNDR Asignada (M$) |
 | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | 57.823 | 27.611 | 14.850 |
-| [[comunas/lago_verde|Lago Verde]] | 779 | 3.321,05 | 2.200 |
+| [[comunas/lago_verde|Lago Verde]] | 882 | 3.321,05 | 2.200 |
 | [[comunas/aysen|Aysén]] | 23.170 | 14.614,29 | 9.800 |
-| [[comunas/cisnes|Cisnes]] | 5.137 | 7.985,27 | 5.600 |
+| [[comunas/cisnes|Cisnes]] | 5.335 | 7.985,27 | 5.600 |
 | [[comunas/guaitecas|Guaitecas]] | 1.598 | 4.569,04 | 3.400 |
-| [[comunas/chile_chico|Chile Chico]] | 4.905 | 5.981,72 | 4.900 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 2.723 | 6.252,85 | 4.100 |
-| [[comunas/cochrane|Cochrane]] | 3.458 | 5.720,96 | 4.800 |
-| [[comunas/ohiggins|O'Higgins]] | 647 | 5.323,76 | 2.400 |
-| [[comunas/tortel|Tortel]] | 505 | 3.440,74 | 2.600 |
+| [[comunas/chile_chico|Chile Chico]] | 4.950 | 5.981,72 | 4.900 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 2.671 | 6.252,85 | 4.100 |
+| [[comunas/cochrane|Cochrane]] | 3.492 | 5.720,96 | 4.800 |
+| [[comunas/ohiggins|O'Higgins]] | 664 | 5.323,76 | 2.400 |
+| [[comunas/tortel|Tortel]] | 563 | 3.440,74 | 2.600 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

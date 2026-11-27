@@ -233,24 +233,33 @@ const HUB_META = [
     title: 'Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social',
     variables_clave: [
       'poblacion_censo_2024',
+      'hogares_censo_2024',
+      'viviendas_totales_censo_2024',
+      'indice_envejecimiento',
       'pobreza_multidim_pct',
       'pobreza_ingresos_pct',
       'matricula_escolar',
       'establecimientos_escolares_n',
+      'establecimientos_slep_aysen',
+      'matricula_educacion_superior_sies_n',
       'deficit_habitacional_cuantitativo_n',
       'sistemas_ssr_apr_n',
+      'beneficiarios_ssr_apr_doh',
+      'cobertura_ssr_apr_familias',
+      'tasa_dmcs_100k',
       'tasa_vif_100k'
     ],
     fuentes_oficiales: [
-      'INE — Censo de Población y Vivienda 2024 (100.745 habitantes)',
-      'MDSF — Encuesta CASEN y Registro Social de Hogares (BIDAT)',
-      'MINEDUC / SLEP Aysén — Matrícula y Establecimientos Escolares',
-      'MINVU / DOH-MOP — Déficit Habitacional y Sistemas Sanitarios Rurales (SSR/APR)'
+      'INE / BCN — Censo 2024 (100.745 hab., 39.964 hogares, 52.294 viviendas)',
+      'MDSF — CASEN 2022/2024 (ene-2026) y Registro Social de Hogares',
+      'MINEDUC / SLEP Aysén / SIES 2026 — 86 colegios (55 SLEP + 10 VTF) y 2.924 SIES',
+      'MINVU CECT / PEH Feb-2026 / DOH-MOP — 1.927 déficit cuantitativo, PEH 1.671 y 47 SSR',
+      'CEAD SPD / BCN — Tasas delictuales violentos/integridad y VIF 2023–2025'
     ],
     conceptLinks: ['conceptos/inversion_publica_regional', 'conceptos/financiamiento_municipal'],
     adrLinks: ['adr/adr_004_normalizacion_per_capita_y_colinealidad', 'adr/adr_002_reconciliacion_38_fuentes_invariantes'],
     synthesis:
-      'El Hub VI (Demografía, Educación, Vivienda y Cohesión) documenta la asimetría demográfica de Aysén según el Censo 2024: sobre un total regional de 100.745 habitantes, Coyhaique concentra 61.210 habitantes (60,8%) y Aysén 25.009 (24,8%), mientras que las ocho comunas restantes reúnen el 14,4% de la población en más de 80.000 km². Esta dispersión exige sostener escuelas rurales multigrado bajo el SLEP Aysén, 43 Sistemas Sanitarios Rurales (SSR/APR) supervisados por la DOH-MOP y programas habitacionales MINVU adaptados a sobrecostos logísticos, donde la pobreza multidimensional supera sistemáticamente a la pobreza por ingresos debido a carencias de habitabilidad, calefacción limpia y conectividad.'
+      'El Hub VI (Demografía, Educación, Vivienda y Cohesión) integra los microdatos oficiales del Censo 2024 (INE / BCN 2026): sobre un total regional consolidado de 100.745 habitantes (suma comunal BCN 101.148 hab.; 80,7% urbana / 19,3% rural; 49.847 hombres y 50.898 mujeres), Coyhaique concentra 57.823 habitantes (57,4%) y Aysén 23.170 habitantes (23,0%) (80,4% conjunto), con 39.964 hogares (2,5 pers./hogar) y 52.294 viviendas totales (39.631 ocupadas). El Índice de Envejecimiento pasó de 13,7 (1992) a 66,2 (2024; Lago Verde 182,8, Río Ibáñez 121,2, Tortel 30,8), con masculinidad regional de 97,9, pueblos originarios de 29,0% (29.230 pers.) e inmigración de 3,9% (3.931 pers.). En hábitat, MINVU CECT (oct-2025) fija el déficit cuantitativo en 1.927 viviendas (4,8% hogares: Coyhaique 1.128, Aysén 330, Lago Verde 73 [19,6%], Cochrane 118 [8,1%]), CASEN 2024 fija el déficit cualitativo en 12,9% (5.155 hogares), se catastran 10 campamentos (244 hogares) y el PEH cerró febrero 2026 con 1.671 viviendas terminadas (129,2% sobre meta de 1.293, prorrogado a dic-2029); paralelamente operan 47 comités SSR/APR DOH-MOP (28.833 personas y 9.185 familias/arranques, con 551 en Melinka). En educación conviven 86 colegios activos (55 escuelas/liceos SLEP + 10 jardines VTF = 65 SLEP; Tortel 1 escuela y 0 liceos), 22.087 alumnos totales (8.939 SLEP), PAES 2026 sobre la media nacional (M1 627,4 / Lectora 600,2) y 2.924 estudiantes SIES 2026 (Coyhaique 2.187 y CFT Estatal Aysén 737). CASEN 2024 (nueva metodología ene-2026) marca 14,3% de pobreza por ingresos y 12,1% multidimensional, mientras CEAD registra VIF regional de 691,6 (2023), 809,9 (2024) y 709,9 c/100k hab (2025).'
   },
   {
     idx: 7,
@@ -750,7 +759,7 @@ const ADR_SPECS = [
     relatedComunas: ['coyhaique', 'aysen', 'cisnes', 'guaitecas', 'tortel', 'ohiggins'],
     relatedConcepts: ['modelo_salmonicultor', 'ecosistema_ctci_ciencia', 'red_asistencial_salud', 'volcan_hudson_y_campos_de_hielo'],
     synthesis:
-      'Tras auditar los 10 Hubs, se establecieron invariantes numéricos únicos en todo el repositorio para eliminar discrepancias entre tablas comunales, nodos satélite y respuestas del Consultor IA: (1) Salmonicultura: 13 holdings salmoneros madres con 745 concesiones otorgadas en las 4 comunas costeras, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada; (2) Criósfera DGA: 10.035,7 km² de superficie glaciar regional; (3) Salud Rural: 27 Postas de Salud Rural (PSR) y 5 hospitales con 261 camas; (4) Ecosistema CTCi: 16 centros científicos con 124 investigadores residentes y 179 proyectos totales (120 ANID + 59 CORFO); (5) Finanzas GORE y Municipales: ingresos municipales BCN/SINIM 2025 de 84.820,68 M$ (FCM 41.753,32 M$ brutos), FNDR 2025 devengado de 73.863,0 M$ (92,0%) y acuerdo Hacienda 2027 en 80.748,0 M$; y (6) Economía, Inversión y Suelo (Hub V — Sprint 8): PIB nominal BCCh 2025 de 1.991.000 MM$ (+8,5% real, 13 actividades, 1T 2026 -2,6% real), demografía SII (13.453 empresas / 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs. 131.520 MUF valor bruto de producción), SEIA sin alucinaciones extrarregionales y sincronía 1:1 (Cuenta Pública SEA 2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias), ChileCompra 2026 YTD (228.874,2 M$ en 31.973 OC), SERNAGEOMIN (356 concesiones / 128.511 ha; Pacífico del Sur en El Toqui y Andean Silver en Cerro Bayo), ODEPA (144.118 bovinos / 177.972 ovinos) y Catastro Vegetacional CONAF 2026 (10.667.211,5 ha; 5.152.384,3 ha bosque nativo; 2.387.525,4 ha en SNASPE).',
+      'Tras auditar los 10 Hubs, se establecieron invariantes numéricos únicos en todo el repositorio para eliminar discrepancias entre tablas comunales, nodos satélite y respuestas del Consultor IA: (1) Salmonicultura: 13 holdings salmoneros madres con 745 concesiones otorgadas en las 4 comunas costeras, 245 centros operativos activos y 503.500 toneladas de biomasa cosechada; (2) Criósfera DGA: 10.035,7 km² de superficie glaciar regional; (3) Salud Rural: 27 Postas de Salud Rural (PSR) y 5 hospitales con 261 camas; (4) Ecosistema CTCi: 16 centros científicos con 124 investigadores residentes y 179 proyectos totales (120 ANID + 59 CORFO); (5) Finanzas GORE y Municipales: ingresos municipales BCN/SINIM 2025 de 84.820,68 M$ (FCM 41.753,32 M$ brutos), FNDR 2025 devengado de 73.863,0 M$ (92,0%) y acuerdo Hacienda 2027 en 80.748,0 M$; (6) Economía, Inversión y Suelo (Hub V — Sprint 8): PIB nominal BCCh 2025 de 1.991.000 MM$ (+8,5% real, 13 actividades, 1T 2026 -2,6% real), demografía SII (13.453 empresas / 35.832 trabajadores en 2025; 5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs. 131.520 MUF valor bruto de producción), SEIA sin alucinaciones extrarregionales y sincronía 1:1 (Cuenta Pública SEA 2025), ChileCompra 2026 YTD (228.874,2 M$), SERNAGEOMIN (356 conc. / 128.511 ha), ODEPA (144.118 bovinos / 177.972 ovinos) y CONAF 2026 (10.667.211,5 ha / 5.152.384,3 ha bosque nativo); y (7) Desarrollo Social (Hub VI — Sprint 9): Censo 2024 (100.745 hab. INE / 39.964 hogares / 52.294 viviendas / IAM 66,2), MINVU CECT (1.927 cuantitativo / 12,9% cualitativo = 5.155 / 10 campamentos / PEH 1.671 = 129,2%), DOH-MOP (47 SSR / 28.833 personas / 9.185 familias), Educación (86 colegios; 55 SLEP + 10 VTF; 2.924 SIES 2026) y CEAD VIF oficial 2023–2025.',
     context:
       'Los catastros administrativos chilenos publican cortes temporales distintos (por ejemplo, concesiones acuícolas otorgadas vs. operativas, o presupuesto FNDR ley inicial vs. devengado anual), lo que inducía contradicciones aparentes cuando un analista cruzaba dos módulos.',
     decision:
@@ -809,7 +818,7 @@ const ADR_SPECS = [
     relatedComunas: ['coyhaique', 'aysen', 'tortel', 'ohiggins', 'lago_verde', 'guaitecas'],
     relatedConcepts: ['financiamiento_municipal', 'inversion_publica_regional', 'sistema_electrico_energia'],
     synthesis:
-      'Debido a que Coyhaique concentra 61.210 de los 100.745 habitantes de Aysén (60,8%) y Puerto Aysén 25.009 (24,8%), cualquier cruce bruto entre dos variables de conteo absoluto (por ejemplo, número de empresas SII vs. matrícula escolar o presupuesto municipal total) produce coeficientes de determinación aparentes superiores a R² = 0,92 que solo reflejan el tamaño poblacional. Para evitar inferencias causales espurias, Aysén Sistémico incorpora normalización dinámica Per Cápita (por 1.000 habitantes), Participación % Regional y un filtro «Excluir Coyhaique (Outlier)» tanto en `laboratorio.html` como en `consultor.html`, priorizando cruces físicamente independientes como Tarifa Eléctrica BT1 ($/kWh) vs. Consumo Residencial de Leña (m³/hogar/año) o Tiempo de Derivación Médica (hrs) vs. Mediana de Espera Quirúrgica (días).',
+      'Debido a que Coyhaique concentra 57.823 de los 100.745 habitantes de Aysén (57,4%) y Puerto Aysén 23.170 (23,0%) (80,4% conjunto), cualquier cruce bruto entre dos variables de conteo absoluto (por ejemplo, número de empresas SII vs. matrícula escolar o presupuesto municipal total) produce coeficientes de determinación aparentes superiores a R² = 0,92 que solo reflejan el tamaño poblacional. Para evitar inferencias causales espurias, Aysén Sistémico incorpora normalización dinámica Per Cápita (por 1.000 habitantes), Participación % Regional y un filtro «Excluir Coyhaique (Outlier)» tanto en `laboratorio.html` como en `consultor.html`, priorizando cruces físicamente independientes como Tarifa Eléctrica BT1 ($/kWh) vs. Consumo Residencial de Leña (m³/hogar/año) o Tiempo de Derivación Médica (hrs) vs. Mediana de Espera Quirúrgica (días).',
     context:
       'La hiperconcentración demográfica en la capital regional distorsiona las regresiones lineales ordinarias (OLS) sobre las 10 comunas.',
     decision:
@@ -1145,9 +1154,9 @@ const NODE_KEY_VARS_MAP = {
   20: ['empresas_sii', 'trabajadores_sii', 'ventas_sii_domicilio_local_muf', 'ventas_sii_muf', 'sucursales_bancarias_n', 'cajeros_automaticos_n', 'cajavecina_puntos_n'],
   21: ['concesiones_mineras_ha', 'fet_royalty_minero_2025_mclp'],
   22: ['suelo_fiscal_bbnn_pct', 'superficie_snaspe_pct', 'parcelaciones_sag_n'],
-  23: ['poblacion_censo_2024', 'pobreza_ingresos_pct', 'pobreza_multidim_pct'],
+  23: ['poblacion_censo_2024', 'hogares_censo_2024', 'viviendas_totales_censo_2024', 'indice_envejecimiento', 'pobreza_ingresos_pct', 'pobreza_multidim_pct'],
   24: ['camas_hospitalarias', 'medicos_por_mil_hab', 'traslado_coyhaique_hrs'],
-  25: ['matricula_escolar', 'establecimientos_escolares_n', 'escuelas_rurales_multigrado_n'],
+  25: ['matricula_escolar', 'matricula_slep_aysen_n', 'establecimientos_escolares_n', 'establecimientos_slep_aysen', 'matricula_educacion_superior_sies_n'],
   26: ['tasa_vif_100k', 'tasa_dmcs_100k'],
   27: ['cobertura_vegetal_nativa_ha', 'cobertura_vegetal_pct', 'bosque_nativo_ha'],
   28: ['fauna_amenazada_n', 'superficie_snaspe_pct'],
@@ -1163,7 +1172,7 @@ const NODE_KEY_VARS_MAP = {
   38: ['postas_salud_rural', 'establecimientos_aps_n', 'traslado_coyhaique_hrs'],
   39: ['mediana_espera_quirurgica_dias', 'espera_no_ges_n', 'aeroevacuaciones_samu_n'],
   40: ['red_vial_total_km', 'red_vial_pavimentada_km', 'red_vial_pavimentada_pct', 'tiempo_viaje_coyhaique_hrs'],
-  41: ['deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n', 'sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias']
+  41: ['deficit_habitacional_cuantitativo_n', 'deficit_cuantitativo_pct_hogares', 'deficit_habitacional_cualitativo_n', 'sistemas_ssr_apr_n', 'beneficiarios_ssr_apr_doh', 'cobertura_ssr_apr_familias']
 };
 
 function generateNodoPages(dataLake) {
@@ -1464,6 +1473,10 @@ function generateLogPage() {
     '## [2026-11-26] ingest | Sprint 8: Reingeniería Forense del Hub V (BCCh, SII 5 Tramos, SEIA 1:1, SERNAGEOMIN, ChileCompra, CMF, ODEPA y CONAF 2026)',
     '- Reconciliación macroeconómica BCCh Cuentas Nacionales Regionales 2018–2025 (`1.991.000 MM$` en 2025, `+8,5%` real, FBCF `+18,2%`, PIB turístico `89.200 MM$` = `4,5%`, 1T 2026 `-2,6%` real, 13 actividades económicas) y eliminación de contradicción SII (`9.365/56.475`) mediante 5 tramos UF BCN 2024 (`12.953` emp.), ventas domicilio local (`25.800 MUF`) vs valor bruto producción (`131.520 MUF`) y series SII 2022–2025 en [[hubs/hub_05_inversion|Hub V]] y [[nodos/nodo_20|Nodo #20]].',
     '- Erradicación geográfica de `Los Cóndores` (Maule) reemplazada por `Central Hidroeléctrica Río Mañihuales` (`Edelaysen S.A.`), limpieza de parámetros ficticios `id_expediente=`, sincronía 1:1 SEIA, Cuenta Pública SEA 2025 (`3` aprobados, `1` desistido, `0` rechazados, `72` pertinencias), catastro SERNAGEOMIN (`356` conc. / `128.511 ha` con Pacífico del Sur y Andean Silver), ChileCompra (`230.850 M$` 2024 / `238.400 M$` 2025 / `228.874,2 M$` 2026 YTD), banca CMF 2025 + leyes de excepción, ODEPA (`144.118` bovinos / `177.972` ovinos), CONAF 2026 (`10.667.211,5 ha` / `5.152.384,3 ha` bosque nativo / `2.387.525,4 ha` en SNASPE) y **Eval E18** en [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]].',
+    '',
+    '## [2026-11-27] ingest | Sprint 9: Reingeniería Forense del Hub VI (Censo 2024, CASEN 2022/2024, MINVU CECT/PEH, DOH-MOP, SLEP/SIES 2026, CEAD) y Eval E19',
+    '- Parche de residuos Sprint 8 (eliminado falso `isAliasOf: total_proyectos_ctci` en `matricula_educacion_superior_sies_n`, alineado `ventas_sii_domicilio_local_muf` sumando `25.800 MUF` y desagregación `personas` vs. `familias` SSR/APR) y actualización oficial de [[hubs/hub_06_social|Hub VI]] (Coyhaique `57.823 [57,4%]` y Aysén `23.170 [23,0%]`), `39.964` hogares, `52.294` viviendas (`39.631` ocupadas), IAM `66,2` (`1992: 13,7`), masculinidad `97,9`, pueblos originarios `29,0%` e inmigración `3,9%`.',
+    '- Reconciliación CASEN 2022/2024 (nueva metodología ene-2026: `14,3%` ingresos / `12,1%` multidimensional), MINVU CECT (`1.927` déficit cuantitativo = `4,8%`, `12,9%` cualitativo = `5.155`, `10` campamentos / `244` hogares, cierre PEH feb-2026 `1.671` viviendas = `129,2%`), DOH-MOP (`47` SSR / `28.833` pers. / `9.185` familias), Educación (`86` colegios, `55` SLEP + `10` VTF, `2.924` SIES 2026, Tortel `1` escuela y `0` liceos), CEAD/VIF 2023–2025 sin múltiplos redondos sintéticos y **Eval E19** en [[nodos/nodo_23|Nodo #23]], [[nodos/nodo_25|#25]], [[nodos/nodo_26|#26]] y [[nodos/nodo_41|#41]].',
     ''
   ].join('\n');
 

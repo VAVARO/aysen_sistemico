@@ -1,8 +1,8 @@
 {
   "schemaVersion": "3.0.0",
-  "label": "HEAD_APROBADO",
-  "capturedAt": "2026-11-26T23:35:19.310Z",
-  "bundleGeneratedAt": "2026-11-26T23:02:12.735Z",
+  "label": "HEAD",
+  "capturedAt": "2026-11-27T11:38:54.582Z",
+  "bundleGeneratedAt": "2026-11-27T11:38:44.637Z",
   "autoUpdateMeta": {
     "frequency": "Mensual (día 1 de cada mes)",
     "lastRun": "2026-11-02T12:13:30+00:00",
@@ -11,7 +11,7 @@
     "totalOfficialSources": 38,
     "totalHubs": 10,
     "totalNodes": 41,
-    "totalComunaVariables": 277
+    "totalComunaVariables": 289
   },
   "comunas": [
     {
@@ -56,28 +56,28 @@
     }
   ],
   "comunaHogares": {
-    "11101": 21800,
-    "11102": 320,
-    "11201": 8200,
-    "11202": 2050,
-    "11203": 520,
-    "11301": 1300,
-    "11302": 250,
-    "11303": 195,
-    "11401": 1950,
-    "11402": 1060
+    "11101": 22423,
+    "11102": 373,
+    "11201": 9057,
+    "11202": 2180,
+    "11203": 606,
+    "11301": 1462,
+    "11302": 292,
+    "11303": 231,
+    "11401": 2109,
+    "11402": 1231
   },
   "comunaPoblacion": {
     "11101": 57823,
-    "11102": 779,
+    "11102": 882,
     "11201": 23170,
-    "11202": 5137,
+    "11202": 5335,
     "11203": 1598,
-    "11301": 3458,
-    "11302": 647,
-    "11303": 505,
-    "11401": 4905,
-    "11402": 2723
+    "11301": 3492,
+    "11302": 664,
+    "11303": 563,
+    "11401": 4950,
+    "11402": 2671
   },
   "hub4FiscalAudit": {
     "ingresosMunBcn2025ByIne": {
@@ -452,6 +452,64 @@
       "bosques_en_snaspe_ha": 2387525.4
     }
   },
+  "hub6SocialAudit": {
+    "viviendasOcupadasByIne": {
+      "11101": 22198,
+      "11102": 370,
+      "11201": 8994,
+      "11202": 2171,
+      "11203": 603,
+      "11301": 1449,
+      "11302": 291,
+      "11303": 231,
+      "11401": 2097,
+      "11402": 1227
+    },
+    "deficitCuantitativoMinvuByIne": {
+      "11101": 1128,
+      "11102": 73,
+      "11201": 330,
+      "11202": 109,
+      "11203": 14,
+      "11301": 118,
+      "11302": 4,
+      "11303": 15,
+      "11401": 86,
+      "11402": 50
+    },
+    "tortelEducacion": {
+      "escuelas_rurales_multigrado_n": 1,
+      "liceos_urbanos_n": 0,
+      "establecimientos_escolares_n": 1
+    },
+    "nodo25Datasets": [
+      [
+        17,
+        3,
+        12,
+        7,
+        2,
+        5,
+        5,
+        2,
+        1,
+        1
+      ],
+      [
+        23,
+        0,
+        7,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "hub06WikiText": "---\nid: hub_06_social\ntitle: \"Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social\"\ntype: hub\nhub_id: social\nhub_roman: VI\nvariables_clave:\n  - poblacion_censo_2024\n  - hogares_censo_2024\n  - viviendas_totales_censo_2024\n  - indice_envejecimiento\n  - pobreza_multidim_pct\n  - pobreza_ingresos_pct\n  - matricula_escolar\n  - establecimientos_escolares_n\n  - establecimientos_slep_aysen\n  - matricula_educacion_superior_sies_n\n  - deficit_habitacional_cuantitativo_n\n  - sistemas_ssr_apr_n\n  - beneficiarios_ssr_apr_doh\n  - cobertura_ssr_apr_familias\n  - tasa_dmcs_100k\n  - tasa_vif_100k\nfuentes_oficiales:\n  - \"INE / BCN — Censo 2024 (100.745 hab., 39.964 hogares, 52.294 viviendas)\"\n  - \"MDSF — CASEN 2022/2024 (ene-2026) y Registro Social de Hogares\"\n  - \"MINEDUC / SLEP Aysén / SIES 2026 — 86 colegios (55 SLEP + 10 VTF) y 2.924 SIES\"\n  - \"MINVU CECT / PEH Feb-2026 / DOH-MOP — 1.927 déficit cuantitativo, PEH 1.671 y 47 SSR\"\n  - \"CEAD SPD / BCN — Tasas delictuales violentos/integridad y VIF 2023–2025\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - hub\n  - hub-vi\n---\n\n# Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social\n\n## Síntesis Compilada (Consultor IA)\n\nEl Hub VI (Demografía, Educación, Vivienda y Cohesión) integra los microdatos oficiales del Censo 2024 (INE / BCN 2026): sobre un total regional consolidado de 100.745 habitantes (suma comunal BCN 101.148 hab.; 80,7% urbana / 19,3% rural; 49.847 hombres y 50.898 mujeres), Coyhaique concentra 57.823 habitantes (57,4%) y Aysén 23.170 habitantes (23,0%) (80,4% conjunto), con 39.964 hogares (2,5 pers./hogar) y 52.294 viviendas totales (39.631 ocupadas). El Índice de Envejecimiento pasó de 13,7 (1992) a 66,2 (2024; Lago Verde 182,8, Río Ibáñez 121,2, Tortel 30,8), con masculinidad regional de 97,9, pueblos originarios de 29,0% (29.230 pers.) e inmigración de 3,9% (3.931 pers.). En hábitat, MINVU CECT (oct-2025) fija el déficit cuantitativo en 1.927 viviendas (4,8% hogares: Coyhaique 1.128, Aysén 330, Lago Verde 73 [19,6%], Cochrane 118 [8,1%]), CASEN 2024 fija el déficit cualitativo en 12,9% (5.155 hogares), se catastran 10 campamentos (244 hogares) y el PEH cerró febrero 2026 con 1.671 viviendas terminadas (129,2% sobre meta de 1.293, prorrogado a dic-2029); paralelamente operan 47 comités SSR/APR DOH-MOP (28.833 personas y 9.185 familias/arranques, con 551 en Melinka). En educación conviven 86 colegios activos (55 escuelas/liceos SLEP + 10 jardines VTF = 65 SLEP; Tortel 1 escuela y 0 liceos), 22.087 alumnos totales (8.939 SLEP), PAES 2026 sobre la media nacional (M1 627,4 / Lectora 600,2) y 2.924 estudiantes SIES 2026 (Coyhaique 2.187 y CFT Estatal Aysén 737). CASEN 2024 (nueva metodología ene-2026) marca 14,3% de pobreza por ingresos y 12,1% multidimensional, mientras CEAD registra VIF regional de 691,6 (2023), 809,9 (2024) y 709,9 c/100k hab (2025).\n\n## Indicadores Comunales Verificados\n\n| Comuna | Población Censo 2024 (hab.) | Hogares Censales Estimados Censo 2024 (hogares) | Viviendas Totales Censadas Censo 2024 (viviendas) | Índice de Envejecimiento Demográfico (65+ años por cada 100 menores de 15) | Pobreza Multidimensional CASEN (%) |\n| --- | --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 57.823 | 22.423 | 27.989 | 64,1 | 14 |\n| [[comunas/lago_verde|Lago Verde]] | 882 | 373 | 724 | 182,8 | 18 |\n| [[comunas/aysen|Aysén]] | 23.170 | 9.057 | 11.054 | 61,6 | 12,8 |\n| [[comunas/cisnes|Cisnes]] | 5.335 | 2.180 | 3.437 | 64,1 | 12,3 |\n| [[comunas/guaitecas|Guaitecas]] | 1.598 | 606 | 816 | 56,5 | 22,2 |\n| [[comunas/chile_chico|Chile Chico]] | 4.950 | 2.109 | 3.108 | 92,9 | 16,3 |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 2.671 | 1.231 | 2.242 | 121,2 | 18,8 |\n| [[comunas/cochrane|Cochrane]] | 3.492 | 1.462 | 2.126 | 65 | 14,3 |\n| [[comunas/ohiggins|O'Higgins]] | 664 | 292 | 403 | 41,7 | 12,1 |\n| [[comunas/tortel|Tortel]] | 563 | 231 | 395 | 30,8 | 12,3 |\n\n## Nodos Satélite del Hub\n\n- [[nodos/nodo_23|Nodo #23: Demografía Censo 2024 y Pobreza CASEN]]\n- [[nodos/nodo_25|Nodo #25: Matrícula escolar en la comuna]]\n- [[nodos/nodo_26|Nodo #26: Denuncias por violencia intrafamiliar]]\n- [[nodos/nodo_41|Nodo #41: Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)]]\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **Paquetes Conceptuales y Entidades Territoriales**:\n- [[conceptos/inversion_publica_regional|inversion_publica_regional]]\n- [[conceptos/financiamiento_municipal|financiamiento_municipal]]\n- **Registros de Decisión de Arquitectura y Datos (ADR)**:\n- [[adr/adr_004_normalizacion_per_capita_y_colinealidad|ADR_004_NORMALIZACION_PER_CAPITA_Y_COLINEALIDAD]]\n- [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR_002_RECONCILIACION_38_FUENTES_INVARIANTES]]\n"
+  },
   "centralesElectricas": [
     {
       "id": "ene_cne_CENTRAL-TERMICA-TEHUELCHE",
@@ -601,22 +659,22 @@
       "potencia_mw": 0.35
     }
   ],
-  "totalKeys": 277,
-  "indicatorCount": 242,
+  "totalKeys": 289,
+  "indicatorCount": 247,
   "indicators": {
     "poblacion_censo_2024": {
       "type": "numeric",
       "values": {
         "11101": 57823,
-        "11102": 779,
+        "11102": 882,
         "11201": 23170,
-        "11202": 5137,
+        "11202": 5335,
         "11203": 1598,
-        "11301": 3458,
-        "11302": 647,
-        "11303": 505,
-        "11401": 4905,
-        "11402": 2723
+        "11301": 3492,
+        "11302": 664,
+        "11303": 563,
+        "11401": 4950,
+        "11402": 2671
       }
     },
     "superficie_km2": {
@@ -667,16 +725,16 @@
     "pobreza_multidim_pct": {
       "type": "numeric",
       "values": {
-        "11101": 11.8,
-        "11102": 24.5,
-        "11201": 15.2,
-        "11202": 18.6,
-        "11203": 27.4,
-        "11301": 15,
-        "11302": 22.8,
-        "11303": 26.2,
-        "11401": 16.2,
-        "11402": 19.8
+        "11101": 14,
+        "11102": 18,
+        "11201": 12.8,
+        "11202": 12.3,
+        "11203": 22.2,
+        "11301": 14.3,
+        "11302": 12.1,
+        "11303": 12.3,
+        "11401": 16.3,
+        "11402": 18.8
       }
     },
     "superficie_snaspe_pct": {
@@ -833,15 +891,15 @@
       "type": "numeric",
       "values": {
         "11101": 477.5,
-        "11102": 4263.2,
+        "11102": 3765.4,
         "11201": 630.7,
-        "11202": 1554.5,
+        "11202": 1496.8,
         "11203": 2859.2,
-        "11301": 1654.4,
-        "11302": 8228.4,
-        "11303": 6813.3,
-        "11401": 1219.5,
-        "11402": 2296.3
+        "11301": 1638.3,
+        "11302": 8017.7,
+        "11303": 6111.4,
+        "11401": 1208.4,
+        "11402": 2341
       }
     },
     "dependencia_fcm_pct": {
@@ -1567,16 +1625,31 @@
     "matricula_escolar": {
       "type": "numeric",
       "values": {
-        "11101": 13450,
-        "11102": 95,
-        "11201": 4850,
-        "11202": 980,
-        "11203": 320,
-        "11301": 750,
-        "11302": 120,
-        "11303": 85,
-        "11401": 890,
-        "11402": 450
+        "11101": 13284,
+        "11102": 54,
+        "11201": 5286,
+        "11202": 1011,
+        "11203": 290,
+        "11301": 740,
+        "11302": 123,
+        "11303": 82,
+        "11401": 864,
+        "11402": 353
+      }
+    },
+    "matricula_slep_aysen_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 3017,
+        "11102": 54,
+        "11201": 2406,
+        "11202": 1010,
+        "11203": 290,
+        "11301": 740,
+        "11302": 123,
+        "11303": 82,
+        "11401": 864,
+        "11402": 353
       }
     },
     "cobertura_vegetal_nativa_ha": {
@@ -1688,15 +1761,15 @@
       "type": "numeric",
       "values": {
         "11101": 148232,
-        "11102": 552952,
+        "11102": 488379,
         "11201": 194770,
-        "11202": 580062,
+        "11202": 558534,
         "11203": 528924,
-        "11301": 145419,
-        "11302": 182859,
-        "11303": 222455,
-        "11401": 135441,
-        "11402": 185784
+        "11301": 144003,
+        "11302": 178178,
+        "11303": 199538,
+        "11401": 134210,
+        "11402": 189401
       }
     },
     "gasto_personal_pct": {
@@ -1762,16 +1835,16 @@
     "hogares_censo_2024": {
       "type": "numeric",
       "values": {
-        "11101": 21800,
-        "11102": 320,
-        "11201": 8200,
-        "11202": 2050,
-        "11203": 520,
-        "11301": 1300,
-        "11302": 250,
-        "11303": 195,
-        "11401": 1950,
-        "11402": 1060
+        "11101": 22423,
+        "11102": 373,
+        "11201": 9057,
+        "11202": 2180,
+        "11203": 606,
+        "11301": 1462,
+        "11302": 292,
+        "11303": 231,
+        "11401": 2109,
+        "11402": 1231
       }
     },
     "potencia_ernc_en_construccion_mw": {
@@ -1822,16 +1895,16 @@
     "cobertura_subsidio_electrico_pct": {
       "type": "numeric",
       "values": {
-        "11101": 35.9,
-        "11102": 25.6,
-        "11201": 38.9,
-        "11202": 36.3,
-        "11203": 28.5,
-        "11301": 34.2,
-        "11302": 19.2,
-        "11303": 20.5,
-        "11401": 30.3,
-        "11402": 32.1
+        "11101": 34.9,
+        "11102": 22,
+        "11201": 35.2,
+        "11202": 34.2,
+        "11203": 24.4,
+        "11301": 30.4,
+        "11302": 16.4,
+        "11303": 17.3,
+        "11401": 28,
+        "11402": 27.6
       }
     },
     "diesel_clp_litro": {
@@ -2584,17 +2657,32 @@
         "11402": 25
       }
     },
+    "matricula_educacion_superior_sies_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2187,
+        "11102": 0,
+        "11201": 737,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
     "establecimientos_escolares_n": {
       "type": "numeric",
       "values": {
-        "11101": 33,
-        "11102": 4,
-        "11201": 18,
-        "11202": 9,
+        "11101": 40,
+        "11102": 3,
+        "11201": 19,
+        "11202": 8,
         "11203": 2,
-        "11301": 4,
-        "11302": 2,
-        "11303": 2,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
         "11401": 5,
         "11402": 5
       }
@@ -2787,9 +2875,9 @@
         "11201": 14,
         "11202": 6,
         "11203": 2,
-        "11301": 4,
-        "11302": 2,
-        "11303": 2,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
         "11401": 3,
         "11402": 4
       }
@@ -2812,61 +2900,46 @@
     "deficit_habitacional_cuantitativo_n": {
       "type": "numeric",
       "values": {
-        "11101": 1742,
-        "11102": 32,
-        "11201": 719,
-        "11202": 174,
-        "11203": 89,
-        "11301": 111,
-        "11302": 26,
-        "11303": 39,
-        "11401": 134,
-        "11402": 81
-      }
-    },
-    "deficit_habitacional_cualitativo_n": {
-      "type": "numeric",
-      "values": {
-        "11101": 6280,
-        "11102": 300,
-        "11201": 3260,
-        "11202": 1280,
-        "11203": 680,
-        "11301": 810,
-        "11302": 255,
-        "11303": 375,
-        "11401": 990,
-        "11402": 770
+        "11101": 1128,
+        "11102": 73,
+        "11201": 330,
+        "11202": 109,
+        "11203": 14,
+        "11301": 118,
+        "11302": 4,
+        "11303": 15,
+        "11401": 86,
+        "11402": 50
       }
     },
     "sistemas_ssr_apr_n": {
       "type": "numeric",
       "values": {
-        "11101": 12,
-        "11102": 3,
+        "11101": 15,
+        "11102": 2,
         "11201": 8,
-        "11202": 6,
-        "11203": 2,
-        "11301": 4,
+        "11202": 5,
+        "11203": 1,
+        "11301": 3,
         "11302": 2,
-        "11303": 2,
-        "11401": 4,
-        "11402": 4
+        "11303": 1,
+        "11401": 5,
+        "11402": 5
       }
     },
     "cobertura_ssr_apr_familias": {
       "type": "numeric",
       "values": {
-        "11101": 10500,
-        "11102": 620,
-        "11201": 5500,
-        "11202": 3100,
-        "11203": 1420,
-        "11301": 1450,
-        "11302": 610,
-        "11303": 480,
-        "11401": 2350,
-        "11402": 2050
+        "11101": 3350,
+        "11102": 210,
+        "11201": 1790,
+        "11202": 1050,
+        "11203": 551,
+        "11301": 450,
+        "11302": 174,
+        "11303": 150,
+        "11401": 780,
+        "11402": 680
       }
     },
     "ganado_bovino_cabezas": {
@@ -3007,31 +3080,31 @@
     "cobertura_empam_pct": {
       "type": "numeric",
       "values": {
-        "11101": 80.8,
-        "11102": 71.8,
-        "11201": 78.4,
+        "11101": 80.2,
+        "11102": 72.1,
+        "11201": 78.6,
         "11202": 76.5,
-        "11203": 70.6,
-        "11301": 77.8,
-        "11302": 69.1,
-        "11303": 68.4,
-        "11401": 79.4,
-        "11402": 75.9
+        "11203": 71,
+        "11301": 77.4,
+        "11302": 69.5,
+        "11303": 68.8,
+        "11401": 79.1,
+        "11402": 75.8
       }
     },
     "cobertura_pscv_pct": {
       "type": "numeric",
       "values": {
-        "11101": 74.8,
-        "11102": 67.8,
-        "11201": 70.2,
-        "11202": 71.8,
-        "11203": 66.4,
-        "11301": 73.4,
-        "11302": 63.4,
-        "11303": 63.9,
-        "11401": 74.1,
-        "11402": 68.9
+        "11101": 74.5,
+        "11102": 68,
+        "11201": 71.2,
+        "11202": 70.4,
+        "11203": 65.8,
+        "11301": 72.1,
+        "11302": 64.2,
+        "11303": 63.5,
+        "11401": 73,
+        "11402": 69.8
       }
     },
     "barometro_confianza_institucional_pct": {
@@ -3154,34 +3227,79 @@
         "11402": 92.8
       }
     },
+    "viviendas_totales_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 27989,
+        "11102": 724,
+        "11201": 11054,
+        "11202": 3437,
+        "11203": 816,
+        "11301": 2126,
+        "11302": 403,
+        "11303": 395,
+        "11401": 3108,
+        "11402": 2242
+      }
+    },
+    "pueblos_originarios_pct_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 27.5,
+        "11102": 22.8,
+        "11201": 31.8,
+        "11202": 28.4,
+        "11203": 57.9,
+        "11301": 22.9,
+        "11302": 21.4,
+        "11303": 40.2,
+        "11401": 24.5,
+        "11402": 25.1
+      }
+    },
+    "inmigrantes_internacionales_pct_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 4.3,
+        "11102": 2.8,
+        "11201": 3.5,
+        "11202": 3.6,
+        "11203": 1.4,
+        "11301": 2.5,
+        "11302": 3.6,
+        "11303": 3.3,
+        "11401": 4.1,
+        "11402": 2.9
+      }
+    },
     "indice_envejecimiento": {
       "type": "numeric",
       "values": {
         "11101": 64.1,
-        "11102": 78.5,
-        "11201": 67.5,
-        "11202": 69.4,
-        "11203": 58,
-        "11301": 67.5,
-        "11302": 74,
-        "11303": 71.5,
-        "11401": 72.4,
-        "11402": 79.1
+        "11102": 182.8,
+        "11201": 61.6,
+        "11202": 64.1,
+        "11203": 56.5,
+        "11301": 65,
+        "11302": 41.7,
+        "11303": 30.8,
+        "11401": 92.9,
+        "11402": 121.2
       }
     },
     "indice_masculinidad": {
       "type": "numeric",
       "values": {
-        "11101": 96.8,
-        "11102": 122.4,
-        "11201": 104.2,
-        "11202": 117.2,
-        "11203": 118.5,
-        "11301": 114.5,
-        "11302": 124.6,
-        "11303": 125.2,
-        "11401": 111,
-        "11402": 116.4
+        "11101": 95,
+        "11102": 121.3,
+        "11201": 98.9,
+        "11202": 102.3,
+        "11203": 115.7,
+        "11301": 106,
+        "11302": 104.7,
+        "11303": 114,
+        "11401": 102.1,
+        "11402": 107.4
       }
     },
     "camas_psiquiatricas_uhce": {
@@ -3277,31 +3395,31 @@
     "tasa_dmcs_100k": {
       "type": "numeric",
       "values": {
-        "11101": 2150.4,
-        "11102": 420,
-        "11201": 1980.2,
-        "11202": 1120,
-        "11203": 890,
-        "11301": 1280,
-        "11302": 650,
-        "11303": 510,
-        "11401": 1340,
-        "11402": 910
+        "11101": 1702,
+        "11102": 1422.3,
+        "11201": 1197.6,
+        "11202": 1754.1,
+        "11203": 1862.2,
+        "11301": 748.5,
+        "11302": 1481.5,
+        "11303": 1202.7,
+        "11401": 1743.2,
+        "11402": 1695.5
       }
     },
     "tasa_vif_100k": {
       "type": "numeric",
       "values": {
-        "11101": 940.8,
-        "11102": 385,
-        "11201": 1080.5,
-        "11202": 620,
-        "11203": 540,
-        "11301": 690,
-        "11302": 410,
-        "11303": 390,
-        "11401": 710,
-        "11402": 480
+        "11101": 730.1,
+        "11102": 548.2,
+        "11201": 1157.9,
+        "11202": 749.3,
+        "11203": 496.6,
+        "11301": 773.1,
+        "11302": 740.7,
+        "11303": 687.3,
+        "11401": 755.4,
+        "11402": 552.9
       }
     },
     "escuelas_rurales_multigrado_n": {
@@ -3314,7 +3432,7 @@
         "11203": 2,
         "11301": 1,
         "11302": 1,
-        "11303": 2,
+        "11303": 1,
         "11401": 2,
         "11402": 2
       }
@@ -3329,7 +3447,7 @@
         "11203": 1,
         "11301": 1,
         "11302": 0,
-        "11303": 1,
+        "11303": 0,
         "11401": 1,
         "11402": 0
       }
@@ -3337,61 +3455,76 @@
     "ratio_pobreza_multidim_vs_ingresos": {
       "type": "numeric",
       "values": {
-        "11101": 4.1,
-        "11102": 27.2,
-        "11201": 2.9,
-        "11202": 3.7,
-        "11203": 4.5,
-        "11301": 2.4,
-        "11302": 2.5,
-        "11303": 5.7,
+        "11101": 4.8,
+        "11102": 20,
+        "11201": 2.4,
+        "11202": 2.5,
+        "11203": 3.6,
+        "11301": 2.3,
+        "11302": 1.3,
+        "11303": 2.7,
         "11401": 2.6,
-        "11402": 2.8
+        "11402": 2.7
       }
     },
     "deficit_habitacional_total_por_1000_hab": {
       "type": "numeric",
       "values": {
-        "11101": 30.1,
-        "11102": 41.1,
-        "11201": 31,
-        "11202": 33.9,
-        "11203": 55.7,
-        "11301": 32.1,
-        "11302": 40.2,
-        "11303": 77.2,
-        "11401": 27.3,
-        "11402": 29.7
+        "11101": 19.5,
+        "11102": 82.8,
+        "11201": 14.2,
+        "11202": 20.4,
+        "11203": 8.8,
+        "11301": 33.8,
+        "11302": 6,
+        "11303": 26.6,
+        "11401": 17.4,
+        "11402": 18.7
+      }
+    },
+    "deficit_cuantitativo_pct_hogares": {
+      "type": "numeric",
+      "values": {
+        "11101": 5,
+        "11102": 19.6,
+        "11201": 3.6,
+        "11202": 5,
+        "11203": 2.3,
+        "11301": 8.1,
+        "11302": 1.4,
+        "11303": 6.5,
+        "11401": 4.1,
+        "11402": 4.1
+      }
+    },
+    "beneficiarios_ssr_apr_doh": {
+      "type": "numeric",
+      "values": {
+        "11101": 10650,
+        "11102": 620,
+        "11201": 5680,
+        "11202": 3250,
+        "11203": 1598,
+        "11301": 1450,
+        "11302": 570,
+        "11303": 480,
+        "11401": 2420,
+        "11402": 2115
       }
     },
     "establecimientos_slep_aysen": {
       "type": "numeric",
       "values": {
-        "11101": 22,
-        "11102": 4,
+        "11101": 17,
+        "11102": 3,
         "11201": 12,
-        "11202": 8,
+        "11202": 7,
         "11203": 2,
-        "11301": 4,
-        "11302": 2,
-        "11303": 2,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
         "11401": 5,
         "11402": 5
-      }
-    },
-    "matricula_ed_superior_sies": {
-      "type": "numeric",
-      "values": {
-        "11101": 2010,
-        "11102": 0,
-        "11201": 317,
-        "11202": 0,
-        "11203": 0,
-        "11301": 0,
-        "11302": 0,
-        "11303": 0,
-        "11401": 0,
-        "11402": 0
       }
     },
     "consumo_lena_m3_solidos_anual": {
@@ -3700,13 +3833,13 @@
         "11101": 16900,
         "11102": 130,
         "11201": 4410,
-        "11202": 1420,
-        "11203": 240,
-        "11301": 790,
-        "11302": 75,
-        "11303": 85,
-        "11401": 1210,
-        "11402": 540
+        "11202": 1450,
+        "11203": 380,
+        "11301": 620,
+        "11302": 170,
+        "11303": 150,
+        "11401": 1180,
+        "11402": 410
       }
     },
     "ventas_por_empresa_uf": {
@@ -3773,30 +3906,30 @@
       "type": "numeric",
       "values": {
         "11101": 256.8,
-        "11102": 2824.1,
+        "11102": 2494.3,
         "11201": 423,
-        "11202": 1090.1,
+        "11202": 1049.7,
         "11203": 2127.7,
-        "11301": 1388.1,
-        "11302": 3709.4,
-        "11303": 5148.5,
-        "11401": 999,
-        "11402": 1505.7
+        "11301": 1374.6,
+        "11302": 3614.5,
+        "11303": 4618.1,
+        "11401": 989.9,
+        "11402": 1535
       }
     },
     "fndr_gore_2023_per_capita_mclp": {
       "type": "numeric",
       "values": {
         "11101": 128.7,
-        "11102": 1615.6,
+        "11102": 1427,
         "11201": 208.3,
-        "11202": 922.3,
+        "11202": 888.1,
         "11203": 1534.4,
-        "11301": 1126.2,
-        "11302": 1775.3,
-        "11303": 3595.7,
-        "11401": 545.5,
-        "11402": 1187.8
+        "11301": 1115.2,
+        "11302": 1729.8,
+        "11303": 3225.3,
+        "11401": 540.5,
+        "11402": 1210.9
       }
     },
     "royalty_fet_peso_presupuesto_pct": {
@@ -3833,15 +3966,15 @@
       "type": "numeric",
       "values": {
         "11101": 95,
-        "11102": 146.5,
+        "11102": 129.4,
         "11201": 98.8,
-        "11202": 94.2,
+        "11202": 90.7,
         "11203": 96.3,
-        "11301": 100.1,
-        "11302": 122.7,
-        "11303": 124.8,
-        "11401": 128.1,
-        "11402": 112.9
+        "11301": 99.1,
+        "11302": 119.6,
+        "11303": 111.9,
+        "11401": 126.9,
+        "11402": 115.1
       }
     },
     "sucursales_bancarias_n": {
@@ -4147,46 +4280,46 @@
     "rsh_carencia_servicios_basicos_jun2026_pct": {
       "type": "numeric",
       "values": {
-        "11101": 11.7,
+        "11101": 11.5,
         "11102": 33.9,
         "11201": 11.7,
-        "11202": 12.2,
-        "11203": 26.9,
+        "11202": 12,
+        "11203": 26.1,
         "11301": 15.8,
-        "11302": 13.1,
-        "11303": 38.1,
-        "11401": 9.7,
-        "11402": 14
+        "11302": 14.4,
+        "11303": 44,
+        "11401": 9.6,
+        "11402": 14.4
       }
     },
     "rsh_hacinamiento_jun2026_pct": {
       "type": "numeric",
       "values": {
-        "11101": 6.2,
+        "11101": 6.7,
         "11102": 3.6,
         "11201": 5,
-        "11202": 3.8,
-        "11203": 10.1,
+        "11202": 3.9,
+        "11203": 11,
         "11301": 5.8,
-        "11302": 5.1,
-        "11303": 7.4,
-        "11401": 5.6,
-        "11402": 4.7
+        "11302": 4.6,
+        "11303": 9,
+        "11401": 5.9,
+        "11402": 4.9
       }
     },
     "ruralidad_censo_2024_pct": {
       "type": "numeric",
       "values": {
-        "11101": 19,
+        "11101": 12.1,
         "11102": 100,
-        "11201": 14.7,
-        "11202": 28.1,
-        "11203": 8.1,
-        "11301": 21.8,
+        "11201": 15.4,
+        "11202": 54,
+        "11203": 26,
+        "11301": 22,
         "11302": 100,
         "11303": 100,
-        "11401": 37.2,
-        "11402": 100
+        "11401": 35,
+        "11402": 72
       }
     },
     "conexiones_fijas_subtel_jun2026_n": {

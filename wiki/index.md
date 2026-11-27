@@ -50,16 +50,16 @@ La Wiki Territorial de Aysén Sistémico organiza el conocimiento verificado de 
 
 ## 3. Las 10 Comunas de la Región de Aysén (`wiki/comunas/`)
 
-- [[comunas/coyhaique|Coyhaique]] — Provincia de Coyhaique · 57.823 hab. (57,4%) · Presupuesto: 27.611 M$ (58,4% FCM)
-- [[comunas/lago_verde|Lago Verde]] — Provincia de Coyhaique · 779 hab. (0,77%) · Presupuesto: 3.321,05 M$ (83,9% FCM)
-- [[comunas/aysen|Aysén]] — Provincia de Aysén · 23.170 hab. (23%) · Presupuesto: 14.614,29 M$ (61,1% FCM)
-- [[comunas/cisnes|Cisnes]] — Provincia de Aysén · 5.137 hab. (5,1%) · Presupuesto: 7.985,27 M$ (48,7% FCM)
-- [[comunas/guaitecas|Guaitecas]] — Provincia de Aysén · 1.598 hab. (1,59%) · Presupuesto: 4.569,04 M$ (73,1% FCM)
-- [[comunas/chile_chico|Chile Chico]] — Provincia de General Carrera · 4.905 hab. (4,87%) · Presupuesto: 5.981,72 M$ (86,5% FCM)
-- [[comunas/rio_ibanez|Río Ibáñez]] — Provincia de General Carrera · 2.723 hab. (2,7%) · Presupuesto: 6.252,85 M$ (86,6% FCM)
-- [[comunas/cochrane|Cochrane]] — Provincia de Capitán Prat · 3.458 hab. (3,43%) · Presupuesto: 5.720,96 M$ (85,7% FCM)
-- [[comunas/ohiggins|O'Higgins]] — Provincia de Capitán Prat · 647 hab. (0,64%) · Presupuesto: 5.323,76 M$ (95,3% FCM)
-- [[comunas/tortel|Tortel]] — Provincia de Capitán Prat · 505 hab. (0,5%) · Presupuesto: 3.440,74 M$ (95,4% FCM)
+- [[comunas/coyhaique|Coyhaique]] — Provincia de Coyhaique · 57.823 hab. (57,17%) · Presupuesto: 27.611 M$ (58,4% FCM)
+- [[comunas/lago_verde|Lago Verde]] — Provincia de Coyhaique · 882 hab. (0,87%) · Presupuesto: 3.321,05 M$ (83,9% FCM)
+- [[comunas/aysen|Aysén]] — Provincia de Aysén · 23.170 hab. (22,91%) · Presupuesto: 14.614,29 M$ (61,1% FCM)
+- [[comunas/cisnes|Cisnes]] — Provincia de Aysén · 5.335 hab. (5,27%) · Presupuesto: 7.985,27 M$ (48,7% FCM)
+- [[comunas/guaitecas|Guaitecas]] — Provincia de Aysén · 1.598 hab. (1,58%) · Presupuesto: 4.569,04 M$ (73,1% FCM)
+- [[comunas/chile_chico|Chile Chico]] — Provincia de General Carrera · 4.950 hab. (4,89%) · Presupuesto: 5.981,72 M$ (86,5% FCM)
+- [[comunas/rio_ibanez|Río Ibáñez]] — Provincia de General Carrera · 2.671 hab. (2,64%) · Presupuesto: 6.252,85 M$ (86,6% FCM)
+- [[comunas/cochrane|Cochrane]] — Provincia de Capitán Prat · 3.492 hab. (3,45%) · Presupuesto: 5.720,96 M$ (85,7% FCM)
+- [[comunas/ohiggins|O'Higgins]] — Provincia de Capitán Prat · 664 hab. (0,66%) · Presupuesto: 5.323,76 M$ (95,3% FCM)
+- [[comunas/tortel|Tortel]] — Provincia de Capitán Prat · 563 hab. (0,56%) · Presupuesto: 3.440,74 M$ (95,4% FCM)
 
 ## 4. Paquetes Conceptuales y Entidades Territoriales (`wiki/conceptos/`)
 

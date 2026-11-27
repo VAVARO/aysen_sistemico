@@ -505,6 +505,46 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     }
   };
 
+  // Contexto Hub VI (Sprint 9 - Eval E19: Censo 2024, MINVU, SSR, SLEP, SIES, CEAD, Wiki)
+  const tortelObj = Array.isArray(dataLake.comunas) ? dataLake.comunas.find(c => String(c.comuna_ine) === '11303') : null;
+  const nodo25 = Array.isArray(dataLake.nodos) ? dataLake.nodos.find(n => n && n.id === 25) : null;
+  const nodo25Ds = Array.isArray(nodo25 && nodo25.chartSpec && nodo25.chartSpec.datasets)
+    ? nodo25.chartSpec.datasets.map(ds => Array.isArray(ds.data) ? ds.data.map(Number) : [])
+    : [];
+  const hub06WikiPath = options.hub06WikiPath || path.join(ROOT_DIR, 'wiki', 'hubs', 'hub_06_social.md');
+  let hub06WikiText = '';
+  try {
+    if (fs.existsSync(hub06WikiPath)) {
+      hub06WikiText = fs.readFileSync(hub06WikiPath, 'utf8');
+    }
+  } catch (_) {}
+  const viviendasOcupadasByIne = {};
+  const deficitCuantitativoMinvuByIne = {};
+  for (const row of (dataLake.comunas || [])) {
+    const ine = String(row.comuna_ine || row.codigo_comuna || '');
+    if (!ine) continue;
+    if (typeof row.viviendas_ocupadas_censo_2024 === 'number') {
+      viviendasOcupadasByIne[ine] = row.viviendas_ocupadas_censo_2024;
+    }
+    const defVal = typeof row.deficit_habitacional_cuantitativo_n === 'number'
+      ? row.deficit_habitacional_cuantitativo_n
+      : (typeof row.deficit_cuantitativo_minvu === 'number' ? row.deficit_cuantitativo_minvu : null);
+    if (defVal !== null) {
+      deficitCuantitativoMinvuByIne[ine] = defVal;
+    }
+  }
+  const hub6SocialAudit = {
+    viviendasOcupadasByIne,
+    deficitCuantitativoMinvuByIne,
+    tortelEducacion: {
+      escuelas_rurales_multigrado_n: tortelObj ? Number(tortelObj.escuelas_rurales_multigrado_n ?? 0) : null,
+      liceos_urbanos_n: tortelObj ? Number(tortelObj.liceos_urbanos_n ?? 0) : null,
+      establecimientos_escolares_n: tortelObj ? Number(tortelObj.establecimientos_escolares_n ?? 0) : null
+    },
+    nodo25Datasets: nodo25Ds,
+    hub06WikiText
+  };
+
   return {
     schemaVersion: '3.0.0',
     label,
@@ -522,6 +562,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
       votantesOct2024ByIne
     },
     hub5EconomyAudit,
+    hub6SocialAudit,
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -1120,6 +1161,164 @@ function evaluateHub5EconomyInvestmentLandInvariants(bundleOrSnapshot, options =
   return alerts;
 }
 
+function evaluateHub6SocialDemographyEducationHousingInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'direct', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h6 = snapshot.hub6SocialAudit || {};
+  if (comunas.length === 0 || !indicators.hogares_censo_2024) return alerts;
+
+  const getVal = (key, ine) => Number(indicators[key]?.values?.[ine] ?? NaN);
+  const sumInd = (key) => comunas.reduce((a, c) => a + (Number(indicators[key]?.values?.[c.comuna_ine]) || 0), 0);
+
+  // 1. Censo 2024: Hogares (39.964), Viviendas totales (52.294), Ocupadas (39.631) e IAM exacto
+  const sumHog = sumInd('hogares_censo_2024');
+  const sumVivTot = sumInd('viviendas_totales_censo_2024');
+  const sumVivOcu = comunas.reduce((a, c) => {
+    const v = indicators.viviendas_ocupadas_censo_2024?.values?.[c.comuna_ine] ?? h6.viviendasOcupadasByIne?.[c.comuna_ine] ?? 0;
+    return a + (Number(v) || 0);
+  }, 0);
+  const iamLV = getVal('indice_envejecimiento', '11102');
+  const iamRI = getVal('indice_envejecimiento', '11402');
+  const iamTor = getVal('indice_envejecimiento', '11303');
+  if (
+    sumHog !== 39964 ||
+    sumVivTot !== 52294 ||
+    sumVivOcu !== 39631 ||
+    Math.abs(iamLV - 182.8) > 0.1 ||
+    Math.abs(iamRI - 121.2) > 0.1 ||
+    Math.abs(iamTor - 30.8) > 0.1
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CENSO_2024_HOGARES_VIVIENDAS_IAM',
+      invariant: 'INVARIANTE_CENSO_2024_DEMOGRAFIA',
+      indicator: 'hogares_censo_2024',
+      hub: CANONICAL_HUB_TITLES.social,
+      detail: `[ERROR_CENSO_2024_HOGARES_VIVIENDAS_IAM] Censo 2024 inconsistente: hogares=${sumHog} (39964), vivTot=${sumVivTot} (52294), vivOcu=${sumVivOcu} (39631), IAM(LV=${iamLV}, RI=${iamRI}, Tor=${iamTor}).`
+    });
+  }
+
+  // 2. Deficit Habitacional MINVU CECT (1.927 = 1.128 Coyhaique + 73 LV + 330 Aysen + 118 Cochrane...)
+  const getDefVal = (ine) => Number(
+    indicators.deficit_habitacional_cuantitativo_n?.values?.[ine] ??
+    indicators.deficit_cuantitativo_minvu?.values?.[ine] ??
+    h6.deficitCuantitativoMinvuByIne?.[ine] ??
+    NaN
+  );
+  const sumDef = comunas.reduce((a, c) => a + (getDefVal(c.comuna_ine) || 0), 0);
+  const defCoy = getDefVal('11101');
+  const defLV = getDefVal('11102');
+  const defAys = getDefVal('11201');
+  const defCoc = getDefVal('11301');
+  const sumAliasDef = h6.deficitCuantitativoMinvuByIne && Object.keys(h6.deficitCuantitativoMinvuByIne).length > 0
+    ? comunas.reduce((a, c) => a + (Number(h6.deficitCuantitativoMinvuByIne[c.comuna_ine]) || 0), 0)
+    : 1927;
+  if (sumDef !== 1927 || sumAliasDef !== 1927 || defCoy !== 1128 || defLV !== 73 || defAys !== 330 || defCoc !== 118) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_MINVU_CECT_DEFICIT_HABITACIONAL',
+      invariant: 'INVARIANTE_MINVU_CECT_2024',
+      indicator: 'deficit_habitacional_cuantitativo_n',
+      hub: CANONICAL_HUB_TITLES.social,
+      detail: `[ERROR_MINVU_CECT_DEFICIT_HABITACIONAL] Deficit MINVU inconsistente: sum=${sumDef} (alias=${sumAliasDef}, esp. 1927), Coy=${defCoy}, LV=${defLV}, Ays=${defAys}, Coc=${defCoc}.`
+    });
+  }
+
+  // 3. Agua Potable Rural SSR/APR DOH-MOP: familias SSR < hogares Censo 2024 y sumas (9.185 fam / 28.833 pers)
+  const sumSsrFam = sumInd('cobertura_ssr_apr_familias');
+  const sumSsrPers = sumInd('beneficiarios_ssr_apr_doh');
+  const ssrOverCap = comunas.find(c => {
+    const fam = getVal('cobertura_ssr_apr_familias', c.comuna_ine);
+    const hog = getVal('hogares_censo_2024', c.comuna_ine);
+    return Number.isFinite(fam) && Number.isFinite(hog) && fam >= hog;
+  });
+  if (sumSsrFam !== 9185 || sumSsrPers !== 28833 || ssrOverCap) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_SSR_DOH_COBERTURA_FAMILIAS',
+      invariant: 'INVARIANTE_SSR_DOH_POBLACION',
+      indicator: 'cobertura_ssr_apr_familias',
+      hub: CANONICAL_HUB_TITLES.social,
+      detail: `[ERROR_SSR_DOH_COBERTURA_FAMILIAS] SSR/APR inconsistente: familias=${sumSsrFam} (9185), personas=${sumSsrPers} (28833), exceso=${ssrOverCap ? ssrOverCap.comuna_ine : 'ninguno'}.`
+    });
+  }
+
+  // 4. Educacion MINEDUC/SLEP/SIES: 86 colegios (55 SLEP), Tortel 1 escuela / 0 liceos, SIES 2.924 (2.187/737)
+  const sumEsc = sumInd('establecimientos_escolares_n');
+  const sumSlep = sumInd('establecimientos_slep_aysen');
+  const sumSies = sumInd('matricula_educacion_superior_sies_n');
+  const siesCoy = getVal('matricula_educacion_superior_sies_n', '11101');
+  const siesAys = getVal('matricula_educacion_superior_sies_n', '11201');
+  const tEdu = h6.tortelEducacion || {};
+  const tortelEst = getVal('establecimientos_escolares_n', '11303');
+  const dsArr = Array.isArray(h6.nodo25Datasets) ? h6.nodo25Datasets : [];
+  const nodo25Sum = dsArr.length >= 2
+    ? dsArr.slice(0, 2).reduce((acc, arr) => acc + (Array.isArray(arr) ? arr.reduce((a, b) => a + (Number(b) || 0), 0) : 0), 0)
+    : 86;
+  if (
+    sumEsc !== 86 ||
+    sumSlep !== 55 ||
+    tortelEst !== 1 ||
+    tEdu.escuelas_rurales_multigrado_n !== 1 ||
+    tEdu.liceos_urbanos_n !== 0 ||
+    nodo25Sum !== 86 ||
+    sumSies !== 2924 ||
+    siesCoy !== 2187 ||
+    siesAys !== 737
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_EDUCACION_SLEP_Y_SIES_2026',
+      invariant: 'INVARIANTE_SLEP_86_Y_SIES_2924',
+      indicator: 'matricula_educacion_superior_sies_n',
+      hub: CANONICAL_HUB_TITLES.social,
+      detail: `[ERROR_EDUCACION_SLEP_Y_SIES_2026] Educacion inconsistente: esc=${sumEsc} (86), slep=${sumSlep} (55), Tortel(est=${tortelEst}, escRur=${tEdu.escuelas_rurales_multigrado_n}, lic=${tEdu.liceos_urbanos_n}), nodo25=${nodo25Sum}, SIES=${sumSies} (${siesCoy}/${siesAys}).`
+    });
+  }
+
+  // 5. Seguridad CEAD: cero multiplos sinteticos antiguos en tasa_dmcs_100k o tasa_vif_100k
+  const bannedCead = new Set([420, 1120, 890, 1340, 910, 1280, 650, 510]);
+  const badCeadFound = [];
+  for (const c of comunas) {
+    for (const k of ['tasa_dmcs_100k', 'tasa_vif_100k']) {
+      const val = getVal(k, c.comuna_ine);
+      if (Number.isFinite(val) && bannedCead.has(val)) {
+        badCeadFound.push(`${c.comuna_ine}:${k}=${val}`);
+      }
+    }
+  }
+  if (badCeadFound.length > 0) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_SEGURIDAD_CEAD_VALORES_SINTETICOS',
+      invariant: 'INVARIANTE_CEAD_2023_2025_REAL',
+      indicator: 'tasa_dmcs_100k',
+      hub: CANONICAL_HUB_TITLES.social,
+      detail: `[ERROR_SEGURIDAD_CEAD_VALORES_SINTETICOS] Multiplos sinteticos heredados detectados: ${badCeadFound.join(', ')}.`
+    });
+  }
+
+  // 6. Wiki hub_06_social.md: 57.823 y 23.170 sin resabios de 61.210
+  const wikiTxt = String(h6.hub06WikiText || '');
+  if (wikiTxt && (!wikiTxt.includes('57.823') || !wikiTxt.includes('23.170') || wikiTxt.includes('61.210'))) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_WIKI_HUB06_POBLACION_CENSO_2024',
+      invariant: 'INVARIANTE_WIKI_HUB06_TEXTO_CENSO',
+      indicator: 'poblacion_censo_2024',
+      hub: CANONICAL_HUB_TITLES.social,
+      detail: '[ERROR_WIKI_HUB06_POBLACION_CENSO_2024] wiki/hubs/hub_06_social.md debe reflejar 57.823 / 23.170 sin 61.210.'
+    });
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -1375,11 +1574,12 @@ function compareSnapshots(baseline, current, options = {}) {
     .map(([hubTitle, count]) => ({ hubTitle, count }))
     .sort((a, b) => a.hubTitle.localeCompare(b.hubTitle));
 
-  // Invariantes físicos, demográficos, fiscales Hub IV, económicos Hub V y anti-colinealidad (Audit V3 / E17-E18)
+  // Invariantes físicos, demográficos, fiscales Hub IV, económicos Hub V, sociales Hub VI y anti-colinealidad (Audit V3 / E17-E19)
   const invariantAlerts = [
     ...evaluatePhysicalAndDemographicInvariants(current, options),
     ...evaluateHub4FiscalAndElectoralInvariants(current, options),
-    ...evaluateHub5EconomyInvestmentLandInvariants(current, options)
+    ...evaluateHub5EconomyInvestmentLandInvariants(current, options),
+    ...evaluateHub6SocialDemographyEducationHousingInvariants(current, options)
   ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
@@ -1923,7 +2123,7 @@ function parseCliArgs(argv) {
     else if (a === '--sync-to-vault') args.syncToVault = true;
     else if (a === '--no-fail-missing-vault') args.noFailMissingVault = true;
     else if (a === '--vault-path' && argv[i + 1]) args.vaultPath = argv[++i];
-    else if (a === '--update-baseline') args.updateBaseline = true;
+    else if (a === '--update-baseline' || a === '--write-baseline') args.updateBaseline = true;
     else if (a === '--approve-latest') args.approveLatest = true;
     else if (a === '--json') args.jsonSummary = true;
   }
@@ -2034,6 +2234,7 @@ module.exports = {
   evaluatePhysicalAndDemographicInvariants,
   evaluateHub4FiscalAndElectoralInvariants,
   evaluateHub5EconomyInvestmentLandInvariants,
+  evaluateHub6SocialDemographyEducationHousingInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

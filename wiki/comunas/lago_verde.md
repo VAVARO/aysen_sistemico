@@ -44,18 +44,18 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Lago Verde (capital comunal: Lago Verde; Provincia de Coyhaique; cuenca principal: Cuenca 111 (Río Palena)) cuenta con una población verificada de 779 habitantes según el Censo 2024 (0,77% del total regional de 100.745 hab.) distribuidos en 5.422,3 km² (densidad de 0,14 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Claudia Valdés Vásquez), administra un presupuesto vigente de 3.321,05 M$ con una dependencia del Fondo Común Municipal de 83,9% (16,1% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 2.200 M$ (2.824,1 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 26 prestadores SERNATUR (165 camas), 0 visitas anuales a áreas protegidas SNASPE y 38,2 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual con tarifa residencial BT1 de $294/kWh y 98,1% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 3 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 4,5 horas), y registra 2 proyectos CTCi con 1 investigadores residentes estimados.
+La comuna de Lago Verde (capital comunal: Lago Verde; Provincia de Coyhaique; cuenca principal: Cuenca 111 (Río Palena)) cuenta con una población verificada de 882 habitantes según el Censo 2024 (0,87% del total regional de 100.745 hab.) distribuidos en 5.422,3 km² (densidad de 0,14 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Claudia Valdés Vásquez), administra un presupuesto vigente de 3.321,05 M$ con una dependencia del Fondo Común Municipal de 83,9% (16,1% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 2.200 M$ (2.494,3 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 26 prestadores SERNATUR (165 camas), 0 visitas anuales a áreas protegidas SNASPE y 38,2 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual con tarifa residencial BT1 de $294/kWh y 98,1% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 3 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 4,5 horas), y registra 2 proyectos CTCi con 1 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
 | Dimensión / Indicador Oficial | Valor Comunal Verificado | Hub Sistémico |
 | --- | --- | --- |
-| Población Censo 2024 (hab.) | 779 (0,77% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
+| Población Censo 2024 (hab.) | 882 (0,87% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 5.422,3 km² (0,14 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
 | Alcalde en Ejercicio (2024-2028) | Claudia Valdés Vásquez (Independiente (cupo PPD) / Contigo Chile Mejor) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Presupuesto Municipal Vigente (M$) | 3.321,05 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Dependencia Fondo Común Municipal (%) | 83,9% (Ingresos Propios: 16,1%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Inversión Pública FNDR Asignada (M$) | 2.200 M$ (2.824,1 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
+| Inversión Pública FNDR Asignada (M$) | 2.200 M$ (2.494,3 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 26 prestadores / 165 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 0 visitantes (Parque Nacional Lago Rosselot (sector este), Reserva Nacional Lago Las Torres) | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Concesiones y Biomasa de Salmón | 0 concesiones / 0 ton | [[hubs/hub_02_salmonicultura|Hub II — Salmonicultura]] |

@@ -44,18 +44,18 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Chile Chico (capital comunal: Chile Chico; Provincia de General Carrera; cuenca principal: Cuenca 115 (Río Baker)) cuenta con una población verificada de 4.905 habitantes según el Censo 2024 (4,87% del total regional de 100.745 hab.) distribuidos en 5.737,1 km² (densidad de 0,85 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Ariel Keim Hermosilla), administra un presupuesto vigente de 5.981,72 M$ con una dependencia del Fondo Común Municipal de 86,5% (13,5% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 4.900 M$ (999 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 231 prestadores SERNATUR (780 camas), 6.600 visitas anuales a áreas protegidas SNASPE y 145 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Mediano General Carrera (SMGC) con tarifa residencial BT1 de $289,5/kWh y 82% de hogares calefaccionados a leña; dispone de 14 camas hospitalarias y 2 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 4 horas), y registra 8 proyectos CTCi con 3 investigadores residentes estimados.
+La comuna de Chile Chico (capital comunal: Chile Chico; Provincia de General Carrera; cuenca principal: Cuenca 115 (Río Baker)) cuenta con una población verificada de 4.950 habitantes según el Censo 2024 (4,89% del total regional de 100.745 hab.) distribuidos en 5.737,1 km² (densidad de 0,85 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Ariel Keim Hermosilla), administra un presupuesto vigente de 5.981,72 M$ con una dependencia del Fondo Común Municipal de 86,5% (13,5% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 4.900 M$ (989,9 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 231 prestadores SERNATUR (780 camas), 6.600 visitas anuales a áreas protegidas SNASPE y 145 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Mediano General Carrera (SMGC) con tarifa residencial BT1 de $289,5/kWh y 82% de hogares calefaccionados a leña; dispone de 14 camas hospitalarias y 2 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 4 horas), y registra 8 proyectos CTCi con 3 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
 | Dimensión / Indicador Oficial | Valor Comunal Verificado | Hub Sistémico |
 | --- | --- | --- |
-| Población Censo 2024 (hab.) | 4.905 (4,87% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
+| Población Censo 2024 (hab.) | 4.950 (4,89% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 5.737,1 km² (0,85 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
 | Alcalde en Ejercicio (2024-2028) | Ariel Keim Hermosilla (Independiente (Fuera de pacto)) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Presupuesto Municipal Vigente (M$) | 5.981,72 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Dependencia Fondo Común Municipal (%) | 86,5% (Ingresos Propios: 13,5%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Inversión Pública FNDR Asignada (M$) | 4.900 M$ (999 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
+| Inversión Pública FNDR Asignada (M$) | 4.900 M$ (989,9 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 231 prestadores / 780 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 6.600 visitantes (Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni) | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Concesiones y Biomasa de Salmón | 0 concesiones / 0 ton | [[hubs/hub_02_salmonicultura|Hub II — Salmonicultura]] |

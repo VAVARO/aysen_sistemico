@@ -1630,12 +1630,10 @@ def build_dataset():
             "educacion_diferenciada_slep": {
                 "escuelas_rurales_multigrado_unidocentes_total": 1,
                 "escuelas_rurales_multigrado_unidocentes_nombres": [
-                    "Escuela Rural Comandante Luis Bravo Martinez (Ciclo Basico)"
+                    "Escuela Comandante Luis Bravo Bravo (RBD 8410-7, hasta 8vo Basico)"
                 ],
-                "liceos_urbanos_hc_tp_total": 1,
-                "liceos_urbanos_hc_tp_nombres": [
-                    "Liceo Luis Bravo Martinez (Ciclo Medio Tecnico y Humanista en Desarrollo)"
-                ],
+                "liceos_urbanos_hc_tp_total": 0,
+                "liceos_urbanos_hc_tp_nombres": [],
                 "jardines_junji_integra_total": 1,
                 "jardines_junji_integra_nombres": [
                     "Jardin Infantil Los Cipreses (Integra / Caleta Tortel)"
@@ -1743,6 +1741,50 @@ def build_dataset():
             series_comuna.append(item)
             
         comuna_datos["series_historicas"] = series_comuna
+        comuna_datos["salud_diferenciada"]["salud_mental_oncologia_deis"] = {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_hrc": 9 if ine == "11101" else 0,
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6
+        }
+        # Inyectar desagregacion MINVU CECT, CASEN y DOH-MOP Sprint 9 por comuna
+        _s9_08 = {
+            "11101": {"def_cuant": 1128, "irrecup": 280, "alleg": 225, "nuc_hac": 219, "hac_no_amp": 404, "def_cual": 2893, "ssr_com": 15, "ssr_pers": 10650, "ssr_fam": 3350, "pob_ing": 2.9, "pob_mul": 14.0},
+            "11102": {"def_cuant": 73,   "irrecup": 65,  "alleg": 3,   "nuc_hac": 1,   "hac_no_amp": 4,   "def_cual": 48,   "ssr_com": 2,  "ssr_pers": 620,   "ssr_fam": 210,  "pob_ing": 0.9, "pob_mul": 18.0},
+            "11201": {"def_cuant": 330,  "irrecup": 78,  "alleg": 63,  "nuc_hac": 63,  "hac_no_amp": 126, "def_cual": 1168, "ssr_com": 8,  "ssr_pers": 5680,  "ssr_fam": 1790, "pob_ing": 5.3, "pob_mul": 12.8},
+            "11202": {"def_cuant": 109,  "irrecup": 60,  "alleg": 9,   "nuc_hac": 10,  "hac_no_amp": 30,  "def_cual": 281,  "ssr_com": 5,  "ssr_pers": 3250,  "ssr_fam": 1050, "pob_ing": 5.0, "pob_mul": 12.3},
+            "11203": {"def_cuant": 14,   "irrecup": 2,   "alleg": 3,   "nuc_hac": 2,   "hac_no_amp": 7,   "def_cual": 78,   "ssr_com": 1,  "ssr_pers": 1598,  "ssr_fam": 551,  "pob_ing": 6.1, "pob_mul": 22.2},
+            "11401": {"def_cuant": 86,   "irrecup": 33,  "alleg": 12,  "nuc_hac": 10,  "hac_no_amp": 31,  "def_cual": 272,  "ssr_com": 5,  "ssr_pers": 2420,  "ssr_fam": 780,  "pob_ing": 6.2, "pob_mul": 16.3},
+            "11402": {"def_cuant": 50,   "irrecup": 17,  "alleg": 4,   "nuc_hac": 7,   "hac_no_amp": 22,  "def_cual": 158,  "ssr_com": 5,  "ssr_pers": 2115,  "ssr_fam": 680,  "pob_ing": 7.0, "pob_mul": 18.8},
+            "11301": {"def_cuant": 118,  "irrecup": 62,  "alleg": 13,  "nuc_hac": 13,  "hac_no_amp": 30,  "def_cual": 189,  "ssr_com": 3,  "ssr_pers": 1450,  "ssr_fam": 450,  "pob_ing": 6.3, "pob_mul": 14.3},
+            "11302": {"def_cuant": 4,    "irrecup": 1,   "alleg": 1,   "nuc_hac": 1,   "hac_no_amp": 1,   "def_cual": 38,   "ssr_com": 2,  "ssr_pers": 570,   "ssr_fam": 174,  "pob_ing": 9.2, "pob_mul": 12.1},
+            "11303": {"def_cuant": 15,   "irrecup": 11,  "alleg": 0,   "nuc_hac": 0,   "hac_no_amp": 4,   "def_cual": 30,   "ssr_com": 1,  "ssr_pers": 480,   "ssr_fam": 150,  "pob_ing": 4.6, "pob_mul": 12.3},
+        }[ine]
+        comuna_datos["habitat_minvu"] = {
+            "deficit_cuantitativo_comunal": _s9_08["def_cuant"],
+            "viviendas_irrecuperables": _s9_08["irrecup"],
+            "hogares_allegados": _s9_08["alleg"],
+            "nucleos_allegados_hacinados": _s9_08["nuc_hac"],
+            "viviendas_hacinamiento_no_ampliable": _s9_08["hac_no_amp"],
+            "deficit_cualitativo_comunal": _s9_08["def_cual"],
+            "deficit_cuantitativo_regional": 1927,
+            "deficit_cualitativo_regional": 5155,
+            "deficit_cualitativo_pct_regional": 12.9
+        }
+        comuna_datos["pobreza_casen"] = {
+            "pobreza_ingresos_comunal_pct": _s9_08["pob_ing"],
+            "pobreza_multidim_comunal_pct": _s9_08["pob_mul"],
+            "pobreza_ingresos_regional_pct": 4.0,
+            "pobreza_multidimensional_regional_pct": 14.0
+        }
+        comuna_datos["servicios_sanitarios_rurales_doh"] = {
+            "comites_ssr_comunales": _s9_08["ssr_com"],
+            "beneficiarios_ssr_comunales": _s9_08["ssr_pers"],
+            "familias_ssr_comunales": _s9_08["ssr_fam"],
+            "comites_ssr_regionales": 47,
+            "beneficiarios_ssr_regionales": 28833,
+            "familias_ssr_regionales": 9185
+        }
         comuna_entry["datos"] = comuna_datos
         por_comuna.append(comuna_entry)
 
@@ -1803,9 +1845,14 @@ def build_dataset():
         },
         "educacion_resumen": {
             "slep_responsable": "Servicio Local de Educacion Publica (SLEP) Aysen",
-            "escuelas_rurales_multigrado_unidocentes_total": 36,
-            "liceos_urbanos_hc_tp_total": 16,
+            "establecimientos_escolares_totales_region": 86,
+            "establecimientos_escolares_slep": 55,
+            "jardines_vtf_slep": 10,
+            "establecimientos_operativos_slep": 65,
+            "escuelas_rurales_multigrado_unidocentes_total": 35,
+            "liceos_urbanos_hc_tp_total": 15,
             "jardines_infantiles_junji_integra_total": 47,
+            "matricula_sies_2026_total": 2924,
             "presencia_internados_estudiantiles": "Red de internados en cabeceras comunales para garantizar escolaridad a ninos de zonas rurales aisladas"
         },
         "energia_resumen": {
@@ -1852,6 +1899,80 @@ def build_dataset():
                 "Globalpesca SpA"
             ],
             "regimen_tributario_pesquero": "Impuesto Especifico Art. 43 ter LGPA (LTP-A) + Patente Unica Pesquera Art. 43 LGPA"
+        },
+        "demografia_vital_censo_2024": {
+            "poblacion_total_censo_2024": 100745,
+            "hogares_censo_2024": 39964,
+            "indice_envejecimiento": 66.2,
+            "indice_masculinidad_regional": 97.9,
+            "viviendas_censadas_total": 52294,
+            "viviendas_ocupadas_moradores_presentes": 39631,
+            "pueblos_originarios_pct": 29.0,
+            "inmigrantes_internacionales_pct": 3.9,
+            "fuente": "INE - Censo 2024 / BCN Distrito 27 (2026)"
+        },
+        "salud_mental_y_uhce_hrc": {
+            "tasa_suicidio_deis_por_100k": 15.1,
+            "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
+            "observacion": "Aysen lidera historicamente la tasa nacional de suicidio (~15,1 por 100k hab) con una restriccion critica a 9 camas psiquiatricas de corta estadia en el Hospital Regional Coyhaique para toda la poblacion regional",
+            "fuente": "DEIS MINSAL / SSA"
+        },
+        "mortalidad_oncologica_digestiva": {
+            "tasa_cancer_gastrico_cie10_c16": 18.4,
+            "tasa_cancer_vesicula_cie10_c23": 12.6,
+            "primeras_causas_avpp": [
+                "Cancer Gastrico (C16)",
+                "Cancer de Vesicula Biliar (C23)"
+            ],
+            "fuente": "DEIS MINSAL / Registro Poblacional de Cancer"
+        },
+        "listas_espera_sigte": {
+            "total_interconsultas_no_ges": 11420,
+            "mediana_dias_espera_consulta_especialidad": 284,
+            "mediana_dias_espera_quirurgica": 395,
+            "fuente": "SIGTE / Redes Asistenciales"
+        },
+        "deficit_habitacional_minvu": {
+            "deficit_cuantitativo": 1927,
+            "deficit_cuantitativo_pct_hogares": 4.8,
+            "viviendas_irrecuperables": 609,
+            "hogares_allegados": 333,
+            "nucleos_allegados_hacinados": 326,
+            "viviendas_hacinamiento_no_ampliable": 659,
+            "deficit_cuantitativo_metodologia_historica_2024": 1254,
+            "deficit_cualitativo": 5155,
+            "deficit_cualitativo_pct_hogares": 12.9,
+            "campamentos_minvu_2024": 10,
+            "campamentos_hogares_2024": 244,
+            "peh_meta_viviendas": 1293,
+            "peh_viviendas_terminadas_feb2026": 1671,
+            "peh_cumplimiento_feb2026_pct": 129.2,
+            "fuente": "MINVU CECT Oct-2025 / CASEN 2024 / Cierre PEH Feb-2026"
+        },
+        "servicios_sanitarios_rurales_ssr_doh": {
+            "comites_ssr_activos": 47,
+            "beneficiarios_totales": 28833,
+            "familias_arranques_totales": 9185,
+            "fuente": "DOH-MOP Subdireccion SSR"
+        },
+        "pobreza_casen": {
+            "pobreza_por_ingresos_regional": 4.0,
+            "pobreza_multidimensional_regional": 14.0,
+            "casen_2024_nueva_metodologia_ingresos_pct": 14.3,
+            "casen_2024_nueva_metodologia_multidim_pct": 12.1,
+            "rango_comunas_aisladas_multidimensional": "12.1% - 22.2%",
+            "fuente": "MDSF - CASEN 2022 / 2024"
+        },
+        "educacion_publica_slep": {
+            "traspaso_oficial_slep": "2024-01-01",
+            "ley": "Ley N° 21.040",
+            "establecimientos_escolares_region": 86,
+            "establecimientos_escolares_slep": 55,
+            "jardines_vtf": 10,
+            "establecimientos_totales": 65,
+            "sies_2026_total": 2924,
+            "nudos_criticos": "Fallas en sistemas de calefaccion escolar y licitaciones desiertas de transporte escolar rural DTPR",
+            "fuente": "SLEP Aysen / MINEDUC / SIES 2026"
         }
     }
 
@@ -2199,10 +2320,14 @@ def build_dataset():
         "fecha_extraccion": "2026-10-17",
         "fuentes_primarias": [
             "Servicio de Salud Aysen (SSA) / DEIS Ministerio de Salud - Red Asistencial y Establecimientos de Salud 2024",
-            "Servicio Local de Educacion Publica (SLEP) Aysen / Datos Abiertos MINEDUC 2024",
+            "Servicio Local de Educacion Publica (SLEP) Aysen / Datos Abiertos MINEDUC 2024-2025 / SIES 2026",
             "Comision Nacional de Energia (CNE) / Resolucion Exenta Fijacion Tarifaria Sistemas Medianos y Aislados",
             "Servicio de Impuestos Internos (SII) - Estadisticas Tributarias de Empresas por Tamano y Comuna",
-            "Subsecretaria de Pesca y Acuicultura (SUBPESCA) / SERNAPESCA - Registro Pesquero Artesanal y Licencias Transables de Pesca LTP Ley 21.752"
+            "Subsecretaria de Pesca y Acuicultura (SUBPESCA) / SERNAPESCA - Registro Pesquero Artesanal y Licencias Transables de Pesca LTP Ley 21.752",
+            "Instituto Nacional de Estadisticas (INE) - Censo de Poblacion y Vivienda 2024 (100.745 hab / 39.964 hogares / 52.294 viviendas)",
+            "Ministerio de Vivienda y Urbanismo (MINVU) - Deficit Habitacional Cuantitativo CECT (1.927), Cualitativo CASEN 2024 (12,9%) y Cierre PEH Feb-2026 (1.671)",
+            "Direccion de Obras Hidraulicas (DOH-MOP) - Catastro de 47 Comites SSR (28.833 personas / 9.185 familias)",
+            "Ministerio de Desarrollo Social y Familia (MDSF) - Encuesta CASEN 2022/2024 y Registro Social de Hogares"
         ],
         "resumen_regional": resumen_regional,
         "por_comuna": por_comuna,

@@ -6,8 +6,10 @@ hub_id: social
 hub_roman: VI
 variables_clave:
   - matricula_escolar
+  - matricula_slep_aysen_n
   - establecimientos_escolares_n
-  - escuelas_rurales_multigrado_n
+  - establecimientos_slep_aysen
+  - matricula_educacion_superior_sies_n
 fuentes_oficiales:
   - "Ministerio de Educación (MINEDUC) — Centro de Estudios / Servicio Local de Educación Pública (SLEP Aysén)"
 updated_at: "2026-11-23"
@@ -21,22 +23,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Red de establecimientos bajo administración del Servicio Local de Educación Pública (SLEP Aysén): matrícula escolar total, presencia de educación media completa, sedes de educación superior y diferenciación de 36 escuelas rurales multigrado frente a 16 liceos urbanos. Registra la matrícula pública en las 10 comunas, los internados estudiantiles para alumnos de zonas aisladas y la oferta de educación superior (Universidad de Aysén e INACAP en Coyhaique).
+Ecosistema escolar y superior (MINEDUC CEM 2024–2025 / SLEP Aysén / SIES 2026): 86 establecimientos escolares activos (`87` en 2025 con 1 particular pagado en Coyhaique), desagregados en 55 escuelas y liceos SLEP (+`10` jardines VTF = `65` operativos SLEP 2025–2026) y 31 colegios particulares subvencionados/CAD/pagados; 22.087 alumnos (`8.939` SLEP); SIMCE 2025, PAES 2026 (`M1 627,4` / `CL 600,2`) y 2.924 estudiantes SIES 2026 (`Coyhaique 2.187` + `Aysén 737`). En Caleta Tortel opera 1 sola escuela básica rural SLEP (*Escuela Comandante Luis Bravo Bravo*, RBD 8410-7, `82` alumnos hasta 8° Básico, 0 liceos), y en Educación Superior SIES 2026 Aysén suma 2.924 estudiantes (UAysén ~`1.000`, INACAP Coyhaique ~`1.187`, CFT Estatal Puerto Aysén `737`).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Establecimientos SLEP | Matrícula Escolar | Educación Media | Sede Superior |
+| Comuna | Colegios Totales | Escuelas/Liceos SLEP | Matrícula Total (SLEP) | Educación Media / SIES 2026 |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 38 | 13.450 | Si | Universidad de Aysén |
-| [[comunas/lago_verde|Lago Verde]] | 3 | 95 | Parcial / Derivacion | Sin sede local |
-| [[comunas/aysen|Aysén]] | 18 | 4.850 | Si | CFT Estatal de la Región de Aysén |
-| [[comunas/cisnes|Cisnes]] | 9 | 980 | Si | Sin sede local |
-| [[comunas/guaitecas|Guaitecas]] | 2 | 320 | Si | Sin sede local |
-| [[comunas/chile_chico|Chile Chico]] | 4 | 890 | Si | Sin sede local |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 3 | 450 | Si | Sin sede local |
-| [[comunas/cochrane|Cochrane]] | 3 | 750 | Si | Sin sede local |
-| [[comunas/ohiggins|O'Higgins]] | 2 | 120 | Si | Sin sede local |
-| [[comunas/tortel|Tortel]] | 2 | 85 | Si | Sin sede local |
+| [[comunas/coyhaique|Coyhaique]] | 40 | 17 | 13.284 (3.017) | Universidad de Aysén, INACAP Sede Coyhaique (2.187 est.) |
+| [[comunas/lago_verde|Lago Verde]] | 3 | 3 | 54 (54) | Solo Básica (8vo) |
+| [[comunas/aysen|Aysén]] | 19 | 12 | 5.286 (2.406) | CFT Estatal de la Región de Aysén (737 est.) |
+| [[comunas/cisnes|Cisnes]] | 8 | 7 | 1.011 (1.010) | Media completa |
+| [[comunas/guaitecas|Guaitecas]] | 2 | 2 | 290 (290) | Media completa |
+| [[comunas/chile_chico|Chile Chico]] | 5 | 5 | 864 (864) | Media completa |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 5 | 5 | 353 (353) | Media completa |
+| [[comunas/cochrane|Cochrane]] | 2 | 2 | 740 (740) | Media completa |
+| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | 123 (123) | Media completa |
+| [[comunas/tortel|Tortel]] | 1 | 1 | 82 (82) | Solo Básica (8vo) |
 
 ## Metadatos de Procedencia Institucional
 

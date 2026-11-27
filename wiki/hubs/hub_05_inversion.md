@@ -45,13 +45,13 @@ El Hub V (Economía, Inversión y Suelo) integra las Cuentas Nacionales Regional
 | [[comunas/coyhaique|Coyhaique]] | 118 | 495,6 | 7.238 | 22.351 | 16.900 |
 | [[comunas/lago_verde|Lago Verde]] | 9 | 31,4 | 119 | 213 | 130 |
 | [[comunas/aysen|Aysén]] | 254 | 1.320 | 2.675 | 6.551 | 4.410 |
-| [[comunas/cisnes|Cisnes]] | 122 | 525 | 895 | 1.757 | 1.420 |
-| [[comunas/guaitecas|Guaitecas]] | 86 | 245 | 144 | 349 | 240 |
-| [[comunas/chile_chico|Chile Chico]] | 41 | 310 | 653 | 965 | 1.210 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 27 | 142 | 577 | 575 | 540 |
-| [[comunas/cochrane|Cochrane]] | 33 | 172 | 519 | 475 | 790 |
-| [[comunas/ohiggins|O'Higgins]] | 14 | 48 | 109 | 148 | 75 |
-| [[comunas/tortel|Tortel]] | 18 | 66,5 | 139 | 145 | 85 |
+| [[comunas/cisnes|Cisnes]] | 122 | 525 | 895 | 1.757 | 1.450 |
+| [[comunas/guaitecas|Guaitecas]] | 86 | 245 | 144 | 349 | 380 |
+| [[comunas/chile_chico|Chile Chico]] | 41 | 310 | 653 | 965 | 1.180 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 27 | 142 | 577 | 575 | 410 |
+| [[comunas/cochrane|Cochrane]] | 33 | 172 | 519 | 475 | 620 |
+| [[comunas/ohiggins|O'Higgins]] | 14 | 48 | 109 | 148 | 170 |
+| [[comunas/tortel|Tortel]] | 18 | 66,5 | 139 | 145 | 150 |
 
 ## Nodos Satélite del Hub
 

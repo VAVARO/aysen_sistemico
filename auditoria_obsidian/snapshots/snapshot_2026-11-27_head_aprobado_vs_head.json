@@ -1,0 +1,5288 @@
+{
+  "schemaVersion": "3.0.0",
+  "label": "HEAD",
+  "capturedAt": "2026-11-27T11:31:07.246Z",
+  "bundleGeneratedAt": "2026-11-27T11:30:54.726Z",
+  "autoUpdateMeta": {
+    "frequency": "Mensual (día 1 de cada mes)",
+    "lastRun": "2026-11-02T12:13:30+00:00",
+    "activeApiConnectors": 7,
+    "totalSources": 38,
+    "totalOfficialSources": 38,
+    "totalHubs": 10,
+    "totalNodes": 41,
+    "totalComunaVariables": 289
+  },
+  "comunas": [
+    {
+      "comuna_ine": "11101",
+      "nombre": "Coyhaique"
+    },
+    {
+      "comuna_ine": "11102",
+      "nombre": "Lago Verde"
+    },
+    {
+      "comuna_ine": "11201",
+      "nombre": "Aysén"
+    },
+    {
+      "comuna_ine": "11202",
+      "nombre": "Cisnes"
+    },
+    {
+      "comuna_ine": "11203",
+      "nombre": "Guaitecas"
+    },
+    {
+      "comuna_ine": "11401",
+      "nombre": "Chile Chico"
+    },
+    {
+      "comuna_ine": "11402",
+      "nombre": "Río Ibáñez"
+    },
+    {
+      "comuna_ine": "11301",
+      "nombre": "Cochrane"
+    },
+    {
+      "comuna_ine": "11302",
+      "nombre": "O'Higgins"
+    },
+    {
+      "comuna_ine": "11303",
+      "nombre": "Tortel"
+    }
+  ],
+  "comunaHogares": {
+    "11101": 22423,
+    "11102": 373,
+    "11201": 9057,
+    "11202": 2180,
+    "11203": 606,
+    "11301": 1462,
+    "11302": 292,
+    "11303": 231,
+    "11401": 2109,
+    "11402": 1231
+  },
+  "comunaPoblacion": {
+    "11101": 57823,
+    "11102": 882,
+    "11201": 23170,
+    "11202": 5335,
+    "11203": 1598,
+    "11301": 3492,
+    "11302": 664,
+    "11303": 563,
+    "11401": 4950,
+    "11402": 2671
+  },
+  "hub4FiscalAudit": {
+    "ingresosMunBcn2025ByIne": {
+      "11101": 27611,
+      "11102": 3321.05,
+      "11201": 14614.29,
+      "11202": 7985.27,
+      "11203": 4569.04,
+      "11301": 5720.96,
+      "11302": 5323.76,
+      "11303": 3440.74,
+      "11401": 5981.72,
+      "11402": 6252.85
+    },
+    "wp01PatentesAcuicolasByIne": {
+      "11101": 0,
+      "11102": 0,
+      "11201": 1516.33,
+      "11202": 1928.64,
+      "11203": 184.15,
+      "11301": 0,
+      "11302": 0,
+      "11303": 0,
+      "11401": 0,
+      "11402": 0
+    },
+    "nodo15PatentesAcuicolasByIne": {
+      "11101": 0,
+      "11102": 0,
+      "11201": 1516.33,
+      "11202": 1928.64,
+      "11203": 184.15,
+      "11301": 0,
+      "11302": 0,
+      "11303": 0,
+      "11401": 0,
+      "11402": 0
+    },
+    "padronOct2024ByIne": {
+      "11101": 54210,
+      "11102": 1261,
+      "11201": 22747,
+      "11202": 4848,
+      "11203": 1557,
+      "11301": 3435,
+      "11302": 829,
+      "11303": 700,
+      "11401": 6343,
+      "11402": 3119
+    },
+    "votantesOct2024ByIne": {
+      "11101": 39488,
+      "11102": 1015,
+      "11201": 17076,
+      "11202": 3777,
+      "11203": 1154,
+      "11301": 2412,
+      "11302": 563,
+      "11303": 564,
+      "11401": 3703,
+      "11402": 2409
+    }
+  },
+  "hub5EconomyAudit": {
+    "hub4ExampleText": "Registra **722 proyectos aprobados** y **22 en calificación** en el SEIA (Cuenta Pública SEA 2024–2025: 3 aprobados, 1 desistido, 0 rechazados y 72 pertinencias en 2025), **13.453 empresas** y **35.832 trabajadores** ante el SII (5 tramos UF BCN 2024 sobre 12.953 empresas; 25.800 MUF domicilio local vs 131.520 MUF bruto), **356 concesiones mineras (128.511 ha SERNAGEOMIN)** y **PIB BCCh 1.991.000 MM$ (2025, +8,5% real)**.",
+    "nodo20TramosData": [
+      8532,
+      1655,
+      186,
+      24,
+      2556
+    ],
+    "seiaSpatialNodes": [
+      {
+        "id": "inv_seia-01-parque-eolico-alto-baguales",
+        "nombre": "Parque Eólico Alto Baguales (Edelaysen)",
+        "magnitudeValue": 14.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-02-minera-el-toqui-bocamina",
+        "nombre": "Mina El Toqui - Proyecto Ampliación Yacimiento Rosa",
+        "magnitudeValue": 68,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-03-relleno-sanitario-coyhaique",
+        "nombre": "Centro de Manejo de Residuos Sólidos Domiciliarios Coyhaique",
+        "magnitudeValue": 12.4,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-04-aerodromo-teniente-vidal",
+        "nombre": "Normalización Pista y Plataforma Aeródromo Teniente Vidal",
+        "magnitudeValue": 18.5,
+        "sourceUrl": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/"
+      },
+      {
+        "id": "inv_seia-05-puerto-chacabuco-terminal-maritimo",
+        "nombre": "Ampliación Terminal Portuario y Frente de Atraque Puerto Chacabuco",
+        "magnitudeValue": 42,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-06-planta-proceso-aquachile-chacabuco",
+        "nombre": "Planta de Procesamiento Salmones Chacabuco",
+        "magnitudeValue": 85,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-07-central-hidro-rio-manihuales",
+        "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
+        "magnitudeValue": 22.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-08-ces-fiordo-aysen-mowi",
+        "nombre": "Centro de Engorda de Salmones Fiordo Aysén (Isla Carmen)",
+        "magnitudeValue": 16.8,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-09-ces-canal-jacaf-cisnes",
+        "nombre": "Centro de Engorda de Salmones Canal Jacaf Sur",
+        "magnitudeValue": 15.2,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-10-rampa-conectividad-puerto-cisnes",
+        "nombre": "Construcción Rampa de Conectividad y Explanada Puerto Cisnes",
+        "magnitudeValue": 14.8,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-11-mini-hidro-la-junta",
+        "nombre": "Mini Central Hidroeléctrica de Pasada Río Palena / La Junta",
+        "magnitudeValue": 19.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-12-rampa-melinka-guaitecas",
+        "nombre": "Ampliación Terminal y Frente de Atraque Melinka",
+        "magnitudeValue": 16.4,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-13-ces-isla-gran-guaiteca",
+        "nombre": "Centro de Cultivo Marino Isla Gran Guaiteca",
+        "magnitudeValue": 14,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-14-minera-cerro-bayo-chile-chico",
+        "nombre": "Continuidad Operacional Minera Cerro Bayo (Planta Cascada y Relaves)",
+        "magnitudeValue": 145,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-15-barcaza-conectividad-lago-general-carrera",
+        "nombre": "Terminal de Conectividad Lacustre Puerto Chico",
+        "magnitudeValue": 22,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-16-pavimentacion-ruta-7-cerro-castillo",
+        "nombre": "Pavimentación Ruta 7 Tramo Villa Cerro Castillo - Bahía Murta",
+        "magnitudeValue": 64,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-17-mini-hidro-cochrane",
+        "nombre": "Mini Central Hidroeléctrica San Victorino (Río Cochrane)",
+        "magnitudeValue": 28.5,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-18-conectividad-puerto-yungay-tortel",
+        "nombre": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay",
+        "magnitudeValue": 19.2,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-19-conectividad-lago-ohiggins-rampa",
+        "nombre": "Rampa de Embarque y Explanada Bahía Bahamóndez (Villa O'Higgins)",
+        "magnitudeValue": 15.8,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "inv_seia-20-mejoramiento-ruta-x12-lago-verde",
+        "nombre": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde",
+        "magnitudeValue": 24,
+        "sourceUrl": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      }
+    ],
+    "wp04SeiaNodes": [
+      {
+        "id": "seia-01-parque-eolico-alto-baguales",
+        "nombre": "Parque Eólico Alto Baguales (Edelaysen)",
+        "monto_inversion_mmusd": 14.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-02-minera-el-toqui-bocamina",
+        "nombre": "Mina El Toqui - Proyecto Ampliación Yacimiento Rosa",
+        "monto_inversion_mmusd": 68,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-03-relleno-sanitario-coyhaique",
+        "nombre": "Centro de Manejo de Residuos Sólidos Domiciliarios Coyhaique",
+        "monto_inversion_mmusd": 12.4,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-04-aerodromo-teniente-vidal",
+        "nombre": "Normalización Pista y Plataforma Aeródromo Teniente Vidal",
+        "monto_inversion_mmusd": 18.5,
+        "source_url": "https://www.mop.gob.cl/aeropuertos/teniente-vidal-aysen/"
+      },
+      {
+        "id": "seia-05-puerto-chacabuco-terminal-maritimo",
+        "nombre": "Ampliación Terminal Portuario y Frente de Atraque Puerto Chacabuco",
+        "monto_inversion_mmusd": 42,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-06-planta-proceso-aquachile-chacabuco",
+        "nombre": "Planta de Procesamiento Salmones Chacabuco",
+        "monto_inversion_mmusd": 85,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-07-central-hidro-rio-manihuales",
+        "nombre": "Central Hidroeléctrica Río Mañihuales y Optimización Generación SMA (Edelaysen S.A.)",
+        "monto_inversion_mmusd": 22.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-08-ces-fiordo-aysen-mowi",
+        "nombre": "Centro de Engorda de Salmones Fiordo Aysén (Isla Carmen)",
+        "monto_inversion_mmusd": 16.8,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-09-ces-canal-jacaf-cisnes",
+        "nombre": "Centro de Engorda de Salmones Canal Jacaf Sur",
+        "monto_inversion_mmusd": 15.2,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-10-rampa-conectividad-puerto-cisnes",
+        "nombre": "Construcción Rampa de Conectividad y Explanada Puerto Cisnes",
+        "monto_inversion_mmusd": 14.8,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-11-mini-hidro-la-junta",
+        "nombre": "Mini Central Hidroeléctrica de Pasada Río Palena / La Junta",
+        "monto_inversion_mmusd": 19.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-12-rampa-melinka-guaitecas",
+        "nombre": "Ampliación Terminal y Frente de Atraque Melinka",
+        "monto_inversion_mmusd": 16.4,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-13-ces-isla-gran-guaiteca",
+        "nombre": "Centro de Cultivo Marino Isla Gran Guaiteca",
+        "monto_inversion_mmusd": 14,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-14-minera-cerro-bayo-chile-chico",
+        "nombre": "Continuidad Operacional Minera Cerro Bayo (Planta Cascada y Relaves)",
+        "monto_inversion_mmusd": 145,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-15-barcaza-conectividad-lago-general-carrera",
+        "nombre": "Terminal de Conectividad Lacustre Puerto Chico",
+        "monto_inversion_mmusd": 22,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-16-pavimentacion-ruta-7-cerro-castillo",
+        "nombre": "Pavimentación Ruta 7 Tramo Villa Cerro Castillo - Bahía Murta",
+        "monto_inversion_mmusd": 64,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-17-mini-hidro-cochrane",
+        "nombre": "Mini Central Hidroeléctrica San Victorino (Río Cochrane)",
+        "monto_inversion_mmusd": 28.5,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-18-conectividad-puerto-yungay-tortel",
+        "nombre": "Mejoramiento Rampa y Terminal Portuario Puerto Yungay",
+        "monto_inversion_mmusd": 19.2,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-19-conectividad-lago-ohiggins-rampa",
+        "nombre": "Rampa de Embarque y Explanada Bahía Bahamóndez (Villa O'Higgins)",
+        "monto_inversion_mmusd": 15.8,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      },
+      {
+        "id": "seia-20-mejoramiento-ruta-x12-lago-verde",
+        "nombre": "Mejoramiento Ruta X-12 Puente Cáceres - Villa Lago Verde",
+        "monto_inversion_mmusd": 24,
+        "source_url": "https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_region=11"
+      }
+    ],
+    "mineriaFaenas": [
+      {
+        "id": "inv_min_el_toqui",
+        "nombre": "Mina El Toqui (Alto Mañihuales)",
+        "titular": "Sociedad Minera Pacífico del Sur SpA (ex SCM El Toqui / Laguna Gold · Activa con litigio garantía de cierre 506.948 UF y multa 5.840 UTM)",
+        "magnitudeValue": 18500
+      },
+      {
+        "id": "inv_min_cerro_bayo",
+        "nombre": "Distrito Minero Cerro Bayo / Laguna Verde",
+        "titular": "Andean Silver Limited (ASX: ASL, ex Mitre Mining / Equus Mining) · Cía. Minera Cerro Bayo Ltda. (136 Moz AgEq JORC jul-2026, en exploración avanzada para reinicio 2027)",
+        "magnitudeValue": 29450
+      },
+      {
+        "id": "inv_min_fachinal",
+        "nombre": "Mina Fachinal (Mallín Grande)",
+        "titular": "Coeur Mining / Cía. Minera Cerro Bayo (Oro y Plata en cierre/exploración) · SERNAGEOMIN",
+        "magnitudeValue": 12800
+      },
+      {
+        "id": "inv_min_puerto_cristal_mina_silva",
+        "nombre": "Mina Silva y Campamento Minero Puerto Cristal",
+        "titular": "Monumento Histórico Nacional CMN / Pasivo Ambiental Minero SERNAGEOMIN (Plomo y Zinc)",
+        "magnitudeValue": 4200
+      },
+      {
+        "id": "inv_min_prospecto_katterfeld",
+        "nombre": "Prospecto Minero Katterfeld (Ñirehuao)",
+        "titular": "Exploración Polimetálica Katterfeld · Catastro SERNAGEOMIN",
+        "magnitudeValue": 8600
+      }
+    ],
+    "sernageominResumen": {
+      "concesiones_totales": 356,
+      "explotacion": 131,
+      "exploracion": 225,
+      "superficie_ha": 128511
+    },
+    "pib2025Mmclp": 1991000,
+    "chilecompra2026YtdMclp": 228874.2,
+    "bosqueNativoByIne": {
+      "11101": 435000,
+      "11102": 365000,
+      "11201": 1390000,
+      "11202": 990000,
+      "11203": 51200,
+      "11301": 465000,
+      "11302": 326184.3,
+      "11303": 585000,
+      "11401": 260000,
+      "11402": 285000
+    },
+    "conaf2026": {
+      "superficie_catastrada_ha": 10667211.5,
+      "bosque_nativo_ha": 5152384.3,
+      "bosques_en_snaspe_ha": 2387525.4
+    }
+  },
+  "hub6SocialAudit": {
+    "tortelEducacion": {
+      "escuelas_rurales_multigrado_n": 1,
+      "liceos_urbanos_n": 0,
+      "establecimientos_escolares_n": 1
+    },
+    "nodo25Datasets": [
+      [
+        17,
+        3,
+        12,
+        7,
+        2,
+        5,
+        5,
+        2,
+        1,
+        1
+      ],
+      [
+        23,
+        0,
+        7,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "hub06WikiText": "---\nid: hub_06_social\ntitle: \"Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social\"\ntype: hub\nhub_id: social\nhub_roman: VI\nvariables_clave:\n  - poblacion_censo_2024\n  - hogares_censo_2024\n  - viviendas_totales_censo_2024\n  - indice_envejecimiento\n  - pobreza_multidim_pct\n  - pobreza_ingresos_pct\n  - matricula_escolar\n  - establecimientos_escolares_n\n  - establecimientos_slep_aysen\n  - matricula_educacion_superior_sies_n\n  - deficit_habitacional_cuantitativo_n\n  - sistemas_ssr_apr_n\n  - beneficiarios_ssr_apr_doh\n  - cobertura_ssr_apr_familias\n  - tasa_dmcs_100k\n  - tasa_vif_100k\nfuentes_oficiales:\n  - \"INE / BCN — Censo 2024 (100.745 hab., 39.964 hogares, 52.294 viviendas)\"\n  - \"MDSF — CASEN 2022/2024 (ene-2026) y Registro Social de Hogares\"\n  - \"MINEDUC / SLEP Aysén / SIES 2026 — 86 colegios (55 SLEP + 10 VTF) y 2.924 SIES\"\n  - \"MINVU CECT / PEH Feb-2026 / DOH-MOP — 1.927 déficit cuantitativo, PEH 1.671 y 47 SSR\"\n  - \"CEAD SPD / BCN — Tasas delictuales violentos/integridad y VIF 2023–2025\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - hub\n  - hub-vi\n---\n\n# Hub VI — Demografía Censo 2024, Educación SLEP, Vivienda MINVU y Cohesión Social\n\n## Síntesis Compilada (Consultor IA)\n\nEl Hub VI (Demografía, Educación, Vivienda y Cohesión) integra los microdatos oficiales del Censo 2024 (INE / BCN 2026): sobre un total regional consolidado de 100.745 habitantes (suma comunal BCN 101.148 hab.; 80,7% urbana / 19,3% rural; 49.847 hombres y 50.898 mujeres), Coyhaique concentra 57.823 habitantes (57,4%) y Aysén 23.170 habitantes (23,0%) (80,4% conjunto), con 39.964 hogares (2,5 pers./hogar) y 52.294 viviendas totales (39.631 ocupadas). El Índice de Envejecimiento pasó de 13,7 (1992) a 66,2 (2024; Lago Verde 182,8, Río Ibáñez 121,2, Tortel 30,8), con masculinidad regional de 97,9, pueblos originarios de 29,0% (29.230 pers.) e inmigración de 3,9% (3.931 pers.). En hábitat, MINVU CECT (oct-2025) fija el déficit cuantitativo en 1.927 viviendas (4,8% hogares: Coyhaique 1.128, Aysén 330, Lago Verde 73 [19,6%], Cochrane 118 [8,1%]), CASEN 2024 fija el déficit cualitativo en 12,9% (5.155 hogares), se catastran 10 campamentos (244 hogares) y el PEH cerró febrero 2026 con 1.671 viviendas terminadas (129,2% sobre meta de 1.293, prorrogado a dic-2029); paralelamente operan 47 comités SSR/APR DOH-MOP (28.833 personas y 9.185 familias/arranques, con 551 en Melinka). En educación conviven 86 colegios activos (55 escuelas/liceos SLEP + 10 jardines VTF = 65 SLEP; Tortel 1 escuela y 0 liceos), 22.087 alumnos totales (8.939 SLEP), PAES 2026 sobre la media nacional (M1 627,4 / Lectora 600,2) y 2.924 estudiantes SIES 2026 (Coyhaique 2.187 y CFT Estatal Aysén 737). CASEN 2024 (nueva metodología ene-2026) marca 14,3% de pobreza por ingresos y 12,1% multidimensional, mientras CEAD registra VIF regional de 691,6 (2023), 809,9 (2024) y 709,9 c/100k hab (2025).\n\n## Indicadores Comunales Verificados\n\n| Comuna | Población Censo 2024 (hab.) | Hogares Censales Estimados Censo 2024 (hogares) | Viviendas Totales Censadas Censo 2024 (viviendas) | Índice de Envejecimiento Demográfico (65+ años por cada 100 menores de 15) | Pobreza Multidimensional CASEN (%) |\n| --- | --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 57.823 | 22.423 | 27.989 | 64,1 | 14 |\n| [[comunas/lago_verde|Lago Verde]] | 882 | 373 | 724 | 182,8 | 18 |\n| [[comunas/aysen|Aysén]] | 23.170 | 9.057 | 11.054 | 61,6 | 12,8 |\n| [[comunas/cisnes|Cisnes]] | 5.335 | 2.180 | 3.437 | 64,1 | 12,3 |\n| [[comunas/guaitecas|Guaitecas]] | 1.598 | 606 | 816 | 56,5 | 22,2 |\n| [[comunas/chile_chico|Chile Chico]] | 4.950 | 2.109 | 3.108 | 92,9 | 16,3 |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 2.671 | 1.231 | 2.242 | 121,2 | 18,8 |\n| [[comunas/cochrane|Cochrane]] | 3.492 | 1.462 | 2.126 | 65 | 14,3 |\n| [[comunas/ohiggins|O'Higgins]] | 664 | 292 | 403 | 41,7 | 12,1 |\n| [[comunas/tortel|Tortel]] | 563 | 231 | 395 | 30,8 | 12,3 |\n\n## Nodos Satélite del Hub\n\n- [[nodos/nodo_23|Nodo #23: Demografía Censo 2024 y Pobreza CASEN]]\n- [[nodos/nodo_25|Nodo #25: Matrícula escolar en la comuna]]\n- [[nodos/nodo_26|Nodo #26: Denuncias por violencia intrafamiliar]]\n- [[nodos/nodo_41|Nodo #41: Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)]]\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **Paquetes Conceptuales y Entidades Territoriales**:\n- [[conceptos/inversion_publica_regional|inversion_publica_regional]]\n- [[conceptos/financiamiento_municipal|financiamiento_municipal]]\n- **Registros de Decisión de Arquitectura y Datos (ADR)**:\n- [[adr/adr_004_normalizacion_per_capita_y_colinealidad|ADR_004_NORMALIZACION_PER_CAPITA_Y_COLINEALIDAD]]\n- [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR_002_RECONCILIACION_38_FUENTES_INVARIANTES]]\n"
+  },
+  "centralesElectricas": [
+    {
+      "id": "ene_cne_CENTRAL-TERMICA-TEHUELCHE",
+      "nombre": "Central Térmica Tehuelche",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 17.98
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-LAGO-ATRAVESADO",
+      "nombre": "Central Hidroeléctrica Lago Atravesado",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 11
+    },
+    {
+      "id": "ene_cne_PLANTA-SOLAR-EL-BLANCO",
+      "nombre": "Planta Solar Fotovoltaica El Blanco",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 2.99
+    },
+    {
+      "id": "ene_cne_PARQUE-EOLICO-ALTO-BAGUALES",
+      "nombre": "Parque Eólico Alto Baguales",
+      "comuna_ine": "11101",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 1.98
+    },
+    {
+      "id": "ene_cne_CENTRAL-TERMICA-CHACABUCO",
+      "nombre": "Central Térmica Puerto Chacabuco",
+      "comuna_ine": "11201",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 10
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-RIO-AYSEN-HIST",
+      "nombre": "Central Mini-Hidroeléctrica Río Aysén / Puerto Aysén",
+      "comuna_ine": "11201",
+      "sistema": "Sistema Mediano de Aysén (SMA)",
+      "potencia_mw": 2
+    },
+    {
+      "id": "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-HIDRO",
+      "nombre": "Central Hidroeléctrica El Toqui (Autogeneración Minera)",
+      "comuna_ine": "11201",
+      "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
+      "potencia_mw": 2
+    },
+    {
+      "id": "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-DIESEL",
+      "nombre": "Central Térmica El Toqui (Respaldo Autogeneración)",
+      "comuna_ine": "11201",
+      "sistema": "Autogeneración Industrial Mañihuales (Villa Mañihuales en SMA 33 kV)",
+      "potencia_mw": 4
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-PUERTO-AGUIRRE",
+      "nombre": "Central Térmica Puerto Aguirre (Islas Huichas)",
+      "comuna_ine": "11201",
+      "sistema": "Sistema Aislado Insular Islas Huichas",
+      "potencia_mw": 0.48
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-PUERTO-CISNES",
+      "nombre": "Central Térmica Puerto Cisnes",
+      "comuna_ine": "11202",
+      "sistema": "Sistema Mediano de Puerto Cisnes",
+      "potencia_mw": 1.67
+    },
+    {
+      "id": "ene_cne_CENTRAL-SM-PALENA-LA-JUNTA-PUYUHUAPI",
+      "nombre": "Centrales La Junta (0,51 MW) y Puyuhuapi (0,29 MW) - Fracción SM Palena",
+      "comuna_ine": "11202",
+      "sistema": "Sistema Mediano Palena (fracción Cisnes en sistema bi-regional de 7,18 MW)",
+      "potencia_mw": 0.8
+    },
+    {
+      "id": "ene_cne_MICROCENTRAL-SSAA-LITORAL-CISNES",
+      "nombre": "Microcentrales SSAA Litoral Cisnes (Pto. Gaviota, Pto. Gala y Melimoyu)",
+      "comuna_ine": "11202",
+      "sistema": "Sistema Aislado Litoral Cisnes",
+      "potencia_mw": 0.36
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-CHILE-CHICO",
+      "nombre": "Central Térmica Chile Chico",
+      "comuna_ine": "11401",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 2.9
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-LOS-MAQUIS",
+      "nombre": "Central Hidroeléctrica Los Maquis (Puerto Guadal)",
+      "comuna_ine": "11401",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 1
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-COCHRANE",
+      "nombre": "Central Térmica Cochrane",
+      "comuna_ine": "11301",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 1.9
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIDRO-EL-TRARO",
+      "nombre": "Central Hidroeléctrica El Traro",
+      "comuna_ine": "11301",
+      "sistema": "Sistema Mediano General Carrera (SMGC)",
+      "potencia_mw": 0.64
+    },
+    {
+      "id": "ene_cne_CENTRAL-DIESEL-MELINKA",
+      "nombre": "Central Térmica Municipal Melinka-Repollal",
+      "comuna_ine": "11203",
+      "sistema": "Sistema Aislado Municipal Melinka-Repollal",
+      "potencia_mw": 1.45
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIBRIDA-CALETA-TORTEL",
+      "nombre": "Central Híbrida Municipal Caleta Tortel (Diésel + Microhidro Pelton)",
+      "comuna_ine": "11303",
+      "sistema": "Sistema Aislado Municipal Caleta Tortel",
+      "potencia_mw": 0.95
+    },
+    {
+      "id": "ene_cne_CENTRAL-HIBRIDA-RIO-MOSCO-OHIGGINS",
+      "nombre": "Central Híbrida Río Mosco / Villa O'Higgins (Hidro + Respaldo Diésel)",
+      "comuna_ine": "11302",
+      "sistema": "Sistema Aislado Municipal Villa O'Higgins",
+      "potencia_mw": 1.25
+    },
+    {
+      "id": "ene_cne_CENTRAL-RESPALDO-RIO-IBANEZ",
+      "nombre": "Grupos Térmicos de Respaldo Local Cerro Castillo - Puerto Ibáñez",
+      "comuna_ine": "11402",
+      "sistema": "Ramal Sur SMA / Respaldo Local",
+      "potencia_mw": 1.4
+    },
+    {
+      "id": "ene_cne_CENTRAL-LOCAL-LAGO-VERDE",
+      "nombre": "Central Local SM Palena / Micro-redes Villa La Tapera y Amengual",
+      "comuna_ine": "11102",
+      "sistema": "Fracción Sistema Mediano Palena y Sistema Aislado Rural Lago Verde",
+      "potencia_mw": 0.35
+    }
+  ],
+  "totalKeys": 289,
+  "indicatorCount": 248,
+  "indicators": {
+    "poblacion_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 57823,
+        "11102": 882,
+        "11201": 23170,
+        "11202": 5335,
+        "11203": 1598,
+        "11301": 3492,
+        "11302": 664,
+        "11303": 563,
+        "11401": 4950,
+        "11402": 2671
+      }
+    },
+    "superficie_km2": {
+      "type": "numeric",
+      "values": {
+        "11101": 7290.2,
+        "11102": 5422.3,
+        "11201": 29796.4,
+        "11202": 16093,
+        "11203": 620.6,
+        "11301": 8599.5,
+        "11302": 8182.5,
+        "11303": 19710.6,
+        "11401": 5737.1,
+        "11402": 5997.2
+      }
+    },
+    "densidad_hab_km2": {
+      "type": "numeric",
+      "values": {
+        "11101": 7.93,
+        "11102": 0.14,
+        "11201": 0.78,
+        "11202": 0.32,
+        "11203": 2.58,
+        "11301": 0.4,
+        "11302": 0.08,
+        "11303": 0.026,
+        "11401": 0.85,
+        "11402": 0.45
+      }
+    },
+    "pobreza_ingresos_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 2.9,
+        "11102": 0.9,
+        "11201": 5.3,
+        "11202": 5,
+        "11203": 6.1,
+        "11301": 6.3,
+        "11302": 9.2,
+        "11303": 4.6,
+        "11401": 6.2,
+        "11402": 7
+      }
+    },
+    "pobreza_multidim_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 14,
+        "11102": 18,
+        "11201": 12.8,
+        "11202": 12.3,
+        "11203": 22.2,
+        "11301": 14.3,
+        "11302": 12.1,
+        "11303": 12.3,
+        "11401": 16.3,
+        "11402": 18.8
+      }
+    },
+    "superficie_snaspe_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 19.2,
+        "11102": 34.5,
+        "11201": 63.4,
+        "11202": 71.2,
+        "11203": 45.8,
+        "11301": 52.1,
+        "11302": 78.3,
+        "11303": 87.4,
+        "11401": 48.6,
+        "11402": 61.7
+      }
+    },
+    "unidades_snaspe": {
+      "type": "categorical",
+      "values": {
+        "11101": "Reserva Nacional Coyhaique, Reserva Nacional Río Simpson, Reserva Nacional Cerro Castillo",
+        "11102": "Parque Nacional Lago Rosselot (sector este), Reserva Nacional Lago Las Torres",
+        "11201": "Parque Nacional Laguna San Rafael, Reserva Nacional Río Simpson (sector poniente), Reserva Nacional Las Guaitecas (sector sur)",
+        "11202": "Parque Nacional Queulat, Parque Nacional Melimoyu, Parque Nacional Isla Magdalena",
+        "11203": "Reserva Nacional Las Guaitecas",
+        "11301": "Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango",
+        "11302": "Parque Nacional Bernardo O'Higgins (sector norte)",
+        "11303": "Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar, Parque Nacional Laguna San Rafael (sector sur)",
+        "11401": "Parque Nacional Patagonia (sector Jeinimeni), Reserva Nacional Lago Jeinimeni",
+        "11402": "Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael, Santuario de la Naturaleza Capillas de Mármol"
+      }
+    },
+    "ruta7_pavimentada_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 142.5,
+        "11102": 0,
+        "11201": 68,
+        "11202": 45.2,
+        "11203": 0,
+        "11301": 12,
+        "11302": 0,
+        "11303": 0,
+        "11401": 8,
+        "11402": 18
+      }
+    },
+    "ruta7_ripio_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 18,
+        "11102": 75,
+        "11201": 0,
+        "11202": 65,
+        "11203": 0,
+        "11301": 168,
+        "11302": 134,
+        "11303": 45,
+        "11401": 120,
+        "11402": 68
+      }
+    },
+    "dependencia_barcaza": {
+      "type": "categorical",
+      "values": {
+        "11101": "Nula (Conectividad terrestre continua 100% pavimentada)",
+        "11102": "Nula (Conectividad terrestre continua)",
+        "11201": "Crítica en territorio insular (Islas Huichas / Puerto Aguirre); Nula en área continental",
+        "11202": "Crítica en localidades aisladas (Puerto Raúl Marín Balmaceda, Puerto Gala y Gaviota); Nula en Puerto Cisnes y La Junta",
+        "11203": "Absoluta (100% marítima vía Quellón/Cisnes/Chacabuco)",
+        "11301": "Baja / Nula en eje troncal norte (Acceso terrestre continuo por Ruta 7 de ripio)",
+        "11302": "Crítica / Absoluta (Cruce obligado en Barcaza Fiordo Mitchell)",
+        "11303": "Alta (Barcaza marítima comercial hacia Puerto Natales y rampa norte de Barcaza Fiordo Mitchell)",
+        "11401": "Alta (Barcaza lacustre Tehuelche / Pilchero en Lago General Carrera)",
+        "11402": "Media (Terminal norte de barcazas hacia Chile Chico)"
+      }
+    },
+    "salud_principal": {
+      "type": "categorical",
+      "values": {
+        "11101": "Hospital Regional Coyhaique",
+        "11102": "Sin hospital en la comuna (Atencion Primaria Rural)",
+        "11201": "Hospital de Puerto Aysen",
+        "11202": "Hospital Comunitario Dr. Jorge Ibar Bruce de Puerto Cisnes",
+        "11203": "Sin hospital en el archipielago (Cobertura por CESFAM Melinka)",
+        "11301": "Hospital Comunitario de Cochrane (Hospital Lord Cochrane)",
+        "11302": "Sin hospital en la comuna (Posta Rural de Aislamiento Extremo)",
+        "11303": "Sin hospital en la comuna (Posta Rural de Dificil Acceso en Pasarelas)",
+        "11401": "Hospital Familiar y Comunitario San Jose / Dr. Leopoldo Ortega Rodriguez de Chile Chico",
+        "11402": "Sin hospital en la comuna (Atencion Primaria con CESFAM y Postas)"
+      }
+    },
+    "aerodromo": {
+      "type": "categorical",
+      "values": {
+        "11101": "Aeródromo Balmaceda (SCBA) / Teniente Vidal (SCCY)",
+        "11102": "Aeródromo Lago Verde (SCVE, tierra/grava, evacuación aeromédica)",
+        "11201": "Aeródromo Cabo 1° Juan Román (SCAS, asfalto 1.050m, aeromédico)",
+        "11202": "Aeródromo Puerto Cisnes (SCPK) / La Junta (SCLJ) / Puyuhuapi (SCPH)",
+        "11203": "Aeródromo Melinka (SCMK, asfalto 830m, vuelos regulares subvencionados)",
+        "11301": "Aeródromo Cochrane (SCHR, asfalto 1.200m, vuelos subvencionados y aeromédicos)",
+        "11302": "Aeródromo Villa O'Higgins (SCOH, asfalto 1.300m, puente aéreo subvencionado)",
+        "11303": "Aeródromo Caleta Tortel (SCTT, ripio 800m, evacuación médica y rescate)",
+        "11401": "Aeródromo Chile Chico (SCCC, asfalto 1.300m, subvencionado y aeromédico)",
+        "11402": "Aeródromo Puerto Ingeniero Ibáñez (SCII, tierra/ripio, emergencias)"
+      }
+    },
+    "alcalde": {
+      "type": "categorical",
+      "values": {
+        "11101": "Carlos Gatica Villegas",
+        "11102": "Claudia Valdés Vásquez",
+        "11201": "Luis Martínez Gallardo",
+        "11202": "Francisco Roncagliolo Lepio",
+        "11203": "Bans Puinao Carimoney",
+        "11301": "Patricio Ulloa Georgia",
+        "11302": "José Claudio Fica Gómez",
+        "11303": "Marisela Jiménez Cruces",
+        "11401": "Ariel Keim Hermosilla",
+        "11402": "Marcelo Daniel Jélvez Cárdenas"
+      }
+    },
+    "partido_alcalde": {
+      "type": "categorical",
+      "values": {
+        "11101": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor",
+        "11102": "Independiente (cupo PPD) / Contigo Chile Mejor",
+        "11201": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+        "11202": "Renovación Nacional (RN) / Chile Vamos",
+        "11203": "Evolución Política (Evópoli) / Chile Vamos",
+        "11301": "Unión Demócrata Independiente (UDI) / Chile Vamos",
+        "11302": "Partido Demócrata Cristiano (DC) / Contigo Chile Mejor",
+        "11303": "Independiente (Fuera de pacto)",
+        "11401": "Independiente (Fuera de pacto)",
+        "11402": "Unión Demócrata Independiente (UDI) / Chile Vamos"
+      }
+    },
+    "presupuesto_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 27611,
+        "11102": 3321.05,
+        "11201": 14614.29,
+        "11202": 7985.27,
+        "11203": 4569.04,
+        "11301": 5720.96,
+        "11302": 5323.76,
+        "11303": 3440.74,
+        "11401": 5981.72,
+        "11402": 6252.85
+      }
+    },
+    "presupuesto_per_capita_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 477.5,
+        "11102": 3765.4,
+        "11201": 630.7,
+        "11202": 1496.8,
+        "11203": 2859.2,
+        "11301": 1638.3,
+        "11302": 8017.7,
+        "11303": 6111.4,
+        "11401": 1208.4,
+        "11402": 2341
+      }
+    },
+    "dependencia_fcm_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 58.4,
+        "11102": 83.9,
+        "11201": 61.1,
+        "11202": 48.7,
+        "11203": 73.1,
+        "11301": 85.7,
+        "11302": 95.3,
+        "11303": 95.4,
+        "11401": 86.5,
+        "11402": 86.6
+      }
+    },
+    "fndr_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 14850,
+        "11102": 2200,
+        "11201": 9800,
+        "11202": 5600,
+        "11203": 3400,
+        "11301": 4800,
+        "11302": 2400,
+        "11303": 2600,
+        "11401": 4900,
+        "11402": 4100
+      }
+    },
+    "sistema_electrico": {
+      "type": "categorical",
+      "values": {
+        "11101": "Sistema Mediano de Aysén (SMA)",
+        "11102": "Fracción Sistema Mediano Palena y Micro-redes La Tapera / Amengual",
+        "11201": "SMA Continental, Autogeneración El Toqui e Islas Huichas (SSAA)",
+        "11202": "SM Puerto Cisnes (1.67 MW), SM Palena (0.80 MW) y 3 SSAA Litorales (0.36 MW)",
+        "11203": "Sistema Aislado Municipal Melinka-Repollal",
+        "11301": "Sistema Mediano General Carrera - Cochrane (SMGC)",
+        "11302": "Sistema Aislado Municipal Villa O'Higgins",
+        "11303": "Sistema Aislado Municipal Caleta Tortel",
+        "11401": "Sistema Mediano General Carrera (SMGC)",
+        "11402": "Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez"
+      }
+    },
+    "potencia_mw": {
+      "type": "numeric",
+      "values": {
+        "11101": 33.95,
+        "11102": 0.35,
+        "11201": 18.48,
+        "11202": 2.83,
+        "11203": 1.45,
+        "11301": 2.54,
+        "11302": 1.25,
+        "11303": 0.95,
+        "11401": 3.9,
+        "11402": 1.4
+      }
+    },
+    "gasolina_93_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 1652,
+        "11102": 1765,
+        "11201": 1651,
+        "11202": 1695,
+        "11203": 1785,
+        "11301": 1714,
+        "11302": 1812,
+        "11303": 1790,
+        "11401": 1710,
+        "11402": 1705
+      }
+    },
+    "precio_lena_m3": {
+      "type": "numeric",
+      "values": {
+        "11101": 48000,
+        "11102": 36000,
+        "11201": 46000,
+        "11202": 44000,
+        "11203": 52000,
+        "11301": 42000,
+        "11302": 36000,
+        "11303": 40000,
+        "11401": 50000,
+        "11402": 44000
+      }
+    },
+    "hogares_lena_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 68.8,
+        "11102": 98.1,
+        "11201": 84.5,
+        "11202": 94,
+        "11203": 94.2,
+        "11301": 95.5,
+        "11302": 98.8,
+        "11303": 98.5,
+        "11401": 82,
+        "11402": 94.2
+      }
+    },
+    "estado_foa": {
+      "type": "categorical",
+      "values": {
+        "11101": "Troncal Terrestre Silica Networks (FDT-2018-02) + Cable Submarino Austral GTD vía Puerto Chacabuco",
+        "11102": "Satelital Starlink / Radioenlace UHF (FTTH hogar en despliegue FDT-2025-03 hacia Lago Verde y Villa La Tapera)",
+        "11201": "Cable Submarino Austral GTD / Telefónica del Sur (Puerto Chacabuco) + Red Troncal Regional Coyhaique",
+        "11202": "Red Troncal Terrestre Norte Ruta 7 (La Junta/Puyuhuapi/Cisnes) + adjudicación FDT-2025-03 Última Milla",
+        "11203": "Radioenlace Microondas / Starlink + Proyecto Última Milla FDT-2025-03 (Melinka y Repollal, sin aterrizaje CTR)",
+        "11301": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Bertrand, Cochrane y Los Ñadis)",
+        "11302": "Satelital Starlink / Radioenlace UHF (Fibra Tortel-Villa O'Higgins adjudicada D.O. 28-abr-2026; operación 1S-2028)",
+        "11303": "Único Aterrizaje Submarino FOA CTR en Aysén (FDT-2017-01) + POIIT Silica FDT-2018-02 + FDT-2025-03 FTTH",
+        "11401": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Puerto Guadal, Mallín Grande y Chile Chico)",
+        "11402": "Troncal Terrestre Silica Networks FDT-2018-02 (POIITs Cerro Castillo, Puerto Ibáñez, Bahía Murta y Río Tranquilo)"
+      }
+    },
+    "concesiones_salmon": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 412,
+        "11202": 218,
+        "11203": 98,
+        "11301": 0,
+        "11302": 0,
+        "11303": 17,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "centros_activos_salmon": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 135,
+        "11202": 78,
+        "11203": 32,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "concesiones_mineras_ha": {
+      "type": "numeric",
+      "values": {
+        "11101": 21573,
+        "11102": 24800,
+        "11201": 13900,
+        "11202": 2300,
+        "11203": 0,
+        "11301": 1201,
+        "11302": 9800,
+        "11303": 0,
+        "11401": 47537,
+        "11402": 7400
+      }
+    },
+    "proyectos_seia_aprobados": {
+      "type": "numeric",
+      "values": {
+        "11101": 118,
+        "11102": 9,
+        "11201": 254,
+        "11202": 122,
+        "11203": 86,
+        "11301": 33,
+        "11302": 14,
+        "11303": 18,
+        "11401": 41,
+        "11402": 27
+      }
+    },
+    "inversion_seia_mmusd": {
+      "type": "numeric",
+      "values": {
+        "11101": 495.6,
+        "11102": 31.4,
+        "11201": 1320,
+        "11202": 525,
+        "11203": 245,
+        "11301": 172,
+        "11302": 48,
+        "11303": 66.5,
+        "11401": 310,
+        "11402": 142
+      }
+    },
+    "empresas_sii": {
+      "type": "numeric",
+      "values": {
+        "11101": 7238,
+        "11102": 119,
+        "11201": 2675,
+        "11202": 895,
+        "11203": 144,
+        "11301": 519,
+        "11302": 109,
+        "11303": 139,
+        "11401": 653,
+        "11402": 577
+      }
+    },
+    "trabajadores_sii": {
+      "type": "numeric",
+      "values": {
+        "11101": 22351,
+        "11102": 213,
+        "11201": 6551,
+        "11202": 1757,
+        "11203": 349,
+        "11301": 475,
+        "11302": 148,
+        "11303": 145,
+        "11401": 965,
+        "11402": 575
+      }
+    },
+    "prestadores_sernatur": {
+      "type": "numeric",
+      "values": {
+        "11101": 489,
+        "11102": 26,
+        "11201": 126,
+        "11202": 215,
+        "11203": 25,
+        "11301": 96,
+        "11302": 31,
+        "11303": 44,
+        "11401": 231,
+        "11402": 445
+      }
+    },
+    "alojamientos_turisticos_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 212,
+        "11102": 14,
+        "11201": 56,
+        "11202": 108,
+        "11203": 13,
+        "11301": 42,
+        "11302": 16,
+        "11303": 21,
+        "11401": 78,
+        "11402": 112
+      }
+    },
+    "operadores_aventura_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 82,
+        "11102": 1,
+        "11201": 20,
+        "11202": 26,
+        "11203": 3,
+        "11301": 22,
+        "11302": 6,
+        "11303": 10,
+        "11401": 36,
+        "11402": 70
+      }
+    },
+    "guias_turismo_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 94,
+        "11102": 3,
+        "11201": 22,
+        "11202": 17,
+        "11203": 3,
+        "11301": 18,
+        "11302": 5,
+        "11303": 7,
+        "11401": 46,
+        "11402": 146
+      }
+    },
+    "restaurantes_turisticos_rnpst_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 58,
+        "11102": 5,
+        "11201": 16,
+        "11202": 38,
+        "11203": 4,
+        "11301": 8,
+        "11302": 2,
+        "11303": 4,
+        "11401": 24,
+        "11402": 30
+      }
+    },
+    "prestadores_vigencia_patente_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 64.2,
+        "11102": 19.2,
+        "11201": 52.4,
+        "11202": 11,
+        "11203": 28,
+        "11301": 44.8,
+        "11302": 38.7,
+        "11303": 40.9,
+        "11401": 34.2,
+        "11402": 30.3
+      }
+    },
+    "camas_turisticas": {
+      "type": "numeric",
+      "values": {
+        "11101": 3420,
+        "11102": 165,
+        "11201": 1850,
+        "11202": 1240,
+        "11203": 145,
+        "11301": 690,
+        "11302": 240,
+        "11303": 360,
+        "11401": 780,
+        "11402": 1150
+      }
+    },
+    "pernoctaciones_emat": {
+      "type": "numeric",
+      "values": {
+        "11101": 138400,
+        "11102": 2800,
+        "11201": 58200,
+        "11202": 44800,
+        "11203": 2300,
+        "11301": 22800,
+        "11302": 6439,
+        "11303": 10400,
+        "11401": 26500,
+        "11402": 51400
+      }
+    },
+    "llegadas_turistas_emat_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 73200,
+        "11102": 1500,
+        "11201": 31800,
+        "11202": 24600,
+        "11203": 1200,
+        "11301": 11900,
+        "11302": 3361,
+        "11303": 5850,
+        "11401": 14100,
+        "11402": 29100
+      }
+    },
+    "zoit_nombre": {
+      "type": "categorical",
+      "values": {
+        "11101": "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén)",
+        "11102": "ZOIT Aysén Patagonia Queulat",
+        "11201": "Sin declaratoria ZOIT (Destino Priorizado SERNATUR Coyhaique - Puerto Aysén y Portal Marítimo PN Laguna San Rafael)",
+        "11202": "ZOIT Aysén Patagonia Queulat",
+        "11203": "Sin declaratoria ZOIT vigente",
+        "11301": "ZOIT Provincia de los Glaciares",
+        "11302": "ZOIT Provincia de los Glaciares",
+        "11303": "ZOIT Provincia de los Glaciares",
+        "11401": "ZOIT Chelenko",
+        "11402": "ZOIT Chelenko"
+      }
+    },
+    "visitantes_snaspe": {
+      "type": "numeric",
+      "values": {
+        "11101": 21190,
+        "11102": 0,
+        "11201": 7048,
+        "11202": 25619,
+        "11203": 0,
+        "11301": 9853,
+        "11302": 0,
+        "11303": 0,
+        "11401": 6600,
+        "11402": 15807
+      }
+    },
+    "visitantes_atractivos_totales_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 49400,
+        "11102": 4200,
+        "11201": 31800,
+        "11202": 48200,
+        "11203": 3800,
+        "11301": 20200,
+        "11302": 9800,
+        "11303": 14200,
+        "11401": 26900,
+        "11402": 65400
+      }
+    },
+    "llegadas_por_cama_turistica": {
+      "type": "numeric",
+      "values": {
+        "11101": 21.4,
+        "11102": 9.1,
+        "11201": 17.2,
+        "11202": 19.8,
+        "11203": 8.3,
+        "11301": 17.2,
+        "11302": 14,
+        "11303": 16.3,
+        "11401": 18.1,
+        "11402": 25.3
+      }
+    },
+    "visitas_por_cama_turistica": {
+      "type": "numeric",
+      "values": {
+        "11101": 6.2,
+        "11102": 0,
+        "11201": 3.8,
+        "11202": 20.7,
+        "11203": 0,
+        "11301": 14.3,
+        "11302": 0,
+        "11303": 0,
+        "11401": 8.5,
+        "11402": 13.7
+      }
+    },
+    "visitas_por_pernoctacion_ratio": {
+      "type": "numeric",
+      "values": {
+        "11101": 0.15,
+        "11102": 0,
+        "11201": 0.12,
+        "11202": 0.57,
+        "11203": 0,
+        "11301": 0.43,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0.25,
+        "11402": 0.31
+      }
+    },
+    "visitantes_extranjeros_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 26.8,
+        "11102": 14.5,
+        "11201": 34.2,
+        "11202": 41.5,
+        "11203": 18,
+        "11301": 44.5,
+        "11302": 55,
+        "11303": 43,
+        "11401": 38.5,
+        "11402": 48
+      }
+    },
+    "visitantes_extranjeros_snaspe_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 5679,
+        "11102": 0,
+        "11201": 2410,
+        "11202": 10632,
+        "11203": 0,
+        "11301": 4385,
+        "11302": 0,
+        "11303": 0,
+        "11401": 2541,
+        "11402": 7587
+      }
+    },
+    "tasa_ocupacion_estival_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 89.9,
+        "11102": 64.5,
+        "11201": 84.2,
+        "11202": 70,
+        "11203": 62,
+        "11301": 79.4,
+        "11302": 80.5,
+        "11303": 78.6,
+        "11401": 76.2,
+        "11402": 78.8
+      }
+    },
+    "tasa_ocupacion_emat_estival_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 45.8,
+        "11102": 29.5,
+        "11201": 43.2,
+        "11202": 41.6,
+        "11203": 28.4,
+        "11301": 40.5,
+        "11302": 38.2,
+        "11303": 37.9,
+        "11401": 39.8,
+        "11402": 44.1
+      }
+    },
+    "tasa_ocupacion_invernal_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 28.4,
+        "11102": 8.5,
+        "11201": 24.6,
+        "11202": 15.8,
+        "11203": 11.2,
+        "11301": 13.8,
+        "11302": 6.8,
+        "11303": 9.2,
+        "11401": 17.5,
+        "11402": 12.4
+      }
+    },
+    "concentracion_estival_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 54.8,
+        "11102": 81.2,
+        "11201": 61.4,
+        "11202": 77.8,
+        "11203": 69.5,
+        "11301": 80.4,
+        "11302": 88.2,
+        "11303": 86.8,
+        "11401": 74.6,
+        "11402": 85.6
+      }
+    },
+    "estadia_promedio_dias": {
+      "type": "numeric",
+      "values": {
+        "11101": 1.89,
+        "11102": 1.87,
+        "11201": 1.83,
+        "11202": 1.82,
+        "11203": 1.92,
+        "11301": 1.92,
+        "11302": 1.92,
+        "11303": 1.78,
+        "11401": 1.88,
+        "11402": 1.77
+      }
+    },
+    "estadia_regional_viaje_dias": {
+      "type": "numeric",
+      "values": {
+        "11101": 8.4,
+        "11102": 10.2,
+        "11201": 8.8,
+        "11202": 9.5,
+        "11203": 10.4,
+        "11301": 11.2,
+        "11302": 12.1,
+        "11303": 11.6,
+        "11401": 10.8,
+        "11402": 10.3
+      }
+    },
+    "gasto_diario_turista_usd": {
+      "type": "numeric",
+      "values": {
+        "11101": 64,
+        "11102": 58,
+        "11201": 96,
+        "11202": 108,
+        "11203": 66,
+        "11301": 104,
+        "11302": 112,
+        "11303": 95,
+        "11401": 74,
+        "11402": 114
+      }
+    },
+    "tarifa_adr_emat_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 67512,
+        "11102": 49800,
+        "11201": 81200,
+        "11202": 84900,
+        "11203": 53400,
+        "11301": 73800,
+        "11302": 58600,
+        "11303": 55600,
+        "11401": 59600,
+        "11402": 62400
+      }
+    },
+    "revpar_emat_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 17981,
+        "11102": 7570,
+        "11201": 20625,
+        "11202": 20376,
+        "11203": 8811,
+        "11301": 16531,
+        "11302": 10196,
+        "11303": 10675,
+        "11401": 13470,
+        "11402": 13790
+      }
+    },
+    "empresas_act_turismo_sii_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 1485,
+        "11102": 42,
+        "11201": 468,
+        "11202": 324,
+        "11203": 29,
+        "11301": 162,
+        "11302": 38,
+        "11303": 64,
+        "11401": 228,
+        "11402": 312
+      }
+    },
+    "ventas_act_turismo_uf": {
+      "type": "numeric",
+      "values": {
+        "11101": 5420000,
+        "11102": 82000,
+        "11201": 1985000,
+        "11202": 1310000,
+        "11203": 67000,
+        "11301": 585000,
+        "11302": 115000,
+        "11303": 218086,
+        "11401": 742000,
+        "11402": 1045000
+      }
+    },
+    "empleo_act_turismo_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2340,
+        "11102": 65,
+        "11201": 820,
+        "11202": 585,
+        "11203": 60,
+        "11301": 295,
+        "11302": 75,
+        "11303": 115,
+        "11401": 385,
+        "11402": 530
+      }
+    },
+    "largo_pista_aerodromo_m": {
+      "type": "numeric",
+      "values": {
+        "11101": 2300,
+        "11102": 850,
+        "11201": 600,
+        "11202": 900,
+        "11203": 800,
+        "11301": 1200,
+        "11302": 1300,
+        "11303": 800,
+        "11401": 1180,
+        "11402": 860
+      }
+    },
+    "operaciones_aerodromo_interior_anual": {
+      "type": "numeric",
+      "values": {
+        "11101": 4820,
+        "11102": 160,
+        "11201": 290,
+        "11202": 310,
+        "11203": 510,
+        "11301": 640,
+        "11302": 420,
+        "11303": 190,
+        "11401": 580,
+        "11402": 240
+      }
+    },
+    "camas_hospitalarias": {
+      "type": "numeric",
+      "values": {
+        "11101": 167,
+        "11102": 0,
+        "11201": 52,
+        "11202": 12,
+        "11203": 0,
+        "11301": 16,
+        "11302": 0,
+        "11303": 0,
+        "11401": 14,
+        "11402": 0
+      }
+    },
+    "traslado_coyhaique_hrs": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 4.5,
+        "11201": 1,
+        "11202": 3.5,
+        "11203": 14,
+        "11301": 6,
+        "11302": 10,
+        "11303": 8,
+        "11401": 4,
+        "11402": 1.5
+      }
+    },
+    "matricula_escolar": {
+      "type": "numeric",
+      "values": {
+        "11101": 13284,
+        "11102": 54,
+        "11201": 5286,
+        "11202": 1011,
+        "11203": 290,
+        "11301": 740,
+        "11302": 123,
+        "11303": 82,
+        "11401": 864,
+        "11402": 353
+      }
+    },
+    "matricula_slep_aysen_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 3017,
+        "11102": 54,
+        "11201": 2406,
+        "11202": 1010,
+        "11203": 290,
+        "11301": 740,
+        "11302": 123,
+        "11303": 82,
+        "11401": 864,
+        "11402": 353
+      }
+    },
+    "cobertura_vegetal_nativa_ha": {
+      "type": "numeric",
+      "values": {
+        "11101": 524500,
+        "11102": 390000,
+        "11201": 1430000,
+        "11202": 1025000,
+        "11203": 53000,
+        "11301": 543000,
+        "11302": 372000,
+        "11303": 715000,
+        "11401": 328500,
+        "11402": 342000
+      }
+    },
+    "cobertura_vegetal_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 72,
+        "11102": 71.9,
+        "11201": 48,
+        "11202": 63.7,
+        "11203": 85.4,
+        "11301": 63.1,
+        "11302": 45.5,
+        "11303": 36.3,
+        "11401": 57.3,
+        "11402": 57
+      }
+    },
+    "fauna_amenazada_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 5,
+        "11102": 5,
+        "11201": 9,
+        "11202": 9,
+        "11203": 5,
+        "11301": 7,
+        "11302": 5,
+        "11303": 8,
+        "11401": 5,
+        "11402": 5
+      }
+    },
+    "fcm_bcn_2025_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 12047.74,
+        "11102": 2249.3,
+        "11201": 7089.9,
+        "11202": 2824.5,
+        "11203": 2297.78,
+        "11301": 3005.2,
+        "11302": 2405.56,
+        "11303": 2322.9,
+        "11401": 4249.66,
+        "11402": 3260.78
+      }
+    },
+    "ipp_bcn_2025_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 8571.21,
+        "11102": 430.75,
+        "11201": 4512.82,
+        "11202": 2979.78,
+        "11203": 845.22,
+        "11301": 502.86,
+        "11302": 118.31,
+        "11303": 112.34,
+        "11401": 664.34,
+        "11402": 505.89
+      }
+    },
+    "participacion_fcm_ingreso_total_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 43.6,
+        "11102": 67.7,
+        "11201": 48.5,
+        "11202": 35.4,
+        "11203": 50.3,
+        "11301": 52.5,
+        "11302": 45.2,
+        "11303": 67.5,
+        "11401": 71,
+        "11402": 52.1
+      }
+    },
+    "gastos_corrientes_bcn_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 85.4,
+        "11102": 75.6,
+        "11201": 85.2,
+        "11202": 71.2,
+        "11203": 70.9,
+        "11301": 74.9,
+        "11302": 86.6,
+        "11303": 88.2,
+        "11401": 82.9,
+        "11402": 75.3
+      }
+    },
+    "ipp_per_capita_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 148232,
+        "11102": 488379,
+        "11201": 194770,
+        "11202": 558534,
+        "11203": 528924,
+        "11301": 144003,
+        "11302": 178178,
+        "11303": 199538,
+        "11401": 134210,
+        "11402": 189401
+      }
+    },
+    "gasto_personal_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 42.1,
+        "11102": 48.5,
+        "11201": 44.2,
+        "11202": 39.8,
+        "11203": 51.2,
+        "11301": 43.5,
+        "11302": 50.4,
+        "11303": 52.6,
+        "11401": 46.7,
+        "11402": 47.9
+      }
+    },
+    "inversion_directa_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 8.4,
+        "11102": 4.2,
+        "11201": 7.1,
+        "11202": 11.5,
+        "11203": 3.6,
+        "11301": 6.2,
+        "11302": 3.8,
+        "11303": 3.1,
+        "11401": 5.8,
+        "11402": 4.9
+      }
+    },
+    "profesionalizacion_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 36.4,
+        "11102": 12.5,
+        "11201": 28.2,
+        "11202": 18.6,
+        "11203": 11.8,
+        "11301": 16.2,
+        "11302": 10.5,
+        "11303": 9.8,
+        "11401": 15.4,
+        "11402": 14.1
+      }
+    },
+    "saidi_horas_anual": {
+      "type": "numeric",
+      "values": {
+        "11101": 11.4,
+        "11102": 54.2,
+        "11201": 13.8,
+        "11202": 28.5,
+        "11203": 62.1,
+        "11301": 22.8,
+        "11302": 58.7,
+        "11303": 64.3,
+        "11401": 19.3,
+        "11402": 24.6
+      }
+    },
+    "hogares_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 22423,
+        "11102": 373,
+        "11201": 9057,
+        "11202": 2180,
+        "11203": 606,
+        "11301": 1462,
+        "11302": 292,
+        "11303": 231,
+        "11401": 2109,
+        "11402": 1231
+      }
+    },
+    "potencia_ernc_en_construccion_mw": {
+      "type": "numeric",
+      "values": {
+        "11101": 17.98,
+        "11102": 0,
+        "11201": 0,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 1,
+        "11402": 0
+      }
+    },
+    "tarifa_bt1_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 287.8,
+        "11102": 294,
+        "11201": 287.8,
+        "11202": 292.4,
+        "11203": 312,
+        "11301": 291.2,
+        "11302": 308,
+        "11303": 318,
+        "11401": 289.5,
+        "11402": 289.5
+      }
+    },
+    "cobertura_subsidio_electrico_hogares_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 7820,
+        "11102": 82,
+        "11201": 3190,
+        "11202": 745,
+        "11203": 148,
+        "11301": 445,
+        "11302": 48,
+        "11303": 40,
+        "11401": 590,
+        "11402": 340
+      }
+    },
+    "cobertura_subsidio_electrico_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 34.9,
+        "11102": 22,
+        "11201": 35.2,
+        "11202": 34.2,
+        "11203": 24.4,
+        "11301": 30.4,
+        "11302": 16.4,
+        "11303": 17.3,
+        "11401": 28,
+        "11402": 27.6
+      }
+    },
+    "diesel_clp_litro": {
+      "type": "numeric",
+      "values": {
+        "11101": 1595,
+        "11102": 1710,
+        "11201": 1585,
+        "11202": 1645,
+        "11203": 1740,
+        "11301": 1735,
+        "11302": 1802,
+        "11303": 1775,
+        "11401": 1675,
+        "11402": 1668
+      }
+    },
+    "kerosene_clp_litro": {
+      "type": "numeric",
+      "values": {
+        "11101": 1485,
+        "11102": 1530,
+        "11201": 1470,
+        "11202": 1495,
+        "11203": 1535,
+        "11301": 1525,
+        "11302": 1541,
+        "11303": 1538,
+        "11401": 1510,
+        "11402": 1505
+      }
+    },
+    "ratio_costo_calefaccion_electrica_vs_lena": {
+      "type": "numeric",
+      "values": {
+        "11101": 2.25,
+        "11102": 3.06,
+        "11201": 2.35,
+        "11202": 2.49,
+        "11203": 2.25,
+        "11301": 2.6,
+        "11302": 3.21,
+        "11303": 2.98,
+        "11401": 2.17,
+        "11402": 2.47
+      }
+    },
+    "costo_diesel_aislado_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 540,
+        "11201": 480,
+        "11202": 495,
+        "11203": 640,
+        "11301": 0,
+        "11302": 620,
+        "11303": 680,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "internet_fijo_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 70.1,
+        "11102": 17.5,
+        "11201": 66.5,
+        "11202": 72.5,
+        "11203": 51.9,
+        "11301": 60.8,
+        "11302": 23.2,
+        "11303": 22.1,
+        "11401": 40.4,
+        "11402": 52.4
+      }
+    },
+    "biomasa_salmon_ton": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 265000,
+        "11202": 185000,
+        "11203": 45000,
+        "11301": 0,
+        "11302": 0,
+        "11303": 8500,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "antibioticos_ica_g_ton": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 335.4,
+        "11202": 324.8,
+        "11203": 382.1,
+        "11301": 0,
+        "11302": 0,
+        "11303": 289,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "amerb_decretadas": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 12,
+        "11202": 14,
+        "11203": 18,
+        "11301": 0,
+        "11302": 0,
+        "11303": 2,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "amerb_operativas": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 4,
+        "11202": 5,
+        "11203": 7,
+        "11301": 0,
+        "11302": 0,
+        "11303": 1,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "seia_plazo_dias": {
+      "type": "numeric",
+      "values": {
+        "11101": 890,
+        "11102": 780,
+        "11201": 960,
+        "11202": 945,
+        "11203": 820,
+        "11301": 850,
+        "11302": 760,
+        "11303": 740,
+        "11401": 880,
+        "11402": 810
+      }
+    },
+    "compras_locales_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 58.4,
+        "11102": 22.1,
+        "11201": 54.6,
+        "11202": 38.2,
+        "11203": 24.5,
+        "11301": 44.5,
+        "11302": 18.4,
+        "11303": 21,
+        "11401": 41.2,
+        "11402": 32.8
+      }
+    },
+    "parcelaciones_sag_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 3240,
+        "11102": 185,
+        "11201": 1120,
+        "11202": 490,
+        "11203": 15,
+        "11301": 390,
+        "11302": 140,
+        "11303": 65,
+        "11401": 980,
+        "11402": 1280
+      }
+    },
+    "medicos_por_mil_hab": {
+      "type": "numeric",
+      "values": {
+        "11101": 3.12,
+        "11102": 0.82,
+        "11201": 1.74,
+        "11202": 1.15,
+        "11203": 0.95,
+        "11301": 1.42,
+        "11302": 0.78,
+        "11303": 0.85,
+        "11401": 1.28,
+        "11402": 0.88
+      }
+    },
+    "espera_no_ges_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 5420,
+        "11102": 128,
+        "11201": 2450,
+        "11202": 890,
+        "11203": 410,
+        "11301": 460,
+        "11302": 96,
+        "11303": 112,
+        "11401": 520,
+        "11402": 280
+      }
+    },
+    "urgencias_respiratorias_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 44.5,
+        "11102": 18.2,
+        "11201": 28.6,
+        "11202": 21.4,
+        "11203": 22.8,
+        "11301": 24.2,
+        "11302": 16.5,
+        "11303": 17.8,
+        "11401": 20.5,
+        "11402": 19.8
+      }
+    },
+    "aeroevacuaciones_samu_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 24,
+        "11201": 48,
+        "11202": 72,
+        "11203": 96,
+        "11301": 54,
+        "11302": 42,
+        "11303": 46,
+        "11401": 38,
+        "11402": 22
+      }
+    },
+    "ratio_presion_turistica": {
+      "type": "numeric",
+      "values": {
+        "11101": 1.53,
+        "11102": 3.65,
+        "11201": 1.76,
+        "11202": 4.22,
+        "11203": 1.48,
+        "11301": 7.09,
+        "11302": 15.15,
+        "11303": 28.12,
+        "11401": 6.08,
+        "11402": 19.24
+      }
+    },
+    "ha_snaspe_por_guardaparque": {
+      "type": "numeric",
+      "values": {
+        "11101": 38500,
+        "11102": 82000,
+        "11201": 145000,
+        "11202": 168000,
+        "11203": 95000,
+        "11301": 142000,
+        "11302": 210000,
+        "11303": 195000,
+        "11401": 112000,
+        "11402": 86000
+      }
+    },
+    "glaciares_dga_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 310,
+        "11102": 285,
+        "11201": 2450,
+        "11202": 1120,
+        "11203": 0,
+        "11301": 1680,
+        "11302": 2240,
+        "11303": 916,
+        "11401": 410,
+        "11402": 890
+      }
+    },
+    "superficie_glaciar_km2": {
+      "type": "numeric",
+      "values": {
+        "11101": 42.5,
+        "11102": 38.2,
+        "11201": 1850,
+        "11202": 480,
+        "11203": 0,
+        "11301": 890,
+        "11302": 3450,
+        "11303": 2680,
+        "11401": 145,
+        "11402": 460
+      }
+    },
+    "daa_consuntivos_m3s": {
+      "type": "numeric",
+      "values": {
+        "11101": 48.5,
+        "11102": 6.2,
+        "11201": 38.4,
+        "11202": 18.2,
+        "11203": 1.2,
+        "11301": 8.4,
+        "11302": 3.8,
+        "11303": 3.1,
+        "11401": 14.8,
+        "11402": 12.5
+      }
+    },
+    "daa_no_consuntivos_m3s": {
+      "type": "numeric",
+      "values": {
+        "11101": 145,
+        "11102": 18,
+        "11201": 680,
+        "11202": 320,
+        "11203": 0,
+        "11301": 890,
+        "11302": 540,
+        "11303": 420,
+        "11401": 45,
+        "11402": 110
+      }
+    },
+    "dias_sobre_norma_mp25": {
+      "type": "numeric",
+      "values": {
+        "11101": 87,
+        "11102": 12,
+        "11201": 34,
+        "11202": 16,
+        "11203": 4,
+        "11301": 22,
+        "11302": 8,
+        "11303": 10,
+        "11401": 18,
+        "11402": 14
+      }
+    },
+    "postas_salud_rural": {
+      "type": "numeric",
+      "values": {
+        "11101": 7,
+        "11102": 3,
+        "11201": 4,
+        "11202": 4,
+        "11203": 1,
+        "11301": 1,
+        "11302": 1,
+        "11303": 1,
+        "11401": 2,
+        "11402": 3
+      }
+    },
+    "centros_culturales_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2,
+        "11102": 1,
+        "11201": 1,
+        "11202": 1,
+        "11203": 0,
+        "11301": 1,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "organizaciones_comunitarias_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 142,
+        "11102": 14,
+        "11201": 84,
+        "11202": 46,
+        "11203": 22,
+        "11301": 18,
+        "11302": 9,
+        "11303": 8,
+        "11401": 28,
+        "11402": 21
+      }
+    },
+    "cultores_patrimonio_inmaterial_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 48,
+        "11102": 22,
+        "11201": 34,
+        "11202": 38,
+        "11203": 26,
+        "11301": 42,
+        "11302": 14,
+        "11303": 19,
+        "11401": 24,
+        "11402": 46
+      }
+    },
+    "fondart_fndr_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 2630.4,
+        "11102": 65.5,
+        "11201": 1052.8,
+        "11202": 357.5,
+        "11203": 110.1,
+        "11301": 279.2,
+        "11302": 83.6,
+        "11303": 133,
+        "11401": 282,
+        "11402": 305.4
+      }
+    },
+    "total_espacios_culturales": {
+      "type": "numeric",
+      "values": {
+        "11101": 8,
+        "11102": 2,
+        "11201": 6,
+        "11202": 6,
+        "11203": 2,
+        "11301": 3,
+        "11302": 2,
+        "11303": 2,
+        "11401": 5,
+        "11402": 6
+      }
+    },
+    "monumentos_nacionales_count": {
+      "type": "numeric",
+      "values": {
+        "11101": 2,
+        "11102": 0,
+        "11201": 2,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 1,
+        "11401": 1,
+        "11402": 3
+      }
+    },
+    "museos_count": {
+      "type": "numeric",
+      "values": {
+        "11101": 3,
+        "11102": 0,
+        "11201": 2,
+        "11202": 2,
+        "11203": 1,
+        "11301": 1,
+        "11302": 1,
+        "11303": 0,
+        "11401": 2,
+        "11402": 2
+      }
+    },
+    "fondos_cultura_adjudicados_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 2150.4,
+        "11102": 23.5,
+        "11201": 742.8,
+        "11202": 212.5,
+        "11203": 42.1,
+        "11301": 184.2,
+        "11302": 45.6,
+        "11303": 91,
+        "11401": 162,
+        "11402": 195.4
+      }
+    },
+    "gasto_municipal_cultura_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 685.2,
+        "11102": 38.4,
+        "11201": 215.6,
+        "11202": 82.4,
+        "11203": 41.2,
+        "11301": 62.4,
+        "11302": 21.8,
+        "11303": 18.5,
+        "11401": 74.8,
+        "11402": 52.6
+      }
+    },
+    "gasto_cultura_per_capita_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 11850,
+        "11102": 49294,
+        "11201": 9306,
+        "11202": 16040,
+        "11203": 25782,
+        "11301": 18045,
+        "11302": 33590,
+        "11303": 36706,
+        "11401": 15250,
+        "11402": 19317
+      }
+    },
+    "fndr_8pct_cultura_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 480,
+        "11102": 42,
+        "11201": 310,
+        "11202": 145,
+        "11203": 68,
+        "11301": 95,
+        "11302": 38,
+        "11303": 42,
+        "11401": 120,
+        "11402": 110
+      }
+    },
+    "nota_percepcion_cultura_b4b": {
+      "type": "numeric",
+      "values": {
+        "11101": 3.87,
+        "11102": 5,
+        "11201": 3.81,
+        "11202": 5,
+        "11203": 4.5,
+        "11301": 4.58,
+        "11302": 4,
+        "11303": 4.8,
+        "11401": 4.12,
+        "11402": 4.62
+      }
+    },
+    "participacion_cultural_pct_c2": {
+      "type": "numeric",
+      "values": {
+        "11101": 42.2,
+        "11102": 80,
+        "11201": 40.4,
+        "11202": 74.1,
+        "11203": 75,
+        "11301": 54.2,
+        "11302": 66.7,
+        "11303": 100,
+        "11401": 52,
+        "11402": 47.6
+      }
+    },
+    "proyectos_anid_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 74,
+        "11102": 1,
+        "11201": 17,
+        "11202": 6,
+        "11203": 3,
+        "11301": 4,
+        "11302": 2,
+        "11303": 5,
+        "11401": 4,
+        "11402": 4
+      }
+    },
+    "monto_anid_acumulado_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 11850.5,
+        "11102": 45,
+        "11201": 2450,
+        "11202": 680,
+        "11203": 280,
+        "11301": 460,
+        "11302": 190,
+        "11303": 361.3,
+        "11401": 490,
+        "11402": 520
+      }
+    },
+    "monto_corfo_innova_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 4120,
+        "11102": 30,
+        "11201": 2150,
+        "11202": 680,
+        "11203": 140,
+        "11301": 410,
+        "11302": 50,
+        "11303": 180,
+        "11401": 580,
+        "11402": 110
+      }
+    },
+    "total_proyectos_ctci": {
+      "type": "numeric",
+      "values": {
+        "11101": 102,
+        "11102": 2,
+        "11201": 31,
+        "11202": 11,
+        "11203": 4,
+        "11301": 7,
+        "11302": 3,
+        "11303": 6,
+        "11401": 8,
+        "11402": 5
+      }
+    },
+    "investigadores_residentes_est": {
+      "type": "numeric",
+      "values": {
+        "11101": 91,
+        "11102": 1,
+        "11201": 14,
+        "11202": 4,
+        "11203": 2,
+        "11301": 3,
+        "11302": 1,
+        "11303": 3,
+        "11401": 3,
+        "11402": 2
+      }
+    },
+    "proyectos_anid_locales_count": {
+      "type": "numeric",
+      "values": {
+        "11101": 48,
+        "11102": 0,
+        "11201": 8,
+        "11202": 3,
+        "11203": 1,
+        "11301": 2,
+        "11302": 0,
+        "11303": 3,
+        "11401": 2,
+        "11402": 1
+      }
+    },
+    "proyectos_anid_extrarregionales_count": {
+      "type": "numeric",
+      "values": {
+        "11101": 26,
+        "11102": 1,
+        "11201": 9,
+        "11202": 3,
+        "11203": 2,
+        "11301": 2,
+        "11302": 2,
+        "11303": 2,
+        "11401": 2,
+        "11402": 3
+      }
+    },
+    "proyectos_corfo_innova_count": {
+      "type": "numeric",
+      "values": {
+        "11101": 28,
+        "11102": 1,
+        "11201": 14,
+        "11202": 5,
+        "11203": 1,
+        "11301": 3,
+        "11302": 1,
+        "11303": 1,
+        "11401": 4,
+        "11402": 1
+      }
+    },
+    "centros_y_estaciones_ctci_count": {
+      "type": "numeric",
+      "values": {
+        "11101": 6,
+        "11102": 1,
+        "11201": 2,
+        "11202": 1,
+        "11203": 1,
+        "11301": 1,
+        "11302": 1,
+        "11303": 1,
+        "11401": 1,
+        "11402": 1
+      }
+    },
+    "percepcion_ctci_prioritaria_pct_i1i": {
+      "type": "numeric",
+      "values": {
+        "11101": 88.6,
+        "11102": 100,
+        "11201": 93.8,
+        "11202": 85.2,
+        "11203": 87.5,
+        "11301": 83.3,
+        "11302": 100,
+        "11303": 100,
+        "11401": 84,
+        "11402": 90
+      }
+    },
+    "evaluacion_uaysen_promedio_i8": {
+      "type": "numeric",
+      "values": {
+        "11101": 4.94,
+        "11102": 6,
+        "11201": 4.92,
+        "11202": 5.04,
+        "11203": 4.17,
+        "11301": 5.35,
+        "11302": 4.33,
+        "11303": 5.2,
+        "11401": 5.13,
+        "11402": 5.11
+      }
+    },
+    "aporte_universidades_f4g_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 72.8,
+        "11102": 68.5,
+        "11201": 71.4,
+        "11202": 64.2,
+        "11203": 58,
+        "11301": 61.2,
+        "11302": 57.5,
+        "11303": 60,
+        "11401": 62.5,
+        "11402": 63.8
+      }
+    },
+    "proporcion_ciencia_endogena_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 64.9,
+        "11102": 0,
+        "11201": 47.1,
+        "11202": 50,
+        "11203": 33.3,
+        "11301": 50,
+        "11302": 0,
+        "11303": 60,
+        "11401": 50,
+        "11402": 25
+      }
+    },
+    "matricula_educacion_superior_sies_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2187,
+        "11102": 0,
+        "11201": 737,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "establecimientos_escolares_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 40,
+        "11102": 3,
+        "11201": 19,
+        "11202": 8,
+        "11203": 2,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
+        "11401": 5,
+        "11402": 5
+      }
+    },
+    "establecimientos_aps_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 13,
+        "11102": 5,
+        "11201": 7,
+        "11202": 7,
+        "11203": 3,
+        "11301": 3,
+        "11302": 3,
+        "11303": 3,
+        "11401": 4,
+        "11402": 5
+      }
+    },
+    "holdings_operadores_salmon": {
+      "type": "categorical",
+      "values": {
+        "11101": "-",
+        "11102": "-",
+        "11201": "AquaChile (105), Mowi Chile (55), Multi X (48), Cermaq Chile (45), Salmones Blumar (42), Australis Seafoods (32), Salmones Antártica (20), Salmones Camanchaca (18), Cooke Aquaculture Chile (18), Invermar (15), Salmones Austral (14)",
+        "11202": "Mowi Chile (40), AquaChile (34), Multi X (32), Cermaq Chile (30), Salmones Blumar (20), Salmones Camanchaca (20), Australis Seafoods (14), Invermar (12), Salmones Austral (10), Salmones Yadrán (6)",
+        "11203": "AquaChile (71), Salmones Yadrán (25), Otros Concesionarios e Históricos (2)",
+        "11301": "-",
+        "11302": "-",
+        "11303": "Titulares Menores (17)",
+        "11401": "-",
+        "11402": "-"
+      }
+    },
+    "red_vial_total_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 684.2,
+        "11102": 312.5,
+        "11201": 495.6,
+        "11202": 482,
+        "11203": 28.5,
+        "11301": 398,
+        "11302": 168.4,
+        "11303": 142.2,
+        "11401": 384,
+        "11402": 291
+      }
+    },
+    "red_vial_pavimentada_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 192.4,
+        "11102": 0,
+        "11201": 118.5,
+        "11202": 45.2,
+        "11203": 4.2,
+        "11301": 12.5,
+        "11302": 0,
+        "11303": 0,
+        "11401": 22,
+        "11402": 18
+      }
+    },
+    "red_vial_solucion_basica_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 88.6,
+        "11102": 18.2,
+        "11201": 42.1,
+        "11202": 38,
+        "11203": 8.3,
+        "11301": 25,
+        "11302": 6.5,
+        "11303": 5.4,
+        "11401": 38.5,
+        "11402": 28
+      }
+    },
+    "red_vial_ripio_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 378.2,
+        "11102": 268.3,
+        "11201": 305,
+        "11202": 365.8,
+        "11203": 14,
+        "11301": 332.5,
+        "11302": 138.9,
+        "11303": 118.8,
+        "11401": 298.5,
+        "11402": 218
+      }
+    },
+    "red_vial_tierra_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 25,
+        "11102": 26,
+        "11201": 30,
+        "11202": 33,
+        "11203": 2,
+        "11301": 28,
+        "11302": 23,
+        "11303": 18,
+        "11401": 25,
+        "11402": 27
+      }
+    },
+    "red_vial_pavimentada_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 41.1,
+        "11102": 5.8,
+        "11201": 32.4,
+        "11202": 17.3,
+        "11203": 43.9,
+        "11301": 9.4,
+        "11302": 3.9,
+        "11303": 3.8,
+        "11401": 15.8,
+        "11402": 15.8
+      }
+    },
+    "distancia_coyhaique_km": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 328,
+        "11201": 67.2,
+        "11202": 196,
+        "11203": 410,
+        "11301": 334,
+        "11302": 564,
+        "11303": 462,
+        "11401": 298,
+        "11402": 116
+      }
+    },
+    "tiempo_viaje_coyhaique_hrs": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 5.5,
+        "11201": 1,
+        "11202": 3,
+        "11203": 18,
+        "11301": 6.5,
+        "11302": 12,
+        "11303": 9,
+        "11401": 4.5,
+        "11402": 1.7
+      }
+    },
+    "dependencia_barcaza_nivel": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 1,
+        "11202": 1,
+        "11203": 3,
+        "11301": 0,
+        "11302": 2,
+        "11303": 2,
+        "11401": 1,
+        "11402": 0
+      }
+    },
+    "cobertura_fibra_hogar_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 68.4,
+        "11102": 0,
+        "11201": 54.2,
+        "11202": 24.8,
+        "11203": 2.4,
+        "11301": 39.2,
+        "11302": 0,
+        "11303": 2.1,
+        "11401": 36.5,
+        "11402": 21.4
+      }
+    },
+    "establecimientos_educacion_conectados_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 24,
+        "11102": 3,
+        "11201": 14,
+        "11202": 6,
+        "11203": 2,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
+        "11401": 3,
+        "11402": 4
+      }
+    },
+    "fdt_ultima_milla_aprobado": {
+      "type": "categorical",
+      "values": {
+        "11101": true,
+        "11102": true,
+        "11201": true,
+        "11202": true,
+        "11203": true,
+        "11301": true,
+        "11302": true,
+        "11303": true,
+        "11401": true,
+        "11402": true
+      }
+    },
+    "deficit_habitacional_cuantitativo_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 1128,
+        "11102": 73,
+        "11201": 330,
+        "11202": 109,
+        "11203": 14,
+        "11301": 118,
+        "11302": 4,
+        "11303": 15,
+        "11401": 86,
+        "11402": 50
+      }
+    },
+    "deficit_habitacional_cualitativo_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 2893,
+        "11102": 48,
+        "11201": 1168,
+        "11202": 281,
+        "11203": 78,
+        "11301": 189,
+        "11302": 38,
+        "11303": 30,
+        "11401": 272,
+        "11402": 158
+      }
+    },
+    "sistemas_ssr_apr_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 15,
+        "11102": 2,
+        "11201": 8,
+        "11202": 5,
+        "11203": 1,
+        "11301": 3,
+        "11302": 2,
+        "11303": 1,
+        "11401": 5,
+        "11402": 5
+      }
+    },
+    "cobertura_ssr_apr_familias": {
+      "type": "numeric",
+      "values": {
+        "11101": 3350,
+        "11102": 210,
+        "11201": 1790,
+        "11202": 1050,
+        "11203": 551,
+        "11301": 450,
+        "11302": 174,
+        "11303": 150,
+        "11401": 780,
+        "11402": 680
+      }
+    },
+    "ganado_bovino_cabezas": {
+      "type": "numeric",
+      "values": {
+        "11101": 46816,
+        "11102": 20048,
+        "11201": 15532,
+        "11202": 9253,
+        "11203": 132,
+        "11301": 18065,
+        "11302": 3098,
+        "11303": 3194,
+        "11401": 10575,
+        "11402": 17405
+      }
+    },
+    "ganado_ovino_cabezas": {
+      "type": "numeric",
+      "values": {
+        "11101": 32010,
+        "11102": 12500,
+        "11201": 6800,
+        "11202": 4100,
+        "11203": 80,
+        "11301": 34808,
+        "11302": 3654,
+        "11303": 3700,
+        "11401": 38210,
+        "11402": 42110
+      }
+    },
+    "plantaciones_ha": {
+      "type": "numeric",
+      "values": {
+        "11101": 18200,
+        "11102": 1200,
+        "11201": 4800,
+        "11202": 2100,
+        "11203": 50,
+        "11301": 3400,
+        "11302": 450,
+        "11303": 240,
+        "11401": 3100,
+        "11402": 1700
+      }
+    },
+    "consumo_lena_m3_hogar_ano": {
+      "type": "numeric",
+      "values": {
+        "11101": 9.81,
+        "11102": 15.1,
+        "11201": 13.2,
+        "11202": 13.95,
+        "11203": 13.1,
+        "11301": 14.35,
+        "11302": 15.5,
+        "11303": 15.2,
+        "11401": 11.95,
+        "11402": 14.05
+      }
+    },
+    "especies_exoticas_invasoras_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 5,
+        "11102": 5,
+        "11201": 4,
+        "11202": 5,
+        "11203": 2,
+        "11301": 5,
+        "11302": 5,
+        "11303": 4,
+        "11401": 4,
+        "11402": 5
+      }
+    },
+    "episodios_gec_mp25_anual": {
+      "type": "numeric",
+      "values": {
+        "11101": 41,
+        "11102": 2,
+        "11201": 14,
+        "11202": 4,
+        "11203": 0,
+        "11301": 8,
+        "11302": 1,
+        "11303": 2,
+        "11401": 5,
+        "11402": 3
+      }
+    },
+    "expedientes_fiscalizacion_sma_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 42,
+        "11102": 4,
+        "11201": 86,
+        "11202": 64,
+        "11203": 28,
+        "11301": 14,
+        "11302": 5,
+        "11303": 8,
+        "11401": 19,
+        "11402": 12
+      }
+    },
+    "amenaza_volcanica_sismica_idx": {
+      "type": "numeric",
+      "values": {
+        "11101": 78.5,
+        "11102": 42,
+        "11201": 94.2,
+        "11202": 88.6,
+        "11203": 64,
+        "11301": 48,
+        "11302": 56.5,
+        "11303": 61,
+        "11401": 72.4,
+        "11402": 91.5
+      }
+    },
+    "esperanza_vida_total_anos": {
+      "type": "numeric",
+      "values": {
+        "11101": 81.6,
+        "11102": 79.8,
+        "11201": 81.1,
+        "11202": 80.4,
+        "11203": 79.5,
+        "11301": 80.8,
+        "11302": 79.2,
+        "11303": 79,
+        "11401": 81.3,
+        "11402": 80.2
+      }
+    },
+    "cobertura_empam_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 80.2,
+        "11102": 72.1,
+        "11201": 78.6,
+        "11202": 76.5,
+        "11203": 71,
+        "11301": 77.4,
+        "11302": 69.5,
+        "11303": 68.8,
+        "11401": 79.1,
+        "11402": 75.8
+      }
+    },
+    "cobertura_pscv_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 74.5,
+        "11102": 68,
+        "11201": 71.2,
+        "11202": 70.4,
+        "11203": 65.8,
+        "11301": 72.1,
+        "11302": 64.2,
+        "11303": 63.5,
+        "11401": 73,
+        "11402": 69.8
+      }
+    },
+    "barometro_confianza_institucional_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 50.4,
+        "11102": 52.1,
+        "11201": 49.8,
+        "11202": 50.5,
+        "11203": 48.2,
+        "11301": 68.4,
+        "11302": 71.2,
+        "11303": 70.5,
+        "11401": 68.9,
+        "11402": 51
+      }
+    },
+    "barometro_redes_apoyo_comunitario_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 38.5,
+        "11102": 51.2,
+        "11201": 48.6,
+        "11202": 50.2,
+        "11203": 52.4,
+        "11301": 57.8,
+        "11302": 62.5,
+        "11303": 60.8,
+        "11401": 56.4,
+        "11402": 41.2
+      }
+    },
+    "barometro_orgullo_identidad_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 89.1,
+        "11102": 87.5,
+        "11201": 86.8,
+        "11202": 87.2,
+        "11203": 85,
+        "11301": 91.2,
+        "11302": 92.5,
+        "11303": 91.8,
+        "11401": 89.5,
+        "11402": 89.8
+      }
+    },
+    "barometro_prioridad_conectividad_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 72.8,
+        "11102": 71.5,
+        "11201": 69.8,
+        "11202": 72,
+        "11203": 73.5,
+        "11301": 65.2,
+        "11302": 66.8,
+        "11303": 65.5,
+        "11401": 63.8,
+        "11402": 71.8
+      }
+    },
+    "barometro_tension_desarrollo_conservacion_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 59.4,
+        "11102": 76.5,
+        "11201": 79.2,
+        "11202": 81,
+        "11203": 74.8,
+        "11301": 43.5,
+        "11302": 41.2,
+        "11303": 44,
+        "11401": 41.8,
+        "11402": 61.2
+      }
+    },
+    "barometro_intencion_migracion_juvenil_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 47.5,
+        "11102": 54.2,
+        "11201": 51.8,
+        "11202": 53,
+        "11203": 55.4,
+        "11301": 49.8,
+        "11302": 52.6,
+        "11303": 51.5,
+        "11401": 48.9,
+        "11402": 48.5
+      }
+    },
+    "barometro_evaluacion_acceso_salud_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 24.1,
+        "11102": 26.5,
+        "11201": 27.2,
+        "11202": 28,
+        "11203": 25.8,
+        "11301": 19.5,
+        "11302": 18.2,
+        "11303": 17.8,
+        "11401": 20.1,
+        "11402": 21.5
+      }
+    },
+    "barometro_preocupacion_contaminacion_lena_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 96.5,
+        "11102": 84.2,
+        "11201": 89.5,
+        "11202": 85,
+        "11203": 81.2,
+        "11301": 95.8,
+        "11302": 94.2,
+        "11303": 95,
+        "11401": 97.2,
+        "11402": 92.8
+      }
+    },
+    "viviendas_totales_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 27989,
+        "11102": 724,
+        "11201": 11054,
+        "11202": 3437,
+        "11203": 816,
+        "11301": 2126,
+        "11302": 403,
+        "11303": 395,
+        "11401": 3108,
+        "11402": 2242
+      }
+    },
+    "pueblos_originarios_pct_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 27.5,
+        "11102": 22.8,
+        "11201": 31.8,
+        "11202": 28.4,
+        "11203": 57.9,
+        "11301": 22.9,
+        "11302": 21.4,
+        "11303": 40.2,
+        "11401": 24.5,
+        "11402": 25.1
+      }
+    },
+    "inmigrantes_internacionales_pct_censo_2024": {
+      "type": "numeric",
+      "values": {
+        "11101": 4.3,
+        "11102": 2.8,
+        "11201": 3.5,
+        "11202": 3.6,
+        "11203": 1.4,
+        "11301": 2.5,
+        "11302": 3.6,
+        "11303": 3.3,
+        "11401": 4.1,
+        "11402": 2.9
+      }
+    },
+    "indice_envejecimiento": {
+      "type": "numeric",
+      "values": {
+        "11101": 64.1,
+        "11102": 182.8,
+        "11201": 61.6,
+        "11202": 64.1,
+        "11203": 56.5,
+        "11301": 65,
+        "11302": 41.7,
+        "11303": 30.8,
+        "11401": 92.9,
+        "11402": 121.2
+      }
+    },
+    "indice_masculinidad": {
+      "type": "numeric",
+      "values": {
+        "11101": 95,
+        "11102": 121.3,
+        "11201": 98.9,
+        "11202": 102.3,
+        "11203": 115.7,
+        "11301": 106,
+        "11302": 104.7,
+        "11303": 114,
+        "11401": 102.1,
+        "11402": 107.4
+      }
+    },
+    "camas_psiquiatricas_uhce": {
+      "type": "numeric",
+      "values": {
+        "11101": 9,
+        "11102": 0,
+        "11201": 0,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "mediana_espera_especialidad_dias": {
+      "type": "numeric",
+      "values": {
+        "11101": 218,
+        "11102": 334,
+        "11201": 242,
+        "11202": 274,
+        "11203": 346,
+        "11301": 269,
+        "11302": 305,
+        "11303": 288,
+        "11401": 262,
+        "11402": 302
+      }
+    },
+    "mediana_espera_quirurgica_dias": {
+      "type": "numeric",
+      "values": {
+        "11101": 318,
+        "11102": 418,
+        "11201": 354,
+        "11202": 412,
+        "11203": 468,
+        "11301": 368,
+        "11302": 436,
+        "11303": 388,
+        "11401": 364,
+        "11402": 424
+      }
+    },
+    "tasa_mortalidad_cancer_gastrico_100k": {
+      "type": "numeric",
+      "values": {
+        "11101": 16.2,
+        "11102": 21.8,
+        "11201": 17.5,
+        "11202": 18.1,
+        "11203": 16.8,
+        "11301": 17.8,
+        "11302": 18,
+        "11303": 17.2,
+        "11401": 19.4,
+        "11402": 21.2
+      }
+    },
+    "tasa_mortalidad_cancer_vesicula_100k": {
+      "type": "numeric",
+      "values": {
+        "11101": 10.8,
+        "11102": 14.9,
+        "11201": 12.1,
+        "11202": 12.4,
+        "11203": 13.5,
+        "11301": 11.8,
+        "11302": 11.6,
+        "11303": 11.5,
+        "11401": 13.2,
+        "11402": 14.2
+      }
+    },
+    "tasa_mortalidad_suicidio_100k": {
+      "type": "numeric",
+      "values": {
+        "11101": 13.4,
+        "11102": 17.8,
+        "11201": 15.6,
+        "11202": 14.8,
+        "11203": 16.2,
+        "11301": 13.9,
+        "11302": 14.2,
+        "11303": 13.8,
+        "11401": 14.5,
+        "11402": 16.8
+      }
+    },
+    "tasa_dmcs_100k": {
+      "type": "numeric",
+      "values": {
+        "11101": 1702,
+        "11102": 1422.3,
+        "11201": 1197.6,
+        "11202": 1754.1,
+        "11203": 1862.2,
+        "11301": 748.5,
+        "11302": 1481.5,
+        "11303": 1202.7,
+        "11401": 1743.2,
+        "11402": 1695.5
+      }
+    },
+    "tasa_vif_100k": {
+      "type": "numeric",
+      "values": {
+        "11101": 730.1,
+        "11102": 548.2,
+        "11201": 1157.9,
+        "11202": 749.3,
+        "11203": 496.6,
+        "11301": 773.1,
+        "11302": 740.7,
+        "11303": 687.3,
+        "11401": 755.4,
+        "11402": 552.9
+      }
+    },
+    "escuelas_rurales_multigrado_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 12,
+        "11102": 3,
+        "11201": 6,
+        "11202": 5,
+        "11203": 2,
+        "11301": 1,
+        "11302": 1,
+        "11303": 1,
+        "11401": 2,
+        "11402": 2
+      }
+    },
+    "liceos_urbanos_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 7,
+        "11102": 0,
+        "11201": 4,
+        "11202": 1,
+        "11203": 1,
+        "11301": 1,
+        "11302": 0,
+        "11303": 0,
+        "11401": 1,
+        "11402": 0
+      }
+    },
+    "ratio_pobreza_multidim_vs_ingresos": {
+      "type": "numeric",
+      "values": {
+        "11101": 4.8,
+        "11102": 20,
+        "11201": 2.4,
+        "11202": 2.5,
+        "11203": 3.6,
+        "11301": 2.3,
+        "11302": 1.3,
+        "11303": 2.7,
+        "11401": 2.6,
+        "11402": 2.7
+      }
+    },
+    "deficit_habitacional_total_por_1000_hab": {
+      "type": "numeric",
+      "values": {
+        "11101": 19.5,
+        "11102": 82.8,
+        "11201": 14.2,
+        "11202": 20.4,
+        "11203": 8.8,
+        "11301": 33.8,
+        "11302": 6,
+        "11303": 26.6,
+        "11401": 17.4,
+        "11402": 18.7
+      }
+    },
+    "deficit_cuantitativo_pct_hogares": {
+      "type": "numeric",
+      "values": {
+        "11101": 5,
+        "11102": 19.6,
+        "11201": 3.6,
+        "11202": 5,
+        "11203": 2.3,
+        "11301": 8.1,
+        "11302": 1.4,
+        "11303": 6.5,
+        "11401": 4.1,
+        "11402": 4.1
+      }
+    },
+    "beneficiarios_ssr_apr_doh": {
+      "type": "numeric",
+      "values": {
+        "11101": 10650,
+        "11102": 620,
+        "11201": 5680,
+        "11202": 3250,
+        "11203": 1598,
+        "11301": 1450,
+        "11302": 570,
+        "11303": 480,
+        "11401": 2420,
+        "11402": 2115
+      }
+    },
+    "establecimientos_slep_aysen": {
+      "type": "numeric",
+      "values": {
+        "11101": 17,
+        "11102": 3,
+        "11201": 12,
+        "11202": 7,
+        "11203": 2,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
+        "11401": 5,
+        "11402": 5
+      }
+    },
+    "consumo_lena_m3_solidos_anual": {
+      "type": "numeric",
+      "values": {
+        "11101": 147080,
+        "11102": 4740,
+        "11201": 91453,
+        "11202": 26882,
+        "11203": 6417,
+        "11301": 17816,
+        "11302": 3829,
+        "11303": 2920,
+        "11401": 19108,
+        "11402": 14029
+      }
+    },
+    "informalidad_lena_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 68,
+        "11102": 80,
+        "11201": 72,
+        "11202": 75,
+        "11203": 78,
+        "11301": 75,
+        "11302": 79,
+        "11303": 80,
+        "11401": 74,
+        "11402": 76
+      }
+    },
+    "subsidio_fiscal_diesel_kwh_clp": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 246,
+        "11201": 192,
+        "11202": 245,
+        "11203": 328,
+        "11301": 0,
+        "11302": 312,
+        "11303": 362,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "indice_aislamiento_multimodal": {
+      "type": "numeric",
+      "values": {
+        "11101": 1.1,
+        "11102": 67.5,
+        "11201": 5.8,
+        "11202": 19.2,
+        "11203": 77.6,
+        "11301": 23.6,
+        "11302": 86.4,
+        "11303": 81.4,
+        "11401": 30.6,
+        "11402": 22.7
+      }
+    },
+    "ecmpo_solicitadas_ha": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 393000,
+        "11202": 227000,
+        "11203": 148000,
+        "11301": 0,
+        "11302": 0,
+        "11303": 18500,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "ecmpo_traslape_acuicola_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 164,
+        "11202": 112,
+        "11203": 58,
+        "11301": 0,
+        "11302": 0,
+        "11303": 4,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "concesiones_acuicolas_en_snaspe": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 112,
+        "11202": 96,
+        "11203": 92,
+        "11301": 0,
+        "11302": 0,
+        "11303": 12,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "desembarque_artesanal_ton": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 4850,
+        "11202": 3200,
+        "11203": 5650,
+        "11301": 0,
+        "11302": 0,
+        "11303": 120,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "desembarque_muelles_total_ton": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 17320,
+        "11202": 5270,
+        "11203": 8920,
+        "11301": 0,
+        "11302": 0,
+        "11303": 180,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "patente_acuicola_pua_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 1485,
+        "11202": 1190,
+        "11203": 492,
+        "11301": 0,
+        "11302": 0,
+        "11303": 82.5,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "peso_pua_ingresos_propios_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 22.1,
+        "11202": 29.3,
+        "11203": 87.7,
+        "11301": 0,
+        "11302": 0,
+        "11303": 55.9,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "superficie_concesionada_mar_ha": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 5180,
+        "11202": 2740,
+        "11203": 1185,
+        "11301": 0,
+        "11302": 0,
+        "11303": 199,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "empleo_directo_acuicola_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 340,
+        "11102": 0,
+        "11201": 4850,
+        "11202": 1420,
+        "11203": 410,
+        "11301": 0,
+        "11302": 0,
+        "11303": 35,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "sancionatorios_sma_acuicolas_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 31,
+        "11202": 21,
+        "11203": 12,
+        "11301": 0,
+        "11302": 0,
+        "11303": 2,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "centros_infa_anaerobica_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 16,
+        "11202": 10,
+        "11203": 6,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "nota_ciclo_productivo": {
+      "type": "categorical",
+      "values": {
+        "11101": "No aplica (comuna sin borde costero marítimo).",
+        "11102": "No aplica (comuna sin borde costero marítimo).",
+        "11201": "Operación continua rotativa en 8 barrios ACS con plantas de proceso primario y secundario en Puerto Chacabuco.",
+        "11202": "Operación continua rotativa en 6 barrios ACS (Canales Puyuhuapi, Jacaf y Moraleda).",
+        "11203": "Operación continua rotativa en 3 barrios ACS del archipiélago de Las Guaitecas (RN Las Guaitecas).",
+        "11301": "No aplica (comuna sin borde costero marítimo).",
+        "11302": "No aplica (comuna sin borde costero marítimo).",
+        "11303": "Las 17 concesiones del barrio ACS-35 (Canal Baker / RN Katalalixar) operan bajo descanso sanitario coordinado de ciclo largo: 8.500 ton cosechadas en la ventana de cierre de ciclo bianual (4 centros habilitados con RCA comercial) y 0 centros en engorda activa durante el trimestre de descanso.",
+        "11401": "No aplica (comuna sin borde costero marítimo).",
+        "11402": "No aplica (comuna sin borde costero marítimo)."
+      }
+    },
+    "tasa_ocupacion_concesiones_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 32.8,
+        "11202": 35.8,
+        "11203": 32.7,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "proporcion_concesiones_en_snaspe_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 27.2,
+        "11202": 44,
+        "11203": 93.9,
+        "11301": 0,
+        "11302": 0,
+        "11303": 70.6,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "trabajadores_sii_por_centro_activo": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 48.5,
+        "11202": 22.5,
+        "11203": 10.9,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "ventas_sii_muf": {
+      "type": "numeric",
+      "values": {
+        "11101": 48500,
+        "11102": 450,
+        "11201": 56200,
+        "11202": 9100,
+        "11203": 2450,
+        "11301": 4400,
+        "11302": 530,
+        "11303": 390,
+        "11401": 6300,
+        "11402": 3200
+      }
+    },
+    "ventas_sii_domicilio_local_muf": {
+      "type": "numeric",
+      "values": {
+        "11101": 16900,
+        "11102": 130,
+        "11201": 4410,
+        "11202": 1450,
+        "11203": 380,
+        "11301": 620,
+        "11302": 170,
+        "11303": 150,
+        "11401": 1180,
+        "11402": 410
+      }
+    },
+    "ventas_por_empresa_uf": {
+      "type": "numeric",
+      "values": {
+        "11101": 6701,
+        "11102": 3782,
+        "11201": 21009,
+        "11202": 10168,
+        "11203": 17014,
+        "11301": 8478,
+        "11302": 4862,
+        "11303": 2806,
+        "11401": 9648,
+        "11402": 5546
+      }
+    },
+    "inversion_por_proyecto_seia_mmusd": {
+      "type": "numeric",
+      "values": {
+        "11101": 4.2,
+        "11102": 3.49,
+        "11201": 5.2,
+        "11202": 4.3,
+        "11203": 2.85,
+        "11301": 5.21,
+        "11302": 3.43,
+        "11303": 3.69,
+        "11401": 7.56,
+        "11402": 5.26
+      }
+    },
+    "suelo_fiscal_bbnn_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 18.5,
+        "11102": 28.2,
+        "11201": 24,
+        "11202": 20.4,
+        "11203": 42.1,
+        "11301": 31.4,
+        "11302": 17.8,
+        "11303": 11.2,
+        "11401": 26.5,
+        "11402": 18.2
+      }
+    },
+    "suelo_privado_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 62.3,
+        "11102": 37.3,
+        "11201": 12.6,
+        "11202": 8.4,
+        "11203": 12.1,
+        "11301": 16.5,
+        "11302": 3.9,
+        "11303": 1.4,
+        "11401": 24.9,
+        "11402": 20.1
+      }
+    },
+    "fndr_per_capita_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 256.8,
+        "11102": 2494.3,
+        "11201": 423,
+        "11202": 1049.7,
+        "11203": 2127.7,
+        "11301": 1374.6,
+        "11302": 3614.5,
+        "11303": 4618.1,
+        "11401": 989.9,
+        "11402": 1535
+      }
+    },
+    "fndr_gore_2023_per_capita_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 128.7,
+        "11102": 1427,
+        "11201": 208.3,
+        "11202": 888.1,
+        "11203": 1534.4,
+        "11301": 1115.2,
+        "11302": 1729.8,
+        "11303": 3225.3,
+        "11401": 540.5,
+        "11402": 1210.9
+      }
+    },
+    "royalty_fet_peso_presupuesto_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 1.7,
+        "11102": 8.5,
+        "11201": 2.7,
+        "11202": 3.9,
+        "11203": 6.2,
+        "11301": 5.2,
+        "11302": 5.3,
+        "11303": 8.1,
+        "11401": 5.1,
+        "11402": 4.8
+      }
+    },
+    "participacion_municipales_2024_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 72.8,
+        "11102": 80.5,
+        "11201": 75.1,
+        "11202": 77.9,
+        "11203": 74.1,
+        "11301": 70.2,
+        "11302": 67.9,
+        "11303": 80.6,
+        "11401": 58.4,
+        "11402": 77.2
+      }
+    },
+    "ratio_padron_poblacion_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 95,
+        "11102": 129.4,
+        "11201": 98.8,
+        "11202": 90.7,
+        "11203": 96.3,
+        "11301": 99.1,
+        "11302": 119.6,
+        "11303": 111.9,
+        "11401": 126.9,
+        "11402": 115.1
+      }
+    },
+    "sucursales_bancarias_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 6,
+        "11102": 0,
+        "11201": 3,
+        "11202": 1,
+        "11203": 0,
+        "11301": 1,
+        "11302": 0,
+        "11303": 0,
+        "11401": 1,
+        "11402": 0
+      }
+    },
+    "cajeros_automaticos_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 28,
+        "11102": 1,
+        "11201": 8,
+        "11202": 2,
+        "11203": 1,
+        "11301": 2,
+        "11302": 1,
+        "11303": 1,
+        "11401": 2,
+        "11402": 1
+      }
+    },
+    "cajavecina_puntos_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 145,
+        "11102": 14,
+        "11201": 85,
+        "11202": 42,
+        "11203": 20,
+        "11301": 34,
+        "11302": 10,
+        "11303": 12,
+        "11401": 28,
+        "11402": 25
+      }
+    },
+    "sucursales_banca_privada_cmf": {
+      "type": "numeric",
+      "values": {
+        "11101": 5,
+        "11102": 0,
+        "11201": 2,
+        "11202": 0,
+        "11203": 0,
+        "11301": 0,
+        "11302": 0,
+        "11303": 0,
+        "11401": 0,
+        "11402": 0
+      }
+    },
+    "tasa_aprobacion_rs_sni_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 45,
+        "11102": 28,
+        "11201": 42,
+        "11202": 35,
+        "11203": 22,
+        "11301": 35,
+        "11302": 20,
+        "11303": 18,
+        "11401": 36,
+        "11402": 34
+      }
+    },
+    "autoidentificacion_indigena_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 28.4,
+        "11102": 22,
+        "11201": 31,
+        "11202": 34,
+        "11203": 49.8,
+        "11301": 20,
+        "11302": 18,
+        "11303": 19,
+        "11401": 21,
+        "11402": 24
+      }
+    },
+    "comunidades_indigenas_conadi": {
+      "type": "numeric",
+      "values": {
+        "11101": 18,
+        "11102": 2,
+        "11201": 22,
+        "11202": 14,
+        "11203": 8,
+        "11301": 2,
+        "11302": 0,
+        "11303": 1,
+        "11401": 3,
+        "11402": 4
+      }
+    },
+    "juntas_vecinos_activas": {
+      "type": "numeric",
+      "values": {
+        "11101": 72,
+        "11102": 6,
+        "11201": 42,
+        "11202": 18,
+        "11203": 7,
+        "11301": 9,
+        "11302": 4,
+        "11303": 4,
+        "11401": 12,
+        "11402": 10
+      }
+    },
+    "sindicatos_pesca_artesanal": {
+      "type": "numeric",
+      "values": {
+        "11101": 0,
+        "11102": 0,
+        "11201": 24,
+        "11202": 12,
+        "11203": 11,
+        "11301": 0,
+        "11302": 0,
+        "11303": 2,
+        "11401": 2,
+        "11402": 1
+      }
+    },
+    "transparencia_activa_cplt_2026_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 74.45,
+        "11102": 59.24,
+        "11201": 96.09,
+        "11202": 61.6,
+        "11203": 92.63,
+        "11301": 60.58,
+        "11302": 62.71,
+        "11303": 72.92,
+        "11401": 57.46,
+        "11402": 100
+      }
+    },
+    "participacion_presidencial_2025_2v_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 74.2,
+        "11102": 67.8,
+        "11201": 75.5,
+        "11202": 77.1,
+        "11203": 71,
+        "11301": 70.8,
+        "11302": 57.8,
+        "11303": 64.4,
+        "11401": 58.4,
+        "11402": 75.7
+      }
+    },
+    "padron_electoral_nov_2025": {
+      "type": "numeric",
+      "values": {
+        "11101": 54921,
+        "11102": 1141,
+        "11201": 22894,
+        "11202": 4838,
+        "11203": 1539,
+        "11301": 3461,
+        "11302": 794,
+        "11303": 630,
+        "11401": 6284,
+        "11402": 3073
+      }
+    },
+    "fet_royalty_minero_2024_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 205.03,
+        "11102": 121.39,
+        "11201": 168.18,
+        "11202": 133.76,
+        "11203": 121.75,
+        "11301": 128.77,
+        "11302": 119.61,
+        "11303": 119.56,
+        "11401": 130.75,
+        "11402": 128.91
+      }
+    },
+    "fet_royalty_minero_2025_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 472.58,
+        "11102": 283.22,
+        "11201": 392.86,
+        "11202": 312.87,
+        "11203": 284.33,
+        "11301": 296.74,
+        "11302": 279.69,
+        "11303": 279.4,
+        "11401": 304.56,
+        "11402": 301.48
+      }
+    },
+    "fndr_gore_2023_proyectos_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 98,
+        "11102": 27,
+        "11201": 69,
+        "11202": 48,
+        "11203": 25,
+        "11301": 39,
+        "11302": 28,
+        "11303": 32,
+        "11401": 32,
+        "11402": 45
+      }
+    },
+    "fndr_gore_2023_asignado_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 7804.2,
+        "11102": 1308.79,
+        "11201": 5107.54,
+        "11202": 5079.95,
+        "11203": 2520.34,
+        "11301": 4090.98,
+        "11302": 1161.93,
+        "11303": 1990.67,
+        "11401": 2972.5,
+        "11402": 3407.22
+      }
+    },
+    "fndr_gore_2023_ejecutado_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 7440.27,
+        "11102": 1258.59,
+        "11201": 4827.45,
+        "11202": 4738.1,
+        "11203": 2452.02,
+        "11301": 3894.32,
+        "11302": 1148.61,
+        "11303": 1815.82,
+        "11401": 2675.58,
+        "11402": 3234.43
+      }
+    },
+    "fndr_gore_2023_ejecucion_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 95.3,
+        "11102": 96.2,
+        "11201": 94.5,
+        "11202": 93.3,
+        "11203": 97.3,
+        "11301": 95.2,
+        "11302": 98.9,
+        "11303": 91.2,
+        "11401": 90,
+        "11402": 94.9
+      }
+    },
+    "fondos_concursables_gore_2023_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 230,
+        "11102": 8,
+        "11201": 83,
+        "11202": 66,
+        "11203": 25,
+        "11301": 37,
+        "11302": 12,
+        "11303": 11,
+        "11401": 28,
+        "11402": 36
+      }
+    },
+    "fondos_concursables_gore_2023_mclp": {
+      "type": "numeric",
+      "values": {
+        "11101": 2688.58,
+        "11102": 97.07,
+        "11201": 888.32,
+        "11202": 607.58,
+        "11203": 278.9,
+        "11301": 356.13,
+        "11302": 127.88,
+        "11303": 135.43,
+        "11401": 416.96,
+        "11402": 301.59
+      }
+    },
+    "rsh_carencia_servicios_basicos_jun2026_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 11.7,
+        "11102": 33.9,
+        "11201": 11.7,
+        "11202": 12.2,
+        "11203": 26.9,
+        "11301": 15.8,
+        "11302": 13.1,
+        "11303": 38.1,
+        "11401": 9.7,
+        "11402": 14
+      }
+    },
+    "rsh_hacinamiento_jun2026_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 6.2,
+        "11102": 3.6,
+        "11201": 5,
+        "11202": 3.8,
+        "11203": 10.1,
+        "11301": 5.8,
+        "11302": 5.1,
+        "11303": 7.4,
+        "11401": 5.6,
+        "11402": 4.7
+      }
+    },
+    "ruralidad_censo_2024_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 19,
+        "11102": 100,
+        "11201": 14.7,
+        "11202": 28.1,
+        "11203": 8.1,
+        "11301": 21.8,
+        "11302": 100,
+        "11303": 100,
+        "11401": 37.2,
+        "11402": 100
+      }
+    },
+    "conexiones_fijas_subtel_jun2026_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 15986,
+        "11102": 68,
+        "11201": 5868,
+        "11202": 1638,
+        "11203": 345,
+        "11301": 835,
+        "11302": 72,
+        "11303": 56,
+        "11401": 845,
+        "11402": 581
+      }
+    },
+    "conexiones_residenciales_subtel_jun2026_n": {
+      "type": "numeric",
+      "values": {
+        "11101": 15279,
+        "11102": 56,
+        "11201": 5456,
+        "11202": 1486,
+        "11203": 270,
+        "11301": 791,
+        "11302": 58,
+        "11303": 43,
+        "11401": 788,
+        "11402": 555
+      }
+    },
+    "variacion_conexiones_2015_2026_pct": {
+      "type": "numeric",
+      "values": {
+        "11101": 65.1,
+        "11102": 551.7,
+        "11201": 75.7,
+        "11202": 155.1,
+        "11203": 219.4,
+        "11301": 293.9,
+        "11302": 27100,
+        "11303": 2700,
+        "11401": 141.4,
+        "11402": 1513.9
+      }
+    }
+  },
+  "scopes": {
+    "barriosAcs": {
+      "acs_concesiones_totales": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 44,
+          "ACS-33": 36,
+          "ACS-34": 18,
+          "ACS-18A": 46,
+          "ACS-18B": 42,
+          "ACS-18C": 28,
+          "ACS-19A": 40,
+          "ACS-19B": 34,
+          "ACS-20": 28,
+          "ACS-21A": 68,
+          "ACS-21B": 58,
+          "ACS-22A": 72,
+          "ACS-22B": 54,
+          "ACS-22C": 38,
+          "ACS-24": 52,
+          "ACS-25": 42,
+          "ACS-26": 28,
+          "ACS-35": 17
+        }
+      },
+      "acs_centros_activos": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 15,
+          "ACS-33": 12,
+          "ACS-34": 5,
+          "ACS-18A": 17,
+          "ACS-18B": 15,
+          "ACS-18C": 10,
+          "ACS-19A": 14,
+          "ACS-19B": 12,
+          "ACS-20": 10,
+          "ACS-21A": 23,
+          "ACS-21B": 19,
+          "ACS-22A": 24,
+          "ACS-22B": 18,
+          "ACS-22C": 12,
+          "ACS-24": 17,
+          "ACS-25": 13,
+          "ACS-26": 9,
+          "ACS-35": 0
+        }
+      },
+      "acs_concesiones_en_snaspe": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 42,
+          "ACS-33": 34,
+          "ACS-34": 16,
+          "ACS-18A": 0,
+          "ACS-18B": 38,
+          "ACS-18C": 0,
+          "ACS-19A": 0,
+          "ACS-19B": 32,
+          "ACS-20": 26,
+          "ACS-21A": 37,
+          "ACS-21B": 39,
+          "ACS-22A": 0,
+          "ACS-22B": 0,
+          "ACS-22C": 26,
+          "ACS-24": 0,
+          "ACS-25": 10,
+          "ACS-26": 0,
+          "ACS-35": 12
+        }
+      },
+      "acs_biomasa_cosechada_ton": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 21100,
+          "ACS-33": 16900,
+          "ACS-34": 7000,
+          "ACS-18A": 40300,
+          "ACS-18B": 35600,
+          "ACS-18C": 23700,
+          "ACS-19A": 33200,
+          "ACS-19B": 28500,
+          "ACS-20": 23700,
+          "ACS-21A": 45200,
+          "ACS-21B": 37300,
+          "ACS-22A": 47100,
+          "ACS-22B": 35300,
+          "ACS-22C": 23500,
+          "ACS-24": 33400,
+          "ACS-25": 25500,
+          "ACS-26": 17700,
+          "ACS-35": 8500
+        }
+      },
+      "acs_antibioticos_ica_g_ton": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 392,
+          "ACS-33": 378.5,
+          "ACS-34": 361,
+          "ACS-18A": 345.8,
+          "ACS-18B": 334,
+          "ACS-18C": 312,
+          "ACS-19A": 319,
+          "ACS-19B": 315,
+          "ACS-20": 308,
+          "ACS-21A": 354,
+          "ACS-21B": 326,
+          "ACS-22A": 364.5,
+          "ACS-22B": 346.5,
+          "ACS-22C": 322,
+          "ACS-24": 314,
+          "ACS-25": 305,
+          "ACS-26": 310,
+          "ACS-35": 289
+        }
+      },
+      "acs_mortalidad_ciclo_pct": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 9.1,
+          "ACS-33": 8.6,
+          "ACS-34": 7.8,
+          "ACS-18A": 8.4,
+          "ACS-18B": 7.9,
+          "ACS-18C": 7.2,
+          "ACS-19A": 7.5,
+          "ACS-19B": 7.4,
+          "ACS-20": 7,
+          "ACS-21A": 8.5,
+          "ACS-21B": 7.6,
+          "ACS-22A": 8.8,
+          "ACS-22B": 8.2,
+          "ACS-22C": 7.3,
+          "ACS-24": 7.1,
+          "ACS-25": 6.9,
+          "ACS-26": 7,
+          "ACS-35": 6.4
+        }
+      },
+      "acs_densidad_max_kg_m3": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 12,
+          "ACS-33": 13,
+          "ACS-34": 14,
+          "ACS-18A": 14,
+          "ACS-18B": 15,
+          "ACS-18C": 15,
+          "ACS-19A": 15,
+          "ACS-19B": 15,
+          "ACS-20": 17,
+          "ACS-21A": 13,
+          "ACS-21B": 15,
+          "ACS-22A": 12,
+          "ACS-22B": 13,
+          "ACS-22C": 15,
+          "ACS-24": 17,
+          "ACS-25": 17,
+          "ACS-26": 17,
+          "ACS-35": 17
+        }
+      },
+      "acs_infa_aerobica_pct": {
+        "type": "numeric",
+        "values": {
+          "ACS-17": 83.5,
+          "ACS-33": 86,
+          "ACS-34": 89.2,
+          "ACS-18A": 85.4,
+          "ACS-18B": 88.1,
+          "ACS-18C": 90.5,
+          "ACS-19A": 89.8,
+          "ACS-19B": 91,
+          "ACS-20": 92.4,
+          "ACS-21A": 86.2,
+          "ACS-21B": 91.2,
+          "ACS-22A": 82.8,
+          "ACS-22B": 85,
+          "ACS-22C": 90.8,
+          "ACS-24": 92.5,
+          "ACS-25": 93.4,
+          "ACS-26": 93,
+          "ACS-35": 95
+        }
+      }
+    },
+    "unidadesSnaspe": {
+      "snaspe_superficie_ha": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 154093,
+          "snaspe_pn_patagonia": 304528,
+          "snaspe_pn_cerro_castillo": 143502,
+          "snaspe_rn_coyhaique": 2150,
+          "snaspe_rn_rio_simpson": 41621,
+          "snaspe_pn_laguna_san_rafael": 1742000,
+          "snaspe_mn_dos_lagunas": 181,
+          "snaspe_rn_lago_carlota": 27110,
+          "snaspe_mn_cinco_hermanas": 228,
+          "snaspe_rn_lago_rosselot": 12725,
+          "snaspe_rn_lago_las_torres": 16516,
+          "snaspe_rn_trapananda": 2305,
+          "snaspe_rn_manihuales": 3715,
+          "snaspe_pn_isla_magdalena": 249712,
+          "snaspe_pn_melimoyu": 105500,
+          "snaspe_pn_isla_guamblin": 10625,
+          "snaspe_rn_las_guaitecas": 1097975,
+          "snaspe_rn_katalalixar": 674500,
+          "snaspe_pn_bernardo_ohiggins_aysen": 1212000
+        }
+      },
+      "snaspe_visitantes_anuales_n": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 25619,
+          "snaspe_pn_patagonia": 16453,
+          "snaspe_pn_cerro_castillo": 13907,
+          "snaspe_rn_coyhaique": 13552,
+          "snaspe_rn_rio_simpson": 7961,
+          "snaspe_pn_laguna_san_rafael": 5900,
+          "snaspe_mn_dos_lagunas": 2638,
+          "snaspe_rn_lago_carlota": 87,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 0,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 0,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_guardaparques_permanentes_n": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 6,
+          "snaspe_pn_patagonia": 8,
+          "snaspe_pn_cerro_castillo": 4,
+          "snaspe_rn_coyhaique": 4,
+          "snaspe_rn_rio_simpson": 3,
+          "snaspe_pn_laguna_san_rafael": 6,
+          "snaspe_mn_dos_lagunas": 2,
+          "snaspe_rn_lago_carlota": 2,
+          "snaspe_mn_cinco_hermanas": 1,
+          "snaspe_rn_lago_rosselot": 2,
+          "snaspe_rn_lago_las_torres": 1,
+          "snaspe_rn_trapananda": 1,
+          "snaspe_rn_manihuales": 1,
+          "snaspe_pn_isla_magdalena": 0,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 0,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_concesiones_salmon_dentro_n": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 0,
+          "snaspe_pn_patagonia": 0,
+          "snaspe_pn_cerro_castillo": 0,
+          "snaspe_rn_coyhaique": 0,
+          "snaspe_rn_rio_simpson": 0,
+          "snaspe_pn_laguna_san_rafael": 2,
+          "snaspe_mn_dos_lagunas": 0,
+          "snaspe_rn_lago_carlota": 0,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 4,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 312,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_superficie_salmon_ha": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 0,
+          "snaspe_pn_patagonia": 0,
+          "snaspe_pn_cerro_castillo": 0,
+          "snaspe_rn_coyhaique": 0,
+          "snaspe_rn_rio_simpson": 0,
+          "snaspe_pn_laguna_san_rafael": 3,
+          "snaspe_mn_dos_lagunas": 0,
+          "snaspe_rn_lago_carlota": 0,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 38.48,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 2159.13,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      },
+      "snaspe_inversion_pdze_mclp": {
+        "type": "numeric",
+        "values": {
+          "snaspe_pn_queulat": 17245,
+          "snaspe_pn_patagonia": 4825,
+          "snaspe_pn_cerro_castillo": 5350,
+          "snaspe_rn_coyhaique": 0,
+          "snaspe_rn_rio_simpson": 0,
+          "snaspe_pn_laguna_san_rafael": 15591,
+          "snaspe_mn_dos_lagunas": 0,
+          "snaspe_rn_lago_carlota": 0,
+          "snaspe_mn_cinco_hermanas": 0,
+          "snaspe_rn_lago_rosselot": 0,
+          "snaspe_rn_lago_las_torres": 0,
+          "snaspe_rn_trapananda": 0,
+          "snaspe_rn_manihuales": 0,
+          "snaspe_pn_isla_magdalena": 0,
+          "snaspe_pn_melimoyu": 0,
+          "snaspe_pn_isla_guamblin": 0,
+          "snaspe_rn_las_guaitecas": 0,
+          "snaspe_rn_katalalixar": 0,
+          "snaspe_pn_bernardo_ohiggins_aysen": 0
+        }
+      }
+    },
+    "holdings": {
+      "holding_total_concesiones_aysen": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 210,
+          "Mowi Chile": 95,
+          "Multi X": 80,
+          "Cermaq Chile": 75,
+          "Blumar Seafoods / Salmones Blumar": 62,
+          "Australis Seafoods": 46,
+          "Salmones Camanchaca": 38,
+          "Salmones Yadrán": 31,
+          "Invermar": 27,
+          "Salmones Austral": 24,
+          "Salmones Antártica": 20,
+          "Cooke Aquaculture Chile": 18,
+          "Titulares Menores Aysén": 19
+        }
+      },
+      "holding_centros_activos_estimados": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 74,
+          "Mowi Chile": 34,
+          "Multi X": 45,
+          "Cermaq Chile": 16,
+          "Blumar Seafoods / Salmones Blumar": 21,
+          "Australis Seafoods": 11,
+          "Salmones Camanchaca": 16,
+          "Salmones Yadrán": 5,
+          "Invermar": 0,
+          "Salmones Austral": 0,
+          "Salmones Antártica": 5,
+          "Cooke Aquaculture Chile": 18,
+          "Titulares Menores Aysén": 0
+        }
+      },
+      "holding_concesiones_snaspe": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 106,
+          "Mowi Chile": 29,
+          "Multi X": 25,
+          "Cermaq Chile": 29,
+          "Blumar Seafoods / Salmones Blumar": 21,
+          "Australis Seafoods": 15,
+          "Salmones Camanchaca": 12,
+          "Salmones Yadrán": 27,
+          "Invermar": 9,
+          "Salmones Austral": 10,
+          "Salmones Antártica": 5,
+          "Cooke Aquaculture Chile": 10,
+          "Titulares Menores Aysén": 14
+        }
+      },
+      "holding_biomasa_estimada_ton": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 141937,
+          "Mowi Chile": 64196,
+          "Multi X": 54076,
+          "Cermaq Chile": 50702,
+          "Blumar Seafoods / Salmones Blumar": 41891,
+          "Australis Seafoods": 31066,
+          "Salmones Camanchaca": 25679,
+          "Salmones Yadrán": 20946,
+          "Invermar": 18227,
+          "Salmones Austral": 16213,
+          "Salmones Antártica": 13494,
+          "Cooke Aquaculture Chile": 12185,
+          "Titulares Menores Aysén": 12839
+        }
+      },
+      "holding_sancionatorios_sma_snifa": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 18,
+          "Mowi Chile": 8,
+          "Multi X": 7,
+          "Cermaq Chile": 6,
+          "Blumar Seafoods / Salmones Blumar": 5,
+          "Australis Seafoods": 8,
+          "Salmones Camanchaca": 3,
+          "Salmones Yadrán": 3,
+          "Invermar": 2,
+          "Salmones Austral": 2,
+          "Salmones Antártica": 1,
+          "Cooke Aquaculture Chile": 3,
+          "Titulares Menores Aysén": 0
+        }
+      },
+      "holding_centros_activos_padron": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 74,
+          "Mowi Chile": 34,
+          "Multi X": 45,
+          "Cermaq Chile": 16,
+          "Blumar Seafoods / Salmones Blumar": 21,
+          "Australis Seafoods": 11,
+          "Salmones Camanchaca": 16,
+          "Salmones Yadrán": 5,
+          "Invermar": 0,
+          "Salmones Austral": 0,
+          "Salmones Antártica": 5,
+          "Cooke Aquaculture Chile": 18,
+          "Titulares Menores Aysén": 0
+        }
+      },
+      "holding_biomasa_padron_ton": {
+        "type": "numeric",
+        "values": {
+          "AquaChile": 130300,
+          "Mowi Chile": 79828,
+          "Multi X": 94844,
+          "Cermaq Chile": 33888,
+          "Blumar Seafoods / Salmones Blumar": 44513,
+          "Australis Seafoods": 21963,
+          "Salmones Camanchaca": 37524,
+          "Salmones Yadrán": 7000,
+          "Invermar": 0,
+          "Salmones Austral": 0,
+          "Salmones Antártica": 9790,
+          "Cooke Aquaculture Chile": 35350,
+          "Titulares Menores Aysén": 8500
+        }
+      }
+    },
+    "padronInvariants": {
+      "padron_total_concesiones": {
+        "type": "numeric",
+        "values": {
+          "regional": 745
+        }
+      },
+      "padron_activos": {
+        "type": "numeric",
+        "values": {
+          "regional": 245
+        }
+      },
+      "padron_inactivos": {
+        "type": "numeric",
+        "values": {
+          "regional": 500
+        }
+      },
+      "padron_en_snaspe": {
+        "type": "numeric",
+        "values": {
+          "regional": 312
+        }
+      },
+      "padron_raw_subpesca_poligonos": {
+        "type": "numeric",
+        "values": {
+          "regional": 694
+        }
+      }
+    },
+    "seriesLatest": {
+      "serie_balmaceda_pasajeros_jac__pasajeros": {
+        "type": "numeric",
+        "values": {
+          "2026": 620000
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__parcial_ene_may_2026": {
+        "type": "numeric",
+        "values": {
+          "2026": 286666
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__nuevo_terminal_m2": {
+        "type": "numeric",
+        "values": {
+          "2026": 12391
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__puentes_embarque": {
+        "type": "numeric",
+        "values": {
+          "2026": 5
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__capacidad_anual_pax": {
+        "type": "numeric",
+        "values": {
+          "2026": 1000000
+        }
+      },
+      "serie_balmaceda_pasajeros_jac__carga_ton": {
+        "type": "numeric",
+        "values": {
+          "2026": 1450
+        }
+      },
+      "serie_emporcha_toneladas__toneladas_totales": {
+        "type": "numeric",
+        "values": {
+          "2026": 495000
+        }
+      },
+      "serie_emporcha_toneladas__carga_transbordadores": {
+        "type": "numeric",
+        "values": {
+          "2026": 269500
+        }
+      },
+      "serie_emporcha_toneladas__carga_comercial": {
+        "type": "numeric",
+        "values": {
+          "2026": 123400
+        }
+      },
+      "serie_emporcha_toneladas__graneles_mineros": {
+        "type": "numeric",
+        "values": {
+          "2026": 72800
+        }
+      },
+      "serie_emporcha_toneladas__acuicultura_pesca": {
+        "type": "numeric",
+        "values": {
+          "2026": 29300
+        }
+      },
+      "serie_emporcha_cruceros__recaladas_cruceros": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 29
+        }
+      },
+      "serie_emporcha_cruceros__pasajeros_cruceros": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 22093
+        }
+      },
+      "serie_emporcha_cruceros__puerto_chacabuco_recaladas": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 20
+        }
+      },
+      "serie_emporcha_cruceros__puerto_chacabuco_pasajeros": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 20047
+        }
+      },
+      "serie_emporcha_cruceros__caleta_tortel_recaladas": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 9
+        }
+      },
+      "serie_emporcha_cruceros__caleta_tortel_pasajeros": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 2046
+        }
+      },
+      "serie_emporcha_cruceros__tripulantes": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 9850
+        }
+      },
+      "serie_pib_regional_nominal_mmclp__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": 1991000
+        }
+      },
+      "serie_pib_regional_variacion_real_pct__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": -2.6
+        }
+      },
+      "serie_transacciones_compras_publicas_mclp__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": 228874.2
+        }
+      },
+      "serie_generacion_electrica_anual__generacion_total_gwh": {
+        "type": "numeric",
+        "values": {
+          "2026": 185.7
+        }
+      },
+      "serie_generacion_electrica_anual__generacion_hidro_gwh": {
+        "type": "numeric",
+        "values": {
+          "2026": 86.5
+        }
+      },
+      "serie_generacion_electrica_anual__generacion_diesel_gwh": {
+        "type": "numeric",
+        "values": {
+          "2026": 89.8
+        }
+      },
+      "serie_generacion_electrica_anual__generacion_eolica_gwh": {
+        "type": "numeric",
+        "values": {
+          "2026": 9.1
+        }
+      },
+      "serie_generacion_electrica_anual__generacion_solar_gwh": {
+        "type": "numeric",
+        "values": {
+          "2026": 0.3
+        }
+      },
+      "serie_generacion_electrica_anual__participacion_diesel_matriz_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 48.4
+        }
+      },
+      "serie_fndr_asignado_vs_ejecutado_2015_2025__asignado_mclp": {
+        "type": "numeric",
+        "values": {
+          "2026": 81812
+        }
+      },
+      "serie_fndr_asignado_vs_ejecutado_2015_2025__marco_ajustado_mclp": {
+        "type": "numeric",
+        "values": {
+          "2026": 74312
+        }
+      },
+      "serie_tasa_vif_regional_por_100k_hab__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": 897.1
+        }
+      },
+      "serie_tasa_dmcs_regional_por_100k_hab__valor": {
+        "type": "numeric",
+        "values": {
+          "2026": 2107.8
+        }
+      },
+      "serie_mp25_pda_coyhaique_2015_2026__mp25_invernal_ugm3": {
+        "type": "numeric",
+        "values": {
+          "2026": 96.8
+        }
+      },
+      "serie_mp25_pda_coyhaique_2015_2026__dias_sobre_norma_mp25": {
+        "type": "numeric",
+        "values": {
+          "2026": 87
+        }
+      },
+      "serie_mp25_pda_coyhaique_2015_2026__episodios_gec_mp25": {
+        "type": "numeric",
+        "values": {
+          "2026": 41
+        }
+      },
+      "serie_snaspe_por_parque_anual__visitantes_snaspe_total": {
+        "type": "numeric",
+        "values": {
+          "2026": 86117
+        }
+      },
+      "serie_snaspe_por_parque_anual__pernoctaciones_emat": {
+        "type": "numeric",
+        "values": {
+          "2026": 364039
+        }
+      },
+      "serie_snaspe_por_parque_anual__pn_queulat": {
+        "type": "numeric",
+        "values": {
+          "2026": 25619
+        }
+      },
+      "serie_snaspe_por_parque_anual__pn_laguna_san_rafael": {
+        "type": "numeric",
+        "values": {
+          "2026": 5900
+        }
+      },
+      "serie_snaspe_por_parque_anual__pn_cerro_castillo": {
+        "type": "numeric",
+        "values": {
+          "2026": 13907
+        }
+      },
+      "serie_snaspe_por_parque_anual__pn_patagonia": {
+        "type": "numeric",
+        "values": {
+          "2026": 16453
+        }
+      },
+      "serie_snaspe_por_parque_anual__otras_unidades": {
+        "type": "numeric",
+        "values": {
+          "2026": 24238
+        }
+      },
+      "serie_parques_snaspe_unidades__visitantes_anuales": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 21500
+        }
+      },
+      "serie_parques_snaspe_unidades__superficie_ha": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 0
+        }
+      },
+      "serie_parques_snaspe_unidades__proporcion_extranjeros_pct": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 48
+        }
+      },
+      "serie_parques_snaspe_unidades__ha_por_guardaparque": {
+        "type": "numeric",
+        "values": {
+          "ultimo": 86000
+        }
+      },
+      "serie_acuicultura__cosecha_salmonidos_total_ton": {
+        "type": "numeric",
+        "values": {
+          "2026": 435000
+        }
+      },
+      "serie_acuicultura__cosecha_salmon_atlantico_ton": {
+        "type": "numeric",
+        "values": {
+          "2026": 348000
+        }
+      },
+      "serie_acuicultura__cosecha_salmon_coho_ton": {
+        "type": "numeric",
+        "values": {
+          "2026": 70000
+        }
+      },
+      "serie_acuicultura__cosecha_trucha_arcoiris_ton": {
+        "type": "numeric",
+        "values": {
+          "2026": 17000
+        }
+      },
+      "serie_acuicultura__concesiones_acuicolas_vigentes": {
+        "type": "numeric",
+        "values": {
+          "2026": 745
+        }
+      },
+      "serie_acuicultura__hectareas_marinas_concesionadas_ha": {
+        "type": "numeric",
+        "values": {
+          "2026": 9450
+        }
+      },
+      "serie_acuicultura__centros_salmonicolas_activos_ciclo": {
+        "type": "numeric",
+        "values": {
+          "2026": 240
+        }
+      },
+      "serie_acuicultura_concentracion_holdings__top_3_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 51.9
+        }
+      },
+      "serie_acuicultura_concentracion_holdings__top_5_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 70.8
+        }
+      },
+      "serie_acuicultura_concentracion_holdings__propiedad_capital_extranjero_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 34.5
+        }
+      },
+      "serie_acuicultura_mineria__concesiones_explotacion_vigentes": {
+        "type": "numeric",
+        "values": {
+          "2026": 197
+        }
+      },
+      "serie_acuicultura_mineria__concesiones_exploracion_vigentes": {
+        "type": "numeric",
+        "values": {
+          "2026": 325
+        }
+      },
+      "serie_acuicultura_mineria__superficie_minera_amparada_ha": {
+        "type": "numeric",
+        "values": {
+          "2026": 151800
+        }
+      },
+      "serie_acuicultura_pesca_artesanal__desembarque_artesanal_total_ton": {
+        "type": "numeric",
+        "values": {
+          "2026": 14250
+        }
+      },
+      "serie_acuicultura_pesca_artesanal__pescadores_inscritos_rpa": {
+        "type": "numeric",
+        "values": {
+          "2026": 4280
+        }
+      },
+      "serie_acuicultura_pesca_artesanal__embarcaciones_artesanales_activas": {
+        "type": "numeric",
+        "values": {
+          "2026": 1275
+        }
+      },
+      "serie_acuicultura_tenencia_tierra__superficie_snaspe_protegida_ha": {
+        "type": "numeric",
+        "values": {
+          "2026": 5830000
+        }
+      },
+      "serie_acuicultura_tenencia_tierra__superficie_snaspe_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 53.81
+        }
+      },
+      "serie_acuicultura_tenencia_tierra__suelo_fiscal_bbnn_ha": {
+        "type": "numeric",
+        "values": {
+          "2026": 2253000
+        }
+      },
+      "serie_acuicultura_tenencia_tierra__suelo_fiscal_bbnn_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 20.79
+        }
+      },
+      "serie_acuicultura_tenencia_tierra__propiedad_privada_ha": {
+        "type": "numeric",
+        "values": {
+          "2026": 2752000
+        }
+      },
+      "serie_acuicultura_tenencia_tierra__propiedad_privada_pct": {
+        "type": "numeric",
+        "values": {
+          "2026": 25.4
+        }
+      }
+    },
+    "centralesElectricas": {
+      "centrales_potencia_mw": {
+        "type": "numeric",
+        "values": {
+          "ene_cne_CENTRAL-TERMICA-TEHUELCHE": 17.98,
+          "ene_cne_CENTRAL-HIDRO-LAGO-ATRAVESADO": 11,
+          "ene_cne_PLANTA-SOLAR-EL-BLANCO": 2.99,
+          "ene_cne_PARQUE-EOLICO-ALTO-BAGUALES": 1.98,
+          "ene_cne_CENTRAL-TERMICA-CHACABUCO": 10,
+          "ene_cne_CENTRAL-HIDRO-RIO-AYSEN-HIST": 2,
+          "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-HIDRO": 2,
+          "ene_cne_CENTRAL-AUTOGEN-EL-TOQUI-DIESEL": 4,
+          "ene_cne_CENTRAL-DIESEL-PUERTO-AGUIRRE": 0.48,
+          "ene_cne_CENTRAL-DIESEL-PUERTO-CISNES": 1.67,
+          "ene_cne_CENTRAL-SM-PALENA-LA-JUNTA-PUYUHUAPI": 0.8,
+          "ene_cne_MICROCENTRAL-SSAA-LITORAL-CISNES": 0.36,
+          "ene_cne_CENTRAL-DIESEL-CHILE-CHICO": 2.9,
+          "ene_cne_CENTRAL-HIDRO-LOS-MAQUIS": 1,
+          "ene_cne_CENTRAL-DIESEL-COCHRANE": 1.9,
+          "ene_cne_CENTRAL-HIDRO-EL-TRARO": 0.64,
+          "ene_cne_CENTRAL-DIESEL-MELINKA": 1.45,
+          "ene_cne_CENTRAL-HIBRIDA-CALETA-TORTEL": 0.95,
+          "ene_cne_CENTRAL-HIBRIDA-RIO-MOSCO-OHIGGINS": 1.25,
+          "ene_cne_CENTRAL-RESPALDO-RIO-IBANEZ": 1.4,
+          "ene_cne_CENTRAL-LOCAL-LAGO-VERDE": 0.35
+        }
+      }
+    }
+  }
+}

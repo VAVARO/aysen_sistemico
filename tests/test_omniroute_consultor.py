@@ -440,7 +440,7 @@ class TestOmniRouteConsultor(unittest.TestCase):
         }
 
         const rCisnes = client.resolveClosedWorldDeterministic('¿cómo está Cisnes?');
-        if (!rCisnes.reply.includes('comuna de Cisnes cuenta con') || !rCisnes.reply.includes('5.137')) {
+        if (!rCisnes.reply.includes('comuna de Cisnes cuenta con') || !rCisnes.reply.includes('5.335')) {
             console.error('Expected individual comuna profile for Cisnes, got:', rCisnes.reply);
             process.exit(11);
         }
@@ -596,14 +596,14 @@ class TestOmniRouteConsultor(unittest.TestCase):
         const r = res.reply || '';
 
         const requiredSnippets = [
-            '5.137',
+            '5.335',
             '16.093',
             '218 concesiones',
             '78 centros activos',
             '185.000 ton',
             '48,7% dependencia FCM',
             '12 camas',
-            '980 alumnos',
+            '1.011 alumnos',
             '94% leña'
         ];
         for (const s of requiredSnippets) {
@@ -1416,8 +1416,8 @@ class TestOmniRouteConsultor(unittest.TestCase):
             for (const r of p6Queries) {
                 assert(r && r.reply, 'P6 sin reply');
                 assert(r.reply.includes('Tortel') && r.reply.includes("O'Higgins") && r.reply.includes('Lago Verde'), 'P6 debe listar Tortel, O\'Higgins y Lago Verde: ' + r.reply);
-                assert(r.reply.includes('1.931') && r.reply.includes('1,917%'), 'P6 debe calcular 1.931 hab. y 1,917%: ' + r.reply);
-                assert(!r.reply.includes('Guaitecas') && !r.reply.includes('2.740'), 'P6 no debe incluir Guaitecas ni 2.740: ' + r.reply);
+                assert(r.reply.includes('2.109') && r.reply.includes('2,085%'), 'P6 debe calcular 2.109 hab. y 2,085%: ' + r.reply);
+                assert(!r.reply.includes('Guaitecas') && !r.reply.includes('3.707'), 'P6 no debe incluir Guaitecas ni 3.707: ' + r.reply);
                 assert(r.chart && Array.isArray(r.chart.focusComunas) && r.chart.focusComunas.length === 3, 'P6 debe poblar focusComunas de 3 comunas');
             }
 

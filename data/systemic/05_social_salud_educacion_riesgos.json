@@ -468,13 +468,62 @@
       "indice_envejecimiento_regional": 66.2,
       "indice_masculinidad_rural": 115.8,
       "viviendas_censadas_total": 47520,
-      "fuente": "INE - Censo de Población y Vivienda 2024"
+      "fuente": "INE - Censo de Población y Vivienda 2024",
+      "poblacion_suma_comunal_bcn": 101148,
+      "urbana_pct": 80.7,
+      "rural_pct": 19.3,
+      "hombres": 49847,
+      "hombres_pct": 49.5,
+      "mujeres": 50898,
+      "mujeres_pct": 50.5,
+      "hogares_censo_2024_total": 39964,
+      "personas_por_hogar_promedio": 2.5,
+      "personas_por_hogar_2017": 2.8,
+      "viviendas_particulares": 52208,
+      "viviendas_colectivas": 86,
+      "viviendas_urbanas": 34128,
+      "viviendas_rurales": 18166,
+      "viviendas_ocupadas_moradores_presentes": 39631,
+      "viviendas_ocupadas_pct": 81.6,
+      "viviendas_desocupadas_pct": 18.4,
+      "indice_envejecimiento_serie": {
+        "1992": 13.7,
+        "2002": 20.4,
+        "2017": 40.0,
+        "2024": 66.2
+      },
+      "edad_promedio_regional": 37.4,
+      "edad_promedio_serie": {
+        "1992": 26.4,
+        "2002": 28.9,
+        "2017": 33.9,
+        "2024": 37.4
+      },
+      "tramos_etarios_2024": {
+        "0_14_pct": 19.2,
+        "0_14_n": 19343,
+        "15_64_pct": 68.1,
+        "15_64_n": 68607,
+        "65_mas_pct": 12.7,
+        "65_mas_n": 12795
+      },
+      "indice_masculinidad_regional": 97.9,
+      "pueblos_originarios_pct": 29.0,
+      "pueblos_originarios_n": 29230,
+      "inmigrantes_internacionales_pct": 3.9,
+      "inmigrantes_internacionales_n": 3931,
+      "hacinamiento_censo_2024_pct": 5.0,
+      "hacinamiento_censo_2024_viviendas": 1996,
+      "hacinamiento_medio_viviendas": 1857,
+      "hacinamiento_critico_viviendas": 139
     },
     "salud_mental_y_riesgo_vital": {
       "tasa_mortalidad_suicidio_deis_por_100k": 15.1,
       "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
       "diagnostico_red_salud_mental": "Restricción crítica estructural a 9 camas psiquiátricas de corta estadía en la Unidad de Hospitalización de Cuidados Especiales (UHCE) del Hospital Regional Coyhaique para toda la población regional; tasa regional de suicidio históricamente en la cúspide nacional (~15,1 por 100k hab)",
-      "fuente": "DEIS MINSAL / SSA"
+      "fuente": "DEIS MINSAL / SSA",
+      "tasa_suicidio_deis_por_100k": 15.1,
+      "riesgo": "Mayor tasa nacional de suicidio (~15,1/100k hab) y cuello de botella a 9 camas UHCE en Hospital Regional Coyhaique."
     },
     "mortalidad_oncologica_digestiva_deis": {
       "tasa_cancer_gastrico_cie10_c16_por_100k": 18.4,
@@ -484,25 +533,47 @@
         "Cáncer de Vesícula Biliar (C23)"
       ],
       "observacion": "Las neoplasias digestivas constituyen la primera causa de años de vida potencialmente perdidos (AVPP) en la región",
-      "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer"
+      "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer",
+      "tasa_cancer_gastrico_cie10_c16": 18.4,
+      "tasa_cancer_vesicula_cie10_c23": 12.6,
+      "avpp_criticos": [
+        "Cáncer Gástrico (C16)",
+        "Cáncer de Vesícula Biliar (C23)"
+      ]
     },
     "listas_espera_sigte": {
       "total_interconsultas_no_ges_espera": 11420,
       "mediana_dias_espera_especialidad": 284,
       "mediana_dias_espera_quirurgica": 395,
-      "fuente": "SIGTE / Subsecretaría de Redes Asistenciales"
+      "fuente": "SIGTE / Subsecretaría de Redes Asistenciales",
+      "interconsultas_no_ges_totales": 11420,
+      "mediana_dias_consulta_especialidad": 284,
+      "mediana_dias_intervencion_quirurgica": 395
     },
     "habitat_y_deficit_habitacional_minvu": {
-      "deficit_habitacional_cuantitativo_total": 3147,
-      "pct_viviendas_irrecuperables": 56.0,
-      "viviendas_irrecuperables_cantidad": 1762,
-      "deficit_habitacional_cualitativo_total": 14200,
-      "plan_emergencia_habitacional_meta_entrega": 1280,
-      "fuente": "MINVU - Observatorio Habitacional / PEH"
+      "deficit_habitacional_cuantitativo_total": 1927,
+      "deficit_cuantitativo_pct_hogares": 4.8,
+      "viviendas_irrecuperables_cantidad": 609,
+      "hogares_allegados_cantidad": 333,
+      "nucleos_allegados_hacinados_cantidad": 326,
+      "viviendas_hacinamiento_no_ampliable_cantidad": 659,
+      "deficit_cuantitativo_metodologia_historica_2024": 1254,
+      "variacion_vs_censo_2017_pct": -35.3,
+      "deficit_habitacional_cualitativo_total": 5155,
+      "deficit_cualitativo_pct_hogares": 12.9,
+      "campamentos_minvu_2024_total": 10,
+      "campamentos_minvu_2024_hogares": 244,
+      "plan_emergencia_habitacional_meta_entrega": 1293,
+      "peh_viviendas_terminadas_feb2026": 1671,
+      "peh_cumplimiento_feb2026_pct": 129.2,
+      "peh_vigencia_prorrogada_hasta": "2029-12-31",
+      "peh_ley_prorroga": "Ley N° 21.450",
+      "fuente": "MINVU CECT Oct-2025 / CASEN 2024 / Cierre PEH Feb-2026"
     },
     "servicios_sanitarios_rurales_ssr_doh": {
       "total_comites_cooperativas_ssr_vigentes": 47,
       "poblacion_beneficiaria_rural_abastecida": 28833,
+      "familias_arranques_conectados_total": 9185,
       "porcentaje_poblacion_regional_abastecida_ssr_pct": 28.6,
       "vulnerabilidad_invernal": "Congelamiento recurrente de matrices y captaciones superficiales en valles interiores",
       "fuente": "Subdirección de Servicios Sanitarios Rurales (DOH-MOP) - Ley N° 20.998"
@@ -510,21 +581,110 @@
     "pobreza_casen_oficial": {
       "pobreza_por_ingresos_regional_pct": 4.0,
       "pobreza_multidimensional_regional_pct": 14.0,
-      "rango_pobreza_multidimensional_comunas_aisladas": "22.0% a 28.0% (Lago Verde, Tortel, O'Higgins, Guaitecas)",
-      "distorsion_pobreza_monetaria": "La medición de pobreza por ingresos monetarios (4,0% regional, 0,9% en Lago Verde) distorsiona la realidad por la alta asignación de zona de funcionarios públicos; la pobreza multidimensional cuadruplica este valor por precariedad en calefacción, leña verde, agua y aislamiento",
-      "fuente": "Ministerio de Desarrollo Social y Familia (MDSF) - CASEN"
+      "rango_pobreza_multidimensional_comunas_aisladas": "12.1% a 22.2% (BCN CASEN 2022)",
+      "fuente": "Ministerio de Desarrollo Social y Familia (MDSF) / BCN - CASEN 2022"
     },
     "educacion_publica_slep_aysen": {
       "traspaso_legal_slep": "1 de enero de 2024 bajo la Ley N° 21.040 de Educación Pública",
-      "establecimientos_totales_slep": 66,
-      "desglose_recintos": "56 escuelas y liceos públicos + 10 jardines infantiles y subvencionados articulados",
-      "crisis_operacional": "Déficit de infraestructura térmica (estufas a pellet defectuosas y calderas) y rutas de transporte escolar rural DTPR declaradas desiertas en temporada invernal",
-      "fuente": "SLEP Aysén / Superintendencia de Educación / DTPR MTT"
+      "establecimientos_escolares_totales_region": 86,
+      "establecimientos_escolares_totales_2025": 87,
+      "establecimientos_escolares_slep": 55,
+      "jardines_vtf_slep": 10,
+      "establecimientos_totales_slep": 65,
+      "establecimientos_slep_2024": 66,
+      "matricula_escolar_regional_2024": 22295,
+      "matricula_escolar_regional_2025": 21837,
+      "matricula_slep_2025": 8872,
+      "matricula_slep_pct": 40.6,
+      "matricula_part_subvencionado_2025": 12506,
+      "matricula_part_subvencionado_pct": 57.3,
+      "matricula_cad_2025": 259,
+      "matricula_part_pagado_2025": 200,
+      "simce_2025": {
+        "4_basico": {
+          "lectura": 276,
+          "matematica": 257
+        },
+        "8_basico": {
+          "lectura": 229,
+          "matematica": 252,
+          "historia": 245
+        },
+        "2_medio": {
+          "lectura": 246,
+          "matematica": 261
+        }
+      },
+      "paes_admision_2026": {
+        "m1": 627.4,
+        "m1_var_vs_2025": 13.8,
+        "m1_chile": 623.0,
+        "lectora": 600.2,
+        "lectora_var_vs_2025": 12.9,
+        "lectora_chile": 597.4
+      },
+      "educacion_superior_sies_2026": {
+        "total_estudiantes": 2924,
+        "pregrado": 2907,
+        "coyhaique": 2187,
+        "aysen_cft": 737,
+        "uaysen_aprox": 1000,
+        "inacap_aprox": 1187
+      },
+      "fuente": "MINEDUC CEM 2024-2025 / SLEP Aysén / Agencia de Calidad / DEMRE / SIES 2026"
     },
-    "rsh_jun2026_carencia_serv_basicos_regional_pct": 12.4,
-    "rsh_jun2026_hacinamiento_regional_pct": 5.7,
+    "rsh_jun2026_carencia_serv_basicos_regional_pct": 12.5,
+    "rsh_jun2026_hacinamiento_regional_pct": 6.1,
     "peh_minvu_meta_viviendas": 1293,
-    "peh_minvu_estado_2025_2026": "Meta de 1.293 viviendas superada (>101-107% en sept 2025); vigencia prorrogada hasta dic 2029. Contraloría tomó razón del PRI Coyhaique-Aysén en oct 2026."
+    "peh_minvu_estado_2025_2026": "Cierre oficial febrero 2026 MINVU: 1.671 viviendas terminadas sobre meta de 1.293 (129,2% de cumplimiento); vigencia prorrogada hasta el 31 de diciembre de 2029 (Ley N° 21.450).",
+    "casen_2024_nueva_metodologia": {
+      "fecha_publicacion": "enero 2026",
+      "pobreza_ingresos_regional_2024_pct": 14.3,
+      "pobreza_ingresos_2022_recalculado_pct": 14.5,
+      "pobreza_ingresos_chile_2024_pct": 17.3,
+      "pobreza_multidimensional_regional_2024_pct": 12.1,
+      "pobreza_multidimensional_2022_recalculado_pct": 13.5,
+      "pobreza_multidimensional_chile_2024_pct": 17.7,
+      "comunas_publicadas_bcn_2026": {
+        "11102": {
+          "pobreza_ingresos_2024_pct": 15.1,
+          "pobreza_multidim_2024_pct": 15.7
+        },
+        "11201": {
+          "pobreza_ingresos_2024_pct": 13.6,
+          "pobreza_multidim_2024_pct": 12.2
+        },
+        "11301": {
+          "pobreza_ingresos_2024_pct": 13.5,
+          "pobreza_multidim_2024_pct": 9.9
+        }
+      },
+      "fuente": "MDSF - Nueva Metodología CASEN 2024 (ene-2026)"
+    },
+    "seguridad_cead_2023_2025": {
+      "delitos_violentos_2024_100k": 1872.2,
+      "delitos_violentos_2024_chile_100k": 2222.7,
+      "vida_integridad_2024_100k": 973.9,
+      "vida_integridad_2025_100k": 902.1,
+      "vida_integridad_chile_100k": 1003.2,
+      "vif_regional_serie_100k": {
+        "2023": {
+          "aysen": 691.6,
+          "chile": 608.2
+        },
+        "2024": {
+          "aysen": 809.9,
+          "chile": 601.0,
+          "brecha_chile_pct": 34.8
+        },
+        "2025": {
+          "aysen": 709.9,
+          "chile": 585.1,
+          "brecha_chile_pct": 21.3
+        }
+      },
+      "fuente": "CEAD - Subsecretaría de Prevención del Delito / BCN"
+    }
   },
   "por_comuna": [
     {
@@ -557,24 +717,28 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 38,
-          "matricula_escolar_total": 13450,
+          "establecimientos_escolares_total": 40,
+          "establecimientos_slep_aysen": 17,
+          "matricula_escolar_total": 13284,
+          "matricula_slep_aysen_n": 3017,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": [
             "Universidad de Aysén",
             "INACAP Sede Coyhaique"
-          ]
+          ],
+          "matricula_educacion_superior_sies_2026": 2187
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 2150.4,
-          "tasa_vif_por_100k_hab": 940.8,
+          "tasa_dmcs_por_100k_hab": 1702.0,
+          "tasa_vif_por_100k_hab": 730.1,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Hurto en centros comerciales",
             "Lesiones menos graves",
             "Robo en lugar habitado"
           ],
-          "dotacion_carabineros_cabecera": "1ª Comisaría Coyhaique + Subcomisaría Fuerzas Especiales + Retenes fronterizos"
+          "dotacion_carabineros_cabecera": "1ª Comisaría Coyhaique + Subcomisaría Fuerzas Especiales + Retenes fronterizos",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -899,27 +1063,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 1128,
+          "deficit_cuantitativo_pct_hogares": 5.0,
+          "viviendas_irrecuperables": 280,
+          "hogares_allegados": 225,
+          "nucleos_allegados_hacinados": 219,
+          "viviendas_hacinamiento_no_ampliable": 404,
+          "deficit_cualitativo_casen_2024_hogares": 2893,
+          "campamentos_minvu_2024_n": 5,
+          "campamentos_minvu_2024_hogares": 127,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 15,
+          "beneficiarios_personas": 10650,
+          "cobertura_ssr_apr_familias": 3350,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 2.9,
+          "pobreza_multidim_pct": 14.0,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 17,
+          "matricula_slep_comuna": 3017,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 11.7,
-          "rsh_hacinamiento_jun2026_pct": 6.2,
-          "ruralidad_censo_2024_pct": 19.0
+          "rsh_carencia_servicios_basicos_jun2026_pct": 11.5,
+          "rsh_hacinamiento_jun2026_pct": 6.7,
+          "ruralidad_censo_2024_pct": 12.1
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 57823,
+          "hogares_censo_2024": 22423,
+          "viviendas_totales_censo_2024": 27989,
+          "viviendas_ocupadas_censo_2024": 22198,
+          "indice_envejecimiento": 64.1,
+          "indice_masculinidad": 95.0,
+          "pueblos_originarios_pct_censo_2024": 27.5,
+          "inmigrantes_internacionales_pct_censo_2024": 4.3
         }
       }
     },
@@ -954,19 +1146,28 @@
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
           "establecimientos_escolares_total": 3,
-          "matricula_escolar_total": 95,
+          "establecimientos_slep_aysen": 3,
+          "matricula_escolar_total": 54,
+          "matricula_slep_aysen_n": 54,
           "tiene_educacion_media_completa": false,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 420.0,
-          "tasa_vif_por_100k_hab": 385.0,
+          "tasa_dmcs_por_100k_hab": 1422.3,
+          "tasa_vif_por_100k_hab": 548.2,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Infracción a Ley de Alcoholes",
             "Abigeato"
           ],
-          "dotacion_carabineros_cabecera": "Retén Lago Verde (Fronterizo) y Retén La Tapera"
+          "dotacion_carabineros_cabecera": "Retén Lago Verde (Fronterizo) y Retén La Tapera",
+          "serie_vif_2023_2025_100k": {
+            "2023": 874.3,
+            "2024": 109.4,
+            "2025": 548.2
+          },
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -1292,27 +1493,59 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 73,
+          "deficit_cuantitativo_pct_hogares": 19.6,
+          "viviendas_irrecuperables": 65,
+          "hogares_allegados": 3,
+          "nucleos_allegados_hacinados": 1,
+          "viviendas_hacinamiento_no_ampliable": 4,
+          "deficit_cualitativo_casen_2024_hogares": 48,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 2,
+          "beneficiarios_personas": 620,
+          "cobertura_ssr_apr_familias": 210,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 0.9,
+          "pobreza_multidim_pct": 18.0,
           "pobreza_ingresos_regional_pct": 4.0,
-          "pobreza_multidimensional_regional_pct": 14.0
+          "pobreza_multidimensional_regional_pct": 14.0,
+          "casen_2024_nueva_metodologia": {
+            "pobreza_ingresos_2024_pct": 15.1,
+            "pobreza_multidim_2024_pct": 15.7
+          }
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 3,
+          "matricula_slep_comuna": 54,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
           "rsh_carencia_servicios_basicos_jun2026_pct": 33.9,
           "rsh_hacinamiento_jun2026_pct": 3.6,
           "ruralidad_censo_2024_pct": 100.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 882,
+          "hogares_censo_2024": 373,
+          "viviendas_totales_censo_2024": 724,
+          "viviendas_ocupadas_censo_2024": 370,
+          "indice_envejecimiento": 182.8,
+          "indice_masculinidad": 121.3,
+          "pueblos_originarios_pct_censo_2024": 22.8,
+          "inmigrantes_internacionales_pct_censo_2024": 2.8
         }
       }
     },
@@ -1346,23 +1579,31 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 18,
-          "matricula_escolar_total": 4850,
+          "establecimientos_escolares_total": 19,
+          "establecimientos_slep_aysen": 12,
+          "matricula_escolar_total": 5286,
+          "matricula_slep_aysen_n": 2406,
           "tiene_educacion_media_completa": true,
           "instituciones_educacion_superior": [
             "CFT Estatal de la Región de Aysén"
-          ]
+          ],
+          "matricula_educacion_superior_sies_2026": 737
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 1980.2,
-          "tasa_vif_por_100k_hab": 1080.5,
+          "tasa_dmcs_por_100k_hab": 1197.6,
+          "tasa_vif_por_100k_hab": 1157.9,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Lesiones en riña",
             "Hurtos portuarios y comercio",
             "Robo en lugar habitado"
           ],
-          "dotacion_carabineros_cabecera": "2ª Comisaría Puerto Aysén y Subcomisaría Puerto Chacabuco"
+          "dotacion_carabineros_cabecera": "2ª Comisaría Puerto Aysén y Subcomisaría Puerto Chacabuco",
+          "serie_vif_2023_2025_100k": {
+            "2024": 1157.9,
+            "2025": 938.6
+          },
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -1689,27 +1930,59 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 330,
+          "deficit_cuantitativo_pct_hogares": 3.6,
+          "viviendas_irrecuperables": 78,
+          "hogares_allegados": 63,
+          "nucleos_allegados_hacinados": 63,
+          "viviendas_hacinamiento_no_ampliable": 126,
+          "deficit_cualitativo_casen_2024_hogares": 1168,
+          "campamentos_minvu_2024_n": 4,
+          "campamentos_minvu_2024_hogares": 107,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 8,
+          "beneficiarios_personas": 5680,
+          "cobertura_ssr_apr_familias": 1790,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 5.3,
+          "pobreza_multidim_pct": 12.8,
           "pobreza_ingresos_regional_pct": 4.0,
-          "pobreza_multidimensional_regional_pct": 14.0
+          "pobreza_multidimensional_regional_pct": 14.0,
+          "casen_2024_nueva_metodologia": {
+            "pobreza_ingresos_2024_pct": 13.6,
+            "pobreza_multidim_2024_pct": 12.2
+          }
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 12,
+          "matricula_slep_comuna": 2406,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
           "rsh_carencia_servicios_basicos_jun2026_pct": 11.7,
           "rsh_hacinamiento_jun2026_pct": 5.0,
-          "ruralidad_censo_2024_pct": 14.7
+          "ruralidad_censo_2024_pct": 15.4
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 23170,
+          "hogares_censo_2024": 9057,
+          "viviendas_totales_censo_2024": 11054,
+          "viviendas_ocupadas_censo_2024": 8994,
+          "indice_envejecimiento": 61.6,
+          "indice_masculinidad": 98.9,
+          "pueblos_originarios_pct_censo_2024": 31.8,
+          "inmigrantes_internacionales_pct_censo_2024": 3.5
         }
       }
     },
@@ -1743,20 +2016,24 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 9,
-          "matricula_escolar_total": 980,
+          "establecimientos_escolares_total": 8,
+          "establecimientos_slep_aysen": 7,
+          "matricula_escolar_total": 1011,
+          "matricula_slep_aysen_n": 1010,
           "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 1120.0,
-          "tasa_vif_por_100k_hab": 620.0,
+          "tasa_dmcs_por_100k_hab": 1754.1,
+          "tasa_vif_por_100k_hab": 749.3,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Conducción en estado de ebriedad",
             "Hurtos"
           ],
-          "dotacion_carabineros_cabecera": "Subcomisaría Puerto Cisnes y Retén Puyuhuapi / La Junta"
+          "dotacion_carabineros_cabecera": "Subcomisaría Puerto Cisnes y Retén Puyuhuapi / La Junta",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -2083,27 +2360,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 109,
+          "deficit_cuantitativo_pct_hogares": 5.0,
+          "viviendas_irrecuperables": 60,
+          "hogares_allegados": 9,
+          "nucleos_allegados_hacinados": 10,
+          "viviendas_hacinamiento_no_ampliable": 30,
+          "deficit_cualitativo_casen_2024_hogares": 281,
+          "campamentos_minvu_2024_n": 1,
+          "campamentos_minvu_2024_hogares": 10,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 5,
+          "beneficiarios_personas": 3250,
+          "cobertura_ssr_apr_familias": 1050,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 5.0,
+          "pobreza_multidim_pct": 12.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 7,
+          "matricula_slep_comuna": 1010,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 12.2,
-          "rsh_hacinamiento_jun2026_pct": 3.8,
-          "ruralidad_censo_2024_pct": 28.1
+          "rsh_carencia_servicios_basicos_jun2026_pct": 12.0,
+          "rsh_hacinamiento_jun2026_pct": 3.9,
+          "ruralidad_censo_2024_pct": 54.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 5335,
+          "hogares_censo_2024": 2180,
+          "viviendas_totales_censo_2024": 3437,
+          "viviendas_ocupadas_censo_2024": 2171,
+          "indice_envejecimiento": 64.1,
+          "indice_masculinidad": 102.3,
+          "pueblos_originarios_pct_censo_2024": 28.4,
+          "inmigrantes_internacionales_pct_censo_2024": 3.6
         }
       }
     },
@@ -2138,19 +2443,23 @@
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
           "establecimientos_escolares_total": 2,
-          "matricula_escolar_total": 320,
+          "establecimientos_slep_aysen": 2,
+          "matricula_escolar_total": 290,
+          "matricula_slep_aysen_n": 290,
           "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 890.0,
-          "tasa_vif_por_100k_hab": 540.0,
+          "tasa_dmcs_por_100k_hab": 1862.2,
+          "tasa_vif_por_100k_hab": 496.6,
           "delitos_frecuentes_comuna": [
             "Infracción a Ley de Pesca",
             "Violencia intrafamiliar",
             "Riñas en faenas bentónicas"
           ],
-          "dotacion_carabineros_cabecera": "Retén Melinka (Fronterizo) y Capitanía de Puerto Melinka (Armada)"
+          "dotacion_carabineros_cabecera": "Retén Melinka (Fronterizo) y Capitanía de Puerto Melinka (Armada)",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -2475,27 +2784,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 14,
+          "deficit_cuantitativo_pct_hogares": 2.3,
+          "viviendas_irrecuperables": 2,
+          "hogares_allegados": 3,
+          "nucleos_allegados_hacinados": 2,
+          "viviendas_hacinamiento_no_ampliable": 7,
+          "deficit_cualitativo_casen_2024_hogares": 78,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 1,
+          "beneficiarios_personas": 1598,
+          "cobertura_ssr_apr_familias": 551,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 6.1,
+          "pobreza_multidim_pct": 22.2,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 2,
+          "matricula_slep_comuna": 290,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 26.9,
-          "rsh_hacinamiento_jun2026_pct": 10.1,
-          "ruralidad_censo_2024_pct": 8.1
+          "rsh_carencia_servicios_basicos_jun2026_pct": 26.1,
+          "rsh_hacinamiento_jun2026_pct": 11.0,
+          "ruralidad_censo_2024_pct": 26.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 1598,
+          "hogares_censo_2024": 606,
+          "viviendas_totales_censo_2024": 816,
+          "viviendas_ocupadas_censo_2024": 603,
+          "indice_envejecimiento": 56.5,
+          "indice_masculinidad": 115.7,
+          "pueblos_originarios_pct_censo_2024": 57.9,
+          "inmigrantes_internacionales_pct_censo_2024": 1.4
         }
       }
     },
@@ -2529,20 +2866,24 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 4,
-          "matricula_escolar_total": 890,
+          "establecimientos_escolares_total": 5,
+          "establecimientos_slep_aysen": 5,
+          "matricula_escolar_total": 864,
+          "matricula_slep_aysen_n": 864,
           "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 1340.0,
-          "tasa_vif_por_100k_hab": 710.0,
+          "tasa_dmcs_por_100k_hab": 1743.2,
+          "tasa_vif_por_100k_hab": 755.4,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Contrabando y pasos fronterizos no habilitados",
             "Hurtos"
           ],
-          "dotacion_carabineros_cabecera": "3ª Comisaría Chile Chico y Retén Puerto Guadal"
+          "dotacion_carabineros_cabecera": "3ª Comisaría Chile Chico y Retén Puerto Guadal",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -2867,27 +3208,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 86,
+          "deficit_cuantitativo_pct_hogares": 4.1,
+          "viviendas_irrecuperables": 33,
+          "hogares_allegados": 12,
+          "nucleos_allegados_hacinados": 10,
+          "viviendas_hacinamiento_no_ampliable": 31,
+          "deficit_cualitativo_casen_2024_hogares": 272,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 5,
+          "beneficiarios_personas": 2420,
+          "cobertura_ssr_apr_familias": 780,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 6.2,
+          "pobreza_multidim_pct": 16.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 5,
+          "matricula_slep_comuna": 864,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 9.7,
-          "rsh_hacinamiento_jun2026_pct": 5.6,
-          "ruralidad_censo_2024_pct": 37.2
+          "rsh_carencia_servicios_basicos_jun2026_pct": 9.6,
+          "rsh_hacinamiento_jun2026_pct": 5.9,
+          "ruralidad_censo_2024_pct": 35.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 4950,
+          "hogares_censo_2024": 2109,
+          "viviendas_totales_censo_2024": 3108,
+          "viviendas_ocupadas_censo_2024": 2097,
+          "indice_envejecimiento": 92.9,
+          "indice_masculinidad": 102.1,
+          "pueblos_originarios_pct_censo_2024": 24.5,
+          "inmigrantes_internacionales_pct_censo_2024": 4.1
         }
       }
     },
@@ -2921,20 +3290,24 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 3,
-          "matricula_escolar_total": 450,
+          "establecimientos_escolares_total": 5,
+          "establecimientos_slep_aysen": 5,
+          "matricula_escolar_total": 353,
+          "matricula_slep_aysen_n": 353,
           "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 910.0,
-          "tasa_vif_por_100k_hab": 480.0,
+          "tasa_dmcs_por_100k_hab": 1695.5,
+          "tasa_vif_por_100k_hab": 552.9,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Infracciones de tránsito Carretera Austral",
             "Abigeato"
           ],
-          "dotacion_carabineros_cabecera": "Tenencia Puerto Ingeniero Ibáñez y Retén Puerto Río Tranquilo"
+          "dotacion_carabineros_cabecera": "Tenencia Puerto Ingeniero Ibáñez y Retén Puerto Río Tranquilo",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -3259,27 +3632,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 50,
+          "deficit_cuantitativo_pct_hogares": 4.1,
+          "viviendas_irrecuperables": 17,
+          "hogares_allegados": 4,
+          "nucleos_allegados_hacinados": 7,
+          "viviendas_hacinamiento_no_ampliable": 22,
+          "deficit_cualitativo_casen_2024_hogares": 158,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 5,
+          "beneficiarios_personas": 2115,
+          "cobertura_ssr_apr_familias": 680,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 7.0,
+          "pobreza_multidim_pct": 18.8,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 5,
+          "matricula_slep_comuna": 353,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 14.0,
-          "rsh_hacinamiento_jun2026_pct": 4.7,
-          "ruralidad_censo_2024_pct": 100.0
+          "rsh_carencia_servicios_basicos_jun2026_pct": 14.4,
+          "rsh_hacinamiento_jun2026_pct": 4.9,
+          "ruralidad_censo_2024_pct": 72.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 2671,
+          "hogares_censo_2024": 1231,
+          "viviendas_totales_censo_2024": 2242,
+          "viviendas_ocupadas_censo_2024": 1227,
+          "indice_envejecimiento": 121.2,
+          "indice_masculinidad": 107.4,
+          "pueblos_originarios_pct_censo_2024": 25.1,
+          "inmigrantes_internacionales_pct_censo_2024": 2.9
         }
       }
     },
@@ -3313,20 +3714,28 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 3,
-          "matricula_escolar_total": 750,
+          "establecimientos_escolares_total": 2,
+          "establecimientos_slep_aysen": 2,
+          "matricula_escolar_total": 740,
+          "matricula_slep_aysen_n": 740,
           "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 1280.0,
-          "tasa_vif_por_100k_hab": 690.0,
+          "tasa_dmcs_por_100k_hab": 748.5,
+          "tasa_vif_por_100k_hab": 773.1,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Lesiones en riña",
             "Abigeato en estancias ganaderas"
           ],
-          "dotacion_carabineros_cabecera": "4ª Comisaría Cochrane"
+          "dotacion_carabineros_cabecera": "4ª Comisaría Cochrane",
+          "serie_vif_2023_2025_100k": {
+            "2024": 374.2,
+            "2025": 773.1
+          },
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -3652,27 +4061,59 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 118,
+          "deficit_cuantitativo_pct_hogares": 8.1,
+          "viviendas_irrecuperables": 62,
+          "hogares_allegados": 13,
+          "nucleos_allegados_hacinados": 13,
+          "viviendas_hacinamiento_no_ampliable": 30,
+          "deficit_cualitativo_casen_2024_hogares": 189,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 3,
+          "beneficiarios_personas": 1450,
+          "cobertura_ssr_apr_familias": 450,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 6.3,
+          "pobreza_multidim_pct": 14.3,
           "pobreza_ingresos_regional_pct": 4.0,
-          "pobreza_multidimensional_regional_pct": 14.0
+          "pobreza_multidimensional_regional_pct": 14.0,
+          "casen_2024_nueva_metodologia": {
+            "pobreza_ingresos_2024_pct": 13.5,
+            "pobreza_multidim_2024_pct": 9.9
+          }
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 2,
+          "matricula_slep_comuna": 740,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
           "rsh_carencia_servicios_basicos_jun2026_pct": 15.8,
           "rsh_hacinamiento_jun2026_pct": 5.8,
-          "ruralidad_censo_2024_pct": 21.8
+          "ruralidad_censo_2024_pct": 22.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 3492,
+          "hogares_censo_2024": 1462,
+          "viviendas_totales_censo_2024": 2126,
+          "viviendas_ocupadas_censo_2024": 1449,
+          "indice_envejecimiento": 65.0,
+          "indice_masculinidad": 106.0,
+          "pueblos_originarios_pct_censo_2024": 22.9,
+          "inmigrantes_internacionales_pct_censo_2024": 2.5
         }
       }
     },
@@ -3706,20 +4147,24 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 2,
-          "matricula_escolar_total": 120,
+          "establecimientos_escolares_total": 1,
+          "establecimientos_slep_aysen": 1,
+          "matricula_escolar_total": 123,
+          "matricula_slep_aysen_n": 123,
           "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 650.0,
-          "tasa_vif_por_100k_hab": 410.0,
+          "tasa_dmcs_por_100k_hab": 1481.5,
+          "tasa_vif_por_100k_hab": 740.7,
           "delitos_frecuentes_comuna": [
             "Infracciones Ley de Fronteras",
             "Violencia intrafamiliar",
             "Faltas contra el orden público"
           ],
-          "dotacion_carabineros_cabecera": "Tenencia Villa O'Higgins (Fronteriza) y Retén Entrada Mayer"
+          "dotacion_carabineros_cabecera": "Tenencia Villa O'Higgins (Fronteriza) y Retén Entrada Mayer",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -4044,27 +4489,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 4,
+          "deficit_cuantitativo_pct_hogares": 1.4,
+          "viviendas_irrecuperables": 1,
+          "hogares_allegados": 1,
+          "nucleos_allegados_hacinados": 1,
+          "viviendas_hacinamiento_no_ampliable": 1,
+          "deficit_cualitativo_casen_2024_hogares": 38,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 2,
+          "beneficiarios_personas": 570,
+          "cobertura_ssr_apr_familias": 174,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 9.2,
+          "pobreza_multidim_pct": 12.1,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 1,
+          "matricula_slep_comuna": 123,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 13.1,
-          "rsh_hacinamiento_jun2026_pct": 5.1,
+          "rsh_carencia_servicios_basicos_jun2026_pct": 14.4,
+          "rsh_hacinamiento_jun2026_pct": 4.6,
           "ruralidad_censo_2024_pct": 100.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 664,
+          "hogares_censo_2024": 292,
+          "viviendas_totales_censo_2024": 403,
+          "viviendas_ocupadas_censo_2024": 291,
+          "indice_envejecimiento": 41.7,
+          "indice_masculinidad": 104.7,
+          "pueblos_originarios_pct_censo_2024": 21.4,
+          "inmigrantes_internacionales_pct_censo_2024": 3.6
         }
       }
     },
@@ -4098,20 +4571,24 @@
         },
         "educacion_mineduc": {
           "slep_territorial": "SLEP Aysén",
-          "establecimientos_escolares_total": 2,
-          "matricula_escolar_total": 85,
-          "tiene_educacion_media_completa": true,
-          "instituciones_educacion_superior": []
+          "establecimientos_escolares_total": 1,
+          "establecimientos_slep_aysen": 1,
+          "matricula_escolar_total": 82,
+          "matricula_slep_aysen_n": 82,
+          "tiene_educacion_media_completa": false,
+          "instituciones_educacion_superior": [],
+          "matricula_educacion_superior_sies_2026": 0
         },
         "seguridad_cead": {
-          "tasa_dmcs_por_100k_hab": 510.0,
-          "tasa_vif_por_100k_hab": 390.0,
+          "tasa_dmcs_por_100k_hab": 1202.7,
+          "tasa_vif_por_100k_hab": 687.3,
           "delitos_frecuentes_comuna": [
             "Violencia intrafamiliar",
             "Infracción a Ley de Bosques (corte ilegal de ciprés)",
             "Faltas menores"
           ],
-          "dotacion_carabineros_cabecera": "Retén Caleta Tortel y Capitanía de Puerto Caleta Tortel (Armada)"
+          "dotacion_carabineros_cabecera": "Retén Caleta Tortel y Capitanía de Puerto Caleta Tortel (Armada)",
+          "nota_serie_cead_2023_2025": "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
         },
         "riesgos_ambientales": {
           "volcanes_influencia_directa": [
@@ -4436,27 +4913,55 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
+          "deficit_cuantitativo": 15,
+          "deficit_cuantitativo_pct_hogares": 6.5,
+          "viviendas_irrecuperables": 11,
+          "hogares_allegados": 0,
+          "nucleos_allegados_hacinados": 0,
+          "viviendas_hacinamiento_no_ampliable": 4,
+          "deficit_cualitativo_casen_2024_hogares": 30,
+          "campamentos_minvu_2024_n": 0,
+          "campamentos_minvu_2024_hogares": 0,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155
         },
         "servicios_sanitarios_rurales_doh": {
+          "comites_ssr": 1,
+          "beneficiarios_personas": 480,
+          "cobertura_ssr_apr_familias": 150,
           "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         },
         "pobreza_casen": {
+          "pobreza_ingresos_pct": 4.6,
+          "pobreza_multidim_pct": 12.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
         },
         "educacion_slep_operativa": {
           "traspaso_oficial": "2024-01-01",
           "marco_normativo": "Ley N° 21.040",
-          "establecimientos_totales": 66
+          "establecimientos_slep_comuna": 1,
+          "matricula_slep_comuna": 82,
+          "establecimientos_escolares_slep_regional": 55,
+          "jardines_vtf_regional": 10,
+          "establecimientos_totales": 65
         },
         "vivienda_y_rsh": {
-          "rsh_carencia_servicios_basicos_jun2026_pct": 38.1,
-          "rsh_hacinamiento_jun2026_pct": 7.4,
+          "rsh_carencia_servicios_basicos_jun2026_pct": 44.0,
+          "rsh_hacinamiento_jun2026_pct": 9.0,
           "ruralidad_censo_2024_pct": 100.0
+        },
+        "demografia_censo_2024": {
+          "poblacion_censo_2024": 563,
+          "hogares_censo_2024": 231,
+          "viviendas_totales_censo_2024": 395,
+          "viviendas_ocupadas_censo_2024": 231,
+          "indice_envejecimiento": 30.8,
+          "indice_masculinidad": 114.0,
+          "pueblos_originarios_pct_censo_2024": 40.2,
+          "inmigrantes_internacionales_pct_censo_2024": 3.3
         }
       }
     }
@@ -4468,8 +4973,8 @@
       "tipo": "Hospital de Alta Complejidad",
       "codigo_comuna": "CL-XI-01",
       "comuna_ine": "11101",
-      "lat": -45.5714,
-      "lng": -72.0635,
+      "lat": -45.5712,
+      "lng": -72.0685,
       "atributos": {
         "categoria": "Red Asistencial Minsal / SSA",
         "camas": 167,

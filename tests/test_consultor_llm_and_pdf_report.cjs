@@ -371,7 +371,7 @@ function loadEnv() {
   const res13a = await client.query(q13a);
   assert.notStrictEqual(res13a.chart.varX, 'costo_diesel_aislado_clp',
     'Consulta evaluativa abierta sobre Villa O\'Higgins no debe reducirse solo a costo_diesel_aislado_clp');
-  ['O\'Higgins', '86,4', '10 hrs', '3.709,4', '620', '0% fibra hogar', '0 visitas SNASPE'].forEach(tok => {
+  ['O\'Higgins', '86,4', '10 hrs', '3.614,5', '620', '0% fibra hogar', '0 visitas SNASPE'].forEach(tok => {
     assert(res13a.reply.includes(tok), `Perfil integral de O'Higgins debe incluir ${tok}: ${res13a.reply}`);
   });
 

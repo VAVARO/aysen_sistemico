@@ -50,10 +50,10 @@ class TestHub4GobernanzaFinanzasInvariants(unittest.TestCase):
         self.assertAlmostEqual(float(self.by_ine["11202"]["dependencia_fcm_pct"]), 48.7, places=1)
         self.assertAlmostEqual(float(self.by_ine["11303"]["dependencia_fcm_pct"]), 95.4, places=1)
 
-        self.assertEqual(int(self.by_ine["11202"]["ipp_per_capita_clp"]), 580062)
-        self.assertEqual(int(self.by_ine["11102"]["ipp_per_capita_clp"]), 552952)
+        self.assertEqual(int(self.by_ine["11202"]["ipp_per_capita_clp"]), 558534)
+        self.assertEqual(int(self.by_ine["11102"]["ipp_per_capita_clp"]), 488379)
         self.assertEqual(int(self.by_ine["11203"]["ipp_per_capita_clp"]), 528924)
-        self.assertEqual(int(self.by_ine["11401"]["ipp_per_capita_clp"]), 135441)
+        self.assertEqual(int(self.by_ine["11401"]["ipp_per_capita_clp"]), 134210)
 
     def test_02_zero_aquaculture_patents_in_inland_communes(self):
         """0 M$ patentes acuicolas en 6 comunas interiores y Tortel (01_gob + Nodo #15), cifras oficiales en litoral y parche espacial Hub III."""

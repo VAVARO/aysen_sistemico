@@ -42,9 +42,9 @@ class TestHub6SocialAudit(unittest.TestCase):
         self.assertGreaterEqual(len(set(dmcs_vals)), 8)
         self.assertGreaterEqual(len(set(vif_vals)), 8)
 
-        self.assertEqual(sum(c["escuelas_rurales_multigrado_n"] for c in self.comunas), 36)
-        self.assertEqual(sum(c["liceos_urbanos_n"] for c in self.comunas), 16)
-        self.assertEqual(sum(c["establecimientos_escolares_n"] for c in self.comunas), 84)
+        self.assertEqual(sum(c["escuelas_rurales_multigrado_n"] for c in self.comunas), 35)
+        self.assertEqual(sum(c["liceos_urbanos_n"] for c in self.comunas), 15)
+        self.assertEqual(sum(c["establecimientos_escolares_n"] for c in self.comunas), 86)
 
         for c in self.comunas:
             self.assertGreaterEqual(
@@ -61,8 +61,9 @@ class TestHub6SocialAudit(unittest.TestCase):
             self.assertIsNotNone(c.get("deficit_habitacional_total_por_1000_hab"))
 
         by_name = {c["nombre"]: c for c in self.comunas}
-        self.assertAlmostEqual(by_name["Lago Verde"]["ratio_pobreza_multidim_vs_ingresos"], 27.2, delta=0.5)
-        self.assertGreater(by_name["Tortel"]["deficit_habitacional_total_por_1000_hab"], 70.0)
+        self.assertAlmostEqual(by_name["Lago Verde"]["ratio_pobreza_multidim_vs_ingresos"], 20.0, delta=0.5)
+        self.assertGreater(by_name["Lago Verde"]["deficit_habitacional_total_por_1000_hab"], 70.0)
+        self.assertAlmostEqual(by_name["Tortel"]["deficit_habitacional_total_por_1000_hab"], 26.6, delta=0.2)
 
         series = self.bundle.get("series", {})
         vif_hist = [p["valor"] if isinstance(p, dict) else p for p in series.get("tasa_vif_regional_por_100k_hab", [])]
@@ -76,7 +77,7 @@ class TestHub6SocialAudit(unittest.TestCase):
 
     def test_02_capa_escuelas_slep_y_nodos_23_41(self):
         escuelas = self.bundle.get("spatialNodesByLayer", {}).get("escuelas_slep", [])
-        self.assertEqual(len(escuelas), 57)
+        self.assertEqual(len(escuelas), 56)
 
         part_sub = [n for n in escuelas if "Particular Subvencionado" in str(n.get("tipo", ""))]
         self.assertTrue(all("MINEDUC" in n.get("tipo", "") for n in part_sub))
@@ -88,15 +89,15 @@ class TestHub6SocialAudit(unittest.TestCase):
         sies_nodes = [n for n in escuelas if n.get("tipo") in sies_tipos]
         self.assertEqual(len(sies_nodes), 3)
         sies_vals = sorted([n.get("magnitudeValue") for n in sies_nodes], reverse=True)
-        self.assertEqual(sies_vals, [1360, 650, 317])
-        self.assertEqual(sum(sies_vals), 2327)
+        self.assertEqual(sies_vals, [1187, 1000, 737])
+        self.assertEqual(sum(sies_vals), 2924)
 
         n23 = self.nodos[23]
         n23_json = json.dumps(n23, ensure_ascii=False)
         self.assertIn("57.823", n23_json)
         self.assertIn("23.170", n23_json)
         n41 = self.nodos[41]
-        self.assertTrue(any("Beneficiarios SSR/APR (personas)" in str(col) for col in n41.get("tableColumns", [])))
+        self.assertTrue(any("Personas / Familias SSR" in str(col) for col in n41.get("tableColumns", [])))
 
     def test_03_presets_hub_social(self):
         presets = {p["preset_id"]: p for p in self.bundle.get("hubsGallery", {}).get("social", {}).get("presets", [])}

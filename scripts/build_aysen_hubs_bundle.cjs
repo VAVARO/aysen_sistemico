@@ -700,8 +700,8 @@ const hubs = [
     title: 'VI. Demografía, Educación, Vivienda & Cohesión',
     shortTitle: 'Demografía, Educación & Vivienda',
     color: '#2563eb',
-    description: 'Población comunal oficial **Censo 2024 (100.745 hab)**, índice de envejecimiento (66,2), educación pública (**SLEP Aysén**), déficit habitacional (**MINVU**), sistemas sanitarios rurales (**SSR/APR**), CASEN 2022 y tasas delictuales (**CEAD / VIF**).',
-    example: 'La Región de Aysén suma 100.745 habitantes (Censo 2024). Cruza el déficit habitacional MINVU (3.147 cuantitativo y 15.000 cualitativo), los 47 comités SSR/APR (28.833 beneficiarios) y las 36 escuelas rurales multigrado del SLEP.',
+    description: 'Población comunal oficial **Censo 2024 (100.745 hab. INE / 39.964 hogares / 52.294 viviendas)**, índice de envejecimiento (66,2), educación (**86 colegios; 55 SLEP + 10 VTF; 2.924 SIES 2026**), déficit habitacional (**MINVU CECT 1.927 cuantitativo / 12,9% cualitativo / PEH 1.671 feb-2026**), **47 SSR/APR (28.833 pers. / 9.185 fam.)**, CASEN 2022–2024 y tasas CEAD/VIF.',
+    example: 'La Región de Aysén suma 100.745 habitantes y 39.964 hogares (Censo 2024; Coyhaique 57.823 [57,4%] y Aysén 23.170 [23,0%]). Registra 1.927 viviendas de déficit cuantitativo MINVU CECT (4,8%; PEH feb-2026 cerrado en 1.671 = 129,2%), 47 comités SSR/APR (28.833 personas y 9.185 familias) y 86 colegios (55 SLEP + 10 VTF; 2.924 estudiantes SIES 2026).',
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     nodesFile: 'data/systemic/csv/08_salud_aps_hospitales_y_desagregaciones.csv',
     sourceName: 'INE Censo 2024 / MINVU / DOH-MOP / MINEDUC SLEP / SPD CEAD',
@@ -775,23 +775,33 @@ hubs.forEach(h => {
 // 2. CONSTRUCCION DE LOS 41 NODOS SATELITE CON DATOS 100% REALES VERIFICADOS
 // ============================================================================
 const DEFICIT_CUANTITATIVO_MINVU_MAP = {
-  '11101': 1742, '11102': 32, '11201': 719, '11202': 174, '11203': 89,
-  '11401': 134, '11402': 81, '11301': 111, '11302': 26, '11303': 39
+  '11101': 1128, '11102': 73, '11201': 330, '11202': 109, '11203': 14,
+  '11401': 86, '11402': 50, '11301': 118, '11302': 4, '11303': 15
+};
+
+const DEFICIT_CUANTITATIVO_PCT_HOGARES_MAP = {
+  '11101': 5.0, '11102': 19.6, '11201': 3.6, '11202': 5.0, '11203': 2.3,
+  '11401': 4.1, '11402': 4.1, '11301': 8.1, '11302': 1.4, '11303': 6.5
 };
 
 const DEFICIT_CUALITATIVO_MINVU_MAP = {
-  '11101': 6280, '11102': 300, '11201': 3260, '11202': 1280, '11203': 680,
-  '11401': 990, '11402': 770, '11301': 810, '11302': 255, '11303': 375
+  '11101': 2893, '11102': 48, '11201': 1168, '11202': 281, '11203': 78,
+  '11401': 272, '11402': 158, '11301': 189, '11302': 38, '11303': 30
 };
 
 const SSR_COMITES_DOH_MAP = {
-  '11101': 12, '11102': 3, '11201': 8, '11202': 6, '11203': 2,
-  '11401': 4, '11402': 4, '11301': 4, '11302': 2, '11303': 2
+  '11101': 15, '11102': 2, '11201': 8, '11202': 5, '11203': 1,
+  '11401': 5, '11402': 5, '11301': 3, '11302': 2, '11303': 1
 };
 
 const SSR_BENEFICIARIOS_DOH_MAP = {
-  '11101': 10500, '11102': 620, '11201': 5500, '11202': 3100, '11203': 1420,
-  '11401': 2350, '11402': 2050, '11301': 1450, '11302': 610, '11303': 480
+  '11101': 10650, '11102': 620, '11201': 5680, '11202': 3250, '11203': 1598,
+  '11401': 2420, '11402': 2115, '11301': 1450, '11302': 570, '11303': 480
+};
+
+const SSR_FAMILIAS_DOH_MAP = {
+  '11101': 3350, '11102': 210, '11201': 1790, '11202': 1050, '11203': 551,
+  '11401': 780, '11402': 680, '11301': 450, '11302': 174, '11303': 150
 };
 
 const LARGO_PISTA_AERODROMO_MAP = {
@@ -1419,7 +1429,7 @@ const rawNodos = [
     hubId: 'energia',
     title: 'Fibra Óptica Austral (FOA) y Telecomunicaciones',
     definition: 'Conectividad comunal según **Informe Nacional FDT SUBTEL 3T-2026**: **Troncal Submarina CTR (FDT-2017-01, único aterrizaje en Caleta Tortel)**, **Cable Submarino Austral GTD (Puerto Chacabuco)**, **Troncal Terrestre Silica (14 POIITs, FDT-2018-02)** y adjudicaciones **Fibra Tortel–Villa O\'Higgins (1S-2028)** y **Última Milla FDT-2025-03 (33 localidades)**.',
-    example: 'Reconcilia **26.294 conexiones fijas** (**24.782 residenciales**, **75,96% FTTX** y **21,48% Starlink**) al corte SUBTEL junio 2026 frente a **37.645 hogares Censo 2024**: **Lago Verde** (17,5% internet, **0,0% fibra**) y **Villa O\'Higgins** (23,2% internet, **0,0% fibra** hasta enlace 1S-2028) operan 100% sobre Starlink y radioenlace.',
+    example: 'Reconcilia **26.294 conexiones fijas** (**24.782 residenciales**, **75,96% FTTX** y **21,48% Starlink**) al corte SUBTEL junio 2026 frente a **39.964 hogares Censo 2024**: **Lago Verde** (17,5% internet, **0,0% fibra**) y **Villa O\'Higgins** (23,2% internet, **0,0% fibra** hasta enlace 1S-2028) operan 100% sobre Starlink y radioenlace.',
     officialSource: { name: 'SUBTEL — Proyecto Fibra Optica Austral (FOA)', url: 'https://www.subtel.gob.cl/', frequency: 'Semestral' },
     csvFile: 'data/systemic/csv/02_energia_combustibles_telecom_comunas.csv',
     relatedNodeIds: [5, 12, 24, 25],
@@ -1870,46 +1880,48 @@ const rawNodos = [
     id: 23,
     hubId: 'social',
     title: 'Demografía Censo 2024 y Pobreza CASEN',
-    definition: 'Resultados oficiales del **Censo 2024 (INE)**: **100.745 habitantes censados**, proporción regional, superficie comunal, índice de envejecimiento (66,2), densidad habitacional (hab/km2) e índices de **pobreza por ingresos y multidimensional CASEN 2022**.',
-    example: 'La Región de Aysén registra 100.745 habitantes según el Censo 2024 (INE), con 57.823 en Coyhaique (57,40%) y 23.170 en Puerto Aysén (23,00%), alcanzando densidades de solo 0,03 hab/km2 en Tortel y 0,04 hab/km2 en O\'Higgins.',
-    officialSource: { name: 'INE Censo 2024 / Ministerio de Desarrollo Social CASEN 2022', url: 'https://censo2024.ine.gob.cl/', frequency: 'Censal / CASEN bienal' },
+    definition: 'Resultados oficiales del **Censo 2024 (INE / BCN 2026)**: **100.745 habitantes regionales** (**80,7% urbana / 19,3% rural**; **39.964 hogares**, `2,5` pers./hogar; **52.294 viviendas totales**, **39.631 ocupadas**), **Índice de Envejecimiento (66,2)**, **Masculinidad (97,9)**, **Pueblos Originarios (29,0%)**, **Inmigración (3,9%)** y **CASEN 2022/2024** (`14,3%` ingresos / `12,1%` multidimensional nueva metodología ene-2026).',
+    example: 'La Región de Aysén suma **100.745 habitantes** (**57.823 en Coyhaique [57,4%]** y **23.170 en Aysén [23,0%]**), **39.964 hogares** y **52.294 viviendas**. El envejecimiento subió de `13,7` (1992) a `66,2` (2024), liderando **Lago Verde (182,8)** y **Río Ibáñez (121,2)** frente a **Tortel (30,8)**.',
+    officialSource: { name: 'INE Censo 2024 / MDSF CASEN 2022-2024 / RSH', url: 'https://censo2024.ine.gob.cl/', frequency: 'Censal / CASEN bienal' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     relatedNodeIds: [15, 24, 25, 26],
     chartSpec: {
       type: 'bar',
-      title: 'Población Comunal Censo 2024 en la Región de Aysén (Total: 100.745 hab)',
+      title: 'Población Comunal Censo 2024 en la Región de Aysén (BCN / Total Regional: 100.745 hab)',
       labels: comunasBase.map(c => c.nombre),
       datasets: [{
         label: 'Población Censo 2024',
-        data: comunasBase.map(c => (c.demografia || {}).censo_2024_poblacion || 0),
+        data: comunasBase.map(c => (wp05ByIne[String(c.comuna_ine)] || {}).demografia_censo_2024?.poblacion_censo_2024 || (c.demografia || {}).censo_2024_poblacion || 0),
         backgroundColor: '#1e3a8a'
       }],
       unit: 'habitantes'
     },
-    tableColumns: ['Comuna', 'Población Censo 2024', '% Regional', 'Superficie (km2)', 'Pobreza CASEN (%)'],
+    tableColumns: ['Comuna', 'Población Censo 2024', 'Hogares (2024)', 'Índice Envejec. (IAM)', 'Pob. Multidim. CASEN (%)'],
     tableRows: comunasBase.map(c => {
-      const d = c.demografia || {};
-      const p = c.pobreza_casen || {};
+      const ine = String(c.comuna_ine);
+      const w5 = wp05ByIne[ine] || {};
+      const dem5 = w5.demografia_censo_2024 || {};
+      const pob5 = w5.pobreza_casen || {};
       return [
         c.nombre,
-        fmtNum(d.censo_2024_poblacion),
-        `${d.porcentaje_regional_pct}%`,
-        fmtNum(d.superficie_km2),
-        `${p.pobreza_ingresos_pct}%`
+        fmtNum(dem5.poblacion_censo_2024 || (c.demografia || {}).censo_2024_poblacion),
+        fmtNum(dem5.hogares_censo_2024 || 0),
+        fmtNum(dem5.indice_envejecimiento || 66.2),
+        `${pob5.pobreza_multidim_pct || 14.0}%`
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Microdatos consolidados del Censo de Población y Vivienda 2024 INE (100.745 hab)',
-        'Tasa de crecimiento intercensal y densidad poblacional (hab/km2)',
-        'Pobreza por ingresos y pobreza multidimensional CASEN 2022',
-        'Indice de masculinidad y estructura etaria por comuna'
+        'Censo 2024 INE/BCN: 100.745 hab (101.148 suma comunal BCN), 39.964 hogares y 52.294 viviendas',
+        'Serie de envejecimiento 1992-2024 (13,7 -> 66,2), edad promedio 37,4 años y masculinidad 97,9',
+        'Pueblos originarios (29,0% = 29.230 pers.) e inmigración internacional (3,9% = 3.931 pers.)',
+        'CASEN 2022 (4,0% / 14,0%) y Nueva Metodología CASEN 2024 ene-2026 (14,3% ing. / 12,1% multidim.)'
       ],
       suggestedCrossings: [
         'Cruce con Red Asistencial de Salud (Nodo #24)',
-        'Cruce con Matrícula Escolar SLEP (Nodo #25)'
+        'Cruce con Déficit Habitacional MINVU CECT y RSH (Nodo #41)'
       ],
-      totalRecordsInFullBase: '10 comunas y perfiles demograficos censales en data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv'
+      totalRecordsInFullBase: '10 comunas y perfiles demograficos censales en data/systemic/05_social_salud_educacion_riesgos.json'
     }
   },
   {
@@ -1964,38 +1976,40 @@ const rawNodos = [
     id: 25,
     hubId: 'social',
     title: 'Matrícula escolar en la comuna',
-    definition: 'Red de establecimientos bajo administración del **Servicio Local de Educación Pública (SLEP Aysén)**: matrícula escolar total, presencia de educación media completa, sedes de educación superior y diferenciación de **36 escuelas rurales multigrado** frente a **16 liceos urbanos**.',
-    example: 'Registra la matrícula pública en las 10 comunas, los internados estudiantiles para alumnos de zonas aisladas y la oferta de educación superior (Universidad de Aysén e INACAP en Coyhaique).',
-    officialSource: { name: 'Centro de Estudios MINEDUC / SLEP Aysen', url: 'https://datosabiertos.mineduc.cl/', frequency: 'Anual' },
+    definition: 'Ecosistema escolar y superior (**MINEDUC CEM 2024–2025 / SLEP Aysén / SIES 2026**): **86 establecimientos escolares activos** (`87` en 2025 con 1 particular pagado en Coyhaique), desagregados en **55 escuelas y liceos SLEP** (+`10` jardines VTF = `65` operativos SLEP 2025–2026) y **31 colegios particulares subvencionados/CAD/pagados**; **22.087 alumnos** (`8.939` SLEP); **SIMCE 2025**, **PAES 2026** (`M1 627,4` / `CL 600,2`) y **2.924 estudiantes SIES 2026** (`Coyhaique 2.187` + `Aysén 737`).',
+    example: 'En Caleta Tortel opera **1 sola escuela básica rural SLEP** (*Escuela Comandante Luis Bravo Bravo*, RBD 8410-7, `82` alumnos hasta 8° Básico, **0 liceos**), y en Educación Superior SIES 2026 Aysén suma **2.924 estudiantes** (UAysén ~`1.000`, INACAP Coyhaique ~`1.187`, CFT Estatal Puerto Aysén `737`).',
+    officialSource: { name: 'Centro de Estudios MINEDUC / SLEP Aysén / SIES 2026', url: 'https://datosabiertos.mineduc.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     relatedNodeIds: [14, 23],
     chartSpec: {
       type: 'bar',
-      title: 'Escuelas Rurales Multigrado vs. Liceos Urbanos por Comuna (SLEP Aysén)',
+      title: 'Establecimientos Públicos SLEP (55) vs. Particulares Subvencionados/CAD/Pagados (31) por Comuna',
       labels: comunasBase.map(c => c.nombre),
       datasets: [
-        { label: 'Escuelas Rurales Multigrado', data: [12, 3, 6, 5, 2, 2, 2, 1, 1, 2], backgroundColor: '#0f766e' },
-        { label: 'Liceos y Colegios Urbanos', data: [7, 0, 4, 1, 1, 1, 0, 1, 0, 1], backgroundColor: '#4338ca' }
+        { label: 'Establecimientos Públicos SLEP Aysén (55 escuelas/liceos)', data: [17, 3, 12, 7, 2, 5, 5, 2, 1, 1], backgroundColor: '#0f766e' },
+        { label: 'Particulares Subvencionados, CAD y Pagados (31 colegios)', data: [23, 0, 7, 1, 0, 0, 0, 0, 0, 0], backgroundColor: '#4338ca' }
       ],
       unit: 'establecimientos'
     },
-    tableColumns: ['Comuna', 'Establecimientos SLEP', 'Matrícula Escolar', 'Educación Media', 'Sede Superior'],
+    tableColumns: ['Comuna', 'Colegios Totales', 'Escuelas/Liceos SLEP', 'Matrícula Total (SLEP)', 'Educación Media / SIES 2026'],
     tableRows: comunasBase.map(c => {
       const ed = (wp05ByIne[String(c.comuna_ine)] || {}).educacion_mineduc || {};
+      const siesN = Number(ed.matricula_educacion_superior_sies_2026) || 0;
+      const supStr = siesN > 0 ? `${(ed.instituciones_educacion_superior || []).join(', ')} (${fmtNum(siesN)} est.)` : (ed.tiene_educacion_media_completa ? 'Media completa' : 'Solo Básica (8vo)');
       return [
         c.nombre,
         fmtNum(ed.establecimientos_escolares_total),
-        fmtNum(ed.matricula_escolar_total),
-        ed.tiene_educacion_media_completa ? 'Si' : 'Parcial / Derivacion',
-        (ed.instituciones_educacion_superior || []).slice(0, 1).join(', ') || 'Sin sede local'
+        fmtNum(ed.establecimientos_slep_aysen),
+        `${fmtNum(ed.matricula_escolar_total)} (${fmtNum(ed.matricula_slep_aysen_n)})`,
+        supStr
       ];
     }),
     canvasPreview: {
       availableDimensions: [
-        'Desglose institucional de establecimientos bajo dependencia del SLEP Aysén',
-        'Directorio de 36 escuelas rurales multigrado unidocentes y bidocentes',
-        'Red de 16 liceos científico-humanistas y técnico-profesionales',
-        'Matrícula de 47 jardines infantiles JUNJI e Integra'
+        '86 establecimientos escolares activos (55 escuelas/liceos SLEP + 31 part. subv./CAD/pagados) + 10 VTF',
+        'SIMCE 2025: 4° Bás. Lect 276/Mat 257; 8° Bás. Lect 229/Mat 252/Hist 245; II° Medio Lect 246/Mat 261',
+        'PAES Admisión 2026: M1 627,4 pts (+13,8) y Lectora 600,2 pts (+12,9), sobre promedio Chile',
+        'Educación Superior SIES 2026: 2.924 estudiantes (2.907 pregrado: Coyhaique 2.187 + CFT Estatal Aysén 737)'
       ],
       suggestedCrossings: [
         'Cruce con Conectividad Digital FOA (Nodo #14)',
@@ -2008,9 +2022,9 @@ const rawNodos = [
     id: 26,
     hubId: 'social',
     title: 'Denuncias por violencia intrafamiliar',
-    definition: 'Tasas comunales de **Delitos de Mayor Connotación Social (DMCS)** y denuncias de **Violencia Intrafamiliar (VIF)** cada 100.000 habitantes (**CEAD Subsecretaría de Prevención del Delito**), tipologías frecuentes y dotación policial.',
-    example: 'Permite revisar las tasas estandarizadas cada 100 mil habitantes y la cobertura de comisarías, subcomisarias, tenencias y retenes fronterizos de Carabineros en las 10 comunas.',
-    officialSource: { name: 'CEAD — Subsecretaria de Prevencion del Delito', url: 'https://cead.spd.gov.cl/', frequency: 'Trimestral' },
+    definition: 'Tasas comunales oficiales de **Delitos Violentos / Vida e Integridad** y **Violencia Intrafamiliar (VIF)** cada 100.000 habitantes (**CEAD Subsecretaría de Prevención del Delito / BCN 2023–2025**): VIF regional `2023: 691,6`, `2024: 809,9` (`+34,8%` vs Chile `601,0`), `2025: 709,9` (`+21,3%` vs Chile `585,1`).',
+    example: 'Tasa VIF consolidada lidera en **Aysén (1.157,9 en 2024; 938,6 en 2025)** y **Cochrane (773,1 en 2025 vs 374,2 en 2024)**; en **Lago Verde** la tasa VIF varió de `874,3` (2023) a `109,4` (2024) y `548,2` (2025), mientras delitos violentos promedian `1.872,2` c/100k hab (bajo Chile `2.222,7`).',
+    officialSource: { name: 'CEAD — Subsecretaría de Prevención del Delito / BCN', url: 'https://cead.spd.gov.cl/', frequency: 'Trimestral' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     relatedNodeIds: [23, 24],
     chartSpec: {
@@ -2777,40 +2791,40 @@ const rawNodos = [
     id: 41,
     hubId: 'social',
     title: 'Déficit Habitacional (MINVU) y Sistemas Sanitarios Rurales (SSR/APR)',
-    definition: 'Brechas de habitabilidad y servicios sanitarios rurales en Aysén: **déficit habitacional cuantitativo (3.147 viviendas)** y **cualitativo (15.000 viviendas)** según estimación MINVU, carencia de servicios básicos y hacinamiento en el **Registro Social de Hogares (MDSF RSH jun-2026)**, junto con **47 comités/cooperativas de Servicios Sanitarios Rurales (SSR/APR)** que abastecen a **28.080 personas beneficiarias (DOH-MOP)**.',
-    example: 'Las comunas australes registran los mayores porcentajes de carencia de servicios básicos en el RSH (**38,1%** en Tortel y **33,9%** en Lago Verde vs. **13,1%** en O\'Higgins), mientras **Coyhaique** concentra **1.742** requerimientos cuantitativos de vivienda y **12** comités SSR.',
-    officialSource: { name: 'MINVU / MDSF Registro Social de Hogares / DOH-MOP', url: 'https://www.minvu.gob.cl/', frequency: 'Anual' },
+    definition: 'Brechas de habitabilidad Censo 2024 y servicios sanitarios rurales en Aysén (**MINVU CECT Oct-2025 / CASEN 2024 / RSH / PEH Feb-2026 / DOH-MOP**): **déficit cuantitativo de 1.927 viviendas** (`4,8%` de `39.964` hogares: `609` irrecuperables, `333` allegados, `326` núcleos hacinados, `659` hacinamiento no ampliable; `-35,3%` en serie histórica), **déficit cualitativo de 12,9% (`5.155` hogares)**, **10 campamentos (`244` hogares)**, **PEH cerrado en feb-2026 con `1.671` viviendas terminadas (`129,2%` de meta `1.293`, prorrogado a dic-2029)** y **47 comités SSR/APR** (`28.833` personas / `9.185` familias).',
+    example: 'En déficit cuantitativo relativo lideran **Lago Verde (`19,6%` = `73` viv.)** y **Cochrane (`8,1%` = `118` viv.)**, mientras **Coyhaique (`1.128` viv., `5` campamentos)** y **Aysén (`330` viv., `4` campamentos)** concentran volumen absoluto. En SSR/APR, los `47` comités cubren `28.833` personas (`9.185` arranques/familias, con `551` en Melinka).',
+    officialSource: { name: 'MINVU CECT / MDSF CASEN-RSH / DOH-MOP', url: 'https://www.minvu.gob.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/05_social_salud_educacion_riesgos_comunas.csv',
     relatedNodeIds: [12, 17, 22, 24],
     chartSpec: {
       type: 'bar',
-      title: 'Déficit Habitacional Cuantitativo vs. Cualitativo por Comuna (MINVU)',
+      title: 'Déficit Habitacional Cuantitativo (1.927) vs. Cualitativo CASEN 2024 (5.155) por Comuna',
       labels: comunasBase.map(c => c.nombre),
       datasets: [
         {
-          label: 'Déficit Cuantitativo (viviendas)',
+          label: 'Déficit Cuantitativo CECT (viviendas)',
           data: comunasBase.map(c => DEFICIT_CUANTITATIVO_MINVU_MAP[String(c.comuna_ine)] || 0),
           backgroundColor: '#2563eb'
         },
         {
-          label: 'Déficit Cualitativo (viviendas)',
+          label: 'Déficit Cualitativo CASEN 2024 (hogares)',
           data: comunasBase.map(c => DEFICIT_CUALITATIVO_MINVU_MAP[String(c.comuna_ine)] || 0),
           backgroundColor: '#60a5fa'
         }
       ],
-      unit: 'viviendas'
+      unit: 'viviendas / hogares'
     },
-    tableColumns: ['Comuna', 'Déficit Cuantitativo', 'Déficit Cualitativo', 'Carencia Serv. Básicos (%)', 'Comités SSR/APR', 'Beneficiarios SSR/APR (personas)'],
+    tableColumns: ['Comuna', 'Déficit Cuantitativo (% Hog.)', 'Déficit Cualitativo', 'Carencia Serv. RSH (%)', 'Comités SSR/APR', 'Personas / Familias SSR'],
     tableRows: comunasBase.map(c => {
       const ine = String(c.comuna_ine);
       const rsh = (wp05ByIne[ine] || {}).vivienda_y_rsh || {};
       return [
         c.nombre,
-        fmtNum(DEFICIT_CUANTITATIVO_MINVU_MAP[ine] || 0),
+        `${fmtNum(DEFICIT_CUANTITATIVO_MINVU_MAP[ine] || 0)} (${DEFICIT_CUANTITATIVO_PCT_HOGARES_MAP[ine] || 0}%)`,
         fmtNum(DEFICIT_CUALITATIVO_MINVU_MAP[ine] || 0),
         `${Number(rsh.rsh_carencia_servicios_basicos_jun2026_pct) || 0}%`,
         fmtNum(SSR_COMITES_DOH_MAP[ine] || 0),
-        fmtNum(SSR_BENEFICIARIOS_DOH_MAP[ine] || 0)
+        `${fmtNum(SSR_BENEFICIARIOS_DOH_MAP[ine] || 0)} / ${fmtNum(SSR_FAMILIAS_DOH_MAP[ine] || 0)}`
       ];
     }),
     canvasPreview: {
@@ -3650,14 +3664,39 @@ if (nodoPescaInd) {
 // 3. PERFILES CONSOLIDADOS DE LAS 10 COMUNAS (CON DATOS REALES VERIFICADOS)
 // ============================================================================
 // Tablas de concordancia territorial y epidemiológica verificadas (Matriz 2026)
+const POBLACION_CENSO_2024_MAP = {
+  '11101': 57823, '11102': 882, '11201': 23170, '11202': 5335, '11203': 1598,
+  '11401': 4950, '11402': 2671, '11301': 3492, '11302': 664, '11303': 563
+};
+
 const INDICE_ENVEJECIMIENTO_MAP = {
-  '11101': 64.1, '11102': 78.5, '11201': 67.5, '11202': 69.4, '11203': 58.0,
-  '11401': 72.4, '11402': 79.1, '11301': 67.5, '11302': 74.0, '11303': 71.5
+  '11101': 64.1, '11102': 182.8, '11201': 61.6, '11202': 64.1, '11203': 56.5,
+  '11401': 92.9, '11402': 121.2, '11301': 65.0, '11302': 41.7, '11303': 30.8
 };
 
 const INDICE_MASCULINIDAD_MAP = {
-  '11101': 96.8, '11102': 122.4, '11201': 104.2, '11202': 117.2, '11203': 118.5,
-  '11401': 111.0, '11402': 116.4, '11301': 114.5, '11302': 124.6, '11303': 125.2
+  '11101': 95.0, '11102': 121.3, '11201': 98.9, '11202': 102.3, '11203': 115.7,
+  '11401': 102.1, '11402': 107.4, '11301': 106.0, '11302': 104.7, '11303': 114.0
+};
+
+const VIVIENDAS_TOTALES_CENSO_2024_MAP = {
+  '11101': 27989, '11102': 724, '11201': 11054, '11202': 3437, '11203': 816,
+  '11401': 3108, '11402': 2242, '11301': 2126, '11302': 403, '11303': 395
+};
+
+const VIVIENDAS_OCUPADAS_CENSO_2024_MAP = {
+  '11101': 22198, '11102': 370, '11201': 8994, '11202': 2171, '11203': 603,
+  '11401': 2097, '11402': 1227, '11301': 1449, '11302': 291, '11303': 231
+};
+
+const PUEBLOS_ORIGINARIOS_CENSO_2024_MAP = {
+  '11101': 27.5, '11102': 22.8, '11201': 31.8, '11202': 28.4, '11203': 57.9,
+  '11401': 24.5, '11402': 25.1, '11301': 22.9, '11302': 21.4, '11303': 40.2
+};
+
+const INMIGRANTES_CENSO_2024_MAP = {
+  '11101': 4.3, '11102': 2.8, '11201': 3.5, '11202': 3.6, '11203': 1.4,
+  '11401': 4.1, '11402': 2.9, '11301': 2.5, '11302': 3.6, '11303': 3.3
 };
 
 const CAMAS_HOSPITALARIAS_MAP = {
@@ -3681,23 +3720,38 @@ const POBREZA_INGRESOS_MAP = {
 };
 
 const POBREZA_MULTIDIMENSIONAL_MAP = {
-  '11101': 11.8, '11102': 24.5, '11201': 15.2, '11202': 18.6, '11203': 27.4,
-  '11401': 16.2, '11402': 19.8, '11301': 15.0, '11302': 22.8, '11303': 26.2
+  '11101': 14.0, '11102': 18.0, '11201': 12.8, '11202': 12.3, '11203': 22.2,
+  '11401': 16.3, '11402': 18.8, '11301': 14.3, '11302': 12.1, '11303': 12.3
+};
+
+const ESTABLECIMIENTOS_ESCOLARES_MAP = {
+  '11101': 40, '11102': 3, '11201': 19, '11202': 8, '11203': 2,
+  '11401': 5, '11402': 5, '11301': 2, '11302': 1, '11303': 1
 };
 
 const SLEP_ESTABLECIMIENTOS_MAP = {
-  '11101': 22, '11102': 4, '11201': 12, '11202': 8, '11203': 2,
-  '11401': 5, '11402': 5, '11301': 4, '11302': 2, '11303': 2
+  '11101': 17, '11102': 3, '11201': 12, '11202': 7, '11203': 2,
+  '11401': 5, '11402': 5, '11301': 2, '11302': 1, '11303': 1
+};
+
+const MATRICULA_ESCOLAR_TOTAL_MAP = {
+  '11101': 13284, '11102': 54, '11201': 5286, '11202': 1011, '11203': 290,
+  '11401': 864, '11402': 353, '11301': 740, '11302': 123, '11303': 82
+};
+
+const MATRICULA_SLEP_MAP = {
+  '11101': 3017, '11102': 54, '11201': 2406, '11202': 1010, '11203': 290,
+  '11401': 864, '11402': 353, '11301': 740, '11302': 123, '11303': 82
 };
 
 const MATRICULA_SIES_MAP = {
-  '11101': 2010, '11102': 0, '11201': 317, '11202': 0, '11203': 0,
+  '11101': 2187, '11102': 0, '11201': 737, '11202': 0, '11203': 0,
   '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0
 };
 
 const HOGARES_CENSO_2024_MAP = {
-  '11101': 21800, '11102': 320, '11201': 8200, '11202': 2050, '11203': 520,
-  '11401': 1950, '11402': 1060, '11301': 1300, '11302': 250, '11303': 195
+  '11101': 22423, '11102': 373, '11201': 9057, '11202': 2180, '11203': 606,
+  '11401': 2109, '11402': 1231, '11301': 1462, '11302': 292, '11303': 231
 };
 
 const CONSUMO_LENA_SOLIDOS_MAP = {
@@ -3927,7 +3981,8 @@ function buildComunaRows() {
     const _activosSalmon = Number(_acuicG3.centros_operativos_activos) || 0;
     const _snaspeConc = CONCESIONES_SNASPE_MAP[ine] !== undefined ? CONCESIONES_SNASPE_MAP[ine] : 0;
     const _trabSii = Number((g4.estructura_empresarial_sii || {}).trabajadores_dependientes_sii) || 0;
-    const _pop = Number(d.censo_2024_poblacion) || 0;
+    const _pop = POBLACION_CENSO_2024_MAP[ine] !== undefined ? POBLACION_CENSO_2024_MAP[ine] : (Number(d.censo_2024_poblacion) || 0);
+    const _estEsc = ESTABLECIMIENTOS_ESCOLARES_MAP[ine] !== undefined ? ESTABLECIMIENTOS_ESCOLARES_MAP[ine] : (Number((g5.educacion_mineduc || {}).establecimientos_escolares_total) || 0);
     const _presMclp = Number((g1.finanzas_sinim || {}).presupuesto_municipal_anual_mclp) || 0;
     const _fndrMclp = Number((g1.inversion_publica || {}).fndr_asignado_estimado_mclp) || 0;
     const _fndr23Ejec = Number((g1.inversion_publica || {}).fndr_gore_2023_ejecutado_mclp) || 0;
@@ -3954,8 +4009,8 @@ function buildComunaRows() {
       provincia: c.provincia,
       cabecera: c.cabecera,
       cuenca_bna: c.cuenca_principal_bna,
-      poblacion_censo_2024: Number(d.censo_2024_poblacion) || 0,
-      porcentaje_regional_pct: Number(d.porcentaje_regional_pct) || 0,
+      poblacion_censo_2024: _pop,
+      porcentaje_regional_pct: Number(((_pop / 101148) * 100).toFixed(2)),
       superficie_km2: Number(d.superficie_km2) || 0,
       densidad_hab_km2: Number(d.densidad_hab_km2) || 0,
       pobreza_ingresos_pct: POBREZA_INGRESOS_MAP[ine] !== undefined ? POBREZA_INGRESOS_MAP[ine] : (Number(p.pobreza_ingresos_pct) || 0),
@@ -4043,7 +4098,10 @@ function buildComunaRows() {
       operaciones_aerodromo_interior_anual: OPS_AERODROMO_INTERIOR_MAP[ine] || 0,
       camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
       traslado_coyhaique_hrs: Number((g5.salud_red_asistencial || {}).tiempo_traslado_terrestre_coyhaique_horas) || 0,
-      matricula_escolar: Number((g5.educacion_mineduc || {}).matricula_escolar_total) || 0,
+      matricula_escolar: MATRICULA_ESCOLAR_TOTAL_MAP[ine] !== undefined ? MATRICULA_ESCOLAR_TOTAL_MAP[ine] : (Number((g5.educacion_mineduc || {}).matricula_escolar_total) || 0),
+      matricula_escolar_total_n: MATRICULA_ESCOLAR_TOTAL_MAP[ine] !== undefined ? MATRICULA_ESCOLAR_TOTAL_MAP[ine] : (Number((g5.educacion_mineduc || {}).matricula_escolar_total) || 0),
+      matricula_escolar_mineduc: MATRICULA_ESCOLAR_TOTAL_MAP[ine] !== undefined ? MATRICULA_ESCOLAR_TOTAL_MAP[ine] : (Number((g5.educacion_mineduc || {}).matricula_escolar_total) || 0),
+      matricula_slep_aysen_n: MATRICULA_SLEP_MAP[ine] !== undefined ? MATRICULA_SLEP_MAP[ine] : 0,
       cobertura_vegetal_nativa_ha: Number((g7.flora_y_formaciones_vegetacionales || {}).total_cobertura_vegetal_nativa_ha) || 0,
       cobertura_vegetal_pct: Number((g7.flora_y_formaciones_vegetacionales || {}).porcentaje_cobertura_vegetal_pct) || 0,
       fauna_amenazada_n: ((g7.fauna_emblematica_conservacion || {}).especies_presentes || []).length,
@@ -4146,8 +4204,8 @@ function buildComunaRows() {
       evaluacion_uaysen_promedio_i8: Number(g10.evaluacion_uaysen_promedio_i8) || 0,
       aporte_universidades_f4g_pct: ({ '11101': 72.8, '11102': 68.5, '11201': 71.4, '11202': 64.2, '11203': 58.0, '11401': 62.5, '11402': 63.8, '11301': 61.2, '11302': 57.5, '11303': 60.0 })[ine] || 66.4,
       proporcion_ciencia_endogena_pct: ({ '11101': 64.9, '11102': 0.0, '11201': 47.1, '11202': 50.0, '11203': 33.3, '11401': 50.0, '11402': 25.0, '11301': 50.0, '11302': 0.0, '11303': 60.0 })[ine] ?? 56.7,
-      matricula_educacion_superior_sies_n: ({ '11101': 1890, '11102': 0, '11201': 437, '11202': 0, '11203': 0, '11401': 0, '11402': 0, '11301': 0, '11302': 0, '11303': 0 })[ine] || 0,
-      establecimientos_escolares_n: ({ '11101': 33, '11102': 4, '11201': 18, '11202': 9, '11203': 2, '11401': 5, '11402': 5, '11301': 4, '11302': 2, '11303': 2 })[ine] || Number((g5.educacion_mineduc || {}).establecimientos_escolares_total) || 0,
+      matricula_educacion_superior_sies_n: MATRICULA_SIES_MAP[ine] !== undefined ? MATRICULA_SIES_MAP[ine] : 0,
+      establecimientos_escolares_n: _estEsc,
       establecimientos_aps_n: Number((g8.salud_diferenciada?.atencion_primaria_aps || {}).total_establecimientos_aps) || 0,
       holdings_operadores_salmon: ((g3.concesiones_acuicolas || {}).holdings_controladores_y_ruts || []).map(ho => `${ho.nombre_fantasia || ho.holding} (${ho.concesiones_estimadas_en_comuna || ho.concesiones_comuna})`).join(', ') || '-',
 
@@ -4163,14 +4221,14 @@ function buildComunaRows() {
       dependencia_barcaza_nivel: Number((g11.conectividad_terrestre || {}).dependencia_barcaza_nivel) || 0,
       hogares_sin_internet_fijo_pct: Number((g11.conectividad_digital || {}).hogares_sin_internet_fijo_pct) || 0,
       cobertura_fibra_hogar_pct: Number((g11.conectividad_digital || {}).cobertura_fibra_hogar_pct) || 0,
-      establecimientos_educacion_conectados_n: Number((g11.conectividad_digital || {}).establecimientos_educacion_conectados_n) || 0,
+      establecimientos_educacion_conectados_n: Math.min(Number((g11.conectividad_digital || {}).establecimientos_educacion_conectados_n) || 0, _estEsc),
       fdt_ultima_milla_aprobado: (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado !== undefined ? (g11.conectividad_digital || {}).fdt_ultima_milla_aprobado : false,
 
       // Informes Territoriales: Vivienda, Agropecuario, Salud y Glaciares
       deficit_habitacional_cuantitativo_n: DEFICIT_CUANTITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_MINVU_MAP[ine] : (Number(gViv.deficit_cuantitativo_n) || 0),
       deficit_habitacional_cualitativo_n: DEFICIT_CUALITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUALITATIVO_MINVU_MAP[ine] : (Number(gViv.deficit_cualitativo_n) || 0),
       sistemas_ssr_apr_n: SSR_COMITES_DOH_MAP[ine] !== undefined ? SSR_COMITES_DOH_MAP[ine] : (Number(gViv.sistemas_ssr_apr_n) || 0),
-      cobertura_ssr_apr_familias: SSR_BENEFICIARIOS_DOH_MAP[ine] !== undefined ? SSR_BENEFICIARIOS_DOH_MAP[ine] : (Number(gViv.cobertura_ssr_apr_familias) || 0),
+      cobertura_ssr_apr_familias: SSR_FAMILIAS_DOH_MAP[ine] !== undefined ? SSR_FAMILIAS_DOH_MAP[ine] : (Number(gViv.cobertura_ssr_apr_familias) || 0),
       ganado_bovino_cabezas: BOVINOS_CAF_MAP[ine] !== undefined ? BOVINOS_CAF_MAP[ine] : (Number(gAgro.ganado_bovino_cabezas) || 0),
       ganado_ovino_cabezas: OVINOS_CAF_MAP[ine] !== undefined ? OVINOS_CAF_MAP[ine] : (Number(gAgro.ganado_ovino_cabezas) || 0),
       bosque_nativo_ha: ({ '11101': 435000.0, '11102': 365000.0, '11201': 1390000.0, '11202': 990000.0, '11203': 51200.0, '11401': 260000.0, '11402': 285000.0, '11301': 465000.0, '11302': 326184.3, '11303': 585000.0 })[ine] || Number(gAgro.bosque_nativo_ha) || 0,
@@ -4199,9 +4257,13 @@ function buildComunaRows() {
       // 36 VARIABLES COMUNALES CANÓNICAS - MATRIZ DE RECONCILIACIÓN 2026
       // ========================================================================
       // 1. Demografía y Salud (INE Censo 2024 / DEIS / SSA / SIGTE)
-      poblacion_censo_2024: Number(d.censo_2024_poblacion) || 0,
+      poblacion_censo_2024: _pop,
+      viviendas_totales_censo_2024: VIVIENDAS_TOTALES_CENSO_2024_MAP[ine] || 0,
+      viviendas_ocupadas_censo_2024: VIVIENDAS_OCUPADAS_CENSO_2024_MAP[ine] || 0,
+      pueblos_originarios_pct_censo_2024: PUEBLOS_ORIGINARIOS_CENSO_2024_MAP[ine] || 29.0,
+      inmigrantes_internacionales_pct_censo_2024: INMIGRANTES_CENSO_2024_MAP[ine] || 3.9,
       indice_envejecimiento: INDICE_ENVEJECIMIENTO_MAP[ine] !== undefined ? INDICE_ENVEJECIMIENTO_MAP[ine] : 66.2,
-      indice_masculinidad: INDICE_MASCULINIDAD_MAP[ine] !== undefined ? INDICE_MASCULINIDAD_MAP[ine] : 115.8,
+      indice_masculinidad: INDICE_MASCULINIDAD_MAP[ine] !== undefined ? INDICE_MASCULINIDAD_MAP[ine] : 97.9,
       camas_hospitalarias: CAMAS_HOSPITALARIAS_MAP[ine] !== undefined ? CAMAS_HOSPITALARIAS_MAP[ine] : ((g8.salud_diferenciada?.red_hospitalaria?.camas_totales !== undefined) ? g8.salud_diferenciada.red_hospitalaria.camas_totales : Number((g5.salud_red_asistencial || {}).camas_hospitalarias) || 0),
       postas_salud_rural: POSTAS_RURALES_PSR_MAP[ine] !== undefined ? POSTAS_RURALES_PSR_MAP[ine] : ((g8.salud_diferenciada?.atencion_primaria_aps?.postas_salud_rural_total !== undefined) ? g8.salud_diferenciada.atencion_primaria_aps.postas_salud_rural_total : Number((g5.salud_red_asistencial || {}).postas_salud_rural) || 0),
       camas_psiquiatricas_uhce: CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] !== undefined ? CAMAS_PSIQUIATRICAS_UHCE_MAP[ine] : 0,
@@ -4212,15 +4274,20 @@ function buildComunaRows() {
       tasa_mortalidad_suicidio_100k: ({ '11101': 13.4, '11102': 17.8, '11201': 15.6, '11202': 14.8, '11203': 16.2, '11401': 14.5, '11402': 16.8, '11301': 13.9, '11302': 14.2, '11303': 13.8 })[ine] || 15.1,
 
       // 2. Social, Hábitat, Agua Rural, Educación y Seguridad (CASEN / MINVU / DOH-MOP / SLEP / SIES / CEAD)
-      tasa_dmcs_100k: ({ '11101': 2150.4, '11102': 420.0, '11201': 1980.2, '11202': 1120.0, '11203': 890.0, '11401': 1340.0, '11402': 910.0, '11301': 1280.0, '11302': 650.0, '11303': 510.0 })[ine] || 0,
-      tasa_vif_100k: ({ '11101': 940.8, '11102': 385.0, '11201': 1080.5, '11202': 620.0, '11203': 540.0, '11401': 710.0, '11402': 480.0, '11301': 690.0, '11302': 410.0, '11303': 390.0 })[ine] || 0,
-      escuelas_rurales_multigrado_n: ({ '11101': 12, '11102': 3, '11201': 6, '11202': 5, '11203': 2, '11401': 2, '11402': 2, '11301': 1, '11302': 1, '11303': 2 })[ine] || 0,
-      liceos_urbanos_n: ({ '11101': 7, '11102': 0, '11201': 4, '11202': 1, '11203': 1, '11401': 1, '11402': 0, '11301': 1, '11302': 0, '11303': 1 })[ine] || 0,
+      tasa_dmcs_100k: ({ '11101': 1702.0, '11102': 1422.3, '11201': 1197.6, '11202': 1754.1, '11203': 1862.2, '11401': 1743.2, '11402': 1695.5, '11301': 748.5, '11302': 1481.5, '11303': 1202.7 })[ine] || 0,
+      tasa_vif_100k: ({ '11101': 730.1, '11102': 548.2, '11201': 1157.9, '11202': 749.3, '11203': 496.6, '11401': 755.4, '11402': 552.9, '11301': 773.1, '11302': 740.7, '11303': 687.3 })[ine] || 0,
+      escuelas_rurales_multigrado_n: ({ '11101': 12, '11102': 3, '11201': 6, '11202': 5, '11203': 2, '11401': 2, '11402': 2, '11301': 1, '11302': 1, '11303': 1 })[ine] || 0,
+      liceos_urbanos_n: ({ '11101': 7, '11102': 0, '11201': 4, '11202': 1, '11203': 1, '11401': 1, '11402': 0, '11301': 1, '11302': 0, '11303': 0 })[ine] || 0,
       ratio_pobreza_multidim_vs_ingresos: Number(((POBREZA_MULTIDIMENSIONAL_MAP[ine] || 14.0) / Math.max(0.1, POBREZA_INGRESOS_MAP[ine] || 4.0)).toFixed(1)),
       deficit_habitacional_total_por_1000_hab: _pop > 0 ? Number((((DEFICIT_CUANTITATIVO_MINVU_MAP[ine] || 0) / _pop) * 1000).toFixed(1)) : 0,
       pobreza_ingresos_casen_pct: POBREZA_INGRESOS_MAP[ine] !== undefined ? POBREZA_INGRESOS_MAP[ine] : (Number(p.pobreza_ingresos_pct) || 4.0),
       pobreza_multidimensional_casen_pct: POBREZA_MULTIDIMENSIONAL_MAP[ine] !== undefined ? POBREZA_MULTIDIMENSIONAL_MAP[ine] : (Number(p.pobreza_multidimensional_pct) || 14.0),
       deficit_habitacional_cuantitativo_minvu: DEFICIT_CUANTITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_MINVU_MAP[ine] : 0,
+      deficit_cuantitativo_minvu: DEFICIT_CUANTITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_MINVU_MAP[ine] : 0,
+      deficit_habitacional_cuantitativo_viv: DEFICIT_CUANTITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_MINVU_MAP[ine] : 0,
+      deficit_cuantitativo_pct_hogares: DEFICIT_CUANTITATIVO_PCT_HOGARES_MAP[ine] !== undefined ? DEFICIT_CUANTITATIVO_PCT_HOGARES_MAP[ine] : 0,
+      carencia_servicios_basicos_rsh_pct: Number((g5.vivienda_y_rsh || {}).rsh_carencia_servicios_basicos_jun2026_pct) || 0,
+      hacinamiento_rsh_pct: Number((g5.vivienda_y_rsh || {}).rsh_hacinamiento_jun2026_pct) || 0,
       deficit_habitacional_cualitativo_minvu: DEFICIT_CUALITATIVO_MINVU_MAP[ine] !== undefined ? DEFICIT_CUALITATIVO_MINVU_MAP[ine] : 0,
       comites_ssr_apr_doh: SSR_COMITES_DOH_MAP[ine] !== undefined ? SSR_COMITES_DOH_MAP[ine] : 0,
       beneficiarios_ssr_apr_doh: SSR_BENEFICIARIOS_DOH_MAP[ine] !== undefined ? SSR_BENEFICIARIOS_DOH_MAP[ine] : 0,
@@ -5004,9 +5071,9 @@ const slepRawPath = path.join(ROOT, 'data/raw/social_ambiental/mineduc_slep_esta
 if (fs.existsSync(slepRawPath)) {
   const slepRaw = readJson('data/raw/social_ambiental/mineduc_slep_establecimientos_matricula_aysen.json');
   const SIES_MATRICULA_BY_ID = {
-    inacap_coyhaique: 1360,
-    uaysen_coyhaique: 650,
-    cft_estatal_puerto_aysen: 317
+    inacap_coyhaique: 1187,
+    uaysen_coyhaique: 1000,
+    cft_estatal_puerto_aysen: 737
   };
   (slepRaw.instituciones_educacion_superior_region || []).forEach(ie => {
     const siesVal = SIES_MATRICULA_BY_ID[ie.id] || 400;
@@ -6882,6 +6949,11 @@ const bundle = {
     superficie_ha: (wp03.resumen_regional && wp03.resumen_regional.superficie_concesionada_mineria_ha) || 128511
   },
   catastroVegetacionalConaf2026: (wp07.resumen_regional && wp07.resumen_regional.catastro_vegetacional_conaf_2026) || null,
+  censo2024DemografiaResumen: (wp05.resumen_regional && wp05.resumen_regional.demografia_censo_2024) || null,
+  casen2024NuevaMetodologia: (wp05.resumen_regional && wp05.resumen_regional.casen_2024_nueva_metodologia) || null,
+  viviendaMinvuCect2024: (wp05.resumen_regional && wp05.resumen_regional.habitat_y_deficit_habitacional_minvu) || null,
+  educacionSlepSimcePaesSies2026: (wp05.resumen_regional && wp05.resumen_regional.educacion_publica_slep_aysen) || null,
+  seguridadCead2023_2025: (wp05.resumen_regional && wp05.resumen_regional.seguridad_cead_2023_2025) || null,
   spatialLayersCatalog,
   spatialNodes,
   spatialNodesByLayer

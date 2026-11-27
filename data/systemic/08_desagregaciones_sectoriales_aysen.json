@@ -8,14 +8,14 @@
   "fecha_extraccion": "2026-10-17",
   "fuentes_primarias": [
     "Servicio de Salud Aysen (SSA) / DEIS Ministerio de Salud - Red Asistencial y Establecimientos de Salud 2024",
-    "Servicio Local de Educacion Publica (SLEP) Aysen / Datos Abiertos MINEDUC 2024",
+    "Servicio Local de Educacion Publica (SLEP) Aysen / Datos Abiertos MINEDUC 2024-2025 / SIES 2026",
     "Comision Nacional de Energia (CNE) / Resolucion Exenta Fijacion Tarifaria Sistemas Medianos y Aislados",
     "Servicio de Impuestos Internos (SII) - Estadisticas Tributarias de Empresas por Tamano y Comuna",
     "Subsecretaria de Pesca y Acuicultura (SUBPESCA) / SERNAPESCA - Registro Pesquero Artesanal y Licencias Transables de Pesca LTP Ley 21.752",
-    "Instituto Nacional de Estadísticas (INE) - Censo de Población y Vivienda 2024 (100.745 hab)",
-    "Ministerio de Vivienda y Urbanismo (MINVU) - Déficit Habitacional Cuantitativo (3.147) y Cualitativo (14.000+)",
-    "Dirección de Obras Hidráulicas (DOH-MOP) - Catastro de 47 Comités de Servicios Sanitarios Rurales (SSR)",
-    "Ministerio de Desarrollo Social y Familia (MDSF) - Encuesta CASEN Pobreza Multidimensional (14,0%) vs Ingresos (4,0%)"
+    "Instituto Nacional de Estadisticas (INE) - Censo de Poblacion y Vivienda 2024 (100.745 hab / 39.964 hogares / 52.294 viviendas)",
+    "Ministerio de Vivienda y Urbanismo (MINVU) - Deficit Habitacional Cuantitativo CECT (1.927), Cualitativo CASEN 2024 (12,9%) y Cierre PEH Feb-2026 (1.671)",
+    "Direccion de Obras Hidraulicas (DOH-MOP) - Catastro de 47 Comites SSR (28.833 personas / 9.185 familias)",
+    "Ministerio de Desarrollo Social y Familia (MDSF) - Encuesta CASEN 2022/2024 y Registro Social de Hogares"
   ],
   "resumen_regional": {
     "region_codigo": "CL-XI",
@@ -378,9 +378,14 @@
     },
     "educacion_resumen": {
       "slep_responsable": "Servicio Local de Educacion Publica (SLEP) Aysen",
-      "escuelas_rurales_multigrado_unidocentes_total": 36,
-      "liceos_urbanos_hc_tp_total": 16,
+      "establecimientos_escolares_totales_region": 86,
+      "establecimientos_escolares_slep": 55,
+      "jardines_vtf_slep": 10,
+      "establecimientos_operativos_slep": 65,
+      "escuelas_rurales_multigrado_unidocentes_total": 35,
+      "liceos_urbanos_hc_tp_total": 15,
       "jardines_infantiles_junji_integra_total": 47,
+      "matricula_sies_2026_total": 2924,
       "presencia_internados_estudiantiles": "Red de internados en cabeceras comunales para garantizar escolaridad a ninos de zonas rurales aisladas"
     },
     "energia_resumen": {
@@ -404,6 +409,7 @@
     },
     "economia_y_pesca_resumen": {
       "total_empresas_sii_vigentes": 13453,
+      "total_empresas_corte_bcn_2024": 12953,
       "desglose_regional_por_tamano": {
         "microempresa_n": 8532,
         "microempresa_pct": 65.9,
@@ -425,30 +431,33 @@
         "Emdepes S.A.",
         "Globalpesca SpA"
       ],
-      "regimen_tributario_pesquero": "Impuesto Especifico Art. 43 ter LGPA (LTP-A) + Patente Unica Pesquera Art. 43 LGPA",
-      "total_empresas_corte_bcn_2024": 12953
+      "regimen_tributario_pesquero": "Impuesto Especifico Art. 43 ter LGPA (LTP-A) + Patente Unica Pesquera Art. 43 LGPA"
     },
     "demografia_vital_censo_2024": {
       "poblacion_total_censo_2024": 100745,
+      "hogares_censo_2024": 39964,
       "indice_envejecimiento": 66.2,
-      "indice_masculinidad_rural": 115.8,
-      "viviendas_censadas_total": 47520,
-      "fuente": "INE - Censo 2024"
+      "indice_masculinidad_regional": 97.9,
+      "viviendas_censadas_total": 52294,
+      "viviendas_ocupadas_moradores_presentes": 39631,
+      "pueblos_originarios_pct": 29.0,
+      "inmigrantes_internacionales_pct": 3.9,
+      "fuente": "INE - Censo 2024 / BCN Distrito 27 (2026)"
     },
     "salud_mental_y_uhce_hrc": {
       "tasa_suicidio_deis_por_100k": 15.1,
       "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9,
-      "observacion": "Aysén lidera históricamente la tasa nacional de suicidio (~15,1 por 100k hab) con una restricción crítica a 9 camas psiquiátricas de corta estadía en el Hospital Regional Coyhaique para toda la población regional",
+      "observacion": "Aysen lidera historicamente la tasa nacional de suicidio (~15,1 por 100k hab) con una restriccion critica a 9 camas psiquiatricas de corta estadia en el Hospital Regional Coyhaique para toda la poblacion regional",
       "fuente": "DEIS MINSAL / SSA"
     },
     "mortalidad_oncologica_digestiva": {
       "tasa_cancer_gastrico_cie10_c16": 18.4,
       "tasa_cancer_vesicula_cie10_c23": 12.6,
       "primeras_causas_avpp": [
-        "Cáncer Gástrico (C16)",
-        "Cáncer de Vesícula Biliar (C23)"
+        "Cancer Gastrico (C16)",
+        "Cancer de Vesicula Biliar (C23)"
       ],
-      "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer"
+      "fuente": "DEIS MINSAL / Registro Poblacional de Cancer"
     },
     "listas_espera_sigte": {
       "total_interconsultas_no_ges": 11420,
@@ -457,28 +466,46 @@
       "fuente": "SIGTE / Redes Asistenciales"
     },
     "deficit_habitacional_minvu": {
-      "deficit_cuantitativo": 3147,
-      "pct_irrecuperable": 56.0,
-      "deficit_cualitativo": 14200,
-      "fuente": "MINVU - Observatorio Habitacional"
+      "deficit_cuantitativo": 1927,
+      "deficit_cuantitativo_pct_hogares": 4.8,
+      "viviendas_irrecuperables": 609,
+      "hogares_allegados": 333,
+      "nucleos_allegados_hacinados": 326,
+      "viviendas_hacinamiento_no_ampliable": 659,
+      "deficit_cuantitativo_metodologia_historica_2024": 1254,
+      "deficit_cualitativo": 5155,
+      "deficit_cualitativo_pct_hogares": 12.9,
+      "campamentos_minvu_2024": 10,
+      "campamentos_hogares_2024": 244,
+      "peh_meta_viviendas": 1293,
+      "peh_viviendas_terminadas_feb2026": 1671,
+      "peh_cumplimiento_feb2026_pct": 129.2,
+      "fuente": "MINVU CECT Oct-2025 / CASEN 2024 / Cierre PEH Feb-2026"
     },
     "servicios_sanitarios_rurales_ssr_doh": {
       "comites_ssr_activos": 47,
       "beneficiarios_totales": 28833,
-      "fuente": "DOH-MOP Subdirección SSR"
+      "familias_arranques_totales": 9185,
+      "fuente": "DOH-MOP Subdireccion SSR"
     },
     "pobreza_casen": {
       "pobreza_por_ingresos_regional": 4.0,
       "pobreza_multidimensional_regional": 14.0,
-      "rango_comunas_aisladas_multidimensional": "22.0% - 28.0%",
-      "fuente": "MDSF - CASEN"
+      "casen_2024_nueva_metodologia_ingresos_pct": 14.3,
+      "casen_2024_nueva_metodologia_multidim_pct": 12.1,
+      "rango_comunas_aisladas_multidimensional": "12.1% - 22.2%",
+      "fuente": "MDSF - CASEN 2022 / 2024"
     },
     "educacion_publica_slep": {
       "traspaso_oficial_slep": "2024-01-01",
       "ley": "Ley N° 21.040",
-      "establecimientos_totales": 66,
-      "nudos_criticos": "Fallas en sistemas de calefacción escolar y licitaciones desiertas de transporte escolar rural DTPR",
-      "fuente": "SLEP Aysén"
+      "establecimientos_escolares_region": 86,
+      "establecimientos_escolares_slep": 55,
+      "jardines_vtf": 10,
+      "establecimientos_totales": 65,
+      "sies_2026_total": 2924,
+      "nudos_criticos": "Fallas en sistemas de calefaccion escolar y licitaciones desiertas de transporte escolar rural DTPR",
+      "fuente": "SLEP Aysen / MINEDUC / SIES 2026"
     }
   },
   "por_comuna": [
@@ -986,17 +1013,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 1128,
+          "viviendas_irrecuperables": 280,
+          "hogares_allegados": 225,
+          "nucleos_allegados_hacinados": 219,
+          "viviendas_hacinamiento_no_ampliable": 404,
+          "deficit_cualitativo_comunal": 2893,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 2.9,
+          "pobreza_multidim_comunal_pct": 14.0,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 15,
+          "beneficiarios_ssr_comunales": 10650,
+          "familias_ssr_comunales": 3350,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -1464,17 +1503,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 73,
+          "viviendas_irrecuperables": 65,
+          "hogares_allegados": 3,
+          "nucleos_allegados_hacinados": 1,
+          "viviendas_hacinamiento_no_ampliable": 4,
+          "deficit_cualitativo_comunal": 48,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 0.9,
+          "pobreza_multidim_comunal_pct": 18.0,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 2,
+          "beneficiarios_ssr_comunales": 620,
+          "familias_ssr_comunales": 210,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -1982,17 +2033,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 330,
+          "viviendas_irrecuperables": 78,
+          "hogares_allegados": 63,
+          "nucleos_allegados_hacinados": 63,
+          "viviendas_hacinamiento_no_ampliable": 126,
+          "deficit_cualitativo_comunal": 1168,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 5.3,
+          "pobreza_multidim_comunal_pct": 12.8,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 8,
+          "beneficiarios_ssr_comunales": 5680,
+          "familias_ssr_comunales": 1790,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -2490,17 +2553,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 109,
+          "viviendas_irrecuperables": 60,
+          "hogares_allegados": 9,
+          "nucleos_allegados_hacinados": 10,
+          "viviendas_hacinamiento_no_ampliable": 30,
+          "deficit_cualitativo_comunal": 281,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 5.0,
+          "pobreza_multidim_comunal_pct": 12.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 5,
+          "beneficiarios_ssr_comunales": 3250,
+          "familias_ssr_comunales": 1050,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -2988,17 +3063,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 14,
+          "viviendas_irrecuperables": 2,
+          "hogares_allegados": 3,
+          "nucleos_allegados_hacinados": 2,
+          "viviendas_hacinamiento_no_ampliable": 7,
+          "deficit_cualitativo_comunal": 78,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 6.1,
+          "pobreza_multidim_comunal_pct": 22.2,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 1,
+          "beneficiarios_ssr_comunales": 1598,
+          "familias_ssr_comunales": 551,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -3475,17 +3562,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 86,
+          "viviendas_irrecuperables": 33,
+          "hogares_allegados": 12,
+          "nucleos_allegados_hacinados": 10,
+          "viviendas_hacinamiento_no_ampliable": 31,
+          "deficit_cualitativo_comunal": 272,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 6.2,
+          "pobreza_multidim_comunal_pct": 16.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 5,
+          "beneficiarios_ssr_comunales": 2420,
+          "familias_ssr_comunales": 780,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -3959,17 +4058,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 50,
+          "viviendas_irrecuperables": 17,
+          "hogares_allegados": 4,
+          "nucleos_allegados_hacinados": 7,
+          "viviendas_hacinamiento_no_ampliable": 22,
+          "deficit_cualitativo_comunal": 158,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 7.0,
+          "pobreza_multidim_comunal_pct": 18.8,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 5,
+          "beneficiarios_ssr_comunales": 2115,
+          "familias_ssr_comunales": 680,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -4445,17 +4556,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 118,
+          "viviendas_irrecuperables": 62,
+          "hogares_allegados": 13,
+          "nucleos_allegados_hacinados": 13,
+          "viviendas_hacinamiento_no_ampliable": 30,
+          "deficit_cualitativo_comunal": 189,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 6.3,
+          "pobreza_multidim_comunal_pct": 14.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 3,
+          "beneficiarios_ssr_comunales": 1450,
+          "familias_ssr_comunales": 450,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -4922,17 +5045,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 4,
+          "viviendas_irrecuperables": 1,
+          "hogares_allegados": 1,
+          "nucleos_allegados_hacinados": 1,
+          "viviendas_hacinamiento_no_ampliable": 1,
+          "deficit_cualitativo_comunal": 38,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 9.2,
+          "pobreza_multidim_comunal_pct": 12.1,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 2,
+          "beneficiarios_ssr_comunales": 570,
+          "familias_ssr_comunales": 174,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     },
@@ -5004,12 +5139,10 @@
         "educacion_diferenciada_slep": {
           "escuelas_rurales_multigrado_unidocentes_total": 1,
           "escuelas_rurales_multigrado_unidocentes_nombres": [
-            "Escuela Rural Comandante Luis Bravo Martinez (Ciclo Basico)"
+            "Escuela Comandante Luis Bravo Bravo (RBD 8410-7, hasta 8vo Basico)"
           ],
-          "liceos_urbanos_hc_tp_total": 1,
-          "liceos_urbanos_hc_tp_nombres": [
-            "Liceo Luis Bravo Martinez (Ciclo Medio Tecnico y Humanista en Desarrollo)"
-          ],
+          "liceos_urbanos_hc_tp_total": 0,
+          "liceos_urbanos_hc_tp_nombres": [],
           "jardines_junji_integra_total": 1,
           "jardines_junji_integra_nombres": [
             "Jardin Infantil Los Cipreses (Integra / Caleta Tortel)"
@@ -5415,17 +5548,29 @@
           }
         ],
         "habitat_minvu": {
-          "deficit_cuantitativo_regional": 3147,
-          "pct_irrecuperable": 56.0,
-          "deficit_cualitativo_regional": 14200
-        },
-        "servicios_sanitarios_rurales_doh": {
-          "comites_ssr_regionales": 47,
-          "beneficiarios_ssr_regionales": 28833
+          "deficit_cuantitativo_comunal": 15,
+          "viviendas_irrecuperables": 11,
+          "hogares_allegados": 0,
+          "nucleos_allegados_hacinados": 0,
+          "viviendas_hacinamiento_no_ampliable": 4,
+          "deficit_cualitativo_comunal": 30,
+          "deficit_cuantitativo_regional": 1927,
+          "deficit_cualitativo_regional": 5155,
+          "deficit_cualitativo_pct_regional": 12.9
         },
         "pobreza_casen": {
+          "pobreza_ingresos_comunal_pct": 4.6,
+          "pobreza_multidim_comunal_pct": 12.3,
           "pobreza_ingresos_regional_pct": 4.0,
           "pobreza_multidimensional_regional_pct": 14.0
+        },
+        "servicios_sanitarios_rurales_doh": {
+          "comites_ssr_comunales": 1,
+          "beneficiarios_ssr_comunales": 480,
+          "familias_ssr_comunales": 150,
+          "comites_ssr_regionales": 47,
+          "beneficiarios_ssr_regionales": 28833,
+          "familias_ssr_regionales": 9185
         }
       }
     }
@@ -5454,8 +5599,8 @@
       "tipo": "Hospital Comunitario de Mediana Complejidad",
       "codigo_comuna": "CL-XI-03",
       "comuna_ine": "11201",
-      "lat": -45.403,
-      "lng": -72.6915,
+      "lat": -45.4058,
+      "lng": -72.6892,
       "atributos": {
         "camas": 52,
         "quirofanos": 2,
@@ -5471,8 +5616,8 @@
       "tipo": "Hospital Comunitario de Baja Complejidad",
       "codigo_comuna": "CL-XI-04",
       "comuna_ine": "11202",
-      "lat": -44.7295,
-      "lng": -72.6815,
+      "lat": -44.745,
+      "lng": -72.6965,
       "atributos": {
         "camas": 12,
         "quirofanos": 0,
@@ -5488,8 +5633,8 @@
       "tipo": "Hospital Comunitario de Baja Complejidad",
       "codigo_comuna": "CL-XI-06",
       "comuna_ine": "11401",
-      "lat": -46.5415,
-      "lng": -71.724,
+      "lat": -46.5412,
+      "lng": -71.7289,
       "atributos": {
         "camas": 14,
         "quirofanos": 0,
@@ -5505,8 +5650,8 @@
       "tipo": "Hospital Comunitario de Baja Complejidad",
       "codigo_comuna": "CL-XI-08",
       "comuna_ine": "11301",
-      "lat": -47.2555,
-      "lng": -72.571,
+      "lat": -47.2558,
+      "lng": -72.5698,
       "atributos": {
         "camas": 16,
         "quirofanos": 0,

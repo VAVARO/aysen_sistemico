@@ -12,13 +12,12 @@ nodo_id: 15
 unidad: "CLP/hab"
 en_lexico_oficial: true
 ultimo_estado: "modificada"
-requiere_verificacion: true
-ultima_corrida: "2026-11-26"
+requiere_verificacion: false
+ultima_corrida: "2026-11-27"
 tags:
   - aysen-sistemico
   - respaldo-indicador
   - estado-modificada
-  - requiere-verificacion
 ---
 
 # Respaldo de Indicador: `ipp_per_capita_clp`
@@ -29,29 +28,27 @@ tags:
 - **Unidad**: CLP/hab
 - **Fuente oficial**: Sistema Nacional de Información Municipal (SINIM) — SUBDERE (https://datos.sinim.gov.cl/)
 - **Frecuencia / Modo**: Trimestral · `live_api`
-- **Última auditoría**: [[corridas/corrida_2026-11-26_head_aprobado_vs_head|Corrida 2026-11-26]] · [[index_auditoria|Índice de Auditoría]]
+- **Última auditoría**: [[corridas/corrida_2026-11-27_head_aprobado_vs_head|Corrida 2026-11-27]] · [[index_auditoria|Índice de Auditoría]]
 
 ## Alertas Activas en esta Corrida
 
-- [ ] **[ALTA · OUTLIER_SALTO]** Coyhaique: 245.565 -> 148.232 (Variación de -39,6% (umbral operativo >= 20%)); Lago Verde: 339.692 -> 552.952 (Variación de +62,8% (umbral operativo >= 20%)); Aysén: 289.478 -> 194.770 (Variación de -32,7% (umbral operativo >= 20%)); Cisnes: 302.813 -> 580.062 (Variación de +91,6% (umbral operativo >= 20%)); Guaitecas: 351.067 -> 528.924 (Variación de +50,7% (umbral operativo >= 20%)); Cochrane: 308.606 -> 145.419 (Variación de -52,9% (umbral operativo >= 20%)); O'Higgins: 282.455 -> 182.859 (Variación de -35,3% (umbral operativo >= 20%)); Tortel: 292.277 -> 222.455 (Variación de -23,9% (umbral operativo >= 20%)); Chile Chico: 317.059 -> 135.441 (Variación de -57,3% (umbral operativo >= 20%)); Río Ibáñez: 295.922 -> 185.784 (Variación de -37,2% (umbral operativo >= 20%))
+Sin alertas activas en la corrida más reciente.
 
 ## Comparación Comunal (HEAD_APROBADO vs HEAD)
 
 | INE | Comuna | Anterior | Actual | Delta | Delta % | Outlier |
 |---|---|---|---|---|---|---|
-| `11101` | Coyhaique | 245.565 | 148.232 | -97.333 | -39,6% | SI (Variación de -39,6% (umbral operativo >= 20%)) |
-| `11102` | Lago Verde | 339.692 | 552.952 | 213.260 | +62,8% | SI (Variación de +62,8% (umbral operativo >= 20%)) |
-| `11201` | Aysén | 289.478 | 194.770 | -94.708 | -32,7% | SI (Variación de -32,7% (umbral operativo >= 20%)) |
-| `11202` | Cisnes | 302.813 | 580.062 | 277.249 | +91,6% | SI (Variación de +91,6% (umbral operativo >= 20%)) |
-| `11203` | Guaitecas | 351.067 | 528.924 | 177.857 | +50,7% | SI (Variación de +50,7% (umbral operativo >= 20%)) |
-| `11301` | Cochrane | 308.606 | 145.419 | -163.187 | -52,9% | SI (Variación de -52,9% (umbral operativo >= 20%)) |
-| `11302` | O'Higgins | 282.455 | 182.859 | -99.596 | -35,3% | SI (Variación de -35,3% (umbral operativo >= 20%)) |
-| `11303` | Tortel | 292.277 | 222.455 | -69.822 | -23,9% | SI (Variación de -23,9% (umbral operativo >= 20%)) |
-| `11401` | Chile Chico | 317.059 | 135.441 | -181.618 | -57,3% | SI (Variación de -57,3% (umbral operativo >= 20%)) |
-| `11402` | Río Ibáñez | 295.922 | 185.784 | -110.138 | -37,2% | SI (Variación de -37,2% (umbral operativo >= 20%)) |
+| `11102` | Lago Verde | 552.952 | 488.379 | -64.573 | -11,7% | NO |
+| `11202` | Cisnes | 580.062 | 558.534 | -21.528 | -3,7% | NO |
+| `11301` | Cochrane | 145.419 | 144.003 | -1.416 | -1,0% | NO |
+| `11302` | O'Higgins | 182.859 | 178.178 | -4.681 | -2,6% | NO |
+| `11303` | Tortel | 222.455 | 199.538 | -22.917 | -10,3% | NO |
+| `11401` | Chile Chico | 135.441 | 134.210 | -1.231 | -0,9% | NO |
+| `11402` | Río Ibáñez | 185.784 | 189.401 | 3.617 | +1,9% | NO |
 
 ## Historial de Corridas
 
+- **2026-11-27** ([[corridas/corrida_2026-11-27_head_aprobado_vs_head|corrida_2026-11-27_head_aprobado_vs_head]]): estado `modificada` · 7 comuna(s) con cambio/registro · alertas: 0.
 - **2026-11-26** ([[corridas/corrida_2026-11-26_head_aprobado_vs_head|corrida_2026-11-26_head_aprobado_vs_head]]): estado `modificada` · 10 comuna(s) con cambio/registro · alertas: 1.
 
 ## Revisión Humana (Notas Preservadas)

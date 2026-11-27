@@ -58,7 +58,7 @@ class TestHub10CtciAudit(unittest.TestCase):
         self.assertEqual(sum(c["investigadores_residentes"] for c in self.comunas), 124)
         self.assertAlmostEqual(sum(c["monto_anid_acumulado_mclp"] for c in self.comunas), 17326.8, places=1)
         self.assertAlmostEqual(sum(c["monto_corfo_innova_mclp"] for c in self.comunas), 8450.0, places=1)
-        self.assertEqual(sum(c["matricula_educacion_superior_sies_n"] for c in self.comunas), 2327)
+        self.assertEqual(sum(c["matricula_educacion_superior_sies_n"] for c in self.comunas), 2924)
 
         centros = self.bundle.get("spatialNodesByLayer", {}).get("centros_ctci", [])
         self.assertEqual(len(centros), 16)

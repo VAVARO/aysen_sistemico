@@ -44,18 +44,18 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Tortel (capital comunal: Caleta Tortel; Provincia de Capitán Prat; cuenca principal: Cuenca 115 (Río Baker)) cuenta con una población verificada de 505 habitantes según el Censo 2024 (0,5% del total regional de 100.745 hab.) distribuidos en 19.710,6 km² (densidad de 0,03 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Marisela Jiménez Cruces), administra un presupuesto vigente de 3.440,74 M$ con una dependencia del Fondo Común Municipal de 95,4% (4,6% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 2.600 M$ (5.148,5 mil $/hab). En el maritorio acuícola (Hub II), registra 17 concesiones de salmonicultura otorgadas (0 centros activos) y 8.500 toneladas anuales de biomasa cosechada. En turismo y conservación (Hub I y Hub VII), contabiliza 44 prestadores SERNATUR (360 camas), 0 visitas anuales a áreas protegidas SNASPE y 2.680 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Aislado Municipal Caleta Tortel con tarifa residencial BT1 de $318/kWh y 98,5% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 8 horas), y registra 6 proyectos CTCi con 3 investigadores residentes estimados.
+La comuna de Tortel (capital comunal: Caleta Tortel; Provincia de Capitán Prat; cuenca principal: Cuenca 115 (Río Baker)) cuenta con una población verificada de 563 habitantes según el Censo 2024 (0,56% del total regional de 100.745 hab.) distribuidos en 19.710,6 km² (densidad de 0,03 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Marisela Jiménez Cruces), administra un presupuesto vigente de 3.440,74 M$ con una dependencia del Fondo Común Municipal de 95,4% (4,6% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 2.600 M$ (4.618,1 mil $/hab). En el maritorio acuícola (Hub II), registra 17 concesiones de salmonicultura otorgadas (0 centros activos) y 8.500 toneladas anuales de biomasa cosechada. En turismo y conservación (Hub I y Hub VII), contabiliza 44 prestadores SERNATUR (360 camas), 0 visitas anuales a áreas protegidas SNASPE y 2.680 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Aislado Municipal Caleta Tortel con tarifa residencial BT1 de $318/kWh y 98,5% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 8 horas), y registra 6 proyectos CTCi con 3 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
 | Dimensión / Indicador Oficial | Valor Comunal Verificado | Hub Sistémico |
 | --- | --- | --- |
-| Población Censo 2024 (hab.) | 505 (0,5% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
+| Población Censo 2024 (hab.) | 563 (0,56% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 19.710,6 km² (0,03 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
 | Alcalde en Ejercicio (2024-2028) | Marisela Jiménez Cruces (Independiente (Fuera de pacto)) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Presupuesto Municipal Vigente (M$) | 3.440,74 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Dependencia Fondo Común Municipal (%) | 95,4% (Ingresos Propios: 4,6%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Inversión Pública FNDR Asignada (M$) | 2.600 M$ (5.148,5 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
+| Inversión Pública FNDR Asignada (M$) | 2.600 M$ (4.618,1 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 44 prestadores / 360 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 0 visitantes (Parque Nacional Bernardo O'Higgins, Reserva Nacional Katalalixar, Parque Nacional Laguna San Rafael (sector sur)) | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Concesiones y Biomasa de Salmón | 17 concesiones / 8.500 ton | [[hubs/hub_02_salmonicultura|Hub II — Salmonicultura]] |

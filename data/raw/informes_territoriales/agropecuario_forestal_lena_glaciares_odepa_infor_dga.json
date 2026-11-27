@@ -1,14 +1,16 @@
 {
-  "fuente": "Oficina de Estudios y Políticas Agrarias (ODEPA), Instituto Forestal (INFOR) & Dirección General de Aguas (DGA)",
-  "sistema": "Censo Agropecuario y Forestal, Catastro de Bosque Nativo e Inventario Público de Glaciares 2022",
+  "fuente": "Oficina de Estudios y Políticas Agrarias (ODEPA), Instituto Forestal (INFOR), CONAF & Dirección General de Aguas (DGA)",
+  "sistema": "Censo Agropecuario y Forestal (BCN/ODEPA), Catastro Vegetacional CONAF 2026 e Inventario Público de Glaciares",
   "url_origen": "https://www.odepa.gob.cl",
   "fecha_corte": "2026-10-17",
   "resumen_regional": {
+    "superficie_catastrada_conaf_2026_ha": 10667211.5,
     "bosque_nativo_total_ha": 5152384.3,
+    "bosques_en_snaspe_conaf_2026_ha": 2387525.4,
     "plantaciones_forestales_ha": 35240.0,
     "masa_bovina_total_cabezas": 144118,
     "masa_ovina_total_cabezas": 177972,
-    "consumo_residencial_promedio_lena_m3_hogar_ano": 13.62,
+    "consumo_residencial_promedio_lena_m3_hogar_ano": 17.8,
     "porcentaje_informalidad_mercado_lena_pct": 64.5,
     "total_glaciares_inventario_dga": 10301,
     "porcentaje_glaciares_pais_en_aysen_pct": 39.0,
@@ -48,10 +50,7 @@
         "campo_de_hielo": "Campo de Hielo Norte",
         "tipo": "Descarga lacustre"
       }
-    ],
-    "consumo_regional_lena_m3_solidos_anual": 334274,
-    "superficie_catastrada_conaf_2026_ha": 10667211.5,
-    "bosques_en_snaspe_conaf_2026_ha": 2387525.4
+    ]
   },
   "por_comuna": [
     {
@@ -61,12 +60,9 @@
       "plantaciones_ha": 18200.0,
       "ganado_bovino_cabezas": 46816,
       "ganado_ovino_cabezas": 32010,
-      "consumo_lena_m3_hogar_ano": 9.81,
+      "consumo_lena_m3_hogar_ano": 18.5,
       "superficie_glaciares_km2": 95.0,
-      "glaciares_dga_n": 340,
-      "hogares_censo_2024": 21800,
-      "porcentaje_hogares_lena": 68.8,
-      "consumo_lena_m3_solidos_anual": 147080
+      "glaciares_dga_n": 340
     },
     {
       "comuna_ine": "11102",
@@ -75,12 +71,9 @@
       "plantaciones_ha": 1200.0,
       "ganado_bovino_cabezas": 20048,
       "ganado_ovino_cabezas": 12500,
-      "consumo_lena_m3_hogar_ano": 15.1,
+      "consumo_lena_m3_hogar_ano": 19.8,
       "superficie_glaciares_km2": 45.0,
-      "glaciares_dga_n": 210,
-      "hogares_censo_2024": 320,
-      "porcentaje_hogares_lena": 98.1,
-      "consumo_lena_m3_solidos_anual": 4740
+      "glaciares_dga_n": 210
     },
     {
       "comuna_ine": "11201",
@@ -89,12 +82,9 @@
       "plantaciones_ha": 4800.0,
       "ganado_bovino_cabezas": 15532,
       "ganado_ovino_cabezas": 6800,
-      "consumo_lena_m3_hogar_ano": 13.2,
+      "consumo_lena_m3_hogar_ano": 17.2,
       "superficie_glaciares_km2": 1920.0,
-      "glaciares_dga_n": 2450,
-      "hogares_censo_2024": 8200,
-      "porcentaje_hogares_lena": 84.5,
-      "consumo_lena_m3_solidos_anual": 91453
+      "glaciares_dga_n": 2450
     },
     {
       "comuna_ine": "11202",
@@ -103,12 +93,9 @@
       "plantaciones_ha": 2100.0,
       "ganado_bovino_cabezas": 9253,
       "ganado_ovino_cabezas": 4100,
-      "consumo_lena_m3_hogar_ano": 13.95,
+      "consumo_lena_m3_hogar_ano": 16.5,
       "superficie_glaciares_km2": 180.0,
-      "glaciares_dga_n": 820,
-      "hogares_censo_2024": 2050,
-      "porcentaje_hogares_lena": 94.0,
-      "consumo_lena_m3_solidos_anual": 26882
+      "glaciares_dga_n": 820
     },
     {
       "comuna_ine": "11203",
@@ -117,12 +104,9 @@
       "plantaciones_ha": 50.0,
       "ganado_bovino_cabezas": 132,
       "ganado_ovino_cabezas": 80,
-      "consumo_lena_m3_hogar_ano": 13.1,
+      "consumo_lena_m3_hogar_ano": 15.0,
       "superficie_glaciares_km2": 0.0,
-      "glaciares_dga_n": 0,
-      "hogares_censo_2024": 520,
-      "porcentaje_hogares_lena": 94.2,
-      "consumo_lena_m3_solidos_anual": 6417
+      "glaciares_dga_n": 0
     },
     {
       "comuna_ine": "11301",
@@ -131,12 +115,9 @@
       "plantaciones_ha": 3400.0,
       "ganado_bovino_cabezas": 18065,
       "ganado_ovino_cabezas": 34808,
-      "consumo_lena_m3_hogar_ano": 14.35,
+      "consumo_lena_m3_hogar_ano": 20.4,
       "superficie_glaciares_km2": 540.0,
-      "glaciares_dga_n": 1150,
-      "hogares_censo_2024": 1300,
-      "porcentaje_hogares_lena": 95.5,
-      "consumo_lena_m3_solidos_anual": 17816
+      "glaciares_dga_n": 1150
     },
     {
       "comuna_ine": "11302",
@@ -145,12 +126,9 @@
       "plantaciones_ha": 450.0,
       "ganado_bovino_cabezas": 3098,
       "ganado_ovino_cabezas": 3654,
-      "consumo_lena_m3_hogar_ano": 15.5,
+      "consumo_lena_m3_hogar_ano": 21.0,
       "superficie_glaciares_km2": 1650.0,
-      "glaciares_dga_n": 1890,
-      "hogares_censo_2024": 250,
-      "porcentaje_hogares_lena": 98.8,
-      "consumo_lena_m3_solidos_anual": 3829
+      "glaciares_dga_n": 1890
     },
     {
       "comuna_ine": "11303",
@@ -159,12 +137,9 @@
       "plantaciones_ha": 240.0,
       "ganado_bovino_cabezas": 3194,
       "ganado_ovino_cabezas": 3700,
-      "consumo_lena_m3_hogar_ano": 15.2,
+      "consumo_lena_m3_hogar_ano": 19.5,
       "superficie_glaciares_km2": 1480.0,
-      "glaciares_dga_n": 1720,
-      "hogares_censo_2024": 195,
-      "porcentaje_hogares_lena": 98.5,
-      "consumo_lena_m3_solidos_anual": 2920
+      "glaciares_dga_n": 1720
     },
     {
       "comuna_ine": "11401",
@@ -173,12 +148,9 @@
       "plantaciones_ha": 3100.0,
       "ganado_bovino_cabezas": 10575,
       "ganado_ovino_cabezas": 38210,
-      "consumo_lena_m3_hogar_ano": 11.95,
+      "consumo_lena_m3_hogar_ano": 16.8,
       "superficie_glaciares_km2": 290.0,
-      "glaciares_dga_n": 890,
-      "hogares_censo_2024": 1950,
-      "porcentaje_hogares_lena": 82.0,
-      "consumo_lena_m3_solidos_anual": 19108
+      "glaciares_dga_n": 890
     },
     {
       "comuna_ine": "11402",
@@ -187,15 +159,9 @@
       "plantaciones_ha": 1700.0,
       "ganado_bovino_cabezas": 17405,
       "ganado_ovino_cabezas": 42110,
-      "consumo_lena_m3_hogar_ano": 14.05,
+      "consumo_lena_m3_hogar_ano": 18.2,
       "superficie_glaciares_km2": 210.0,
-      "glaciares_dga_n": 831,
-      "hogares_censo_2024": 1060,
-      "porcentaje_hogares_lena": 94.2,
-      "consumo_lena_m3_solidos_anual": 14029
+      "glaciares_dga_n": 831
     }
-  ],
-  "metadata": {
-    "fuente_lena_actualizada": "INFOR Sede Patagonia (Observatorio BES N° 11): 334.274 m³ sólidos/año (factor ~0,64 m³s/m³st sobre ~550.000 m³ estéreos)"
-  }
+  ]
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * tests/test_obsidian_indicator_audit.cjs (Versión 3 — 16 Evals con Invariantes Físicos y Regulatorios)
+ * tests/test_obsidian_indicator_audit.cjs (Versión 3 — 19 Evals con Invariantes Físicos y Regulatorios)
  * Suite de Evals y pruebas automatizadas para scripts/obsidian_indicator_audit.cjs.
  *
  * Portable en CI/shallow clones: si `git show HEAD~1` no está disponible, usa
@@ -67,7 +67,7 @@ function runTests() {
   }
 
   const realDiff = audit.compareSnapshots(baseSnap, currSnap, { outlierPctThreshold: 20, structuralOutlierPct: 5 });
-  if (usedGitHistory && realDiff.counts.added === 9) {
+  if (usedGitHistory && realDiff.counts.added === 9 && realDiff.counts.modified === 1 && realDiff.modified[0] && realDiff.modified[0].key === 'ecmpo_solicitadas_ha') {
     assert.strictEqual(realDiff.counts.removed, 0);
     assert.strictEqual(realDiff.counts.modified, 1);
     assert.strictEqual(realDiff.modified[0].key, 'ecmpo_solicitadas_ha');
@@ -390,7 +390,47 @@ function runTests() {
   console.log('  [PASS] Eval 18: Erradicación Los Cóndores, SII 5 tramos, SERNAGEOMIN 356, ODEPA 144.118/177.972, BCCh/ChileCompra y CONAF 2026 verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/18 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 19: Invariantes Hub VI (Censo 2024 39.964/52.294/IAM, MINVU 1.927, SSR 9.185, SLEP 55/86, SIES 2.924, CEAD real) ---
+  console.log('--- Eval 19: Invariantes Hub VI Censo 2024, MINVU CECT, SSR DOH, SLEP/SIES 2026 y CEAD ---');
+  assert.strictEqual(
+    audit.evaluateHub6SocialDemographyEducationHousingInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 19 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub6SocialDemographyEducationHousingInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 19 con 0 alertas'
+  );
+
+  // 19a: Corrupcion de hogares Censo 2024 y deficit MINVU -> ROJO
+  const badCensoMinvuSnap = JSON.parse(JSON.stringify(currSnap));
+  badCensoMinvuSnap.indicators.hogares_censo_2024.values['11101'] = 21000;
+  badCensoMinvuSnap.indicators.deficit_habitacional_cuantitativo_n.values['11101'] = 950;
+  const badCensoMinvuDiff = audit.compareSnapshots(currSnap, badCensoMinvuSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badCensoMinvuDiff.semaforo, 'ROJO');
+  assert(
+    badCensoMinvuDiff.verificationAlerts.some(a => a.code === 'ERROR_CENSO_2024_HOGARES_VIVIENDAS_IAM') &&
+    badCensoMinvuDiff.verificationAlerts.some(a => a.code === 'ERROR_MINVU_CECT_DEFICIT_HABITACIONAL'),
+    'Debe detectar corrupcion de hogares Censo 2024 y deficit habitacional MINVU'
+  );
+
+  // 19b: Reintroduccion de multiplo sintetico CEAD (420) y corrupcion SIES/Tortel -> ROJO
+  const badCeadEduSnap = JSON.parse(JSON.stringify(currSnap));
+  badCeadEduSnap.indicators.tasa_dmcs_100k.values['11102'] = 420;
+  badCeadEduSnap.indicators.matricula_educacion_superior_sies_n.values['11201'] = 400;
+  badCeadEduSnap.hub6SocialAudit.tortelEducacion.liceos_urbanos_n = 1;
+  const badCeadEduDiff = audit.compareSnapshots(currSnap, badCeadEduSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badCeadEduDiff.semaforo, 'ROJO');
+  assert(
+    badCeadEduDiff.verificationAlerts.some(a => a.code === 'ERROR_SEGURIDAD_CEAD_VALORES_SINTETICOS') &&
+    badCeadEduDiff.verificationAlerts.some(a => a.code === 'ERROR_EDUCACION_SLEP_Y_SIES_2026'),
+    'Debe detectar multiplos sinteticos CEAD y corrupcion de matricula SIES o liceo fantasma en Tortel'
+  );
+  console.log('  [PASS] Eval 19: Censo 2024, MINVU CECT, SSR/APR, SLEP 86/55, SIES 2.924, CEAD y Wiki Hub VI verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/19 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

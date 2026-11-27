@@ -44,18 +44,18 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Río Ibáñez (capital comunal: Puerto Ingeniero Ibáñez; Provincia de General Carrera; cuenca principal: Cuenca 113 (Río Aysén)) cuenta con una población verificada de 2.723 habitantes según el Censo 2024 (2,7% del total regional de 100.745 hab.) distribuidos en 5.997,2 km² (densidad de 0,45 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Marcelo Daniel Jélvez Cárdenas), administra un presupuesto vigente de 6.252,85 M$ con una dependencia del Fondo Común Municipal de 86,6% (13,4% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 4.100 M$ (1.505,7 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 445 prestadores SERNATUR (1.150 camas), 15.807 visitas anuales a áreas protegidas SNASPE y 460 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez con tarifa residencial BT1 de $289,5/kWh y 94,2% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 3 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 1,5 horas), y registra 5 proyectos CTCi con 2 investigadores residentes estimados.
+La comuna de Río Ibáñez (capital comunal: Puerto Ingeniero Ibáñez; Provincia de General Carrera; cuenca principal: Cuenca 113 (Río Aysén)) cuenta con una población verificada de 2.671 habitantes según el Censo 2024 (2,64% del total regional de 100.745 hab.) distribuidos en 5.997,2 km² (densidad de 0,45 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Marcelo Daniel Jélvez Cárdenas), administra un presupuesto vigente de 6.252,85 M$ con una dependencia del Fondo Común Municipal de 86,6% (13,4% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 4.100 M$ (1.535 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 445 prestadores SERNATUR (1.150 camas), 15.807 visitas anuales a áreas protegidas SNASPE y 460 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Ramal Sur SMA / Respaldo Local Cerro Castillo-Puerto Ibáñez con tarifa residencial BT1 de $289,5/kWh y 94,2% de hogares calefaccionados a leña; dispone de 0 camas hospitalarias y 3 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 1,5 horas), y registra 5 proyectos CTCi con 2 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
 | Dimensión / Indicador Oficial | Valor Comunal Verificado | Hub Sistémico |
 | --- | --- | --- |
-| Población Censo 2024 (hab.) | 2.723 (2,7% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
+| Población Censo 2024 (hab.) | 2.671 (2,64% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 5.997,2 km² (0,45 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
 | Alcalde en Ejercicio (2024-2028) | Marcelo Daniel Jélvez Cárdenas (Unión Demócrata Independiente (UDI) / Chile Vamos) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Presupuesto Municipal Vigente (M$) | 6.252,85 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Dependencia Fondo Común Municipal (%) | 86,6% (Ingresos Propios: 13,4%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Inversión Pública FNDR Asignada (M$) | 4.100 M$ (1.505,7 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
+| Inversión Pública FNDR Asignada (M$) | 4.100 M$ (1.535 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 445 prestadores / 1.150 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 15.807 visitantes (Parque Nacional Cerro Castillo, Reserva Nacional Laguna San Rafael, Santuario de la Naturaleza Capillas de Mármol) | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Concesiones y Biomasa de Salmón | 0 concesiones / 0 ton | [[hubs/hub_02_salmonicultura|Hub II — Salmonicultura]] |

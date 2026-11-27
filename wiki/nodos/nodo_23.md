@@ -6,6 +6,9 @@ hub_id: social
 hub_roman: VI
 variables_clave:
   - poblacion_censo_2024
+  - hogares_censo_2024
+  - viviendas_totales_censo_2024
+  - indice_envejecimiento
   - pobreza_ingresos_pct
   - pobreza_multidim_pct
 fuentes_oficiales:
@@ -21,22 +24,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Resultados oficiales del Censo 2024 (INE): 100.745 habitantes censados, proporción regional, superficie comunal, índice de envejecimiento (66,2), densidad habitacional (hab/km2) e índices de pobreza por ingresos y multidimensional CASEN 2022. La Región de Aysén registra 100.745 habitantes según el Censo 2024 (INE), con 57.823 en Coyhaique (57,40%) y 23.170 en Puerto Aysén (23,00%), alcanzando densidades de solo 0,03 hab/km2 en Tortel y 0,04 hab/km2 en O'Higgins.
+Resultados oficiales del Censo 2024 (INE / BCN 2026): 100.745 habitantes regionales (80,7% urbana / 19,3% rural; 39.964 hogares, `2,5` pers./hogar; 52.294 viviendas totales, 39.631 ocupadas), Índice de Envejecimiento (66,2), Masculinidad (97,9), Pueblos Originarios (29,0%), Inmigración (3,9%) y CASEN 2022/2024 (`14,3%` ingresos / `12,1%` multidimensional nueva metodología ene-2026). La Región de Aysén suma 100.745 habitantes (57.823 en Coyhaique [57,4%] y 23.170 en Aysén [23,0%]), 39.964 hogares y 52.294 viviendas. El envejecimiento subió de `13,7` (1992) a `66,2` (2024), liderando Lago Verde (182,8) y Río Ibáñez (121,2) frente a Tortel (30,8).
 
 ## Indicadores Comunales Verificados
 
-| Comuna | Población Censo 2024 | % Regional | Superficie (km2) | Pobreza CASEN (%) |
+| Comuna | Población Censo 2024 | Hogares (2024) | Índice Envejec. (IAM) | Pob. Multidim. CASEN (%) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 57.823 | 57.4% | 7.290,2 | 2.9% |
-| [[comunas/lago_verde|Lago Verde]] | 779 | 0.77% | 5.422,3 | 0.9% |
-| [[comunas/aysen|Aysén]] | 23.170 | 23% | 29.796,4 | 5.3% |
-| [[comunas/cisnes|Cisnes]] | 5.137 | 5.1% | 16.093 | 5% |
-| [[comunas/guaitecas|Guaitecas]] | 1.598 | 1.59% | 620,6 | 6.1% |
-| [[comunas/chile_chico|Chile Chico]] | 4.905 | 4.87% | 5.737,1 | 6.2% |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 2.723 | 2.7% | 5.997,2 | 7% |
-| [[comunas/cochrane|Cochrane]] | 3.458 | 3.43% | 8.599,5 | 6.3% |
-| [[comunas/ohiggins|O'Higgins]] | 647 | 0.64% | 8.182,5 | 9.2% |
-| [[comunas/tortel|Tortel]] | 505 | 0.5% | 19.710,6 | 4.6% |
+| [[comunas/coyhaique|Coyhaique]] | 57.823 | 22.423 | 64,1 | 14% |
+| [[comunas/lago_verde|Lago Verde]] | 882 | 373 | 182,8 | 18% |
+| [[comunas/aysen|Aysén]] | 23.170 | 9.057 | 61,6 | 12.8% |
+| [[comunas/cisnes|Cisnes]] | 5.335 | 2.180 | 64,1 | 12.3% |
+| [[comunas/guaitecas|Guaitecas]] | 1.598 | 606 | 56,5 | 22.2% |
+| [[comunas/chile_chico|Chile Chico]] | 4.950 | 2.109 | 92,9 | 16.3% |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 2.671 | 1.231 | 121,2 | 18.8% |
+| [[comunas/cochrane|Cochrane]] | 3.492 | 1.462 | 65 | 14.3% |
+| [[comunas/ohiggins|O'Higgins]] | 664 | 292 | 41,7 | 12.1% |
+| [[comunas/tortel|Tortel]] | 563 | 231 | 30,8 | 12.3% |
 
 ## Metadatos de Procedencia Institucional
 

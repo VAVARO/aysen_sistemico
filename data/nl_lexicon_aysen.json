@@ -2958,6 +2958,208 @@
       ]
     },
     {
+      "id": "viviendas_totales_censo_2024",
+      "canonicalId": "viviendas_totales_censo_2024",
+      "name": "Viviendas Totales Censadas (Censo 2024 INE)",
+      "shortName": "Viviendas Totales Censo 2024",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "viviendas totales",
+        "viviendas censadas",
+        "parque habitacional censo 2024"
+      ]
+    },
+    {
+      "id": "viviendas_ocupadas_censo_2024",
+      "canonicalId": "hogares_censo_2024",
+      "isAliasOf": "hogares_censo_2024",
+      "name": "Viviendas Particulares Ocupadas con Moradores Presentes (Censo 2024)",
+      "shortName": "Viviendas Ocupadas Censo 2024",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "viviendas ocupadas",
+        "viviendas con moradores presentes"
+      ]
+    },
+    {
+      "id": "pueblos_originarios_pct_censo_2024",
+      "canonicalId": "pueblos_originarios_pct_censo_2024",
+      "name": "Población Pueblos Originarios Censo 2024 (%)",
+      "shortName": "Pueblos Originarios % (2024)",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "pueblos originarios censo 2024",
+        "pertenencia indigena censo 2024"
+      ]
+    },
+    {
+      "id": "inmigrantes_internacionales_pct_censo_2024",
+      "canonicalId": "inmigrantes_internacionales_pct_censo_2024",
+      "name": "Inmigrantes Internacionales Censo 2024 (%)",
+      "shortName": "Inmigrantes % (Censo 2024)",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 23,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "inmigrantes internacionales",
+        "poblacion extranjera censo 2024",
+        "migrantes censo 2024"
+      ]
+    },
+    {
+      "id": "deficit_cuantitativo_minvu",
+      "canonicalId": "deficit_habitacional_cuantitativo_n",
+      "isAliasOf": "deficit_habitacional_cuantitativo_n",
+      "name": "Déficit Habitacional Cuantitativo Censo 2024 (MINVU CECT)",
+      "shortName": "Déficit Cuantitativo MINVU",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "deficit cuantitativo minvu",
+        "deficit habitacional censo 2024"
+      ]
+    },
+    {
+      "id": "deficit_habitacional_cuantitativo_viv",
+      "canonicalId": "deficit_habitacional_cuantitativo_n",
+      "isAliasOf": "deficit_habitacional_cuantitativo_n",
+      "name": "Déficit Habitacional Cuantitativo (viviendas MINVU)",
+      "shortName": "Déficit Cuantitativo (viv.)",
+      "unit": "viviendas",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "deficit habitacional viv",
+        "requerimiento vivienda nueva"
+      ]
+    },
+    {
+      "id": "deficit_cuantitativo_pct_hogares",
+      "canonicalId": "deficit_cuantitativo_pct_hogares",
+      "name": "Déficit Habitacional Cuantitativo (% de Hogares Censo 2024)",
+      "shortName": "% Déficit Cuantitativo / Hogares",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "porcentaje deficit cuantitativo",
+        "tasa deficit habitacional"
+      ]
+    },
+    {
+      "id": "carencia_servicios_basicos_rsh_pct",
+      "canonicalId": "rsh_carencia_servicios_basicos_jun2026_pct",
+      "isAliasOf": "rsh_carencia_servicios_basicos_jun2026_pct",
+      "name": "Carencia de Servicios Básicos RSH (%)",
+      "shortName": "Carencia Serv. Básicos RSH (%)",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "carencia servicios basicos rsh",
+        "sin agua o alcantarillado rsh"
+      ]
+    },
+    {
+      "id": "hacinamiento_rsh_pct",
+      "canonicalId": "rsh_hacinamiento_jun2026_pct",
+      "isAliasOf": "rsh_hacinamiento_jun2026_pct",
+      "name": "Hacinamiento en Registro Social de Hogares (%)",
+      "shortName": "Hacinamiento RSH (%)",
+      "unit": "%",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 41,
+      "dim": "comuna",
+      "outlierBiased": false,
+      "synonyms": [
+        "hacinamiento rsh",
+        "tasa hacinamiento rsh"
+      ]
+    },
+    {
+      "id": "matricula_escolar_total_n",
+      "canonicalId": "matricula_escolar",
+      "isAliasOf": "matricula_escolar",
+      "name": "Matrícula Escolar Total MINEDUC (todas las dependencias)",
+      "shortName": "Matrícula Escolar MINEDUC",
+      "unit": "estudiantes",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "matricula escolar total",
+        "alumnos mineduc"
+      ]
+    },
+    {
+      "id": "matricula_escolar_mineduc",
+      "canonicalId": "matricula_escolar",
+      "isAliasOf": "matricula_escolar",
+      "name": "Matrícula Escolar Total MINEDUC CEM",
+      "shortName": "Matrícula Escolar CEM",
+      "unit": "estudiantes",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "matricula cem mineduc",
+        "matricula total escolar"
+      ]
+    },
+    {
+      "id": "matricula_slep_aysen_n",
+      "canonicalId": "matricula_slep_aysen_n",
+      "name": "Matrícula Escolar Pública SLEP Aysén",
+      "shortName": "Matrícula SLEP Aysén",
+      "unit": "estudiantes",
+      "hub": "social",
+      "hubTitle": "VI. Demografía, Educación y Sociedad",
+      "nodeId": 25,
+      "dim": "comuna",
+      "outlierBiased": true,
+      "synonyms": [
+        "matricula slep",
+        "alumnos slep aysen",
+        "educacion publica matricula"
+      ]
+    },
+    {
       "id": "establecimientos_escolares_n",
       "canonicalId": "establecimientos_escolares_n",
       "name": "Establecimientos Escolares (SLEP / MINEDUC)",
@@ -3008,7 +3210,8 @@
         "deficit cualitativo",
         "viviendas por mejorar",
         "mejoramiento vivienda"
-      ]
+      ],
+      "isComplementOf": "hogares_censo_2024"
     },
     {
       "id": "sistemas_ssr_apr_n",
@@ -4427,8 +4630,8 @@
     },
     {
       "id": "matricula_educacion_superior_sies_n",
-      "canonicalId": "total_proyectos_ctci",
-      "name": "Matrícula Educación Superior SIES",
+      "canonicalId": "matricula_educacion_superior_sies_n",
+      "name": "Matrícula Educación Superior SIES 2026 (UAysén + INACAP + CFT Estatal)",
       "shortName": "Matrícula Ed. Sup.",
       "unit": "estudiantes",
       "hub": "ctci",
@@ -4439,12 +4642,11 @@
       "synonyms": [
         "matricula educacion superior sies n",
         "matrícula ed. sup."
-      ],
-      "isAliasOf": "total_proyectos_ctci"
+      ]
     },
     {
       "id": "matricula_ed_superior_sies",
-      "canonicalId": "matricula_ed_superior_sies",
+      "canonicalId": "matricula_educacion_superior_sies_n",
       "name": "Matrícula Educación Superior SIES (Comuna)",
       "shortName": "Matrícula SIES",
       "unit": "estudiantes",
@@ -4456,7 +4658,8 @@
       "synonyms": [
         "matricula ed superior sies",
         "matrícula sies"
-      ]
+      ],
+      "isAliasOf": "matricula_educacion_superior_sies_n"
     },
     {
       "id": "establecimientos_aps_n",
@@ -4847,7 +5050,7 @@
     },
     {
       "id": "beneficiarios_ssr_apr_doh",
-      "canonicalId": "cobertura_ssr_apr_familias",
+      "canonicalId": "beneficiarios_ssr_apr_doh",
       "name": "Beneficiarios Agua Potable Rural (SSR/APR DOH)",
       "shortName": "Beneficiarios APR",
       "unit": "personas",
@@ -4859,8 +5062,7 @@
       "synonyms": [
         "beneficiarios ssr apr doh",
         "beneficiarios apr"
-      ],
-      "isAliasOf": "cobertura_ssr_apr_familias"
+      ]
     },
     {
       "id": "indice_masculinidad",

@@ -2,9 +2,9 @@
 id: index_auditoria_indicadores
 title: "Índice de Auditoría y Respaldos por Indicador — Aysén Sistémico"
 type: index_auditoria
-updated_at: "2026-11-26"
-total_corridas: 3
-total_fichas_indicadores: 90
+updated_at: "2026-11-27"
+total_corridas: 5
+total_fichas_indicadores: 122
 tags:
   - aysen-sistemico
   - auditoria-indicadores
@@ -16,6 +16,8 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 
 ## Corridas Registradas
 
+- [[corridas/corrida_2026-11-27_head_vs_head|corrida_2026-11-27_head_vs_head]]
+- [[corridas/corrida_2026-11-27_head_aprobado_vs_head|corrida_2026-11-27_head_aprobado_vs_head]]
 - [[corridas/corrida_2026-11-26_head_vs_head|corrida_2026-11-26_head_vs_head]]
 - [[corridas/corrida_2026-11-26_head_aprobado_vs_head|corrida_2026-11-26_head_aprobado_vs_head]]
 - [[corridas/corrida_2026-11-25_head_1_vs_head|corrida_2026-11-25_head_1_vs_head]]
@@ -23,12 +25,14 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 ## Fichas de Respaldo por Indicador (Modificados / Nuevos / Alertados)
 
 - [[indicadores/alojamientos_turisticos_rnpst_n|alojamientos_turisticos_rnpst_n]]
+- [[indicadores/beneficiarios_ssr_apr_doh|beneficiarios_ssr_apr_doh]]
 - [[indicadores/cajavecina_puntos_n|cajavecina_puntos_n]]
 - [[indicadores/cajeros_automaticos_n|cajeros_automaticos_n]]
 - [[indicadores/centros_infa_anaerobica_n|centros_infa_anaerobica_n]]
 - [[indicadores/cobertura_empam_pct|cobertura_empam_pct]]
 - [[indicadores/cobertura_fibra_hogar_pct|cobertura_fibra_hogar_pct]]
 - [[indicadores/cobertura_pscv_pct|cobertura_pscv_pct]]
+- [[indicadores/cobertura_ssr_apr_familias|cobertura_ssr_apr_familias]]
 - [[indicadores/cobertura_subsidio_electrico_hogares_n|cobertura_subsidio_electrico_hogares_n]]
 - [[indicadores/cobertura_subsidio_electrico_pct|cobertura_subsidio_electrico_pct]]
 - [[indicadores/concentracion_estival_pct|concentracion_estival_pct]]
@@ -38,6 +42,10 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/consumo_lena_m3_hogar_ano|consumo_lena_m3_hogar_ano]]
 - [[indicadores/consumo_lena_m3_solidos_anual|consumo_lena_m3_solidos_anual]]
 - [[indicadores/costo_diesel_aislado_clp|costo_diesel_aislado_clp]]
+- [[indicadores/deficit_cuantitativo_pct_hogares|deficit_cuantitativo_pct_hogares]]
+- [[indicadores/deficit_habitacional_cualitativo_n|deficit_habitacional_cualitativo_n]]
+- [[indicadores/deficit_habitacional_cuantitativo_n|deficit_habitacional_cuantitativo_n]]
+- [[indicadores/deficit_habitacional_total_por_1000_hab|deficit_habitacional_total_por_1000_hab]]
 - [[indicadores/dependencia_fcm_pct|dependencia_fcm_pct]]
 - [[indicadores/desembarque_muelles_total_ton|desembarque_muelles_total_ton]]
 - [[indicadores/diesel_clp_litro|diesel_clp_litro]]
@@ -47,10 +55,16 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/empleo_directo_acuicola_n|empleo_directo_acuicola_n]]
 - [[indicadores/empresas_act_turismo_sii_n|empresas_act_turismo_sii_n]]
 - [[indicadores/empresas_sii|empresas_sii]]
+- [[indicadores/escuelas_rurales_multigrado_n|escuelas_rurales_multigrado_n]]
+- [[indicadores/establecimientos_educacion_conectados_n|establecimientos_educacion_conectados_n]]
+- [[indicadores/establecimientos_escolares_n|establecimientos_escolares_n]]
+- [[indicadores/establecimientos_slep_aysen|establecimientos_slep_aysen]]
 - [[indicadores/estadia_promedio_dias|estadia_promedio_dias]]
 - [[indicadores/estadia_regional_viaje_dias|estadia_regional_viaje_dias]]
 - [[indicadores/estado_foa|estado_foa]]
 - [[indicadores/fcm_bcn_2025_mclp|fcm_bcn_2025_mclp]]
+- [[indicadores/fndr_gore_2023_per_capita_mclp|fndr_gore_2023_per_capita_mclp]]
+- [[indicadores/fndr_per_capita_mclp|fndr_per_capita_mclp]]
 - [[indicadores/ganado_bovino_cabezas|ganado_bovino_cabezas]]
 - [[indicadores/ganado_ovino_cabezas|ganado_ovino_cabezas]]
 - [[indicadores/gasolina_93_clp|gasolina_93_clp]]
@@ -60,13 +74,21 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/hogares_censo_2024|hogares_censo_2024]]
 - [[indicadores/hogares_lena_pct|hogares_lena_pct]]
 - [[indicadores/indice_aislamiento_multimodal|indice_aislamiento_multimodal]]
+- [[indicadores/indice_envejecimiento|indice_envejecimiento]]
+- [[indicadores/indice_masculinidad|indice_masculinidad]]
 - [[indicadores/ingresos_mun_bcn_2025_mclp|ingresos_mun_bcn_2025_mclp]]
+- [[indicadores/inmigrantes_internacionales_pct_censo_2024|inmigrantes_internacionales_pct_censo_2024]]
 - [[indicadores/internet_fijo_pct|internet_fijo_pct]]
 - [[indicadores/ipp_bcn_2025_mclp|ipp_bcn_2025_mclp]]
 - [[indicadores/ipp_per_capita_clp|ipp_per_capita_clp]]
 - [[indicadores/kerosene_clp_litro|kerosene_clp_litro]]
+- [[indicadores/liceos_urbanos_n|liceos_urbanos_n]]
 - [[indicadores/llegadas_por_cama_turistica|llegadas_por_cama_turistica]]
 - [[indicadores/llegadas_turistas_emat_n|llegadas_turistas_emat_n]]
+- [[indicadores/matricula_ed_superior_sies|matricula_ed_superior_sies]]
+- [[indicadores/matricula_educacion_superior_sies_n|matricula_educacion_superior_sies_n]]
+- [[indicadores/matricula_escolar|matricula_escolar]]
+- [[indicadores/matricula_slep_aysen_n|matricula_slep_aysen_n]]
 - [[indicadores/mediana_espera_especialidad_dias|mediana_espera_especialidad_dias]]
 - [[indicadores/mediana_espera_quirurgica_dias|mediana_espera_quirurgica_dias]]
 - [[indicadores/nota_ciclo_productivo|nota_ciclo_productivo]]
@@ -77,6 +99,8 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/patente_acuicola_pua_mclp|patente_acuicola_pua_mclp]]
 - [[indicadores/pernoctaciones_emat|pernoctaciones_emat]]
 - [[indicadores/peso_pua_ingresos_propios_pct|peso_pua_ingresos_propios_pct]]
+- [[indicadores/poblacion_censo_2024|poblacion_censo_2024]]
+- [[indicadores/pobreza_multidim_pct|pobreza_multidim_pct]]
 - [[indicadores/potencia_ernc_en_construccion_mw|potencia_ernc_en_construccion_mw]]
 - [[indicadores/potencia_mw|potencia_mw]]
 - [[indicadores/precio_lena_m3|precio_lena_m3]]
@@ -84,23 +108,32 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/prestadores_vigencia_patente_pct|prestadores_vigencia_patente_pct]]
 - [[indicadores/presupuesto_mclp|presupuesto_mclp]]
 - [[indicadores/presupuesto_per_capita_mclp|presupuesto_per_capita_mclp]]
+- [[indicadores/pueblos_originarios_pct_censo_2024|pueblos_originarios_pct_censo_2024]]
 - [[indicadores/puntos_cajavecina_bancoestado|puntos_cajavecina_bancoestado]]
 - [[indicadores/ratio_costo_calefaccion_electrica_vs_lena|ratio_costo_calefaccion_electrica_vs_lena]]
+- [[indicadores/ratio_padron_poblacion_pct|ratio_padron_poblacion_pct]]
+- [[indicadores/ratio_pobreza_multidim_vs_ingresos|ratio_pobreza_multidim_vs_ingresos]]
 - [[indicadores/restaurantes_turisticos_rnpst_n|restaurantes_turisticos_rnpst_n]]
 - [[indicadores/revpar_emat_clp|revpar_emat_clp]]
 - [[indicadores/revpar_estimado_usd|revpar_estimado_usd]]
 - [[indicadores/royalty_fet_peso_presupuesto_pct|royalty_fet_peso_presupuesto_pct]]
+- [[indicadores/rsh_carencia_servicios_basicos_jun2026_pct|rsh_carencia_servicios_basicos_jun2026_pct]]
+- [[indicadores/rsh_hacinamiento_jun2026_pct|rsh_hacinamiento_jun2026_pct]]
+- [[indicadores/ruralidad_censo_2024_pct|ruralidad_censo_2024_pct]]
 - [[indicadores/sancionatorios_sma_acuicolas_n|sancionatorios_sma_acuicolas_n]]
 - [[indicadores/sistema_electrico|sistema_electrico]]
+- [[indicadores/sistemas_ssr_apr_n|sistemas_ssr_apr_n]]
 - [[indicadores/subsidio_fiscal_diesel_kwh_clp|subsidio_fiscal_diesel_kwh_clp]]
 - [[indicadores/sucursales_bancarias_n|sucursales_bancarias_n]]
 - [[indicadores/superficie_concesionada_mar_ha|superficie_concesionada_mar_ha]]
 - [[indicadores/tarifa_adr_emat_clp|tarifa_adr_emat_clp]]
 - [[indicadores/tarifa_adr_estimada_usd|tarifa_adr_estimada_usd]]
 - [[indicadores/tarifa_bt1_clp|tarifa_bt1_clp]]
+- [[indicadores/tasa_dmcs_100k|tasa_dmcs_100k]]
 - [[indicadores/tasa_ocupacion_emat_estival_pct|tasa_ocupacion_emat_estival_pct]]
 - [[indicadores/tasa_ocupacion_estival_pct|tasa_ocupacion_estival_pct]]
 - [[indicadores/tasa_ocupacion_invernal_pct|tasa_ocupacion_invernal_pct]]
+- [[indicadores/tasa_vif_100k|tasa_vif_100k]]
 - [[indicadores/trabajadores_sii|trabajadores_sii]]
 - [[indicadores/trabajadores_sii_por_centro_activo|trabajadores_sii_por_centro_activo]]
 - [[indicadores/ventas_act_turismo_uf|ventas_act_turismo_uf]]
@@ -111,6 +144,7 @@ Bitácora estructurada para auditar cambios en los indicadores comunales, Barrio
 - [[indicadores/visitantes_snaspe|visitantes_snaspe]]
 - [[indicadores/visitas_por_cama_turistica|visitas_por_cama_turistica]]
 - [[indicadores/visitas_por_pernoctacion_ratio|visitas_por_pernoctacion_ratio]]
+- [[indicadores/viviendas_totales_censo_2024|viviendas_totales_censo_2024]]
 - [[indicadores/zoit_nombre|zoit_nombre]]
 
 ## Consulta Rápida Dataview (Pendientes de Verificación)

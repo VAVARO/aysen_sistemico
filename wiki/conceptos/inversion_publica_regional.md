@@ -33,15 +33,15 @@ La inversión pública territorial en Aysén articula el Fondo Nacional de Desar
 | Comuna | Inversión Pública FNDR Asignada (M$) | Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab) | Tasa Ejecución FNDR GORE 2023 (%) | Red Vial Total Comunal (km) | Porcentaje de Pavimentación Vial (%) |
 | --- | --- | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | 14.850 | 256,8 | 95,3 | 684,2 | 41,1 |
-| [[comunas/lago_verde|Lago Verde]] | 2.200 | 2.824,1 | 96,2 | 312,5 | 5,8 |
+| [[comunas/lago_verde|Lago Verde]] | 2.200 | 2.494,3 | 96,2 | 312,5 | 5,8 |
 | [[comunas/aysen|Aysén]] | 9.800 | 423 | 94,5 | 495,6 | 32,4 |
-| [[comunas/cisnes|Cisnes]] | 5.600 | 1.090,1 | 93,3 | 482 | 17,3 |
+| [[comunas/cisnes|Cisnes]] | 5.600 | 1.049,7 | 93,3 | 482 | 17,3 |
 | [[comunas/guaitecas|Guaitecas]] | 3.400 | 2.127,7 | 97,3 | 28,5 | 43,9 |
-| [[comunas/chile_chico|Chile Chico]] | 4.900 | 999 | 90 | 384 | 15,8 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 4.100 | 1.505,7 | 94,9 | 291 | 15,8 |
-| [[comunas/cochrane|Cochrane]] | 4.800 | 1.388,1 | 95,2 | 398 | 9,4 |
-| [[comunas/ohiggins|O'Higgins]] | 2.400 | 3.709,4 | 98,9 | 168,4 | 3,9 |
-| [[comunas/tortel|Tortel]] | 2.600 | 5.148,5 | 91,2 | 142,2 | 3,8 |
+| [[comunas/chile_chico|Chile Chico]] | 4.900 | 989,9 | 90 | 384 | 15,8 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 4.100 | 1.535 | 94,9 | 291 | 15,8 |
+| [[comunas/cochrane|Cochrane]] | 4.800 | 1.374,6 | 95,2 | 398 | 9,4 |
+| [[comunas/ohiggins|O'Higgins]] | 2.400 | 3.614,5 | 98,9 | 168,4 | 3,9 |
+| [[comunas/tortel|Tortel]] | 2.600 | 4.618,1 | 91,2 | 142,2 | 3,8 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

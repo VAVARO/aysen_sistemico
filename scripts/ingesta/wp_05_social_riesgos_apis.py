@@ -70,7 +70,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "111",
         "lat": -44.2410,
         "lng": -71.8465,
-        "poblacion_censo_2024": 779,
+        "poblacion_censo_2024": 882,
         "source_url": "https://www.saludaysen.cl",
     },
     "11201": {
@@ -92,7 +92,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "112",
         "lat": -44.7430,
         "lng": -72.6990,
-        "poblacion_censo_2024": 5137,
+        "poblacion_censo_2024": 5335,
         "source_url": "https://www.saludaysen.cl",
     },
     "11203": {
@@ -114,7 +114,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "115",
         "lat": -46.5410,
         "lng": -71.7220,
-        "poblacion_censo_2024": 4905,
+        "poblacion_censo_2024": 4950,
         "source_url": "https://www.saludaysen.cl",
     },
     "11402": {
@@ -125,7 +125,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "113",
         "lat": -46.2910,
         "lng": -71.9360,
-        "poblacion_censo_2024": 2723,
+        "poblacion_censo_2024": 2671,
         "source_url": "https://www.saludaysen.cl",
     },
     "11301": {
@@ -136,7 +136,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "115",
         "lat": -47.2540,
         "lng": -72.5710,
-        "poblacion_censo_2024": 3458,
+        "poblacion_censo_2024": 3492,
         "source_url": "https://www.saludaysen.cl",
     },
     "11302": {
@@ -147,7 +147,7 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "117",
         "lat": -48.4680,
         "lng": -72.5600,
-        "poblacion_censo_2024": 647,
+        "poblacion_censo_2024": 664,
         "source_url": "https://www.saludaysen.cl",
     },
     "11303": {
@@ -158,8 +158,92 @@ COMUNAS_CATALOG: Dict[str, Dict[str, Any]] = {
         "codigo_cuenca": "115",
         "lat": -47.7950,
         "lng": -73.5350,
-        "poblacion_censo_2024": 505,
+        "poblacion_censo_2024": 563,
         "source_url": "https://www.saludaysen.cl",
+    },
+}
+
+# Reingenieria Hub VI (Sprint 9): Censo 2024 INE/BCN, CASEN 2022/2024, RSH, MINVU CECT/PEH, DOH-MOP, MINEDUC/SLEP/SIES y CEAD
+WP05_SPRINT9_COMUNAL: Dict[str, Dict[str, Any]] = {
+    "11101": {
+        "hogares": 22423, "viv_tot": 27989, "viv_ocu": 22198, "iam": 64.1, "masc": 95.0, "orig_pct": 27.5, "inmig_pct": 4.3, "rur_pct": 12.1,
+        "pob_ing": 2.9, "pob_mul": 14.0, "rsh_serv": 11.5, "rsh_hac": 6.7,
+        "def_cuant": 1128, "def_cuant_pct": 5.0, "irrecup": 280, "alleg": 225, "nuc_hac": 219, "hac_no_amp": 404, "def_cual": 2893, "camp_n": 5, "camp_hog": 127,
+        "ssr_com": 15, "ssr_pers": 10650, "ssr_fam": 3350,
+        "est_tot": 40, "est_slep": 17, "mat_tot": 13284, "mat_slep": 3017, "media_comp": True, "sies_n": 2187,
+        "dmcs_100k": 1702.0, "vif_100k": 730.1,
+    },
+    "11102": {
+        "hogares": 373, "viv_tot": 724, "viv_ocu": 370, "iam": 182.8, "masc": 121.3, "orig_pct": 22.8, "inmig_pct": 2.8, "rur_pct": 100.0,
+        "pob_ing": 0.9, "pob_mul": 18.0, "rsh_serv": 33.9, "rsh_hac": 3.6, "casen_2024": {"pobreza_ingresos_2024_pct": 15.1, "pobreza_multidim_2024_pct": 15.7},
+        "def_cuant": 73, "def_cuant_pct": 19.6, "irrecup": 65, "alleg": 3, "nuc_hac": 1, "hac_no_amp": 4, "def_cual": 48, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 2, "ssr_pers": 620, "ssr_fam": 210,
+        "est_tot": 3, "est_slep": 3, "mat_tot": 54, "mat_slep": 54, "media_comp": False, "sies_n": 0,
+        "dmcs_100k": 1422.3, "vif_100k": 548.2, "serie_vif_2023_2025": {"2023": 874.3, "2024": 109.4, "2025": 548.2},
+    },
+    "11201": {
+        "hogares": 9057, "viv_tot": 11054, "viv_ocu": 8994, "iam": 61.6, "masc": 98.9, "orig_pct": 31.8, "inmig_pct": 3.5, "rur_pct": 15.4,
+        "pob_ing": 5.3, "pob_mul": 12.8, "rsh_serv": 11.7, "rsh_hac": 5.0, "casen_2024": {"pobreza_ingresos_2024_pct": 13.6, "pobreza_multidim_2024_pct": 12.2},
+        "def_cuant": 330, "def_cuant_pct": 3.6, "irrecup": 78, "alleg": 63, "nuc_hac": 63, "hac_no_amp": 126, "def_cual": 1168, "camp_n": 4, "camp_hog": 107,
+        "ssr_com": 8, "ssr_pers": 5680, "ssr_fam": 1790,
+        "est_tot": 19, "est_slep": 12, "mat_tot": 5286, "mat_slep": 2406, "media_comp": True, "sies_n": 737,
+        "dmcs_100k": 1197.6, "vif_100k": 1157.9, "serie_vif_2023_2025": {"2024": 1157.9, "2025": 938.6},
+    },
+    "11202": {
+        "hogares": 2180, "viv_tot": 3437, "viv_ocu": 2171, "iam": 64.1, "masc": 102.3, "orig_pct": 28.4, "inmig_pct": 3.6, "rur_pct": 54.0,
+        "pob_ing": 5.0, "pob_mul": 12.3, "rsh_serv": 12.0, "rsh_hac": 3.9,
+        "def_cuant": 109, "def_cuant_pct": 5.0, "irrecup": 60, "alleg": 9, "nuc_hac": 10, "hac_no_amp": 30, "def_cual": 281, "camp_n": 1, "camp_hog": 10,
+        "ssr_com": 5, "ssr_pers": 3250, "ssr_fam": 1050,
+        "est_tot": 8, "est_slep": 7, "mat_tot": 1011, "mat_slep": 1010, "media_comp": True, "sies_n": 0,
+        "dmcs_100k": 1754.1, "vif_100k": 749.3,
+    },
+    "11203": {
+        "hogares": 606, "viv_tot": 816, "viv_ocu": 603, "iam": 56.5, "masc": 115.7, "orig_pct": 57.9, "inmig_pct": 1.4, "rur_pct": 26.0,
+        "pob_ing": 6.1, "pob_mul": 22.2, "rsh_serv": 26.1, "rsh_hac": 11.0,
+        "def_cuant": 14, "def_cuant_pct": 2.3, "irrecup": 2, "alleg": 3, "nuc_hac": 2, "hac_no_amp": 7, "def_cual": 78, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 1, "ssr_pers": 1598, "ssr_fam": 551,
+        "est_tot": 2, "est_slep": 2, "mat_tot": 290, "mat_slep": 290, "media_comp": True, "sies_n": 0,
+        "dmcs_100k": 1862.2, "vif_100k": 496.6,
+    },
+    "11401": {
+        "hogares": 2109, "viv_tot": 3108, "viv_ocu": 2097, "iam": 92.9, "masc": 102.1, "orig_pct": 24.5, "inmig_pct": 4.1, "rur_pct": 35.0,
+        "pob_ing": 6.2, "pob_mul": 16.3, "rsh_serv": 9.6, "rsh_hac": 5.9,
+        "def_cuant": 86, "def_cuant_pct": 4.1, "irrecup": 33, "alleg": 12, "nuc_hac": 10, "hac_no_amp": 31, "def_cual": 272, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 5, "ssr_pers": 2420, "ssr_fam": 780,
+        "est_tot": 5, "est_slep": 5, "mat_tot": 864, "mat_slep": 864, "media_comp": True, "sies_n": 0,
+        "dmcs_100k": 1743.2, "vif_100k": 755.4,
+    },
+    "11402": {
+        "hogares": 1231, "viv_tot": 2242, "viv_ocu": 1227, "iam": 121.2, "masc": 107.4, "orig_pct": 25.1, "inmig_pct": 2.9, "rur_pct": 72.0,
+        "pob_ing": 7.0, "pob_mul": 18.8, "rsh_serv": 14.4, "rsh_hac": 4.9,
+        "def_cuant": 50, "def_cuant_pct": 4.1, "irrecup": 17, "alleg": 4, "nuc_hac": 7, "hac_no_amp": 22, "def_cual": 158, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 5, "ssr_pers": 2115, "ssr_fam": 680,
+        "est_tot": 5, "est_slep": 5, "mat_tot": 353, "mat_slep": 353, "media_comp": True, "sies_n": 0,
+        "dmcs_100k": 1695.5, "vif_100k": 552.9,
+    },
+    "11301": {
+        "hogares": 1462, "viv_tot": 2126, "viv_ocu": 1449, "iam": 65.0, "masc": 106.0, "orig_pct": 22.9, "inmig_pct": 2.5, "rur_pct": 22.0,
+        "pob_ing": 6.3, "pob_mul": 14.3, "rsh_serv": 15.8, "rsh_hac": 5.8, "casen_2024": {"pobreza_ingresos_2024_pct": 13.5, "pobreza_multidim_2024_pct": 9.9},
+        "def_cuant": 118, "def_cuant_pct": 8.1, "irrecup": 62, "alleg": 13, "nuc_hac": 13, "hac_no_amp": 30, "def_cual": 189, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 3, "ssr_pers": 1450, "ssr_fam": 450,
+        "est_tot": 2, "est_slep": 2, "mat_tot": 740, "mat_slep": 740, "media_comp": True, "sies_n": 0,
+        "dmcs_100k": 748.5, "vif_100k": 773.1, "serie_vif_2023_2025": {"2024": 374.2, "2025": 773.1},
+    },
+    "11302": {
+        "hogares": 292, "viv_tot": 403, "viv_ocu": 291, "iam": 41.7, "masc": 104.7, "orig_pct": 21.4, "inmig_pct": 3.6, "rur_pct": 100.0,
+        "pob_ing": 9.2, "pob_mul": 12.1, "rsh_serv": 14.4, "rsh_hac": 4.6,
+        "def_cuant": 4, "def_cuant_pct": 1.4, "irrecup": 1, "alleg": 1, "nuc_hac": 1, "hac_no_amp": 1, "def_cual": 38, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 2, "ssr_pers": 570, "ssr_fam": 174,
+        "est_tot": 1, "est_slep": 1, "mat_tot": 123, "mat_slep": 123, "media_comp": True, "sies_n": 0,
+        "dmcs_100k": 1481.5, "vif_100k": 740.7,
+    },
+    "11303": {
+        "hogares": 231, "viv_tot": 395, "viv_ocu": 231, "iam": 30.8, "masc": 114.0, "orig_pct": 40.2, "inmig_pct": 3.3, "rur_pct": 100.0,
+        "pob_ing": 4.6, "pob_mul": 12.3, "rsh_serv": 44.0, "rsh_hac": 9.0,
+        "def_cuant": 15, "def_cuant_pct": 6.5, "irrecup": 11, "alleg": 0, "nuc_hac": 0, "hac_no_amp": 4, "def_cual": 30, "camp_n": 0, "camp_hog": 0,
+        "ssr_com": 1, "ssr_pers": 480, "ssr_fam": 150,
+        "est_tot": 1, "est_slep": 1, "mat_tot": 82, "mat_slep": 82, "media_comp": False, "sies_n": 0,
+        "dmcs_100k": 1202.7, "vif_100k": 687.3,
     },
 }
 
@@ -572,18 +656,18 @@ def generate_comunal_historical_series(ine: str) -> List[Dict[str, Any]]:
     else:
         camas_base = 0
 
-    # Establecimientos escolares
+    # Establecimientos escolares (Sprint 9: 86 totales = 55 SLEP + 31 part. subv./CAD/pagados)
     est_total_comuna = {
-        "11101": (38, 31, 7),
+        "11101": (40, 17, 23),
         "11102": (3, 3, 0),
-        "11201": (18, 15, 3),
-        "11202": (9, 9, 0),
+        "11201": (19, 12, 7),
+        "11202": (8, 7, 1),
         "11203": (2, 2, 0),
-        "11401": (4, 4, 0),
-        "11402": (3, 3, 0),
-        "11301": (3, 3, 0),
-        "11302": (2, 2, 0),
-        "11303": (2, 2, 0),
+        "11401": (5, 5, 0),
+        "11402": (5, 5, 0),
+        "11301": (2, 2, 0),
+        "11302": (1, 1, 0),
+        "11303": (1, 1, 0),
     }[ine]
 
     series_comuna = []
@@ -883,6 +967,18 @@ def build_raw_education_catalog() -> Dict[str, Any]:
             }
             for r in SERIES_REGIONALES_WP05
         ],
+        "calidad_y_sies_oficial": {
+            "simce_2025": {
+                "4_basico": {"lectura": 276, "matematica": 257},
+                "8_basico": {"lectura": 229, "matematica": 252, "historia": 245},
+                "2_medio": {"lectura": 246, "matematica": 261},
+            },
+            "paes_admision_2026": {
+                "matematica_m1": 627.4, "matematica_m1_var_vs_2025": 13.8, "chile_m1": 623.0,
+                "competencia_lectora": 600.2, "competencia_lectora_var_vs_2025": 12.9, "chile_lectora": 597.4,
+            },
+            "sies_2026": {"total_estudiantes": 2924, "pregrado": 2907, "coyhaique": 2187, "aysen": 737, "uaysen_aprox": 1000, "inacap_aprox": 1187, "cft_estatal_aysen": 737},
+        },
     }
     with open(raw_file, "w", encoding="utf-8") as f:
         json.dump(catalog, f, indent=2, ensure_ascii=False)
@@ -917,6 +1013,18 @@ def build_raw_security_catalog() -> Dict[str, Any]:
             }
             for r in SERIES_REGIONALES_WP05
         ],
+        "cead_bcn_oficial_2023_2025": {
+            "delitos_violentos_2024_100k": 1872.2,
+            "delitos_violentos_2024_chile_100k": 2222.7,
+            "vida_integridad_2024_100k": 973.9,
+            "vida_integridad_2025_100k": 902.1,
+            "vida_integridad_chile_100k": 1003.2,
+            "vif_regional_serie_100k": {
+                "2023": {"aysen": 691.6, "chile": 608.2},
+                "2024": {"aysen": 809.9, "chile": 601.0, "brecha_chile_pct": 34.8},
+                "2025": {"aysen": 709.9, "chile": 585.1, "brecha_chile_pct": 21.3},
+            },
+        },
     }
     with open(raw_file, "w", encoding="utf-8") as f:
         json.dump(catalog, f, indent=2, ensure_ascii=False)
@@ -1435,6 +1543,26 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
     for item in comunas_data:
         ine = item["comuna_ine"]
         meta = COMUNAS_CATALOG[ine]
+        s9 = WP05_SPRINT9_COMUNAL[ine]
+        item["educacion_mineduc"] = {
+            "slep_territorial": "SLEP Aysén",
+            "establecimientos_escolares_total": s9["est_tot"],
+            "establecimientos_slep_aysen": s9["est_slep"],
+            "matricula_escolar_total": s9["mat_tot"],
+            "matricula_slep_aysen_n": s9["mat_slep"],
+            "tiene_educacion_media_completa": s9["media_comp"],
+            "instituciones_educacion_superior": (
+                ["Universidad de Aysén", "INACAP Sede Coyhaique"] if ine == "11101"
+                else (["CFT Estatal de la Región de Aysén"] if ine == "11201" else [])
+            ),
+            "matricula_educacion_superior_sies_2026": s9["sies_n"],
+        }
+        item["seguridad_cead"]["tasa_dmcs_por_100k_hab"] = s9["dmcs_100k"]
+        item["seguridad_cead"]["tasa_vif_por_100k_hab"] = s9["vif_100k"]
+        if "serie_vif_2023_2025" in s9:
+            item["seguridad_cead"]["serie_vif_2023_2025_100k"] = s9["serie_vif_2023_2025"]
+        item["seguridad_cead"]["nota_serie_cead_2023_2025"] = "CEAD/BCN: VIF regional 2023: 691,6 (Chile 608,2); 2024: 809,9 (Chile 601,0); 2025: 709,9 (Chile 585,1). Delitos violentos 2024: 1.872,2; vida e integridad 2024: 973,9 / 2025: 902,1."
+
         row = {
             "codigo_comuna": meta["codigo_comuna"],
             "comuna_ine": ine,
@@ -1451,6 +1579,58 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
                 "seguridad_cead": item["seguridad_cead"],
                 "riesgos_ambientales": item["riesgos_ambientales"],
                 "series_historicas": item["series_historicas"],
+                "demografia_censo_2024": {
+                    "poblacion_censo_2024": meta["poblacion_censo_2024"],
+                    "hogares_censo_2024": s9["hogares"],
+                    "viviendas_totales_censo_2024": s9["viv_tot"],
+                    "viviendas_ocupadas_censo_2024": s9["viv_ocu"],
+                    "indice_envejecimiento": s9["iam"],
+                    "indice_masculinidad": s9["masc"],
+                    "pueblos_originarios_pct_censo_2024": s9["orig_pct"],
+                    "inmigrantes_internacionales_pct_censo_2024": s9["inmig_pct"],
+                },
+                "habitat_minvu": {
+                    "deficit_cuantitativo": s9["def_cuant"],
+                    "deficit_cuantitativo_pct_hogares": s9["def_cuant_pct"],
+                    "viviendas_irrecuperables": s9["irrecup"],
+                    "hogares_allegados": s9["alleg"],
+                    "nucleos_allegados_hacinados": s9["nuc_hac"],
+                    "viviendas_hacinamiento_no_ampliable": s9["hac_no_amp"],
+                    "deficit_cualitativo_casen_2024_hogares": s9["def_cual"],
+                    "campamentos_minvu_2024_n": s9["camp_n"],
+                    "campamentos_minvu_2024_hogares": s9["camp_hog"],
+                    "deficit_cuantitativo_regional": 1927,
+                    "deficit_cualitativo_regional": 5155,
+                },
+                "servicios_sanitarios_rurales_doh": {
+                    "comites_ssr": s9["ssr_com"],
+                    "beneficiarios_personas": s9["ssr_pers"],
+                    "cobertura_ssr_apr_familias": s9["ssr_fam"],
+                    "comites_ssr_regionales": 47,
+                    "beneficiarios_ssr_regionales": 28833,
+                    "familias_ssr_regionales": 9185,
+                },
+                "pobreza_casen": {
+                    "pobreza_ingresos_pct": s9["pob_ing"],
+                    "pobreza_multidim_pct": s9["pob_mul"],
+                    "pobreza_ingresos_regional_pct": 4.0,
+                    "pobreza_multidimensional_regional_pct": 14.0,
+                    **(({"casen_2024_nueva_metodologia": s9["casen_2024"]}) if "casen_2024" in s9 else {}),
+                },
+                "educacion_slep_operativa": {
+                    "traspaso_oficial": "2024-01-01",
+                    "marco_normativo": "Ley N° 21.040",
+                    "establecimientos_slep_comuna": s9["est_slep"],
+                    "matricula_slep_comuna": s9["mat_slep"],
+                    "establecimientos_escolares_slep_regional": 55,
+                    "jardines_vtf_regional": 10,
+                    "establecimientos_totales": 65,
+                },
+                "vivienda_y_rsh": {
+                    "rsh_carencia_servicios_basicos_jun2026_pct": s9["rsh_serv"],
+                    "rsh_hacinamiento_jun2026_pct": s9["rsh_hac"],
+                    "ruralidad_censo_2024_pct": s9["rur_pct"],
+                },
             },
         }
         por_comuna_list.append(row)
@@ -1468,8 +1648,8 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "tipo": "Hospital de Alta Complejidad",
             "codigo_comuna": "CL-XI-01",
             "comuna_ine": "11101",
-            "lat": -45.5714,
-            "lng": -72.0635,
+            "lat": -45.5712,
+            "lng": -72.0685,
             "atributos": {
                 "categoria": "Red Asistencial Minsal / SSA",
                 "camas": 167,
@@ -1831,6 +2011,132 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
             "sismos_registrados_usgs_periodo": len(usgs_features),
             "nodos_georreferenciados_totales": len(nodos),
             "series_historicas_regionales": SERIES_REGIONALES_WP05,
+            "demografia_censo_2024": {
+                "poblacion_regional_total": 100745,
+                "poblacion_suma_comunal_bcn": 101148,
+                "urbana_pct": 80.7,
+                "rural_pct": 19.3,
+                "hombres": 49847,
+                "hombres_pct": 49.5,
+                "mujeres": 50898,
+                "mujeres_pct": 50.5,
+                "hogares_censo_2024_total": 39964,
+                "personas_por_hogar_promedio": 2.5,
+                "personas_por_hogar_2017": 2.8,
+                "viviendas_censadas_total": 52294,
+                "viviendas_particulares": 52208,
+                "viviendas_colectivas": 86,
+                "viviendas_urbanas": 34128,
+                "viviendas_rurales": 18166,
+                "viviendas_ocupadas_moradores_presentes": 39631,
+                "viviendas_ocupadas_pct": 81.6,
+                "viviendas_desocupadas_pct": 18.4,
+                "indice_envejecimiento_regional": 66.2,
+                "indice_envejecimiento_serie": {"1992": 13.7, "2002": 20.4, "2017": 40.0, "2024": 66.2},
+                "edad_promedio_regional": 37.4,
+                "edad_promedio_serie": {"1992": 26.4, "2002": 28.9, "2017": 33.9, "2024": 37.4},
+                "tramos_etarios_2024": {"0_14_pct": 19.2, "0_14_n": 19343, "15_64_pct": 68.1, "15_64_n": 68607, "65_mas_pct": 12.7, "65_mas_n": 12795},
+                "indice_masculinidad_regional": 97.9,
+                "pueblos_originarios_pct": 29.0,
+                "pueblos_originarios_n": 29230,
+                "inmigrantes_internacionales_pct": 3.9,
+                "inmigrantes_internacionales_n": 3931,
+                "hacinamiento_censo_2024_pct": 5.0,
+                "hacinamiento_censo_2024_viviendas": 1996,
+                "hacinamiento_medio_viviendas": 1857,
+                "hacinamiento_critico_viviendas": 139,
+                "fuente": "INE - Censo de Población y Vivienda 2024 / BCN Reporte Distrital 27 (2026)",
+            },
+            "habitat_y_deficit_habitacional_minvu": {
+                "deficit_habitacional_cuantitativo_total": 1927,
+                "deficit_cuantitativo_pct_hogares": 4.8,
+                "viviendas_irrecuperables_cantidad": 609,
+                "hogares_allegados_cantidad": 333,
+                "nucleos_allegados_hacinados_cantidad": 326,
+                "viviendas_hacinamiento_no_ampliable_cantidad": 659,
+                "deficit_cuantitativo_metodologia_historica_2024": 1254,
+                "variacion_vs_censo_2017_pct": -35.3,
+                "deficit_habitacional_cualitativo_total": 5155,
+                "deficit_cualitativo_pct_hogares": 12.9,
+                "campamentos_minvu_2024_total": 10,
+                "campamentos_minvu_2024_hogares": 244,
+                "plan_emergencia_habitacional_meta_entrega": 1293,
+                "peh_viviendas_terminadas_feb2026": 1671,
+                "peh_cumplimiento_feb2026_pct": 129.2,
+                "peh_vigencia_prorrogada_hasta": "2029-12-31",
+                "peh_ley_prorroga": "Ley N° 21.450",
+                "fuente": "MINVU CECT Oct-2025 / CASEN 2024 / Cierre PEH Feb-2026",
+            },
+            "servicios_sanitarios_rurales_ssr_doh": {
+                "total_comites_cooperativas_ssr_vigentes": 47,
+                "poblacion_beneficiaria_rural_abastecida": 28833,
+                "familias_arranques_conectados_total": 9185,
+                "porcentaje_poblacion_regional_abastecida_ssr_pct": 28.6,
+                "vulnerabilidad_invernal": "Congelamiento recurrente de matrices y captaciones superficiales en valles interiores",
+                "fuente": "Subdirección de Servicios Sanitarios Rurales (DOH-MOP) - Ley N° 20.998",
+            },
+            "pobreza_casen_oficial": {
+                "pobreza_por_ingresos_regional_pct": 4.0,
+                "pobreza_multidimensional_regional_pct": 14.0,
+                "rango_pobreza_multidimensional_comunas_aisladas": "12.1% a 22.2% (BCN CASEN 2022)",
+                "fuente": "Ministerio de Desarrollo Social y Familia (MDSF) / BCN - CASEN 2022",
+            },
+            "casen_2024_nueva_metodologia": {
+                "fecha_publicacion": "enero 2026",
+                "pobreza_ingresos_regional_2024_pct": 14.3,
+                "pobreza_ingresos_2022_recalculado_pct": 14.5,
+                "pobreza_ingresos_chile_2024_pct": 17.3,
+                "pobreza_multidimensional_regional_2024_pct": 12.1,
+                "pobreza_multidimensional_2022_recalculado_pct": 13.5,
+                "pobreza_multidimensional_chile_2024_pct": 17.7,
+                "comunas_publicadas_bcn_2026": {
+                    "11102": {"pobreza_ingresos_2024_pct": 15.1, "pobreza_multidim_2024_pct": 15.7},
+                    "11201": {"pobreza_ingresos_2024_pct": 13.6, "pobreza_multidim_2024_pct": 12.2},
+                    "11301": {"pobreza_ingresos_2024_pct": 13.5, "pobreza_multidim_2024_pct": 9.9},
+                },
+                "fuente": "MDSF - Nueva Metodología CASEN 2024 (ene-2026)",
+            },
+            "educacion_publica_slep_aysen": {
+                "traspaso_legal_slep": "1 de enero de 2024 bajo la Ley N° 21.040 de Educación Pública",
+                "establecimientos_escolares_totales_region": 86,
+                "establecimientos_escolares_totales_2025": 87,
+                "establecimientos_escolares_slep": 55,
+                "jardines_vtf_slep": 10,
+                "establecimientos_totales_slep": 65,
+                "establecimientos_slep_2024": 66,
+                "matricula_escolar_regional_2024": 22295,
+                "matricula_escolar_regional_2025": 21837,
+                "matricula_slep_2025": 8872,
+                "matricula_slep_pct": 40.6,
+                "matricula_part_subvencionado_2025": 12506,
+                "matricula_part_subvencionado_pct": 57.3,
+                "matricula_cad_2025": 259,
+                "matricula_part_pagado_2025": 200,
+                "simce_2025": {"4_basico": {"lectura": 276, "matematica": 257}, "8_basico": {"lectura": 229, "matematica": 252, "historia": 245}, "2_medio": {"lectura": 246, "matematica": 261}},
+                "paes_admision_2026": {"m1": 627.4, "m1_var_vs_2025": 13.8, "m1_chile": 623.0, "lectora": 600.2, "lectora_var_vs_2025": 12.9, "lectora_chile": 597.4},
+                "educacion_superior_sies_2026": {"total_estudiantes": 2924, "pregrado": 2907, "coyhaique": 2187, "aysen_cft": 737, "uaysen_aprox": 1000, "inacap_aprox": 1187},
+                "fuente": "MINEDUC CEM 2024-2025 / SLEP Aysén / Agencia de Calidad / DEMRE / SIES 2026",
+            },
+            "seguridad_cead_2023_2025": {
+                "delitos_violentos_2024_100k": 1872.2,
+                "delitos_violentos_2024_chile_100k": 2222.7,
+                "vida_integridad_2024_100k": 973.9,
+                "vida_integridad_2025_100k": 902.1,
+                "vida_integridad_chile_100k": 1003.2,
+                "vif_regional_serie_100k": {
+                    "2023": {"aysen": 691.6, "chile": 608.2},
+                    "2024": {"aysen": 809.9, "chile": 601.0, "brecha_chile_pct": 34.8},
+                    "2025": {"aysen": 709.9, "chile": 585.1, "brecha_chile_pct": 21.3},
+                },
+                "fuente": "CEAD - Subsecretaría de Prevención del Delito / BCN",
+            },
+            "rsh_jun2026_carencia_serv_basicos_regional_pct": 12.5,
+            "rsh_jun2026_hacinamiento_regional_pct": 6.1,
+            "peh_minvu_meta_viviendas": 1293,
+            "peh_minvu_estado_2025_2026": "Cierre oficial febrero 2026 MINVU: 1.671 viviendas terminadas sobre meta de 1.293 (129,2% de cumplimiento); vigencia prorrogada hasta el 31 de diciembre de 2029 (Ley N° 21.450).",
+            "salud_mental_y_riesgo_vital": {"tasa_suicidio_deis_por_100k": 15.1, "camas_psiquiatricas_cortas_estadias_uhce_hrc": 9, "riesgo": "Mayor tasa nacional de suicidio (~15,1/100k hab) y cuello de botella a 9 camas UHCE en Hospital Regional Coyhaique.", "fuente": "DEIS MINSAL / SSA"},
+            "mortalidad_oncologica_digestiva_deis": {"tasa_cancer_gastrico_cie10_c16": 18.4, "tasa_cancer_vesicula_cie10_c23": 12.6, "avpp_criticos": ["Cáncer Gástrico (C16)", "Cáncer de Vesícula Biliar (C23)"], "fuente": "DEIS MINSAL / Registro Poblacional de Cáncer"},
+            "listas_espera_sigte": {"interconsultas_no_ges_totales": 11420, "mediana_dias_consulta_especialidad": 284, "mediana_dias_intervencion_quirurgica": 395, "fuente": "SIGTE / Redes Asistenciales"},
         },
         "por_comuna": por_comuna_list,
         "nodos_georreferenciados": nodos,
@@ -1840,7 +2146,59 @@ def generate_systemic_wp_05(usgs_data: Dict[str, Any]) -> Path:
     if str(Path(__file__).resolve().parent) not in _nd_sys.path:
         _nd_sys.path.insert(0, str(Path(__file__).resolve().parent))
     from non_destructive_merge import save_systemic_json_non_destructive
-    save_systemic_json_non_destructive(out_json, dataset)
+    merged = save_systemic_json_non_destructive(out_json, dataset)
+    # Aplicar de manera autoritativa los bloques Sprint 9 verificados sobre posibles valores heredados en disco
+    s9_reg_keys = (
+        "demografia_censo_2024_oficial",
+        "habitat_y_deficit_habitacional_minvu",
+        "servicios_sanitarios_rurales_ssr_doh",
+        "pobreza_casen_oficial",
+        "casen_2024_nueva_metodologia",
+        "educacion_publica_slep_aysen",
+        "seguridad_cead_2023_2025",
+        "rsh_jun2026_carencia_serv_basicos_regional_pct",
+        "rsh_jun2026_hacinamiento_regional_pct",
+        "peh_minvu_meta_viviendas",
+        "peh_minvu_estado_2025_2026",
+    )
+    merged.setdefault("resumen_regional", {})
+    for rk in s9_reg_keys:
+        if rk in dataset["resumen_regional"]:
+            merged["resumen_regional"][rk] = dataset["resumen_regional"][rk]
+
+    gen_by_ine = {r["comuna_ine"]: r["datos"] for r in por_comuna_list}
+    s9_com_blocks = (
+        "educacion_mineduc",
+        "demografia_censo_2024",
+        "habitat_minvu",
+        "servicios_sanitarios_rurales_doh",
+        "pobreza_casen",
+        "educacion_slep_operativa",
+        "vivienda_y_rsh",
+    )
+    for row in merged.get("por_comuna", []):
+        ine = row.get("comuna_ine")
+        gdat = gen_by_ine.get(ine)
+        if not gdat:
+            continue
+        rdat = row.setdefault("datos", {})
+        for bk in s9_com_blocks:
+            if bk in gdat:
+                rdat[bk] = gdat[bk]
+        if "seguridad_cead" in gdat:
+            rsec = rdat.setdefault("seguridad_cead", {})
+            for sk in ("tasa_dmcs_por_100k_hab", "tasa_vif_por_100k_hab", "serie_vif_2023_2025_100k", "nota_serie_cead_2023_2025"):
+                if sk in gdat["seguridad_cead"]:
+                    rsec[sk] = gdat["seguridad_cead"][sk]
+
+    for n_disk in merged.get("nodos_georreferenciados", []):
+        if n_disk.get("id") == "hosp_coyhaique":
+            n_disk["lat"] = -45.5712
+            n_disk["lng"] = -72.0685
+
+    with open(out_json, "w", encoding="utf-8", newline="\n") as fh:
+        json.dump(merged, fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
 
     print(f"  [OK] Archivo sistémico generado exitosamente: {out_json.relative_to(REPO_ROOT)}")
     print(f"       Comunas cubiertas: {len(por_comuna_list)}/10")

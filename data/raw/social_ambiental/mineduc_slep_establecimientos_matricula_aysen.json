@@ -121,5 +121,39 @@
       "establecimientos_particulares_subvencionados": 10,
       "establecimientos_escolares_totales": 66
     }
-  ]
+  ],
+  "calidad_y_sies_oficial": {
+    "simce_2025": {
+      "4_basico": {
+        "lectura": 276,
+        "matematica": 257
+      },
+      "8_basico": {
+        "lectura": 229,
+        "matematica": 252,
+        "historia": 245
+      },
+      "2_medio": {
+        "lectura": 246,
+        "matematica": 261
+      }
+    },
+    "paes_admision_2026": {
+      "matematica_m1": 627.4,
+      "matematica_m1_var_vs_2025": 13.8,
+      "chile_m1": 623.0,
+      "competencia_lectora": 600.2,
+      "competencia_lectora_var_vs_2025": 12.9,
+      "chile_lectora": 597.4
+    },
+    "sies_2026": {
+      "total_estudiantes": 2924,
+      "pregrado": 2907,
+      "coyhaique": 2187,
+      "aysen": 737,
+      "uaysen_aprox": 1000,
+      "inacap_aprox": 1187,
+      "cft_estatal_aysen": 737
+    }
+  }
 }

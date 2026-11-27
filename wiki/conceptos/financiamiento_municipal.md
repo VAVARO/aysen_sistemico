@@ -33,15 +33,15 @@ El financiamiento de las 10 municipalidades de la Región de Aysén opera bajo u
 | Comuna | Presupuesto Municipal Vigente (M$) | Dependencia del Fondo Común Municipal (%) | Ingresos Propios Permanentes (%) | Inversión FNDR Asignada Per Cápita (Miles $ CLP/hab) | Profesionalización de Planta Municipal (%) |
 | --- | --- | --- | --- | --- | --- |
 | [[comunas/coyhaique|Coyhaique]] | 27.611 | 58,4 | 41,6 | 256,8 | 36,4 |
-| [[comunas/lago_verde|Lago Verde]] | 3.321,05 | 83,9 | 16,1 | 2.824,1 | 12,5 |
+| [[comunas/lago_verde|Lago Verde]] | 3.321,05 | 83,9 | 16,1 | 2.494,3 | 12,5 |
 | [[comunas/aysen|Aysén]] | 14.614,29 | 61,1 | 38,9 | 423 | 28,2 |
-| [[comunas/cisnes|Cisnes]] | 7.985,27 | 48,7 | 51,3 | 1.090,1 | 18,6 |
+| [[comunas/cisnes|Cisnes]] | 7.985,27 | 48,7 | 51,3 | 1.049,7 | 18,6 |
 | [[comunas/guaitecas|Guaitecas]] | 4.569,04 | 73,1 | 26,9 | 2.127,7 | 11,8 |
-| [[comunas/chile_chico|Chile Chico]] | 5.981,72 | 86,5 | 13,5 | 999 | 15,4 |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 6.252,85 | 86,6 | 13,4 | 1.505,7 | 14,1 |
-| [[comunas/cochrane|Cochrane]] | 5.720,96 | 85,7 | 14,3 | 1.388,1 | 16,2 |
-| [[comunas/ohiggins|O'Higgins]] | 5.323,76 | 95,3 | 4,7 | 3.709,4 | 10,5 |
-| [[comunas/tortel|Tortel]] | 3.440,74 | 95,4 | 4,6 | 5.148,5 | 9,8 |
+| [[comunas/chile_chico|Chile Chico]] | 5.981,72 | 86,5 | 13,5 | 989,9 | 15,4 |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 6.252,85 | 86,6 | 13,4 | 1.535 | 14,1 |
+| [[comunas/cochrane|Cochrane]] | 5.720,96 | 85,7 | 14,3 | 1.374,6 | 16,2 |
+| [[comunas/ohiggins|O'Higgins]] | 5.323,76 | 95,3 | 4,7 | 3.614,5 | 10,5 |
+| [[comunas/tortel|Tortel]] | 3.440,74 | 95,4 | 4,6 | 4.618,1 | 9,8 |
 
 ## Conexiones Sistémicas (`[[Wikilinks]]`)
 

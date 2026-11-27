@@ -342,6 +342,20 @@
     sucursales_bancarias_n: 'Sucursales Bancarias Totales CMF (Privada + BancoEstado)',
     cajeros_automaticos_n: 'Cajeros Automáticos ATM CMF (N°)',
     cajavecina_puntos_n: 'Puntos de Corresponsalía CajaVecina BancoEstado (N°)',
+    viviendas_totales_censo_2024: 'Viviendas Totales Censadas Censo 2024 (viviendas)',
+    viviendas_ocupadas_censo_2024: 'Viviendas Ocupadas Moradores Presentes Censo 2024 (viviendas)',
+    pueblos_originarios_pct_censo_2024: 'Población Pueblos Originarios Censo 2024 (%)',
+    inmigrantes_internacionales_pct_censo_2024: 'Inmigrantes Internacionales Censo 2024 (%)',
+    deficit_cuantitativo_minvu: 'Déficit Habitacional Cuantitativo Censo 2024 MINVU CECT (viviendas)',
+    deficit_habitacional_cuantitativo_viv: 'Déficit Habitacional Cuantitativo MINVU (viviendas)',
+    deficit_cuantitativo_pct_hogares: 'Déficit Habitacional Cuantitativo (% Hogares Censo 2024)',
+    carencia_servicios_basicos_rsh_pct: 'Carencia de Servicios Básicos RSH (%)',
+    hacinamiento_rsh_pct: 'Hacinamiento Registro Social de Hogares (%)',
+    matricula_escolar_total_n: 'Matrícula Escolar Total MINEDUC (estudiantes)',
+    matricula_escolar_mineduc: 'Matrícula Escolar Total MINEDUC CEM (estudiantes)',
+    matricula_slep_aysen_n: 'Matrícula Escolar Pública SLEP Aysén (estudiantes)',
+    matricula_educacion_superior_sies_n: 'Matrícula Educación Superior SIES 2026 (estudiantes)',
+    beneficiarios_ssr_apr_doh: 'Beneficiarios Agua Potable Rural SSR/APR DOH (personas)',
     ventas_por_empresa_uf: 'Ventas Promedio por Empresa SII (UF/empresa)',
     inversion_por_proyecto_seia_mmusd: 'Ticket Promedio por Proyecto SEIA (MM USD/proy.)',
     suelo_fiscal_bbnn_pct: 'Porcentaje de Suelo Fiscal Bienes Nacionales (%)',
@@ -953,6 +967,20 @@
     tasa_vif_100k: PROVENANCE_CATALOG_ENTRIES.CEAD_SPD,
     escuelas_rurales_multigrado_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
     liceos_urbanos_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    viviendas_totales_censo_2024: PROVENANCE_CATALOG_ENTRIES.INE_CENSO,
+    viviendas_ocupadas_censo_2024: PROVENANCE_CATALOG_ENTRIES.INE_CENSO,
+    pueblos_originarios_pct_censo_2024: PROVENANCE_CATALOG_ENTRIES.INE_CENSO,
+    inmigrantes_internacionales_pct_censo_2024: PROVENANCE_CATALOG_ENTRIES.INE_CENSO,
+    deficit_cuantitativo_minvu: PROVENANCE_CATALOG_ENTRIES.MINVU_DOH,
+    deficit_habitacional_cuantitativo_viv: PROVENANCE_CATALOG_ENTRIES.MINVU_DOH,
+    deficit_cuantitativo_pct_hogares: PROVENANCE_CATALOG_ENTRIES.MINVU_DOH,
+    carencia_servicios_basicos_rsh_pct: PROVENANCE_CATALOG_ENTRIES.BIDAT_RSH_2026,
+    hacinamiento_rsh_pct: PROVENANCE_CATALOG_ENTRIES.BIDAT_RSH_2026,
+    matricula_escolar_total_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    matricula_escolar_mineduc: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    matricula_slep_aysen_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    matricula_educacion_superior_sies_n: PROVENANCE_CATALOG_ENTRIES.MINEDUC_SLEP,
+    beneficiarios_ssr_apr_doh: PROVENANCE_CATALOG_ENTRIES.MINVU_DOH,
     ratio_pobreza_multidim_vs_ingresos: PROVENANCE_CATALOG_ENTRIES.CASEN,
     deficit_habitacional_total_por_1000_hab: PROVENANCE_CATALOG_ENTRIES.MINVU,
     especies_exoticas_invasoras_n: PROVENANCE_CATALOG_ENTRIES.CONAF_SNASPE,
@@ -1200,6 +1228,11 @@
     tasa_dmcs_100k: ['delitos de mayor connotacion social', 'dmcs', 'tasa dmcs', 'tasas de dmcs', 'connotacion social', 'cead'],
     establecimientos_slep_aysen: ['establecimientos escolares slep', 'establecimientos slep', 'establecimientos escolares', 'colegios slep', 'escuelas slep'],
     matricula_ed_superior_sies: ['educacion superior', 'matricula de educacion superior', 'matricula educacion superior sies', 'matricula superior', 'sies'],
+    viviendas_totales_censo_2024: ['viviendas totales', 'viviendas censadas', 'parque habitacional censo 2024'],
+    deficit_cuantitativo_pct_hogares: ['porcentaje deficit cuantitativo', 'tasa deficit habitacional'],
+    matricula_slep_aysen_n: ['matricula slep', 'alumnos slep aysen'],
+    pueblos_originarios_pct_censo_2024: ['pueblos originarios censo 2024', 'pertenencia indigena censo 2024'],
+    inmigrantes_internacionales_pct_censo_2024: ['inmigrantes internacionales', 'poblacion extranjera censo 2024', 'migrantes censo 2024'],
     indice_masculinidad: ['indice de masculinidad', 'masculinidad'],
     establecimientos_aps_n: ['establecimientos aps', 'dispositivos aps', 'centros aps', 'red aps', 'recintos aps', 'cesfam y postas', 'atencion primaria'],
     traslado_coyhaique_hrs: ['tiempo de traslado a coyhaique en ambulancia', 'traslado en ambulancia', 'derivacion medica a coyhaique', 'tiempo de derivacion medica', 'traslado a coyhaique'],
@@ -2586,7 +2619,7 @@
         };
       }
       case 'deficit_habitacional': {
-        const reply = 'Según el Observatorio Habitacional del MINVU y el Plan de Emergencia Habitacional (PEH): La Región de Aysén registra un déficit habitacional cuantitativo de 3.147 viviendas (56% irrecuperables, 1.762 viviendas) y un déficit cualitativo superior a 14.000 viviendas con deficiencias en envolvente térmica y habitabilidad. La demanda se concentra prioritariamente en Coyhaique (1.845 viviendas cuantitativo) y Aysén (762 viviendas).';
+        const reply = 'Según el MINVU CECT (Censo 2024), CASEN 2024 y el cierre oficial del Plan de Emergencia Habitacional (PEH febrero 2026): Aysén registra un déficit habitacional cuantitativo de 1.927 viviendas (4,8% de los 39.964 hogares: 609 irrecuperables, 333 allegados, 326 núcleos hacinados y 659 en hacinamiento no ampliable; -35,3% histórico) y un déficit cualitativo CASEN 2024 de 12,9% (5.155 hogares), además de 10 campamentos (244 hogares). En volumen lidera Coyhaique (1.128) y Aysén (330), y en tasa relativa Lago Verde (19,6%) y Cochrane (8,1%). El PEH cerró febrero 2026 con 1.671 viviendas terminadas sobre la meta de 1.293 (129,2% de cumplimiento, prorrogado hasta dic-2029).';
         const sources = resolveSourcesForKeys(['deficit_habitacional_cuantitativo_n', 'deficit_habitacional_cualitativo_n']);
         return {
           reply,
@@ -2606,7 +2639,7 @@
         };
       }
       case 'agua_rural_ssr': {
-        const reply = 'Según la Subdirección de Servicios Sanitarios Rurales (DOH-MOP) bajo la Ley N° 20.998: En la Región de Aysén operan 47 comités y cooperativas de SSR vigentes, abasteciendo a 28.833 beneficiarios rurales (28,6% de la población regional). Esta infraestructura comunitaria enfrenta una alta vulnerabilidad estacional por congelamiento recurrente de matrices y captaciones superficiales en valles interiores durante la temporada invernal.';
+        const reply = 'Según la Subdirección de Servicios Sanitarios Rurales (DOH-MOP) bajo la Ley N° 20.998: En la Región de Aysén operan 47 comités y cooperativas de SSR vigentes, abasteciendo a 28.833 personas beneficiarias rurales (28,6% de la población regional) a través de 9.185 familias/arranques domiciliarios conectados (incluyendo 551 arranques en el SSR de Melinka). Esta infraestructura comunitaria enfrenta una alta vulnerabilidad estacional por congelamiento recurrente de matrices y captaciones superficiales.';
         const sources = resolveSourcesForKeys(['sistemas_ssr_apr_n', 'cobertura_ssr_apr_familias']);
         return {
           reply,
@@ -2713,7 +2746,7 @@
         };
       }
       case 'slep_sies': {
-        const reply = 'En educación escolar y superior regional (SLEP Aysén Ley N° 21.040, SIES MINEDUC y CTCi 2026): El SLEP Aysén asumió el 1 de enero de 2024 articulando 66 recintos públicos (56 escuelas/liceos y 10 jardines infantiles). En educación superior SIES 2026, Aysén registra 2.327 estudiantes: INACAP Coyhaique (800, 34,4%), Universidad de Aysén (790, 33,9%) y CFT Estatal de Aysén (737, 31,7%). Institucionalmente, el 15 de enero de 2026 finalizó formalmente la Administración Provisional SES en la UAysén tras sanear $3.000 MM de déficit histórico, asumiendo el rector electo Dr. Víctor Cubillos Godoy (2026-2030) con consolidación del Campus Errázuriz y acreditación CNA con tutoría UTA; paralelamente, UACh Campus Patagonia transita hacia investigación aplicada y posgrado, y el CDPR CORFO Aysén opera un presupuesto 100% descentralizado de $1.900-$1.930 MM/año (junto a fondos FIC-R).';
+        const reply = 'En educación escolar y superior regional (MINEDUC CEM, SLEP Aysén Ley N° 21.040, SIES 2026 y PAES 2026): La región cuenta con 86 establecimientos escolares activos (87 en 2025) y el SLEP Aysén articula 65 recintos operativos (55 escuelas/liceos + 10 jardines VTF; 66 en 2024; 22.087 alumnos totales y 8.939 SLEP), logrando en PAES Admisión 2026 627,4 pts en M1 (+13,8 pts; Chile 623,0) y 600,2 pts en Lectora (+12,9 pts). En educación superior SIES 2026 suma 2.924 estudiantes (2.907 pregrado): Coyhaique 2.187 (INACAP ~1.187, Universidad de Aysén ~1.000) y Puerto Aysén 737 en el CFT Estatal de Aysén.';
         const sources = resolveSourcesForKeys(['matricula_escolar', 'matricula_ed_superior_sies', 'evaluacion_uaysen_promedio_i8']);
         return {
           reply,
@@ -6607,7 +6640,7 @@
 
     if (isStructuralComunasQuery) {
       const pobVar = _memoryIndex.variablesByKey['poblacion_censo_2024'];
-      const totalPob = pobVar && pobVar.stats ? fmtNumber(pobVar.stats.sum) : '-';
+      const sumComunalPob = pobVar && pobVar.stats ? fmtNumber(pobVar.stats.sum) : '-';
       const provinces = Array.from(new Set(_memoryIndex.entities.map(e => e.provincia).filter(Boolean)));
       const byProv = {};
       _memoryIndex.entities.forEach(e => {
@@ -6621,7 +6654,7 @@
 
       const structSources = resolveSourcesForKeys(['poblacion_censo_2024', 'superficie_km2']);
       const res = {
-        reply: `La Región de Aysén tiene ${_memoryIndex.entities.length} comunas distribuidas en ${provinces.length} provincias: ${provSummary}. En conjunto suman ${totalPob} habitantes según el Censo 2024 (INE).`,
+        reply: `La Región de Aysén tiene ${_memoryIndex.entities.length} comunas distribuidas en ${provinces.length} provincias: ${provSummary}. En conjunto consolidan 100.745 habitantes según el Censo 2024 INE (suma comunal BCN: ${sumComunalPob} hab.).`,
         chart: {
           render: true,
           type: 'bar',
@@ -7359,7 +7392,9 @@
         const bottom = list[list.length - 1];
         const aggSentence = v.aggregation === 'avg'
           ? `Promedio regional: ${fmtNumber(avg)}${unitStr}.`
-          : `Total regional: ${fmtNumber(sum)}${unitStr} (promedio comunal: ${fmtNumber(avg)}${unitStr}).`;
+          : (v.key === 'poblacion_censo_2024' && !excludeCoyhaique && list.length === 10
+            ? `Total regional oficial INE: 100.745 hab. (suma comunal BCN: ${fmtNumber(sum)}${unitStr}, promedio comunal: ${fmtNumber(avg)}${unitStr}).`
+            : `Total regional: ${fmtNumber(sum)}${unitStr} (promedio comunal: ${fmtNumber(avg)}${unitStr}).`);
 
         return `${cleanLbl}${excludeCoyhaique ? ' (sin Coyhaique)' : ''}: Lideran ${topN}, y el menor registro corresponde a ${bottom.comuna} (${fmtNumber(bottom.value)}${unitStr}). ${aggSentence}`;
       };

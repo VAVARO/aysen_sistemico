@@ -44,18 +44,18 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-La comuna de Cochrane (capital comunal: Cochrane; Provincia de Capitán Prat; cuenca principal: Cuenca 115 (Río Baker)) cuenta con una población verificada de 3.458 habitantes según el Censo 2024 (3,43% del total regional de 100.745 hab.) distribuidos en 8.599,5 km² (densidad de 0,4 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Patricio Ulloa Georgia), administra un presupuesto vigente de 5.720,96 M$ con una dependencia del Fondo Común Municipal de 85,7% (14,3% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 4.800 M$ (1.388,1 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 96 prestadores SERNATUR (690 camas), 9.853 visitas anuales a áreas protegidas SNASPE y 890 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Mediano General Carrera - Cochrane (SMGC) con tarifa residencial BT1 de $291,2/kWh y 95,5% de hogares calefaccionados a leña; dispone de 16 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 6 horas), y registra 7 proyectos CTCi con 3 investigadores residentes estimados.
+La comuna de Cochrane (capital comunal: Cochrane; Provincia de Capitán Prat; cuenca principal: Cuenca 115 (Río Baker)) cuenta con una población verificada de 3.492 habitantes según el Censo 2024 (3,45% del total regional de 100.745 hab.) distribuidos en 8.599,5 km² (densidad de 0,4 hab/km²). En gobernanza municipal (Hub IV, alcalde 2024-2028: Patricio Ulloa Georgia), administra un presupuesto vigente de 5.720,96 M$ con una dependencia del Fondo Común Municipal de 85,7% (14,3% de ingresos propios permanentes) y recibe una inversión pública FNDR asignada de 4.800 M$ (1.374,6 mil $/hab). En el ámbito productivo (Hub II y Hub V), es una comuna interior sin concesiones marítimas de salmonicultura, con vocación de servicios, ganadería, turismo y conservación. En turismo y conservación (Hub I y Hub VII), contabiliza 96 prestadores SERNATUR (690 camas), 9.853 visitas anuales a áreas protegidas SNASPE y 890 km² de superficie glaciar DGA. En energía, salud y ciencia (Hubs III, VIII y X), opera en el subsistema eléctrico Sistema Mediano General Carrera - Cochrane (SMGC) con tarifa residencial BT1 de $291,2/kWh y 95,5% de hogares calefaccionados a leña; dispone de 16 camas hospitalarias y 1 Postas de Salud Rural (con tiempo de derivación hacia Coyhaique de 6 horas), y registra 7 proyectos CTCi con 3 investigadores residentes estimados.
 
 ## Indicadores Comunales Verificados
 
 | Dimensión / Indicador Oficial | Valor Comunal Verificado | Hub Sistémico |
 | --- | --- | --- |
-| Población Censo 2024 (hab.) | 3.458 (3,43% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
+| Población Censo 2024 (hab.) | 3.492 (3,45% regional) | [[hubs/hub_06_social|Hub VI — Social]] |
 | Superficie Comunal (km²) y Densidad | 8.599,5 km² (0,4 hab/km²) | [[hubs/hub_05_inversion|Hub V — Inversión y Suelo]] |
 | Alcalde en Ejercicio (2024-2028) | Patricio Ulloa Georgia (Unión Demócrata Independiente (UDI) / Chile Vamos) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Presupuesto Municipal Vigente (M$) | 5.720,96 M$ | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
 | Dependencia Fondo Común Municipal (%) | 85,7% (Ingresos Propios: 14,3%) | [[hubs/hub_04_gobernanza|Hub IV — Gobernanza]] |
-| Inversión Pública FNDR Asignada (M$) | 4.800 M$ (1.388,1 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
+| Inversión Pública FNDR Asignada (M$) | 4.800 M$ (1.374,6 mil $/hab) | [[hubs/hub_05_inversion|Hub V — Inversión]] |
 | Prestadores Turísticos SERNATUR y Camas | 96 prestadores / 690 camas | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Visitantes Anuales Parques SNASPE | 9.853 visitantes (Parque Nacional Patagonia (sector Valle Chacabuco), Reserva Nacional Tamango) | [[hubs/hub_01_turismo|Hub I — Turismo]] |
 | Concesiones y Biomasa de Salmón | 0 concesiones / 0 ton | [[hubs/hub_02_salmonicultura|Hub II — Salmonicultura]] |
