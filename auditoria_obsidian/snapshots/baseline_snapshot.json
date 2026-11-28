@@ -1,8 +1,8 @@
 {
   "schemaVersion": "3.0.0",
   "label": "HEAD_APROBADO",
-  "capturedAt": "2026-11-27T22:16:01.172Z",
-  "bundleGeneratedAt": "2026-11-27T22:15:51.819Z",
+  "capturedAt": "2026-11-27T23:55:30.452Z",
+  "bundleGeneratedAt": "2026-11-27T23:50:21.055Z",
   "autoUpdateMeta": {
     "frequency": "Mensual (día 1 de cada mes)",
     "lastRun": "2026-11-02T12:13:30+00:00",
@@ -615,7 +615,7 @@
       "arenalesInAysen": false,
       "nodo31Text": "Catastro georreferenciado de los **5 complejos volcánicos activos monitoreados por la RNVV de SERNAGEOMIN dentro de la Región de Aysén** (**Hudson `#12` Cat. I**, **Melimoyu Cat. II**, **Mentolat `#35` Cat. III**, **Macá `#39` Cat. III** y **Cay `#63` Cat. IV**), junto a los sismos instrumentales **USGS** y la exclusión técnica del **Cerro Arenales** (sin erupción holocena confirmada, Stern et al. 2016), considerando al **Volcán Lautaro** (Cat. III, Natales/Magallanes) como amenaza volcánica transregional en el borde sur de Villa O'Higgins (`11302`). El **Volcán Hudson** (`-45.90, -72.97`, `1.905 m`, Aysén / Río Ibáñez) ocupa el puesto **`#12` Nacional (Categoría I — Muy Alto Riesgo por regla VEI >= 4)**; Melimoyu (`Cat. II`), Mentolat (`#35 Cat. III`) y Cay (`#63 Cat. IV`) monitorean la Falla Liquiñe-Ofqui."
     },
-    "nodo36WikiText": "---\nid: nodo_36\ntitle: \"Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\"\ntype: nodo\nhub_id: ctci\nhub_roman: X\nvariables_clave:\n  - centros_y_estaciones_ctci_count\n  - investigadores_residentes_est\n  - proporcion_ciencia_endogena_pct\nfuentes_oficiales:\n  - \"Ministerio de Ciencia / OBSERVA / ANID\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - nodo\n  - hub-x\n---\n\n# Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\n\n## Síntesis Compilada (Consultor IA)\n\nInfraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026), INIA Tamel Aike (10), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos).\n\n## Indicadores Comunales Verificados\n\n| Comuna | Centros y Estaciones I+D | Investigadores Residentes | Instituciones Principales | Prioridad Ciudadana (%) |\n| --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 6 | 91 | CIEP / UAysén / INIA Tamel Aike / INFOR / UACh Patagonia / DGAC | 88.6% |\n| [[comunas/lago_verde|Lago Verde]] | 1 | 1 | MinCiencia / CONAF / UAysén | 100% |\n| [[comunas/aysen|Aysén]] | 2 | 14 | CECs / U. de Chile / Plataforma Bioseguridad IFOP | 93.8% |\n| [[comunas/cisnes|Cisnes]] | 1 | 4 | IFOP Puerto Cisnes | 85.2% |\n| [[comunas/guaitecas|Guaitecas]] | 1 | 2 | IFOP Melinka (Marea Roja) | 87.5% |\n| [[comunas/chile_chico|Chile Chico]] | 1 | 3 | INIA Tamel Aike (Agroclimática) | 84% |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 1 | 2 | Pontificia Universidad Católica (PUC) | 90% |\n| [[comunas/cochrane|Cochrane]] | 1 | 3 | CIEP / UAysén (Cuencas Australes) | 83.3% |\n| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | CECs / U. de Concepción | 100% |\n| [[comunas/tortel|Tortel]] | 1 | 3 | CIEP / Municipalidad de Tortel | 100% |\n\n## Metadatos de Procedencia Institucional\n\n- **Entidad Oficial**: Ministerio de Ciencia / OBSERVA / ANID\n- **Fecha de Corte**: Catastro Oficial 2026\n- **Método de Captura**: Registro administrativo oficial y estadísticas sectoriales consolidadas\n- **Subsistema VSM**: S4 · Flujo metabólico: info\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Hub Perteneciente**: [[hubs/hub_10_ctci|Hub X — Ciencia, Tecnología, Conocimiento e Innovación (CTCi) en Aysén]]\n- **Nodos Satélite Relacionados**: [[nodos/nodo_06|Nodo #06]] · [[nodos/nodo_09|Nodo #09]] · [[nodos/nodo_25|Nodo #25]] · [[nodos/nodo_27|Nodo #27]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **ADRs de Referencia**: [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]] · [[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]\n"
+    "nodo36WikiText": "---\nid: nodo_36\ntitle: \"Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\"\ntype: nodo\nhub_id: ctci\nhub_roman: X\nvariables_clave:\n  - centros_y_estaciones_ctci_count\n  - investigadores_residentes_est\n  - proporcion_ciencia_endogena_pct\nfuentes_oficiales:\n  - \"Ministerio de Ciencia / OBSERVA / ANID\"\nupdated_at: \"2026-11-23\"\ntags:\n  - aysen-sistemico\n  - nodo\n  - hub-x\n---\n\n# Nodo #36 — Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional\n\n## Síntesis Compilada (Consultor IA)\n\nInfraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34 · nómina 2026: 23 investigadores [19 PhD] + 12 apoyo = 35 I+D + 12 gestión = 47 personas), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026 · cierre Administración Provisional SES 15-01-2026 · Rector Dr. Víctor Cubillos), INIA Tamel Aike (10 · 1er Banco de Recursos Zoogenéticos de Chile), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID · cierre pregrado ago-2025) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos). En territorio destacan la nueva sede/laboratorio IFOP Puerto Aysén (oct-2024), Reserva Elemental Melimoyu (Fundación MERI, 16.000 ha en Cisnes, excluyendo Huinay) y el deslinde de Bahía Exploradores (jurisdicción Aysén 11201, acceso vía Puerto Río Tranquilo / Río Ibáñez 11402) junto a Estación Cerro Castillo UAysén.\n\n## Indicadores Comunales Verificados\n\n| Comuna | Centros y Estaciones I+D | Investigadores Residentes | Instituciones Principales | Prioridad Ciudadana (%) |\n| --- | --- | --- | --- | --- |\n| [[comunas/coyhaique|Coyhaique]] | 6 | 91 | CIEP (23 inv./19 PhD + 12 apoyo) / UAysén / INIA (Banco Zoogenético) / INFOR / UACh / DGAC | 88.6% |\n| [[comunas/lago_verde|Lago Verde]] | 1 | 1 | INIA Agrometeorología / MinCiencia / CONAF / UAysén | 100% |\n| [[comunas/aysen|Aysén]] | 2 | 14 | IFOP Sede y Lab. Puerto Aysén / Plataforma Barrio 21B / CECs-U. de Chile San Rafael | 93.8% |\n| [[comunas/cisnes|Cisnes]] | 1 | 4 | IFOP Puerto Cisnes / Reserva Elemental Melimoyu (Fundación MERI) | 85.2% |\n| [[comunas/guaitecas|Guaitecas]] | 1 | 2 | IFOP Melinka (Marea Roja) / CBA-MERI (Cetáceos) | 87.5% |\n| [[comunas/chile_chico|Chile Chico]] | 1 | 3 | INIA Tamel Aike (Agroclimática) / Sitio Paleontológico Formación Toqui | 84% |\n| [[comunas/rio_ibanez|Río Ibáñez]] | 1 | 2 | Estación Cerro Castillo (UAysén) / Estación Patagonia UC (Bahía Exploradores) | 90% |\n| [[comunas/cochrane|Cochrane]] | 1 | 3 | CIEP / UAysén / DGA / Rewilding (Cuencas y PN Patagonia) | 83.3% |\n| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | DGA Glaciología / CECs / UdeC (Campo de Hielo Sur) | 100% |\n| [[comunas/tortel|Tortel]] | 1 | 3 | CIEP / COPAS Coastal (UdeC) / CIAyT / DGA (Caleta Tortel) | 100% |\n\n## Metadatos de Procedencia Institucional\n\n- **Entidad Oficial**: Ministerio de Ciencia / OBSERVA / ANID\n- **Fecha de Corte**: Catastro Oficial 2026\n- **Método de Captura**: Registro administrativo oficial y estadísticas sectoriales consolidadas\n- **Subsistema VSM**: S4 · Flujo metabólico: info\n\n## Conexiones Sistémicas (`[[Wikilinks]]`)\n\n- **Catálogo Maestro**: [[index|Índice Maestro de la Wiki]] · [[log|Bitácora Cronológica (Wiki Log)]]\n- **Hub Perteneciente**: [[hubs/hub_10_ctci|Hub X — Ciencia, Tecnología, Conocimiento e Innovación (CTCi) en Aysén]]\n- **Nodos Satélite Relacionados**: [[nodos/nodo_06|Nodo #06]] · [[nodos/nodo_09|Nodo #09]] · [[nodos/nodo_25|Nodo #25]] · [[nodos/nodo_27|Nodo #27]]\n- **Comunas de Aysén (10)**: [[comunas/coyhaique|Coyhaique]] · [[comunas/lago_verde|Lago Verde]] · [[comunas/aysen|Aysén]] · [[comunas/cisnes|Cisnes]] · [[comunas/guaitecas|Guaitecas]] · [[comunas/chile_chico|Chile Chico]] · [[comunas/rio_ibanez|Río Ibáñez]] · [[comunas/cochrane|Cochrane]] · [[comunas/ohiggins|O'Higgins]] · [[comunas/tortel|Tortel]]\n- **ADRs de Referencia**: [[adr/adr_002_reconciliacion_38_fuentes_invariantes|ADR-002]] · [[adr/adr_006_workflow_karpathy_llm_wiki_obsidian|ADR-006]]\n"
   },
   "hub8SaludAudit": {
     "hrcQuirofanosTotales": 4,
@@ -739,6 +739,79 @@
     },
     "wikiHasObsolete18Rmc": false,
     "wikiNodo34HasObsoleteTortel19": false
+  },
+  "hub10CtciAudit": {
+    "diskNodosCount": 16,
+    "diskNodosInvSum": 124,
+    "diskNodosHas16": true,
+    "spatialCtciCount": 16,
+    "bundleHubsCtciDescHas16": true,
+    "wp11ScriptMatchesCensoAnd16Nodos": true,
+    "diskComunaPopByIne": {
+      "11101": 57823,
+      "11102": 882,
+      "11201": 23170,
+      "11202": 5335,
+      "11203": 1598,
+      "11301": 3492,
+      "11302": 664,
+      "11303": 563,
+      "11401": 4950,
+      "11402": 2671
+    },
+    "hitosAnid2025_2026": {
+      "fiut_total_mclp": 10484,
+      "patser_mclp": 2750,
+      "basal_gore_2026_mclp": 1599
+    },
+    "ncaEquipamiento": {
+      "proyectos_fondequip_aysen": 6,
+      "equipos_criticos_count": 9,
+      "monto_total_clp": 1683057705,
+      "uaysen_clp": 1295862096,
+      "ciep_clp": 330346929,
+      "inia_clp": 56848680
+    },
+    "siesDisk": {
+      "total": 2924,
+      "inacap": 1187,
+      "uaysen": 1000,
+      "cft": 737
+    },
+    "ct07PresetHas2327": false,
+    "finDescentralizado": {
+      "cdpr_2024": 1930,
+      "cdpr_2025_corfo": 1885,
+      "cdpr_2026": 2534,
+      "plan_aysen_azul": 7500,
+      "fia_cerezos_ha": 244,
+      "fia_cerezos_ton": 660
+    },
+    "gobInnovacion": {
+      "has_seremi_ciencia": true,
+      "inapi_marcas_2025": 252,
+      "inapi_crecimiento_pct": 63
+    },
+    "semaforoByIne": {
+      "11101": "verde",
+      "11102": "rojo_baja_precision_n_menor_30",
+      "11201": "verde",
+      "11202": "rojo_baja_precision_n_menor_30",
+      "11203": "rojo_baja_precision_n_menor_30",
+      "11301": "rojo_baja_precision_n_menor_30",
+      "11302": "rojo_baja_precision_n_menor_30",
+      "11303": "rojo_baja_precision_n_menor_30",
+      "11401": "rojo_baja_precision_n_menor_30",
+      "11402": "rojo_baja_precision_n_menor_30"
+    },
+    "barometroResumen": {
+      "i1i": 89.6,
+      "i5": 84.3,
+      "i8_ref": 5.08,
+      "i8_n423": 4.98,
+      "f4g": 66.4
+    },
+    "wikiCtciHasObsolete15Or2327": false
   },
   "centralesElectricas": [
     {

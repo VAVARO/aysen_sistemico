@@ -813,6 +813,114 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     wikiNodo34HasObsoleteTortel19
   };
 
+  // Contexto Hub X (Sprint 13 - Eval E23: 16 Centros / 124 Inv., 179 CTCi [120 ANID + 59 CORFO], Censo 2024, FIUT/PATSER/NCA 2026, SIES 2924, CDPR/Azul/FIA/SEREMI/INAPI, Semaforo Barometro & Wiki)
+  const wp10PathAudit = options.wp10Path || path.join(ROOT_DIR, 'data', 'systemic', '10_ctci_innovacion.json');
+  const wp10JsonAudit = readJsonSafe(wp10PathAudit, null);
+  const wp10ResAudit = (wp10JsonAudit && wp10JsonAudit.resumen_regional) || {};
+  const wp10ComsAudit = Array.isArray(wp10JsonAudit && wp10JsonAudit.por_comuna) ? wp10JsonAudit.por_comuna : [];
+  const wp10NodosAudit = Array.isArray(wp10JsonAudit && wp10JsonAudit.nodos_georreferenciados) ? wp10JsonAudit.nodos_georreferenciados : [];
+  const ctciNodesSpatial = Array.isArray(dataLake?.spatialNodesByLayer?.centros_ctci) ? dataLake.spatialNodesByLayer.centros_ctci : [];
+  const hubCtciObj = Array.isArray(dataLake.hubs) ? dataLake.hubs.find(h => h && h.id === 'ctci') : null;
+  const bundleHubsCtciDescHas16 = Boolean(hubCtciObj && /16 centros y estaciones/i.test(String(hubCtciObj.description || '')));
+
+  const wp11ScriptPathAudit = options.wp11PyPath || path.join(ROOT_DIR, 'scripts', 'ingesta', 'wp_11_ctci_anid_corfo.py');
+  const wp11ScriptTxt = fs.existsSync(wp11ScriptPathAudit) ? fs.readFileSync(wp11ScriptPathAudit, 'utf8') : '';
+  const wp11RequiredTokens = [
+    'CTCI-NOD-16', '"57823"'.replace(/"/g, ''), '882', '23170', '5335', '1598',
+    '4950', '2671', '3492', '664', '563',
+    '"centros_y_estaciones_ctci_count": 6', '"investigadores_residentes_est": 91'
+  ];
+  const wp11ScriptMatchesCensoAnd16Nodos = wp11RequiredTokens.every(tok => wp11ScriptTxt.includes(tok));
+
+  const diskComunaPopByIne = {};
+  const semaforoCtciByIne = {};
+  for (const row of wp10ComsAudit) {
+    const ine = String(row && row.comuna_ine || '');
+    if (!ine) continue;
+    diskComunaPopByIne[ine] = Number(row?.poblacion_censo_2024 ?? 0);
+    semaforoCtciByIne[ine] = String(row?.datos?.semaforo_muestral_barometro || '');
+  }
+
+  const cecanAuditPath = path.join(ROOT_DIR, 'data', 'cecan_16_presets_aysen.json');
+  const cecanAuditJson = readJsonSafe(cecanAuditPath, null);
+  const ct07PresetDisk = cecanAuditJson?.strategic_extra_presets?.ctci?.find(p => p && p.preset_id === 'CT_07') || null;
+  const ct07PresetBundle = dataLake?.hubsGallery?.ctci?.presets?.find(p => p && p.preset_id === 'CT_07') || null;
+  const ct07TextCombined = `${JSON.stringify(ct07PresetDisk || {})} ${JSON.stringify(ct07PresetBundle || {})}`;
+  const ct07PresetHas2327 = /2\.327|2327/.test(ct07TextCombined) || !/2\.924/.test(ct07TextCombined);
+
+  const wikiH10Txt = readWikiSafe(['wiki', 'hubs', 'hub_10_ctci.md']);
+  const wikiN35Txt = readWikiSafe(['wiki', 'nodos', 'nodo_35.md']);
+  const wikiN36Txt = readWikiSafe(['wiki', 'nodos', 'nodo_36.md']);
+  const wikiN37Txt = readWikiSafe(['wiki', 'nodos', 'nodo_37.md']);
+  const wikiConceptCtciTxt = readWikiSafe(['wiki', 'conceptos', 'ecosistema_ctci_ciencia.md']);
+  const combinedWikiH10 = `${wikiH10Txt}
+${wikiN35Txt}
+${wikiN36Txt}
+${wikiN37Txt}
+${wikiConceptCtciTxt}`;
+  const wikiCtciHasObsolete15Or2327 =
+    /15 centros y estaciones/i.test(combinedWikiH10) ||
+    /2\.327/.test(combinedWikiH10) ||
+    /179 proyectos de investigaci[oó]n \(17\.326/i.test(combinedWikiH10);
+
+  const hitosAnid = wp10ResAudit.hitos_anid_minciencia_2025_2026 || {};
+  const ncaCat = wp10ResAudit.catastro_equipamiento_critico_nca_2026 || {};
+  const siesRes = wp10ResAudit.matricula_educacion_superior_sies || {};
+  const finDesc = wp10ResAudit.financiamiento_descentralizado_ctci || {};
+  const gobInnov = wp10ResAudit.gobernanza_e_innovacion_regional_2024_2026 || {};
+
+  const hub10CtciAudit = {
+    diskNodosCount: wp10NodosAudit.length,
+    diskNodosInvSum: wp10NodosAudit.reduce((acc, n) => acc + (Number(n?.investigadores_radicados) || 0), 0),
+    diskNodosHas16: wp10NodosAudit.some(n => n && n.id === 'CTCI-NOD-16'),
+    spatialCtciCount: ctciNodesSpatial.length,
+    bundleHubsCtciDescHas16,
+    wp11ScriptMatchesCensoAnd16Nodos,
+    diskComunaPopByIne,
+    hitosAnid2025_2026: {
+      fiut_total_mclp: Number(hitosAnid?.fiut_etapa2_uaysen_2025_2035?.monto_total_10_anos_mclp || 0),
+      patser_mclp: Number(hitosAnid?.ciep_patser_y_basal_gore?.monto_patser_2020_2025_mclp || 0),
+      basal_gore_2026_mclp: Number(hitosAnid?.ciep_patser_y_basal_gore?.presupuesto_basal_gore_2026_mclp || 0)
+    },
+    ncaEquipamiento: {
+      proyectos_fondequip_aysen: Number(ncaCat.proyectos_fondequip_adjudicados_aysen || 0),
+      equipos_criticos_count: Number(ncaCat.equipos_criticos_residentes_aysen_count || 0),
+      monto_total_clp: Number(ncaCat.monto_total_equipos_criticos_residentes_aysen_clp || 0),
+      uaysen_clp: Number(ncaCat?.por_institucion_residente?.uaysen?.monto_clp || 0),
+      ciep_clp: Number(ncaCat?.por_institucion_residente?.ciep?.monto_clp || 0),
+      inia_clp: Number(ncaCat?.por_institucion_residente?.inia_tamel_aike?.monto_clp || 0)
+    },
+    siesDisk: {
+      total: Number(siesRes.matricula_total_regional || 0),
+      inacap: Number(siesRes.inacap_sede_coyhaique_estudiantes || 0),
+      uaysen: Number(siesRes.universidad_de_aysen_estudiantes || 0),
+      cft: Number(siesRes.cft_estatal_aysen_estudiantes || 0)
+    },
+    ct07PresetHas2327,
+    finDescentralizado: {
+      cdpr_2024: Number(finDesc?.cdpr_corfo_aysen?.monto_ejecutado_2024_mclp || 0),
+      cdpr_2025_corfo: Number(finDesc?.cdpr_corfo_aysen?.monto_ejecutado_2025_corfo_mclp || 0),
+      cdpr_2026: Number(finDesc?.cdpr_corfo_aysen?.presupuesto_2026_mclp || 0),
+      plan_aysen_azul: Number(finDesc?.plan_aysen_azul_transforma_litoral_2026?.inversion_publico_privada_mclp || 0),
+      fia_cerezos_ha: Number(finDesc?.fia_innovacion_agraria?.cerezos_chile_chico_ha || 0),
+      fia_cerezos_ton: Number(finDesc?.fia_innovacion_agraria?.cerezos_exportacion_ton || 0)
+    },
+    gobInnovacion: {
+      has_seremi_ciencia: /Gabriel P[eé]rez Aros/i.test(String(gobInnov?.seremi_ciencia_aysen?.seremi_titular_2026 || '')),
+      inapi_marcas_2025: Number(gobInnov?.propiedad_industrial_inapi_2026?.marcas_residentes_2025 || 0),
+      inapi_crecimiento_pct: Number(gobInnov?.propiedad_industrial_inapi_2026?.crecimiento_anual_pct || 0)
+    },
+    semaforoByIne: semaforoCtciByIne,
+    barometroResumen: {
+      i1i: Number(wp10ResAudit.percepcion_ctci_prioritaria_pct_regional_i1i || 0),
+      i5: Number(wp10ResAudit.conocimiento_uaysen_pct_regional_i5 || 0),
+      i8_ref: Number(wp10ResAudit.evaluacion_uaysen_promedio_regional_i8 || 0),
+      i8_n423: Number(wp10ResAudit.evaluacion_uaysen_media_muestral_n423_i8 || 0),
+      f4g: Number(wp10ResAudit.aporte_universidades_pct_regional_f4g || 0)
+    },
+    wikiCtciHasObsolete15Or2327
+  };
+
   return {
     schemaVersion: '3.0.0',
     label,
@@ -834,6 +942,7 @@ function extractSnapshotFromBundle(dataLake, label = 'current', options = {}) {
     hub7BiodivAudit,
     hub8SaludAudit,
     hub9CulturaAudit,
+    hub10CtciAudit,
     centralesElectricas,
     totalKeys: allKeys.length,
     indicatorCount: Object.keys(indicators).length,
@@ -2067,6 +2176,180 @@ function evaluateHub9CulturaPatrimonioConadiBarometroInvariants(bundleOrSnapshot
   return alerts;
 }
 
+
+/**
+ * Eval E23: Invariantes Hub X (Sprint 13: 16 Centros / 124 Inv., 179 CTCi [120 ANID + 59 CORFO],
+ * Censo 2024, FIUT UAysen $10.484M, PATSER CIEP, Catastro NCA 2026 $1.683,1M, SIES 2.924 / CT_07,
+ * CDPR CORFO 2024-2026, Plan Aysen Azul, FIA, INAPI 252, SEREMI Ciencia y Semaforo Barometro).
+ */
+function evaluateHub10CtciAnidFondequipSiesCorfoBarometroInvariants(bundleOrSnapshot, options = {}) {
+  const alerts = [];
+  if (!bundleOrSnapshot || typeof bundleOrSnapshot !== 'object') return alerts;
+  const snapshot = (!bundleOrSnapshot.indicators && Array.isArray(bundleOrSnapshot.comunas))
+    ? extractSnapshotFromBundle(bundleOrSnapshot, 'EVAL_H10', options)
+    : bundleOrSnapshot;
+  const comunas = Array.isArray(snapshot.comunas) ? snapshot.comunas : [];
+  const indicators = snapshot.indicators || {};
+  const h10 = snapshot.hub10CtciAudit || {};
+  if (comunas.length < 10 || !indicators.centros_y_estaciones_ctci_count) return alerts;
+
+  const getNum = (indKey, ine) => {
+    const vals = (indicators[indKey] && indicators[indKey].values) || {};
+    const v = vals[ine];
+    return typeof v === 'number' && Number.isFinite(v) ? v : NaN;
+  };
+  const sumInd = (indKey) => {
+    const vals = (indicators[indKey] && indicators[indKey].values) || {};
+    return Object.values(vals).reduce((acc, v) => acc + (typeof v === 'number' && Number.isFinite(v) ? v : 0), 0);
+  };
+
+  // 1. Cuadratura en disco y en bundle: 16 centros, 124 investigadores, 179 CTCi (120 ANID + 59 CORFO) y Censo 2024
+  const expPop = { '11101': 57823, '11102': 882, '11201': 23170, '11202': 5335, '11203': 1598, '11401': 4950, '11402': 2671, '11301': 3492, '11302': 664, '11303': 563 };
+  const expCentros = { '11101': 6, '11102': 1, '11201': 2, '11202': 1, '11203': 1, '11401': 1, '11402': 1, '11301': 1, '11302': 1, '11303': 1 };
+  const expInv = { '11101': 91, '11102': 1, '11201': 14, '11202': 4, '11203': 2, '11401': 3, '11402': 2, '11301': 3, '11302': 1, '11303': 3 };
+
+  const centrosMismatch = Object.entries(expCentros).some(([ine, v]) => getNum('centros_y_estaciones_ctci_count', ine) !== v);
+  const invKey = indicators.investigadores_residentes_est ? 'investigadores_residentes_est' : 'investigadores_residentes';
+  const invMismatch = Object.entries(expInv).some(([ine, v]) => getNum(invKey, ine) !== v);
+  const popDiskMismatch = Object.entries(expPop).some(([ine, v]) => Number(h10.diskComunaPopByIne?.[ine] ?? 0) !== v);
+
+  const sumCtci = sumInd('total_proyectos_ctci');
+  const sumAnid = sumInd('proyectos_anid_n');
+  const sumAnidLoc = sumInd('proyectos_anid_locales_count');
+  const sumAnidExt = sumInd('proyectos_anid_extrarregionales_count');
+  const sumCorfo = sumInd('proyectos_corfo_innova_count');
+  const montoAnidKey = indicators.monto_anid_acumulado_mclp ? 'monto_anid_acumulado_mclp' : 'monto_anid_mclp';
+  const sumMontoAnid = sumInd(montoAnidKey);
+  const sumMontoCorfo = sumInd('monto_corfo_innova_mclp');
+
+  if (
+    centrosMismatch ||
+    invMismatch ||
+    popDiskMismatch ||
+    Number(h10.diskNodosCount || 0) !== 16 ||
+    Number(h10.diskNodosInvSum || 0) !== 124 ||
+    !h10.diskNodosHas16 ||
+    Number(h10.spatialCtciCount || 0) !== 16 ||
+    !h10.bundleHubsCtciDescHas16 ||
+    !h10.wp11ScriptMatchesCensoAnd16Nodos ||
+    sumCtci !== 179 ||
+    sumAnid !== 120 ||
+    sumAnidLoc !== 68 ||
+    sumAnidExt !== 52 ||
+    sumCorfo !== 59 ||
+    Math.abs(sumMontoAnid - 17326.8) > 0.5 ||
+    Math.abs(sumMontoCorfo - 8450.0) > 0.5
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_CUADRATURA_CTCI_DISCO_BUNDLE_16_124_179',
+      invariant: 'INVARIANTE_CTCI_16_CENTROS_124_INV_179_PROYECTOS_CENSO_2024',
+      indicator: 'centros_y_estaciones_ctci_count',
+      hub: CANONICAL_HUB_TITLES.ctci,
+      detail: `[ERROR_CUADRATURA_CTCI_DISCO_BUNDLE_16_124_179] centrosMismatch=${centrosMismatch}, invMismatch=${invMismatch}, popDiskMismatch=${popDiskMismatch}, nodos=${h10.diskNodosCount}(16)/inv=${h10.diskNodosInvSum}(124), spatial=${h10.spatialCtciCount}(16), ctci=${sumCtci}(179)=${sumAnid}(120)+${sumCorfo}(59).`
+    });
+  }
+
+  // 2. Hitos ANID 2025-2026 (FIUT $10.484M, PATSER $2.750M + Basal >= $1.599M) y Catastro NCA 2026 (6 FONDEQUIP, 9 equipos = $1.683.057.705)
+  const hitos = h10.hitosAnid2025_2026 || {};
+  const nca = h10.ncaEquipamiento || {};
+  if (
+    Math.abs(Number(hitos.fiut_total_mclp || 0) - 10484.0) > 0.5 ||
+    Math.abs(Number(hitos.patser_mclp || 0) - 2750.0) > 0.5 ||
+    Number(hitos.basal_gore_2026_mclp || 0) < 1599.0 ||
+    Number(nca.proyectos_fondequip_aysen || 0) !== 6 ||
+    Number(nca.equipos_criticos_count || 0) !== 9 ||
+    Number(nca.monto_total_clp || 0) !== 1683057705 ||
+    Number(nca.uaysen_clp || 0) !== 1295862096 ||
+    Number(nca.ciep_clp || 0) !== 330346929 ||
+    Number(nca.inia_clp || 0) !== 56848680
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_HITOS_ANID_FIUT_PATSER_Y_CATASTRO_NCA_2026',
+      invariant: 'INVARIANTE_FIUT_10484_PATSER_2750_NCA_1683M',
+      indicator: 'monto_anid_mclp',
+      hub: CANONICAL_HUB_TITLES.ctci,
+      detail: `[ERROR_HITOS_ANID_FIUT_PATSER_Y_CATASTRO_NCA_2026] fiut=${hitos.fiut_total_mclp}(10484), patser=${hitos.patser_mclp}(2750), fondequip=${nca.proyectos_fondequip_aysen}(6), ncaEq=${nca.equipos_criticos_count}(9), ncaClp=${nca.monto_total_clp}(1683057705).`
+    });
+  }
+
+  // 3. Reconciliacion SIES 2026 (2.924 = 1.187 + 1.000 + 737) en disco, bundle y preset CT_07 (cero 2.327)
+  const sies = h10.siesDisk || {};
+  const siesBundleTotal = sumInd('matricula_educacion_superior_sies_n');
+  if (
+    Number(sies.total || 0) !== 2924 ||
+    Number(sies.inacap || 0) !== 1187 ||
+    Number(sies.uaysen || 0) !== 1000 ||
+    Number(sies.cft || 0) !== 737 ||
+    siesBundleTotal !== 2924 ||
+    getNum('matricula_educacion_superior_sies_n', '11101') !== 2187 ||
+    getNum('matricula_educacion_superior_sies_n', '11201') !== 737 ||
+    Boolean(h10.ct07PresetHas2327)
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_RECONCILIACION_SIES_2026_2924_Y_PRESET_CT07',
+      invariant: 'INVARIANTE_SIES_2026_2924_SIN_2327',
+      indicator: 'matricula_educacion_superior_sies_n',
+      hub: CANONICAL_HUB_TITLES.ctci,
+      detail: `[ERROR_RECONCILIACION_SIES_2026_2924_Y_PRESET_CT07] siesDisk=${sies.total}(${sies.inacap}+${sies.uaysen}+${sies.cft}), siesBundle=${siesBundleTotal}(2924), ct07Has2327=${Boolean(h10.ct07PresetHas2327)}.`
+    });
+  }
+
+  // 4. Financiamiento descentralizado (CDPR 1930/1885/2534, Aysen Azul >= 7500, FIA cerezos 244/660) y Gobernanza (SEREMI Ciencia + INAPI 252/+63%)
+  const fin = h10.finDescentralizado || {};
+  const gob = h10.gobInnovacion || {};
+  if (
+    Math.abs(Number(fin.cdpr_2024 || 0) - 1930.0) > 0.5 ||
+    Math.abs(Number(fin.cdpr_2025_corfo || 0) - 1885.0) > 0.5 ||
+    Math.abs(Number(fin.cdpr_2026 || 0) - 2534.0) > 0.5 ||
+    Number(fin.plan_aysen_azul || 0) < 7500.0 ||
+    Number(fin.fia_cerezos_ha || 0) !== 244 ||
+    Number(fin.fia_cerezos_ton || 0) !== 660 ||
+    !gob.has_seremi_ciencia ||
+    Number(gob.inapi_marcas_2025 || 0) !== 252 ||
+    Math.abs(Number(gob.inapi_crecimiento_pct || 0) - 63.0) > 0.5
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_FINANCIAMIENTO_DESCENTRALIZADO_CDPR_AZUL_FIA_SEREMI_INAPI',
+      invariant: 'INVARIANTE_CDPR_2534_AZUL_7500_FIA_SEREMI_INAPI_252',
+      indicator: 'monto_corfo_innova_mclp',
+      hub: CANONICAL_HUB_TITLES.ctci,
+      detail: `[ERROR_FINANCIAMIENTO_DESCENTRALIZADO_CDPR_AZUL_FIA_SEREMI_INAPI] cdpr26=${fin.cdpr_2026}(2534), azul=${fin.plan_aysen_azul}(>=7500), fia=${fin.fia_cerezos_ha}/${fin.fia_cerezos_ton}, seremi=${Boolean(gob.has_seremi_ciencia)}, inapi=${gob.inapi_marcas_2025}(252).`
+    });
+  }
+
+  // 5. Semaforo muestral Barometro en las 10 comunas + I8 (4.98 / 5.08) + Wiki Hub X limpia
+  const sems = h10.semaforoByIne || {};
+  const baroRes = h10.barometroResumen || {};
+  const ruralInes = ['11102', '11202', '11203', '11401', '11402', '11301', '11302', '11303'];
+  const semInvalid =
+    sems['11101'] !== 'verde' ||
+    sems['11201'] !== 'verde' ||
+    ruralInes.some(ine => sems[ine] !== 'rojo_baja_precision_n_menor_30');
+  if (
+    semInvalid ||
+    Math.abs(Number(baroRes.i8_ref || 0) - 5.08) > 0.02 ||
+    Math.abs(Number(baroRes.i8_n423 || 0) - 4.98) > 0.02 ||
+    Math.abs(Number(baroRes.i5 || 0) - 84.3) > 0.1 ||
+    Math.abs(Number(baroRes.f4g || 0) - 66.4) > 0.1 ||
+    Boolean(h10.wikiCtciHasObsolete15Or2327)
+  ) {
+    alerts.push({
+      severity: 'ALTA',
+      code: 'ERROR_SEMAFORO_BAROMETRO_CTCI_Y_WIKI_HUB10',
+      invariant: 'INVARIANTE_SEMAFORO_BAROMETRO_I8_498_508_Y_WIKI_HUB10',
+      indicator: 'evaluacion_uaysen_promedio_i8',
+      hub: CANONICAL_HUB_TITLES.ctci,
+      detail: `[ERROR_SEMAFORO_BAROMETRO_CTCI_Y_WIKI_HUB10] semInvalid=${semInvalid}, i8_ref=${baroRes.i8_ref}(5.08), i8_n423=${baroRes.i8_n423}(4.98), wikiObsolete=${Boolean(h10.wikiCtciHasObsolete15Or2327)}.`
+    });
+  }
+
+  return alerts;
+}
+
 function compareSnapshots(baseline, current, options = {}) {
   const outlierPctThreshold = Number.isFinite(options.outlierPctThreshold) ? options.outlierPctThreshold : 20;
   const structuralOutlierPct = Number.isFinite(options.structuralOutlierPct) ? options.structuralOutlierPct : 5;
@@ -2330,7 +2613,8 @@ function compareSnapshots(baseline, current, options = {}) {
     ...evaluateHub6SocialDemographyEducationHousingInvariants(current, options),
     ...evaluateHub7BiodiversidadGlaciaresAireVolcanesInvariants(current, options),
     ...evaluateHub8SaludSsaDeisSigteSamuInvariants(current, options),
-    ...evaluateHub9CulturaPatrimonioConadiBarometroInvariants(current, options)
+    ...evaluateHub9CulturaPatrimonioConadiBarometroInvariants(current, options),
+    ...evaluateHub10CtciAnidFondequipSiesCorfoBarometroInvariants(current, options)
   ];
   for (const invAlert of invariantAlerts) {
     verificationAlerts.push(invAlert);
@@ -2991,6 +3275,8 @@ module.exports = {
   hub8_salud_ssa_deis_sigte_samu_consistency: evaluateHub8SaludSsaDeisSigteSamuInvariants,
   evaluateHub9CulturaPatrimonioConadiBarometroInvariants,
   hub9_cultura_patrimonio_conadi_barometro_consistency: evaluateHub9CulturaPatrimonioConadiBarometroInvariants,
+  evaluateHub10CtciAnidFondequipSiesCorfoBarometroInvariants,
+  hub10_ctci_anid_fondequip_sies_corfo_barometro_consistency: evaluateHub10CtciAnidFondequipSiesCorfoBarometroInvariants,
   compareSnapshots,
   renderRunNote,
   renderIndicatorBackupNote,

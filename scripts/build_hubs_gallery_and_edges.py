@@ -1961,9 +1961,9 @@ def build_extension_gallery(barometro_data=None):
                             "margin_error_pct": 4.68,
                             "robustness_rule": "semaforo_n_30_50"
                         },
-                        "mirror_series": _extract_mirror_series(barometro_data, "F4_G", "investigadores_residentes_est", {"norte": 11.0, "centro": 58.0, "sur": 19.0})
+                        "mirror_series": _extract_mirror_series(barometro_data, "F4_G", "investigadores_residentes_est", {"norte": 6.0, "centro": 106.0, "sur": 12.0})
                     },
-                    "what_it_shows": "Perfil integral de madurez del ecosistema regional de ciencia y tecnología en sus dimensiones estructurales y de percepción.",
+                    "what_it_shows": "Perfil integral de los 124 investigadores residentes (Norte 6, Centro 106, Sur 12) frente a F4_G (66,4%) e I1_I (89,6%). Advertencia metodológica: solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro verde (n>=50), mientras las 8 comunas rurales operan en rojo_baja_precision_n_menor_30 (n<30; p.ej. 100,0% en I1_I o 6,00 en I8 con referente 5,08 / media muestral n=423 de 4,98).",
                     "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
                 }
             ]

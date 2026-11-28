@@ -2,7 +2,7 @@
 // Procedencia por nodo en data/systemic/provenance_catalog.json. Las series anuales
 // de WP_02 y WP_03 declaran su origen por punto: ver "metodologia_series_historicas".
 window.AYSEN_HUBS_DATA = {
-  "generatedAt": "2026-11-27T22:15:51.819Z",
+  "generatedAt": "2026-11-27T23:50:21.055Z",
   "meta": {
     "autoUpdate": {
       "frequency": "Mensual (día 1 de cada mes)",
@@ -4054,7 +4054,7 @@ window.AYSEN_HUBS_DATA = {
       "title": "X. CTCi, Ciencia & Innovación",
       "shortTitle": "CTCi, Ciencia & Innovación",
       "color": "#6d28d9",
-      "description": "Ecosistema de ciencia, tecnología y educación superior austral: **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), **179 proyectos de I+D**, cartera histórica ANID y **15 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15).",
+      "description": "Ecosistema de ciencia, tecnología y educación superior austral: **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), **179 proyectos de I+D**, cartera histórica ANID y **16 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16).",
       "example": "Articula la educación superior e investigación local liderada por el **CFT Estatal de Aysén** (737 alumnos), **INACAP Coyhaique** (1.187 alumnos), la **Universidad de Aysén** (1.000 alumnos), el **CIEP**, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e **INIA Tamel Aike** frente a estaciones científicas en fiordos y glaciares.",
       "csvFile": "data/systemic/csv/10_ctci_innovacion_comunas.csv",
       "nodesFile": "data/systemic/csv/10_ctci_innovacion_nodos.csv",
@@ -10475,8 +10475,8 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 3,
       "metabolic_flow": "info",
       "algedonic_trigger": false,
-      "definition": "Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.",
-      "example": "Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.",
+      "definition": "Cartera histórica y vigente de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID** / **MinCiencia**): **120 proyectos científicos ANID adjudicados en Aysén por $17.326,8 millones CLP** (**68 proyectos de instituciones locales residentes por $11.850,5M [68,4%]** y **52 proyectos de universidades extrarregionales por $5.476,3M [31,6%]**; que junto a los **59 proyectos CORFO Innova por $8.450,0M** suman **179 proyectos CTCi totales por $25.776,8M**), reforzados por el nuevo **Fondo de Investigación Universitaria Territorial (FIUT Etapa 2) de la Universidad de Aysén ($10.484 millones a 10 años, 2025-2035)**, el convenio **PATSER CIEP R20F0002 ($2.750M) + Basal GORE 2026 (>$1.599M)** y el **Catastro de Equipamiento Científico Crítico del Nodo Ciencia Austral 2026 (6 proyectos FONDEQUIP en Aysén y 9 equipos críticos activos >=$50M por $1.683,06 millones CLP)**.",
+      "example": "De las **120 adjudicaciones históricas ANID ($17.326,8M)**, lideran **CIEP (34 proyectos)**, **UACh (32)**, **Universidad de Aysén (22)**, **U. de Chile (3)** y otras instituciones (29). En el **Catastro de Equipamiento Crítico NCA 2026 ($1.683.057.705 CLP en 9 equipos activos en Coyhaique)**, la **UAysén concentra 4 equipos por $1.295,86M (77,0%)** —Microscopio de Fuerzas Atómicas EQM200182 ($399,98M), Seahorse XF Pro EQM240161 ($385,83M, mar-2026), Cytek Aurora EQM230139 ($353,54M) y Drone Multiespectral EQM170060 ($156,52M)—, el **CIEP opera 4 equipos por $330,35M (19,6%)** —Plataforma EQM220096 (Espectrofluorímetro Aqualog $113,02M con limitante de mantenimiento preventivo, Microanalizador CHN $85,26M y Analizador TOC/TN $72,79M) más Cromatógrafo Iónico Dionex ($59,28M)— e **INIA Tamel Aike opera 1 Analizador Elemental CN ($56,85M, 3,4%)**, además del SODAR-RASS EQM160161 UACh ($137,60M) e IFCB EQM170178 UdeC/COPAS Coastal.",
       "officialSource": {
         "name": "Base de Datos Histórica ANID / MinCiencia OBSERVA",
         "url": "https://anid.cl/",
@@ -10642,7 +10642,7 @@ window.AYSEN_HUBS_DATA = {
           "Cruce con Educación Superior y SLEP (Nodo #25)",
           "Cruce con Empresas e Inversión Productiva (Nodo #20)"
         ],
-        "totalRecordsInFullBase": "179 proyectos de investigación georreferenciados en data/systemic/10_ctci_innovacion.json"
+        "totalRecordsInFullBase": "120 proyectos científicos ANID ($17.326,8M) y 9 equipos críticos NCA ($1.683,1M) dentro de 179 proyectos CTCi totales en data/systemic/10_ctci_innovacion.json"
       }
     },
     {
@@ -10656,7 +10656,7 @@ window.AYSEN_HUBS_DATA = {
       "metabolic_flow": "info",
       "algedonic_trigger": false,
       "definition": "Infraestructura científica fija y educación superior en la región: **16 centros y estaciones de campo** (incluyendo **INFOR Sede Patagonia CTCI-NOD-15** y **UACh Campus Patagonia CTCI-NOD-16**) y **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), contrastando centros endógenos con estaciones de investigación extrarregionales.",
-      "example": "Coyhaique alberga 6 centros con 91 investigadores residentes: **CIEP (34)**, **UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026)**, **INIA Tamel Aike (10)**, **INFOR Sede Patagonia (9)**, **UACh Campus Patagonia (5 · 32 proyectos ANID)** y **DGAC BBA (2)**, junto a **INACAP Coyhaique (1.187 alumnos)** y **CFT Estatal de Aysén en Puerto Aysén (737 alumnos)**.",
+      "example": "Coyhaique alberga 6 centros con 91 investigadores residentes: **CIEP (34 · nómina 2026: 23 investigadores [19 PhD] + 12 apoyo = 35 I+D + 12 gestión = 47 personas)**, **UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026 · cierre Administración Provisional SES 15-01-2026 · Rector Dr. Víctor Cubillos)**, **INIA Tamel Aike (10 · 1er Banco de Recursos Zoogenéticos de Chile)**, **INFOR Sede Patagonia (9)**, **UACh Campus Patagonia (5 · 32 proyectos ANID · cierre pregrado ago-2025)** y **DGAC BBA (2)**, junto a **INACAP Coyhaique (1.187 alumnos)** y **CFT Estatal de Aysén en Puerto Aysén (737 alumnos)**. En territorio destacan la nueva sede/laboratorio IFOP Puerto Aysén (oct-2024), Reserva Elemental Melimoyu (Fundación MERI, 16.000 ha en Cisnes, excluyendo Huinay) y el deslinde de Bahía Exploradores (jurisdicción Aysén 11201, acceso vía Puerto Río Tranquilo / Río Ibáñez 11402) junto a Estación Cerro Castillo UAysén.",
       "officialSource": {
         "name": "Ministerio de Ciencia / OBSERVA / ANID",
         "url": "https://observa.minciencia.gob.cl/",
@@ -10728,70 +10728,70 @@ window.AYSEN_HUBS_DATA = {
           "Coyhaique",
           "6",
           "91",
-          "CIEP / UAysén / INIA Tamel Aike / INFOR / UACh Patagonia / DGAC",
+          "CIEP (23 inv./19 PhD + 12 apoyo) / UAysén / INIA (Banco Zoogenético) / INFOR / UACh / DGAC",
           "88.6%"
         ],
         [
           "Lago Verde",
           "1",
           "1",
-          "MinCiencia / CONAF / UAysén",
+          "INIA Agrometeorología / MinCiencia / CONAF / UAysén",
           "100%"
         ],
         [
           "Aysén",
           "2",
           "14",
-          "CECs / U. de Chile / Plataforma Bioseguridad IFOP",
+          "IFOP Sede y Lab. Puerto Aysén / Plataforma Barrio 21B / CECs-U. de Chile San Rafael",
           "93.8%"
         ],
         [
           "Cisnes",
           "1",
           "4",
-          "IFOP Puerto Cisnes",
+          "IFOP Puerto Cisnes / Reserva Elemental Melimoyu (Fundación MERI)",
           "85.2%"
         ],
         [
           "Guaitecas",
           "1",
           "2",
-          "IFOP Melinka (Marea Roja)",
+          "IFOP Melinka (Marea Roja) / CBA-MERI (Cetáceos)",
           "87.5%"
         ],
         [
           "Chile Chico",
           "1",
           "3",
-          "INIA Tamel Aike (Agroclimática)",
+          "INIA Tamel Aike (Agroclimática) / Sitio Paleontológico Formación Toqui",
           "84%"
         ],
         [
           "Río Ibáñez",
           "1",
           "2",
-          "Pontificia Universidad Católica (PUC)",
+          "Estación Cerro Castillo (UAysén) / Estación Patagonia UC (Bahía Exploradores)",
           "90%"
         ],
         [
           "Cochrane",
           "1",
           "3",
-          "CIEP / UAysén (Cuencas Australes)",
+          "CIEP / UAysén / DGA / Rewilding (Cuencas y PN Patagonia)",
           "83.3%"
         ],
         [
           "O'Higgins",
           "1",
           "1",
-          "CECs / U. de Concepción",
+          "DGA Glaciología / CECs / UdeC (Campo de Hielo Sur)",
           "100%"
         ],
         [
           "Tortel",
           "1",
           "3",
-          "CIEP / Municipalidad de Tortel",
+          "CIEP / COPAS Coastal (UdeC) / CIAyT / DGA (Caleta Tortel)",
           "100%"
         ]
       ],
@@ -10819,8 +10819,8 @@ window.AYSEN_HUBS_DATA = {
       "espejo_governance": 4,
       "metabolic_flow": "material",
       "algedonic_trigger": false,
-      "definition": "Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.",
-      "example": "Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.",
+      "definition": "Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CDPR CORFO Aysén**, **Plan Aysén Azul / Transforma Litoral (>$7.500M)**, **FIA**, **FIC-R GORE Aysén** y propiedad industrial (**INAPI 2026**), bajo articulación de la **SEREMI de Ciencia exclusiva de Aysén** (instalada en oct-2025, Seremi Gabriel Pérez Aros) y el **Comité Regional de CTCID** (ERI vencida desde 2020; convocatoria dic-2026 para nueva Estrategia CTCID 2027).",
+      "example": "Registra **59 proyectos CORFO Innova ($8.450M)**, **CDPR CORFO Aysén** (**$1.930M en 2024 -> $1.885M CORFO + $747M Sercotec en 2025 -> $2.534M en 2026, +34,4%**), **Plan Aysén Azul (>$7.500M a 36 meses)**, **FIA (244 ha cerezos Chile Chico / 660 ton, vitivinicultura austral Pinot Noir/Chardonnay y valorización de orujo cervecero 2026)**, **INAPI 2026 (252 marcas residentes en 2025, +63% #1 nacional)** y percepción ciudadana del Barómetro (N=465: I8 referente 5,08 / media n=423 de 4,98; semáforo rojo n<30 en las 8 comunas rurales).",
       "officialSource": {
         "name": "CORFO DataInnovación / FIA / MinCiencia",
         "url": "https://datainnovacion.corfo.cl/",
@@ -23624,7 +23624,7 @@ window.AYSEN_HUBS_DATA = {
               }
             }
           },
-          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, 100% en Lago Verde, O'Higgins y Tortel): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo).",
+          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, n=452): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%, n=438) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo). Advertencia metodológica (Semáforo Barómetro N=465): solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro 'verde' (n>=50), mientras las 8 comunas rurales operan en 'rojo_baja_precision_n_menor_30' (n<30), por lo que extremos como 100,0% en I1_I (Lago Verde, O'Higgins, Tortel) o nota 6,00 en I8 (Lago Verde) son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona (I1_I: Norte 92,1%, Sur 90,4%, Centro 87,2%; I8: media muestral n=423 de 4,98 y referente regional ponderado 5,08).",
           "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
         },
         {
@@ -23647,7 +23647,7 @@ window.AYSEN_HUBS_DATA = {
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "La Universidad de Aysén obtiene una evaluación regional positiva de 5,08 sobre 7,0, alcanzando sus notas más altas en territorios con programas colaborativos o estaciones (Lago Verde 6,00, Cochrane 5,35, Tortel 5,20, Chile Chico 5,13, Río Ibáñez 5,11, Cisnes 5,04), mientras cae en comunas extremas sin presencia universitaria permanente (Guaitecas 4,17 y O'Higgins 4,33) pese al 100% de prioridad ciudadana en O'Higgins y Tortel.",
+          "what_it_shows": "La Universidad de Aysén obtiene un referente regional ponderado de 5,08 sobre 7,0 y una media muestral directa (n=423) de 4,98 (71,4% notas 5-7: Macrozona Centro 5,04, Norte 4,95 y Sur 4,90), con menor valoración relativa en territorios extremos sin presencia permanente (Guaitecas 4,17 y O'Higgins 4,33). Advertencia metodológica (Semáforo Barómetro N=465): solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro 'verde' (n>=50), mientras las 8 comunas rurales operan en 'rojo_baja_precision_n_menor_30' (n<30), por lo que extremos como 100,0% en I1_I (Lago Verde, O'Higgins, Tortel) o nota 6,00 en I8 (Lago Verde) son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona (I1_I: Norte 92,1%, Sur 90,4%, Centro 87,2%; I8: media muestral n=423 de 4,98 y referente regional ponderado 5,08).",
           "why_complex_system": "Brecha de presencia institucional: la legitimidad de la universidad regional crece allí donde mantiene vinculación presencial con las comunidades rurales, y decrece cuando el territorio solo percibe aislamiento."
         },
         {
@@ -23658,7 +23658,7 @@ window.AYSEN_HUBS_DATA = {
           "subtype": "grouped_bar",
           "inter_hub_cross": {
             "cross_hub": "social",
-            "descripcion": "Documenta el acoplamiento entre investigadores residentes, captación ANID ($17.326,8 MM) y los 2.327 estudiantes de educación superior SIES (INACAP, UAysén, CFT Estatal)"
+            "descripcion": "Documenta el acoplamiento entre investigadores residentes (124), captación ANID ($17.326,8 MM) y los 2.924 estudiantes de educación superior SIES 2026 (INACAP Coyhaique 1.187, UAysén 1.000, CFT Estatal de Aysén 737)"
           },
           "config": {
             "widget_type": "chart",
@@ -23670,7 +23670,7 @@ window.AYSEN_HUBS_DATA = {
             "showAverage": true,
             "showTrend": true
           },
-          "what_it_shows": "Evidencia un acoplamiento casi perfecto (r = +0.9984, R² = 0.9969) entre la masa crítica de 124 investigadores residentes y la captación acumulada de fondos ANID ($17.326,8 MM), articulado con una matrícula de 2.327 estudiantes de educación superior SIES 2026 (INACAP Coyhaique 800 [34,4%], Universidad de Aysén 790 [33,9%] y CFT Estatal de Aysén 737 [31,7%] en Puerto Aysén y Coyhaique).",
+          "what_it_shows": "Evidencia un acoplamiento casi perfecto (r = +0.9984, R² = 0.9969) entre la masa crítica de 124 investigadores residentes y la captación acumulada de fondos ANID ($17.326,8 MM en 120 proyectos: 68 locales y 52 extrarregionales), articulado con una matrícula oficial de 2.924 estudiantes de educación superior SIES 2026 (2.907 pregrado + 17 postgrado: INACAP Coyhaique 1.187 [40,6%], Universidad de Aysén 1.000 [34,2%, evolucionando desde 660 en 2024 y 793 en 2025] y CFT Estatal de Aysén 737 [25,2%] en Puerto Aysén y Coyhaique).",
           "why_complex_system": "Retorno de escala en capital humano: atraer y retener investigadores residentes multiplica linealmente la capacidad de adjudicación competitiva y alimenta la formación técnica-universitaria regional."
         }
       ]
@@ -24454,7 +24454,7 @@ window.AYSEN_HUBS_DATA = {
               }
             }
           },
-          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, 100% en Lago Verde, O'Higgins y Tortel): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo).",
+          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, n=452): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%, n=438) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo). Advertencia metodológica (Semáforo Barómetro N=465): solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro 'verde' (n>=50), mientras las 8 comunas rurales operan en 'rojo_baja_precision_n_menor_30' (n<30), por lo que extremos como 100,0% en I1_I (Lago Verde, O'Higgins, Tortel) o nota 6,00 en I8 (Lago Verde) son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona (I1_I: Norte 92,1%, Sur 90,4%, Centro 87,2%; I8: media muestral n=423 de 4,98 y referente regional ponderado 5,08).",
           "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
         }
       ]
@@ -25473,52 +25473,37 @@ window.AYSEN_HUBS_DATA = {
     },
     "ctci_innovacion": {
       "$schema": "https://json-schema.org/draft/2020-12/schema",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "work_package": "WP_10",
       "dataset_id": "10_ctci_innovacion",
-      "titulo": "Ciencia, Tecnología, Conocimiento e Innovación (CTCi): Proyectos ANID, Innovación CORFO, Centros Científicos y Evaluación UAysén (ANID / MinCiencia / CORFO / Barómetro)",
+      "titulo": "Ciencia, Tecnología, Conocimiento e Innovación (CTCi): 179 Proyectos (120 ANID + 59 CORFO), 16 Centros (124 Investigadores), Equipamiento Crítico NCA 2026, SIES 2026 (2.924) y SEREMI Ciencia Aysén",
       "region": "Región de Aysén del General Carlos Ibáñez del Campo",
-      "fecha_extraccion": "2026-10-17T20:00:00Z",
+      "fecha_extraccion": "2026-11-27T00:00:00Z",
       "fuentes_primarias": [
         {
           "nombre": "Agencia Nacional de Investigación y Desarrollo (ANID)",
           "url": "https://raw.githubusercontent.com/ANID-GITHUB/Historico-de-Proyectos-Adjudicados/master/BDH_HISTORICA.csv",
-          "cobertura": "Base de Datos Histórica (BDH_HISTORICA.csv) 120 proyectos ejecutados en Aysén 2015-2026"
+          "cobertura": "BDH_HISTORICA.csv (120 proyectos ANID $17.326,8M), Compendio ANID 2021-2025, FIUT Etapa 2 UAysén ($10.484M), PATSER CIEP R20F0002 y FONDAP"
         },
         {
-          "nombre": "Ministerio de Ciencia, Tecnología, Conocimiento e Innovación (OBSERVA)",
+          "nombre": "Nodo Ciencia Austral (NCA) / FONDEQUIP ANID",
           "url": "https://observa.minciencia.gob.cl/",
-          "cobertura": "Gasto regional en I+D, investigadores residentes EJC, empresas de base científica tecnológica"
+          "cobertura": "Catastro de Equipamiento Científico Crítico NCA 2026 (9 equipos activos >=$50M por $1.683.057.705 CLP y 6 proyectos FONDEQUIP en Aysén)"
         },
         {
-          "nombre": "Corporación de Fomento de la Producción (CORFO)",
-          "url": "https://datainnovacion.cl/api/v1/proyectos",
-          "cobertura": "Proyectos de Innova Región, Bienes Públicos, Viraliza y Crédito Tributario Ley I+D"
+          "nombre": "SIES MINEDUC / Superintendencia de Educación Superior (SES) / CNA",
+          "url": "https://www.mifuturo.cl/",
+          "cobertura": "Matrícula SIES 2026 (2.924 estudiantes: INACAP 1.187, UAysén 1.000, CFT Estatal 737), término Administración Provisional SES y cierre pregrado UACh Patagonia"
         },
         {
-          "nombre": "Barómetro Regional UAYSÉN 2024-2025",
+          "nombre": "SEREMI MinCiencia Aysén / CORFO CDPR Aysén / FIA / GORE / INAPI",
+          "url": "https://www.minciencia.gob.cl/Regiones/seremi-aysen/",
+          "cobertura": "59 proyectos CORFO Innova ($8.450,0M), CDPR 2024-2026 ($2.534M en 2026), Plan Aysén Azul (>$7.500M), FIA, FIC-R e INAPI 2026 (252 marcas, +63%)"
+        },
+        {
+          "nombre": "Barómetro Regional UAYSÉN (N=465)",
           "url": "https://www.uaysen.cl/",
-          "cobertura": "Indicadores empíricos I1_I (Prioridad CTCi), I5 (Conocimiento UAysén), I8 (Nota UAysén) y F4_G (Aporte Universidades)"
-        },
-        {
-          "nombre": "Servicio de Informacion de Educacion Superior (SIES - MINEDUC)",
-          "url": "https://www.mifuturo.cl/bases-de-datos-matricula/",
-          "cobertura": "Matricula oficial educacion tecnica y universitaria: CFT Estatal Aysen, UAysen, INACAP Coyhaique"
-        },
-        {
-          "nombre": "Superintendencia de Educacion Superior (SES)",
-          "url": "https://www.sesuperior.cl/",
-          "cobertura": "Informes de fiscalizacion financiera, regimen de Administracion Provisional y cierre tutela UAysen 2026"
-        },
-        {
-          "nombre": "Comite de Desarrollo Productivo Regional (CDPR Corfo Aysen)",
-          "url": "https://www.corfo.cl/sedes/aysen/",
-          "cobertura": "Financiamiento descentralizado de innovacion, emprendimiento y transferencia tecnologica ($1.930 MM)"
-        },
-        {
-          "nombre": "Instituto Forestal (INFOR Sede Patagonia)",
-          "url": "https://infor.cl/sede-patagonia/",
-          "cobertura": "Investigacion silvicultural, monitoreo dasometrico de lenga y nirre, biomasa y dendroenergia (Ley 21.499)"
+          "cobertura": "Indicadores I1_I (89,6%), I5 (84,3%), I8 (referente 5,08 / media n=423: 4,98) y F4_G (66,4%) con semáforo muestral por comuna"
         }
       ],
       "resumen_regional": {
@@ -25533,14 +25518,22 @@ window.AYSEN_HUBS_DATA = {
         "percepcion_ctci_prioritaria_pct_regional_i1i": 89.6,
         "evaluacion_uaysen_promedio_regional_i8": 5.08,
         "matricula_educacion_superior_sies": {
-          "fuente": "SIES / MINEDUC - Base Oficial de Matricula",
-          "matricula_total_regional": 2327,
+          "fuente": "SIES / MINEDUC - Base Oficial de Matrícula Educación Superior 2026 y Cuenta Pública UAysén 2024-2025",
+          "matricula_total_regional": 2924,
           "cft_estatal_aysen_estudiantes": 737,
-          "inacap_sede_coyhaique_estudiantes": 800,
-          "universidad_de_aysen_estudiantes": 790,
-          "distribucion_tecnica_pct": 66,
-          "distribucion_universitaria_pct": 34,
-          "tasa_retencion_regional_est": 68.5
+          "inacap_sede_coyhaique_estudiantes": 1187,
+          "universidad_de_aysen_estudiantes": 1000,
+          "distribucion_tecnica_pct": 65.8,
+          "distribucion_universitaria_pct": 34.2,
+          "tasa_retencion_regional_est": 68.5,
+          "matricula_pregrado_regional": 2907,
+          "matricula_postgrado_regional": 17,
+          "serie_historica_uaysen": {
+            "2024": 660,
+            "2025": 793,
+            "2026": 1000,
+            "nuevos_admision_2026": 325
+          }
         },
         "situacion_institucional_uaysen": {
           "estado": "Regimen Regular Autonomo",
@@ -25555,33 +25548,274 @@ window.AYSEN_HUBS_DATA = {
             "periodo": "2026-2030",
             "eleccion": "Elegido por votacion del cuerpo academico y proclamado para el periodo estatutario"
           },
-          "infraestructura": "Campus Errazuriz consolidado como sede propia en Coyhaique",
+          "infraestructura": "Campus Errazuriz consolidado como sede propia en Coyhaique y futuro Campus Rio Coyhaique (23 ha)",
           "acreditacion_cna": "Nivel Basico (3 anos) con plan de tutoria de la Universidad de Tarapaca (UTA)"
         },
         "situacion_uach_campus_patagonia": {
           "institucion": "Universidad Austral de Chile (UACh) - Campus Patagonia Coyhaique",
-          "estado_pregrado": "Cierre progresivo de oferta de pregrado en Coyhaique aprobado por Consejo Academico en Valdivia",
-          "enfoque_actual": "Lineas de investigacion aplicada, posgrados y continuidad de proyectos ANID/FIC-R"
+          "estado_pregrado": "Cierre definitivo de oferta de pregrado en Coyhaique en agosto de 2025 aprobado por Consejo Academico en Valdivia",
+          "enfoque_actual": "Lineas de investigacion aplicada, posgrados, educacion continua y continuidad de 32 proyectos ANID/FIC-R"
         },
         "financiamiento_descentralizado_ctci": {
           "cdpr_corfo_aysen": {
             "monto_ejecutado_2024_mclp": 1930,
-            "presupuesto_2025_2026_mclp": 1900,
-            "mecanismo": "100% descentralizado mediante Comite de Desarrollo Productivo Regional presidido por Gobernador"
+            "instalacion_formal": "2024 (presidido por Gobernador Regional; subcomités de Innovación/Emprendimiento y Fomento Productivo)",
+            "proyectos_aprobados_2024": 24,
+            "monto_ejecutado_2025_corfo_mclp": 1885,
+            "instrumentos_2025_count": 23,
+            "beneficiarios_corfo_2025": 440,
+            "activa_desarrolla_inversion_2025": {
+              "proyectos": 20,
+              "subsidio_corfo_mclp": 469.745,
+              "inversion_total_mclp": 795
+            },
+            "monto_sercotec_2025_mclp": 747,
+            "beneficiarios_sercotec_2025": 148,
+            "presupuesto_2026_mclp": 2534,
+            "crecimiento_presupuesto_2026_pct": 34.4,
+            "hitos_2026": "10 proyectos aprobados en nov-2026: 3 Innova Región (Café Púrpura con maqui, Frío Silvestre sidras patrimoniales, Invernadero modular), 1 Súmate a Innovar (biocombustible sólido de ñire), 4 Semilla Inicia (IA/sensores) y 2 PDT (raps y Sous Vide)"
           },
-          "fic_r_gore_aysen": {
-            "monto_historico_anual_mclp": 2000,
-            "estado_2024_2026": "Afectado por desaceleracion administrativa y exigencias de Glosa 7 DIPRES tras Caso Convenios"
+          "plan_aysen_azul_transforma_litoral_2026": {
+            "nombre_programa": "Transferencia para el Fortalecimiento Productivo del Litoral de Aysén (FNDR-CORFO / Plan Aysén Azul)",
+            "fecha_activacion": "2026-02-06",
+            "horizonte_meses": 36,
+            "inversion_publico_privada_mclp": 7500,
+            "comunas_objetivo": [
+              "Aysén (11201)",
+              "Cisnes (11202)",
+              "Guaitecas (11203)",
+              "Tortel (11303)"
+            ],
+            "infraestructura": "Cesión de inmueble CORFO en Puerto Aguirre (Islas Huichas) al GORE Aysén para acompañamiento técnico permanente"
+          },
+          "fia_innovacion_agraria": {
+            "cerezos_chile_chico_ha": 244,
+            "cerezos_exportacion_ton": 660,
+            "cerezos_cajas_5kg_est": 132000,
+            "vitivinicultura_austral": "2 viñedos experimentales Pinot Noir y Chardonnay en Chile Chico y Puerto Ibáñez (INIA-FIA, rumbo a D.O. vinos australes nov-2026)",
+            "economia_circular_2026": "Valorización de orujo de cebada cervecero para alimentación ganadera (INIA Tamel Aike - FIA - UAysén, mar-2026)",
+            "pfnm_y_berries": "Selección clonal de calafate y maqui antioxidante (20 accesiones) y cultivo de hongos comestibles (FIA-INFOR / Morchella)"
+          },
+          "fic_r_y_transferencias_gore_aysen": {
+            "cartera_fic_2022_2023_proyectos": 12,
+            "cartera_fic_2022_2023_monto_mclp": 1200,
+            "proyectos_fic_uaysen_2023": 8,
+            "monto_fic_uaysen_2023_mclp": 800,
+            "estudios_energeticos_fndr_ciep_2022_2025_mclp": 837,
+            "transferencias_fndr_minagri_inia_indap_sag_mclp": 4919
           }
         },
         "proyectos_anid_distincion": {
           "proyectos_locales_residentes_count": 68,
           "monto_locales_residentes_mclp": 11850.5,
-          "instituciones_residentes": "CIEP, UAysen, INIA Tamel Aike, INFOR Sede Patagonia, IFOP",
+          "instituciones_residentes": "CIEP, UAysén, INIA Tamel Aike, INFOR Sede Patagonia, IFOP, UACh Campus Patagonia",
           "proyectos_enclaves_extrarregionales_count": 52,
           "monto_enclaves_extrarregionales_mclp": 5476.3,
-          "instituciones_extrarregionales": "Pontificia Universidad Catolica (Estacion Patagonia), CECs Valdivia, Universidad de Chile",
-          "diagnostico_extractivismo": "Enclaves que utilizan Aysen como laboratorio natural sin transferencia de capacidades permanentes a las comunidades"
+          "instituciones_extrarregionales": "Pontificia Universidad Católica (Estación Patagonia), CECs Valdivia, Universidad de Chile, UdeC COPAS Coastal",
+          "diagnostico_extractivismo": "Articula 68 proyectos locales endógenos (68,4% del monto ANID) frente a 52 iniciativas extrarregionales (31,6%) con estaciones de campo"
+        },
+        "poblacion_censo_2024_suma_comunal": 101148,
+        "poblacion_censo_2024_consolidado_ine": 100745,
+        "total_proyectos_anid_regional": 120,
+        "proporcion_ciencia_endogena_regional_pct": 56.7,
+        "monto_total_ctci_anid_y_corfo_mclp": 25776.8,
+        "conocimiento_uaysen_pct_regional_i5": 84.3,
+        "evaluacion_uaysen_media_muestral_n423_i8": 4.98,
+        "aporte_universidades_pct_regional_f4g": 66.4,
+        "hitos_anid_minciencia_2025_2026": {
+          "fiut_etapa2_uaysen_2025_2035": {
+            "ranking_nacional": "1° lugar nacional línea Territorial (adjudicado dic-2025/ene-2026; lanzamiento oficial 13-11-2026)",
+            "monto_total_10_anos_mclp": 10484,
+            "aporte_anid_mclp": 5200,
+            "aporte_gore_aysen_3_anos_mclp": 3747,
+            "aporte_valorizado_uaysen_mclp": 1537,
+            "alcance": "8 laboratorios de investigación en futuro Campus Río Coyhaique (23 ha), 5 programas de postgrado y 4 grupos interdisciplinarios"
+          },
+          "ciep_patser_y_basal_gore": {
+            "codigo_anid_patser": "R20F0002 (continuidad de R17A10002)",
+            "monto_patser_2020_2025_mclp": 2750,
+            "presupuesto_basal_gore_2026_mclp": 1599,
+            "estado_programa_regional_anid_2026": "Sin convocatorias nuevas en 2026 por reformulación DIPRES sujeta al Plan Nacional de Centros"
+          },
+          "compendio_anid_2025_macrozona_austral": {
+            "gasto_id_pib_nacional_pct_2022": 0.39,
+            "gasto_id_pib_nacional_pct_2025_anuncio": 0.41,
+            "concentracion_rm_gasto_id_pct": 65,
+            "concentracion_rm_personal_id_pct": 57,
+            "concentracion_rm_adjudicaciones_2025_pct": 48.59,
+            "proyectos_spi_fondecyt_macrozona_austral_2025": 6,
+            "proyectos_scia_centros_macrozona_austral_2025": 1,
+            "proyectos_sia_fondef_macrozona_austral_2025": 5,
+            "proyectos_srec_ines_fovi_nodos_macrozona_austral_2025": 6
+          },
+          "centros_fondap_interes_nacional_en_aysen": {
+            "copas_coastal_udec": "Renovó financiamiento ANID 2026-2031 (oct-2026); opera Laboratorio Costero y CIAyT en Caleta Tortel (>15 años)",
+            "cia_incar2": "Opera sistema semáforo de riesgo ecosistémico para salmonicultura en Los Lagos y Aysén (jun-2026)",
+            "cr2_e_ideal": "Perdieron continuidad de financiamiento basal ANID en concurso 2025/2026"
+          }
+        },
+        "catastro_equipamiento_critico_nca_2026": {
+          "fuente": "Nodo Ciencia Austral (CIEP / UMAG / UAysén / INIA / INACH) - Catastro de Equipamiento CTCI Macrozonal (jul-oct 2026)",
+          "fondequip_nacional_2012_2025_total": 515,
+          "fondequip_mediano_nacional": 486,
+          "fondequip_mayor_nacional": 29,
+          "tasa_operatividad_nacional_pct": 73.4,
+          "proyectos_fondequip_adjudicados_aysen": 6,
+          "proyectos_fondequip_adjudicados_magallanes": 12,
+          "equipos_criticos_residentes_aysen_count": 9,
+          "monto_total_equipos_criticos_residentes_aysen_clp": 1683057705,
+          "monto_total_equipos_criticos_residentes_aysen_mclp": 1683.1,
+          "monto_total_equipos_criticos_magallanes_clp": 3158051521,
+          "por_institucion_residente": {
+            "uaysen": {
+              "equipos_count": 4,
+              "monto_clp": 1295862096,
+              "participacion_pct": 77
+            },
+            "ciep": {
+              "equipos_count": 4,
+              "monto_clp": 330346929,
+              "participacion_pct": 19.6
+            },
+            "inia_tamel_aike": {
+              "equipos_count": 1,
+              "monto_clp": 56848680,
+              "participacion_pct": 3.4
+            }
+          },
+          "equipos_residentes_detalle": [
+            {
+              "institucion": "UAysén",
+              "folio": "EQM200182",
+              "nombre": "Microscopio de Fuerzas Atómicas",
+              "marca_modelo": "Asylum Research Infinity BIO",
+              "categoria": "Microscopía",
+              "costo_clp": 399976300,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "UAysén",
+              "folio": "EQM240161",
+              "nombre": "Seahorse XF Pro",
+              "marca_modelo": "Agilent XF Pro",
+              "categoria": "Bioanalítica",
+              "costo_clp": 385828729,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "UAysén",
+              "folio": "EQM230139",
+              "nombre": "Cytek Aurora",
+              "marca_modelo": "Cytek Biosciences 3 Laser V/B/R 383 canales",
+              "categoria": "Citometría",
+              "costo_clp": 353537765,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "UAysén",
+              "folio": "EQM170060",
+              "nombre": "Drone Multiespectral",
+              "marca_modelo": "Microdrones MD4-1000 / Tetracam Macaw-T",
+              "categoria": "Teledetección",
+              "costo_clp": 156519302,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "CIEP",
+              "folio": "EQM220096",
+              "nombre": "Espectrofluorímetro Aqualog",
+              "marca_modelo": "HORIBA Aqualog UV-800-C",
+              "categoria": "Espectrometría",
+              "costo_clp": 113016744,
+              "estado": "Activo_con_limitante_mantenimiento_preventivo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "CIEP",
+              "folio": "EQM220096",
+              "nombre": "Microanalizador CHN",
+              "marca_modelo": "LECO TruSpec CHN micro",
+              "categoria": "Análisis Elemental",
+              "costo_clp": 85263500,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "CIEP",
+              "folio": "EQM220096",
+              "nombre": "Analizador TOC/TN",
+              "marca_modelo": "Shimadzu TOC-LCHP FA/100",
+              "categoria": "Análisis Elemental",
+              "costo_clp": 72790701,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "CIEP",
+              "folio": "INSTITUCIONAL_CIEP",
+              "nombre": "Cromatógrafo Iónico Dionex",
+              "marca_modelo": "Thermo Scientific Dionex",
+              "categoria": "Cromatografía",
+              "costo_clp": 59275984,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            },
+            {
+              "institucion": "INIA Tamel Aike",
+              "folio": "INSTITUCIONAL_INIA",
+              "nombre": "Analizador Elemental CN",
+              "marca_modelo": "Analizador Elemental CN",
+              "categoria": "Análisis Elemental",
+              "costo_clp": 56848680,
+              "estado": "Activo",
+              "comuna_ine": "11101"
+            }
+          ],
+          "equipos_extrarregionales_instalados_en_aysen": [
+            {
+              "institucion": "UACh",
+              "folio": "EQM160161",
+              "nombre": "Perfilador de Viento y Temperatura Vertical SODAR-RASS",
+              "marca_modelo": "SCINTEC XFAS-RAE1",
+              "costo_clp": 137597893,
+              "estado": "Activo"
+            },
+            {
+              "institucion": "UdeC / COPAS Coastal",
+              "folio": "EQM170178",
+              "nombre": "Imaging FlowCytobot (IFCB)",
+              "marca_modelo": "McLane Instruments IFCB",
+              "costo_clp": 0,
+              "estado": "Activo"
+            }
+          ]
+        },
+        "gobernanza_e_innovacion_regional_2024_2026": {
+          "seremi_ciencia_aysen": {
+            "instalacion": "Octubre 2025 (fin de dependencia exclusiva de SEREMI Macrozona Austral en Punta Arenas)",
+            "seremi_titular_2026": "Gabriel Pérez Aros",
+            "url": "https://www.minciencia.gob.cl/Regiones/seremi-aysen/"
+          },
+          "comite_regional_ctcid_y_eri": {
+            "estado_eri": "Estrategia Regional de Innovación (ERI) vencida desde 2020",
+            "sesiones_crctcid_2026": [
+              "2026-04-24",
+              "2026-11-26"
+            ],
+            "convocatoria_vacantes_2026": "Concurso público 01 al 30 de diciembre de 2026 para 3 vacantes (6 perfiles) con mandato de redactar la nueva Estrategia Regional de CTCID en 2027"
+          },
+          "propiedad_industrial_inapi_2026": {
+            "fuente": "Reporte Anual INAPI 2026 (p. 33)",
+            "marcas_residentes_2024": 155,
+            "marcas_residentes_2025": 252,
+            "crecimiento_anual_pct": 63,
+            "ranking_crecimiento_nacional": 1,
+            "sello_origen": "Marca de Certificación Calidad Aysén Patagonia-Chile (GORE Aysén)"
+          }
         }
       },
       "por_comuna": [
@@ -25592,20 +25826,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Coyhaique",
           "cabecera": "Coyhaique",
           "codigo_cuenca": "113",
+          "poblacion_censo_2024": 57823,
           "lat": -45.5712,
           "lng": -72.0685,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 102,
+            "proyectos_anid_n": 74,
             "proyectos_anid_locales_count": 48,
             "proyectos_anid_extrarregionales_count": 26,
+            "proporcion_ciencia_endogena_pct": 64.9,
             "monto_anid_acumulado_mclp": 11850.5,
             "proyectos_corfo_innova_count": 28,
             "monto_corfo_innova_mclp": 4120,
             "centros_y_estaciones_ctci_count": 6,
             "investigadores_residentes_est": 91,
+            "matricula_educacion_superior_sies_n": 2187,
             "percepcion_ctci_prioritaria_pct_i1i": 88.6,
             "evaluacion_uaysen_promedio_i8": 4.94,
+            "semaforo_muestral_barometro": "verde",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25616,20 +25855,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Coyhaique",
           "cabecera": "Lago Verde",
           "codigo_cuenca": "111",
+          "poblacion_censo_2024": 882,
           "lat": -44.241,
           "lng": -71.8465,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 2,
+            "proyectos_anid_n": 1,
             "proyectos_anid_locales_count": 0,
             "proyectos_anid_extrarregionales_count": 1,
+            "proporcion_ciencia_endogena_pct": 0,
             "monto_anid_acumulado_mclp": 45,
             "proyectos_corfo_innova_count": 1,
             "monto_corfo_innova_mclp": 30,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 1,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 100,
             "evaluacion_uaysen_promedio_i8": 6,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25640,20 +25884,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Aysén",
           "cabecera": "Puerto Aysén",
           "codigo_cuenca": "113",
+          "poblacion_censo_2024": 23170,
           "lat": -45.405,
           "lng": -72.693,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 31,
+            "proyectos_anid_n": 17,
             "proyectos_anid_locales_count": 8,
             "proyectos_anid_extrarregionales_count": 9,
+            "proporcion_ciencia_endogena_pct": 47.1,
             "monto_anid_acumulado_mclp": 2450,
             "proyectos_corfo_innova_count": 14,
             "monto_corfo_innova_mclp": 2150,
             "centros_y_estaciones_ctci_count": 2,
             "investigadores_residentes_est": 14,
+            "matricula_educacion_superior_sies_n": 737,
             "percepcion_ctci_prioritaria_pct_i1i": 93.8,
             "evaluacion_uaysen_promedio_i8": 4.92,
+            "semaforo_muestral_barometro": "verde",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25664,20 +25913,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Aysén",
           "cabecera": "Puerto Cisnes",
           "codigo_cuenca": "112",
+          "poblacion_censo_2024": 5335,
           "lat": -44.743,
           "lng": -72.699,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 11,
+            "proyectos_anid_n": 6,
             "proyectos_anid_locales_count": 3,
             "proyectos_anid_extrarregionales_count": 3,
+            "proporcion_ciencia_endogena_pct": 50,
             "monto_anid_acumulado_mclp": 680,
             "proyectos_corfo_innova_count": 5,
             "monto_corfo_innova_mclp": 680,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 4,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 85.2,
             "evaluacion_uaysen_promedio_i8": 5.04,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25688,20 +25942,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Aysén",
           "cabecera": "Melinka",
           "codigo_cuenca": "110",
+          "poblacion_censo_2024": 1598,
           "lat": -43.896,
           "lng": -73.748,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 4,
+            "proyectos_anid_n": 3,
             "proyectos_anid_locales_count": 1,
             "proyectos_anid_extrarregionales_count": 2,
+            "proporcion_ciencia_endogena_pct": 33.3,
             "monto_anid_acumulado_mclp": 280,
             "proyectos_corfo_innova_count": 1,
             "monto_corfo_innova_mclp": 140,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 2,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 87.5,
             "evaluacion_uaysen_promedio_i8": 4.17,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25712,20 +25971,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "General Carrera",
           "cabecera": "Chile Chico",
           "codigo_cuenca": "115",
+          "poblacion_censo_2024": 4950,
           "lat": -46.541,
           "lng": -71.722,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 8,
+            "proyectos_anid_n": 4,
             "proyectos_anid_locales_count": 2,
             "proyectos_anid_extrarregionales_count": 2,
+            "proporcion_ciencia_endogena_pct": 50,
             "monto_anid_acumulado_mclp": 490,
             "proyectos_corfo_innova_count": 4,
             "monto_corfo_innova_mclp": 580,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 3,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 84,
             "evaluacion_uaysen_promedio_i8": 5.13,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25736,20 +26000,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "General Carrera",
           "cabecera": "Puerto Ingeniero Ibáñez",
           "codigo_cuenca": "113",
+          "poblacion_censo_2024": 2671,
           "lat": -46.291,
           "lng": -71.936,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 5,
+            "proyectos_anid_n": 4,
             "proyectos_anid_locales_count": 1,
             "proyectos_anid_extrarregionales_count": 3,
+            "proporcion_ciencia_endogena_pct": 25,
             "monto_anid_acumulado_mclp": 520,
             "proyectos_corfo_innova_count": 1,
             "monto_corfo_innova_mclp": 110,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 2,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 90,
             "evaluacion_uaysen_promedio_i8": 5.11,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25760,20 +26029,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Capitán Prat",
           "cabecera": "Cochrane",
           "codigo_cuenca": "115",
+          "poblacion_censo_2024": 3492,
           "lat": -47.254,
           "lng": -72.571,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 7,
+            "proyectos_anid_n": 4,
             "proyectos_anid_locales_count": 2,
             "proyectos_anid_extrarregionales_count": 2,
+            "proporcion_ciencia_endogena_pct": 50,
             "monto_anid_acumulado_mclp": 460,
             "proyectos_corfo_innova_count": 3,
             "monto_corfo_innova_mclp": 410,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 3,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 83.3,
             "evaluacion_uaysen_promedio_i8": 5.35,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25784,20 +26058,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Capitán Prat",
           "cabecera": "Villa O'Higgins",
           "codigo_cuenca": "117",
+          "poblacion_censo_2024": 664,
           "lat": -48.467,
           "lng": -72.558,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 3,
+            "proyectos_anid_n": 2,
             "proyectos_anid_locales_count": 0,
             "proyectos_anid_extrarregionales_count": 2,
+            "proporcion_ciencia_endogena_pct": 0,
             "monto_anid_acumulado_mclp": 190,
             "proyectos_corfo_innova_count": 1,
             "monto_corfo_innova_mclp": 50,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 1,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 100,
             "evaluacion_uaysen_promedio_i8": 4.33,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         },
@@ -25808,20 +26087,25 @@ window.AYSEN_HUBS_DATA = {
           "provincia": "Capitán Prat",
           "cabecera": "Caleta Tortel",
           "codigo_cuenca": "116",
+          "poblacion_censo_2024": 563,
           "lat": -47.795,
           "lng": -73.535,
           "source_url": "https://observa.minciencia.gob.cl/",
           "datos": {
             "total_proyectos_ctci": 6,
+            "proyectos_anid_n": 5,
             "proyectos_anid_locales_count": 3,
             "proyectos_anid_extrarregionales_count": 2,
+            "proporcion_ciencia_endogena_pct": 60,
             "monto_anid_acumulado_mclp": 361.3,
             "proyectos_corfo_innova_count": 1,
             "monto_corfo_innova_mclp": 180,
             "centros_y_estaciones_ctci_count": 1,
             "investigadores_residentes_est": 3,
+            "matricula_educacion_superior_sies_n": 0,
             "percepcion_ctci_prioritaria_pct_i1i": 100,
             "evaluacion_uaysen_promedio_i8": 5.2,
+            "semaforo_muestral_barometro": "rojo_baja_precision_n_menor_30",
             "origen_dato": "observado_oficial"
           }
         }
@@ -25838,14 +26122,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.0674,
           "source_url": "https://www.ciep.cl/",
           "categoria": "Centro_Cientifico",
-          "vocacion_cientifica": "Ecosistemas acuáticos, dinámica climática y pesca artesanal austral",
+          "vocacion_cientifica": "23 investigadores residentes [19 doctores] + 12 profesionales científicos de apoyo = 35 efectivos I+D + 12 gestión = 47 personas en nómina 2026; PATSER R20F0002 $2.750M y Basal GORE 2026 >$1.599M",
           "institucion_titular": "CIEP / GORE Aysén / ANID",
           "investigadores_radicados": 34,
           "origen_dato": "ANID_CIEP"
         },
         {
           "id": "CTCI-NOD-02",
-          "nombre": "Campus Río Simpson - UAysén",
+          "nombre": "Campus Río Simpson y Campus Errázuriz - Universidad de Aysén (UAysén)",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-01",
           "comuna_ine": "11101",
@@ -25854,14 +26138,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.0582,
           "source_url": "https://www.uaysen.cl/",
           "categoria": "Universidad_Estatal",
-          "vocacion_cientifica": "Ciencias naturales, salud pública, ciencias sociales y agronomía austral",
+          "vocacion_cientifica": "1.000 estudiantes SIES 2026 en 13 carreras y 1° Magíster; término Administración Provisional SES 15-01-2026; Rector Dr. Víctor Cubillos 2026-2030; adjudicación FIUT Etapa 2 $10.484M a 10 años para 8 laboratorios en futuro Campus Río Coyhaique 23 ha",
           "institucion_titular": "Universidad de Aysén",
           "investigadores_radicados": 31,
           "origen_dato": "MINEDUC_UAYSEN"
         },
         {
           "id": "CTCI-NOD-03",
-          "nombre": "INIA Tamel Aike",
+          "nombre": "INIA Tamel Aike (Coyhaique Alto Km 4,5 y Predio Valle Simpson 201 ha)",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-01",
           "comuna_ine": "11101",
@@ -25870,14 +26154,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.1845,
           "source_url": "https://www.inia.cl/tamelaike/",
           "categoria": "Centro_Agropecuario",
-          "vocacion_cientifica": "Ganadería regenerativa, forrajes de clima frío y mejoramiento genético ovino/bovino",
+          "vocacion_cientifica": "Alberga el 1er Banco de Recursos Zoogenéticos [Germoplasma Animal a -196°C] de Chile, Laboratorio de Suelos modernizado, ganadería regenerativa y mejoramiento genético",
           "institucion_titular": "Instituto de Investigaciones Agropecuarias (INIA)",
           "investigadores_radicados": 10,
           "origen_dato": "MINAGRI_INIA"
         },
         {
           "id": "CTCI-NOD-04",
-          "nombre": "Laboratorio Costero Caleta Tortel (CIEP)",
+          "nombre": "Laboratorio Costero Caleta Tortel (CIEP / COPAS Coastal / CIAyT)",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-10",
           "comuna_ine": "11303",
@@ -25886,14 +26170,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -73.5382,
           "source_url": "https://www.ciep.cl/laboratorio-costero/",
           "categoria": "Estacion_Oceanografica",
-          "vocacion_cientifica": "Monitoreo oceanográfico de la pluma de agua dulce del río Baker y fiordos australes",
-          "institucion_titular": "CIEP / Municipalidad de Tortel",
+          "vocacion_cientifica": "Monitoreo oceanográfico de la pluma del río Baker, fiordos australes, GLOFs Glaciar Steffen/Jorge Montt DGA y Centro de Interpretación Ambiental y Turístico CIAyT inaugurado ene-2024",
+          "institucion_titular": "CIEP / COPAS Coastal (UdeC) / Municipalidad de Tortel",
           "investigadores_radicados": 3,
           "origen_dato": "ANID_CIEP"
         },
         {
           "id": "CTCI-NOD-05",
-          "nombre": "Base Glaciológica San Rafael (CECs/UCHILE)",
+          "nombre": "Base Glaciológica San Rafael (CECs / U. de Chile / DGA)",
           "tipo": "Extrarregional",
           "codigo_comuna": "CL-XI-03",
           "comuna_ine": "11201",
@@ -25903,13 +26187,13 @@ window.AYSEN_HUBS_DATA = {
           "source_url": "https://www.cecs.cl/",
           "categoria": "Estacion_Glaciologica",
           "vocacion_cientifica": "Dinámica del retroceso de hielo en el Glaciar San Rafael y Campo de Hielo Norte",
-          "institucion_titular": "Centro de Estudios Científicos (CECs) / Universidad de Chile",
+          "institucion_titular": "Centro de Estudios Científicos (CECs) / Universidad de Chile / DGA",
           "investigadores_radicados": 4,
           "origen_dato": "CECS_UCHILE"
         },
         {
           "id": "CTCI-NOD-06",
-          "nombre": "Estación Meteorológica BBA",
+          "nombre": "Estación Meteorológica Balmaceda BBA (DGAC / DMC)",
           "tipo": "Pública_Mixta",
           "codigo_comuna": "CL-XI-01",
           "comuna_ine": "11101",
@@ -25925,7 +26209,7 @@ window.AYSEN_HUBS_DATA = {
         },
         {
           "id": "CTCI-NOD-07",
-          "nombre": "Centro Experimental Puerto Cisnes - IFOP",
+          "nombre": "Centro Experimental Puerto Cisnes (IFOP) y Reserva Elemental Melimoyu (Fundación MERI)",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-04",
           "comuna_ine": "11202",
@@ -25934,30 +26218,30 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.6985,
           "source_url": "https://www.ifop.cl/",
           "categoria": "Centro_Acuicola",
-          "vocacion_cientifica": "Monitoreo ambiental bentónico, oceanografía de fiordos y floraciones algales nocivas (FAN)",
-          "institucion_titular": "Instituto de Fomento Pesquero (IFOP)",
+          "vocacion_cientifica": "Monitoreo bentónico y FAN (IFOP) más bioacústica de ballena azul y conservación en Reserva Elemental Melimoyu (16.000 ha, Fundación MERI); nota: Centro Huinay pertenece a Hualaihué, Los Lagos",
+          "institucion_titular": "IFOP / Fundación MERI",
           "investigadores_radicados": 4,
           "origen_dato": "SUBPESCA_IFOP"
         },
         {
           "id": "CTCI-NOD-08",
-          "nombre": "Plataforma Bioseguridad Barrio 21B",
+          "nombre": "Sede y Laboratorio IFOP Puerto Aysén / Plataforma Bioseguridad Barrio 21B",
           "tipo": "Empresarial_Mixta",
           "codigo_comuna": "CL-XI-03",
           "comuna_ine": "11201",
           "lat": -45.45,
           "lng": -73.35,
           "lon": -73.35,
-          "source_url": "https://www.sernapesca.cl/",
+          "source_url": "https://www.ifop.cl/",
           "categoria": "Plataforma_Bioseguridad",
-          "vocacion_cientifica": "Monitoreo genómico de patógenos del salmón (SRS, Caligus) y calidad de aguas de cultivo",
-          "institucion_titular": "Consorcio Salmonero / Sernapesca / Corfo Innova",
+          "vocacion_cientifica": "Nueva sede y laboratorio de toxinas marinas IFOP Puerto Aysén (inaugurada 08-10-2024: 450 m2 terreno, 135 m2 sede + 24 m2 laboratorio) y monitoreo genómico/sanitario acuícola",
+          "institucion_titular": "IFOP / Sernapesca / Consorcio Salmonero / Corfo Innova",
           "investigadores_radicados": 10,
-          "origen_dato": "CORFO_SERNAPESCA"
+          "origen_dato": "IFOP_CORFO_SERNAPESCA"
         },
         {
           "id": "CTCI-NOD-09",
-          "nombre": "Estación Patagonia UC - Bahía Exploradores",
+          "nombre": "Estación de Investigación Cerro Castillo (UAysén) / Estación Patagonia UC - Bahía Exploradores",
           "tipo": "Extrarregional",
           "codigo_comuna": "CL-XI-07",
           "comuna_ine": "11402",
@@ -25966,14 +26250,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -73.18,
           "source_url": "https://estacionpatagonia.uc.cl/",
           "categoria": "Estacion_Cientifica_Universitaria",
-          "vocacion_cientifica": "Ecología terrestre y marina de bosques templados lluviosos y fiordos patagónicos",
-          "institucion_titular": "Pontificia Universidad Católica de Chile (PUC)",
+          "vocacion_cientifica": "Estación Cerro Castillo UAysén y Observatorio Geofísico U. de Chile-UAysén en Río Ibáñez (11402), más Estación Patagonia UC en Bahía Exploradores (concesión 5.014 ha, 10 años dic-2025: 59 proyectos, 34 artículos; acceso terrestre vía Puerto Río Tranquilo 11402 y jurisdicción administrativa en Aysén 11201)",
+          "institucion_titular": "UAysén / Pontificia Universidad Católica de Chile (PUC) / U. de Chile",
           "investigadores_radicados": 2,
-          "origen_dato": "PUC_ESTACION"
+          "origen_dato": "PUC_UAYSEN_ESTACION"
         },
         {
           "id": "CTCI-NOD-10",
-          "nombre": "Estación Limnológica y Glaciar O'Higgins",
+          "nombre": "Estación Limnológica y Glaciar O'Higgins (DGA / CECs / UdeC)",
           "tipo": "Extrarregional",
           "codigo_comuna": "CL-XI-09",
           "comuna_ine": "11302",
@@ -25983,13 +26267,13 @@ window.AYSEN_HUBS_DATA = {
           "source_url": "https://www.cecs.cl/glaciologia/",
           "categoria": "Estacion_Glaciologica",
           "vocacion_cientifica": "Balance de masa del Glaciar O'Higgins y limnología de lagos proglaciares australes",
-          "institucion_titular": "CECs / Universidad de Concepción",
+          "institucion_titular": "DGA / CECs / Universidad de Concepción",
           "investigadores_radicados": 1,
           "origen_dato": "CECS_UDEC"
         },
         {
           "id": "CTCI-NOD-11",
-          "nombre": "Estación Experimental Agroclimática Chile Chico (INIA)",
+          "nombre": "Estación Experimental Agroclimática Chile Chico (INIA Tamel Aike) y Sitio Paleontológico Formación Toqui",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-06",
           "comuna_ine": "11401",
@@ -25998,14 +26282,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -71.728,
           "source_url": "https://www.inia.cl/",
           "categoria": "Centro_Agropecuario",
-          "vocacion_cientifica": "Fruticultura bajo microclima lacustre (cerezas tardías) y eficiencia de riego tecnificado",
-          "institucion_titular": "INIA Tamel Aike",
+          "vocacion_cientifica": "Fruticultura de cerezos (244 ha / 660 ton) y vitivinicultura austral (Pinot Noir/Chardonnay) con apoyo FIA, más sitio jurásico Chilesaurus diegosuarezi en Mallín Grande",
+          "institucion_titular": "INIA Tamel Aike / FIA / SERNAGEOMIN",
           "investigadores_radicados": 3,
           "origen_dato": "MINAGRI_INIA"
         },
         {
           "id": "CTCI-NOD-12",
-          "nombre": "Centro de Monitoreo Marea Roja Melinka (IFOP)",
+          "nombre": "Centro de Monitoreo Marea Roja Melinka (IFOP) y Monitoreo Cetáceos Golfo Corcovado (CBA / MERI)",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-05",
           "comuna_ine": "11203",
@@ -26014,14 +26298,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -73.749,
           "source_url": "https://www.ifop.cl/marea-roja/",
           "categoria": "Centro_Bioceanografico",
-          "vocacion_cientifica": "Detección temprana de toxinas paralizantes y diarreicas de moluscos en el archipiélago",
-          "institucion_titular": "IFOP / Subpesca",
+          "vocacion_cientifica": "Detección temprana de toxinas paralizantes y diarreicas de moluscos en el archipiélago y monitoreo de cetáceos en Golfo del Corcovado",
+          "institucion_titular": "IFOP / Subpesca / CBA / Fundación MERI",
           "investigadores_radicados": 2,
           "origen_dato": "IFOP_SUBPESCA"
         },
         {
           "id": "CTCI-NOD-13",
-          "nombre": "Estación de Investigación de Cuencas Australes Cochrane",
+          "nombre": "Estación de Investigación de Cuencas Australes Cochrane (CIEP / UAysén / DGA / Rewilding PN Patagonia)",
           "tipo": "Local_Endógena",
           "codigo_comuna": "CL-XI-08",
           "comuna_ine": "11301",
@@ -26030,14 +26314,14 @@ window.AYSEN_HUBS_DATA = {
           "lon": -72.574,
           "source_url": "https://www.ciep.cl/",
           "categoria": "Estacion_Cuencas",
-          "vocacion_cientifica": "Hidrología de la cuenca del Río Baker, caudales ecológicos y modelación de crecidas",
-          "institucion_titular": "CIEP / UAysén",
+          "vocacion_cientifica": "Hidrología de la cuenca del Río Baker, caudales ecológicos, modelación de crecidas y restauración ecológica en Parque Nacional Patagonia",
+          "institucion_titular": "CIEP / UAysén / DGA / Fundación Rewilding",
           "investigadores_radicados": 3,
           "origen_dato": "ANID_CIEP"
         },
         {
           "id": "CTCI-NOD-14",
-          "nombre": "Nodo de Monitoreo Ecosistémico Lago Verde",
+          "nombre": "Nodo de Monitoreo Ecosistémico y Agrometeorológico Lago Verde (INIA / MinCiencia / CONAF)",
           "tipo": "Pública_Mixta",
           "codigo_comuna": "CL-XI-02",
           "comuna_ine": "11102",
@@ -26046,8 +26330,8 @@ window.AYSEN_HUBS_DATA = {
           "lon": -71.848,
           "source_url": "https://observa.minciencia.gob.cl/",
           "categoria": "Estacion_Ecosistemica",
-          "vocacion_cientifica": "Sensores de microclima andino y dinámica de bosques de Lenga en el valle de Palena",
-          "institucion_titular": "MinCiencia / CONAF / UAysén",
+          "vocacion_cientifica": "Sensores de microclima andino, red agrometeorológica INIA y dinámica de bosques de Lenga en el valle de Palena",
+          "institucion_titular": "INIA / MinCiencia / CONAF / UAysén",
           "investigadores_radicados": 1,
           "origen_dato": "MINCIENCIA_OBSERVA"
         },
@@ -26060,10 +26344,10 @@ window.AYSEN_HUBS_DATA = {
           "lat": -45.5482,
           "lng": -72.0125,
           "lon": -72.0125,
-          "source_url": "https://infor.cl/sede-patagonia/",
+          "source_url": "https://www.infor.cl/",
           "categoria": "Instituto_Forestal",
-          "vocacion_cientifica": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
-          "institucion_titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
+          "vocacion_cientifica": "Dotación oficial 8-10 personas (Memoria INFOR 2025): Inventario Forestal Continuo, silvicultura de Lenga y Ñirre, PFNM (Morchella) y dendroenergía Ley 21.499",
+          "institucion_titular": "Instituto Forestal (INFOR) - MINAGRI",
           "investigadores_radicados": 9,
           "origen_dato": "MINAGRI_INFOR"
         },
@@ -26071,15 +26355,17 @@ window.AYSEN_HUBS_DATA = {
           "id": "CTCI-NOD-16",
           "nombre": "Campus Patagonia - Universidad Austral de Chile (UACh)",
           "tipo": "Local_Endógena",
+          "codigo_comuna": "CL-XI-01",
           "comuna_ine": "11101",
-          "nombre_comuna": "Coyhaique",
           "lat": -45.5892,
           "lng": -72.0815,
+          "lon": -72.0815,
+          "source_url": "https://patagonia.uach.cl/",
           "categoria": "Universidad_Investigacion",
-          "vocacion_cientifica": "Investigación aplicada, posgrados, arqueología y ejecución de 32 proyectos ANID/FIC-R en Patagonia",
+          "vocacion_cientifica": "Investigación aplicada, posgrados, educación continua y ejecución de 32 proyectos históricos ANID y FIC-R tras el cierre de su oferta de pregrado en agosto de 2025",
           "institucion_titular": "Universidad Austral de Chile (UACh)",
           "investigadores_radicados": 5,
-          "source_url": "https://patagonia.uach.cl/"
+          "origen_dato": "UACH_PATAGONIA"
         }
       ],
       "resumen_anid_adjudicaciones": {
@@ -41153,7 +41439,7 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.0674,
       "magnitudeValue": 34,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Ecosistemas acuáticos, dinámica climática y pesca artesanal austral",
+      "magnitudeLabel": "23 investigadores residentes [19 doctores] + 12 profesionales científicos de apoyo = 35 efectivos I+D + 12 gestión = 47 personas en nómina 2026; PATSER R20F0002 $2.750M y Basal GORE 2026 >$1.599M",
       "titular": "CIEP / GORE Aysén / ANID",
       "sourceUrl": "https://www.ciep.cl/",
       "bufferGenerator": true,
@@ -41163,7 +41449,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-02",
-      "nombre": "Campus Río Simpson - UAysén",
+      "nombre": "Campus Río Simpson y Campus Errázuriz - Universidad de Aysén (UAysén)",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41174,7 +41460,7 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.0582,
       "magnitudeValue": 31,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Ciencias naturales, salud pública, ciencias sociales y agronomía austral",
+      "magnitudeLabel": "1.000 estudiantes SIES 2026 en 13 carreras y 1° Magíster; término Administración Provisional SES 15-01-2026; Rector Dr. Víctor Cubillos 2026-2030; adjudicación FIUT Etapa 2 $10.484M a 10 años para 8 laboratorios en futuro Campus Río Coyhaique 23 ha",
       "titular": "Universidad de Aysén",
       "sourceUrl": "https://www.uaysen.cl/",
       "bufferGenerator": true,
@@ -41184,7 +41470,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-03",
-      "nombre": "INIA Tamel Aike",
+      "nombre": "INIA Tamel Aike (Coyhaique Alto Km 4,5 y Predio Valle Simpson 201 ha)",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41195,7 +41481,7 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.1845,
       "magnitudeValue": 10,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Ganadería regenerativa, forrajes de clima frío y mejoramiento genético ovino/bovino",
+      "magnitudeLabel": "Alberga el 1er Banco de Recursos Zoogenéticos [Germoplasma Animal a -196°C] de Chile, Laboratorio de Suelos modernizado, ganadería regenerativa y mejoramiento genético",
       "titular": "Instituto de Investigaciones Agropecuarias (INIA)",
       "sourceUrl": "https://www.inia.cl/tamelaike/",
       "bufferGenerator": true,
@@ -41205,7 +41491,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-04",
-      "nombre": "Laboratorio Costero Caleta Tortel (CIEP)",
+      "nombre": "Laboratorio Costero Caleta Tortel (CIEP / COPAS Coastal / CIAyT)",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41216,8 +41502,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -73.5382,
       "magnitudeValue": 3,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Monitoreo oceanográfico de la pluma de agua dulce del río Baker y fiordos australes",
-      "titular": "CIEP / Municipalidad de Tortel",
+      "magnitudeLabel": "Monitoreo oceanográfico de la pluma del río Baker, fiordos australes, GLOFs Glaciar Steffen/Jorge Montt DGA y Centro de Interpretación Ambiental y Turístico CIAyT inaugurado ene-2024",
+      "titular": "CIEP / COPAS Coastal (UdeC) / Municipalidad de Tortel",
       "sourceUrl": "https://www.ciep.cl/laboratorio-costero/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41226,7 +41512,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-05",
-      "nombre": "Base Glaciológica San Rafael (CECs/UCHILE)",
+      "nombre": "Base Glaciológica San Rafael (CECs / U. de Chile / DGA)",
       "tipo": "Extrarregional",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41238,7 +41524,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 4,
       "magnitudeUnit": "investigadores residentes",
       "magnitudeLabel": "Dinámica del retroceso de hielo en el Glaciar San Rafael y Campo de Hielo Norte",
-      "titular": "Centro de Estudios Científicos (CECs) / Universidad de Chile",
+      "titular": "Centro de Estudios Científicos (CECs) / Universidad de Chile / DGA",
       "sourceUrl": "https://www.cecs.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41247,7 +41533,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-06",
-      "nombre": "Estación Meteorológica BBA",
+      "nombre": "Estación Meteorológica Balmaceda BBA (DGAC / DMC)",
       "tipo": "Pública_Mixta",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41268,7 +41554,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-07",
-      "nombre": "Centro Experimental Puerto Cisnes - IFOP",
+      "nombre": "Centro Experimental Puerto Cisnes (IFOP) y Reserva Elemental Melimoyu (Fundación MERI)",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41279,8 +41565,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.6985,
       "magnitudeValue": 4,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Monitoreo ambiental bentónico, oceanografía de fiordos y floraciones algales nocivas (FAN)",
-      "titular": "Instituto de Fomento Pesquero (IFOP)",
+      "magnitudeLabel": "Monitoreo bentónico y FAN (IFOP) más bioacústica de ballena azul y conservación en Reserva Elemental Melimoyu (16.000 ha, Fundación MERI); nota: Centro Huinay pertenece a Hualaihué, Los Lagos",
+      "titular": "IFOP / Fundación MERI",
       "sourceUrl": "https://www.ifop.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41289,7 +41575,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-08",
-      "nombre": "Plataforma Bioseguridad Barrio 21B",
+      "nombre": "Sede y Laboratorio IFOP Puerto Aysén / Plataforma Bioseguridad Barrio 21B",
       "tipo": "Empresarial_Mixta",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41300,9 +41586,9 @@ window.AYSEN_HUBS_DATA = {
       "lon": -73.35,
       "magnitudeValue": 10,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Monitoreo genómico de patógenos del salmón (SRS, Caligus) y calidad de aguas de cultivo",
-      "titular": "Consorcio Salmonero / Sernapesca / Corfo Innova",
-      "sourceUrl": "https://www.sernapesca.cl/",
+      "magnitudeLabel": "Nueva sede y laboratorio de toxinas marinas IFOP Puerto Aysén (inaugurada 08-10-2024: 450 m2 terreno, 135 m2 sede + 24 m2 laboratorio) y monitoreo genómico/sanitario acuícola",
+      "titular": "IFOP / Sernapesca / Consorcio Salmonero / Corfo Innova",
+      "sourceUrl": "https://www.ifop.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
       "color": "#0e7490",
@@ -41310,7 +41596,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-09",
-      "nombre": "Estación Patagonia UC - Bahía Exploradores",
+      "nombre": "Estación de Investigación Cerro Castillo (UAysén) / Estación Patagonia UC - Bahía Exploradores",
       "tipo": "Extrarregional",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41321,8 +41607,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -73.18,
       "magnitudeValue": 2,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Ecología terrestre y marina de bosques templados lluviosos y fiordos patagónicos",
-      "titular": "Pontificia Universidad Católica de Chile (PUC)",
+      "magnitudeLabel": "Estación Cerro Castillo UAysén y Observatorio Geofísico U. de Chile-UAysén en Río Ibáñez (11402), más Estación Patagonia UC en Bahía Exploradores (concesión 5.014 ha, 10 años dic-2025: 59 proyectos, 34 artículos; acceso terrestre vía Puerto Río Tranquilo 11402 y jurisdicción administrativa en Aysén 11201)",
+      "titular": "UAysén / Pontificia Universidad Católica de Chile (PUC) / U. de Chile",
       "sourceUrl": "https://estacionpatagonia.uc.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41331,7 +41617,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-10",
-      "nombre": "Estación Limnológica y Glaciar O'Higgins",
+      "nombre": "Estación Limnológica y Glaciar O'Higgins (DGA / CECs / UdeC)",
       "tipo": "Extrarregional",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41343,7 +41629,7 @@ window.AYSEN_HUBS_DATA = {
       "magnitudeValue": 1,
       "magnitudeUnit": "investigadores residentes",
       "magnitudeLabel": "Balance de masa del Glaciar O'Higgins y limnología de lagos proglaciares australes",
-      "titular": "CECs / Universidad de Concepción",
+      "titular": "DGA / CECs / Universidad de Concepción",
       "sourceUrl": "https://www.cecs.cl/glaciologia/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41352,7 +41638,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-11",
-      "nombre": "Estación Experimental Agroclimática Chile Chico (INIA)",
+      "nombre": "Estación Experimental Agroclimática Chile Chico (INIA Tamel Aike) y Sitio Paleontológico Formación Toqui",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41363,8 +41649,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -71.728,
       "magnitudeValue": 3,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Fruticultura bajo microclima lacustre (cerezas tardías) y eficiencia de riego tecnificado",
-      "titular": "INIA Tamel Aike",
+      "magnitudeLabel": "Fruticultura de cerezos (244 ha / 660 ton) y vitivinicultura austral (Pinot Noir/Chardonnay) con apoyo FIA, más sitio jurásico Chilesaurus diegosuarezi en Mallín Grande",
+      "titular": "INIA Tamel Aike / FIA / SERNAGEOMIN",
       "sourceUrl": "https://www.inia.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41373,7 +41659,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-12",
-      "nombre": "Centro de Monitoreo Marea Roja Melinka (IFOP)",
+      "nombre": "Centro de Monitoreo Marea Roja Melinka (IFOP) y Monitoreo Cetáceos Golfo Corcovado (CBA / MERI)",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41384,8 +41670,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -73.749,
       "magnitudeValue": 2,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Detección temprana de toxinas paralizantes y diarreicas de moluscos en el archipiélago",
-      "titular": "IFOP / Subpesca",
+      "magnitudeLabel": "Detección temprana de toxinas paralizantes y diarreicas de moluscos en el archipiélago y monitoreo de cetáceos en Golfo del Corcovado",
+      "titular": "IFOP / Subpesca / CBA / Fundación MERI",
       "sourceUrl": "https://www.ifop.cl/marea-roja/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41394,7 +41680,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-13",
-      "nombre": "Estación de Investigación de Cuencas Australes Cochrane",
+      "nombre": "Estación de Investigación de Cuencas Australes Cochrane (CIEP / UAysén / DGA / Rewilding PN Patagonia)",
       "tipo": "Local_Endógena",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41405,8 +41691,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.574,
       "magnitudeValue": 3,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Hidrología de la cuenca del Río Baker, caudales ecológicos y modelación de crecidas",
-      "titular": "CIEP / UAysén",
+      "magnitudeLabel": "Hidrología de la cuenca del Río Baker, caudales ecológicos, modelación de crecidas y restauración ecológica en Parque Nacional Patagonia",
+      "titular": "CIEP / UAysén / DGA / Fundación Rewilding",
       "sourceUrl": "https://www.ciep.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41415,7 +41701,7 @@ window.AYSEN_HUBS_DATA = {
     },
     {
       "id": "ctci_CTCI-NOD-14",
-      "nombre": "Nodo de Monitoreo Ecosistémico Lago Verde",
+      "nombre": "Nodo de Monitoreo Ecosistémico y Agrometeorológico Lago Verde (INIA / MinCiencia / CONAF)",
       "tipo": "Pública_Mixta",
       "layerKey": "centros_ctci",
       "hubId": "ctci",
@@ -41426,8 +41712,8 @@ window.AYSEN_HUBS_DATA = {
       "lon": -71.848,
       "magnitudeValue": 1,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Sensores de microclima andino y dinámica de bosques de Lenga en el valle de Palena",
-      "titular": "MinCiencia / CONAF / UAysén",
+      "magnitudeLabel": "Sensores de microclima andino, red agrometeorológica INIA y dinámica de bosques de Lenga en el valle de Palena",
+      "titular": "INIA / MinCiencia / CONAF / UAysén",
       "sourceUrl": "https://observa.minciencia.gob.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
@@ -41447,9 +41733,9 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.0125,
       "magnitudeValue": 9,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
-      "titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
-      "sourceUrl": "https://infor.cl/sede-patagonia/",
+      "magnitudeLabel": "Dotación oficial 8-10 personas (Memoria INFOR 2025): Inventario Forestal Continuo, silvicultura de Lenga y Ñirre, PFNM (Morchella) y dendroenergía Ley 21.499",
+      "titular": "Instituto Forestal (INFOR) - MINAGRI",
+      "sourceUrl": "https://www.infor.cl/",
       "bufferGenerator": true,
       "bufferRadiusM": 25000,
       "color": "#0e7490",
@@ -41468,7 +41754,7 @@ window.AYSEN_HUBS_DATA = {
       "lon": -72.0815,
       "magnitudeValue": 5,
       "magnitudeUnit": "investigadores residentes",
-      "magnitudeLabel": "Investigación aplicada, posgrados, arqueología y ejecución de 32 proyectos ANID/FIC-R en Patagonia",
+      "magnitudeLabel": "Investigación aplicada, posgrados, educación continua y ejecución de 32 proyectos históricos ANID y FIC-R tras el cierre de su oferta de pregrado en agosto de 2025",
       "titular": "Universidad Austral de Chile (UACh)",
       "sourceUrl": "https://patagonia.uach.cl/",
       "bufferGenerator": true,
@@ -48551,7 +48837,7 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.0674,
         "magnitudeValue": 34,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Ecosistemas acuáticos, dinámica climática y pesca artesanal austral",
+        "magnitudeLabel": "23 investigadores residentes [19 doctores] + 12 profesionales científicos de apoyo = 35 efectivos I+D + 12 gestión = 47 personas en nómina 2026; PATSER R20F0002 $2.750M y Basal GORE 2026 >$1.599M",
         "titular": "CIEP / GORE Aysén / ANID",
         "sourceUrl": "https://www.ciep.cl/",
         "bufferGenerator": true,
@@ -48561,7 +48847,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-02",
-        "nombre": "Campus Río Simpson - UAysén",
+        "nombre": "Campus Río Simpson y Campus Errázuriz - Universidad de Aysén (UAysén)",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48572,7 +48858,7 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.0582,
         "magnitudeValue": 31,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Ciencias naturales, salud pública, ciencias sociales y agronomía austral",
+        "magnitudeLabel": "1.000 estudiantes SIES 2026 en 13 carreras y 1° Magíster; término Administración Provisional SES 15-01-2026; Rector Dr. Víctor Cubillos 2026-2030; adjudicación FIUT Etapa 2 $10.484M a 10 años para 8 laboratorios en futuro Campus Río Coyhaique 23 ha",
         "titular": "Universidad de Aysén",
         "sourceUrl": "https://www.uaysen.cl/",
         "bufferGenerator": true,
@@ -48582,7 +48868,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-03",
-        "nombre": "INIA Tamel Aike",
+        "nombre": "INIA Tamel Aike (Coyhaique Alto Km 4,5 y Predio Valle Simpson 201 ha)",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48593,7 +48879,7 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.1845,
         "magnitudeValue": 10,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Ganadería regenerativa, forrajes de clima frío y mejoramiento genético ovino/bovino",
+        "magnitudeLabel": "Alberga el 1er Banco de Recursos Zoogenéticos [Germoplasma Animal a -196°C] de Chile, Laboratorio de Suelos modernizado, ganadería regenerativa y mejoramiento genético",
         "titular": "Instituto de Investigaciones Agropecuarias (INIA)",
         "sourceUrl": "https://www.inia.cl/tamelaike/",
         "bufferGenerator": true,
@@ -48603,7 +48889,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-04",
-        "nombre": "Laboratorio Costero Caleta Tortel (CIEP)",
+        "nombre": "Laboratorio Costero Caleta Tortel (CIEP / COPAS Coastal / CIAyT)",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48614,8 +48900,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -73.5382,
         "magnitudeValue": 3,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Monitoreo oceanográfico de la pluma de agua dulce del río Baker y fiordos australes",
-        "titular": "CIEP / Municipalidad de Tortel",
+        "magnitudeLabel": "Monitoreo oceanográfico de la pluma del río Baker, fiordos australes, GLOFs Glaciar Steffen/Jorge Montt DGA y Centro de Interpretación Ambiental y Turístico CIAyT inaugurado ene-2024",
+        "titular": "CIEP / COPAS Coastal (UdeC) / Municipalidad de Tortel",
         "sourceUrl": "https://www.ciep.cl/laboratorio-costero/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48624,7 +48910,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-05",
-        "nombre": "Base Glaciológica San Rafael (CECs/UCHILE)",
+        "nombre": "Base Glaciológica San Rafael (CECs / U. de Chile / DGA)",
         "tipo": "Extrarregional",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48636,7 +48922,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 4,
         "magnitudeUnit": "investigadores residentes",
         "magnitudeLabel": "Dinámica del retroceso de hielo en el Glaciar San Rafael y Campo de Hielo Norte",
-        "titular": "Centro de Estudios Científicos (CECs) / Universidad de Chile",
+        "titular": "Centro de Estudios Científicos (CECs) / Universidad de Chile / DGA",
         "sourceUrl": "https://www.cecs.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48645,7 +48931,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-06",
-        "nombre": "Estación Meteorológica BBA",
+        "nombre": "Estación Meteorológica Balmaceda BBA (DGAC / DMC)",
         "tipo": "Pública_Mixta",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48666,7 +48952,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-07",
-        "nombre": "Centro Experimental Puerto Cisnes - IFOP",
+        "nombre": "Centro Experimental Puerto Cisnes (IFOP) y Reserva Elemental Melimoyu (Fundación MERI)",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48677,8 +48963,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.6985,
         "magnitudeValue": 4,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Monitoreo ambiental bentónico, oceanografía de fiordos y floraciones algales nocivas (FAN)",
-        "titular": "Instituto de Fomento Pesquero (IFOP)",
+        "magnitudeLabel": "Monitoreo bentónico y FAN (IFOP) más bioacústica de ballena azul y conservación en Reserva Elemental Melimoyu (16.000 ha, Fundación MERI); nota: Centro Huinay pertenece a Hualaihué, Los Lagos",
+        "titular": "IFOP / Fundación MERI",
         "sourceUrl": "https://www.ifop.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48687,7 +48973,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-08",
-        "nombre": "Plataforma Bioseguridad Barrio 21B",
+        "nombre": "Sede y Laboratorio IFOP Puerto Aysén / Plataforma Bioseguridad Barrio 21B",
         "tipo": "Empresarial_Mixta",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48698,9 +48984,9 @@ window.AYSEN_HUBS_DATA = {
         "lon": -73.35,
         "magnitudeValue": 10,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Monitoreo genómico de patógenos del salmón (SRS, Caligus) y calidad de aguas de cultivo",
-        "titular": "Consorcio Salmonero / Sernapesca / Corfo Innova",
-        "sourceUrl": "https://www.sernapesca.cl/",
+        "magnitudeLabel": "Nueva sede y laboratorio de toxinas marinas IFOP Puerto Aysén (inaugurada 08-10-2024: 450 m2 terreno, 135 m2 sede + 24 m2 laboratorio) y monitoreo genómico/sanitario acuícola",
+        "titular": "IFOP / Sernapesca / Consorcio Salmonero / Corfo Innova",
+        "sourceUrl": "https://www.ifop.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
         "color": "#0e7490",
@@ -48708,7 +48994,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-09",
-        "nombre": "Estación Patagonia UC - Bahía Exploradores",
+        "nombre": "Estación de Investigación Cerro Castillo (UAysén) / Estación Patagonia UC - Bahía Exploradores",
         "tipo": "Extrarregional",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48719,8 +49005,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -73.18,
         "magnitudeValue": 2,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Ecología terrestre y marina de bosques templados lluviosos y fiordos patagónicos",
-        "titular": "Pontificia Universidad Católica de Chile (PUC)",
+        "magnitudeLabel": "Estación Cerro Castillo UAysén y Observatorio Geofísico U. de Chile-UAysén en Río Ibáñez (11402), más Estación Patagonia UC en Bahía Exploradores (concesión 5.014 ha, 10 años dic-2025: 59 proyectos, 34 artículos; acceso terrestre vía Puerto Río Tranquilo 11402 y jurisdicción administrativa en Aysén 11201)",
+        "titular": "UAysén / Pontificia Universidad Católica de Chile (PUC) / U. de Chile",
         "sourceUrl": "https://estacionpatagonia.uc.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48729,7 +49015,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-10",
-        "nombre": "Estación Limnológica y Glaciar O'Higgins",
+        "nombre": "Estación Limnológica y Glaciar O'Higgins (DGA / CECs / UdeC)",
         "tipo": "Extrarregional",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48741,7 +49027,7 @@ window.AYSEN_HUBS_DATA = {
         "magnitudeValue": 1,
         "magnitudeUnit": "investigadores residentes",
         "magnitudeLabel": "Balance de masa del Glaciar O'Higgins y limnología de lagos proglaciares australes",
-        "titular": "CECs / Universidad de Concepción",
+        "titular": "DGA / CECs / Universidad de Concepción",
         "sourceUrl": "https://www.cecs.cl/glaciologia/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48750,7 +49036,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-11",
-        "nombre": "Estación Experimental Agroclimática Chile Chico (INIA)",
+        "nombre": "Estación Experimental Agroclimática Chile Chico (INIA Tamel Aike) y Sitio Paleontológico Formación Toqui",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48761,8 +49047,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -71.728,
         "magnitudeValue": 3,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Fruticultura bajo microclima lacustre (cerezas tardías) y eficiencia de riego tecnificado",
-        "titular": "INIA Tamel Aike",
+        "magnitudeLabel": "Fruticultura de cerezos (244 ha / 660 ton) y vitivinicultura austral (Pinot Noir/Chardonnay) con apoyo FIA, más sitio jurásico Chilesaurus diegosuarezi en Mallín Grande",
+        "titular": "INIA Tamel Aike / FIA / SERNAGEOMIN",
         "sourceUrl": "https://www.inia.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48771,7 +49057,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-12",
-        "nombre": "Centro de Monitoreo Marea Roja Melinka (IFOP)",
+        "nombre": "Centro de Monitoreo Marea Roja Melinka (IFOP) y Monitoreo Cetáceos Golfo Corcovado (CBA / MERI)",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48782,8 +49068,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -73.749,
         "magnitudeValue": 2,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Detección temprana de toxinas paralizantes y diarreicas de moluscos en el archipiélago",
-        "titular": "IFOP / Subpesca",
+        "magnitudeLabel": "Detección temprana de toxinas paralizantes y diarreicas de moluscos en el archipiélago y monitoreo de cetáceos en Golfo del Corcovado",
+        "titular": "IFOP / Subpesca / CBA / Fundación MERI",
         "sourceUrl": "https://www.ifop.cl/marea-roja/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48792,7 +49078,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-13",
-        "nombre": "Estación de Investigación de Cuencas Australes Cochrane",
+        "nombre": "Estación de Investigación de Cuencas Australes Cochrane (CIEP / UAysén / DGA / Rewilding PN Patagonia)",
         "tipo": "Local_Endógena",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48803,8 +49089,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.574,
         "magnitudeValue": 3,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Hidrología de la cuenca del Río Baker, caudales ecológicos y modelación de crecidas",
-        "titular": "CIEP / UAysén",
+        "magnitudeLabel": "Hidrología de la cuenca del Río Baker, caudales ecológicos, modelación de crecidas y restauración ecológica en Parque Nacional Patagonia",
+        "titular": "CIEP / UAysén / DGA / Fundación Rewilding",
         "sourceUrl": "https://www.ciep.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48813,7 +49099,7 @@ window.AYSEN_HUBS_DATA = {
       },
       {
         "id": "ctci_CTCI-NOD-14",
-        "nombre": "Nodo de Monitoreo Ecosistémico Lago Verde",
+        "nombre": "Nodo de Monitoreo Ecosistémico y Agrometeorológico Lago Verde (INIA / MinCiencia / CONAF)",
         "tipo": "Pública_Mixta",
         "layerKey": "centros_ctci",
         "hubId": "ctci",
@@ -48824,8 +49110,8 @@ window.AYSEN_HUBS_DATA = {
         "lon": -71.848,
         "magnitudeValue": 1,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Sensores de microclima andino y dinámica de bosques de Lenga en el valle de Palena",
-        "titular": "MinCiencia / CONAF / UAysén",
+        "magnitudeLabel": "Sensores de microclima andino, red agrometeorológica INIA y dinámica de bosques de Lenga en el valle de Palena",
+        "titular": "INIA / MinCiencia / CONAF / UAysén",
         "sourceUrl": "https://observa.minciencia.gob.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
@@ -48845,9 +49131,9 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.0125,
         "magnitudeValue": 9,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Silvicultura de bosque nativo (Lenga y Ñirre), dendroenergía, biomasa y secado de leña Ley 21.499",
-        "titular": "Instituto Forestal (INFOR) / Ministerio de Agricultura",
-        "sourceUrl": "https://infor.cl/sede-patagonia/",
+        "magnitudeLabel": "Dotación oficial 8-10 personas (Memoria INFOR 2025): Inventario Forestal Continuo, silvicultura de Lenga y Ñirre, PFNM (Morchella) y dendroenergía Ley 21.499",
+        "titular": "Instituto Forestal (INFOR) - MINAGRI",
+        "sourceUrl": "https://www.infor.cl/",
         "bufferGenerator": true,
         "bufferRadiusM": 25000,
         "color": "#0e7490",
@@ -48866,7 +49152,7 @@ window.AYSEN_HUBS_DATA = {
         "lon": -72.0815,
         "magnitudeValue": 5,
         "magnitudeUnit": "investigadores residentes",
-        "magnitudeLabel": "Investigación aplicada, posgrados, arqueología y ejecución de 32 proyectos ANID/FIC-R en Patagonia",
+        "magnitudeLabel": "Investigación aplicada, posgrados, educación continua y ejecución de 32 proyectos históricos ANID y FIC-R tras el cierre de su oferta de pregrado en agosto de 2025",
         "titular": "Universidad Austral de Chile (UACh)",
         "sourceUrl": "https://patagonia.uach.cl/",
         "bufferGenerator": true,

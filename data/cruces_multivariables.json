@@ -2058,9 +2058,9 @@
               "promedio_valor": 2.11,
               "structural_variable": "investigadores_residentes_est",
               "structural_by_macrozona": {
-                "norte": 11.0,
-                "centro": 58.0,
-                "sur": 19.0
+                "norte": 6.0,
+                "centro": 106.0,
+                "sur": 12.0
               },
               "por_nivel_educativo": {
                 "basica_media": {
@@ -2194,7 +2194,7 @@
               }
             }
           },
-          "what_it_shows": "Perfil integral de madurez del ecosistema regional de ciencia y tecnología en sus dimensiones estructurales y de percepción.",
+          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6, Centro 106, Sur 12) contrasta con el aporte percibido universitario (F4_G: 66,4% regional) y prioridad CTCi (I1_I: 89,6%). Advertencia metodológica (Semáforo Barómetro N=465): solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro 'verde' (n>=50), mientras las 8 comunas rurales operan en 'rojo_baja_precision_n_menor_30' (n<30), por lo que extremos como 100,0% en I1_I (Lago Verde, O'Higgins, Tortel) o nota 6,00 en I8 (Lago Verde) son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona (I1_I: Norte 92,1%, Sur 90,4%, Centro 87,2%; I8: media muestral n=423 de 4,98 y referente regional ponderado 5,08).",
           "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
         }
       ]

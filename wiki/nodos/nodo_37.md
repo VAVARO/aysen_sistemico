@@ -21,7 +21,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Iniciativas de transferencia tecnológica e innovación empresarial financiadas por CORFO (Innova Chile / DataInnovación) y la Fundación para la Innovación Agraria (FIA): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia. Registra 59 proyectos CORFO Innova (8.450 MM CLP) focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.
+Iniciativas de transferencia tecnológica e innovación empresarial financiadas por CDPR CORFO Aysén, Plan Aysén Azul / Transforma Litoral (>$7.500M), FIA, FIC-R GORE Aysén y propiedad industrial (INAPI 2026), bajo articulación de la SEREMI de Ciencia exclusiva de Aysén (instalada en oct-2025, Seremi Gabriel Pérez Aros) y el Comité Regional de CTCID (ERI vencida desde 2020; convocatoria dic-2026 para nueva Estrategia CTCID 2027). Registra 59 proyectos CORFO Innova ($8.450M), CDPR CORFO Aysén ($1.930M en 2024 -> $1.885M CORFO + $747M Sercotec en 2025 -> $2.534M en 2026, +34,4%), Plan Aysén Azul (>$7.500M a 36 meses), FIA (244 ha cerezos Chile Chico / 660 ton, vitivinicultura austral Pinot Noir/Chardonnay y valorización de orujo cervecero 2026), INAPI 2026 (252 marcas residentes en 2025, +63% #1 nacional) y percepción ciudadana del Barómetro (N=465: I8 referente 5,08 / media n=423 de 4,98; semáforo rojo n<30 en las 8 comunas rurales).
 
 ## Indicadores Comunales Verificados
 

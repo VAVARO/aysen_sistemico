@@ -5480,7 +5480,7 @@
               }
             }
           },
-          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, 100% en Lago Verde, O'Higgins y Tortel): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo).",
+          "what_it_shows": "La suma macrozonal de los 124 investigadores residentes (Norte 6 [prom. 3,0], Centro 106 [prom. 35,3], Sur 12 [prom. 2,4]) contrasta con la alta prioridad ciudadana asignada a la ciencia (I1_I: 89,6% regional, n=452): mientras 85,5% de los investigadores (106 de 124) reside en Centro (73,4% en Coyhaique), la valoración positiva del aporte universitario (F4_G: 66,4%, n=438) cae del 72,8% en Centro al 62,2% en Norte y 60,6% en Sur (y del 74,8% en NSE Alto al 58,2% en NSE Bajo). Advertencia metodológica (Semáforo Barómetro N=465): solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro 'verde' (n>=50), mientras las 8 comunas rurales operan en 'rojo_baja_precision_n_menor_30' (n<30), por lo que extremos como 100,0% en I1_I (Lago Verde, O'Higgins, Tortel) o nota 6,00 en I8 (Lago Verde) son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona (I1_I: Norte 92,1%, Sur 90,4%, Centro 87,2%; I8: media muestral n=423 de 4,98 y referente regional ponderado 5,08).",
           "why_complex_system": "Comportamiento emergente: un ecosistema científico maduro trasciende la simple suma de proyectos, generando redes de transferencia territorial auto-sostenidas."
         }
       ]
@@ -6023,7 +6023,7 @@
           "showAverage": true,
           "showTrend": true
         },
-        "what_it_shows": "La Universidad de Aysén obtiene una evaluación regional positiva de 5,08 sobre 7,0, alcanzando sus notas más altas en territorios con programas colaborativos o estaciones (Lago Verde 6,00, Cochrane 5,35, Tortel 5,20, Chile Chico 5,13, Río Ibáñez 5,11, Cisnes 5,04), mientras cae en comunas extremas sin presencia universitaria permanente (Guaitecas 4,17 y O'Higgins 4,33) pese al 100% de prioridad ciudadana en O'Higgins y Tortel.",
+        "what_it_shows": "La Universidad de Aysén obtiene un referente regional ponderado de 5,08 sobre 7,0 y una media muestral directa (n=423) de 4,98 (71,4% notas 5-7: Macrozona Centro 5,04, Norte 4,95 y Sur 4,90), con menor valoración relativa en territorios extremos sin presencia permanente (Guaitecas 4,17 y O'Higgins 4,33). Advertencia metodológica (Semáforo Barómetro N=465): solo Coyhaique (11101) y Aysén (11201) operan en semaforo_muestral_barometro 'verde' (n>=50), mientras las 8 comunas rurales operan en 'rojo_baja_precision_n_menor_30' (n<30), por lo que extremos como 100,0% en I1_I (Lago Verde, O'Higgins, Tortel) o nota 6,00 en I8 (Lago Verde) son artefactos de micro-muestra (n<=5) que deben interpretarse a nivel de Macrozona (I1_I: Norte 92,1%, Sur 90,4%, Centro 87,2%; I8: media muestral n=423 de 4,98 y referente regional ponderado 5,08).",
         "why_complex_system": "Brecha de presencia institucional: la legitimidad de la universidad regional crece allí donde mantiene vinculación presencial con las comunidades rurales, y decrece cuando el territorio solo percibe aislamiento."
       },
       {
@@ -6034,7 +6034,7 @@
         "subtype": "grouped_bar",
         "inter_hub_cross": {
           "cross_hub": "social",
-          "descripcion": "Documenta el acoplamiento entre investigadores residentes, captación ANID ($17.326,8 MM) y los 2.327 estudiantes de educación superior SIES (INACAP, UAysén, CFT Estatal)"
+          "descripcion": "Documenta el acoplamiento entre investigadores residentes (124), captación ANID ($17.326,8 MM) y los 2.924 estudiantes de educación superior SIES 2026 (INACAP Coyhaique 1.187, UAysén 1.000, CFT Estatal de Aysén 737)"
         },
         "config": {
           "widget_type": "chart",
@@ -6046,7 +6046,7 @@
           "showAverage": true,
           "showTrend": true
         },
-        "what_it_shows": "Evidencia un acoplamiento casi perfecto (r = +0.9984, R² = 0.9969) entre la masa crítica de 124 investigadores residentes y la captación acumulada de fondos ANID ($17.326,8 MM), articulado con una matrícula de 2.327 estudiantes de educación superior SIES 2026 (INACAP Coyhaique 800 [34,4%], Universidad de Aysén 790 [33,9%] y CFT Estatal de Aysén 737 [31,7%] en Puerto Aysén y Coyhaique).",
+        "what_it_shows": "Evidencia un acoplamiento casi perfecto (r = +0.9984, R² = 0.9969) entre la masa crítica de 124 investigadores residentes y la captación acumulada de fondos ANID ($17.326,8 MM en 120 proyectos: 68 locales y 52 extrarregionales), articulado con una matrícula oficial de 2.924 estudiantes de educación superior SIES 2026 (2.907 pregrado + 17 postgrado: INACAP Coyhaique 1.187 [40,6%], Universidad de Aysén 1.000 [34,2%, evolucionando desde 660 en 2024 y 793 en 2025] y CFT Estatal de Aysén 737 [25,2%] en Puerto Aysén y Coyhaique).",
         "why_complex_system": "Retorno de escala en capital humano: atraer y retener investigadores residentes multiplica linealmente la capacidad de adjudicación competitiva y alimenta la formación técnica-universitaria regional."
       }
     ]

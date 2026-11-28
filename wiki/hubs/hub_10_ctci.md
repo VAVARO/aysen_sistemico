@@ -12,10 +12,11 @@ variables_clave:
   - investigadores_residentes_est
   - centros_y_estaciones_ctci_count
   - proporcion_ciencia_endogena_pct
+  - matricula_educacion_superior_sies_n
 fuentes_oficiales:
-  - "ANID DataCiencia — Cartera Histórica y Vigente de Proyectos FONDECYT, FONDEF y Centros Regionales"
-  - "CORFO Innova Aysén — Portafolio de Innovación Productiva Regional"
-  - "CIEP / Universidad de Aysén / INIA Tamel Aike / INFOR / IFOP — Catastro de Centros y Estaciones de Campo"
+  - "ANID DataCiencia / Compendio 2021-2025 / FIUT Etapa 2 / PATSER R20F0002 / FONDAP"
+  - "Nodo Ciencia Austral (NCA 2026) — Catastro de Equipamiento Científico Crítico y FONDEQUIP"
+  - "SIES MINEDUC / SES / CNA / SEREMI de Ciencia Aysén / CDPR CORFO / FIA / INAPI 2026 / Barómetro N=465"
 updated_at: "2026-11-23"
 tags:
   - aysen-sistemico
@@ -27,7 +28,7 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-El Hub X (CTCi, Ciencia e Innovación) cartografía la capacidad científica endógena y extrarregional desplegada en Aysén: 16 centros científicos y estaciones experimentales geolocalizadas, 124 investigadores residentes estimados (91 en Coyhaique, 14 en Aysén, 4 en Cisnes y presencia en estaciones de Tortel, Río Ibáñez, Chile Chico, Cochrane, Guaitecas, O'Higgins y Lago Verde) y 179 proyectos CTCi totales compuestos por 120 proyectos ANID (17.326,8 M$, desglosados en 68 adjudicaciones de instituciones locales como CIEP, UAysén e INIA Tamel Aike y 52 expediciones extrarregionales) más 59 proyectos de innovación productiva CORFO Innova (8.450,0 M$).
+El Hub X (CTCi, Ciencia e Innovación) distingue exactamente 179 proyectos CTCi totales ($25.776,8M CLP) compuestos por 120 proyectos científicos ANID ($17.326,8M: 68 locales endógenos por $11.850,5M [68,4%] y 52 extrarregionales por $5.476,3M [31,6%]) más 59 proyectos CORFO Innova ($8.450,0M). Registra 16 centros científicos y estaciones (124 investigadores residentes: 91 en Coyhaique, 14 en Puerto Aysén): nómina real CIEP (23 inv. [19 PhD] + 12 apoyo = 35 I+D + 12 gestión = 47 personas; PATSER R20F0002 $2.750M + Basal GORE 2026 >$1.599M), UAysén (FIUT Etapa 2 $10.484M a 10 años, fin Administración Provisional SES 15-01-2026, Rector Dr. Víctor Cubillos), INIA Tamel Aike (1er Banco de Recursos Zoogenéticos de Chile), IFOP Puerto Aysén (nueva sede/lab. oct-2024), Reserva Elemental Melimoyu (Fundación MERI, 16.000 ha en Cisnes, excluyendo Huinay), Estación Cerro Castillo UAysén / Bahía Exploradores UC (jurisdicción Aysén 11201, acceso Río Ibáñez 11402), COPAS Coastal (2026-2031) e INCAR². Incluye el Catastro NCA 2026 (6 FONDEQUIP en Aysén; 9 equipos críticos activos = $1.683,06M: UAysén 4 [$1.295,86M], CIEP 4 [$330,35M, con limitante de mantenimiento en Aqualog], INIA 1 [$56,85M] + SODAR-RASS UACh $137,60M e IFCB UdeC/COPAS), matrícula SIES 2026 de 2.924 estudiantes (Coyhaique 2.187: INACAP 1.187 + UAysén 1.000; Puerto Aysén 737: CFT Estatal; cierre pregrado UACh Patagonia ago-2025), CDPR CORFO ($1.930M 2024 -> $1.885M + $747M Sercotec 2025 -> $2.534M 2026), Plan Aysén Azul (>$7.500M), FIA (244 ha cerezos / 660 ton, vitivinicultura austral, orujo cervecero 2026), INAPI 2026 (252 marcas residentes +63% #1 nacional), nueva SEREMI de Ciencia Aysén (oct-2025, Gabriel Pérez Aros) y semáforo muestral Barómetro (N=465; verde 11101/11201 vs rojo n<30 en 8 rurales; I8 referente 5,08 / media n=423 4,98).
 
 ## Indicadores Comunales Verificados
 

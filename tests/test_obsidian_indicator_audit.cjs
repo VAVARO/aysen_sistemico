@@ -564,7 +564,52 @@ function runTests() {
   console.log('  [PASS] Eval 22: CMN 16/23 (Capilla Marmol Rio Ibanez), RMC 16/27 (MRA 36.173), SNBP 16 (54 esp.), Gasto Censo 2024, Indigena 29,0% / 47 SIIC / 25 PCC y Barometro verificados.');
   passed++;
 
-  console.log(`\n[ALL PASS] ${passed}/22 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
+  // --- EVAL 23: Invariantes Hub X (16 Centros / 124 Inv., 120 ANID + 59 CORFO = 179 CTCi, FIUT $10.484M, NCA $1.683,1M, SIES 2.924, CDPR $2.534M, Plan Aysen Azul, INAPI 252, SEREMI Ciencia y Semaforo Barometro) ---
+  console.log('--- Eval 23: Invariantes Hub X CTCi, ANID/FIUT/FONDEQUIP NCA 2026, SIES 2.924, CDPR/FIA/INAPI, SEREMI y Barometro ---');
+  assert.strictEqual(
+    audit.evaluateHub10CtciAnidFondequipSiesCorfoBarometroInvariants(currBundle).length,
+    0,
+    'El bundle actual reconciliado debe pasar Eval 23 directo sobre bundle con 0 alertas'
+  );
+  assert.strictEqual(
+    audit.evaluateHub10CtciAnidFondequipSiesCorfoBarometroInvariants(currSnap).length,
+    0,
+    'El snapshot actual reconciliado debe pasar Eval 23 con 0 alertas'
+  );
+
+  // 23a: Regresion cuadratura centros/inv (Coyhaique 5/82), NCA monto (900M) y SIES 2026 (2327) -> ROJO
+  const badCtciCoreSnap = JSON.parse(JSON.stringify(currSnap));
+  badCtciCoreSnap.indicators.centros_y_estaciones_ctci_count.values['11101'] = 5;
+  const invKeyTest = badCtciCoreSnap.indicators.investigadores_residentes_est ? 'investigadores_residentes_est' : 'investigadores_residentes';
+  badCtciCoreSnap.indicators[invKeyTest].values['11101'] = 82;
+  badCtciCoreSnap.hub10CtciAudit.ncaEquipamiento.monto_total_clp = 900000000;
+  badCtciCoreSnap.hub10CtciAudit.siesDisk.total = 2327;
+  const badCtciCoreDiff = audit.compareSnapshots(currSnap, badCtciCoreSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badCtciCoreDiff.semaforo, 'ROJO');
+  assert(
+    badCtciCoreDiff.verificationAlerts.some(a => a.code === 'ERROR_CUADRATURA_CTCI_DISCO_BUNDLE_16_124_179') &&
+    badCtciCoreDiff.verificationAlerts.some(a => a.code === 'ERROR_HITOS_ANID_FIUT_PATSER_Y_CATASTRO_NCA_2026') &&
+    badCtciCoreDiff.verificationAlerts.some(a => a.code === 'ERROR_RECONCILIACION_SIES_2026_2924_Y_PRESET_CT07'),
+    'Debe detectar regresiones en cuadratura 16/124, Catastro NCA 2026 y matricula SIES 2.924'
+  );
+
+  // 23b: Regresion CDPR/INAPI (cdpr_2026=1900, inapi=155) y Semaforo Barometro/I8/Wiki -> ROJO
+  const badCtciGovSnap = JSON.parse(JSON.stringify(currSnap));
+  badCtciGovSnap.hub10CtciAudit.finDescentralizado.cdpr_2026 = 1900;
+  badCtciGovSnap.hub10CtciAudit.gobInnovacion.inapi_marcas_2025 = 155;
+  badCtciGovSnap.hub10CtciAudit.semaforoByIne['11102'] = 'verde';
+  badCtciGovSnap.hub10CtciAudit.barometroResumen.i8_n423 = 0;
+  const badCtciGovDiff = audit.compareSnapshots(currSnap, badCtciGovSnap, { autoUpdateStatus: allGreenApi });
+  assert.strictEqual(badCtciGovDiff.semaforo, 'ROJO');
+  assert(
+    badCtciGovDiff.verificationAlerts.some(a => a.code === 'ERROR_FINANCIAMIENTO_DESCENTRALIZADO_CDPR_AZUL_FIA_SEREMI_INAPI') &&
+    badCtciGovDiff.verificationAlerts.some(a => a.code === 'ERROR_SEMAFORO_BAROMETRO_CTCI_Y_WIKI_HUB10'),
+    'Debe detectar regresiones en CDPR CORFO / INAPI y semaforo muestral / I8 / Wiki Hub X'
+  );
+  console.log('  [PASS] Eval 23: 16 Centros / 124 Inv., 120 ANID + 59 CORFO = 179 CTCi, FIUT $10.484M, NCA $1.683,1M, SIES 2.924, CDPR $2.534M, INAPI 252 (+63%), SEREMI Ciencia y Semaforo Barometro verificados.');
+  passed++;
+
+  console.log(`\n[ALL PASS] ${passed}/23 evals automatizados de auditoría Obsidian V3 pasaron correctamente.`);
 }
 
 runTests();

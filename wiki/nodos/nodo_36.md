@@ -21,22 +21,22 @@ tags:
 
 ## Síntesis Compilada (Consultor IA)
 
-Infraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026), INIA Tamel Aike (10), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos).
+Infraestructura científica fija y educación superior en la región: 16 centros y estaciones de campo (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16) y 2.924 estudiantes de Educación Superior SIES 2026 (2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén), contrastando centros endógenos con estaciones de investigación extrarregionales. Coyhaique alberga 6 centros con 91 investigadores residentes: CIEP (34 · nómina 2026: 23 investigadores [19 PhD] + 12 apoyo = 35 I+D + 12 gestión = 47 personas), UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026 · cierre Administración Provisional SES 15-01-2026 · Rector Dr. Víctor Cubillos), INIA Tamel Aike (10 · 1er Banco de Recursos Zoogenéticos de Chile), INFOR Sede Patagonia (9), UACh Campus Patagonia (5 · 32 proyectos ANID · cierre pregrado ago-2025) y DGAC BBA (2), junto a INACAP Coyhaique (1.187 alumnos) y CFT Estatal de Aysén en Puerto Aysén (737 alumnos). En territorio destacan la nueva sede/laboratorio IFOP Puerto Aysén (oct-2024), Reserva Elemental Melimoyu (Fundación MERI, 16.000 ha en Cisnes, excluyendo Huinay) y el deslinde de Bahía Exploradores (jurisdicción Aysén 11201, acceso vía Puerto Río Tranquilo / Río Ibáñez 11402) junto a Estación Cerro Castillo UAysén.
 
 ## Indicadores Comunales Verificados
 
 | Comuna | Centros y Estaciones I+D | Investigadores Residentes | Instituciones Principales | Prioridad Ciudadana (%) |
 | --- | --- | --- | --- | --- |
-| [[comunas/coyhaique|Coyhaique]] | 6 | 91 | CIEP / UAysén / INIA Tamel Aike / INFOR / UACh Patagonia / DGAC | 88.6% |
-| [[comunas/lago_verde|Lago Verde]] | 1 | 1 | MinCiencia / CONAF / UAysén | 100% |
-| [[comunas/aysen|Aysén]] | 2 | 14 | CECs / U. de Chile / Plataforma Bioseguridad IFOP | 93.8% |
-| [[comunas/cisnes|Cisnes]] | 1 | 4 | IFOP Puerto Cisnes | 85.2% |
-| [[comunas/guaitecas|Guaitecas]] | 1 | 2 | IFOP Melinka (Marea Roja) | 87.5% |
-| [[comunas/chile_chico|Chile Chico]] | 1 | 3 | INIA Tamel Aike (Agroclimática) | 84% |
-| [[comunas/rio_ibanez|Río Ibáñez]] | 1 | 2 | Pontificia Universidad Católica (PUC) | 90% |
-| [[comunas/cochrane|Cochrane]] | 1 | 3 | CIEP / UAysén (Cuencas Australes) | 83.3% |
-| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | CECs / U. de Concepción | 100% |
-| [[comunas/tortel|Tortel]] | 1 | 3 | CIEP / Municipalidad de Tortel | 100% |
+| [[comunas/coyhaique|Coyhaique]] | 6 | 91 | CIEP (23 inv./19 PhD + 12 apoyo) / UAysén / INIA (Banco Zoogenético) / INFOR / UACh / DGAC | 88.6% |
+| [[comunas/lago_verde|Lago Verde]] | 1 | 1 | INIA Agrometeorología / MinCiencia / CONAF / UAysén | 100% |
+| [[comunas/aysen|Aysén]] | 2 | 14 | IFOP Sede y Lab. Puerto Aysén / Plataforma Barrio 21B / CECs-U. de Chile San Rafael | 93.8% |
+| [[comunas/cisnes|Cisnes]] | 1 | 4 | IFOP Puerto Cisnes / Reserva Elemental Melimoyu (Fundación MERI) | 85.2% |
+| [[comunas/guaitecas|Guaitecas]] | 1 | 2 | IFOP Melinka (Marea Roja) / CBA-MERI (Cetáceos) | 87.5% |
+| [[comunas/chile_chico|Chile Chico]] | 1 | 3 | INIA Tamel Aike (Agroclimática) / Sitio Paleontológico Formación Toqui | 84% |
+| [[comunas/rio_ibanez|Río Ibáñez]] | 1 | 2 | Estación Cerro Castillo (UAysén) / Estación Patagonia UC (Bahía Exploradores) | 90% |
+| [[comunas/cochrane|Cochrane]] | 1 | 3 | CIEP / UAysén / DGA / Rewilding (Cuencas y PN Patagonia) | 83.3% |
+| [[comunas/ohiggins|O'Higgins]] | 1 | 1 | DGA Glaciología / CECs / UdeC (Campo de Hielo Sur) | 100% |
+| [[comunas/tortel|Tortel]] | 1 | 3 | CIEP / COPAS Coastal (UdeC) / CIAyT / DGA (Caleta Tortel) | 100% |
 
 ## Metadatos de Procedencia Institucional
 

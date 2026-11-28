@@ -770,7 +770,7 @@ const hubs = [
     title: 'X. CTCi, Ciencia & Innovación',
     shortTitle: 'CTCi, Ciencia & Innovación',
     color: '#6d28d9',
-    description: 'Ecosistema de ciencia, tecnología y educación superior austral: **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), **179 proyectos de I+D**, cartera histórica ANID y **15 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15).',
+    description: 'Ecosistema de ciencia, tecnología y educación superior austral: **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), **179 proyectos de I+D**, cartera histórica ANID y **16 centros y estaciones científicas** (incluyendo INFOR Sede Patagonia CTCI-NOD-15 y UACh Campus Patagonia CTCI-NOD-16).',
     example: 'Articula la educación superior e investigación local liderada por el **CFT Estatal de Aysén** (737 alumnos), **INACAP Coyhaique** (1.187 alumnos), la **Universidad de Aysén** (1.000 alumnos), el **CIEP**, el Instituto Forestal **INFOR Sede Patagonia (CTCI-NOD-15)** e **INIA Tamel Aike** frente a estaciones científicas en fiordos y glaciares.',
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     nodesFile: 'data/systemic/csv/10_ctci_innovacion_nodos.csv',
@@ -2519,8 +2519,8 @@ const rawNodos = [
     id: 35,
     hubId: 'ctci',
     title: 'Proyectos de investigación científica adjudicados',
-    definition: 'Cartera histórica de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID**): proyectos FONDECYT, FONDEF, Centros Regionales y becas de posgrado adjudicadas con ejecución en el territorio regional.',
-    example: 'Registra **179 proyectos de investigación (17.326 MM CLP acumulados)**, donde el **CIEP** y la **Universidad de Aysén** concentran el 68% de los fondos locales en ecología acuática, glaciología y desarrollo territorial.',
+    definition: 'Cartera histórica y vigente de iniciativas científicas financiadas por la Agencia Nacional de Investigación y Desarrollo (**ANID** / **MinCiencia**): **120 proyectos científicos ANID adjudicados en Aysén por $17.326,8 millones CLP** (**68 proyectos de instituciones locales residentes por $11.850,5M [68,4%]** y **52 proyectos de universidades extrarregionales por $5.476,3M [31,6%]**; que junto a los **59 proyectos CORFO Innova por $8.450,0M** suman **179 proyectos CTCi totales por $25.776,8M**), reforzados por el nuevo **Fondo de Investigación Universitaria Territorial (FIUT Etapa 2) de la Universidad de Aysén ($10.484 millones a 10 años, 2025-2035)**, el convenio **PATSER CIEP R20F0002 ($2.750M) + Basal GORE 2026 (>$1.599M)** y el **Catastro de Equipamiento Científico Crítico del Nodo Ciencia Austral 2026 (6 proyectos FONDEQUIP en Aysén y 9 equipos críticos activos >=$50M por $1.683,06 millones CLP)**.',
+    example: 'De las **120 adjudicaciones históricas ANID ($17.326,8M)**, lideran **CIEP (34 proyectos)**, **UACh (32)**, **Universidad de Aysén (22)**, **U. de Chile (3)** y otras instituciones (29). En el **Catastro de Equipamiento Crítico NCA 2026 ($1.683.057.705 CLP en 9 equipos activos en Coyhaique)**, la **UAysén concentra 4 equipos por $1.295,86M (77,0%)** —Microscopio de Fuerzas Atómicas EQM200182 ($399,98M), Seahorse XF Pro EQM240161 ($385,83M, mar-2026), Cytek Aurora EQM230139 ($353,54M) y Drone Multiespectral EQM170060 ($156,52M)—, el **CIEP opera 4 equipos por $330,35M (19,6%)** —Plataforma EQM220096 (Espectrofluorímetro Aqualog $113,02M con limitante de mantenimiento preventivo, Microanalizador CHN $85,26M y Analizador TOC/TN $72,79M) más Cromatógrafo Iónico Dionex ($59,28M)— e **INIA Tamel Aike opera 1 Analizador Elemental CN ($56,85M, 3,4%)**, además del SODAR-RASS EQM160161 UACh ($137,60M) e IFCB EQM170178 UdeC/COPAS Coastal.',
     officialSource: { name: 'Base de Datos Histórica ANID / MinCiencia OBSERVA', url: 'https://anid.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     relatedNodeIds: [18, 20, 25, 36],
@@ -2564,7 +2564,7 @@ const rawNodos = [
         'Cruce con Educación Superior y SLEP (Nodo #25)',
         'Cruce con Empresas e Inversión Productiva (Nodo #20)'
       ],
-      totalRecordsInFullBase: '179 proyectos de investigación georreferenciados en data/systemic/10_ctci_innovacion.json'
+      totalRecordsInFullBase: '120 proyectos científicos ANID ($17.326,8M) y 9 equipos críticos NCA ($1.683,1M) dentro de 179 proyectos CTCi totales en data/systemic/10_ctci_innovacion.json'
     }
   },
   {
@@ -2572,7 +2572,7 @@ const rawNodos = [
     hubId: 'ctci',
     title: 'Centros I+D Locales UAysén/CIEP/INIA/UACh vs. Ciencia Extrarregional',
     definition: 'Infraestructura científica fija y educación superior en la región: **16 centros y estaciones de campo** (incluyendo **INFOR Sede Patagonia CTCI-NOD-15** y **UACh Campus Patagonia CTCI-NOD-16**) y **2.924 estudiantes de Educación Superior SIES 2026** (**2.187 en Coyhaique: INACAP 1.187 y UAysén 1.000; 737 en Puerto Aysén: CFT Estatal de Aysén**), contrastando centros endógenos con estaciones de investigación extrarregionales.',
-    example: 'Coyhaique alberga 6 centros con 91 investigadores residentes: **CIEP (34)**, **UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026)**, **INIA Tamel Aike (10)**, **INFOR Sede Patagonia (9)**, **UACh Campus Patagonia (5 · 32 proyectos ANID)** y **DGAC BBA (2)**, junto a **INACAP Coyhaique (1.187 alumnos)** y **CFT Estatal de Aysén en Puerto Aysén (737 alumnos)**.',
+    example: 'Coyhaique alberga 6 centros con 91 investigadores residentes: **CIEP (34 · nómina 2026: 23 investigadores [19 PhD] + 12 apoyo = 35 I+D + 12 gestión = 47 personas)**, **UAysén Campus Río Simpson (31 · 1.000 alumnos SIES 2026 · cierre Administración Provisional SES 15-01-2026 · Rector Dr. Víctor Cubillos)**, **INIA Tamel Aike (10 · 1er Banco de Recursos Zoogenéticos de Chile)**, **INFOR Sede Patagonia (9)**, **UACh Campus Patagonia (5 · 32 proyectos ANID · cierre pregrado ago-2025)** y **DGAC BBA (2)**, junto a **INACAP Coyhaique (1.187 alumnos)** y **CFT Estatal de Aysén en Puerto Aysén (737 alumnos)**. En territorio destacan la nueva sede/laboratorio IFOP Puerto Aysén (oct-2024), Reserva Elemental Melimoyu (Fundación MERI, 16.000 ha en Cisnes, excluyendo Huinay) y el deslinde de Bahía Exploradores (jurisdicción Aysén 11201, acceso vía Puerto Río Tranquilo / Río Ibáñez 11402) junto a Estación Cerro Castillo UAysén.',
     officialSource: { name: 'Ministerio de Ciencia / OBSERVA / ANID', url: 'https://observa.minciencia.gob.cl/', frequency: 'Continuo' },
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     relatedNodeIds: [6, 25, 27, 35],
@@ -2591,16 +2591,16 @@ const rawNodos = [
     tableRows: comunasBase.map(c => {
       const ct = wp10ByIne[String(c.comuna_ine)] || {};
       const actoresCtciPorIne = {
-        '11101': 'CIEP / UAysén / INIA Tamel Aike / INFOR / UACh Patagonia / DGAC',
-        '11102': 'MinCiencia / CONAF / UAysén',
-        '11201': 'CECs / U. de Chile / Plataforma Bioseguridad IFOP',
-        '11202': 'IFOP Puerto Cisnes',
-        '11203': 'IFOP Melinka (Marea Roja)',
-        '11301': 'CIEP / UAysén (Cuencas Australes)',
-        '11302': 'CECs / U. de Concepción',
-        '11303': 'CIEP / Municipalidad de Tortel',
-        '11401': 'INIA Tamel Aike (Agroclimática)',
-        '11402': 'Pontificia Universidad Católica (PUC)'
+        '11101': 'CIEP (23 inv./19 PhD + 12 apoyo) / UAysén / INIA (Banco Zoogenético) / INFOR / UACh / DGAC',
+        '11102': 'INIA Agrometeorología / MinCiencia / CONAF / UAysén',
+        '11201': 'IFOP Sede y Lab. Puerto Aysén / Plataforma Barrio 21B / CECs-U. de Chile San Rafael',
+        '11202': 'IFOP Puerto Cisnes / Reserva Elemental Melimoyu (Fundación MERI)',
+        '11203': 'IFOP Melinka (Marea Roja) / CBA-MERI (Cetáceos)',
+        '11301': 'CIEP / UAysén / DGA / Rewilding (Cuencas y PN Patagonia)',
+        '11302': 'DGA Glaciología / CECs / UdeC (Campo de Hielo Sur)',
+        '11303': 'CIEP / COPAS Coastal (UdeC) / CIAyT / DGA (Caleta Tortel)',
+        '11401': 'INIA Tamel Aike (Agroclimática) / Sitio Paleontológico Formación Toqui',
+        '11402': 'Estación Cerro Castillo (UAysén) / Estación Patagonia UC (Bahía Exploradores)'
       };
       return [
         c.nombre,
@@ -2628,8 +2628,8 @@ const rawNodos = [
     id: 37,
     hubId: 'ctci',
     title: 'Proyectos de innovación productiva local',
-    definition: 'Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CORFO (Innova Chile / DataInnovación)** y la Fundación para la Innovación Agraria (**FIA**): proyectos aprobados, montos de cofinanciamiento y vinculación industria-academia.',
-    example: 'Registra **59 proyectos CORFO Innova (8.450 MM CLP)** focalizados en acuicultura sustentable, bioseguridad, diversificación frutícola bajo microclima en Chile Chico y turismo científico en el Baker.',
+    definition: 'Iniciativas de transferencia tecnológica e innovación empresarial financiadas por **CDPR CORFO Aysén**, **Plan Aysén Azul / Transforma Litoral (>$7.500M)**, **FIA**, **FIC-R GORE Aysén** y propiedad industrial (**INAPI 2026**), bajo articulación de la **SEREMI de Ciencia exclusiva de Aysén** (instalada en oct-2025, Seremi Gabriel Pérez Aros) y el **Comité Regional de CTCID** (ERI vencida desde 2020; convocatoria dic-2026 para nueva Estrategia CTCID 2027).',
+    example: 'Registra **59 proyectos CORFO Innova ($8.450M)**, **CDPR CORFO Aysén** (**$1.930M en 2024 -> $1.885M CORFO + $747M Sercotec en 2025 -> $2.534M en 2026, +34,4%**), **Plan Aysén Azul (>$7.500M a 36 meses)**, **FIA (244 ha cerezos Chile Chico / 660 ton, vitivinicultura austral Pinot Noir/Chardonnay y valorización de orujo cervecero 2026)**, **INAPI 2026 (252 marcas residentes en 2025, +63% #1 nacional)** y percepción ciudadana del Barómetro (N=465: I8 referente 5,08 / media n=423 de 4,98; semáforo rojo n<30 en las 8 comunas rurales).',
     officialSource: { name: 'CORFO DataInnovación / FIA / MinCiencia', url: 'https://datainnovacion.corfo.cl/', frequency: 'Anual' },
     csvFile: 'data/systemic/csv/10_ctci_innovacion_comunas.csv',
     relatedNodeIds: [10, 19, 20, 35],

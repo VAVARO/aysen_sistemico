@@ -52,8 +52,8 @@ El ecosistema de conocimiento de Aysén no es una simple suma de aulas universit
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ RECURSIÓN N+1: Meta-Sistema Nacional / Macrozona Austral de CTCI       │
-│ MinCiencia Macrozonal (Punta Arenas) · ANID · SES · CNA · CRUCH · GORE │
+│ RECURSIÓN N+1: Meta-Sistema Nacional / Gobernanza CTCI de Aysén        │
+│ MinCiencia / SEREMI Ciencia Aysén (oct-2025) · ANID · SES · CNA · GORE │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │
                                     ▼
@@ -78,7 +78,7 @@ El ecosistema de conocimiento de Aysén no es una simple suma de aulas universit
 #### Recursión N+1: Meta-Sistema Macrozonal Austral y Nacional de CTCI y Educación Superior
 - **Nombramiento:** Sistema Soberano de Generación, Financiamiento y Regulación de Capacidades Científicas, Tecnológicas y Formativas para la Patagonia Austral y Antártica.
 - **T (Transformación):** Dispersión geográfica extrema, asimetría de financiamiento centralista y aislamiento patagónico $\rightarrow$ Consolidación de soberanía de conocimiento, gobernanza territorialmente equitativa, retención de capital humano avanzado y regulación integral de la calidad académica en zonas extremas.
-- **A (Actores):** Ministerio de Ciencia, Tecnología, Conocimiento e Innovación (MinCiencia - Secretaría Regional Ministerial Macrozona Austral Aysén-Magallanes), Agencia Nacional de Investigación y Desarrollo (ANID), Subsecretaría de Educación Superior (Mineduc), Superintendencia de Educación Superior (SES), Comisión Nacional de Acreditación (CNA), Corporación de Fomento de la Producción (CORFO central), Consejo de Rectores de las Universidades Chilenas (CRUCH).
+- **A (Actores):** Ministerio de Ciencia, Tecnología, Conocimiento e Innovación (MinCiencia - SEREMI de Ciencia propia de Aysén instalada en octubre de 2025, tras superar la etapa exclusiva de Macrozona Austral en Punta Arenas), Agencia Nacional de Investigación y Desarrollo (ANID), Subsecretaría de Educación Superior (Mineduc), Superintendencia de Educación Superior (SES), Comisión Nacional de Acreditación (CNA), Corporación de Fomento de la Producción (CORFO central), Consejo de Rectores de las Universidades Chilenas (CRUCH).
 - **S (Proveedores):** Tesoro Público (Ley de Presupuestos del Sector Público), DIPRES, fondos basales de ciencia, cooperación científica internacional, egresados secundarios de todo el país.
 - **C (Clientes):** Las comunidades y aparatos productivos de las regiones de Aysén y Magallanes, la comunidad científica nacional e internacional, la administración pública del Estado.
 - **O (Propietarios):** El Estado de Chile (Ministerio de Educación, MinCiencia, Presidencia de la República).
@@ -138,33 +138,32 @@ Reconstruyendo la metodología de flujogramas industriales cuantificados de Espe
                             ┌─────────────────────────────────────────────────────┴──────────┐
                             ▼                                                                ▼
               [SUBSISTEMA UNIVERSITARIO REGIONAL]                          [SUBSISTEMA TÉCNICO-PROFESIONAL (CFT/IP)]
-                   (Matrícula Total: ~800 alumnos)                              (Matrícula Total: ~1.500 alumnos)
+                 (Matrícula SIES 2026: 1.000 alumnos)                      (Matrícula SIES 2026: 1.924 alumnos)
                             │                                                                │
             ┌───────────────┴───────────────┐                                ┌───────────────┴───────────────┐
             ▼                               ▼                                ▼                               ▼
      [UDELAYSÉN (Estatal)]       [UACH CAMPUS PATAGONIA]             [CFT ESTATAL AYSÉN]             [INACAP COYHAIQUE]
-     - 790 estudiantes           - Cierre progresivo pregrado        - 737 estudiantes               - ~800 estudiantes
-     - 13 carreras vigentes        aprobado por Valdivia             - Puerto Aysén y Coyhaique      - Gratuidad y vespertino
-     - Salida de Administrador   - Enfocado solo a posgrados/        - Foco en procesos acuícolas,   - Carreras operativas de
-       Provisional (2024-2026)     investigación aplicada              electricidad y salud            servicios y mecánica
+     - 1.000 estudiantes SIES    - Cierre pregrado ago-2025          - 737 estudiantes               - 1.187 estudiantes SIES
+       2026 (660->793->1.000)      aprobado por Valdivia             - Puerto Aysén (Sede Central)   - Coyhaique (Gratuidad)
+     - Término Adm. Provisional  - Posgrados e investigación         - Foco en procesos acuícolas,   - Carreras técnicas de
+       SES (15-01-2026)            aplicada (32 proy. ANID)            electricidad y salud            servicios y mecánica
             │                                                                │                               │
             └───────────────────────────────┬────────────────────────────────┴───────────────────────────────┘
                                             ▼
                     [MASA CRÍTICA REGIONAL DE CAPITAL HUMANO AVANZADO]
-                      - Total investigadores residentes: ~115 personas
-                      - Doctores (PhD) con dedicación exclusiva en I+D: ~65 personas
-                      - Concentración: 71.3% radicados en Coyhaique / 12.2% Puerto Aysén
+                      - Total investigadores residentes: 124 personas en 16 centros
+                      - Catastro NCA 2026: 9 equipos críticos activos ($1.683,1 MM CLP)
+                      - Concentración: 73,4% (91) en Coyhaique / 11,3% (14) Puerto Aysén
                                             │
                                             ▼
-                    [FLUJOS DE FINANCIAMIENTO PÚBLICO A LA I+D (2023-2025)]
+                    [FLUJOS DE FINANCIAMIENTO PÚBLICO A LA I+D (2024-2026)]
                                             │
      ┌──────────────────────────────────────┼──────────────────────────────────────┐
      ▼                                      ▼                                      ▼
-[ANID MACROZONAL]                      [FIC-R / GORE AYSÉN]                   [CORFO CDPR AYSÉN]
-- ~$2.900 MM adjudicados tramo 2023    - Histórico: $1.500 - $2.500 MM/año    - $1.930 MM ejecutados en 2024
-  (compartidos con Magallanes)         - Golpeado por "Caso Convenios"        - $1.900 MM presupuestados 2025
-- $1.800 MM Fondecyt Regular/Inic.       (freno post-ProCultura)              - 100% descentralizado por
-- Adjudicación local: CIEP, UdelAysén  - Parálisis por Glosa 7 Dipres           Comité de Fomento Regional
+[ANID HISTÓRICO + FIUT]                [FIC-R / BASAL GORE AYSÉN]             [CORFO CDPR AYSÉN + LITORAL]
+- 120 proyectos ANID ($17.326,8 MM)    - FIC 22-23: $1.200 MM (8 UAysén)      - $1.930M (2024) -> $1.885M (2025)
+- FIUT Etapa 2 UAysén: $10.484 MM      - Basal GORE CIEP 2026: >$1.599 MM     - $2.534 MM aprobados 2026 (+34,4%)
+- PATSER CIEP R20F0002: $2.750 MM      - FNDR-Minagri: $4.919 MM              - Plan Aysén Azul: >$7.500 MM
 ```
 
 #### Cuantificación de Capacidades y Rendimientos Operacionales
@@ -180,13 +179,13 @@ Aplicando las definiciones formales de Stafford Beer:
 
 | Eje Operacional / Unidad | Métricas Clave | Actualidad ($A$) | Capacidad ($C$) | Potencialidad ($P$) | Productividad ($A/C$) | Latencia ($C/P$) | Rendimiento ($A/P$) | Cuello de Botella Estructural |
 |---|---|---|---|---|---|---|---|---|
-| **Formación Universitaria (UdelAysén)** | Matrícula de pregrado vigente | 790 estudiantes | 1.200 estudiantes | 2.500 estudiantes | **0.66** | **0.48** | **0.32** | Falta de Campus Integrado propio (Campus Errázuriz en consolidación; edificio fundacional demorado); régimen de tutoría CNA. |
+| **Formación Universitaria (UdelAysén)** | Matrícula vigente SIES 2026 | 1.000 estudiantes | 1.200 estudiantes | 2.500 estudiantes | **0.66** | **0.48** | **0.32** | Falta de Campus Integrado propio (Campus Errázuriz en consolidación; edificio fundacional demorado); régimen de tutoría CNA. |
 | **Formación Técnico-Estatal (CFT Aysén)** | Matrícula activa en carreras TNS | 737 estudiantes | 1.000 estudiantes | 1.800 estudiantes | **0.74** | **0.56** | **0.41** | Capacidad de talleres en Puerto Aysén y dependencia de arriendos en Coyhaique; falta de sedes en cuenca Baker y litoral norte. |
 | **Investigación Socioecológica (CIEP)** | Proyectos activos I+D y publicaciones | 18 proyectos / 24 WoS/año | 25 proyectos / 35 WoS/año | 45 proyectos / 60 WoS/año | **0.72** | **0.56** | **0.40** | Incertidumbre presupuestaria de glosas basales GORE; trabas administrativas de rendición post-Caso Convenios. |
 | **Investigación Agropecuaria (INIA Tamel Aike)** | Ensayos de campo y transferencia a predios campesinos | 12 programas / 450 predios | 20 programas / 900 predios | 35 programas / 2.200 predios | **0.60** | **0.57** | **0.34** | Dispersión geográfica de las 10 comunas; presupuesto limitado de viáticos y vehículos 4x4 para cobertura rural profunda. |
 | **Investigación Forestal Nativa (INFOR)** | Monitoreo de cuencas madereras y biocombustibles | 6 líneas / 18 estaciones | 10 líneas / 30 estaciones | 18 líneas / 60 estaciones | **0.60** | **0.50** | **0.30** | Mercado informal de leña (>80% sin secado ni plan de manejo formal); debilidad de fiscalización de CONAF en terreno. |
 | **Monitoreo FAN y Oceanografía (IFOP)** | Cruceros de monitoreo y estaciones de marea roja | 14 cruceros/año / 45 estaciones | 20 cruceros/año / 65 estaciones | 36 cruceros/año / 120 estaciones | **0.70** | **0.54** | **0.38** | Disponibilidad de buques de investigación propios en fiordos australes; costo prohibitivo de horas de navegación arrendadas. |
-| **Innovación Productiva Regional (CDPR Corfo)** | Proyectos cofinanciados en pymes y cooperativas | 20 proyectos/año ($1.930 MM) | 35 proyectos/año ($2.800 MM) | 70 proyectos/año ($5.500 MM) | **0.57** | **0.64** | **0.36** | Baja capacidad de formulación técnica en empresas locales de comunas periféricas (Tortel, Guaitecas, O'Higgins). |
+| **Innovación Productiva Regional (CDPR Corfo)** | Proyectos cofinanciados en pymes y cooperativas | 24 proyectos/año ($1.930 MM 2024; $1.885 MM 2025; $2.534 MM 2026) | 35 proyectos/año ($2.800 MM) | 70 proyectos/año ($5.500 MM) | **0.57** | **0.64** | **0.36** | Baja capacidad de formulación técnica en empresas locales de comunas periféricas (Tortel, Guaitecas, O'Higgins). |
 | **Fondo de Innovación GORE (FIC-R)** | Fondos adjudicados y transferidos | ~$1.200 MM/año (retrasos) | $2.500 MM/año | $4.500 MM/año | **0.48** | **0.56** | **0.27** | Parálisis por excesivo celo burocrático de control tras escándalo nacional de fundaciones; Glosa 7 DIPRES rígida. |
 
 **Diagnóstico Cibernético del Rendimiento:**
@@ -202,7 +201,7 @@ El índice de Rendimiento Global del subsistema de conocimiento se sitúa entre 
 3. **Desastres Ecosistémicos y Floraciones Algales Nocivas ($V_{D3}$):** Proliferación de microalgas tóxicas (*Pseudochattonella*, *Alexandrium catenella*) que provocan mortandades masivas en centros de salmones (pérdidas de cientos de millones de dólares) y cierre prolongado de la extracción de mariscos en el litoral norte (Melinka, Puerto Aguirre, Cisnes), destruyendo el sustento de la pesca artesanal.
 4. **Crisis de Polución Atmosférica Invernal por Dendroenergía ($V_{D4}$):** Coyhaique lidera recurrentemente los rankings de contaminación por material particulado fino (MP2.5) en América Latina. El 100% de la leña consumida proviene de bosques nativos (lenga y ñirre), con un alto porcentaje comercializado en la informalidad con humedad >25%.
 5. **Parálisis Burocrática Post-"Caso Convenios" ($V_{D5}$):** El intento frustrado de convenio entre el GORE Aysén y Fundación ProCultura (más de $1.600 millones para el programa de Zonas Rezagadas en Capitán Prat), revocado antes de la firma final, desencadenó investigaciones de la Contraloría y el Ministerio Público, instalando un clima de hipervigilancia administrativa que asfixió la liquidez de centros legítimos como el CIEP.
-6. **Centralismo Macrozonal Remoto ($V_{D6}$):** La Secretaría Regional Ministerial de Ciencia fue estructurada abarcando Aysén y Magallanes de manera conjunta, pero su sede y la titularidad política se radicaron en Punta Arenas (a más de 1.000 km en línea recta, sin conexión vial directa con Coyhaique), generando una desconexión operacional sistemática con el terreno aysenino.
+6. **Brecha Histórica de Descentralización Científica ($V_{D6}$ — superada parcialmente con SEREMI propia desde oct-2025):** Hasta octubre de 2025, la SEREMI de Ciencia operó a nivel macrozonal desde Punta Arenas; tras la instalación de la primera SEREMI de Ciencia exclusiva en Aysén (Seremi Gabriel Pérez Aros en 2026) y la reactivación del Comité Regional de CTCID (sesiones 24-04-2026 y 26-11-2026; convocatoria dic-2026 para reemplazar la ERI vencida desde 2020), el desafío actual es dotar de continuidad financiera al sistema.
 
 #### Catálogo de Respuestas del Regulador ($V_R$) y Operadores de Variedad
 
@@ -340,17 +339,17 @@ El análisis cuantitativo de `10_ctci_innovacion.json` y del Nodo 35 revela una 
 - De los **68 proyectos ANID locales** ejecutados históricamente, **48 (70.6%) están radicados en Coyhaique** y 8 (11.8%) en Puerto Aysén. Es decir, dos comunas absorben el **82.4%** de la ciencia local.
 - Las 8 comunas restantes se reparten apenas 12 proyectos (17.6%). Comunas estratégicas para la biogeografía como **Lago Verde y O'Higgins registran 0 proyectos locales ANID**.
 - En términos de montos acumulados, Coyhaique concentra **$11.850,5 millones de los $17.326,8 millones (68.4%)**.
-- De los **115 investigadores residentes** estimados en la base, **82 (71.3%) viven en Coyhaique** y 14 (12.2%) en Puerto Aysén. El sur austral (Tortel, O'Higgins, Cochrane) reúne a menos del 5% de los científicos permanentes.
+- De los **124 investigadores residentes** verificados en los 16 centros de la base Sprint 13, **91 (73.4%) viven en Coyhaique** y 14 (11.3%) en Puerto Aysén. El sur austral (Tortel, O'Higgins, Cochrane) reúne apenas 7 científicos permanentes (5.6%).
 
 #### 2. Sesgo de Extractivismo Científico e Institucional Metropolitano
 El repositorio clasifica 52 proyectos de investigación como *"extrarregionales"*, ejecutados por universidades foráneas (Pontificia Universidad Católica de Chile, Universidad de Chile, CECs Valdivia):
-- En comunas como Río Ibáñez (Bahía Exploradores) y O'Higgins (Campos de Hielo), los proyectos de universidades de Santiago y Valdivia superan en número y financiamiento a los proyectos de instituciones locales.
+- En comunas como O'Higgins (Campos de Hielo) y el eje Río Ibáñez / Aysén (acceso terrestre por Puerto Río Tranquilo 11402 hacia Bahía Exploradores, concesión UC bajo jurisdicción administrativa de Aysén 11201, junto a la Estación Cerro Castillo UAysén en 11402), los proyectos de universidades extrarregionales superan en número al impulso local.
 - **Vulnerabilidad Forense:** El repositorio registra estas estaciones (Estación Patagonia UC, Estación Glaciar O'Higgins) como nodos del ecosistema regional (Nodos 09 y 10 en `nodos_georreferenciados`), pero no consigna ningún indicador de transferencia tecnológica ni impacto sobre las comunidades locales de Caleta Tortel o Villa O'Higgins, normalizando una relación colonial donde Aysén es utilizado como "laboratorio natural a costo cero" sin dejar capacidades instaladas en el territorio.
 
 #### 3. Sesgo de Invisibilización de la Educación Técnico-Profesional (CFT e IP)
 Una de las omisiones más graves descubiertas en la auditoría forense de `10_ctci_innovacion.json` y Hub X es la **completa ausencia de datos sobre la educación superior técnica**:
 - El **CFT Estatal de la Región de Aysén**, creado por Ley 20.910 y con sede central en Puerto Aysén, cuenta con **737 estudiantes matriculados** (representando **un tercio de toda la matrícula de educación superior de la región**). Sin embargo, en el dataset del Hub X no existe una sola variable que registre su matrícula, retención, inserción laboral o infraestructura.
-- De igual modo, **INACAP Sede Coyhaique** (con ~800 estudiantes) y sus carreras técnicas de mecánica, gastronomía y administración están absolutamente ausentes de las tablas y series del repositorio.
+- De igual modo, **INACAP Sede Coyhaique** (con **1.187 estudiantes** en matrícula oficial SIES 2026, junto a 1.000 de UAysén y 737 del CFT Estatal = **2.924 estudiantes totales**) requería visibilidad estadística plena en el Hub X.
 - El modelo actual confunde *"Conocimiento e Innovación"* con *"Papers indexados de postgrado"*, invisibilizando a la fuerza de trabajo técnica que opera las redes eléctricas, la acuicultura y las obras civiles de la región.
 
 #### 4. Sesgo por Omisión de Crisis Institucionales y Cambios de Régimen
@@ -406,7 +405,7 @@ Para superar los sesgos detectados y completar la variedad requerida del Hub X s
    Con el cierre de la administración provisional en enero de 2026 y la asunción del rector Dr. Víctor Cubillos, la Universidad de Aysén debe consolidar su campus físico y su modelo financiero, exigiendo al Estado de Chile una **fórmula de financiamiento basal diferenciado por zona extrema** en la Ley de Presupuestos que compense el sobrecosto biogeográfico estructural.
 3. **Reconocimiento e Integración de la Formación Técnica (CFT Estatal):**
    El Data Lake regional debe incorporar de inmediato al CFT Estatal de Aysén y a las carreras técnicas como parte del núcleo duro del conocimiento territorial. La viabilidad de las plantas de proceso, las redes eléctricas aisladas y la infraestructura vial descansa en técnicos formados en la región y con vocación de permanencia.
-4. **Descentralización Macrozonal de la CTCI:**
-   Se recomienda solicitar formalmente al MinCiencia la división de la Seremi Macrozona Austral en dos seremías independientes (Aysén y Magallanes) o, en su defecto, la radicación alternada de la autoridad en Coyhaique con facultades resolutivas y presupuesto propio, evitando que Aysén continúe siendo una subdirección periférica administrada desde Punta Arenas.
+4. **Consolidación de la SEREMI de Ciencia de Aysén y Nueva Estrategia CTCID 2027:**
+   Habiéndose concretado en octubre de 2025 la instalación de la SEREMI de Ciencia propia en la Región de Aysén, corresponde consolidar al Comité Regional de CTCID (sesiones de abril y noviembre de 2026, convocatoria pública dic-2026) para redactar en 2027 la nueva Estrategia Regional de CTCID con capacidades resolutivas y presupuestarias permanentes.
 5. **Implementación de una Sala de Operaciones de Inteligencia Territorial (Cybersyn Austral):**
    La integración del Data Lake de 10 Hubs y 39 Nodos con tableros de control en tiempo real (basados en índices de Productividad, Latencia y Rendimiento de Beer) permitirá que las autoridades del GORE y las 10 municipalidades monitoreen perturbaciones climáticas, alertas oceanográficas y brechas sociales con anticipación sistémica, dotando a la Patagonia de la variedad requerida para gobernar su propio destino.
